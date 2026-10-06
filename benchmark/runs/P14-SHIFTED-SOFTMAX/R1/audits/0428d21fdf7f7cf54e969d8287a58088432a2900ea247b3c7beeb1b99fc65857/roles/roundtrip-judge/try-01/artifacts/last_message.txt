@@ -1,0 +1,135 @@
+{
+  "accepted": true,
+  "candidate_semantic_sha256": "0428d21fdf7f7cf54e969d8287a58088432a2900ea247b3c7beeb1b99fc65857",
+  "classification": "faithful-equivalent",
+  "implications": {
+    "candidate_implies_source": {
+      "reasoning": "The candidate covers every selected input and maximizing index, constructs all outputs through the specified perturbed recursive algorithm, and proves precisely (4.11). Its uniform C u² remainder expresses the selected O(u²) remainder.",
+      "verdict": "yes"
+    },
+    "source_implies_candidate": {
+      "reasoning": "The source's relative-operation model, shifted exponential evaluation, recursive summation, and final division give the candidate's perturbation formulas. Under the packet's uniform local interpretation of O(u²), Theorem 4.3 supplies the candidate's existential C and positive ε for each fixed input and maximizing index.",
+      "verdict": "yes"
+    }
+  },
+  "mismatches": [],
+  "paper_sha256": "7247047bc49218e001195edc8a2d66131eea7596d252503f34b0ace6328981cd",
+  "rationale": "The translation preserves the selected normwise theorem, its algorithmic provenance, coefficient, and uniform first-order meaning. The explicit local remainder constants clarify the asymptotic notation without changing the result. The componentwise estimate preceding the theorem is not an additional selected conclusion. The translation's stated ambiguities about formats and input-dependent constants are resolved by the source's abstract relative-error model and the packet's fixed-input remainder interpretation.",
+  "requires_adjudication": false,
+  "role": "roundtrip-judge",
+  "semantic_checklist": [
+    {
+      "id": "S01",
+      "paper_evidence": "Theorem 4.3, equation (4.11), printed page 2324, concerns shifted softmax from Algorithm 4.1.",
+      "reasoning": "The candidate selects the correct theorem and algorithm.",
+      "status": "pass",
+      "translation_evidence": "The conclusion bounds relative maximum-norm error of the shifted normalized exponential vector."
+    },
+    {
+      "id": "S02",
+      "paper_evidence": "Algorithm 4.1 takes x in R^n and selects a=x_k=max_i x_i; the packet selects n≥2.",
+      "reasoning": "Dimensions, real coordinates, and the maximizing index agree.",
+      "status": "pass",
+      "translation_evidence": "Universally quantified natural n≥2, real vector x, and coordinate k satisfying x_i≤x_k for every i."
+    },
+    {
+      "id": "S03",
+      "paper_evidence": "The packet specifies a quadratic remainder uniform over admissible local errors for fixed input and order.",
+      "reasoning": "The constants precede the error choices, so they cannot depend on individual perturbations or u.",
+      "status": "pass",
+      "translation_evidence": "For each n,x,k, there exist C≥0 and ε>0, followed by universal quantification over u and all four perturbation vectors."
+    },
+    {
+      "id": "S04",
+      "paper_evidence": "The source uses a maximal shift and local relative errors of magnitude at most u.",
+      "reasoning": "No extra input restrictions, uniqueness assumptions, or probabilistic assumptions are imposed. Bounds on unused perturbation entries do not restrict executions because those entries can be zero.",
+      "status": "pass",
+      "translation_evidence": "Arbitrary real x, any maximizing k including ties, and coordinatewise perturbation bounds."
+    },
+    {
+      "id": "S05",
+      "paper_evidence": "Equation (4.11) bounds ||ĝ−g||∞/||g||∞ by [n+2+2(xmax−xmin)]u+O(u²).",
+      "reasoning": "The complete selected normwise conclusion is present and includes all output coordinates.",
+      "status": "pass",
+      "translation_evidence": "The same relative norm inequality holds for the full vectors ŷ and y."
+    },
+    {
+      "id": "S06",
+      "paper_evidence": "The source uses ordinary real exponentials, sums, division, extrema, and the infinity norm.",
+      "reasoning": "The supplied definitions implement these operations with their intended mathematical meanings.",
+      "status": "pass",
+      "translation_evidence": "Exact and perturbed exponentials use exp; the minimum ranges over every coordinate; sums and vector subtraction have their ordinary real meanings."
+    },
+    {
+      "id": "S07",
+      "paper_evidence": "Equations (4.4)–(4.6) distinguish exact shifted exponentials and sum from their computed counterparts.",
+      "reasoning": "Reference quantities remain exact, while computed quantities carry the specified perturbations.",
+      "status": "pass",
+      "translation_evidence": "a_i=exp(x_i−x_k), S=Σ_{i≠k}a_i, and y_i=a_i/(1+S) are distinct from â_i, Ŝ, and ŷ_i."
+    },
+    {
+      "id": "S08",
+      "paper_evidence": "Algorithm 4.1 evaluates shifted exponentials, recursively sums terms excluding k, and divides every numerator by 1+s.",
+      "reasoning": "The computed output is constructed from the algorithm rather than assumed to satisfy an error certificate. Initializing with the first summand accounts for the exact addition to zero.",
+      "status": "pass",
+      "translation_evidence": "Increasing indices excluding k determine a perturbed left fold with n−2 additions; each output uses its perturbed exponential and final division factor."
+    },
+    {
+      "id": "S09",
+      "paper_evidence": "Equation (4.11) uses the infinity norm in both numerator and denominator.",
+      "reasoning": "The candidate uses exactly the maximum absolute coordinate norm.",
+      "status": "pass",
+      "translation_evidence": "||v||∞=max_i|v_i| on the nonempty finite coordinate domain."
+    },
+    {
+      "id": "S10",
+      "paper_evidence": "The displayed coefficient is n+2+2(xmax−xmin); only the selected maximizing index is omitted from the sum.",
+      "reasoning": "The coefficient and indexing agree, including when several coordinates attain the maximum.",
+      "status": "pass",
+      "translation_evidence": "The coefficient is n+2+2(x_k−min_i x_i); filtering removes exactly k and retains every other index."
+    },
+    {
+      "id": "S11",
+      "paper_evidence": "Equation (1.7) gives the relative-operation model; Section 4 uses relative exponential errors and the denominator 1+s(1+η).",
+      "reasoning": "The candidate matches this abstract model, including the absence of an additional denominator-rounding factor. Exceptional values outside that model are not part of the selected estimate. Choosing ε<1 ensures positive computed denominators, so totalized division introduces no substantive discrepancy.",
+      "status": "pass",
+      "translation_evidence": "All modeled errors have magnitude at most u; the outer addition of 1 is exact; the theorem permits restricting the positive local radius ε."
+    },
+    {
+      "id": "S12",
+      "paper_evidence": "Theorem 4.3 asserts a non-strict upper bound with the displayed first-order coefficient.",
+      "reasoning": "The relation and its strength are preserved.",
+      "status": "pass",
+      "translation_evidence": "The candidate asserts ≤ with the identical linear coefficient and a quadratic remainder."
+    },
+    {
+      "id": "S13",
+      "paper_evidence": "The selected result is a relative normwise forward-error estimate against exact softmax.",
+      "reasoning": "The candidate measures the same output error and normalizes by the exact output norm.",
+      "status": "pass",
+      "translation_evidence": "The error is ||ŷ−y||∞/||y||∞, where y equals ordinary softmax."
+    },
+    {
+      "id": "S14",
+      "paper_evidence": "Equation (4.11) retains O(u²); the packet requires uniformity over local errors for fixed input and order.",
+      "reasoning": "The existential nonnegative constant and positive radius give precisely the required uniform local quadratic upper remainder.",
+      "status": "pass",
+      "translation_evidence": "A single C u² bounds the remainder for every admissible perturbation tuple and every 0≤u≤ε."
+    },
+    {
+      "id": "S15",
+      "paper_evidence": "The packet selects arbitrary real inputs with n≥2 and any maximizing coordinate; the source's k=n convention is only notational.",
+      "reasoning": "The candidate preserves the selected applicability and recursive order without fixing the maximum's location.",
+      "status": "pass",
+      "translation_evidence": "Every n≥2, arbitrary x, and every maximizing k are quantified; the retained indices follow the algorithm's increasing order."
+    },
+    {
+      "id": "S16",
+      "paper_evidence": "The source concerns nonempty real vectors with positive exact softmax entries and admissible small rounding errors.",
+      "reasoning": "The hypotheses are consistent, positive admissible u exist, zero perturbations are always allowed, and the exact normalizing norm is strictly positive. The conclusion is not assumed as a hypothesis.",
+      "status": "pass",
+      "translation_evidence": "n≥2, ε>0, and y_k=1/(1+S)>0; perturbation bounds admit the all-zero tuple and nonzero small perturbations."
+    }
+  ],
+  "uncertainties": []
+}

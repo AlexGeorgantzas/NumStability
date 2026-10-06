@@ -1,0 +1,3 @@
+`Candidate.lean` now states Lemma 2.2 for every nonempty binary summation tree, including the one-leaf case. Its right-hand side has one term per internal node, weighted by the rounding factors of its strict ancestors.
+
+The file compiles with the required single `sorry` in `target`.

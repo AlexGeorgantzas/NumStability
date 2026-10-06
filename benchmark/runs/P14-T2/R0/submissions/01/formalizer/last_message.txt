@@ -1,0 +1,1 @@
+I wrote the source-faithful proposition in [Candidate.lean](/workspace/Candidate.lean:35). It models the ordered unshifted computation and states uniform componentwise and infinity-norm bounds. The file compiles; the target’s `sorry` is its only proof hole.

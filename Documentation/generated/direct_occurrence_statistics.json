@@ -1,0 +1,20 @@
+{
+  "source_sha256": "aa8e788f31b4db9525d2a36c073a88f8397babb511647676c76c2ae0f62f67df",
+  "spearman": {
+    "occurrences_statement": {
+      "total_time_gain_pct": -0.2147400916989471,
+      "proof_line_gain_pct": -0.27609440361293197,
+      "total_tokens_gain_pct": -0.22701095408174407
+    },
+    "occurrences_proof": {
+      "total_time_gain_pct": -0.2606060606060606,
+      "proof_line_gain_pct": -0.40606060606060607,
+      "total_tokens_gain_pct": 0.2
+    },
+    "occurrences_combined": {
+      "total_time_gain_pct": -0.2606060606060606,
+      "proof_line_gain_pct": -0.40606060606060607,
+      "total_tokens_gain_pct": 0.2
+    }
+  }
+}

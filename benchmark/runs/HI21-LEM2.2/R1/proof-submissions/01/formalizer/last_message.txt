@@ -1,0 +1,1 @@
+Replaced the target’s `sorry` with a complete proof in [Candidate.lean](/workspace/Candidate.lean). The documented Lean compilation command succeeds, and the file contains no proof holes.

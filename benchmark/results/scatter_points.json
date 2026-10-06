@@ -1,0 +1,542 @@
+{
+  "source_reuse_sha256": "830c21a190dd71cd2bfa6ee6a5c89e4876c7c7e117e346d49b0210b4146215c8",
+  "graphs": {
+    "09a_reuse_formalization_scatter": {
+      "x_metric": "realized_reuse_score",
+      "y_metric": "formalization_time_gain_pct",
+      "horizontal_offset_display_only": true,
+      "points": [
+        {
+          "number": 1,
+          "task_id": "CAST08-FIXED3",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": 8.567067770600001
+        },
+        {
+          "number": 2,
+          "task_id": "P14-T1",
+          "reuse_score": 2,
+          "x_display_score": 2.09,
+          "gain_pct": 2.6224017324862903
+        },
+        {
+          "number": 3,
+          "task_id": "HI21-LEM2.2",
+          "reuse_score": 1,
+          "x_display_score": 1.0,
+          "gain_pct": -52.57860289717787
+        },
+        {
+          "number": 4,
+          "task_id": "CAST08-PROP3.1",
+          "reuse_score": 3,
+          "x_display_score": 3.09,
+          "gain_pct": -6.102373322009077
+        },
+        {
+          "number": 5,
+          "task_id": "P14-T2",
+          "reuse_score": 2,
+          "x_display_score": 1.91,
+          "gain_pct": 0.545111299843168
+        },
+        {
+          "number": 6,
+          "task_id": "RUMP12-THM3.4",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": -47.578717014356265
+        },
+        {
+          "number": 7,
+          "task_id": "P14-LOGSUMEXP",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": 28.4929488530403
+        },
+        {
+          "number": 8,
+          "task_id": "H20-8",
+          "reuse_score": 3,
+          "x_display_score": 2.91,
+          "gain_pct": -11.902905352283753
+        },
+        {
+          "number": 9,
+          "task_id": "CAST08-PROP3.2",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": 20.190998679950752
+        },
+        {
+          "number": 10,
+          "task_id": "P14-SHIFTED-SOFTMAX",
+          "reuse_score": 1,
+          "x_display_score": 1.0,
+          "gain_pct": -23.07736821145821
+        }
+      ]
+    },
+    "09b_reuse_proof_scatter": {
+      "x_metric": "realized_reuse_score",
+      "y_metric": "proof_time_gain_pct",
+      "horizontal_offset_display_only": true,
+      "points": [
+        {
+          "number": 1,
+          "task_id": "CAST08-FIXED3",
+          "reuse_score": 3,
+          "x_display_score": 3.09,
+          "gain_pct": 42.90349122780566
+        },
+        {
+          "number": 2,
+          "task_id": "P14-T1",
+          "reuse_score": 2,
+          "x_display_score": 2.0,
+          "gain_pct": 34.11742592100222
+        },
+        {
+          "number": 3,
+          "task_id": "HI21-LEM2.2",
+          "reuse_score": 1,
+          "x_display_score": 1.0,
+          "gain_pct": -27.277603351130427
+        },
+        {
+          "number": 4,
+          "task_id": "CAST08-PROP3.1",
+          "reuse_score": 3,
+          "x_display_score": 3.27,
+          "gain_pct": 46.36215608550516
+        },
+        {
+          "number": 5,
+          "task_id": "P14-T2",
+          "reuse_score": 2,
+          "x_display_score": 2.0,
+          "gain_pct": 17.868657907740108
+        },
+        {
+          "number": 6,
+          "task_id": "RUMP12-THM3.4",
+          "reuse_score": 3,
+          "x_display_score": 2.73,
+          "gain_pct": 30.843031098829144
+        },
+        {
+          "number": 7,
+          "task_id": "P14-LOGSUMEXP",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": 5.03777694124325
+        },
+        {
+          "number": 8,
+          "task_id": "H20-8",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": 65.59334748863681
+        },
+        {
+          "number": 9,
+          "task_id": "CAST08-PROP3.2",
+          "reuse_score": 3,
+          "x_display_score": 2.91,
+          "gain_pct": 35.43705077704322
+        },
+        {
+          "number": 10,
+          "task_id": "P14-SHIFTED-SOFTMAX",
+          "reuse_score": 1,
+          "x_display_score": 1.0,
+          "gain_pct": -0.3241151085249163
+        }
+      ]
+    },
+    "09c_reuse_total_scatter": {
+      "x_metric": "realized_reuse_score",
+      "y_metric": "total_time_gain_pct",
+      "horizontal_offset_display_only": true,
+      "points": [
+        {
+          "number": 1,
+          "task_id": "CAST08-FIXED3",
+          "reuse_score": 3,
+          "x_display_score": 3.18,
+          "gain_pct": 35.929523617185616
+        },
+        {
+          "number": 2,
+          "task_id": "P14-T1",
+          "reuse_score": 2,
+          "x_display_score": 2.0,
+          "gain_pct": 24.945738410282402
+        },
+        {
+          "number": 3,
+          "task_id": "HI21-LEM2.2",
+          "reuse_score": 1,
+          "x_display_score": 1.0,
+          "gain_pct": -47.11291398316175
+        },
+        {
+          "number": 4,
+          "task_id": "CAST08-PROP3.1",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": 35.46254062548555
+        },
+        {
+          "number": 5,
+          "task_id": "P14-T2",
+          "reuse_score": 2,
+          "x_display_score": 2.0,
+          "gain_pct": 14.636309400955538
+        },
+        {
+          "number": 6,
+          "task_id": "RUMP12-THM3.4",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": 21.018297707970707
+        },
+        {
+          "number": 7,
+          "task_id": "P14-LOGSUMEXP",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": 10.49653856152489
+        },
+        {
+          "number": 8,
+          "task_id": "H20-8",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": 55.539239724928755
+        },
+        {
+          "number": 9,
+          "task_id": "CAST08-PROP3.2",
+          "reuse_score": 3,
+          "x_display_score": 2.82,
+          "gain_pct": 31.625166218268603
+        },
+        {
+          "number": 10,
+          "task_id": "P14-SHIFTED-SOFTMAX",
+          "reuse_score": 1,
+          "x_display_score": 1.0,
+          "gain_pct": -3.7974440331566632
+        }
+      ]
+    },
+    "09d_reuse_tokens_scatter": {
+      "x_metric": "realized_reuse_score",
+      "y_metric": "total_tokens_gain_pct",
+      "horizontal_offset_display_only": true,
+      "points": [
+        {
+          "number": 1,
+          "task_id": "CAST08-FIXED3",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": -122.72098385857034
+        },
+        {
+          "number": 2,
+          "task_id": "P14-T1",
+          "reuse_score": 2,
+          "x_display_score": 2.0,
+          "gain_pct": -47.86234464380068
+        },
+        {
+          "number": 3,
+          "task_id": "HI21-LEM2.2",
+          "reuse_score": 1,
+          "x_display_score": 1.0,
+          "gain_pct": -182.5549796185396
+        },
+        {
+          "number": 4,
+          "task_id": "CAST08-PROP3.1",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": -33.627132926058565
+        },
+        {
+          "number": 5,
+          "task_id": "P14-T2",
+          "reuse_score": 2,
+          "x_display_score": 2.0,
+          "gain_pct": -4.243788450875294
+        },
+        {
+          "number": 6,
+          "task_id": "RUMP12-THM3.4",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": 0.08285917026237268
+        },
+        {
+          "number": 7,
+          "task_id": "P14-LOGSUMEXP",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": -18.137914070186948
+        },
+        {
+          "number": 8,
+          "task_id": "H20-8",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": 39.11249171266603
+        },
+        {
+          "number": 9,
+          "task_id": "CAST08-PROP3.2",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": -164.22339854561528
+        },
+        {
+          "number": 10,
+          "task_id": "P14-SHIFTED-SOFTMAX",
+          "reuse_score": 1,
+          "x_display_score": 1.0,
+          "gain_pct": -10.96124741542856
+        }
+      ]
+    },
+    "09e_reuse_proof_lines_scatter": {
+      "x_metric": "realized_reuse_score",
+      "y_metric": "proof_lines_gain_pct",
+      "horizontal_offset_display_only": true,
+      "points": [
+        {
+          "number": 1,
+          "task_id": "CAST08-FIXED3",
+          "reuse_score": 3,
+          "x_display_score": 3.18,
+          "gain_pct": 32.0
+        },
+        {
+          "number": 2,
+          "task_id": "P14-T1",
+          "reuse_score": 2,
+          "x_display_score": 2.0,
+          "gain_pct": -12.935323383084578
+        },
+        {
+          "number": 3,
+          "task_id": "HI21-LEM2.2",
+          "reuse_score": 1,
+          "x_display_score": 1.0,
+          "gain_pct": -25.641025641025642
+        },
+        {
+          "number": 4,
+          "task_id": "CAST08-PROP3.1",
+          "reuse_score": 3,
+          "x_display_score": 3.09,
+          "gain_pct": 46.38069705093834
+        },
+        {
+          "number": 5,
+          "task_id": "P14-T2",
+          "reuse_score": 2,
+          "x_display_score": 2.0,
+          "gain_pct": 5.21978021978022
+        },
+        {
+          "number": 6,
+          "task_id": "RUMP12-THM3.4",
+          "reuse_score": 3,
+          "x_display_score": 2.91,
+          "gain_pct": 44.40734557595993
+        },
+        {
+          "number": 7,
+          "task_id": "P14-LOGSUMEXP",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": -25.980392156862745
+        },
+        {
+          "number": 8,
+          "task_id": "H20-8",
+          "reuse_score": 3,
+          "x_display_score": 3.0,
+          "gain_pct": 31.275720164609055
+        },
+        {
+          "number": 9,
+          "task_id": "CAST08-PROP3.2",
+          "reuse_score": 3,
+          "x_display_score": 2.82,
+          "gain_pct": 25.53191489361702
+        },
+        {
+          "number": 10,
+          "task_id": "P14-SHIFTED-SOFTMAX",
+          "reuse_score": 1,
+          "x_display_score": 1.0,
+          "gain_pct": -2.494802494802495
+        }
+      ]
+    },
+    "14a_formalization_vs_proof_scatter": {
+      "x_metric": "formalization_time_gain_pct",
+      "y_metric": "proof_time_gain_pct",
+      "points": [
+        {
+          "number": 1,
+          "task_id": "CAST08-FIXED3",
+          "reuse_score": 3,
+          "x_gain_pct": 8.567067770600001,
+          "y_gain_pct": 42.90349122780566
+        },
+        {
+          "number": 2,
+          "task_id": "P14-T1",
+          "reuse_score": 2,
+          "x_gain_pct": 2.6224017324862903,
+          "y_gain_pct": 34.11742592100222
+        },
+        {
+          "number": 3,
+          "task_id": "HI21-LEM2.2",
+          "reuse_score": 1,
+          "x_gain_pct": -52.57860289717787,
+          "y_gain_pct": -27.277603351130427
+        },
+        {
+          "number": 4,
+          "task_id": "CAST08-PROP3.1",
+          "reuse_score": 3,
+          "x_gain_pct": -6.102373322009077,
+          "y_gain_pct": 46.36215608550516
+        },
+        {
+          "number": 5,
+          "task_id": "P14-T2",
+          "reuse_score": 2,
+          "x_gain_pct": 0.545111299843168,
+          "y_gain_pct": 17.868657907740108
+        },
+        {
+          "number": 6,
+          "task_id": "RUMP12-THM3.4",
+          "reuse_score": 3,
+          "x_gain_pct": -47.578717014356265,
+          "y_gain_pct": 30.843031098829144
+        },
+        {
+          "number": 7,
+          "task_id": "P14-LOGSUMEXP",
+          "reuse_score": 3,
+          "x_gain_pct": 28.4929488530403,
+          "y_gain_pct": 5.03777694124325
+        },
+        {
+          "number": 8,
+          "task_id": "H20-8",
+          "reuse_score": 3,
+          "x_gain_pct": -11.902905352283753,
+          "y_gain_pct": 65.59334748863681
+        },
+        {
+          "number": 9,
+          "task_id": "CAST08-PROP3.2",
+          "reuse_score": 3,
+          "x_gain_pct": 20.190998679950752,
+          "y_gain_pct": 35.43705077704322
+        },
+        {
+          "number": 10,
+          "task_id": "P14-SHIFTED-SOFTMAX",
+          "reuse_score": 1,
+          "x_gain_pct": -23.07736821145821,
+          "y_gain_pct": -0.3241151085249163
+        }
+      ]
+    },
+    "14b_total_time_vs_tokens_scatter": {
+      "x_metric": "total_time_gain_pct",
+      "y_metric": "total_tokens_gain_pct",
+      "points": [
+        {
+          "number": 1,
+          "task_id": "CAST08-FIXED3",
+          "reuse_score": 3,
+          "x_gain_pct": 35.929523617185616,
+          "y_gain_pct": -122.72098385857034
+        },
+        {
+          "number": 2,
+          "task_id": "P14-T1",
+          "reuse_score": 2,
+          "x_gain_pct": 24.945738410282402,
+          "y_gain_pct": -47.86234464380068
+        },
+        {
+          "number": 3,
+          "task_id": "HI21-LEM2.2",
+          "reuse_score": 1,
+          "x_gain_pct": -47.11291398316175,
+          "y_gain_pct": -182.5549796185396
+        },
+        {
+          "number": 4,
+          "task_id": "CAST08-PROP3.1",
+          "reuse_score": 3,
+          "x_gain_pct": 35.46254062548555,
+          "y_gain_pct": -33.627132926058565
+        },
+        {
+          "number": 5,
+          "task_id": "P14-T2",
+          "reuse_score": 2,
+          "x_gain_pct": 14.636309400955538,
+          "y_gain_pct": -4.243788450875294
+        },
+        {
+          "number": 6,
+          "task_id": "RUMP12-THM3.4",
+          "reuse_score": 3,
+          "x_gain_pct": 21.018297707970707,
+          "y_gain_pct": 0.08285917026237268
+        },
+        {
+          "number": 7,
+          "task_id": "P14-LOGSUMEXP",
+          "reuse_score": 3,
+          "x_gain_pct": 10.49653856152489,
+          "y_gain_pct": -18.137914070186948
+        },
+        {
+          "number": 8,
+          "task_id": "H20-8",
+          "reuse_score": 3,
+          "x_gain_pct": 55.539239724928755,
+          "y_gain_pct": 39.11249171266603
+        },
+        {
+          "number": 9,
+          "task_id": "CAST08-PROP3.2",
+          "reuse_score": 3,
+          "x_gain_pct": 31.625166218268603,
+          "y_gain_pct": -164.22339854561528
+        },
+        {
+          "number": 10,
+          "task_id": "P14-SHIFTED-SOFTMAX",
+          "reuse_score": 1,
+          "x_gain_pct": -3.7974440331566632,
+          "y_gain_pct": -10.96124741542856
+        }
+      ]
+    }
+  }
+}

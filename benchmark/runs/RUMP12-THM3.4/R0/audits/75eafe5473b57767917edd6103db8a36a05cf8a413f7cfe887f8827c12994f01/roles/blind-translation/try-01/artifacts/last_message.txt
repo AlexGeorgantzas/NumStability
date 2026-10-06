@@ -1,0 +1,484 @@
+{
+  "ambiguities": [
+    "Nearest rounding specifies a relation, not a deterministic algorithm: either nearest representable value is allowed at a tie. The target quantifies over every sequence satisfying that relation.",
+    "The format has no maximum exponent, infinities, NaNs, or signed-zero distinction. It is a set of real dyadic values with a lower exponent bound and a bounded integer significand.",
+    "Some standard library declarations are supplied only by type or refer to unexpanded implementation details. Their standard mathematical meanings are used; the target proof is excluded, so this translation does not verify the claimed bound."
+  ],
+  "dependency_coverage": [
+    {
+      "effect_on_target": "The target universally quantifies over these formats, including their built-in parameter restrictions.",
+      "id": "D001",
+      "meaning": "The type of formats F. The supplied constructor and projections identify its data as a natural precision q, a proof that q > 0, an integer minimum exponent E, and a proof that E ≤ −q.",
+      "name": "Binary format",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "This is the recursive-summation hypothesis: n rounded additions follow an exact initialization.",
+      "id": "D002",
+      "meaning": "For every format F, natural n, and real sequences p,s indexed by {0,…,n}, recursiveSum(F,p,s) means s₀ = p₀ and, for every i ∈ {0,…,n−1}, sᵢ₊₁ is a nearest F-representable value to the exact real number sᵢ + pᵢ₊₁.",
+      "name": "Recursive nearest-rounded summation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Every input pᵢ must satisfy this predicate; it also defines the admissible outputs and competitors in each rounding step.",
+      "id": "D003",
+      "meaning": "For a format F with precision q and minimum exponent E, a real x is representable exactly when there exist integers m,e such that E ≤ e, |m| < 2^q, and x = m·2^e. The significand magnitude is a natural number, 2^q is a natural power, and 2^e is a real integer power. No normalization condition or upper exponent bound is imposed.",
+      "name": "Representable real values",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The bound uses precisely the factor n·2^(−q), without a denominator or additional constant.",
+      "id": "D004",
+      "meaning": "For every format F of precision q, its unit roundoff is the real number u(F) = 2^(−q), with q first embedded in the integers.",
+      "name": "Unit roundoff",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Sets the lower bound on exponents in representability.",
+      "id": "D005",
+      "meaning": "For every format F, returns its third field, the integer minimum exponent E.",
+      "name": "Minimum-exponent projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Restricts the universally quantified formats to positive precision and E ≤ −q; these are implicit structural hypotheses.",
+      "id": "D006",
+      "meaning": "Given any q ∈ ℕ, a proof 0 < q, any E ∈ ℤ, and a proof E ≤ −(q interpreted in ℤ), constructs a format with these fields.",
+      "name": "Format constructor and constraints",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies q both to the significand bound 2^q and to u = 2^(−q).",
+      "id": "D007",
+      "meaning": "For every format F, returns its first field, the natural precision q.",
+      "name": "Precision projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes index 0 available in Fin(n+1), including when n = 0.",
+      "id": "D008",
+      "meaning": "For every natural n, n+1 is nonzero.",
+      "name": "Nonzero sequence length",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supports interpreting the literal 2 as a real number in the powers defining representability and unit roundoff.",
+      "id": "D009",
+      "meaning": "The natural number 1+1 is at least two.",
+      "name": "Two is at least two",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Each summation step must minimize absolute error over all representable real values. Ties are unrestricted.",
+      "id": "D010",
+      "meaning": "For every format F and real x,y, roundsToNearest(F,x,y) means that y is F-representable and, for every real z, if z is F-representable then |y−x| ≤ |z−x|.",
+      "name": "Nearest-representable relation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Fin(n+1) indexes n+1 inputs and partial sums; Fin n indexes the n additions.",
+      "id": "D011",
+      "meaning": "For each natural k, Fin k is the finite type of natural indices i satisfying 0 ≤ i < k.",
+      "name": "Bounded natural indices",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Allows both target sums to range over all indices 0,…,n.",
+      "id": "D012",
+      "meaning": "For every natural k, equips Fin k with a finite enumeration listing every index exactly once, using the list finRange k.",
+      "name": "Finite enumeration of indices",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The output whose error is bounded is sₙ.",
+      "id": "D013",
+      "meaning": "For every natural n, last(n) is the element of Fin(n+1) with numerical value n.",
+      "name": "Last sequence index",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Forms the exact real sum of the inputs and the sum of their absolute values.",
+      "id": "D014",
+      "meaning": "For arbitrary types ι and M, an additive commutative monoid structure on M, a finite set A of elements of ι, and f:ι→M, returns ∑ᵢ∈A f(i), implemented by mapping f over the underlying multiset and adding its entries.",
+      "name": "Finite sum",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Ensures neither target sum omits any of the n+1 indices.",
+      "id": "D015",
+      "meaning": "For every type α equipped with a finite enumeration, univ is the finite set containing every element of α.",
+      "name": "Universal finite set",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses natural addition in n+1 and real addition in each exact pre-rounding sum.",
+      "id": "D016",
+      "meaning": "For arbitrary types α,β,γ equipped with a heterogeneous addition operation, selects that operation α×β→γ. Its instances here give ordinary addition.",
+      "name": "Addition operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses the products n·u·∑|pᵢ| and m·2^e.",
+      "id": "D017",
+      "meaning": "For arbitrary types α,β,γ equipped with heterogeneous multiplication, selects that operation α×β→γ. Its real instance here is ordinary multiplication.",
+      "name": "Multiplication operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses the final summation error and the differences used in nearest rounding.",
+      "id": "D018",
+      "meaning": "For arbitrary types α,β,γ equipped with heterogeneous subtraction, selects that operation α×β→γ. Its real instance here is ordinary subtraction.",
+      "name": "Subtraction operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses the final non-strict error bound, nearest-distance comparisons, and integer exponent constraints.",
+      "id": "D019",
+      "meaning": "For every type α equipped with a non-strict comparison relation, selects its relation ≤ on α.",
+      "name": "Non-strict comparison",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The addition count n and precision q are nonnegative integers; only q is required to be positive.",
+      "id": "D020",
+      "meaning": "The type ℕ of natural numbers, including zero.",
+      "name": "Natural numbers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Embeds n into ℝ in the bound and q into ℤ before negating it.",
+      "id": "D021",
+      "meaning": "For every type R equipped with a natural-number cast, selects its map ℕ→R.",
+      "name": "Natural-number cast",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets numerical literals such as 0, 1, and 2 at their required types.",
+      "id": "D022",
+      "meaning": "For every type α and natural numeral k with an assigned interpretation in α, returns that interpretation.",
+      "name": "Numeral interpretation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Inputs, partial sums, exact sums, distances, and the bound are real-valued; representability is a predicate on real values.",
+      "id": "D023",
+      "meaning": "The type ℝ of real numbers.",
+      "name": "Real numbers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the algebraic structure required for the two exact finite sums.",
+      "id": "D024",
+      "meaning": "The additive commutative monoid structure on ℝ, inherited from its commutative ring: ordinary addition with zero, associativity, and commutativity.",
+      "name": "Real additive commutative monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies real negation and the additive structure used in absolute value.",
+      "id": "D025",
+      "meaning": "The additive group structure on ℝ, inherited from its ring structure.",
+      "name": "Real additive group",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Fixes the comparisons of errors and the conclusion as ordinary real inequalities.",
+      "id": "D026",
+      "meaning": "The ordinary non-strict order ≤ on ℝ.",
+      "name": "Real non-strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes all displayed real products exact real multiplication.",
+      "id": "D027",
+      "meaning": "The multiplication operation on ℝ.",
+      "name": "Real multiplication",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets n and the base 2 as their exact real values.",
+      "id": "D028",
+      "meaning": "The canonical embedding ℕ→ℝ, implemented by embedding a natural number into the Cauchy completion of ℚ and then into the real representation.",
+      "name": "Natural numbers embedded in the reals",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the real error differences in the target and the rounding relation.",
+      "id": "D029",
+      "meaning": "Real subtraction is defined by a−b = a+(−b).",
+      "name": "Real subtraction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the maximum operation in the definition of real absolute value.",
+      "id": "D030",
+      "meaning": "The lattice structure on the ordered reals, with supremum equal to maximum and infimum equal to minimum.",
+      "name": "Real lattice",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The error is scalar absolute error, and the input-size term is ∑|pᵢ|.",
+      "id": "D031",
+      "meaning": "For any type α with a lattice and additive group structure, defines abs(a) as a∨(−a). On ℝ this is |a| = max(a,−a).",
+      "name": "Absolute value",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Determines the sequence length n+1 and successor index arithmetic.",
+      "id": "D032",
+      "meaning": "Equips ℕ with its ordinary addition operation.",
+      "name": "Natural addition instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects the overloaded addition notation to natural or real addition as appropriate.",
+      "id": "D033",
+      "meaning": "For every type α with addition, regards that operation as heterogeneous addition α×α→α without changing it.",
+      "name": "Addition notation adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects the overloaded multiplication notation to real multiplication.",
+      "id": "D034",
+      "meaning": "For every type α with multiplication, regards that operation as heterogeneous multiplication α×α→α without changing it.",
+      "name": "Multiplication notation adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects the overloaded subtraction notation to real subtraction.",
+      "id": "D035",
+      "meaning": "For every type α with subtraction, regards that operation as heterogeneous subtraction α×α→α without changing it.",
+      "name": "Subtraction notation adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Fixes natural literals used in lengths, positivity, and powers.",
+      "id": "D036",
+      "meaning": "For each natural k, interprets the numeral k in ℕ as k itself.",
+      "name": "Natural numeral instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Requires all components of the recursive-sum, representability, and nearest-rounding predicates simultaneously.",
+      "id": "D037",
+      "meaning": "For propositions A and B, A ∧ B is their logical conjunction.",
+      "name": "Conjunction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Allows both positive and negative exponents in 2^e and 2^(−q).",
+      "id": "D038",
+      "meaning": "For every type M with a division-and-inversion monoid structure, equips M with integer exponentiation using its zpow operation; negative powers use inversion.",
+      "name": "Integer-power structure",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Initialization s₀=p₀ and the representation x=m·2^e are exact equalities.",
+      "id": "D039",
+      "meaning": "For any sort α and elements a,b of α, Eq(a,b) asserts their equality.",
+      "name": "Equality",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The representing integers m and e may depend on the real value being represented; no common pair is required for all inputs.",
+      "id": "D040",
+      "meaning": "For any sort α and predicate P on α, ∃x:α, P(x) asserts the existence of an element satisfying P.",
+      "name": "Existential quantification",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Addresses sᵢ for the current partial sum in each recursive step.",
+      "id": "D041",
+      "meaning": "For every natural n, embeds Fin n into Fin(n+1) while preserving the numerical index i.",
+      "name": "Index-preserving extension",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the literal 0 in Fin(n+1) as its initial index.",
+      "id": "D042",
+      "meaning": "For any nonzero natural k and natural numeral i, interprets i as an element of Fin k through Fin.ofNat, using its residue modulo k.",
+      "name": "Numerals in finite index types",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Addresses pᵢ₊₁ and sᵢ₊₁, so the recurrence advances exactly one position.",
+      "id": "D043",
+      "meaning": "For every natural n and index i ∈ Fin n, returns the index i+1 in Fin(n+1).",
+      "name": "Successor index",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses the natural power 2^q and real integer powers 2^e and 2^(−q).",
+      "id": "D044",
+      "meaning": "For arbitrary base, exponent, and result types α,β,γ with a heterogeneous power operation, selects that operation α×β→γ.",
+      "name": "Exponentiation operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Significands may have either sign, and exponents and the minimum exponent may be negative.",
+      "id": "D045",
+      "meaning": "The type ℤ of integers.",
+      "name": "Integers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the integer significand m as an exact real factor.",
+      "id": "D046",
+      "meaning": "For every type R equipped with an integer cast, selects its map ℤ→R.",
+      "name": "Integer cast",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets E ≤ e and E ≤ −q as ordinary integer inequalities.",
+      "id": "D047",
+      "meaning": "The ordinary non-strict order ≤ on ℤ.",
+      "name": "Integer non-strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Forms the integer exponent −q and the structural bound E ≤ −q.",
+      "id": "D048",
+      "meaning": "The ordinary additive negation operation on ℤ.",
+      "name": "Integer negation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Bounds the magnitude of the significand, treating positive and negative significands symmetrically.",
+      "id": "D049",
+      "meaning": "For every integer m, returns its absolute magnitude as a natural number: k for m=k≥0, and k+1 for m=−(k+1).",
+      "name": "Natural-valued integer absolute value",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses the strict conditions 0<q and |m|<2^q.",
+      "id": "D050",
+      "meaning": "For any type α equipped with a strict comparison relation, selects its relation < on α.",
+      "name": "Strict comparison",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies natural exponentiation in the significand bound 2^q.",
+      "id": "D051",
+      "meaning": "For every monoid M, equips M with natural-number powers using the monoid's npow operation, corresponding to repeated multiplication with zeroth power one.",
+      "name": "Natural-power structure",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes 2^q in the significand bound the usual natural-number power.",
+      "id": "D052",
+      "meaning": "The multiplicative monoid structure on ℕ, inherited from its commutative multiplicative monoid.",
+      "name": "Natural multiplicative monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supports −q in the format constraint and unit-roundoff definition, and negation within real absolute value.",
+      "id": "D053",
+      "meaning": "For any type α equipped with negation, selects its unary operation a↦−a.",
+      "name": "Negation operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The number sᵢ+pᵢ₊₁ being rounded is computed as an exact real sum in the model.",
+      "id": "D054",
+      "meaning": "The ordinary addition operation on ℝ.",
+      "name": "Real addition",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines real powers of the nonzero base 2, including negative exponents, in representability and unit roundoff.",
+      "id": "D055",
+      "meaning": "Equips ℝ with its multiplicative monoid, reciprocal, division defined as multiplication by reciprocal, and recursive integer powers satisfying the zero, successor, and negative-exponent laws.",
+      "name": "Real division and integer powers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes m·2^e an equality involving the canonical real image of the integer m.",
+      "id": "D056",
+      "meaning": "The canonical embedding ℤ→ℝ, implemented through the Cauchy completion of ℚ.",
+      "name": "Integers embedded in the reals",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects power notation to the appropriate natural or real integer-power operation.",
+      "id": "D057",
+      "meaning": "For arbitrary types α,β with a power operation α×β→α, regards it as a heterogeneous power operation with the same inputs and result.",
+      "name": "Power notation adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Fixes precision positivity, index bounds, and the significand bound as ordinary strict natural inequalities.",
+      "id": "D058",
+      "meaning": "The ordinary strict order < on ℕ.",
+      "name": "Natural strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Ensures −q means the negative integer precision, rather than truncated natural subtraction.",
+      "id": "D059",
+      "meaning": "The canonical embedding ℕ→ℤ sending n to the nonnegative integer n.",
+      "name": "Natural numbers embedded in the integers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the real numeral 2 used as the base of integer powers.",
+      "id": "D060",
+      "meaning": "For any type R with a natural-number cast and any natural k≥2, supplies the interpretation of the numeral k in R as its natural-number cast.",
+      "name": "Cast-based numerals of at least two",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the side condition for the numeral-construction instance used at 2; it adds no hypothesis on n or q.",
+      "id": "D061",
+      "meaning": "For a natural k, the proposition that k is at least two.",
+      "name": "At-least-two predicate",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Certifies that Fin(n+1) admits a numeral interpretation for its initial index.",
+      "id": "D062",
+      "meaning": "For any type R with a designated zero and any a∈R, the proposition that a≠0.",
+      "name": "Nonzero predicate",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the natural zero against which n+1 is certified nonzero.",
+      "id": "D063",
+      "meaning": "For any type α with an interpretation of the numeral 0, equips α with a designated zero equal to that interpretation.",
+      "name": "Zero from the zero numeral",
+      "status": "understood"
+    }
+  ],
+  "role": "blind-translation",
+  "semantic_sha256": "75eafe5473b57767917edd6103db8a36a05cf8a413f7cfe887f8827c12994f01",
+  "translation": {
+    "binders": [
+      "For every format F with precision q∈ℕ, q>0, and minimum exponent E∈ℤ satisfying E≤−q.",
+      "For every n∈ℕ, including n=0.",
+      "For every pair of real sequences p,s:{0,…,n}→ℝ. Both sequences are universally quantified; s is constrained by the recursive-summation hypothesis."
+    ],
+    "conclusions": [
+      "|sₙ − ∑ᵢ₌₀ⁿ pᵢ| ≤ ((n interpreted in ℝ)·2^(−q))·∑ᵢ₌₀ⁿ |pᵢ|.",
+      "This bounds absolute forward error for n rounded additions of n+1 representable inputs, for every permitted choice at rounding ties."
+    ],
+    "hypotheses": [
+      "For every i∈{0,…,n}, there exist integers mᵢ,eᵢ with E≤eᵢ, |mᵢ|<2^q, and pᵢ=mᵢ·2^eᵢ. The witnesses may depend on i.",
+      "s₀=p₀.",
+      "For every i∈{0,…,n−1}, sᵢ₊₁ is representable and, for every real z, if z is representable then |sᵢ₊₁−(sᵢ+pᵢ₊₁)|≤|z−(sᵢ+pᵢ₊₁)|.",
+      "There is no additional restriction on n, no assumption n·2^(−q)<1, and no sign restriction on the inputs."
+    ],
+    "mathematical_definitions": [
+      "Representable values form R_F={m·2^e : m,e∈ℤ, E≤e, |m|<2^q}. Here |m| is the integer magnitude, 2^q is a natural power, and m and 2^e are interpreted in ℝ in the product.",
+      "The format allows zero, both signs, and unnormalized significands, including values on the minimum-exponent grid; there is no upper exponent bound.",
+      "u(F)=2^(−q)∈ℝ, with integer exponent −q.",
+      "Nearest rounding of x to y means y∈R_F and ∀z∈R_F, |y−x|≤|z−x|.",
+      "The recursive process initializes exactly at p₀ and then rounds each exact real sum sᵢ+pᵢ₊₁ to a nearest representable value.",
+      "Both finite sums in the conclusion are exact real sums over all n+1 indices. The absolute value is |x|=max(x,−x); ∑|pᵢ| is the finite ℓ¹ magnitude of the input sequence."
+    ],
+    "proposition_plain_english": "For every binary format with positive precision q and integer minimum exponent E≤−q, every natural n, and every pair of real sequences p₀,…,pₙ and s₀,…,sₙ, if all inputs are representable, s₀=p₀, and each subsequent sᵢ₊₁ is a nearest representable value to sᵢ+pᵢ₊₁, then the absolute difference between sₙ and the exact sum of the inputs is at most n·2^(−q) times the sum of their absolute values."
+  },
+  "vacuity_risks": [
+    "For a fixed pair p,s, the implication imposes no conclusion unless every input is representable and s satisfies every required rounding step. The target itself does not assert existence of such an s for arbitrary p.",
+    "The format domain is nonempty: q=1 and E=−1 satisfy its constructor constraints. For any format and n, identically zero p and s satisfy the hypotheses, so the statement is not globally vacuous.",
+    "When n=0, the step quantifier ranges over the empty type Fin 0. Initialization still requires s₀=p₀, and the bound becomes 0≤0.",
+    "For identically zero inputs, the hypotheses force identically zero partial sums and the bound is again 0≤0."
+  ]
+}

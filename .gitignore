@@ -1,0 +1,11 @@
+/.lake/
+/.venv/
+.DS_Store
+__pycache__/
+*.pyc
+/Documentation/*.aux
+/Documentation/*.fdb_latexmk
+/Documentation/*.fls
+/Documentation/*.log
+/Documentation/*.out
+/Documentation/*.synctex.gz

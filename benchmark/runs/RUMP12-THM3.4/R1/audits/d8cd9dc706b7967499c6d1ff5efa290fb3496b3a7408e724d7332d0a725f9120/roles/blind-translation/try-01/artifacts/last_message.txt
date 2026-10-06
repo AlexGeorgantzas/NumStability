@@ -1,0 +1,712 @@
+{
+  "ambiguities": [
+    "Nearest rounding allows any minimizer, including either choice at a tie. No deterministic tie-breaking rule is specified.",
+    "The model represents numbers as real values, so it does not distinguish signed zeros or include NaNs or infinities. The enlarged rounding set contains arbitrarily large real normalized values, not infinity.",
+    "No unresolved ambiguity affects the mathematical translation. The target proof is excluded, so this translation does not audit its proof."
+  ],
+  "dependency_coverage": [
+    {
+      "effect_on_target": "This is the summation hypothesis: exact initialization followed by n−1 nearest-rounded additions, with every stored partial sum in the finite representable set.",
+      "id": "D001",
+      "meaning": "For a format fmt, n∈ℕ, a proof hn that n>0, and p,s:{0,…,n−1}→ℝ, the predicate means s₀=p₀; for every integer index 0≤i<n−1, sᵢ₊₁ is nearest to the exact real sum sᵢ+pᵢ₊₁ in the enlarged set E_fmt of D009; and for every 0≤i<n, sᵢ belongs to F_fmt of D005.",
+      "name": "Nearest-rounded sequential summation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Justifies using n−1 as the final index of s; it imposes no additional hypothesis.",
+      "id": "D002",
+      "meaning": "For every n∈ℕ with n>0, assuming that n−1<n is false yields a contradiction. Subtraction here is natural-number subtraction.",
+      "name": "Validity of the final index",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The target universally quantifies over these formats and further restricts the radix to 2.",
+      "id": "D003",
+      "meaning": "The type of formats, with natural-number radix β and precision t, integer exponent bounds emin and emax, and proofs β≥2, t>0, and emin≤emax, as specified by D011.",
+      "name": "Floating-point format",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The hypothesis sets this parameter equal to 2; it also determines representable values and roundoff.",
+      "id": "D004",
+      "meaning": "For each format, returns its first field, the radix β∈ℕ.",
+      "name": "Radix",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Every input pᵢ and every stored partial sum sᵢ must belong to this set.",
+      "id": "D005",
+      "meaning": "For fmt and y∈ℝ, F_fmt(y) means y=0, or y is a normalized value as in D013, or y is a subnormal value as in D014.",
+      "name": "Finite representable values",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "This is the factor u in the error bound (n−1)u∑ᵢ|pᵢ|; for β=2 it equals 2^(−t).",
+      "id": "D006",
+      "meaning": "For each format, the real unit roundoff is u=(1/2)ε, where ε=β^(1−t).",
+      "name": "Unit roundoff",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes sᵢ a valid array access at every addition step.",
+      "id": "D007",
+      "meaning": "For every n∈ℕ with n>0 and every i∈Fin(n−1), the underlying natural number i.val is less than n.",
+      "name": "Current-step index bound",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes pᵢ₊₁ and sᵢ₊₁ valid array accesses at every addition step.",
+      "id": "D008",
+      "meaning": "For every n∈ℕ with n>0 and every i∈Fin(n−1), i.val+1<n.",
+      "name": "Next-step index bound",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Nearest rounding is measured against this enlarged set, even though the selected stored result must also lie in F_fmt. Rounding is therefore not defined by clamping to the finite range.",
+      "id": "D009",
+      "meaning": "For fmt and x∈ℝ, E_fmt(x) means F_fmt(x), or there exist a Boolean sign b, m∈ℕ, and e∈ℤ with β^(t−1)≤m<β^t, emax<e, and x=σ(b)mβ^(e−t). Thus it extends the finite set by normalized values at all exponents above emax.",
+      "name": "Representable set with unbounded upper exponents",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Determines u through u=ε/2.",
+      "id": "D010",
+      "meaning": "For each format, ε=β_R^(1−t), where β_R is β embedded in ℝ and 1−t is computed in ℤ.",
+      "name": "Machine epsilon",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the built-in domain restrictions on every quantified format; these restrictions need not appear as separate target hypotheses.",
+      "id": "D011",
+      "meaning": "Given β,t∈ℕ and emin,emax∈ℤ, together with proofs 2≤β, 0<t, and emin≤emax, constructs a format with those fields.",
+      "name": "Format constructor and constraints",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Specifies absolute-distance nearest rounding at every step, without choosing a unique minimizer or tie rule.",
+      "id": "D012",
+      "meaning": "For any predicate S on ℝ and any x,y∈ℝ, y is nearest to x in S exactly when y∈S and, for every z∈ℝ with z∈S, |x−y|≤|x−z|.",
+      "name": "Nearest-point relation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the normalized part of the permitted inputs, partial sums, and rounding set.",
+      "id": "D013",
+      "meaning": "For fmt and y∈ℝ, y is normalized exactly when there exist b∈Bool, m∈ℕ, and e∈ℤ such that β^(t−1)≤m<β^t, emin≤e≤emax, and y=σ(b)mβ^(e−t).",
+      "name": "Normalized representable values",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Includes subnormal values among the permitted inputs, stored sums, and rounding candidates.",
+      "id": "D014",
+      "meaning": "For fmt and y∈ℝ, y is subnormal exactly when there exist b∈Bool and m∈ℕ with 0<m<β^(t−1) and y=σ(b)mβ^(emin−t).",
+      "name": "Subnormal representable values",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supports interpretation of the real numeral 2 in the definition u=(1/2)ε; it is not an extra format assumption.",
+      "id": "D015",
+      "meaning": "The natural number 1+1 satisfies the predicate of being at least two.",
+      "name": "Two is at least two",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes radix powers in representable values and roundoff real-valued.",
+      "id": "D016",
+      "meaning": "For each format, β_R is the natural radix β embedded in ℝ.",
+      "name": "Real radix",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Controls the upper limit of the finite set and the threshold beyond which D009 adds further normalized values.",
+      "id": "D017",
+      "meaning": "For each format, returns its fourth field, emax∈ℤ.",
+      "name": "Maximum exponent",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Restricts normalized finite representations to an inclusive interval of exponents.",
+      "id": "D018",
+      "meaning": "For a format and e∈ℤ, the exponent is in range exactly when emin≤e and e≤emax.",
+      "name": "Exponent range",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Restricts normalized significands both in the finite set and in its upper-exponent extension.",
+      "id": "D019",
+      "meaning": "For a format and m∈ℕ, m is a normalized mantissa exactly when β^(t−1)≤m and m<β^t.",
+      "name": "Normalized mantissa range",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Fixes the precise exponent convention for normalized values: the scale is β^(e−t).",
+      "id": "D020",
+      "meaning": "For any format, Boolean b, m∈ℕ, and e∈ℤ, the normalized-value expression is (σ(b)·(m cast to ℝ))·β_R^(e−(t cast to ℤ)). This function itself imposes no mantissa or exponent range restriction.",
+      "name": "Normalized value formula",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Specifies the nonzero subnormal significands; the range is empty when t=1.",
+      "id": "D021",
+      "meaning": "For a format and m∈ℕ, m is a subnormal mantissa exactly when 0<m<β^(t−1).",
+      "name": "Subnormal mantissa range",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Fixes the subnormal spacing at β^(emin−t).",
+      "id": "D022",
+      "meaning": "For any format, Boolean b, and m∈ℕ, the subnormal-value expression is (σ(b)·(m cast to ℝ))·β_R^(emin−(t cast to ℤ)). This function itself imposes no mantissa restriction.",
+      "name": "Subnormal value formula",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Controls mantissa ranges and the constant u; it is any positive natural number.",
+      "id": "D023",
+      "meaning": "For each format, returns its second field, the precision t∈ℕ.",
+      "name": "Precision",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Controls the lower normalized exponent and the fixed subnormal scale.",
+      "id": "D024",
+      "meaning": "For each format, returns its third field, emin∈ℤ.",
+      "name": "Minimum exponent",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the strict upper bound on normalized mantissas.",
+      "id": "D025",
+      "meaning": "For a format and m∈ℕ, the mantissa-range predicate is m<β^t, with natural-number exponentiation.",
+      "name": "Mantissa upper bound",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Separates subnormal mantissas from normalized mantissas.",
+      "id": "D026",
+      "meaning": "For each format, the minimum normalized mantissa is the natural number β^(t−1). Here t−1 is natural-number subtraction, agreeing with ordinary subtraction because t>0.",
+      "name": "Minimum normalized mantissa",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Allows positive and negative representable values; its format argument has no effect.",
+      "id": "D027",
+      "meaning": "For any format and Boolean b, σ(b)=−1 if b=true and σ(b)=1 otherwise.",
+      "name": "Sign multiplier",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Converts D002 into a proof that n−1<n for construction of the final index.",
+      "id": "D028",
+      "meaning": "For any proposition P with a decision procedure, if ¬P implies falsehood, then P holds.",
+      "name": "Decidable proof by contradiction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses β=2, s₀=p₀, representation equalities, and the Boolean sign test.",
+      "id": "D029",
+      "meaning": "For any type or sort α and x,y∈α, Eq(x,y) is the proposition that x and y are equal.",
+      "name": "Equality",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes p and s length-n arrays and indexes the n−1 addition steps.",
+      "id": "D030",
+      "meaning": "For each n∈ℕ, Fin n is the type of natural numbers i satisfying i<n, namely indices 0,…,n−1.",
+      "name": "Bounded natural indices",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Enables both target sums to range over every index exactly once.",
+      "id": "D031",
+      "meaning": "For every n∈ℕ, equips Fin n with the finite enumeration supplied by the list 0,…,n−1, with no duplicates and containing every element.",
+      "name": "Finite enumeration of indices",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Constructs the indices 0, i, i+1, and n−1 from their natural values and bounds.",
+      "id": "D032",
+      "meaning": "For any n∈ℕ, a natural number val and a proof val<n determine an element of Fin n.",
+      "name": "Bounded-index constructor",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the exact real sum ∑ᵢpᵢ and the magnitude sum ∑ᵢ|pᵢ| in the conclusion.",
+      "id": "D033",
+      "meaning": "For any index type ι, additive commutative monoid M, finite set A⊆ι, and function f:ι→M, returns ∑ᵢ∈A f(i), implemented by mapping f over the underlying multiset and summing.",
+      "name": "Finite sum",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Ensures that both sums include all indices in Fin n.",
+      "id": "D034",
+      "meaning": "For any type α equipped with a finite enumeration, returns the finite set of all elements of α.",
+      "name": "Universal finite set",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses the products in the error coefficient and representation formulas using the specified arithmetic instances.",
+      "id": "D035",
+      "meaning": "For types α,β,γ with a specified heterogeneous multiplication α×β→γ, returns that multiplication operation.",
+      "name": "Multiplication operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses natural subtraction in index counts and mantissa thresholds, integer subtraction in exponents, and real subtraction in errors.",
+      "id": "D036",
+      "meaning": "For types α,β,γ with a specified heterogeneous subtraction α×β→γ, returns that subtraction operation.",
+      "name": "Subtraction operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses the final error bound, nearest-point comparisons, and inclusive format or representation bounds.",
+      "id": "D037",
+      "meaning": "For any type equipped with a relation denoted ≤, returns that binary relation.",
+      "name": "Non-strict comparison",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses positivity, valid indices, strict mantissa bounds, and exponents above emax.",
+      "id": "D038",
+      "meaning": "For any type equipped with a relation denoted <, returns that binary relation.",
+      "name": "Strict comparison",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the domains of n, array indices, β, t, and mantissas.",
+      "id": "D039",
+      "meaning": "The type ℕ of natural numbers, including zero.",
+      "name": "Natural numbers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Embeds n−1, β, and mantissas into ℝ and precision t into ℤ where required.",
+      "id": "D040",
+      "meaning": "For any type R with a specified natural-number cast, maps each n∈ℕ to its designated value in R.",
+      "name": "Natural-number cast",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies decidability for proving n−1<n in the final array index.",
+      "id": "D041",
+      "meaning": "For n,m∈ℕ, decides whether n<m by deciding whether n+1≤m.",
+      "name": "Decidability of natural strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Used in the contradiction argument validating the final index and in conditional infrastructure.",
+      "id": "D042",
+      "meaning": "For any proposition P, ¬P is defined as P implying falsehood.",
+      "name": "Logical negation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the literals 0, 1, and 2 in their natural, integer, or real domains.",
+      "id": "D043",
+      "meaning": "For any type α, natural literal k, and specified interpretation of k in α, returns that element of α.",
+      "name": "Numeral interpretation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "All input values, partial sums, distances, and error bounds are real numbers.",
+      "id": "D044",
+      "meaning": "The type ℝ of real numbers.",
+      "name": "Real numbers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supports the finite real sums in the conclusion.",
+      "id": "D045",
+      "meaning": "The usual additive commutative monoid structure on ℝ, inherited from its ring structure.",
+      "name": "Real additive commutative monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the additive inverses used in absolute value and error expressions.",
+      "id": "D046",
+      "meaning": "The usual additive group structure on ℝ, inherited from its ring structure.",
+      "name": "Real additive group",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes nearest-point and error comparisons ordinary real inequalities.",
+      "id": "D047",
+      "meaning": "The standard relation ≤ on ℝ.",
+      "name": "Real non-strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes the error coefficient, unit roundoff, and representable-value products ordinary real products.",
+      "id": "D048",
+      "meaning": "The standard multiplication operation on ℝ.",
+      "name": "Real multiplication",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the operation count n−1, radix β, and mantissas as real numbers without rounding.",
+      "id": "D049",
+      "meaning": "The standard embedding ℕ→ℝ, implemented through the natural-number embedding into the Cauchy completion used to construct ℝ.",
+      "name": "Embedding naturals into reals",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the exact real differences used in the final error and nearest-rounding distances.",
+      "id": "D050",
+      "meaning": "Real subtraction is a−b=a+(−b).",
+      "name": "Real subtraction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the maximum operation in real absolute value.",
+      "id": "D051",
+      "meaning": "The usual lattice structure on ℝ, with supremum and infimum given by maximum and minimum.",
+      "name": "Real lattice",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The norm-like quantity throughout is ordinary scalar absolute value: the left side is absolute summation error and the right side uses the sum of input magnitudes.",
+      "id": "D052",
+      "meaning": "For any type α with a lattice and additive group, defines |a| as the lattice supremum of a and −a. On ℝ this is max(a,−a), the usual absolute value.",
+      "name": "Absolute value",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects multiplication notation to the real multiplication instance.",
+      "id": "D053",
+      "meaning": "For any type α with a multiplication α×α→α, supplies the corresponding heterogeneous-multiplication interface with the same operation.",
+      "name": "Multiplication notation adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects subtraction notation to the appropriate natural, integer, and real subtraction operations.",
+      "id": "D054",
+      "meaning": "For any type α with subtraction α×α→α, supplies the corresponding heterogeneous-subtraction interface with the same operation.",
+      "name": "Subtraction notation adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes n>0 and the index and mantissa strict bounds ordinary natural-number comparisons.",
+      "id": "D055",
+      "meaning": "The standard strict order < on ℕ.",
+      "name": "Natural strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Gives natural literals their usual values in index arithmetic and the binary-radix hypothesis.",
+      "id": "D056",
+      "meaning": "For every n∈ℕ, interprets the numeral n in ℕ as n itself.",
+      "name": "Natural numeral instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines n−1 and t−1. Since n>0 and t>0, truncation does not alter these particular predecessor expressions.",
+      "id": "D057",
+      "meaning": "Subtraction on ℕ is truncated subtraction: a−b=max(a−b,0), viewed as a natural number.",
+      "name": "Truncated natural subtraction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Requires all initialization, rounding, finiteness, and representation constraints joined by conjunction to hold together.",
+      "id": "D058",
+      "meaning": "For propositions P and Q, P∧Q means both P and Q hold.",
+      "name": "Logical conjunction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies real division for the factor 1/2 in unit roundoff.",
+      "id": "D059",
+      "meaning": "For any type with a division-and-inverse monoid structure, extracts its division operation.",
+      "name": "Division from inverse-monoid structure",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Serves as the contradiction conclusion in the proof that the last index is valid.",
+      "id": "D060",
+      "meaning": "The false proposition, which has no constructors and expresses contradiction.",
+      "name": "Falsehood",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Extracts the natural index i used to access positions i and i+1 in the recurrence.",
+      "id": "D061",
+      "meaning": "For every n∈ℕ, maps an element of Fin n to its underlying natural number, which is less than n.",
+      "name": "Underlying index value",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses the exact real addition sᵢ+pᵢ₊₁ and the natural successor i+1.",
+      "id": "D062",
+      "meaning": "For types α,β,γ with a specified heterogeneous addition α×β→γ, returns that addition operation.",
+      "name": "Addition operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses the real division 1/2 in the roundoff constant.",
+      "id": "D063",
+      "meaning": "For types α,β,γ with a specified heterogeneous division α×β→γ, returns that division operation.",
+      "name": "Division operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets real 1 in the half factor and the sign multiplier.",
+      "id": "D064",
+      "meaning": "For any type α with a designated element one, interprets the numeral 1 as that element.",
+      "name": "Numeral one adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Combines the alternative cases defining finite and enlarged representability.",
+      "id": "D065",
+      "meaning": "For propositions P and Q, P∨Q means at least one of P or Q holds.",
+      "name": "Logical disjunction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The value submitted to nearest rounding at each step is the exact real sum of the previous stored value and the next input.",
+      "id": "D066",
+      "meaning": "The standard addition operation on ℝ.",
+      "name": "Real addition",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supports the factor 1/2 and the possibly negative integer exponents in ε and value formulas. The bases used here are nonzero because β≥2.",
+      "id": "D067",
+      "meaning": "The usual multiplicative monoid, inverse, division, and integer-power structure on ℝ: division is multiplication by an inverse, and integer powers are defined recursively using multiplication for nonnegative powers and inverses for negative powers.",
+      "name": "Real division and integer powers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides real 1 for the numerator in 1/2 and the positive sign multiplier.",
+      "id": "D068",
+      "meaning": "The standard element 1∈ℝ.",
+      "name": "Real one",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the explicitly representable value zero.",
+      "id": "D069",
+      "meaning": "The standard element 0∈ℝ.",
+      "name": "Real zero",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the zero in the finite-representability predicate as real zero.",
+      "id": "D070",
+      "meaning": "For any type α with a designated zero, interprets the numeral 0 as that element.",
+      "name": "Numeral zero adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides i+1 in the step recurrence and 1+1 in D015.",
+      "id": "D071",
+      "meaning": "The standard addition operation on ℕ.",
+      "name": "Natural addition",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects addition notation to exact real addition and natural index addition.",
+      "id": "D072",
+      "meaning": "For any type α with addition α×α→α, supplies the corresponding heterogeneous-addition interface with the same operation.",
+      "name": "Addition notation adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects the division notation in 1/2 to real division.",
+      "id": "D073",
+      "meaning": "For any type α with division α×α→α, supplies the corresponding heterogeneous-division interface with the same operation.",
+      "name": "Division notation adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the real literal 2 in u=(1/2)ε by casting the natural number 2.",
+      "id": "D074",
+      "meaning": "For any type R with a natural-number cast and any n∈ℕ certified to satisfy n≥2, interprets the numeral n in R as the cast of n.",
+      "name": "Numerals at least two",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the sign choice used in the existential descriptions of representable values.",
+      "id": "D075",
+      "meaning": "The two-element Boolean type, with values false and true.",
+      "name": "Boolean signs",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Gives β_R^(1−t), β_R^(e−t), and β_R^(emin−t) their integer-power interpretation.",
+      "id": "D076",
+      "meaning": "For any division-and-inverse monoid M, supplies exponentiation M×ℤ→M using its integer-power operation.",
+      "name": "Integer-power instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Requires the existence of appropriate sign, mantissa, and exponent witnesses for representability, without choosing them uniquely.",
+      "id": "D077",
+      "meaning": "For any type or sort α and predicate P on α, ∃x∈α, P(x) states that a witness satisfying P exists.",
+      "name": "Existential quantification",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses real powers with integer exponents and natural powers in mantissa bounds.",
+      "id": "D078",
+      "meaning": "For base, exponent, and result types α,β,γ equipped with a power operation α×β→γ, returns that operation.",
+      "name": "Exponentiation operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Allows negative exponent bounds and negative differences in real radix powers.",
+      "id": "D079",
+      "meaning": "The type ℤ of integers.",
+      "name": "Integers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Orders emin, e, and emax in the format and normalized exponent-range conditions.",
+      "id": "D080",
+      "meaning": "The standard non-strict order ≤ on ℤ.",
+      "name": "Integer non-strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses emax<e in the enlarged rounding set.",
+      "id": "D081",
+      "meaning": "The standard strict order < on ℤ.",
+      "name": "Integer strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes 1−t, e−t, and emin−t signed integer differences, allowing negative powers.",
+      "id": "D082",
+      "meaning": "The standard, non-truncated subtraction operation on ℤ.",
+      "name": "Integer subtraction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supports the numeral-construction machinery for real 2; it is distinct from the format's radix restriction.",
+      "id": "D083",
+      "meaning": "For n∈ℕ, the proposition recording that n is at least two.",
+      "name": "At-least-two predicate",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects power notation to the natural and integer power instances used in the model.",
+      "id": "D084",
+      "meaning": "For types α and β with exponentiation α×β→α, supplies the corresponding heterogeneous-power interface with the same operation.",
+      "name": "Exponentiation notation adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses β≥2 and the inclusive lower bound on normalized mantissas.",
+      "id": "D085",
+      "meaning": "The standard non-strict order ≤ on ℕ.",
+      "name": "Natural non-strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Embeds t into ℤ before it is subtracted in real-power exponents.",
+      "id": "D086",
+      "meaning": "The standard embedding ℕ→ℤ, sending n to its nonnegative integer value.",
+      "name": "Embedding naturals into integers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the integer literal 1 in the exponent 1−t.",
+      "id": "D087",
+      "meaning": "For every natural numeral n, its interpretation in ℤ is the nonnegative integer n.",
+      "name": "Integer natural-numeral instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Selects the negative sign in σ when the sign flag equals true.",
+      "id": "D088",
+      "meaning": "The Boolean value true.",
+      "name": "True sign flag",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines β^t and β^(t−1) as natural-number powers in mantissa restrictions.",
+      "id": "D089",
+      "meaning": "For any monoid M, supplies natural-number exponentiation M×ℕ→M through the monoid's power operation, with exponent zero giving the multiplicative identity.",
+      "name": "Natural-power instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the multiplication and identity underlying the natural powers used for mantissa bounds.",
+      "id": "D090",
+      "meaning": "The usual multiplicative monoid structure on ℕ, with multiplication and identity 1.",
+      "name": "Natural multiplicative monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Forms the sign −1 and supports additive inverses in absolute values and differences.",
+      "id": "D091",
+      "meaning": "For any type α with a specified negation operation, returns the map a↦−a.",
+      "name": "Negation operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes −1 the ordinary negative real unit and supports real subtraction.",
+      "id": "D092",
+      "meaning": "The standard additive negation operation on ℝ.",
+      "name": "Real negation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Decides whether the sign flag equals true when evaluating σ.",
+      "id": "D093",
+      "meaning": "For any two Boolean values, supplies a decision procedure for their equality.",
+      "name": "Decidable Boolean equality",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Implements σ(b)=−1 when b=true and σ(b)=1 otherwise. The locally named branch parameter is not a reference to the format precision.",
+      "id": "D094",
+      "meaning": "For any type or sort α, proposition C with a decision procedure, and branch values a,b∈α, returns a if C holds and b otherwise.",
+      "name": "Conditional expression",
+      "status": "understood"
+    }
+  ],
+  "role": "blind-translation",
+  "semantic_sha256": "d8cd9dc706b7967499c6d1ff5efa290fb3496b3a7408e724d7332d0a725f9120",
+  "translation": {
+    "binders": [
+      "For every format fmt with fields β,t∈ℕ and emin,emax∈ℤ, carrying the constraints β≥2, t>0, and emin≤emax.",
+      "Given a proof that this format has β=2.",
+      "For every n∈ℕ and every proof hn of 0<n.",
+      "For every pair of real-valued arrays p,s:Fin n→ℝ, equivalently p=(p₀,…,pₙ₋₁) and s=(s₀,…,sₙ₋₁).",
+      "Given a proof that every pᵢ belongs to F_fmt, and a proof that p and s satisfy the sequential summation relation for this same fmt, n, and hn."
+    ],
+    "conclusions": [
+      "|sₙ₋₁ − ∑ᵢ₌₀ⁿ⁻¹ pᵢ| ≤ ((n−1) cast to ℝ)·u·∑ᵢ₌₀ⁿ⁻¹ |pᵢ|.",
+      "Here u=(1/2)β^(1−t)=2^(−t) because β=2. The comparison sum and all arithmetic appearing in the bound are exact real arithmetic."
+    ],
+    "hypotheses": [
+      "The format radix is exactly β=2.",
+      "The length satisfies n>0.",
+      "For every i∈{0,…,n−1}, pᵢ∈F_fmt.",
+      "The initialization is exact: s₀=p₀.",
+      "For every i∈{0,…,n−2}, sᵢ₊₁∈E_fmt and, for every z∈E_fmt, |(sᵢ+pᵢ₊₁)−sᵢ₊₁|≤|(sᵢ+pᵢ₊₁)−z|.",
+      "For every i∈{0,…,n−1}, sᵢ∈F_fmt.",
+      "There is no additional smallness restriction on n or (n−1)u, no sign restriction on the inputs, and no exclusion of subnormal values."
+    ],
+    "mathematical_definitions": [
+      "The format parameters satisfy β,t∈ℕ, β≥2, t≥1, and emin,emax∈ℤ with emin≤emax.",
+      "For b∈Bool, σ(b)=−1 if b=true and σ(b)=1 if b=false.",
+      "A normalized mantissa is m∈ℕ with β^(t−1)≤m<β^t. A normalized finite value has the form σ(b)mβ^(e−t), where emin≤e≤emax and e∈ℤ.",
+      "A subnormal mantissa is m∈ℕ with 0<m<β^(t−1). A subnormal value has the form σ(b)mβ^(emin−t).",
+      "F_fmt is the union of {0}, the normalized finite values, and the subnormal values.",
+      "E_fmt is F_fmt together with all values σ(b)mβ^(e−t) for normalized mantissas m and integer exponents e>emax. Equivalently, it retains zero and subnormals and permits normalized exponents at every integer e≥emin.",
+      "For S⊆ℝ, Nearest(S,x,y) means y∈S and ∀z∈S, |x−y|≤|x−z|. This is a relation permitting all nearest choices.",
+      "The summation relation requires s₀=p₀, Nearest(E_fmt,sᵢ+pᵢ₊₁,sᵢ₊₁) for every 0≤i<n−1, and sᵢ∈F_fmt for every 0≤i<n.",
+      "Machine epsilon is ε=β_R^(1−t), and unit roundoff is u=ε/2, with β_R the real embedding of β and the exponent 1−t computed in ℤ.",
+      "Mantissa thresholds use natural-number powers. Natural subtraction in n−1 and t−1 is truncated, but n>0 and t>0 make these ordinary predecessors. Exponents e−t and emin−t use integer subtraction after embedding t into ℤ.",
+      "Fin n consists of the indices 0,…,n−1. Both sums in the conclusion range over all these indices exactly once. Absolute value is the usual real absolute value |x|=max(x,−x)."
+    ],
+    "proposition_plain_english": "For every binary format of positive precision and ordered integer exponent bounds, every nonempty finite sequence of representable real inputs, and every sequence of finite representable partial sums initialized at the first input and thereafter obtained by nearest rounding of each previous partial sum plus the next input in the format's upper-exponent-unbounded representable set, the absolute error of the final partial sum relative to the exact sum is at most (n−1) times the unit roundoff times the sum of the absolute input values. The assertion holds for every partial-sum sequence satisfying this relation, including every allowed choice at a rounding tie."
+  },
+  "vacuity_risks": [
+    "The theorem is conditional on the existence of a partial-sum sequence satisfying both nearest rounding in E_fmt and membership in F_fmt. If a step has no finite nearest result, no such sequence exists for that input, and the corresponding implication is vacuous. The target does not assert that all finite input sequences admit such a computation.",
+    "The format constraints are consistent, and zero inputs with zero partial sums satisfy the hypotheses for every positive length, so the proposition is not globally vacuous.",
+    "For n=1, there are no rounding steps, s₀=p₀, and the conclusion is the trivial inequality 0≤0.",
+    "For t=1, the subnormal mantissa range is empty because it requires 0<m<1. Zero and normalized representable values still exist.",
+    "Length zero is excluded by n>0; no assertion about empty summation is made."
+  ]
+}

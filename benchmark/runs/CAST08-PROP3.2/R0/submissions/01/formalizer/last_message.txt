@@ -1,0 +1,3 @@
+Wrote [Candidate.lean](/workspace/Candidate.lean:1) with the full equal-block, \(t\)-level dot product statement. It compiles with exactly one `sorry`, in the target proof. The PDF hash matches `source/task.md`.
+
+The statement follows the hierarchy in the paper’s prose and Figure 3.2. Figure 3.1(a) has a loop defect that skips level zero.

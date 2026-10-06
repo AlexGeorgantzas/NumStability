@@ -1,0 +1,3 @@
+[Candidate.lean](/workspace/Candidate.lean) now proves the unchanged audited statement. It constructs an attaining matrix perturbation and proves that every admissible perturbation has at least its Frobenius norm, including when `b = 0`.
+
+The documented Lean command compiles successfully. The file has no `sorry` or `admit`, and `#print axioms` reports no `sorryAx`.

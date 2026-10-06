@@ -1,0 +1,180 @@
+{
+  "source_admission_sha256": "a9111ff6f2e197e45af75fe1cd75be62a0cbccc730104d4483001d5862209eb0",
+  "tasks": {
+    "CAST08-FIXED3": {
+      "status": "ADMITTED_DEVELOPMENT",
+      "difficulty": "ordinary",
+      "source_cluster": "CAST08",
+      "model_stratum": "algorithm_error",
+      "source_packet_sha256": "24639a0ed59386b0a6c547f61fac18ad70e298ec89195c7e3f05e177ea7ccf17",
+      "source_pdf_sha256": "ffdea8e2136c7f4226e4c0d382d512fef190cd207133a1a0c88c8ef7b9ebeeb2",
+      "target_collision_review": "NO_TARGET_RESULT_FOUND",
+      "collision_review_note": "Manual source/signature scan of the frozen NumStability snapshot found reusable algorithm/model/bound components but no selected composite or sharp target theorem. This scan is not a formal proof of absence.",
+      "required_direct_names": [
+        "NumStability.fl_dotProduct"
+      ],
+      "prior_admission_path": "<data-drive>/highambench/pilot32-controller-f9e65cd27/paper_bencmark/formalization_benchmark/design29/ADMISSION_10.json",
+      "prior_admission_sha256": "503fbe455447ea81569825b5f1649123fe8c7784d32b45d85ad939fc758ecb1c",
+      "prior_corpus_path": "<data-drive>/highambench/pilot32-controller-f9e65cd27/paper_bencmark/formalization_benchmark/design29/CORPUS_10.json",
+      "prior_corpus_sha256": "01695bbcc9207d255a6bee5994fedccb537ec113d81608dfb9f449e3c15d4b1b"
+    },
+    "P14-T1": {
+      "status": "ADMITTED_DEVELOPMENT",
+      "difficulty": "ordinary",
+      "source_cluster": "P14",
+      "model_stratum": "algorithm_error",
+      "source_packet_sha256": "9fd32199f87e51def28269df3d24b9fda5fa7e7892e2fcff719d3a70f305c10b",
+      "source_pdf_sha256": "7247047bc49218e001195edc8a2d66131eea7596d252503f34b0ace6328981cd",
+      "target_collision_review": "NO_TARGET_RESULT_FOUND",
+      "collision_review_note": "Manual frozen NumStability signature and source scan found recursive-summation algorithm/model/bounds but no selected log-sum-exp or softmax paper bound; this is not a formal proof of absence.",
+      "required_direct_names": [
+        "NumStability.fl_recursiveSum"
+      ],
+      "evidence_kind": "new_private_audit",
+      "private_candidate_path": "<data-drive>/highambench/pilot33-private-screen/P14-T1/Candidate.lean",
+      "private_candidate_sha256": "59b5fa6ce3299424f6ba9c1977f33cb434e09fc253c02616a7e404372085a06d",
+      "private_audit_result_path": "<data-drive>/highambench/pilot33-private-screen/P14-T1/audit-b/result.json",
+      "private_audit_result_sha256": "f47c8367c84e08bd9777e99cede23e45a0f735580a6830094ff9c07f7e9e51eb"
+    },
+    "HI21-LEM2.2": {
+      "status": "ADMITTED_DEVELOPMENT",
+      "difficulty": "hard",
+      "source_cluster": "HI21",
+      "model_stratum": "algorithm_error",
+      "source_packet_sha256": "03c570d3ef94fb3d82053419346010207d93987709846f3bb8934e3934c3a5fe",
+      "source_pdf_sha256": "cce25923a86d5d2051a079ad4ae7ea965f1dde97ffb6d3bf6462d069968fd1c6",
+      "target_collision_review": "NO_TARGET_RESULT_FOUND",
+      "collision_review_note": "Manual frozen SumTree signature and source scan found tree interfaces and related error bounds but not the selected exact expansion or uniform first-order result; this is not a formal proof of absence.",
+      "required_direct_names": [
+        "NumStability.SumTree"
+      ],
+      "evidence_kind": "new_private_audit",
+      "private_candidate_path": "<data-drive>/highambench/pilot33-private-screen/HI21-LEM2.2/candidate-full/Candidate.lean",
+      "private_candidate_sha256": "e716f25dca02d883b343e27dfaaee0bb71015535a6edd156446c3ad84981f7d0",
+      "private_audit_result_path": "<data-drive>/highambench/pilot33-private-screen/HI21-LEM2.2/audit-b/result.json",
+      "private_audit_result_sha256": "83585e3ab9d2006a45d8a0469db23a521e94f0f39a1e9ba4ca334d588d3f2185"
+    },
+    "CAST08-PROP3.1": {
+      "status": "ADMITTED_DEVELOPMENT",
+      "difficulty": "hard",
+      "source_cluster": "CAST08",
+      "model_stratum": "algorithm_error",
+      "source_packet_sha256": "60a3ce84bb175fbce6fd46423646d16ac84af3044d920a32cd17eae5202fedcb",
+      "source_pdf_sha256": "ffdea8e2136c7f4226e4c0d382d512fef190cd207133a1a0c88c8ef7b9ebeeb2",
+      "target_collision_review": "NO_TARGET_RESULT_FOUND",
+      "collision_review_note": "The snapshot has recursive-sum and generic tree bounds, but the inspected summation declarations do not contain Proposition 3.1's t-level algorithm plus optimality result.",
+      "required_direct_names": [
+        "NumStability.fl_recursiveSum"
+      ],
+      "prior_admission_path": "<data-drive>/highambench/pilot32-controller-f9e65cd27/paper_bencmark/formalization_benchmark/design29/ADMISSION_10.json",
+      "prior_admission_sha256": "503fbe455447ea81569825b5f1649123fe8c7784d32b45d85ad939fc758ecb1c",
+      "prior_corpus_path": "<data-drive>/highambench/pilot32-controller-f9e65cd27/paper_bencmark/formalization_benchmark/design29/CORPUS_10.json",
+      "prior_corpus_sha256": "01695bbcc9207d255a6bee5994fedccb537ec113d81608dfb9f449e3c15d4b1b"
+    },
+    "P14-T2": {
+      "status": "ADMITTED_DEVELOPMENT",
+      "difficulty": "ordinary",
+      "source_cluster": "P14",
+      "model_stratum": "algorithm_error",
+      "source_packet_sha256": "06ff32755a9a3704b720301044a6d9108f187183e8a1a7242ed221da3ab77ac6",
+      "source_pdf_sha256": "7247047bc49218e001195edc8a2d66131eea7596d252503f34b0ace6328981cd",
+      "target_collision_review": "NO_TARGET_RESULT_FOUND",
+      "collision_review_note": "Manual frozen NumStability signature and source scan found recursive-summation algorithm/model/bounds but no selected log-sum-exp or softmax paper bound; this is not a formal proof of absence.",
+      "required_direct_names": [
+        "NumStability.fl_recursiveSum"
+      ],
+      "evidence_kind": "new_private_audit",
+      "private_candidate_path": "<data-drive>/highambench/pilot33-private-screen/P14-T2/Candidate.lean",
+      "private_candidate_sha256": "a4e754a8b81e50dc2da2049ee45a2cdde5d7746d384b8eba90e08575a3d77806",
+      "private_audit_result_path": "<data-drive>/highambench/pilot33-private-screen/P14-T2/audit-a/result.json",
+      "private_audit_result_sha256": "2f1dcfb581a35d6153cbe1ba8107da4817418ceedd6723f4b172139d24e74b69"
+    },
+    "RUMP12-THM3.4": {
+      "status": "ADMITTED_DEVELOPMENT",
+      "difficulty": "ordinary",
+      "source_cluster": "RUMP12",
+      "model_stratum": "finite_format",
+      "source_packet_sha256": "f91a6d1c9ef559bbf9057954f0efd63f32a995a8f86666fa4efe0582d07b8712",
+      "source_pdf_sha256": "4b23ffc2f7588ddc5218b914e520acf6c6c1ba0ec07bdae221f3d692fc254706",
+      "target_collision_review": "NO_TARGET_RESULT_FOUND",
+      "collision_review_note": "Manual source/signature scan of the frozen NumStability snapshot found reusable algorithm/model/bound components but no selected composite or sharp target theorem. This scan is not a formal proof of absence.",
+      "required_direct_names": [
+        "NumStability.FloatingPointFormat"
+      ],
+      "prior_admission_path": "<data-drive>/highambench/pilot32-controller-f9e65cd27/paper_bencmark/formalization_benchmark/design29/ADMISSION_10.json",
+      "prior_admission_sha256": "503fbe455447ea81569825b5f1649123fe8c7784d32b45d85ad939fc758ecb1c",
+      "prior_corpus_path": "<data-drive>/highambench/pilot32-controller-f9e65cd27/paper_bencmark/formalization_benchmark/design29/CORPUS_10.json",
+      "prior_corpus_sha256": "01695bbcc9207d255a6bee5994fedccb537ec113d81608dfb9f449e3c15d4b1b"
+    },
+    "P14-LOGSUMEXP": {
+      "status": "ADMITTED_DEVELOPMENT",
+      "difficulty": "ordinary",
+      "source_cluster": "P14",
+      "model_stratum": "algorithm_error",
+      "source_packet_sha256": "836fc44b5cad055e731e51419afcf81a68be45f3fb004fe8e95f0a2330d156de",
+      "source_pdf_sha256": "7247047bc49218e001195edc8a2d66131eea7596d252503f34b0ace6328981cd",
+      "target_collision_review": "NO_TARGET_RESULT_FOUND",
+      "collision_review_note": "Manual frozen NumStability signature and source scan found recursive-summation algorithm/model/bounds but no selected log-sum-exp or softmax paper bound; this is not a formal proof of absence.",
+      "required_direct_names": [
+        "NumStability.fl_recursiveSum"
+      ],
+      "evidence_kind": "new_private_audit",
+      "private_candidate_path": "<data-drive>/highambench/pilot33-private-screen/P14-LOGSUMEXP/Candidate.lean",
+      "private_candidate_sha256": "4cf8f573d4aa57c67c82ef1a210aafde3c2d2bb739247a0a751586f18b6a1a75",
+      "private_audit_result_path": "<data-drive>/highambench/pilot33-private-screen/P14-LOGSUMEXP/audit-a/result.json",
+      "private_audit_result_sha256": "9ac38ba7dfa7090885c1b1be2d4043a606b373308d2954fe6163628b6856cc71"
+    },
+    "H20-8": {
+      "status": "ADMITTED_DEVELOPMENT",
+      "difficulty": "ordinary",
+      "source_cluster": "H20",
+      "model_stratum": "error_interface",
+      "source_packet_sha256": "722d28643343002f250688dc0dc8520b47bdc985c104914401bc851bf2980cdf",
+      "source_pdf_sha256": "7ca85d5caf3ffd5ae90fb315e9b4e00912e174881bcf969e7ba0a7b3ce9ec814",
+      "target_collision_review": "NO_TARGET_RESULT_FOUND",
+      "collision_review_note": "Manual review of the frozen least-squares declarations found the generic matrix-only backward-error functional and partial properties, but not the exercise's attained b-nonzero closed formula; this is not a formal proof of absence.",
+      "required_direct_names": [
+        "NumStability.lsNormwiseBackwardErrorMatrixOnlyEtaF"
+      ],
+      "prior_admission_path": "<data-drive>/highambench/pilot32-controller-f9e65cd27/paper_bencmark/formalization_benchmark/design29/ADMISSION_10.json",
+      "prior_admission_sha256": "503fbe455447ea81569825b5f1649123fe8c7784d32b45d85ad939fc758ecb1c",
+      "prior_corpus_path": "<data-drive>/highambench/pilot32-controller-f9e65cd27/paper_bencmark/formalization_benchmark/design29/CORPUS_10.json",
+      "prior_corpus_sha256": "01695bbcc9207d255a6bee5994fedccb537ec113d81608dfb9f449e3c15d4b1b"
+    },
+    "CAST08-PROP3.2": {
+      "status": "ADMITTED_DEVELOPMENT",
+      "difficulty": "hard",
+      "source_cluster": "CAST08",
+      "model_stratum": "algorithm_error",
+      "source_packet_sha256": "febce0930ad9a3384b31911c78e3706b3973673e576d6e9930550551817d0f51",
+      "source_pdf_sha256": "ffdea8e2136c7f4226e4c0d382d512fef190cd207133a1a0c88c8ef7b9ebeeb2",
+      "target_collision_review": "NO_TARGET_RESULT_FOUND",
+      "collision_review_note": "Manual source/signature scan of the frozen NumStability snapshot found reusable algorithm/model/bound components but no selected composite or sharp target theorem. This scan is not a formal proof of absence.",
+      "required_direct_names": [
+        "NumStability.fl_dotProduct"
+      ],
+      "prior_admission_path": "<data-drive>/highambench/pilot32-controller-f9e65cd27/paper_bencmark/formalization_benchmark/design29/ADMISSION_10.json",
+      "prior_admission_sha256": "503fbe455447ea81569825b5f1649123fe8c7784d32b45d85ad939fc758ecb1c",
+      "prior_corpus_path": "<data-drive>/highambench/pilot32-controller-f9e65cd27/paper_bencmark/formalization_benchmark/design29/CORPUS_10.json",
+      "prior_corpus_sha256": "01695bbcc9207d255a6bee5994fedccb537ec113d81608dfb9f449e3c15d4b1b"
+    },
+    "P14-SHIFTED-SOFTMAX": {
+      "status": "ADMITTED_DEVELOPMENT",
+      "difficulty": "hard",
+      "source_cluster": "P14",
+      "model_stratum": "algorithm_error",
+      "source_packet_sha256": "673e6fc20c8e98c7e7ba9dc331903fe498e82716d4b51c3c7ffc647bf1a1e47c",
+      "source_pdf_sha256": "7247047bc49218e001195edc8a2d66131eea7596d252503f34b0ace6328981cd",
+      "target_collision_review": "NO_TARGET_RESULT_FOUND",
+      "collision_review_note": "Manual frozen NumStability signature and source scan found recursive-summation algorithm/model/bounds but no selected log-sum-exp or softmax paper bound; this is not a formal proof of absence.",
+      "required_direct_names": [
+        "NumStability.fl_recursiveSum"
+      ],
+      "evidence_kind": "new_private_audit",
+      "private_candidate_path": "<data-drive>/highambench/pilot33-private-screen/P14-SHIFTED-SOFTMAX/Candidate.lean",
+      "private_candidate_sha256": "371a0238b77c7df09c19e6e56297361687f2d41bf7f27e39d04995063ba80851",
+      "private_audit_result_path": "<data-drive>/highambench/pilot33-private-screen/P14-SHIFTED-SOFTMAX/audit-a/result.json",
+      "private_audit_result_sha256": "fe4da567bfa5c30415108597a8ee2ee06069c950a27d92227017ed12d2bcb148"
+    }
+  }
+}

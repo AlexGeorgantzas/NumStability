@@ -1,0 +1,2 @@
+2026-09-25T02:16:28.975710Z ERROR codex_core::tools::router: error=apply_patch verification failed: invalid patch: multiple operations target /workspace/Candidate.lean
+2026-09-25T02:36:46.529466Z ERROR codex_core::tools::router: error=exec_command failed: CreateProcess { message: "Rejected(\"`/usr/bin/bash -lc 'rm -f Probe.lean CheckAxioms.lean'` rejected: rm -f style commands are not permitted. Use a safer approach\")" }

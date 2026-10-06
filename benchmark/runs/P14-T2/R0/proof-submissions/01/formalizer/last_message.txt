@@ -1,0 +1,1 @@
+The frozen statement is proved in [Candidate.lean](/workspace/Candidate.lean:318). The documented Lean command compiles it successfully, and the file contains no `sorry`, `admit`, or added axioms.

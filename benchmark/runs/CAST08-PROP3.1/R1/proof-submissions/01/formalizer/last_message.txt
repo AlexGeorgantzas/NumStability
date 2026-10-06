@@ -1,0 +1,3 @@
+The audited `target` in [Candidate.lean](/workspace/Candidate.lean:199) now has a complete proof. The recursive error bound follows level by level; the integral blocking optimum follows from AM–GM.
+
+`lean --root . -o Candidate.olean Candidate.lean` exits successfully. The file contains no `sorry`, `admit`, axioms, or unsafe declarations.

@@ -1,0 +1,457 @@
+{
+  "ambiguities": [
+    "The pseudonym LocalDef005 denotes the real-valued error-parameter projection in local declarations, but also appears as a universe-level name in generic library declarations. These occurrences have different syntactic roles; the universe level is not the real error parameter.",
+    "The supplied body of Fin.foldl calls a private loop whose body is not supplied. The translation uses the standard meaning of Fin.foldl: a left fold through indices 0, ..., n−1.",
+    "The arithmetic model specifies real-valued operations and relative-error axioms, but no concrete floating-point format, rounding rule, representable-number set, or exponential-evaluation algorithm."
+  ],
+  "dependency_coverage": [
+    {
+      "effect_on_target": "Defines sTilde, the exact sum of the supplied approximate exponential values.",
+      "id": "D001",
+      "meaning": "For every natural number n and function wHat : {0, ..., n−1} → ℝ, returns ∑ᵢ wHat(i), using exact real addition. The empty sum is zero.",
+      "name": "Exact sum of supplied values",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the exact reference value s.",
+      "id": "D002",
+      "meaning": "For every natural number n and function x : {0, ..., n−1} → ℝ, returns ∑ᵢ exp(x(i)). The empty sum is zero.",
+      "name": "Exact exponential sum",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines sHat as the output of the modeled sequential summation algorithm.",
+      "id": "D003",
+      "meaning": "For every arithmetic model fp, natural number n, and real-valued vector wHat indexed by Fin n, returns the modeled sum defined in D007.",
+      "name": "Computed sum wrapper",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The target universally quantifies over objects of this type, so all model axioms in D006 are available as bundled assumptions.",
+      "id": "D004",
+      "meaning": "The type of arithmetic models whose fields and required properties are specified by the constructor D006.",
+      "name": "Arithmetic model type",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies u in the hypothesis u < 1, the coordinatewise exponential-error assumption, and both error bounds. The model also ensures u ≥ 0.",
+      "id": "D005",
+      "meaning": "For any arithmetic model fp, extracts its first field, the real error parameter u.",
+      "name": "Error parameter projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Specifies every bundled assumption on fp. Summation uses its addition operation, its addition error axiom, and exact addition of zero on the left. The subtraction, multiplication, division, and square-root fields remain part of the quantified model even though the summation algorithm does not call them.",
+      "id": "D006",
+      "meaning": "Constructs an arithmetic model from a real u with 0 ≤ u; four total functions A, S, M, D : ℝ × ℝ → ℝ; and a total function Q : ℝ → ℝ. Required properties are: for every real x, A(0,x)=x; for every real x,y, there exists a real δ with |δ|≤u and A(x,y)=(x+y)(1+δ); for every real x,y, there exists such a δ with S(x,y)=(x−y)(1+δ); for every real x,y, there exists such a δ with M(x,y)=xy(1+δ); for every real x,y with y≠0, there exists such a δ with D(x,y)=(x/y)(1+δ); and for every real x≥0, there exists such a δ with Q(x)=√x(1+δ). Each existential δ may depend on the operation and its arguments. No division accuracy condition is imposed at y=0, and no square-root accuracy condition is imposed at x<0.",
+      "name": "Arithmetic model constructor and axioms",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Fixes the summation algorithm and its initialization; the result is not an arbitrary approximation to the sum.",
+      "id": "D007",
+      "meaning": "For every model fp, natural number n, and vector v : Fin n → ℝ, left-folds the model addition A over the indices, starting at zero. In recurrence notation, a₀=0 and aₖ₊₁=A(aₖ,v(k)) for 0≤k<n; the result is aₙ.",
+      "name": "Sequential modeled summation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the operation used at each step of the computed summation.",
+      "id": "D008",
+      "meaning": "For any arithmetic model fp, extracts its modeled addition function A : ℝ × ℝ → ℝ.",
+      "name": "Modeled addition projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Combines the error bound and equality for each local error witness, and combines all three conclusions concerning Δs.",
+      "id": "D009",
+      "meaning": "For propositions P and Q, P ∧ Q asserts that both hold.",
+      "name": "Logical conjunction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses exact identities in the model, the exponential approximation hypothesis, and sHat=s+Δs.",
+      "id": "D010",
+      "meaning": "For any sort α and elements a,b of α, a=b asserts equality.",
+      "name": "Equality",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Quantifies the coordinate-specific and operation-specific real errors δ and the final real error Δs.",
+      "id": "D011",
+      "meaning": "For any sort α and predicate P on α, ∃a : α, P(a) asserts the existence of a witness satisfying P.",
+      "name": "Existential quantification",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes x and wHat vectors with exactly n coordinates and restricts every coordinatewise hypothesis and sum to those coordinates.",
+      "id": "D012",
+      "meaning": "For each natural number n, Fin n is the finite type of natural indices i satisfying 0≤i<n.",
+      "name": "Finite index type",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the displayed additions, including 1+δ, s+Δs, and the addition of terms in the bound, as exact arithmetic under the selected instances.",
+      "id": "D013",
+      "meaning": "For arbitrary types α, β, γ with a specified heterogeneous addition operation α × β → γ, extracts and applies that operation.",
+      "name": "Generic addition operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets all products in the error models and final bounds as exact real multiplication.",
+      "id": "D014",
+      "meaning": "For arbitrary types α, β, γ with a specified heterogeneous multiplication operation α × β → γ, extracts and applies that operation.",
+      "name": "Generic multiplication operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses the real powers 2ⁿ and u², with natural-number exponents.",
+      "id": "D015",
+      "meaning": "For arbitrary base, exponent, and result types α, β, γ with a specified power operation α × β → γ, extracts and applies that operation.",
+      "name": "Generic exponentiation operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses the exact differences sTilde−s and (2ⁿ−n)−1.",
+      "id": "D016",
+      "meaning": "For arbitrary types α, β, γ with a specified heterogeneous subtraction operation α × β → γ, extracts and applies that operation.",
+      "name": "Generic subtraction operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses all non-strict error bounds and the model's nonnegativity restrictions.",
+      "id": "D017",
+      "meaning": "For any type α equipped with a relation ≤, extracts that relation as a predicate on pairs of elements.",
+      "name": "Non-strict comparison",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses u<1 over the reals and 0<n over the natural numbers.",
+      "id": "D018",
+      "meaning": "For any type α equipped with a relation <, extracts that relation as a predicate on pairs of elements.",
+      "name": "Strict comparison",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Ensures that 2ⁿ and u² use ordinary natural powers in the multiplicative monoid of real numbers.",
+      "id": "D019",
+      "meaning": "For any monoid M, equips M with natural-number powers using its repeated-multiplication operation: x⁰=1 and xⁿ⁺¹=xⁿx.",
+      "name": "Natural powers in a monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the domain of n, the finite index bounds, and the exponents.",
+      "id": "D020",
+      "meaning": "The type ℕ of natural numbers, including zero.",
+      "name": "Natural numbers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Converts n into a real number wherever it occurs in the real-valued bound.",
+      "id": "D021",
+      "meaning": "For any type R with a specified natural-number cast, maps each n∈ℕ to its designated image in R.",
+      "name": "Natural-number coercion",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supports construction of the real numeral 2. It does not impose an additional hypothesis on the target's n.",
+      "id": "D022",
+      "meaning": "For every natural number m with m≠0, the natural number m+1 is at least two.",
+      "name": "Nonzero successor is at least two",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies nonzeroness of 1 in the instance machinery used to construct the numeral 2.",
+      "id": "D023",
+      "meaning": "For every natural number m, m+1≠0.",
+      "name": "Successor is nonzero",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies typed numerals such as 0, 1, and 2 in the statement and definitions.",
+      "id": "D024",
+      "meaning": "Given a type α, a natural numeral k, and an interpretation of that numeral in α, returns the designated element of α.",
+      "name": "Numeral interpretation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes the real numeral 1 denote the multiplicative identity.",
+      "id": "D025",
+      "meaning": "For any type with a designated element one, interprets the numeral 1 as that element.",
+      "name": "Interpretation of one",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "All vector entries, arithmetic-operation inputs and outputs, sums, and error witnesses lie in ℝ.",
+      "id": "D026",
+      "meaning": "The type ℝ of real numbers.",
+      "name": "Real numbers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the exact positive reference values exp(x(i)); it does not describe a rounded exponential algorithm.",
+      "id": "D027",
+      "meaning": "For each real x, the real exponential exp(x) is defined as the real part of the complex exponential of x embedded in ℂ.",
+      "name": "Real exponential",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the exact real addition appearing in formulas, distinct from the model's A.",
+      "id": "D028",
+      "meaning": "Equips ℝ with its usual addition operation.",
+      "name": "Real addition",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the additive-group structure used to form real absolute values and differences.",
+      "id": "D029",
+      "meaning": "The additive group of real numbers, inherited from their ring structure, with zero, addition, and additive inverses.",
+      "name": "Real additive group",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes all real non-strict inequalities ordinary numerical comparisons.",
+      "id": "D030",
+      "meaning": "Equips ℝ with its usual order relation ≤.",
+      "name": "Real non-strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes the hypothesis u<1 an ordinary strict real inequality.",
+      "id": "D031",
+      "meaning": "Equips ℝ with its usual strict order relation <.",
+      "name": "Real strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the multiplicative structure underlying natural powers in the bound.",
+      "id": "D032",
+      "meaning": "The monoid of real numbers under multiplication, with identity 1.",
+      "name": "Real multiplicative monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes products in the target exact real products, distinct from the modeled multiplication field.",
+      "id": "D033",
+      "meaning": "Equips ℝ with its usual multiplication operation.",
+      "name": "Real multiplication",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets n in the error coefficient as its exact real value and supports real numerals.",
+      "id": "D034",
+      "meaning": "Embeds each natural number into ℝ by its corresponding element in the Cauchy completion of ℚ.",
+      "name": "Natural numbers embedded in the reals",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the exact real constant 1 used throughout the error formulas.",
+      "id": "D035",
+      "meaning": "Designates the usual real multiplicative identity 1.",
+      "name": "Real one",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes the error difference and the coefficient 2ⁿ−n−1 exact real subtractions; there is no truncated natural subtraction.",
+      "id": "D036",
+      "meaning": "Defines real subtraction by a−b=a+(−b).",
+      "name": "Real subtraction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the maximum operation used in the definition of real absolute value.",
+      "id": "D037",
+      "meaning": "The lattice structure of the real order, with supremum max and infimum min.",
+      "name": "Real order lattice",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "All error magnitudes are scalar real absolute values. No vector or matrix norm is used.",
+      "id": "D038",
+      "meaning": "For any type with lattice and additive-group structures, defines |a| as a∨(−a). On ℝ this is max(a,−a), the usual absolute value.",
+      "name": "Absolute value",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Routes ordinary real and natural addition through the generic addition notation.",
+      "id": "D039",
+      "meaning": "For any type α with an addition operation α × α → α, supplies the corresponding heterogeneous-addition instance with all three types equal to α.",
+      "name": "Addition notation instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Routes ordinary real multiplication through the generic multiplication notation.",
+      "id": "D040",
+      "meaning": "For any type α with multiplication α × α → α, supplies the corresponding heterogeneous-multiplication instance.",
+      "name": "Multiplication notation instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Routes natural powers of real numbers through the generic power notation.",
+      "id": "D041",
+      "meaning": "For any types α and β with a power operation α × β → α, supplies the corresponding heterogeneous-power instance.",
+      "name": "Power notation instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Routes exact real subtraction through the generic subtraction notation.",
+      "id": "D042",
+      "meaning": "For any type α with subtraction α × α → α, supplies the corresponding heterogeneous-subtraction instance.",
+      "name": "Subtraction notation instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets hn as the requirement that n is a strictly positive natural number.",
+      "id": "D043",
+      "meaning": "Equips ℕ with its usual strict order.",
+      "name": "Natural-number strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes the real numeral 2 in 2ⁿ the natural number 2 embedded in ℝ.",
+      "id": "D044",
+      "meaning": "For any type R with a natural-number cast and any natural number k≥2, interprets the numeral k in R by that cast.",
+      "name": "Numerals at least two via casting",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies ordinary natural-number constants, including the exponent 2 and the zero in 0<n.",
+      "id": "D045",
+      "meaning": "For every natural number k, interprets the numeral k in ℕ as k itself.",
+      "name": "Natural-number numerals",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the finite enumeration over which s and sTilde are summed.",
+      "id": "D046",
+      "meaning": "For every natural number n, equips Fin n with the complete, duplicate-free enumeration of its indices, using the list of indices 0 through n−1.",
+      "name": "Finite enumeration of indices",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the exact, order-independent sums in D001 and D002; it does not invoke modeled addition.",
+      "id": "D047",
+      "meaning": "For any index type I, additive commutative monoid M, finite subset S of I, and function f : I → M, returns ∑ᵢ∈S f(i), implemented as the sum of the mapped underlying multiset.",
+      "name": "Finite-set summation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Ensures the exact sums include every coordinate in Fin n.",
+      "id": "D048",
+      "meaning": "For any finitely enumerated type α, returns the finite set of all its elements.",
+      "name": "Universal finite set",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supports finite exact real summation and its empty-sum value zero.",
+      "id": "D049",
+      "meaning": "The additive commutative monoid of real numbers, inherited from their commutative-ring structure.",
+      "name": "Real additive commutative monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies exact division in the bundled division-error axiom; division is not used by the target's summation algorithm.",
+      "id": "D050",
+      "meaning": "For any type G with a division-and-inversion monoid structure, extracts its division operation.",
+      "name": "Division structure projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Determines the left-to-right accumulation used in D007, including initialization at zero.",
+      "id": "D051",
+      "meaning": "For any accumulator sort α, natural number n, update function f : α × Fin n → α, and initial value a₀, returns the left fold aₙ obtained by aₖ₊₁=f(aₖ,k) for k=0,...,n−1. The supplied implementation invokes a private loop with initial index zero.",
+      "name": "Indexed left fold",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses exact real division within the model constructor's division-error property.",
+      "id": "D052",
+      "meaning": "For arbitrary types α, β, γ with a specified heterogeneous division operation α × β → γ, extracts and applies that operation.",
+      "name": "Generic division operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Restricts the bundled division-error guarantee to nonzero denominators.",
+      "id": "D053",
+      "meaning": "For any sort α and elements a,b of α, a≠b means that a=b is false.",
+      "name": "Inequality as negated equality",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the exact real division used to specify the modeled division operation. Its integer-power structure has no further role in the target.",
+      "id": "D054",
+      "meaning": "Equips ℝ with its multiplication monoid, inverse, division a/b=a·b⁻¹, and recursively defined integer powers satisfying the zero, successor, and negative-exponent laws.",
+      "name": "Real division and inversion structure",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the initial accumulator zero, the bound 0≤u, and zero in the model's domain restrictions and addition identity.",
+      "id": "D055",
+      "meaning": "Designates the usual real additive identity 0.",
+      "name": "Real zero",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the exact reference square root in the bundled square-root error axiom. The summation algorithm does not evaluate square roots.",
+      "id": "D056",
+      "meaning": "For every real x, converts x to the nonnegative real max(x,0), takes its nonnegative square root, and embeds the result back into ℝ. Thus it equals the usual nonnegative √x for x≥0 and zero for x<0.",
+      "name": "Total real square root",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes the real numeral 0 denote the designated real zero in the model and summation definitions.",
+      "id": "D057",
+      "meaning": "For any type with a designated zero element, interprets the numeral 0 as that element.",
+      "name": "Interpretation of zero",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Routes exact real division through the generic division notation in the model's division axiom.",
+      "id": "D058",
+      "meaning": "For any type α with division α × α → α, supplies the corresponding heterogeneous-division instance.",
+      "name": "Division notation instance",
+      "status": "understood"
+    }
+  ],
+  "role": "blind-translation",
+  "semantic_sha256": "4598172610655576a604f93f9444c561248061092309cc58788c1d7c650c23eb",
+  "translation": {
+    "binders": [
+      "For every arithmetic model fp as specified in D006, write u for its real error parameter and A for its modeled addition.",
+      "For every proof hu that u<1, every natural number n, and every proof hn that 0<n.",
+      "For every pair of functions x,wHat : Fin n → ℝ.",
+      "Assume hExp: for every i∈Fin n, there exists a real δ, possibly depending on i, such that |δ|≤u and wHat(i)=exp(x(i))(1+δ).",
+      "After fixing fp, hu, n, hn, x, wHat, and hExp, there exists a real Δs satisfying the three conclusions simultaneously."
+    ],
+    "conclusions": [
+      "sHat=s+Δs.",
+      "|sTilde−s|≤u·s.",
+      "|Δs|≤((n+1)u+(2ⁿ−n−1)u²)·s, where n in the coefficient is cast to ℝ, 2 is a real base, and both exponents are natural-number exponents."
+    ],
+    "hypotheses": [
+      "The model supplies u≥0 and the total real-valued operations and accuracy properties stated in D006.",
+      "u<1, so together with the model axiom, 0≤u<1.",
+      "n∈ℕ and n>0.",
+      "x and wHat have exactly n real coordinates; there is no restriction on the magnitudes or signs of the coordinates of x.",
+      "For each coordinate i separately, wHat(i) is exp(x(i)) multiplied by 1+δ for some real δ with |δ|≤u. No single common δ is required.",
+      "There is no hypothesis of the form nu<1."
+    ],
+    "mathematical_definitions": [
+      "Fin n={0,...,n−1}.",
+      "s=∑ᵢ∈Fin n exp(x(i)), an exact real sum.",
+      "sTilde=∑ᵢ∈Fin n wHat(i), an exact real sum.",
+      "sHat is obtained by a₀=0 and aₖ₊₁=A(aₖ,wHat(k)) for 0≤k<n, with sHat=aₙ. Because A(0,z)=z, its first addition is exact.",
+      "The model consists of a real u≥0, total operations A,S,M,D : ℝ×ℝ→ℝ, and Q : ℝ→ℝ. For all real x,y, each of A(x,y), S(x,y), and M(x,y) equals its corresponding exact value x+y, x−y, or xy multiplied by 1+δ for an operation- and input-dependent real δ satisfying |δ|≤u. The same property holds for D(x,y) relative to x/y when y≠0, and for Q(x) relative to √x when x≥0. Additionally, A(0,x)=x for every real x.",
+      "|t| is the usual scalar real absolute value max(t,−t). All arithmetic in the stated bounds and reference values is exact real arithmetic.",
+      "The quantities s, sTilde, and sHat are local definitions, not separately quantified variables or extra hypotheses."
+    ],
+    "proposition_plain_english": "For every arithmetic model with nonnegative error parameter u<1, every positive natural number n, and every pair of real n-vectors x and wHat whose coordinates approximate exp(x(i)) with relative errors of absolute value at most u, let s be the exact sum of exp(x(i)), let sTilde be the exact sum of wHat(i), and let sHat be the result of sequentially adding wHat's coordinates with the model's addition operation starting from zero. There exists a real total error Δs such that sHat=s+Δs, the error from approximating the exponential values satisfies |sTilde−s|≤us, and the total error satisfies |Δs|≤[(n+1)u+(2ⁿ−n−1)u²]s."
+  },
+  "vacuity_risks": [
+    "The assertion is conditional on u<1, n>0, and hExp. It gives no conclusion for models with u≥1, empty vectors, or supplied values that fail hExp.",
+    "There is no evident inconsistency making the admissible cases empty: exact real operations with u=0 form a model, and wHat(i)=exp(x(i)) satisfies hExp. Exact operations also satisfy the model axioms for any chosen 0≤u<1.",
+    "Since n>0 and every exp(x(i))>0, s>0. The error bounds therefore do not become vacuous through a zero or negative reference sum. The hypotheses also imply wHat(i)>0.",
+    "Existence of Δs with sHat=s+Δs alone is automatic, with the unique choice Δs=sHat−s. The substantive conclusion is its quantitative bound, together with the separate bound for sTilde−s.",
+    "The exponential approximation property is assumed, not established for any concrete exponential routine. Likewise, the theorem applies to abstract operations satisfying the global real-valued model axioms; it does not itself verify those axioms for a particular machine implementation.",
+    "At u=0 the conclusions force sTilde=s and sHat=s, so Δs=0. This is an exact-arithmetic case rather than a contradictory or empty case."
+  ]
+}

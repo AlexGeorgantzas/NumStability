@@ -1,0 +1,135 @@
+{
+  "accepted": true,
+  "candidate_semantic_sha256": "f23c39c11d95ea8a4ce0c780375e0e5202e3f918f1e3cd342d9113727fe5a6ac",
+  "classification": "faithful-equivalent",
+  "implications": {
+    "candidate_implies_source": {
+      "reasoning": "Every source-admissible execution of Algorithm 3.1 is represented by the candidate's exponential errors, sequential addition errors, and final logarithm error. Adding the first computed term to zero is exact, so a_0=0 preserves coverage. The candidate's uniform C u² remainder gives precisely the selected absolute forward-error estimate, including y=0.",
+      "verdict": "yes"
+    },
+    "source_implies_candidate": {
+      "reasoning": "The source's relative arithmetic model and Algorithm 3.1 give the candidate's recurrence and output formula. With the packet's uniform interpretation of O(u²), the selected estimate supplies constants C>0 and u₀>0 independent of local errors. Shrinking u₀ below 1 makes all computed terms and accumulated sums positive, so the candidate's total logarithm agrees with the source logarithm.",
+      "verdict": "yes"
+    }
+  },
+  "mismatches": [],
+  "paper_sha256": "7247047bc49218e001195edc8a2d66131eea7596d252503f34b0ace6328981cd",
+  "rationale": "The translation preserves the selected absolute estimate and its complete algorithmic perturbation model. The exact first addition reflects Algorithm 3.1, and the total logarithm introduces no discrepancy on a sufficiently small positive roundoff interval. The explicit uniform quadratic remainder matches the source packet's interpretation of the asymptotic statement.",
+  "requires_adjudication": false,
+  "role": "roundtrip-judge",
+  "semantic_checklist": [
+    {
+      "id": "S01",
+      "paper_evidence": "Page 2318 displays |y−ŷ| ≤ u|y|+(n+1)u+O(u²) immediately before Theorem 3.2; the packet selects this display.",
+      "reasoning": "The candidate targets the selected absolute bound.",
+      "status": "pass",
+      "translation_evidence": "The conclusion bounds |L(x)−F(x,e,a,ℓ)| by u|L(x)|+(n+1)u+C u²."
+    },
+    {
+      "id": "S02",
+      "paper_evidence": "Algorithm 3.1 takes x∈ℝⁿ; the packet specifies positive n.",
+      "reasoning": "Dimensions, coordinates, errors, and constants have the required types.",
+      "status": "pass",
+      "translation_evidence": "Universally quantified n∈ℕ with n>0 and x∈ℝⁿ; all perturbations and remainder parameters are real."
+    },
+    {
+      "id": "S03",
+      "paper_evidence": "The packet requires C and u₀ independent of the execution at fixed n and x.",
+      "reasoning": "The existential constants precede the roundoff scale and all local errors.",
+      "status": "pass",
+      "translation_evidence": "For every n,x there exist C>0,u₀>0 such that every admissible u,e,a,ℓ satisfies the bound."
+    },
+    {
+      "id": "S04",
+      "paper_evidence": "Equations (1.7), (3.1), and (3.4) impose local relative errors bounded by u; Algorithm 3.1 initializes s=0.",
+      "reasoning": "The hypotheses encode these local errors without assuming the output estimate. The first addition to zero is exact.",
+      "status": "pass",
+      "translation_evidence": "|e_i|≤u, |a_i|≤u, a_0=0, |ℓ|≤u, and 0<u≤u₀; x is unrestricted."
+    },
+    {
+      "id": "S05",
+      "paper_evidence": "The selected display contains u|y|, (n+1)u, and O(u²).",
+      "reasoning": "Every component of the selected conclusion is present.",
+      "status": "pass",
+      "translation_evidence": "The bound contains exactly u|L(x)|+(n+1)u+C u²."
+    },
+    {
+      "id": "S06",
+      "paper_evidence": "The exact function is the natural logarithm of the sum of ordinary real exponentials.",
+      "reasoning": "The operators agree on all relevant positive logarithm arguments; the total extension elsewhere is immaterial after shrinking u₀.",
+      "status": "pass",
+      "translation_evidence": "Ordinary real exponential, finite sum, real arithmetic, and a logarithm equal to ln on positive inputs."
+    },
+    {
+      "id": "S07",
+      "paper_evidence": "Pages 2317–2318 distinguish exact exponentials and sum from computed exponentials, sum, and output.",
+      "reasoning": "The exact reference and perturbed computation remain distinct.",
+      "status": "pass",
+      "translation_evidence": "L(x)=log(Σ exp(x_i)); F uses perturbed exponentials and the recursively perturbed sum."
+    },
+    {
+      "id": "S08",
+      "paper_evidence": "Algorithm 3.1 evaluates exponentials, accumulates them in index order, and then evaluates log(s).",
+      "reasoning": "The candidate models the actual recursive computation and places logarithm rounding on its output.",
+      "status": "pass",
+      "translation_evidence": "s_0=0, s_{k+1}=(s_k+exp(x_k)(1+e_k))(1+a_k), and F=log(s_n)(1+ℓ)."
+    },
+    {
+      "id": "S09",
+      "paper_evidence": "The selected display uses scalar absolute values.",
+      "reasoning": "No vector norm or different error aggregation replaces scalar absolute value.",
+      "status": "pass",
+      "translation_evidence": "Absolute value is the usual real absolute value; perturbation bounds are coordinatewise."
+    },
+    {
+      "id": "S10",
+      "paper_evidence": "The source indexes terms from 1 to n and uses coefficient n+1.",
+      "reasoning": "Zero-based indexing is a harmless reindexing; the coefficient and effective n−1 rounded additions agree.",
+      "status": "pass",
+      "translation_evidence": "Indices run from 0 to n−1, a_0=0, and the real coefficient is n+1."
+    },
+    {
+      "id": "S11",
+      "paper_evidence": "Equation (1.7) supplies the multiplicative relative model; Section 3 assumes no overflow or underflow.",
+      "reasoning": "The candidate represents this model with finite real quantities. Taking u₀<1 ensures positive perturbed exponentials and sums, so exceptional logarithm values are never needed. No specific floating-point format is required by the selected bound.",
+      "status": "pass",
+      "translation_evidence": "All operations have explicit bounded multiplicative errors; u₀ is existential, and arithmetic is over ℝ."
+    },
+    {
+      "id": "S12",
+      "paper_evidence": "The selected result is a non-strict upper bound.",
+      "reasoning": "The candidate preserves the direction and strength of the comparison.",
+      "status": "pass",
+      "translation_evidence": "The conclusion uses ≤ with the same first-order expression."
+    },
+    {
+      "id": "S13",
+      "paper_evidence": "The packet selects absolute forward error specifically to retain the case y=0.",
+      "reasoning": "There is no normalization by the exact output and no backward-error substitution.",
+      "status": "pass",
+      "translation_evidence": "The left side is |L−F|, with no hypothesis L≠0."
+    },
+    {
+      "id": "S14",
+      "paper_evidence": "The source retains O(u²); the packet requires uniformity over admissible errors at fixed n,x.",
+      "reasoning": "A positive quadratic majorant on a positive neighborhood is the required uniform asymptotic interpretation.",
+      "status": "pass",
+      "translation_evidence": "C>0 and u₀>0 are fixed before all scales and errors; the remainder is C u²."
+    },
+    {
+      "id": "S15",
+      "paper_evidence": "The selected scope is positive n, arbitrary real x, and the unshifted algorithm.",
+      "reasoning": "No input restriction, missing case, or algorithm substitution changes applicability.",
+      "status": "pass",
+      "translation_evidence": "All positive dimensions and real inputs are quantified, including L(x)=0; no shift occurs."
+    },
+    {
+      "id": "S16",
+      "paper_evidence": "The source model permits zero local errors and arbitrary sufficiently small positive u.",
+      "reasoning": "The hypotheses are consistent and admit executions for every source input. Choosing all errors zero gives F=L; positive u₀ guarantees a nonempty range of scales.",
+      "status": "pass",
+      "translation_evidence": "Zero perturbations satisfy every error constraint, including a_0=0, for every 0<u≤u₀."
+    }
+  ],
+  "uncertainties": []
+}

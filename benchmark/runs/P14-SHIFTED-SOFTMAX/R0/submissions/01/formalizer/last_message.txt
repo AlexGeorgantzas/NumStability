@@ -1,0 +1,3 @@
+Formalized Theorem 4.3 in [Candidate.lean](/workspace/Candidate.lean:40), including arbitrary maximal-entry selection, recursive summation order, all softmax outputs, and a uniform quadratic remainder.
+
+The file compiles with the required single `sorry` in the target proof.

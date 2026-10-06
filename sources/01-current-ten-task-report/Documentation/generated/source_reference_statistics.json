@@ -1,0 +1,16 @@
+{
+  "source_sha256": "fd59df431cc209aeadb1dd7445d46931f4a7fd7e15b887ce9b41607eaddf8686",
+  "metric_ledger_sha256": "80062bb05253db65785cdc4fb35ff89aebe645257bf012d98fb5a5bf338c9e3f",
+  "spearman": {
+    "distinct_source_names": {
+      "total_time_gain_pct": 0.583589321932862,
+      "proof_line_gain_pct": 0.6383008208640678,
+      "total_tokens_gain_pct": 0.5167197121280549
+    },
+    "source_references": {
+      "total_time_gain_pct": 0.3575757575757576,
+      "proof_line_gain_pct": 0.21212121212121213,
+      "total_tokens_gain_pct": 0.6121212121212121
+    }
+  }
+}

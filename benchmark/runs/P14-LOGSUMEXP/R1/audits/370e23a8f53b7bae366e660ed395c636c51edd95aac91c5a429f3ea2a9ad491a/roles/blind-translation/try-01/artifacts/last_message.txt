@@ -1,0 +1,430 @@
+{
+  "ambiguities": [
+    "The pseudonym LocalDef004 also appears in universe-level positions such as 'Type LocalDef004'. Those occurrences denote a universe parameter, not the real-valued precision projection D004.",
+    "D050 exposes a call to a private fold loop starting at index zero, but not the loop body. The algorithm is interpreted using the standard meaning of Fin.foldl: a left fold through indices 0,...,n−1.",
+    "The model specifies real-valued operations satisfying relative-error axioms. It does not specify a floating-point format, rounding rule, representable-number set, or treatment of hardware overflow and underflow."
+  ],
+  "dependency_coverage": [
+    {
+      "effect_on_target": "Defines the approximate output whose absolute difference from the exact output is bounded.",
+      "id": "D001",
+      "meaning": "For every model fp, natural n, vectors x,e : Fin n → ℝ, and ℓ ∈ ℝ, define A(fp,n,x,e,ℓ) = log(S_fp,n(i ↦ exp(x_i)(1+e_i)))(1+ℓ), where S is D006. Products and the evaluation of exp and log here are exact real operations; the explicit factors encode their errors.",
+      "name": "Perturbed log-sum-exp output",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the reference output and the quantity appearing in the leading term u|L|.",
+      "id": "D002",
+      "meaning": "For every natural n and x : Fin n → ℝ, define L(n,x) = log(Σ_{i=0}^{n−1} exp(x_i)), with an exact finite sum and the total real logarithm D047.",
+      "name": "Exact log-sum-exp",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The target universally quantifies over all objects of this model type.",
+      "id": "D003",
+      "meaning": "A type of arithmetic models, whose data and laws are specified by the constructor D005: a nonnegative real error parameter, five real-valued arithmetic operations, and proofs of their required properties.",
+      "name": "Arithmetic model type",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies u in the smallness hypotheses, perturbation bounds, and final error bound.",
+      "id": "D004",
+      "meaning": "For every model fp, returns its first field u ∈ ℝ. The constructor requires u ≥ 0.",
+      "name": "Model error parameter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Restricts the models quantified over by the target. Only the addition operation is executed by the approximate-output algorithm, but every model must also provide the subtraction, multiplication, division, and square-root operations and laws.",
+      "id": "D005",
+      "meaning": "Constructs a model from u ∈ ℝ with 0 ≤ u; functions add, sub, mul, div : ℝ × ℝ → ℝ and sqrt_fl : ℝ → ℝ; and the following laws. For every real x, add(0,x)=x. For every real x,y, there exists δ ∈ ℝ with |δ| ≤ u and add(x,y)=(x+y)(1+δ); independently, such a δ exists for sub(x,y)=(x−y)(1+δ), and independently for mul(x,y)=xy(1+δ). For every real x,y with y ≠ 0, there exists δ with |δ| ≤ u and div(x,y)=(x/y)(1+δ). For every real x ≥ 0, there exists δ with |δ| ≤ u and sqrt_fl(x)=sqrt(x)(1+δ). Each existential δ may depend on the operation and its operands. No division law is required when y=0, and no square-root law is required when x<0.",
+      "name": "Arithmetic model constructor and axioms",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Specifies sequential model addition, rather than an exact or arbitrarily reassociated sum, inside D001.",
+      "id": "D006",
+      "meaning": "For every model fp, natural n, and v : Fin n → ℝ, S_fp,n(v) is the left fold initialized at 0 with update acc ↦ add_fp(acc,v_i). Equivalently, s_0=0, s_{k+1}=add_fp(s_k,v_k) for 0 ≤ k<n, and S_fp,n(v)=s_n.",
+      "name": "Sequential approximate summation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the operation used at every summation step in D006.",
+      "id": "D007",
+      "meaning": "For every model fp, projects its addition field add_fp : ℝ × ℝ → ℝ, the third field of the model.",
+      "name": "Model addition projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Requires positivity of each existential constant together with its remaining assertion, and pairs each model error bound with its operation equation.",
+      "id": "D008",
+      "meaning": "For propositions a and b, And(a,b) is their conjunction: both a and b hold.",
+      "name": "Logical conjunction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses existence of C and u0 in the target and of operation-specific relative errors in D005.",
+      "id": "D009",
+      "meaning": "For any type or sort α and predicate p : α → Prop, Exists(p) asserts that some element a of α satisfies p(a).",
+      "name": "Existential quantification",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Indexes the n input values and n exponential-error values, including all componentwise error hypotheses.",
+      "id": "D010",
+      "meaning": "For each natural n, Fin n is the finite type of natural indices i with 0 ≤ i<n.",
+      "name": "Bounded finite indices",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the additions in factors 1+e_i and 1+ℓ, in n+1, and between error-bound terms as ordinary real addition.",
+      "id": "D011",
+      "meaning": "For types α, β, γ equipped with a heterogeneous addition operation, projects the function α × β → γ. In the supplied real expressions this is real addition.",
+      "name": "Addition operation selector",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the products in the approximate output, model laws, and final bound as ordinary real multiplication.",
+      "id": "D012",
+      "meaning": "For types α, β, γ equipped with a heterogeneous multiplication operation, projects the function α × β → γ.",
+      "name": "Multiplication operation selector",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the power operation in the quadratic term C u².",
+      "id": "D013",
+      "meaning": "For base, exponent, and result types equipped with heterogeneous exponentiation, projects that exponentiation function.",
+      "name": "Power operation selector",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets subtraction in the output difference and in the model subtraction law.",
+      "id": "D014",
+      "meaning": "For types α, β, γ equipped with a heterogeneous subtraction operation, projects the function α × β → γ.",
+      "name": "Subtraction operation selector",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses the non-strict real inequalities in model axioms, perturbation bounds, the threshold u ≤ u0, and the conclusion.",
+      "id": "D015",
+      "meaning": "For any type equipped with a relation denoted ≤, projects that binary relation.",
+      "name": "Non-strict order selector",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses n>0 and strict positivity of C, u0, and u.",
+      "id": "D016",
+      "meaning": "For any type equipped with a relation denoted <, projects that binary relation.",
+      "name": "Strict order selector",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes u² the ordinary natural-number power in the real multiplicative monoid.",
+      "id": "D017",
+      "meaning": "For every monoid M, supplies exponentiation by natural numbers using its monoid power operation: x^0=1 and x^n is the product of n copies of x.",
+      "name": "Natural powers in a monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the domain for n and the exponent 2; n=0 is excluded by the target hypothesis.",
+      "id": "D018",
+      "meaning": "The type ℕ of natural numbers, including zero.",
+      "name": "Natural numbers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Converts the input length n to a real number in the coefficient (n+1)u.",
+      "id": "D019",
+      "meaning": "For any type R equipped with a natural-number cast, maps each n ∈ ℕ to its designated image in R.",
+      "name": "Natural-number cast",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the numeric literals 0, 1, and 2 at their required real or natural-number types.",
+      "id": "D020",
+      "meaning": "For a type α, natural numeral k, and a supplied interpretation of that numeral in α, returns the interpreted element.",
+      "name": "Numeral interpretation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes the real numeral 1 the multiplicative identity in the perturbation factors and coefficient n+1.",
+      "id": "D021",
+      "meaning": "For every type with a distinguished element 1, interprets the numeral 1 as that element.",
+      "name": "One numeral instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "All input components, outputs, errors, model parameters, and existential constants lie in ℝ.",
+      "id": "D022",
+      "meaning": "The type ℝ of real numbers.",
+      "name": "Real numbers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides exact real addition for the formulas surrounding the model summation.",
+      "id": "D023",
+      "meaning": "Installs the standard addition operation on ℝ.",
+      "name": "Real addition",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the negation and additive structure used by real absolute value and subtraction.",
+      "id": "D024",
+      "meaning": "The additive group structure on ℝ inherited from its ring structure: associative addition, zero, and additive inverses.",
+      "name": "Real additive group",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes every real ≤ comparison use the usual real order.",
+      "id": "D025",
+      "meaning": "Installs the standard non-strict order relation on ℝ.",
+      "name": "Real non-strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes positivity assumptions on C, u0, and u ordinary strict real positivity.",
+      "id": "D026",
+      "meaning": "Installs the standard strict order relation on ℝ.",
+      "name": "Real strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supports the natural power u² and the multiplicative structure used by the real division instance.",
+      "id": "D027",
+      "meaning": "The multiplicative monoid structure on ℝ, with associative multiplication and identity 1, inherited from its monoid-with-zero structure.",
+      "name": "Real multiplicative monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "All displayed products outside the abstract model operations use exact real multiplication.",
+      "id": "D028",
+      "meaning": "Installs the standard multiplication operation on ℝ.",
+      "name": "Real multiplication",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Ensures n.cast in the bound is the usual real number n.",
+      "id": "D029",
+      "meaning": "Embeds each natural n into ℝ through the real Cauchy-completion representation of the corresponding rational natural number.",
+      "name": "Natural numbers embedded in the reals",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the real constant 1 used throughout the error factors and bound.",
+      "id": "D030",
+      "meaning": "The distinguished real element 1.",
+      "name": "Real one",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the signed output difference before taking its absolute value, and subtraction on the right side of the model subtraction axiom.",
+      "id": "D031",
+      "meaning": "Defines real subtraction by a−b=a+(−b).",
+      "name": "Real subtraction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the zero used in positivity comparisons, summation initialization, and model domain restrictions.",
+      "id": "D032",
+      "meaning": "The distinguished real element 0.",
+      "name": "Real zero",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the maximum operation in the definition |a|=max(a,−a).",
+      "id": "D033",
+      "meaning": "The lattice structure of the usual real order, with supremum max and infimum min, inherited from the real distributive lattice.",
+      "name": "Real lattice structure",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the real numeral 0 used in the target and local definitions.",
+      "id": "D034",
+      "meaning": "For every type with a distinguished zero, interprets the numeral 0 as that element.",
+      "name": "Zero numeral instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Measures scalar output error and scalar perturbations; the target uses no vector norm.",
+      "id": "D035",
+      "meaning": "For a type with a lattice and additive group, defines |a| as the lattice supremum of a and −a. On ℝ this is the usual absolute value max(a,−a).",
+      "name": "Absolute value",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects the generic addition notation to the ordinary real addition instance.",
+      "id": "D036",
+      "meaning": "For every type α with addition α × α → α, supplies the corresponding heterogeneous-addition instance with all three types equal to α.",
+      "name": "Homogeneous addition adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects the generic multiplication notation to ordinary real multiplication.",
+      "id": "D037",
+      "meaning": "For every type α with multiplication α × α → α, supplies the corresponding heterogeneous-multiplication instance with all three types equal to α.",
+      "name": "Homogeneous multiplication adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects the power notation u² to real exponentiation by natural numbers.",
+      "id": "D038",
+      "meaning": "For types α and β with a power operation α × β → α, supplies a heterogeneous-power instance with base and result type α and exponent type β.",
+      "name": "Power notation adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects generic subtraction notation to real subtraction.",
+      "id": "D039",
+      "meaning": "For every type α with subtraction α × α → α, supplies the corresponding heterogeneous-subtraction instance with all three types equal to α.",
+      "name": "Homogeneous subtraction adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes 0<n the usual statement that the natural input length is positive.",
+      "id": "D040",
+      "meaning": "Installs the standard strict order on ℕ.",
+      "name": "Natural-number strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the natural zero in 0<n and the natural exponent 2 in u².",
+      "id": "D041",
+      "meaning": "For each natural n, interprets the numeral n in ℕ as n itself.",
+      "name": "Natural-number numerals",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Allows the exact sum in D002 to range over every index exactly once.",
+      "id": "D042",
+      "meaning": "For every natural n, equips Fin n with a finite enumeration built from the duplicate-free list of indices 0,...,n−1, together with completeness of that enumeration.",
+      "name": "Finite enumeration of bounded indices",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Forms the exact exponential sum in D002. It does not invoke the approximate addition operation.",
+      "id": "D043",
+      "meaning": "For any index type ι, additive commutative monoid M, finite set s of indices, and function f : ι → M, returns Σ_{i∈s} f(i), implemented by mapping f over the underlying multiset and summing.",
+      "name": "Finite exact sum",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes D002 sum over all n components of x.",
+      "id": "D044",
+      "meaning": "For every type with a finite enumeration, returns the finite set containing all of its elements.",
+      "name": "Universal finite set",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies exact exponential values in both outputs. In D001 each such value is subsequently multiplied by its explicit relative-error factor.",
+      "id": "D045",
+      "meaning": "For every real x, exp(x) is the real part of the complex exponential of x embedded in ℂ; mathematically it is the usual real exponential e^x.",
+      "name": "Real exponential",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the exact addition and zero required for the finite sum in D002.",
+      "id": "D046",
+      "meaning": "The additive commutative monoid structure on ℝ inherited from its commutative ring structure.",
+      "name": "Real additive commutative monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines both logarithms for every real argument. The exact exponential sum is positive when n>0; the approximate formula remains formally defined even without an explicit positivity hypothesis on its sum.",
+      "id": "D047",
+      "meaning": "Defines a total real logarithm: log(0)=0; for x≠0, log(x) is the inverse of the exponential order isomorphism evaluated at |x|. Thus log(x)=ln|x| for x≠0 and agrees with the natural logarithm for positive x.",
+      "name": "Total real logarithm",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the division operation used in the arithmetic model's division axiom; division is not executed by D001.",
+      "id": "D048",
+      "meaning": "For every type G equipped with a division-inverse monoid structure, projects its division structure.",
+      "name": "Division structure projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses exact addition at zero and the equalities specifying each relative-error model; also appears in the logarithm's zero test.",
+      "id": "D049",
+      "meaning": "For any type or sort α and elements a,b of α, Eq(a,b) asserts that a and b are equal.",
+      "name": "Equality",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the accumulation order and initial accumulator for D006.",
+      "id": "D050",
+      "meaning": "For any accumulator type α, natural n, update function f : α × Fin n → α, and initial accumulator a, returns the left fold through Fin n. Its exposed implementation calls a private loop with accumulator a and starting index 0. Under the standard fold semantics, the result is f(...f(f(a,0),1)...,n−1), with result a when n=0.",
+      "name": "Left fold over finite indices",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets x/y in the division relative-error law.",
+      "id": "D051",
+      "meaning": "For types α, β, γ equipped with heterogeneous division, projects the division function α × β → γ.",
+      "name": "Division operation selector",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Restricts the division model law to nonzero denominators.",
+      "id": "D052",
+      "meaning": "For any type or sort and elements a,b, a≠b means the negation of a=b.",
+      "name": "Inequality as non-equality",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes the exact quotient in the model division law ordinary real division. Its integer-power support does not contribute to the target's bound.",
+      "id": "D053",
+      "meaning": "Equips ℝ with its multiplicative monoid, real inverse, and division defined by x/y=x·y⁻¹, with the corresponding division identity. It also supplies integer powers by recursion, with zero, successor, and negative-exponent laws.",
+      "name": "Real division-inverse monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the exact reference square root in the model square-root axiom, which applies only to nonnegative inputs. Square root is not executed by D001.",
+      "id": "D054",
+      "meaning": "For every real x, first converts x to the nonnegative real max(x,0), applies the nonnegative-real square-root order isomorphism, and returns the result as a real. Thus sqrt(x)=√x for x≥0 and sqrt(x)=0 for x<0.",
+      "name": "Total real square root",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects generic quotient notation in D005 to ordinary real division.",
+      "id": "D055",
+      "meaning": "For every type α equipped with division α × α → α, supplies the corresponding heterogeneous-division instance with all three types equal to α.",
+      "name": "Homogeneous division adapter",
+      "status": "understood"
+    }
+  ],
+  "role": "blind-translation",
+  "semantic_sha256": "370e23a8f53b7bae366e660ed395c636c51edd95aac91c5a429f3ea2a9ad491a",
+  "translation": {
+    "binders": [
+      "For every n ∈ ℕ, every proof hn of 0<n, and every vector x : {0,...,n−1} → ℝ.",
+      "There exists a real C>0, and then there exists a real u0>0. These witnesses may depend on n and x (formally also on hn); u0 is chosen within the scope of C.",
+      "For every arithmetic model fp of D003/D005, every vector e : {0,...,n−1} → ℝ, and every ℓ ∈ ℝ, the stated implication holds. C and u0 are chosen before fp,e,ℓ and therefore must work uniformly over them."
+    ],
+    "conclusions": [
+      "Writing u=fp.u, L=log(Σ_{i=0}^{n−1} exp(x_i)), s_0=0, s_{k+1}=add_fp(s_k,exp(x_k)(1+e_k)), and A=log(s_n)(1+ℓ), the conclusion is |L−A| ≤ u|L| + ((n:ℝ)+1)u + C u².",
+      "The bound is an absolute scalar error bound with the explicit first-order coefficient |L|+n+1 and an existentially bounded quadratic remainder. It holds for every admissible model and perturbation with 0<u≤u0."
+    ],
+    "hypotheses": [
+      "The length n is strictly positive; the input components x_i are otherwise arbitrary real numbers.",
+      "The model fp includes u≥0 and the arithmetic operations and relative-error axioms specified in D005, including add_fp(0,t)=t for every real t.",
+      "For the particular model being tested, 0<u and u≤u0.",
+      "For every index i with 0≤i<n, |e_i|≤u.",
+      "The scalar logarithm error satisfies |ℓ|≤u."
+    ],
+    "mathematical_definitions": [
+      "Fin n={0,...,n−1}. All absolute values are ordinary real absolute values |t|=max(t,−t). The natural n is embedded in ℝ in the coefficient n+1, and u² is the natural power u·u.",
+      "An arithmetic model consists of a nonnegative real u; real binary operations add_fp, sub_fp, mul_fp, div_fp; and a real unary operation sqrt_fp. Addition at a zero left operand is exact. For each operation and each admissible input there exists a possibly different δ with |δ|≤u such that the model output equals the exact output times 1+δ. Addition, subtraction, and multiplication laws hold for all real operands; division requires a nonzero denominator; square root requires a nonnegative operand.",
+      "S_fp,n(v) is sequential left-to-right model summation: s_0=0 and s_{k+1}=add_fp(s_k,v_k) for k=0,...,n−1, returning s_n.",
+      "L(n,x)=log(Σ_{i=0}^{n−1} exp(x_i)), using exact real addition.",
+      "A(fp,n,x,e,ℓ)=log(S_fp,n(i↦exp(x_i)(1+e_i)))(1+ℓ). The perturbation factors are explicitly prescribed inputs; there are no model exponential or logarithm operations. The displayed products are exact real products.",
+      "The logarithm is total: log(0)=0 and log(t)=ln|t| for t≠0. The square root used in the model axioms is √max(t,0)."
+    ],
+    "proposition_plain_english": "For every positive integer n and every fixed real vector x of length n, there exist positive real constants C and u0 such that the following holds uniformly over all supplied arithmetic models and all exponential and logarithm perturbations. If the model error parameter satisfies 0<u≤u0, every exponential relative error has magnitude at most u, and the logarithm relative error has magnitude at most u, then forming the perturbed exponentials, adding them sequentially with the model addition starting from zero, taking the total real logarithm, and multiplying by the logarithm error factor produces an output A satisfying |log(Σ_i exp(x_i))−A| ≤ u|log(Σ_i exp(x_i))|+(n+1)u+C u²."
+  },
+  "vacuity_risks": [
+    "The implication makes no assertion for n=0, for models with u=0 or u>u0, or for perturbations violating their bounds.",
+    "The model type is not forced to be empty: exact real arithmetic operations satisfy all model laws for every chosen u≥0 by using δ=0. Consequently, models with arbitrarily small positive u exist, so choosing a positive u0 cannot make the universal assertion vacuous by excluding all models.",
+    "There is no explicit positivity hypothesis on the approximate sum. The total logarithm prevents undefined expressions even at nonpositive sums. For sufficiently small u<1, however, positive perturbed exponential inputs and the addition relative-error law imply a positive accumulated sum.",
+    "The constants are allowed to depend on the fixed input vector and its length. The proposition does not assert a single threshold or quadratic constant valid uniformly over all dimensions and input vectors.",
+    "Only the target proposition is supplied, with its proof excluded. This translation does not independently verify that the asserted constants exist."
+  ]
+}

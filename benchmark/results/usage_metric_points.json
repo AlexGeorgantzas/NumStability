@@ -1,0 +1,361 @@
+{
+  "schema_version": "ten-task-observed-use-metric-comparison-1",
+  "task_count": 10,
+  "source_sha256": {
+    "source_task_ledger.json": "44b56e635d45f124ac3f3267a81fb595f045c7fa8d31ebbdc072219df9ae6904",
+    "declaration_scan.json": "cdb75163997154f3ce46655ec12f8997e8d8552229e6a748f6893b77972185c9",
+    "summary.json": "02a5451409519335445f76f8d3984fbfd6e743f082d9d63de668bedb885c984b"
+  },
+  "metric_definitions": {
+    "qualified_distinct": "Distinct explicit NumStability.* tokens in the accepted L proof file outside imports, Lean comments, and strings; open-namespace references are missed.",
+    "qualified_occurrences": "Occurrences of those same explicit qualified tokens; repeated names count repeatedly.",
+    "direct_statement": "Distinct NumStability constants in the elaborated accepted target statement and local statement definitions, from declaration_scan.json.",
+    "direct_proof": "Distinct NumStability constants in the accepted proof term and proof-local helper bodies, from declaration_scan.json.",
+    "direct_union": "Distinct union of direct_statement and direct_proof names.",
+    "recursive_statement": "Distinct NumStability constants in the archived recursive semantic dossier of the accepted theorem statement, including compiler-generated names; not the proof-term closure.",
+    "recursive_filtered": "The recursive_statement count after heuristic generated-name pattern removal; not a certified public-API count."
+  },
+  "outcome_definition": "100*(N-L)/N, positive favoring L; total active time and net-new tokens exclude the one-time scout; LOC is accepted proof code only.",
+  "rows": [
+    {
+      "number": 1,
+      "task_id": "CAST08-FIXED3",
+      "accepted_proof_path": "benchmark/runs/CAST08-FIXED3/R1/proof-submissions/01/Candidate.lean",
+      "accepted_proof_sha256": "fd291ec2ef7a1f617fbe42b665429e7f1bd7af9e5f4e9d4d4a7f8df77c6b30f0",
+      "semantic_manifest_path": "benchmark/runs/CAST08-FIXED3/R1/proof-submissions/01/private_semantic_manifest.json",
+      "semantic_manifest_sha256": "6d2a3cee7e5cbb193cb382891bb78806ea3447216a897dc7b0286d8e8774f84f",
+      "measurements": {
+        "qualified_distinct": 0,
+        "qualified_occurrences": 0,
+        "direct_statement": 5,
+        "direct_proof": 9,
+        "direct_union": 9,
+        "recursive_statement": 11,
+        "recursive_filtered": 9
+      },
+      "gains": {
+        "total_time_gain_pct": 35.929523617185616,
+        "proof_line_gain_pct": 32.0,
+        "total_tokens_gain_pct": -122.72098385857034,
+        "proof_time_gain_pct": 42.90349122780566,
+        "formalization_time_gain_pct": 8.567067770600001
+      }
+    },
+    {
+      "number": 2,
+      "task_id": "P14-T1",
+      "accepted_proof_path": "benchmark/runs/P14-T1/R1/proof-submissions/01/Candidate.lean",
+      "accepted_proof_sha256": "c2671e28603f035e9de3ef7addc03243d0f510b7daa8564f8c1f67282f6b3290",
+      "semantic_manifest_path": "benchmark/runs/P14-T1/R1/proof-submissions/01/private_semantic_manifest.json",
+      "semantic_manifest_sha256": "f35b20a364f08bd7566db96cbdfba83971adcaecbf84b1c96eb3b464891be395",
+      "measurements": {
+        "qualified_distinct": 0,
+        "qualified_occurrences": 0,
+        "direct_statement": 3,
+        "direct_proof": 7,
+        "direct_union": 7,
+        "recursive_statement": 5,
+        "recursive_filtered": 5
+      },
+      "gains": {
+        "total_time_gain_pct": 24.945738410282402,
+        "proof_line_gain_pct": -12.935323383084578,
+        "total_tokens_gain_pct": -47.86234464380068,
+        "proof_time_gain_pct": 34.11742592100222,
+        "formalization_time_gain_pct": 2.6224017324862903
+      }
+    },
+    {
+      "number": 3,
+      "task_id": "HI21-LEM2.2",
+      "accepted_proof_path": "benchmark/runs/HI21-LEM2.2/R1/proof-submissions/01/Candidate.lean",
+      "accepted_proof_sha256": "9b8ddc3f45d0b268e384a5eb31f14e5e321ac4a4ccead938316fc5b57450940e",
+      "semantic_manifest_path": "benchmark/runs/HI21-LEM2.2/R1/proof-submissions/01/private_semantic_manifest.json",
+      "semantic_manifest_sha256": "70a3704c2487a010fd8bd49e8ad530e193af028e63f9feaa21d65885d8750503",
+      "measurements": {
+        "qualified_distinct": 0,
+        "qualified_occurrences": 0,
+        "direct_statement": 4,
+        "direct_proof": 4,
+        "direct_union": 4,
+        "recursive_statement": 11,
+        "recursive_filtered": 5
+      },
+      "gains": {
+        "total_time_gain_pct": -47.11291398316175,
+        "proof_line_gain_pct": -25.641025641025642,
+        "total_tokens_gain_pct": -182.5549796185396,
+        "proof_time_gain_pct": -27.277603351130427,
+        "formalization_time_gain_pct": -52.57860289717787
+      }
+    },
+    {
+      "number": 4,
+      "task_id": "CAST08-PROP3.1",
+      "accepted_proof_path": "benchmark/runs/CAST08-PROP3.1/R1/proof-submissions/01/Candidate.lean",
+      "accepted_proof_sha256": "a63be7eb52921d3b3ab8648891f3d186cde59a115f04aa9b0b251a05ace3cda8",
+      "semantic_manifest_path": "benchmark/runs/CAST08-PROP3.1/R1/proof-submissions/01/private_semantic_manifest.json",
+      "semantic_manifest_sha256": "650facbc7882b9be53503e310818e9947a72345fa2d520c356b6b7d92d460787",
+      "measurements": {
+        "qualified_distinct": 8,
+        "qualified_occurrences": 48,
+        "direct_statement": 4,
+        "direct_proof": 9,
+        "direct_union": 9,
+        "recursive_statement": 7,
+        "recursive_filtered": 7
+      },
+      "gains": {
+        "total_time_gain_pct": 35.46254062548555,
+        "proof_line_gain_pct": 46.38069705093834,
+        "total_tokens_gain_pct": -33.627132926058565,
+        "proof_time_gain_pct": 46.36215608550516,
+        "formalization_time_gain_pct": -6.102373322009077
+      }
+    },
+    {
+      "number": 5,
+      "task_id": "P14-T2",
+      "accepted_proof_path": "benchmark/runs/P14-T2/R1/proof-submissions/01/Candidate.lean",
+      "accepted_proof_sha256": "0c5e3722967ce2b77c39816799743182edcc0552f2bf3b844ee77fdb72801792",
+      "semantic_manifest_path": "benchmark/runs/P14-T2/R1/proof-submissions/01/private_semantic_manifest.json",
+      "semantic_manifest_sha256": "821c2b55f186e9776b4cbbf89ac702b54819595208c973ef998c3d9bc65ee96d",
+      "measurements": {
+        "qualified_distinct": 11,
+        "qualified_occurrences": 38,
+        "direct_statement": 0,
+        "direct_proof": 13,
+        "direct_union": 13,
+        "recursive_statement": 0,
+        "recursive_filtered": 0
+      },
+      "gains": {
+        "total_time_gain_pct": 14.636309400955538,
+        "proof_line_gain_pct": 5.21978021978022,
+        "total_tokens_gain_pct": -4.243788450875294,
+        "proof_time_gain_pct": 17.868657907740108,
+        "formalization_time_gain_pct": 0.545111299843168
+      }
+    },
+    {
+      "number": 6,
+      "task_id": "RUMP12-THM3.4",
+      "accepted_proof_path": "benchmark/runs/RUMP12-THM3.4/R1/proof-submissions/01/Candidate.lean",
+      "accepted_proof_sha256": "75666ac6b2db3ad639190d0d47fe88badba89102f3d05c56e4d43693ce11e0dd",
+      "semantic_manifest_path": "benchmark/runs/RUMP12-THM3.4/R1/proof-submissions/01/private_semantic_manifest.json",
+      "semantic_manifest_sha256": "6acf4c800b2f7cd95f7c45b91a3236c8adfa44d78ca9d4384ac8d1236bdce5b1",
+      "measurements": {
+        "qualified_distinct": 0,
+        "qualified_occurrences": 0,
+        "direct_statement": 8,
+        "direct_proof": 39,
+        "direct_union": 39,
+        "recursive_statement": 22,
+        "recursive_filtered": 21
+      },
+      "gains": {
+        "total_time_gain_pct": 21.018297707970707,
+        "proof_line_gain_pct": 44.40734557595993,
+        "total_tokens_gain_pct": 0.08285917026237268,
+        "proof_time_gain_pct": 30.843031098829144,
+        "formalization_time_gain_pct": -47.578717014356265
+      }
+    },
+    {
+      "number": 7,
+      "task_id": "P14-LOGSUMEXP",
+      "accepted_proof_path": "benchmark/runs/P14-LOGSUMEXP/R1/proof-submissions/01/Candidate.lean",
+      "accepted_proof_sha256": "9c54d7dcfca282f9d00ebd525b562724eeece277e76b266a600b88aec93278cf",
+      "semantic_manifest_path": "benchmark/runs/P14-LOGSUMEXP/R1/proof-submissions/01/private_semantic_manifest.json",
+      "semantic_manifest_sha256": "056ca72e48292808d4790c9b920ad977855923d08461ca537acdf7f79626d189",
+      "measurements": {
+        "qualified_distinct": 0,
+        "qualified_occurrences": 0,
+        "direct_statement": 3,
+        "direct_proof": 8,
+        "direct_union": 8,
+        "recursive_statement": 5,
+        "recursive_filtered": 5
+      },
+      "gains": {
+        "total_time_gain_pct": 10.49653856152489,
+        "proof_line_gain_pct": -25.980392156862745,
+        "total_tokens_gain_pct": -18.137914070186948,
+        "proof_time_gain_pct": 5.03777694124325,
+        "formalization_time_gain_pct": 28.4929488530403
+      }
+    },
+    {
+      "number": 8,
+      "task_id": "H20-8",
+      "accepted_proof_path": "benchmark/runs/H20-8/R1/proof-submissions/01/Candidate.lean",
+      "accepted_proof_sha256": "5a91c6580737bf17b721066a438721fe0e2abec7cedffc88aa09622fc2ad3130",
+      "semantic_manifest_path": "benchmark/runs/H20-8/R1/proof-submissions/01/private_semantic_manifest.json",
+      "semantic_manifest_sha256": "757be3a53cc4ec5bd3c98298722888875e99cfc3f822cf7e9f10118c95bdbfc5",
+      "measurements": {
+        "qualified_distinct": 0,
+        "qualified_occurrences": 0,
+        "direct_statement": 5,
+        "direct_proof": 26,
+        "direct_union": 26,
+        "recursive_statement": 12,
+        "recursive_filtered": 12
+      },
+      "gains": {
+        "total_time_gain_pct": 55.539239724928755,
+        "proof_line_gain_pct": 31.275720164609055,
+        "total_tokens_gain_pct": 39.11249171266603,
+        "proof_time_gain_pct": 65.59334748863681,
+        "formalization_time_gain_pct": -11.902905352283753
+      }
+    },
+    {
+      "number": 9,
+      "task_id": "CAST08-PROP3.2",
+      "accepted_proof_path": "benchmark/runs/CAST08-PROP3.2/R1/proof-submissions/01/Candidate.lean",
+      "accepted_proof_sha256": "c1454a6479b32f4e5de8c051d20f25429b641a0a01234cb2d8a9b457ff0c1655",
+      "semantic_manifest_path": "benchmark/runs/CAST08-PROP3.2/R1/proof-submissions/01/private_semantic_manifest.json",
+      "semantic_manifest_sha256": "b8b29e8622bec403ffe12ceb0d704d62ec59d553602fbc5fa58f598ee62cc190",
+      "measurements": {
+        "qualified_distinct": 0,
+        "qualified_occurrences": 0,
+        "direct_statement": 5,
+        "direct_proof": 11,
+        "direct_union": 11,
+        "recursive_statement": 8,
+        "recursive_filtered": 8
+      },
+      "gains": {
+        "total_time_gain_pct": 31.625166218268603,
+        "proof_line_gain_pct": 25.53191489361702,
+        "total_tokens_gain_pct": -164.22339854561528,
+        "proof_time_gain_pct": 35.43705077704322,
+        "formalization_time_gain_pct": 20.190998679950752
+      }
+    },
+    {
+      "number": 10,
+      "task_id": "P14-SHIFTED-SOFTMAX",
+      "accepted_proof_path": "benchmark/runs/P14-SHIFTED-SOFTMAX/R1/proof-submissions/01/Candidate.lean",
+      "accepted_proof_sha256": "a3517554c8d3268db3371fafe473036fa9965f0f03b7e55229393826228eb173",
+      "semantic_manifest_path": "benchmark/runs/P14-SHIFTED-SOFTMAX/R1/proof-submissions/01/private_semantic_manifest.json",
+      "semantic_manifest_sha256": "8766804bbd8338bda91d29b89ebb159e63f2395cf9362e5187b59199d20d3789",
+      "measurements": {
+        "qualified_distinct": 0,
+        "qualified_occurrences": 0,
+        "direct_statement": 1,
+        "direct_proof": 3,
+        "direct_union": 3,
+        "recursive_statement": 1,
+        "recursive_filtered": 1
+      },
+      "gains": {
+        "total_time_gain_pct": -3.7974440331566632,
+        "proof_line_gain_pct": -2.494802494802495,
+        "total_tokens_gain_pct": -10.96124741542856,
+        "proof_time_gain_pct": -0.3241151085249163,
+        "formalization_time_gain_pct": -23.07736821145821
+      }
+    }
+  ],
+  "spearman": {
+    "qualified_distinct": {
+      "total_time_gain_pct": {
+        "spearman_rho": 0.0518999296107682,
+        "n": 10
+      },
+      "proof_line_gain_pct": {
+        "spearman_rho": 0.3027495893961478,
+        "n": 10
+      },
+      "total_tokens_gain_pct": {
+        "spearman_rho": 0.19894973017461143,
+        "n": 10
+      }
+    },
+    "qualified_occurrences": {
+      "total_time_gain_pct": {
+        "spearman_rho": 0.12109983575845912,
+        "n": 10
+      },
+      "proof_line_gain_pct": {
+        "spearman_rho": 0.38924947208076155,
+        "n": 10
+      },
+      "total_tokens_gain_pct": {
+        "spearman_rho": 0.14704980056384323,
+        "n": 10
+      }
+    },
+    "direct_statement": {
+      "total_time_gain_pct": {
+        "spearman_rho": 0.549476941711005,
+        "n": 10
+      },
+      "proof_line_gain_pct": {
+        "spearman_rho": 0.5988681274827808,
+        "n": 10
+      },
+      "total_tokens_gain_pct": {
+        "spearman_rho": -0.03086949110735984,
+        "n": 10
+      }
+    },
+    "direct_proof": {
+      "total_time_gain_pct": {
+        "spearman_rho": 0.5592731001856595,
+        "n": 10
+      },
+      "proof_line_gain_pct": {
+        "spearman_rho": 0.6383008208640678,
+        "n": 10
+      },
+      "total_tokens_gain_pct": {
+        "spearman_rho": 0.5410359338752574,
+        "n": 10
+      }
+    },
+    "direct_union": {
+      "total_time_gain_pct": {
+        "spearman_rho": 0.5592731001856595,
+        "n": 10
+      },
+      "proof_line_gain_pct": {
+        "spearman_rho": 0.6383008208640678,
+        "n": 10
+      },
+      "total_tokens_gain_pct": {
+        "spearman_rho": 0.5410359338752574,
+        "n": 10
+      }
+    },
+    "recursive_statement": {
+      "total_time_gain_pct": {
+        "spearman_rho": 0.4146418546569908,
+        "n": 10
+      },
+      "proof_line_gain_pct": {
+        "spearman_rho": 0.4695209236557102,
+        "n": 10
+      },
+      "total_tokens_gain_pct": {
+        "spearman_rho": 0.018293022999573125,
+        "n": 10
+      }
+    },
+    "recursive_filtered": {
+      "total_time_gain_pct": {
+        "spearman_rho": 0.6687619998624351,
+        "n": 10
+      },
+      "proof_line_gain_pct": {
+        "spearman_rho": 0.6564911374796382,
+        "n": 10
+      },
+      "total_tokens_gain_pct": {
+        "spearman_rho": 0.14111491740216522,
+        "n": 10
+      }
+    }
+  }
+}

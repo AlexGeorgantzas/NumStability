@@ -1,0 +1,3 @@
+[Candidate.lean](/workspace/Candidate.lean) now states the matrix-only least-squares backward error at the zero solution for every `m ≥ n` and every `b`, including `b = 0`. It states the value, an admissible perturbation attaining it, and minimality against every admissible perturbation.
+
+The PDF hash matches the task packet. `lean --root . -o Candidate.olean Candidate.lean` compiled with only the required `sorry` warning.

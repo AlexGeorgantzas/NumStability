@@ -1,0 +1,135 @@
+{
+  "accepted": true,
+  "candidate_semantic_sha256": "a8354776d5dd54b81282b58cb2a939b4452f8f429d79138aac14db34a619849e",
+  "classification": "faithful-equivalent",
+  "implications": {
+    "candidate_implies_source": {
+      "reasoning": "The candidate supplies a feasible perturbation attaining the stated value and proves that every feasible perturbation has at least that Frobenius norm. This establishes the minimum defining η_F(0) with Δb=0, including both b=0 and b≠0.",
+      "verdict": "yes"
+    },
+    "source_implies_candidate": {
+      "reasoning": "The selected result evaluates an attained minimum over exactly the candidate's feasible perturbations. Its value and attainment give the existential witness, exact norm equality, and universal lower bound. Empty-dimensional cases follow immediately from empty sums and zero perturbations.",
+      "verdict": "yes"
+    }
+  },
+  "mismatches": [],
+  "paper_sha256": "7ca85d5caf3ffd5ae90fb315e9b4e00912e174881bcf969e7ba0a7b3ce9ec814",
+  "rationale": "The translation faithfully expresses Problem 20.8 using the backward-error definition (20.20). For b≠0, zero is a least-squares minimizer precisely when (A+ΔA)ᵀb=0. The perturbation ΔA=−b(Aᵀb)ᵀ/||b||₂² is feasible and has Frobenius norm ||Aᵀb||₂/||b||₂. Every feasible E satisfies ||Aᵀb||₂=||Eᵀb||₂≤||E||_F||b||₂, proving optimality. For b=0, ΔA=0 attains the minimum zero. The existential formulation captures attainment without requiring a particular formula for the witness.",
+  "requires_adjudication": false,
+  "role": "roundtrip-judge",
+  "semantic_checklist": [
+    {
+      "id": "S01",
+      "paper_evidence": "Problem 20.8, printed page 406, asks to evaluate η_F(0) for θ=∞, meaning Δb≡0; equation (20.20) defines η_F.",
+      "reasoning": "The candidate addresses the selected zero-vector problem rather than applying the nonzero-y formula of Theorem 20.5.",
+      "status": "pass",
+      "translation_evidence": "The proposition evaluates the minimum perturbation norm making zero a least-squares minimizer, with b fixed."
+    },
+    {
+      "id": "S02",
+      "paper_evidence": "Theorem 20.5 uses A∈ℝ^{m×n}, m≥n, and b∈ℝᵐ; Problem 20.8 replaces y by zero.",
+      "reasoning": "Matrix, vector, and perturbation types and the dimension constraint agree.",
+      "status": "pass",
+      "translation_evidence": "Universally quantified natural dimensions satisfy n≤m; A and ΔA are real m-by-n matrices and b∈ℝᵐ."
+    },
+    {
+      "id": "S03",
+      "paper_evidence": "The backward-error minimum is evaluated separately for each A,b, over perturbations for which the chosen y minimizes the residual over all trial vectors.",
+      "reasoning": "The witness may depend on the input, while both least-squares feasibility and the competing-perturbation lower bound have the required universal scope.",
+      "status": "pass",
+      "translation_evidence": "For every A,b there exists ΔA satisfying feasibility for every x and a lower bound for every feasible E."
+    },
+    {
+      "id": "S04",
+      "paper_evidence": "Problem 20.8 imposes y=0 and Δb=0. The packet specifies arbitrary b and no rank or consistency restrictions.",
+      "reasoning": "No added hypothesis excludes source-admissible cases or assumes the desired evaluation.",
+      "status": "pass",
+      "translation_evidence": "The only dimension hypothesis is n≤m; there are no nonzero-b, rank, invertibility, or consistency assumptions."
+    },
+    {
+      "id": "S05",
+      "paper_evidence": "Equation (20.20) uses a minimum; the packet requires its value and an admissible perturbation attaining it.",
+      "reasoning": "Feasibility, exact witness norm, and a universal lower bound jointly establish the complete attained minimum.",
+      "status": "pass",
+      "translation_evidence": "The same ΔA satisfies P(A+ΔA,b), ||ΔA||_F=r(A,b), and r(A,b)≤||E||_F for every feasible E."
+    },
+    {
+      "id": "S06",
+      "paper_evidence": "The source uses ordinary real matrix perturbations, transposes, and least-squares residuals.",
+      "reasoning": "The supplied operator definitions implement the intended finite-dimensional arithmetic. Reversing the residual sign leaves its Euclidean norm unchanged.",
+      "status": "pass",
+      "translation_evidence": "Addition and subtraction are entrywise; matrix-vector products are coordinate sums; transpose swaps indices; P compares ||b−Mx||₂."
+    },
+    {
+      "id": "S07",
+      "paper_evidence": "Problem 20.8 requests an exact evaluation of the backward error.",
+      "reasoning": "The candidate does not substitute rounded data, computed residuals, or approximations.",
+      "status": "pass",
+      "translation_evidence": "r(A,b) is defined from the original exact real A,b, and the witness norm equals it exactly."
+    },
+    {
+      "id": "S08",
+      "paper_evidence": "The selected problem concerns the backward error at a specified vector and requires no numerical algorithm.",
+      "reasoning": "No algorithm linkage is required.",
+      "status": "not-applicable",
+      "translation_evidence": "The translation states existence and optimality without prescribing an algorithm."
+    },
+    {
+      "id": "S09",
+      "paper_evidence": "Equation (20.20) measures perturbations in Frobenius norm and least-squares residuals in the vector 2-norm.",
+      "reasoning": "Both norms have exactly the required sums-of-squares semantics.",
+      "status": "pass",
+      "translation_evidence": "||M||_F=√ΣᵢΣⱼMᵢⱼ² and ||v||₂=√Σᵢvᵢ²."
+    },
+    {
+      "id": "S10",
+      "paper_evidence": "The selected evaluation is zero for b=0 and ||Aᵀb||₂/||b||₂ otherwise, as specified by the packet.",
+      "reasoning": "There are no missing constants or normalization factors; every matrix and vector coordinate is included.",
+      "status": "pass",
+      "translation_evidence": "r uses precisely those two branches, with coordinate ranges 0 through m−1 and 0 through n−1."
+    },
+    {
+      "id": "S11",
+      "paper_evidence": "The selected result is exact real mathematics. The discussion after (20.20) interprets θ=∞ as forbidding perturbations to b.",
+      "reasoning": "The candidate directly fixes b rather than representing infinity numerically. The quotient is used only when its denominator is positive, and square-root arguments are nonnegative.",
+      "status": "pass",
+      "translation_evidence": "All quantities are real; b=0 has an explicit branch; no floating-point operations or exceptional values occur."
+    },
+    {
+      "id": "S12",
+      "paper_evidence": "The source asks for the value of a minimum, not merely an upper or lower estimate.",
+      "reasoning": "The exact equality and universal lower bound preserve the full relation strength.",
+      "status": "pass",
+      "translation_evidence": "A feasible witness has norm exactly r, and every feasible competitor has norm at least r."
+    },
+    {
+      "id": "S13",
+      "paper_evidence": "The source's error is the minimum absolute Frobenius perturbation to A making y a least-squares minimizer, with Δb=0.",
+      "reasoning": "The candidate preserves this backward-error notion and does not replace least-squares optimality by exact fitting, uniqueness, or a relative perturbation measure.",
+      "status": "pass",
+      "translation_evidence": "Feasibility is global residual minimality at zero, and the objective is ||ΔA||_F without normalization by ||A||."
+    },
+    {
+      "id": "S14",
+      "paper_evidence": "Problem 20.8 requests an exact evaluation and contains no asymptotic remainder.",
+      "reasoning": "There are no higher-order terms to preserve.",
+      "status": "not-applicable",
+      "translation_evidence": "The candidate contains exact equalities and inequalities without truncations or remainder terms."
+    },
+    {
+      "id": "S15",
+      "paper_evidence": "The selected scope is y=0, m≥n, arbitrary real A,b, and matrix-only perturbations.",
+      "reasoning": "The candidate covers the complete intended scope. Allowing empty dimensions is a harmless extension whose conclusions follow directly from the definitions.",
+      "status": "pass",
+      "translation_evidence": "Both b branches are covered without rank restrictions; natural dimensions include zero."
+    },
+    {
+      "id": "S16",
+      "paper_evidence": "The source minimizes over admissible matrix perturbations, a nonempty set since ΔA=−A makes zero a least-squares minimizer.",
+      "reasoning": "The hypotheses are consistent and the feasible set is nonempty for every allowed input. Positive error occurs, for example, when m=n=1 and A=b=1, so the claim is substantive.",
+      "status": "pass",
+      "translation_evidence": "The candidate asserts a feasible witness for every input and imposes no contradictory assumptions. Its b=0 and empty-dimensional cases correctly have minimum zero."
+    }
+  ],
+  "uncertainties": []
+}

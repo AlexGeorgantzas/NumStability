@@ -1,0 +1,34 @@
+{
+  "schema_version": "formalization-source-packet-1",
+  "task_id": "P14-LOGSUMEXP",
+  "selected_result": "Absolute forward-error bound immediately preceding Theorem 3.2 for basic log-sum-exp",
+  "bibliographic_source": {
+    "authors": ["Pierre Blanchard", "Desmond J. Higham", "Nicholas J. Higham"],
+    "title": "Accurately Computing the Log-Sum-Exp and Softmax Functions",
+    "venue": "IMA Journal of Numerical Analysis",
+    "volume": "41",
+    "issue": "4",
+    "year": 2021,
+    "pages": "2311-2330",
+    "doi": "10.1093/imanum/draa038"
+  },
+  "paper_pdf": {
+    "path_basename": "P14_Accurately computing the log-sum-exp and softmax functions.pdf",
+    "sha256": "7247047bc49218e001195edc8a2d66131eea7596d252503f34b0ace6328981cd"
+  },
+  "paper_locations": [
+    {"section": "Section 3", "printed_pages": "2316", "pdf_pages": "6", "anchor": "Unshifted Algorithm 3.1"},
+    {"section": "Section 3", "printed_pages": "2317-2318", "pdf_pages": "7-8", "anchor": "Exponential evaluation (3.1) and positive sum error (3.3)"},
+    {"section": "Section 3", "printed_pages": "2318", "pdf_pages": "8", "anchor": "Absolute error bound |y-yHat| <= u|y|+(n+1)u+O(u^2), immediately before Theorem 3.2"}
+  ],
+  "task_clarification": [
+    "For positive n and x in R^n, let s = sum_i exp(x_i) and y = log(s). Use the unshifted basic Algorithm 3.1 with each exponential evaluated under relative error at most u, recursive floating-point summation of those exponentials, and a final rounded logarithm under relative error at most u.",
+    "Formalize the absolute forward-error estimate immediately preceding Theorem 3.2: |y-yHat| <= u*|y| + (n+1)*u + O(u^2). This statement is chosen instead of the following relative quotient, so it covers the case y = 0 as well.",
+    "The O(u^2) remainder must be uniform over admissible local errors at fixed n and x. It may be expressed by constants C>0 and u0>0 independent of the individual execution, such that the displayed bound with +C*u^2 holds for every admissible execution with 0<u<=u0."
+  ],
+  "scope_constraints": [
+    "Preserve the exponential errors, actual recursive summation, final logarithm and its rounding error, and the no-overflow/no-underflow relative model.",
+    "Do not assume the requested output-error estimate or replace the basic algorithm with a shifted one.",
+    "Do not narrow the x-domain by requiring y to be nonzero."
+  ]
+}

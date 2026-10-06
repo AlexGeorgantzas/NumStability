@@ -1,0 +1,3 @@
+[Candidate.lean](/workspace/Candidate.lean) contains the Lemma 2.2 statement for arbitrary binary summation trees, including the one-leaf case. It models a relative error at each addition and sums every internal node’s exact partial sum times its local error and strict-ancestor factors.
+
+The required Lean command compiles it. The target’s entire proof is the single permitted `sorry`; there are no other proof holes.

@@ -1,0 +1,3 @@
+The statement is in [Candidate.lean](/workspace/Candidate.lean:26). It covers both cases of `b`, states least-squares optimality at zero, and asserts a perturbation that attains the minimum Frobenius norm.
+
+The required Lean command compiles it. The target proof consists solely of the requested `sorry`; there are no other proof holes.

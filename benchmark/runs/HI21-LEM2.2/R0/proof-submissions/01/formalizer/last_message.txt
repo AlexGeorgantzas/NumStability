@@ -1,0 +1,1 @@
+The frozen `target` now has a complete proof in [Candidate.lean](/workspace/Candidate.lean). The required Lean compilation succeeds with no diagnostics, and the file contains no proof holes.

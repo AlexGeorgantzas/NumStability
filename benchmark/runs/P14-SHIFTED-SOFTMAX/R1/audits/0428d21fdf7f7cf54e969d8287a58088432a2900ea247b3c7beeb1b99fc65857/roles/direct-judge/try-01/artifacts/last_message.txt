@@ -1,0 +1,801 @@
+{
+  "accepted": true,
+  "candidate_semantic_sha256": "0428d21fdf7f7cf54e969d8287a58088432a2900ea247b3c7beeb1b99fc65857",
+  "classification": "faithful-equivalent",
+  "dependency_coverage": [
+    {
+      "effect_on_target": "Quantifies over all admissible local rounding errors.",
+      "id": "D001",
+      "interpretation": "Each subtraction, exponential, addition, and division error has absolute value at most u.",
+      "name": "Local error bounds",
+      "paper_match": "Matches the relative-error model used in Section 4.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Defines every computed output appearing in the forward error.",
+      "id": "D002",
+      "interpretation": "The computed shifted exponential divided by one plus the recursively computed sum, multiplied by the division-error factor.",
+      "name": "Computed softmax",
+      "paper_match": "Matches the displayed computed-output formula preceding Theorem 4.3, without an additional denominator rounding.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Provides the exact reference vector and its normalization.",
+      "id": "D003",
+      "interpretation": "The exact shifted exponential divided by one plus the exact sum excluding the selected maximum.",
+      "name": "Exact softmax",
+      "paper_match": "Equals the softmax in (1.4), since the omitted exponential equals one.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Determines the norm in both numerator and denominator of the error ratio.",
+      "id": "D004",
+      "interpretation": "The finite real function space carries the maximum absolute component norm.",
+      "name": "Infinity norm",
+      "paper_match": "Matches the infinity norm in (4.11).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Connects the denominator to an explicit rounded recursive computation.",
+      "id": "D005",
+      "interpretation": "Initialize with the first retained computed exponential, then successively add each remaining one with its relative addition error.",
+      "name": "Rounded recursive sum",
+      "paper_match": "Matches Algorithm 4.1 and its n−2 effective rounded additions; adding the first term to zero is exact.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Models the numerator errors and the terms supplied to recursive summation.",
+      "id": "D006",
+      "interpretation": "exp((x_i−x_k)(1+δsub_i))(1+δexp_i).",
+      "name": "Computed shifted exponential",
+      "paper_match": "Matches the shifted exponential evaluation model on page 2321.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Defines the exact denominator contribution other than the selected maximum.",
+      "id": "D007",
+      "interpretation": "The exact sum of exp(x_i−x_k) over all indices except k.",
+      "name": "Exact shifted sum",
+      "paper_match": "Matches s in (4.4).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Defines the exact exponential weights.",
+      "id": "D008",
+      "interpretation": "The ordinary real exponential exp(x_i−x_k).",
+      "name": "Exact shifted exponential",
+      "paper_match": "Matches w_i in Section 4.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Selects the initialization branch for recursive summation.",
+      "id": "D009",
+      "interpretation": "Distinguishes an empty list from its first element and remaining elements.",
+      "name": "Sum initialization cases",
+      "paper_match": "Administrative representation of recursive summation; the retained list is nonempty when n≥2.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Fixes summation order and excludes exactly one index.",
+      "id": "D010",
+      "interpretation": "All indices in increasing order, with only k removed.",
+      "name": "Retained summation indices",
+      "paper_match": "Matches Algorithm 4.1, including arbitrary locations of k and tied maxima.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Requires all stated conditions simultaneously.",
+      "id": "D011",
+      "interpretation": "Logical conjunction.",
+      "name": "Conjunction",
+      "paper_match": "Preserves the simultaneous hypotheses and remainder conditions.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies division for the softmax and error ratios.",
+      "id": "D012",
+      "interpretation": "Extracts ordinary division from the underlying arithmetic structure.",
+      "name": "Division operation",
+      "paper_match": "Matches real quotients; relevant denominators are positive for sufficiently small u.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses existence of a remainder constant and a positive neighborhood.",
+      "id": "D013",
+      "interpretation": "Existential quantification.",
+      "name": "Existence",
+      "paper_match": "Matches the quantified meaning of the quadratic remainder.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Certifies that the index set used for the minimum is nonempty.",
+      "id": "D014",
+      "interpretation": "Introduces an existential witness, here the selected index k.",
+      "name": "Nonempty-set witness",
+      "paper_match": "Adds no assumption beyond the already selected maximum index.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Indexes every input, output, and local error.",
+      "id": "D015",
+      "interpretation": "The n indices from zero through n−1.",
+      "name": "Finite coordinate indices",
+      "paper_match": "Equivalent to the paper's indices from one through n.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Enables complete finite enumeration and the finite-function norm.",
+      "id": "D016",
+      "interpretation": "The coordinate index type has exactly n enumerable elements.",
+      "name": "Finite index enumeration",
+      "paper_match": "Matches an n-component vector.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Provides the finite domain over which the input minimum is taken.",
+      "id": "D017",
+      "interpretation": "Finite sets without duplicate elements.",
+      "name": "Finite sets",
+      "paper_match": "Faithfully represents the finite coordinate set.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Determines xmin in the leading coefficient.",
+      "id": "D018",
+      "interpretation": "The minimum of a real-valued function over a nonempty finite set.",
+      "name": "Finite minimum",
+      "paper_match": "Matches xmin=min_i x_i in (1.6).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets membership in the finite coordinate set.",
+      "id": "D019",
+      "interpretation": "Views a finite set through its ordinary element-membership predicate.",
+      "name": "Finite-set membership interpretation",
+      "paper_match": "Structural support for the input minimum, with no domain change.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Shows that k belongs to the full coordinate set.",
+      "id": "D020",
+      "interpretation": "Every element belongs to the universal finite set.",
+      "name": "Universal-set membership",
+      "paper_match": "Justifies the minimum's nonempty domain without adding a hypothesis.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Ensures that the minimum includes all coordinates.",
+      "id": "D021",
+      "interpretation": "The finite set of all coordinate indices.",
+      "name": "Full coordinate set",
+      "paper_match": "Matches the full range of the minimum in (1.6).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Combines denominator terms, error factors, and bound terms.",
+      "id": "D022",
+      "interpretation": "Addition specialized to the indicated numerical types.",
+      "name": "Addition operator",
+      "paper_match": "Ordinary addition as used in the source formulas.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms computed, exact, and normalized-error quotients.",
+      "id": "D023",
+      "interpretation": "Division specialized to real numbers.",
+      "name": "Quotient operator",
+      "paper_match": "Matches the quotients in (1.4) and (4.11).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Applies relative-error factors and scales bound terms.",
+      "id": "D024",
+      "interpretation": "Ordinary multiplication.",
+      "name": "Multiplication operator",
+      "paper_match": "Matches the multiplicative rounding model.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms the quadratic remainder factor.",
+      "id": "D025",
+      "interpretation": "Exponentiation, here raising u to the natural power two.",
+      "name": "Power operator",
+      "paper_match": "Matches u² in O(u²).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms shifted inputs, output differences, and the input range.",
+      "id": "D026",
+      "interpretation": "Ordinary subtraction.",
+      "name": "Subtraction operator",
+      "paper_match": "Matches the source differences with the correct orientation.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses the size, maximum, error, and conclusion inequalities.",
+      "id": "D027",
+      "interpretation": "Non-strict order on the relevant numerical type.",
+      "name": "Non-strict inequality",
+      "paper_match": "Matches the source's upper bounds.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Requires a genuinely positive asymptotic neighborhood.",
+      "id": "D028",
+      "interpretation": "Strict order, used for ε>0.",
+      "name": "Strict inequality",
+      "paper_match": "Matches the nontrivial neighborhood required by O(u²).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports the nonempty coordinate set used for the minimum.",
+      "id": "D029",
+      "interpretation": "Element membership in a collection.",
+      "name": "Membership predicate",
+      "paper_match": "Structural support only; no additional numerical condition.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Makes the remainder factor u² an ordinary square.",
+      "id": "D030",
+      "interpretation": "Natural powers defined by repeated multiplication.",
+      "name": "Natural powers",
+      "paper_match": "Matches the quadratic order in the source.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Types the dimension and numerical exponents.",
+      "id": "D031",
+      "interpretation": "Nonnegative integers.",
+      "name": "Natural numbers",
+      "paper_match": "Matches the discrete vector dimension n.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Includes the dimension as an exact real coefficient.",
+      "id": "D032",
+      "interpretation": "Canonical embedding of a natural number into the numerical coefficient type.",
+      "name": "Dimension embedding",
+      "paper_match": "Preserves n exactly in n+2+2(xmax−xmin).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports the interpretation of the numeral two.",
+      "id": "D033",
+      "interpretation": "A positive natural number plus one is at least two.",
+      "name": "Numeral lower-bound fact",
+      "paper_match": "Numeral infrastructure; adds no hypothesis on the input.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports construction of positive numerical constants.",
+      "id": "D034",
+      "interpretation": "A natural-number successor is nonzero.",
+      "name": "Successor nonzero fact",
+      "paper_match": "Numeral infrastructure with no change to the proposition.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets displayed numerical constants.",
+      "id": "D035",
+      "interpretation": "The value of a natural-number literal in its specified type.",
+      "name": "Numerical literals",
+      "paper_match": "Preserves the constants zero, one, and two.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Types inputs, local errors, computed quantities, and bounds.",
+      "id": "D036",
+      "interpretation": "The ordinary real numbers.",
+      "name": "Real scalar domain",
+      "paper_match": "Matches the real-vector and real-error setting of the source model.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies exact addition within the explicitly perturbed model.",
+      "id": "D037",
+      "interpretation": "Real addition.",
+      "name": "Real addition",
+      "paper_match": "Rounding is represented by explicit error factors, as in the source analysis.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Provides real division in all ratios.",
+      "id": "D038",
+      "interpretation": "Real multiplication and inversion, with totalized division.",
+      "name": "Real quotient arithmetic",
+      "paper_match": "Agrees with ordinary division on the positive denominators relevant near u=0.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Orders inputs, local errors, and the final bound.",
+      "id": "D039",
+      "interpretation": "The usual non-strict order on real numbers.",
+      "name": "Real non-strict order",
+      "paper_match": "Matches the source inequalities.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses positivity of ε.",
+      "id": "D040",
+      "interpretation": "The usual strict order on real numbers.",
+      "name": "Real strict order",
+      "paper_match": "Ensures a nonempty positive neighborhood for the asymptotic estimate.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports multiplication and natural powers in the remainder.",
+      "id": "D041",
+      "interpretation": "Associative real multiplication with identity one.",
+      "name": "Real multiplicative structure",
+      "paper_match": "Ordinary real algebra used by the source.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Applies error factors and coefficient scaling.",
+      "id": "D042",
+      "interpretation": "Real multiplication.",
+      "name": "Real multiplication",
+      "paper_match": "Matches products in the rounding model and error bound.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Converts n and numerical constants into real values exactly.",
+      "id": "D043",
+      "interpretation": "The canonical natural-number embedding into the reals.",
+      "name": "Natural-to-real conversion",
+      "paper_match": "No rounding or altered dimension coefficient is introduced.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Makes the finite infimum the ordinary minimum of input entries.",
+      "id": "D044",
+      "interpretation": "The real order structure whose binary infimum is minimum.",
+      "name": "Real minimum structure",
+      "paper_match": "Matches xmin in the source.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Computes all real differences in the model and conclusion.",
+      "id": "D045",
+      "interpretation": "Real subtraction as addition of the additive inverse.",
+      "name": "Real subtraction",
+      "paper_match": "Matches x_i−x_k, computed-minus-exact outputs, and xmax−xmin.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies zero for sums and positivity conditions.",
+      "id": "D046",
+      "interpretation": "The real number zero.",
+      "name": "Real zero",
+      "paper_match": "Matches the source's zero initialization and nonnegative quantities.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets coordinate-set membership.",
+      "id": "D047",
+      "interpretation": "Membership induced by viewing a collection as a set.",
+      "name": "Set membership interpretation",
+      "paper_match": "Structural support for the minimum; no numerical alteration.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets zero literals consistently.",
+      "id": "D048",
+      "interpretation": "The numeral zero denotes the additive zero.",
+      "name": "Zero literal interpretation",
+      "paper_match": "Matches ordinary zero in the source.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Routes addition notation to ordinary addition.",
+      "id": "D049",
+      "interpretation": "Addition on a single scalar type.",
+      "name": "Addition specialization",
+      "paper_match": "No change to the source arithmetic.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Routes quotient notation to ordinary scalar division.",
+      "id": "D050",
+      "interpretation": "Division on a single scalar type.",
+      "name": "Division specialization",
+      "paper_match": "Preserves all source ratios.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Routes product notation to ordinary scalar multiplication.",
+      "id": "D051",
+      "interpretation": "Multiplication on a single scalar type.",
+      "name": "Multiplication specialization",
+      "paper_match": "Preserves relative-error factors and bound coefficients.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Routes exponentiation notation to natural powers.",
+      "id": "D052",
+      "interpretation": "Exponentiation using the specified scalar and exponent types.",
+      "name": "Power specialization",
+      "paper_match": "Preserves the square u².",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Routes difference notation to scalar subtraction.",
+      "id": "D053",
+      "interpretation": "Subtraction on a single scalar type.",
+      "name": "Subtraction specialization",
+      "paper_match": "Preserves the source differences.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Enforces n≥2.",
+      "id": "D054",
+      "interpretation": "The usual order on natural numbers.",
+      "name": "Dimension order",
+      "paper_match": "Matches the selected domain identified by the source packet.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets constants at least two through their exact natural-number values.",
+      "id": "D055",
+      "interpretation": "Numerical literals obtained by canonical natural-number embedding.",
+      "name": "Positive numeral interpretation",
+      "paper_match": "Preserves the displayed coefficient and exponent constants.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets dimension and exponent literals as natural numbers.",
+      "id": "D056",
+      "interpretation": "A natural-number literal denotes that natural number.",
+      "name": "Natural numeral interpretation",
+      "paper_match": "Preserves n≥2 and the exponent two.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Applies the selected vector norm.",
+      "id": "D057",
+      "interpretation": "Evaluation of the norm supplied by the vector's norm structure.",
+      "name": "Norm evaluation",
+      "paper_match": "Here evaluates the infinity norm required by (4.11).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Passes the scalar norm to the finite-function norm construction.",
+      "id": "D058",
+      "interpretation": "Forgets commutativity while retaining the same normed arithmetic structure.",
+      "name": "Scalar norm preservation",
+      "paper_match": "Keeps the usual absolute-value norm on real scalars.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Extracts the norm used in the error ratio.",
+      "id": "D059",
+      "interpretation": "Retains the norm from a normed arithmetic structure.",
+      "name": "Norm extraction",
+      "paper_match": "Does not change the infinity norm.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies the one in denominators and relative-error factors.",
+      "id": "D060",
+      "interpretation": "The numeral one denotes the multiplicative identity.",
+      "name": "One literal interpretation",
+      "paper_match": "Matches the constants in 1+s and 1+δ.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Determines the concrete vector norm semantics.",
+      "id": "D061",
+      "interpretation": "A finite product of normed scalar spaces carries the supremum of component norms.",
+      "name": "Finite-product supremum norm",
+      "paper_match": "For real n-vectors this is max_i |v_i|, exactly the source infinity norm.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports negation and absolute values of local errors.",
+      "id": "D062",
+      "interpretation": "The usual additive group of real numbers.",
+      "name": "Real additive structure",
+      "paper_match": "Matches the signed real-error model.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies the exact unit contribution of the selected maximum.",
+      "id": "D063",
+      "interpretation": "The real number one.",
+      "name": "Real one",
+      "paper_match": "Matches exp(x_k−x_k)=1 and all relative-error factors.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports the usual absolute-value operation.",
+      "id": "D064",
+      "interpretation": "The real order lattice with ordinary minimum and maximum.",
+      "name": "Real lattice order",
+      "paper_match": "Gives the standard magnitude semantics used by the source.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies component norms for the vector norm.",
+      "id": "D065",
+      "interpretation": "The real numbers with their usual arithmetic and absolute-value norm.",
+      "name": "Normed real scalars",
+      "paper_match": "Ensures the vector norm is based on |v_i|.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Bounds the magnitude of every local error.",
+      "id": "D066",
+      "interpretation": "For a real number a, the value max(a,−a).",
+      "name": "Absolute value",
+      "paper_match": "Matches |δ|≤u.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Represents the ordered summation inputs.",
+      "id": "D067",
+      "interpretation": "Finite ordered sequences.",
+      "name": "Ordered lists",
+      "paper_match": "Preserves the sequential algorithm's order.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Executes recursive accumulation of the retained computed exponentials.",
+      "id": "D068",
+      "interpretation": "Processes a list from left to right, updating an accumulator.",
+      "name": "Sequential accumulation",
+      "paper_match": "Matches the recursive sum analyzed in Section 4.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Constructs the exact exponential terms in the exact sum.",
+      "id": "D069",
+      "interpretation": "Applies a function to each list element while preserving order.",
+      "name": "Termwise list transformation",
+      "paper_match": "Produces exactly the shifted exponential terms in (4.4).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms the exact reference denominator sum.",
+      "id": "D070",
+      "interpretation": "Adds all list entries using exact real addition and zero.",
+      "name": "Exact finite sum",
+      "paper_match": "Matches exact s; it does not replace the separately defined rounded sum.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Defines the analytic exponential in both exact and perturbed weights.",
+      "id": "D071",
+      "interpretation": "The usual real exponential function.",
+      "name": "Real exponential",
+      "paper_match": "Matches exp in (1.4) and the shifted evaluation model.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies a dummy argument for the empty-list initialization branch.",
+      "id": "D072",
+      "interpretation": "A type with one element.",
+      "name": "Singleton parameter type",
+      "paper_match": "Administrative only; adds no numerical input or restriction.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Turns index inequality into the predicate used to filter summation indices.",
+      "id": "D073",
+      "interpretation": "Returns the truth value of a decidable proposition.",
+      "name": "Boolean decision",
+      "paper_match": "Implements the test that excludes only the selected maximum index.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Distinguishes coordinate indices.",
+      "id": "D074",
+      "interpretation": "Ordinary equality.",
+      "name": "Equality",
+      "paper_match": "Supports the algorithm's comparison of i with k.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Implements the distinction between empty and nonempty summation lists.",
+      "id": "D075",
+      "interpretation": "Case analysis on a list's empty or head-and-tail form.",
+      "name": "List case analysis",
+      "paper_match": "Structural implementation of sum initialization.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Represents the first retained term and the remaining sequence.",
+      "id": "D076",
+      "interpretation": "Constructs a list from a head element and a tail list.",
+      "name": "List extension",
+      "paper_match": "Preserves the ordered recursive summation structure.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Removes k while keeping every other index in order.",
+      "id": "D077",
+      "interpretation": "Retains exactly those list elements satisfying a Boolean predicate.",
+      "name": "Order-preserving filtering",
+      "paper_match": "Matches omission of only the selected maximum from the denominator sum.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Enumerates all coordinates once before filtering.",
+      "id": "D078",
+      "interpretation": "The increasing list of all n finite indices.",
+      "name": "Full ordered index range",
+      "paper_match": "Matches the loop over all coordinates in Algorithm 4.1.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Provides the empty-list base case.",
+      "id": "D079",
+      "interpretation": "The sequence containing no elements.",
+      "name": "Empty list",
+      "paper_match": "Administrative base case; does not remove any source-admissible input.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Specifies which index is excluded from the sum.",
+      "id": "D080",
+      "interpretation": "Negation of equality.",
+      "name": "Index inequality",
+      "paper_match": "Tests i≠k, not whether x_i is strictly below the maximum.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Invokes the empty-list initialization branch.",
+      "id": "D081",
+      "interpretation": "The unique element of the singleton parameter type.",
+      "name": "Singleton value",
+      "paper_match": "Administrative only; no mathematical restriction.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Makes the comparison between i and k executable.",
+      "id": "D082",
+      "interpretation": "Equality of finite coordinate indices is decidable.",
+      "name": "Decidable index equality",
+      "paper_match": "Matches the finite-index comparison in Algorithm 4.1.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Enables the complementary test i≠k.",
+      "id": "D083",
+      "interpretation": "A decidable proposition has a decidable negation.",
+      "name": "Decidable negation",
+      "paper_match": "Completes the exact index-exclusion test without changing its meaning.",
+      "status": "pass"
+    }
+  ],
+  "implications": {
+    "candidate_implies_source": {
+      "reasoning": "For every n≥2, real input vector, and selected maximal index, the candidate defines the same exact softmax and rounded recursive computation. Its finite-function norm is the infinity norm, and its coefficient is exactly n+2+2(xmax−xmin). The witnesses C≥0 and ε>0 provide a uniform quadratic remainder for all admissible local errors, yielding the full selected normwise estimate (4.11).",
+      "verdict": "yes"
+    },
+    "source_implies_candidate": {
+      "reasoning": "Theorem 4.3 in its stated relative-error context gives the same estimate for Algorithm 4.1. The packet specifies uniformity of the quadratic remainder over admissible local errors for fixed input and order. Expressing that remainder as C u² on a sufficiently small positive neighborhood gives precisely the candidate's quantifiers. Its explicit recursive sum and arbitrary maximal index preserve the source algorithm and domain.",
+      "verdict": "yes"
+    }
+  },
+  "mismatches": [],
+  "paper_sha256": "7247047bc49218e001195edc8a2d66131eea7596d252503f34b0ace6328981cd",
+  "rationale": "The candidate faithfully expresses Theorem 4.3, equation (4.11), with the source packet's explicit uniform-remainder interpretation. Exact and computed quantities remain distinct, the denominator retains its rounded recursive sum, every output is included, and no successful-run assumption restricts the input domain.",
+  "requires_adjudication": false,
+  "role": "direct-judge",
+  "semantic_checklist": [
+    {
+      "candidate_evidence": "The target bounds the relative infinity-norm error of shifted softmax by (n+2+2(x_k−min_i x_i))u+C u².",
+      "id": "S01",
+      "paper_evidence": "Theorem 4.3, equation (4.11), printed page 2324.",
+      "reasoning": "The selected result is the shifted softmax normwise forward-error theorem.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Universally quantified natural dimension n≥2, real n-vector x, index k, real u, and four real local-error vectors.",
+      "id": "S02",
+      "paper_evidence": "Algorithm 4.1 uses a real n-vector and a selected maximal entry; the packet selects n≥2.",
+      "reasoning": "The scalar types, vector size, and index domain match.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "For each n, x, and maximal k, C and ε are chosen before universally quantifying u and all local errors.",
+      "id": "S03",
+      "paper_evidence": "The packet requires the quadratic remainder to be uniform over admissible local errors for fixed input and order.",
+      "reasoning": "The remainder constant and neighborhood cannot depend on the individual rounding errors or u.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Assumptions are n≥2, x_i≤x_k for every i, 0≤u≤ε, and all local error magnitudes at most u.",
+      "id": "S04",
+      "paper_evidence": "Section 4 selects any maximal entry and analyzes bounded relative operation errors.",
+      "reasoning": "There is no additional input restriction, execution certificate, or assumed error conclusion.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The conclusion includes all n output components in the normalized infinity-norm error.",
+      "id": "S05",
+      "paper_evidence": "Equation (4.11) is the full normwise conclusion; the packet makes inclusion of the componentwise precursor optional.",
+      "reasoning": "The selected theorem's conclusion is complete without separately asserting its componentwise precursor.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Definitions use ordinary real exponential, exact real arithmetic, explicit relative-error factors, and a finite minimum.",
+      "id": "S06",
+      "paper_evidence": "Equations (1.4), (1.6), and the shifted evaluation model on pages 2321–2324.",
+      "reasoning": "The imported operations have the intended mathematical meanings.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Separate definitions specify exact weights and sums, perturbed weights, a rounded recursive sum, and computed outputs.",
+      "id": "S07",
+      "paper_evidence": "Section 4 distinguishes w_i, s, their computed counterparts, and the exact and computed softmax.",
+      "reasoning": "The forward error compares computed output with exact softmax, without substituting an exact denominator into the computed path.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The index list removes only k; its first computed weight initializes a left-to-right rounded accumulation; all outputs divide by one plus that accumulation.",
+      "id": "S08",
+      "paper_evidence": "Algorithm 4.1 and the recursive summation analysis leading to (4.6).",
+      "reasoning": "The computation is explicitly linked to the source algorithm, including the selected maximum's output.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Both norms use the finite real function space's supremum norm.",
+      "id": "S09",
+      "paper_evidence": "Equation (4.11) uses the infinity norm in numerator and denominator.",
+      "reasoning": "The concrete norm is max_i |v_i|, with no dimension scaling.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The coefficient is n+2+2(x_k−min_i x_i); k is any maximal index and only k is excluded from the sum.",
+      "id": "S10",
+      "paper_evidence": "The coefficient in (4.11) is n+2+2(xmax−xmin); Section 4 permits any maximal index.",
+      "reasoning": "Constants, extrema, tied maxima, and index counts are preserved.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Subtraction, exponential evaluation, recursive addition, and division have explicit bounded relative errors; no separate rounding is inserted for 1+the computed sum.",
+      "id": "S11",
+      "paper_evidence": "The standard model (1.7), shifted exponential model, and computed-output formula preceding Theorem 4.3.",
+      "reasoning": "This matches the selected real relative-error model. For sufficiently small u, computed weights are positive and the computed denominator exceeds zero; exceptional totalized division is therefore irrelevant.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "A non-strict upper bound holds for every admissible local-error choice in a positive neighborhood of u=0.",
+      "id": "S12",
+      "paper_evidence": "Theorem 4.3 asserts a first-order upper bound with a quadratic remainder.",
+      "reasoning": "The candidate preserves the inequality and its asymptotic strength.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The error is ||computed softmax−exact softmax||∞ divided by ||exact softmax||∞.",
+      "id": "S13",
+      "paper_evidence": "Equation (4.11) uses this same normwise relative forward error.",
+      "reasoning": "It is neither backward error nor normalization by the computed result.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "There exist C≥0 and ε>0 such that the remainder contribution is C u² for all 0≤u≤ε and all admissible errors.",
+      "id": "S14",
+      "paper_evidence": "Equation (4.11) contains O(u²), with uniformity clarified in the packet.",
+      "reasoning": "The explicit witnesses faithfully encode the quadratic remainder and retain the displayed first-order coefficient.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "All real inputs of every dimension n≥2 and every maximal index are covered in the algorithm's coordinate order.",
+      "id": "S15",
+      "paper_evidence": "The selected domain is all such vectors; the paper's temporary k=n convention is only notational.",
+      "reasoning": "The candidate neither restricts the maximum's location nor specializes the input values or computation.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Every admissible input permits zero local errors; ε must be positive, and exact softmax has positive components and positive infinity norm.",
+      "id": "S16",
+      "paper_evidence": "Softmax is defined on every real input vector, and the selected theorem gives a substantive forward-error estimate.",
+      "reasoning": "The hypotheses are satisfiable, the error normalization is nonzero, and no run-existence premise makes coverage vacuous.",
+      "status": "pass"
+    }
+  ],
+  "uncertainties": []
+}

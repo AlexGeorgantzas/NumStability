@@ -1,0 +1,135 @@
+{
+  "accepted": true,
+  "candidate_semantic_sha256": "49902039bc2e5b353a2622b2d8d0cee6951a9a5debc3c4286b4370fc37737bd8",
+  "classification": "faithful-stronger",
+  "implications": {
+    "candidate_implies_source": {
+      "reasoning": "Represent any execution of Algorithm 2.1 by its binary computational tree, labeling each internal node with its actual local rounding error. Equation (1.1) supplies the label bounds. Induction identifies E with the computed partial sums and S with the exact partial sums. The contribution list contains exactly the terms of equation (2.3), including the root and all strict-ancestor factors.",
+      "verdict": "yes"
+    },
+    "source_implies_candidate": {
+      "reasoning": "The source result, with its stated floating-point execution assumptions, covers representable inputs and perturbations arising from rounded additions. The candidate additionally covers arbitrary real inputs, arbitrary bounded real perturbation assignments, and arbitrary nonnegative u. These additional executions need not be realizable in floating-point arithmetic. The source's algebraic argument extends to them, but its stated domain does not assert this broader result.",
+      "verdict": "no"
+    }
+  },
+  "mismatches": [],
+  "paper_sha256": "cce25923a86d5d2051a079ad4ae7ea965f1dde97ffb6d3bf6462d069968fd1c6",
+  "rationale": "The candidate preserves the complete exact identity of Lemma 2.2. Its recursive evaluation retains the essential execution linkage: each addition uses computed child values and its own perturbation. It genuinely strengthens the source by extending the identity from floating-point executions to arbitrary bounded real perturbation trees. No source case is excluded, and the conclusion is neither assumed nor replaced by the local recurrence.",
+  "requires_adjudication": false,
+  "role": "roundtrip-judge",
+  "semantic_checklist": [
+    {
+      "id": "S01",
+      "paper_evidence": "Section 2.1, Lemma 2.2, equation (2.3), gives the first explicit expression for the error in Algorithm 2.1.",
+      "reasoning": "The candidate targets this identity, rather than Lemma 2.3 or the later deterministic and probabilistic bounds. The PDF hash matches the supplied identifier.",
+      "status": "pass",
+      "translation_evidence": "The conclusion is E(t)−S(t)=sum(C(t,1)), expanded as the strict-ancestor-weighted sum of exact partial sums times local perturbations."
+    },
+    {
+      "id": "S02",
+      "paper_evidence": "Algorithm 2.1 sums n inputs; its computational tree has real input values at leaves and partial sums at internal vertices.",
+      "reasoning": "Finite binary trees encode all permitted summation shapes and their node occurrences. Real-valued data are appropriate for the arithmetic model; their broader applicability is a strengthening.",
+      "status": "pass",
+      "translation_evidence": "The candidate universally quantifies real u and finite ordered binary trees with real leaves and real internal-node labels."
+    },
+    {
+      "id": "S03",
+      "paper_evidence": "Equation (2.3) applies to the computational tree of any ordering in Algorithm 2.1, with the local errors of that execution.",
+      "reasoning": "All trees and label assignments satisfying the common bound are covered. No special tree or favorable choice of perturbations is substituted for universal coverage.",
+      "status": "pass",
+      "translation_evidence": "For every u and t, the assumptions 0≤u and B(u,t) imply the identity; C is evaluated with initial multiplier 1."
+    },
+    {
+      "id": "S04",
+      "paper_evidence": "Section 1.2 assumes exactly stored inputs, no overflow or underflow, and |δ|≤u. Lemma 2.2 imposes no probabilistic hypothesis.",
+      "reasoning": "Every source execution satisfies the candidate assumptions. Nonnegativity is inherent in unit roundoff, and the candidate adds no restrictive sign, independence, or tree-height condition.",
+      "status": "pass",
+      "translation_evidence": "The only hypotheses are 0≤u and |δ_v|≤u at every internal-node occurrence."
+    },
+    {
+      "id": "S05",
+      "paper_evidence": "Equation (2.3) sums s_k δ_k times the product over k≺j≼n for every k from 2 through n.",
+      "reasoning": "The complete tree-wide expression is present, including the root contribution. It is not merely the parent-error recurrence.",
+      "status": "pass",
+      "translation_evidence": "C includes the current node's contribution and recursively concatenates the contributions of both subtrees."
+    },
+    {
+      "id": "S06",
+      "paper_evidence": "The formula uses ordinary real subtraction, multiplication, finite sums, and products over the tree ancestor relation.",
+      "reasoning": "The recursive definitions and ordinary real operations reproduce these meanings. List ordering does not change a finite real sum, and concatenation preserves multiplicity.",
+      "status": "pass",
+      "translation_evidence": "S, E, and C use ordinary real arithmetic; list summation starts at zero, and concatenation retains repeated occurrences."
+    },
+    {
+      "id": "S07",
+      "paper_evidence": "The paragraph following equation (2.4) emphasizes that equation (2.3) depends on exact partial sums s_k, unlike the alternative involving computed partial sums.",
+      "reasoning": "The candidate keeps exact subtree sums separate from perturbed evaluation and uses the exact quantities in every contribution.",
+      "status": "pass",
+      "translation_evidence": "S ignores perturbation labels, while E incorporates them; each contribution contains S(t_v), not E(t_v)."
+    },
+    {
+      "id": "S08",
+      "paper_evidence": "Immediately before equation (2.1), the computed parent satisfies ŝ_k=(x̂+ŷ)(1+δ_k).",
+      "reasoning": "The recursive execution uses computed children as operands. Labeling an actual source execution with its rounding witnesses makes E equal its computed result by induction.",
+      "status": "pass",
+      "translation_evidence": "E(Node(l,r,δ))=(E(l)+E(r))(1+δ), with E(Leaf(x))=x."
+    },
+    {
+      "id": "S09",
+      "paper_evidence": "The standard model bounds each scalar perturbation by |δ|≤u; equation (2.3) itself is a signed equality.",
+      "reasoning": "Absolute value has its ordinary scalar meaning and is applied only in the perturbation hypotheses. No norm substitutes for the signed error.",
+      "status": "pass",
+      "translation_evidence": "B uses |δ|=max(δ,−δ); the conclusion retains E(t)−S(t) without absolute value."
+    },
+    {
+      "id": "S10",
+      "paper_evidence": "The sum includes k=n, and the product uses strict descendants-to-ancestors ordering k≺j≼n.",
+      "reasoning": "Every internal occurrence contributes once. The current node's factor is passed only to descendants, so a node never receives its own factor in its ancestor product. The root's product is 1.",
+      "status": "pass",
+      "translation_evidence": "C(Node(l,r,δ),a) starts with S(Node(l,r,δ))·δ·a and recurses with a(1+δ); the initial multiplier is 1."
+    },
+    {
+      "id": "S11",
+      "paper_evidence": "Section 1.2 excludes overflow and underflow and states the relative perturbation model (1.1) for floating-point operations.",
+      "reasoning": "All admissible source executions embed in the real perturbation semantics. The candidate does not purport to model exceptional machine values; its additional real executions constitute a genuine extension.",
+      "status": "pass",
+      "translation_evidence": "All quantities are real, leaf evaluation is exact, and each internal addition obeys the multiplicative perturbation equation with a bounded label."
+    },
+    {
+      "id": "S12",
+      "paper_evidence": "Lemma 2.2 states an exact equality for e_n=ŝ_n−s_n.",
+      "reasoning": "The candidate preserves equality rather than weakening it to an inequality, approximation, or one-sided assertion.",
+      "status": "pass",
+      "translation_evidence": "E(t)−S(t)=sum(C(t,1)) is an equality of real numbers."
+    },
+    {
+      "id": "S13",
+      "paper_evidence": "Section 2 defines e_k=ŝ_k−s_k as the forward error.",
+      "reasoning": "The subtraction order and reference value agree. There is no normalization by the exact sum and no backward-error interpretation.",
+      "status": "pass",
+      "translation_evidence": "The left side is perturbed evaluation minus exact leaf sum."
+    },
+    {
+      "id": "S14",
+      "paper_evidence": "Equation (2.3) retains the full products of factors 1+δ_j; first-order truncations appear only later in Section 2.2.",
+      "reasoning": "All mixed and higher-order perturbation terms remain in the recursively accumulated products.",
+      "status": "pass",
+      "translation_evidence": "Each descent multiplies the ancestor accumulator by 1+δ without truncation or remainder notation."
+    },
+    {
+      "id": "S15",
+      "paper_evidence": "Algorithm 2.1 permits arbitrary summation ordering; Section 1.2 places the analysis in floating-point arithmetic with exactly stored inputs.",
+      "reasoning": "No tree shape or sign case is lost. Arbitrary real inputs and bounded perturbation assignments broaden the source's execution domain while preserving its entire conclusion.",
+      "status": "pass",
+      "translation_evidence": "All finite ordered binary trees and real leaf values are allowed, with no upper bound on nonnegative u or positivity requirement on 1+δ."
+    },
+    {
+      "id": "S16",
+      "paper_evidence": "The source derives the global error identity from the actual local computation equations; the packet also includes the one-leaf zero-error case.",
+      "reasoning": "The assumptions are satisfiable for every tree shape, including zero and nonzero bounded perturbations. The global identity is a substantive consequence of the definitions, not a hypothesis. A single leaf gives the required zero-error case.",
+      "status": "pass",
+      "translation_evidence": "B is true at leaves; E(Leaf(x))=S(Leaf(x))=x and C(Leaf(x),1)=[]; zero labels satisfy B(0,t) for every tree."
+    }
+  ],
+  "uncertainties": []
+}

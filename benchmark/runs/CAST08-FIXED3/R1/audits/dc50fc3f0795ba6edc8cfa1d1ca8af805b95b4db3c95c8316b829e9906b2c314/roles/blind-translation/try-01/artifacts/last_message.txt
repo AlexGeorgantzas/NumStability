@@ -1,0 +1,526 @@
+{
+  "ambiguities": [
+    "Several polymorphic declarations display LocalDef007 as a universe-level name. In those positions it is a universe parameter, not the real-valued error-parameter projection D007.",
+    "The external frontier stops before some implementation details, including the private loop used by Fin.foldl. The translation uses the standard meaning of Fin.foldl as an increasing-index left fold; the supplied wrapper alone does not expose the loop's implementation.",
+    "The arithmetic model specifies abstract functions on all real inputs with relative-error axioms. It does not specify a floating-point format, rounding rule, representable-number set, overflow behavior, or underflow behavior."
+  ],
+  "dependency_coverage": [
+    {
+      "effect_on_target": "Defines the computed quantity whose absolute error the target bounds, including its exact grouping and index layout.",
+      "id": "D001",
+      "meaning": "For every arithmetic model fp, natural numbers b and m, and real arrays x,y indexed by Fin((b*m)*m), define T(fp,b,m,x,y) = S(fp,m,s ↦ S(fp,m,j ↦ P(fp,b,i ↦ x((s*m+j)*b+i),i ↦ y((s*m+j)*b+i)))), where S is D009, P is D008, and each flattened index is the bounded index supplied by D005. Thus there are m outer groups, each containing m length-b computed dot products.",
+      "name": "Two-level grouped dot product",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The target universally quantifies over objects of this type, so all model fields and axioms supplied by D006 are implicit assumptions.",
+      "id": "D002",
+      "meaning": "The type of arithmetic models. Its supplied constructor D006 packages a nonnegative real error parameter, five real arithmetic operations, exact addition with a zero left operand, and relative-error axioms.",
+      "name": "Arithmetic model type",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the exact error constant γ_fp(b+2*(m−1)) on the right-hand side.",
+      "id": "D003",
+      "meaning": "For any model fp and n in the natural numbers, γ_fp(n) = ((n cast to the reals)*u)/(1−(n cast to the reals)*u), where u is D007(fp). This is a total real-valued definition using Lean's real division; no validity hypothesis is part of this definition.",
+      "name": "Gamma error factor",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The hypothesis asserts this predicate at n=b+2*(m−1), ensuring the denominator of the target's gamma factor is strictly positive.",
+      "id": "D004",
+      "meaning": "For a model fp and natural number n, validity means ((n cast to the reals)*u)<1.",
+      "name": "Error-factor validity",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Specifies which entries feed each length-b dot product: i varies fastest, then j, then s.",
+      "id": "D005",
+      "meaning": "For b,m in the natural numbers, s,j in Fin m, and i in Fin b, produce the element of Fin((b*m)*m) whose natural-number value is ((s.val*m+j.val)*b+i.val). D010 supplies the proof that this value is in range.",
+      "name": "Flattened block index",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies all assumptions hidden inside fp. The algorithm uses the addition and multiplication functions; subtraction, division, and square root remain required model fields even though the algorithm does not call them.",
+      "id": "D006",
+      "meaning": "Constructs an arithmetic model from u∈R with 0≤u; functions A,B,M,Q:R×R→R for computed addition, subtraction, multiplication, and division; and H:R→R for computed square root. Required laws are: for every real x, A(0,x)=x; for every real x,y, there exists a real δ with |δ|≤u and A(x,y)=(x+y)(1+δ); likewise, separately, there exists such a δ with B(x,y)=(x−y)(1+δ), and separately one with M(x,y)=(xy)(1+δ). For every real x,y with y≠0, there exists such a δ with Q(x,y)=(x/y)(1+δ). For every real x≥0, there exists such a δ with H(x)=sqrt(x)(1+δ). Each existential error may depend on the operation and its operands; no shared δ is required. The functions are total, but the division and square-root error axioms apply only on the stated domains.",
+      "name": "Arithmetic model constructor and axioms",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides u in both the validity condition and the gamma error constant.",
+      "id": "D007",
+      "meaning": "For every arithmetic model, extracts its first field, the real error parameter u. Its nonnegativity is supplied by the model constructor.",
+      "name": "Error-parameter projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines each leaf dot product. For b>0 it uses b computed multiplications and b−1 computed additions, with no addition to zero before the first product.",
+      "id": "D008",
+      "meaning": "For a model fp, n∈N, and x,y:Fin n→R, define P(fp,0,x,y)=0. If n=n′+1, initialize the accumulator to M(x(0),y(0)); then, for i=0,…,n′−1 in increasing order, replace the accumulator by A(acc,M(x(i+1),y(i+1))). Return the final accumulator.",
+      "name": "Sequential computed dot product",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines both summation levels above the leaf dot products. Each fold begins at zero, and A(0,z)=z makes its first update exact.",
+      "id": "D009",
+      "meaning": "For every model fp, n∈N, and v:Fin n→R, initialize a_0=0 and set a_(i+1)=A(a_i,v(i)) for i=0,…,n−1 in increasing order. The computed sum S(fp,n,v) is a_n; for n=0 it is zero.",
+      "name": "Sequential computed sum",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes the flattened array accesses in D005 well-defined. It adds no hypothesis to the target.",
+      "id": "D010",
+      "meaning": "For every b,m∈N, s,j∈Fin m, and i∈Fin b, ((s.val*m+j.val)*b+i.val)<(b*m)*m.",
+      "name": "Flattened index range bound",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Selects the computed addition used by every accumulation step, subject to D006's addition axioms.",
+      "id": "D011",
+      "meaning": "For every arithmetic model fp, extracts its binary real-valued computed addition function A:R×R→R.",
+      "name": "Computed-addition projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Selects the computed multiplication used for each leaf product, subject to D006's multiplication axiom.",
+      "id": "D012",
+      "meaning": "For every arithmetic model fp, extracts its binary real-valued computed multiplication function M:R×R→R.",
+      "name": "Computed-multiplication projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Allows the index literal 0 in Fin(n′+1) when initializing a nonempty dot product.",
+      "id": "D013",
+      "meaning": "For every natural number n′, the natural number n′+1 is nonzero, packaged as a NeZero instance.",
+      "name": "Successor is nonzero",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Implements D008's distinction between an empty vector and a vector with a first element.",
+      "id": "D014",
+      "meaning": "Dependent case analysis for a natural length and two real arrays of that length: for any family C(n,x,y) valued in an arbitrary sort, any n∈N and x,y:Fin n→R, a handler producing C(0,x,y) for every pair of empty arrays, and a handler producing C(n′+1,x,y) for every n′ and pair of arrays of length n′+1, return C(n,x,y) by choosing the appropriate handler. No induction hypothesis is passed to the successor handler.",
+      "name": "Length-dependent array case analysis",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Specifies finite array domains and bounds all local and global indices.",
+      "id": "D015",
+      "meaning": "For every n∈N, Fin n is the type of natural-number indices k satisfying 0≤k<n, represented by a value and a proof of its upper bound. Fin 0 is empty.",
+      "name": "Bounded natural indices",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the finite enumeration used to sum over every global array index.",
+      "id": "D016",
+      "meaning": "For every n∈N, equips Fin n with a finite enumeration obtained from the list finRange n, containing all indices 0,…,n−1 without duplicates.",
+      "name": "Finite enumeration of bounded indices",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the exact reference dot product and the exact sum of absolute products. These sums use ordinary real addition, not computed addition.",
+      "id": "D017",
+      "meaning": "For any index type I, additive commutative monoid M, finite set s of indices, and function f:I→M, sum f over s by mapping f over the underlying multiset and taking its monoid sum. The empty sum is the additive identity.",
+      "name": "Finite-set sum",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Ensures both reference sums include every index of Fin((b*m)*m).",
+      "id": "D018",
+      "meaning": "For any type α equipped with a finite enumeration, univ is the finite set consisting of all elements of α.",
+      "name": "Universal finite set",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets additions in sizes, flattened indices, gamma denominators, and model equations through their specified natural or real instances.",
+      "id": "D019",
+      "meaning": "For types α,β,γ and a heterogeneous addition structure HAdd α β γ, extracts its operation α×β→γ. The result type γ is inferred as an output parameter; the projection itself imposes no arithmetic laws.",
+      "name": "Addition operation projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets products in dimensions, constants, exact reference products, and model equations. Computed multiplication is separately D012.",
+      "id": "D020",
+      "meaning": "For types α,β,γ and a heterogeneous multiplication structure HMul α β γ, extracts its operation α×β→γ, with γ an inferred output parameter.",
+      "name": "Multiplication operation projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Resolves m−1 as natural subtraction and the error difference and gamma denominator as real subtraction.",
+      "id": "D021",
+      "meaning": "For types α,β,γ and a heterogeneous subtraction structure HSub α β γ, extracts its operation α×β→γ, with γ an inferred output parameter.",
+      "name": "Subtraction operation projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses the final real error inequality and the model's nonnegativity and error bounds.",
+      "id": "D022",
+      "meaning": "For a type α equipped with an LE structure, extracts its binary proposition-valued relation ≤. The projection alone does not assert order laws.",
+      "name": "Non-strict comparison projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses positive dimensions, bounded-index conditions, and strict validity of the error factor using the relevant natural or real order.",
+      "id": "D023",
+      "meaning": "For a type α equipped with an LT structure, extracts its binary proposition-valued relation <.",
+      "name": "Strict comparison projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the domain of b,m, lengths, flattened index arithmetic, and the gamma index.",
+      "id": "D024",
+      "meaning": "The natural numbers N={0,1,2,…}, with zero and successor constructors.",
+      "name": "Natural numbers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets numeric literals in their context, including natural constants 0,1,2, real 0 and 1, and the initial bounded index 0.",
+      "id": "D025",
+      "meaning": "For a type α, natural number n, and an OfNat α n instance, extracts the element of α assigned to the numeral n.",
+      "name": "Numeral interpretation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "All array values, operation results, errors, and error bounds are real numbers.",
+      "id": "D026",
+      "meaning": "The type R of real numbers.",
+      "name": "Real numbers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supports exact finite sums in the target, with real zero as the empty sum.",
+      "id": "D027",
+      "meaning": "The usual additive commutative monoid structure on R, inherited from the real commutative ring: real addition is associative and commutative and has identity zero.",
+      "name": "Real additive commutative monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides real negation in the absolute-value construction used for the error and individual products.",
+      "id": "D028",
+      "meaning": "The usual additive group structure on R, including addition, zero, and additive inverses, inherited from the real ring.",
+      "name": "Real additive group",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes the conclusion and model error constraints ordinary real inequalities.",
+      "id": "D029",
+      "meaning": "The non-strict order instance on R, selecting the usual real relation ≤.",
+      "name": "Real non-strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides exact real products in the reference dot product, absolute-product sum, gamma factor, and model axioms.",
+      "id": "D030",
+      "meaning": "The multiplication instance on R, selecting ordinary real multiplication.",
+      "name": "Exact real multiplication",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the exact difference between the computed result and reference sum, and the denominator 1−n*u.",
+      "id": "D031",
+      "meaning": "Real subtraction is defined by a−b=a+(−b).",
+      "name": "Exact real subtraction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the supremum operation used to interpret real absolute value as max(a,−a).",
+      "id": "D032",
+      "meaning": "The usual lattice structure on R inherited from its distributive lattice, whose binary supremum and infimum are maximum and minimum.",
+      "name": "Real lattice",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The error measure is scalar absolute value, and the scale factor is the sum of scalar absolute products. No vector norm is explicitly used.",
+      "id": "D033",
+      "meaning": "For any type with a lattice and an additive group, defines abs(a)=a∨(−a), the lattice supremum of a and its additive inverse. On R this is |a|=max(a,−a).",
+      "name": "Absolute value",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides addition for the gamma index b+2*(m−1), successor lengths, and flattened offsets.",
+      "id": "D034",
+      "meaning": "The addition instance on N is ordinary natural-number addition.",
+      "name": "Natural-number addition",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects addition notation to ordinary natural or real addition in the displayed formulas.",
+      "id": "D035",
+      "meaning": "For any type α with a binary addition operation, constructs HAdd α α α using that same operation.",
+      "name": "Homogeneous addition adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects multiplication notation to the specified natural or real multiplication instance.",
+      "id": "D036",
+      "meaning": "For any type α with a binary multiplication operation, constructs HMul α α α using that same operation.",
+      "name": "Homogeneous multiplication adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects subtraction notation to natural truncated subtraction or real subtraction according to its type.",
+      "id": "D037",
+      "meaning": "For any type α with a binary subtraction operation, constructs HSub α α α using that same operation.",
+      "name": "Homogeneous subtraction adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes hb and hm the ordinary conditions 0<b and 0<m, and supplies bounded-index comparisons.",
+      "id": "D038",
+      "meaning": "The strict-order instance on N is the usual natural-number relation <.",
+      "name": "Natural-number strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the vector length (b*m)*m, index strides, and the factor 2*(m−1).",
+      "id": "D039",
+      "meaning": "The multiplication instance on N is ordinary natural-number multiplication.",
+      "name": "Natural-number multiplication",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Fixes the natural constants appearing in dimension constraints, arithmetic, and case analysis.",
+      "id": "D040",
+      "meaning": "For every n∈N, the numeral n interpreted in N is n itself.",
+      "name": "Natural-number numeral instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The expression m−1 in the gamma index is formally truncated subtraction. Because hm asserts m>0, it equals the ordinary integer difference m−1.",
+      "id": "D041",
+      "meaning": "Subtraction on N is truncated subtraction: a−b=max(a−b,0), with the difference on the right interpreted in the integers.",
+      "name": "Truncated natural subtraction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the real division operation used in γ_fp(n) and in the division-model axiom.",
+      "id": "D042",
+      "meaning": "For any type G equipped with a division-inverse monoid structure, extracts its division structure.",
+      "name": "Division-structure projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses exact real division in the gamma factor and the model's division specification.",
+      "id": "D043",
+      "meaning": "For types α,β,γ and an HDiv α β γ structure, extracts its division operation α×β→γ, with γ an inferred output parameter.",
+      "name": "Division operation projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Converts the natural error-count index into a real number before multiplying by u.",
+      "id": "D044",
+      "meaning": "For any type R equipped with a NatCast structure, uses its specified function N→R to interpret natural numbers in R.",
+      "name": "Natural-number cast",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Allows the real unit to be written as 1 in 1−n*u, n*u<1, and 1+δ.",
+      "id": "D045",
+      "meaning": "For any type α with a designated element one, interprets the numeral 1 as that element.",
+      "name": "Unit numeral adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Determines exact division in γ_fp(n). The target's validity hypothesis avoids division by zero, although the underlying division operation is total.",
+      "id": "D046",
+      "meaning": "The real division-inverse monoid structure uses ordinary multiplication, unit, and inverse, defines a/b=a*b⁻¹, and includes recursively defined integer powers with their zero, successor, and negative-exponent laws. Real inversion is total, with 0⁻¹=0.",
+      "name": "Real division and inverse structure",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes validity the ordinary strict real inequality n*u<1.",
+      "id": "D047",
+      "meaning": "The strict-order instance on R selects the usual real relation <.",
+      "name": "Real strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Ensures the n used in n*u is the exact real image of the natural index, with no computed rounding.",
+      "id": "D048",
+      "meaning": "The natural-number cast into R embeds n as the corresponding real number, implemented through the natural cast into the Cauchy completion of the rationals and its real-number representation.",
+      "name": "Natural-number embedding into the reals",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the exact constant 1 in the gamma formula, validity threshold, and relative-error factors.",
+      "id": "D049",
+      "meaning": "The distinguished multiplicative unit in R is the real number 1.",
+      "name": "Real unit",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects division notation to the real division structure used in the gamma definition and model axiom.",
+      "id": "D050",
+      "meaning": "For any type α with a binary division operation, constructs HDiv α α α using that same operation.",
+      "name": "Homogeneous division adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Each error witness in the arithmetic model must satisfy both the magnitude bound and the corresponding exact equation.",
+      "id": "D051",
+      "meaning": "For propositions p and q, And(p,q) is their conjunction: both p and q hold.",
+      "name": "Logical conjunction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The model equations and the zero-left-addition law are exact equalities of real numbers.",
+      "id": "D052",
+      "meaning": "For any type or sort α and elements a,b∈α, Eq(a,b) asserts equality of those elements.",
+      "name": "Equality",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Quantifies an error δ separately for each operation and its admissible operands. It does not provide a single global error value.",
+      "id": "D053",
+      "meaning": "For any type or sort α and predicate p:α→Prop, Exists(p) asserts that some a∈α satisfies p(a).",
+      "name": "Existential quantification",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Determines sequential accumulation in D008 and D009, so grouping and order are part of the computed algorithm.",
+      "id": "D054",
+      "meaning": "For any accumulator sort α, n∈N, update function f:α×Fin n→α, and initial value a_0∈α, the finite left fold returns a_n after updates a_(i+1)=f(a_i,i) for i=0,…,n−1. The displayed body invokes a private loop starting at index zero; its internal definition is outside the supplied frontier.",
+      "name": "Finite increasing-index left fold",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the initial index 0 in each nonempty dot product as the first bounded index.",
+      "id": "D055",
+      "meaning": "For n∈N with n≠0 and any natural numeral i, supplies its interpretation in Fin n through Fin.ofNat n i, the bounded index with value i modulo n.",
+      "name": "Bounded-index numeral instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Builds the flattened index from its arithmetic value and D010's range proof.",
+      "id": "D056",
+      "meaning": "For n∈N, a natural value k, and a proof k<n, constructs the bounded index k∈Fin n.",
+      "name": "Bounded-index constructor",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Shifts the fold's indices so that the dot-product loop visits entries 1,…,n−1 after initializing from entry 0.",
+      "id": "D057",
+      "meaning": "For every n∈N, sends an index i∈Fin n to the index with value i.val+1 in Fin(n+1). The upper bound follows by taking successors of i.val<n.",
+      "name": "Bounded-index successor",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Extracts the natural values of s,j,i when calculating the flattened position.",
+      "id": "D058",
+      "meaning": "For every n∈N, maps an element of Fin n to its underlying natural-number value.",
+      "name": "Bounded-index value projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Restricts the division-model axiom to nonzero denominators and supports the nonzero-length condition for bounded numerals.",
+      "id": "D059",
+      "meaning": "For any type or sort and elements a,b, a≠b is defined as the negation of a=b.",
+      "name": "Inequality as negated equality",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies exact real addition in reference sums, gamma expressions, and relative-error specifications; computed addition remains a separate model function.",
+      "id": "D060",
+      "meaning": "The addition instance on R selects ordinary real addition.",
+      "name": "Exact real addition",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies fold initial values, the empty dot product, and zero in the model's domain and nonnegativity conditions.",
+      "id": "D061",
+      "meaning": "The designated additive zero in R is the real number 0.",
+      "name": "Real zero",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Occurs only in the arithmetic model's square-root axiom; the target algorithm does not evaluate square roots.",
+      "id": "D062",
+      "meaning": "The total real square-root function converts x to the nonnegative real max(x,0), takes its nonnegative square root, and converts back to R. Thus it is the usual nonnegative square root for x≥0 and zero for x<0.",
+      "name": "Total real square root",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Allows real zero to be written as the numeral 0 in fold initialization and model axioms.",
+      "id": "D063",
+      "meaning": "For any type α with a designated zero element, interprets the numeral 0 as that element.",
+      "name": "Zero numeral adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Underlies D014's empty/nonempty length split in the computed dot product.",
+      "id": "D064",
+      "meaning": "For any family C:N→Sort, natural number t, value z∈C(0), and function h assigning an element of C(n+1) to every n∈N, returns z when t=0 and h(n) when t=n+1. Although implemented using natural-number recursion, this case eliminator ignores the recursive hypothesis.",
+      "name": "Natural-number case analysis",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Represents the positive-length case n=n′+1 and the increment used in bounded indices.",
+      "id": "D065",
+      "meaning": "The successor constructor maps each n∈N to n+1.",
+      "name": "Natural-number successor",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Represents the empty-length case of the dot-product definition.",
+      "id": "D066",
+      "meaning": "The zero constructor is the natural number 0.",
+      "name": "Natural-number zero",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Packages the nonzero successor length required to interpret 0 as an element of Fin(n′+1). It introduces no additional target hypothesis.",
+      "id": "D067",
+      "meaning": "For any type R with a zero element and n∈R, NeZero(n) is the proposition, packaged as a typeclass, that n≠0.",
+      "name": "Nonzero-element proposition",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the natural zero used in the NeZero conditions supporting bounded-index numerals.",
+      "id": "D068",
+      "meaning": "For any type α with an interpretation of the numeral 0, constructs a zero structure whose designated zero is that numeral's value.",
+      "name": "Zero structure from a numeral",
+      "status": "understood"
+    }
+  ],
+  "role": "blind-translation",
+  "semantic_sha256": "dc50fc3f0795ba6edc8cfa1d1ca8af805b95b4db3c95c8316b829e9906b2c314",
+  "translation": {
+    "binders": [
+      "Universally quantify an arithmetic model fp of the type described below.",
+      "Universally quantify b,m∈N, then proofs hb:0<b and hm:0<m.",
+      "Universally quantify x,y:Fin((b*m)*m)→R. Their entries are arbitrary real numbers.",
+      "Finally quantify a proof hvalid that ((b+2*(m−1)) cast to R)*u<1, where u belongs to fp and m−1 is natural-number subtraction."
+    ],
+    "conclusions": [
+      "Let N=(b*m)*m and q=b+2*(m−1). Then |T(fp,b,m,x,y)−Σ_{k=0}^{N−1} x(k)y(k)| ≤ γ_fp(q) * Σ_{k=0}^{N−1}|x(k)y(k)|.",
+      "Equivalently, the absolute forward error is at most ((q*u)/(1−q*u)) times the exact sum of absolute products, with q cast to R in this fraction. All arithmetic in this bound and both reference sums is exact real arithmetic."
+    ],
+    "hypotheses": [
+      "The model has a real parameter u≥0; total binary functions A,B,M,Q:R×R→R for computed addition, subtraction, multiplication, and division; and a total function H:R→R for computed square root.",
+      "For every x∈R, A(0,x)=x.",
+      "For every x,y∈R, there exists δ∈R with |δ|≤u and A(x,y)=(x+y)(1+δ). Separately, for every x,y there exists such a δ for B(x,y)=(x−y)(1+δ), and separately one for M(x,y)=xy(1+δ).",
+      "For every x,y∈R with y≠0, there exists δ∈R with |δ|≤u and Q(x,y)=(x/y)(1+δ). For every x∈R with x≥0, there exists δ∈R with |δ|≤u and H(x)=sqrt(x)(1+δ). These witnesses may depend on the operation and its operands.",
+      "The dimensions satisfy b>0 and m>0.",
+      "For q=b+2*(m−1), q*u<1. Together with u≥0 this implies 0≤q*u<1 and 1−q*u>0."
+    ],
+    "mathematical_definitions": [
+      "Fin n denotes {0,…,n−1}; an array Fin n→R is a real vector of length n with zero-based indices.",
+      "For any n∈N, γ_fp(n)=((n cast to R)*u)/(1−(n cast to R)*u). Validity at n means ((n cast to R)*u)<1. Real division is total in the underlying formalism, but the target uses a strictly positive denominator.",
+      "For v:Fin n→R, define S(fp,n,v) by a_0=0 and a_(r+1)=A(a_r,v(r)) for r=0,…,n−1, returning a_n.",
+      "For x,y:Fin n→R, define P(fp,0,x,y)=0. For n>0 set p_0=M(x(0),y(0)), then p_r=A(p_(r−1),M(x(r),y(r))) for r=1,…,n−1, and return p_(n−1).",
+      "For s,j∈Fin m and i∈Fin b, define K(s,j,i)=(s*m+j)*b+i as an index in Fin((b*m)*m). Thus each pair (s,j) specifies a contiguous block of length b.",
+      "Define d(s,j)=P(fp,b,i↦x(K(s,j,i)),i↦y(K(s,j,i))). Define r(s)=S(fp,m,j↦d(s,j)). The target's computed value is T(fp,b,m,x,y)=S(fp,m,s↦r(s)). Each fold proceeds in increasing index order.",
+      "The scalar absolute value is |z|=max(z,−z). The right-hand scale Σ_k|x(k)y(k)| is the exact sum of absolute coordinatewise products; the statement does not use a relative error divided by the exact dot product.",
+      "The count q is computed in N as b+2*(m−1), with truncated subtraction. Since m>0, this is the ordinary nonnegative integer b+2m−2. Its b term accounts for the maximum product-and-leaf-accumulation error depth, and each of the two upper summation levels contributes m−1 potentially inexact additions because A(0,z)=z."
+    ],
+    "proposition_plain_english": "For every arithmetic model satisfying the stated relative-error axioms and exact addition with a zero left operand, every pair of positive natural dimensions b,m, and every pair of real vectors of length b*m*m, compute length-b dot products in contiguous blocks, sum m such block results for each outer group, and then sum the m outer-group results, using the specified sequential computed operations. If (b+2*(m−1))*u<1, the absolute difference between this computed result and the exact dot product is bounded by γ_fp(b+2*(m−1)) times the exact sum of the absolute coordinatewise products."
+  },
+  "vacuity_risks": [
+    "For b=0 or m=0 the positive-dimension hypotheses cannot be supplied, so the target makes no claim about those cases. Its reference sums are never empty under its hypotheses.",
+    "For any fixed model and dimensions failing q*u<1, the target's implication is vacuous. Because q≥1, a model with u≥1 has no admissible positive dimensions.",
+    "The model assumptions are jointly satisfiable: choose u=0 and all five operations to be exact real operations. This also satisfies validity for every positive b,m, so the theorem is not globally vacuous.",
+    "The relative-error axioms force computed addition and multiplication to return zero whenever their exact result is zero. This is a substantive model restriction, not an assumption that the input vectors or dot product are nonzero.",
+    "If Σ_k|x(k)y(k)|=0, the bound requires the computed result to equal the exact dot product, namely zero. If the exact dot product is zero through cancellation while the absolute-product sum is positive, the conclusion remains a meaningful absolute-error bound.",
+    "The target asserts no representability restriction on input entries and no hardware-format guarantee. Its scope is exactly the abstract real-function model, including its globally quantified addition, subtraction, and multiplication axioms."
+  ]
+}

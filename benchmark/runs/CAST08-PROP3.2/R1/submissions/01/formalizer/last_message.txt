@@ -1,0 +1,5 @@
+[Candidate.lean](/workspace/Candidate.lean) now states the full positive-`t` equal-block superblock dot-product bound, including `t = 1` and `t = 2`. Its evaluator rounds every input product and combines contiguous blocks left to right at each level. The target has exactly one proof hole, as required for this stage.
+
+The PDF hash matched the task packet. `lean --root . -o Candidate.olean Candidate.lean` compiled with only the expected `sorry` warning.
+
+The statement follows the mathematical hierarchy in Section 3 and Figure 3.2. Figure 3.1(a)’s printed carry loop skips level zero, so its literal code does not implement that hierarchy.

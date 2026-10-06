@@ -1,0 +1,553 @@
+{
+  "accepted": true,
+  "candidate_semantic_sha256": "365fe6f80abf57f2fd3d592a28e86c517c55d144e219d5be7d6385138b3fd5bc",
+  "classification": "faithful-stronger",
+  "dependency_coverage": [
+    {
+      "effect_on_target": "Links the error bound to the computed sum.",
+      "id": "D001",
+      "interpretation": "Accumulates computed exponentials in increasing index order, copying the first term and multiplying each subsequent addition by 1+ε_i.",
+      "name": "Rounded recursive sum",
+      "paper_match": "Matches Algorithm 3.1; adding the first computed term to zero is exact.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies the exact reference value and error scale.",
+      "id": "D002",
+      "interpretation": "The exact real sum s=Σ_i exp(x_i).",
+      "name": "Exact exponential sum",
+      "paper_match": "Matches s in equations (3.1)–(3.3).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Includes both summation and exponential evaluation errors.",
+      "id": "D003",
+      "interpretation": "Defines Δs=(ŝ−s̃)+(s̃−s), equal to ŝ−s.",
+      "name": "Total forward error",
+      "paper_match": "Matches the error decomposition preceding (3.2) and the perturbation in (3.3).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Models the exponential evaluation stage.",
+      "id": "D004",
+      "interpretation": "The computed term is exp(x_i)(1+δ_i).",
+      "name": "Computed exponential",
+      "paper_match": "Matches equation (3.1).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Separates evaluation error from summation error.",
+      "id": "D005",
+      "interpretation": "The exact real sum of the computed exponential terms.",
+      "name": "Exact sum of computed terms",
+      "paper_match": "Matches s̃ on printed page 2317.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Requires both the computed-value identity and error inequality.",
+      "id": "D006",
+      "interpretation": "Logical conjunction.",
+      "name": "Conjunction",
+      "paper_match": "Matches the two assertions in (3.3).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses exact equality and identifies the first index.",
+      "id": "D007",
+      "interpretation": "Ordinary equality.",
+      "name": "Equality",
+      "paper_match": "Matches the exact identity ŝ=s+Δs.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Gives exactly n input and local-error coordinates.",
+      "id": "D008",
+      "interpretation": "The finite index set 0,…,n−1.",
+      "name": "Finite index type",
+      "paper_match": "Equivalent to the paper's indexing 1,…,n.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms sums, local perturbation factors, and the bound.",
+      "id": "D009",
+      "interpretation": "Addition with the specified natural or real arithmetic.",
+      "name": "Addition operator",
+      "paper_match": "Matches ordinary mathematical addition.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms relative-error factors and scales the bound.",
+      "id": "D010",
+      "interpretation": "Ordinary real multiplication in its target uses.",
+      "name": "Multiplication operator",
+      "paper_match": "Matches multiplication in the source error model.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses the explicit quadratic remainder.",
+      "id": "D011",
+      "interpretation": "Exponentiation, instantiated with real bases and natural exponents.",
+      "name": "Power operator",
+      "paper_match": "Correctly expresses u² and the finite remainder coefficient.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "States local-error constraints and the final upper bound.",
+      "id": "D012",
+      "interpretation": "Non-strict order.",
+      "name": "Non-strict inequality",
+      "paper_match": "Matches the source's ≤ relations.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Restricts n to positive integers.",
+      "id": "D013",
+      "interpretation": "Strict order, used for 0<n.",
+      "name": "Strict inequality",
+      "paper_match": "Matches the positive-length source domain.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Fixes the meaning of the powers in the remainder.",
+      "id": "D014",
+      "interpretation": "Natural powers defined by repeated multiplication.",
+      "name": "Natural powers",
+      "paper_match": "Uses ordinary powers without a changed exponent convention.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Types lengths, indices, and exponents.",
+      "id": "D015",
+      "interpretation": "Natural numbers.",
+      "name": "Natural-number domain",
+      "paper_match": "Matches integer dimensions and indexing.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets n+1 as an exact real coefficient.",
+      "id": "D016",
+      "interpretation": "Canonical embedding of natural numbers into the chosen number system.",
+      "name": "Natural-number embedding",
+      "paper_match": "Preserves the source coefficient n+1 exactly.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports the interpretation of the numeral 2.",
+      "id": "D017",
+      "interpretation": "A nonzero natural number plus one is at least two.",
+      "name": "Successor lower bound",
+      "paper_match": "Arithmetic support only; adds no hypothesis on the inputs.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports numeral construction.",
+      "id": "D018",
+      "interpretation": "Every natural successor is nonzero.",
+      "name": "Successor nonzeroness",
+      "paper_match": "Arithmetic support only; imposes no source-domain restriction.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies numerical constants in their specified types.",
+      "id": "D019",
+      "interpretation": "Interpretation of natural-number literals.",
+      "name": "Numeral interpretation",
+      "paper_match": "Preserves the values of all displayed constants.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies 1 in perturbation factors and coefficients.",
+      "id": "D020",
+      "interpretation": "Interprets the literal 1 as the multiplicative identity.",
+      "name": "Unit numeral",
+      "paper_match": "Matches the source's constant 1.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Types inputs, errors, and exact mathematical quantities.",
+      "id": "D021",
+      "interpretation": "The real numbers.",
+      "name": "Real-number domain",
+      "paper_match": "Matches real inputs and the real-valued rounding-error model.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies exact addition within the mathematical model.",
+      "id": "D022",
+      "interpretation": "Standard real addition.",
+      "name": "Real addition",
+      "paper_match": "Rounding is separately represented by local factors, as in (1.7).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports negation, subtraction, and absolute value.",
+      "id": "D023",
+      "interpretation": "The usual additive group structure of the reals.",
+      "name": "Real additive structure",
+      "paper_match": "Matches ordinary signed real errors.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Orders the local errors and total-error bound.",
+      "id": "D024",
+      "interpretation": "The usual non-strict order on real numbers.",
+      "name": "Real order",
+      "paper_match": "Matches the inequalities in the source.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports real natural powers.",
+      "id": "D025",
+      "interpretation": "The usual multiplicative structure of the reals.",
+      "name": "Real multiplicative structure",
+      "paper_match": "Preserves ordinary multiplication and powers.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Combines exponential values, error factors, and coefficients.",
+      "id": "D026",
+      "interpretation": "Standard real multiplication.",
+      "name": "Real multiplication",
+      "paper_match": "Matches the source's relative-error formulas.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Embeds integer coefficients without rounding.",
+      "id": "D027",
+      "interpretation": "The canonical natural-number embedding into the reals.",
+      "name": "Real integer coefficients",
+      "paper_match": "Matches the exact coefficient n+1.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies the unit in every local perturbation factor.",
+      "id": "D028",
+      "interpretation": "The real number 1.",
+      "name": "Real unit",
+      "paper_match": "Matches 1+δ and 1+ε.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Initializes the accumulator and bounds u below.",
+      "id": "D029",
+      "interpretation": "The real number 0.",
+      "name": "Real zero",
+      "paper_match": "Matches the initial sum and nonnegative roundoff parameter.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies the maximum operation used by absolute value.",
+      "id": "D030",
+      "interpretation": "The usual minimum and maximum operations on ordered reals.",
+      "name": "Real lattice",
+      "paper_match": "Produces the ordinary scalar absolute value.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets zero literals consistently.",
+      "id": "D031",
+      "interpretation": "The zero numeral is the additive identity.",
+      "name": "Zero numeral",
+      "paper_match": "Matches ordinary zero in the source.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Measures local relative errors and total absolute error.",
+      "id": "D032",
+      "interpretation": "For reals, |a|=max(a,−a).",
+      "name": "Scalar absolute value",
+      "paper_match": "Exactly matches the scalar magnitudes in (3.1)–(3.3).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms n+1 in the coefficient and remainder exponent.",
+      "id": "D033",
+      "interpretation": "Standard natural-number addition.",
+      "name": "Natural addition",
+      "paper_match": "Preserves the intended dimension dependence.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Connects addition notation to the specified arithmetic.",
+      "id": "D034",
+      "interpretation": "Uses the underlying ordinary addition operation.",
+      "name": "Addition dispatch",
+      "paper_match": "No alternative addition semantics are introduced.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Connects multiplication notation to real multiplication.",
+      "id": "D035",
+      "interpretation": "Uses the underlying ordinary multiplication operation.",
+      "name": "Multiplication dispatch",
+      "paper_match": "No alternative multiplication semantics are introduced.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Connects power notation to natural powers of reals.",
+      "id": "D036",
+      "interpretation": "Uses the specified ordinary exponentiation operation.",
+      "name": "Power dispatch",
+      "paper_match": "Preserves the quadratic order of the remainder.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Gives the positive-length condition its ordinary meaning.",
+      "id": "D037",
+      "interpretation": "Standard strict order on natural numbers.",
+      "name": "Natural strict order",
+      "paper_match": "Matches n>0.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets the real numeral 2.",
+      "id": "D038",
+      "interpretation": "Numerals at least two are interpreted through the canonical natural-number embedding.",
+      "name": "Larger numeral interpretation",
+      "paper_match": "Preserves the numerical remainder coefficient.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies natural constants for indexing and exponents.",
+      "id": "D039",
+      "interpretation": "A natural-number literal denotes that natural number.",
+      "name": "Natural numerals",
+      "paper_match": "Matches the ordinary integer constants.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Ensures exact sums include every coordinate once.",
+      "id": "D040",
+      "interpretation": "The complete finite enumeration of the n indices.",
+      "name": "Finite index enumeration",
+      "paper_match": "Matches summing over all n inputs.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Identifies the first coordinate in the accumulation.",
+      "id": "D041",
+      "interpretation": "Extracts the integer value of a bounded index.",
+      "name": "Index value",
+      "paper_match": "Correctly implements the first-term case under zero-based indexing.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Defines exact reference and intermediate sums.",
+      "id": "D042",
+      "interpretation": "Exact finite summation using the specified additive structure.",
+      "name": "Exact finite sum",
+      "paper_match": "Matches s and s̃; it is not substituted for the rounded accumulation.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Selects all input coordinates for the exact sums.",
+      "id": "D043",
+      "interpretation": "The full finite set of indices.",
+      "name": "Universal finite index set",
+      "paper_match": "Matches the full range 1,…,n after reindexing.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms the two error contributions.",
+      "id": "D044",
+      "interpretation": "Ordinary subtraction with the supplied real arithmetic.",
+      "name": "Subtraction operator",
+      "paper_match": "Matches differences between exact and computed quantities.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Fixes the accumulation order.",
+      "id": "D045",
+      "interpretation": "The ordered list 0,1,…,n−1.",
+      "name": "Increasing index list",
+      "paper_match": "Matches the left-to-right loop in Algorithm 3.1.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Executes the recursive accumulation.",
+      "id": "D046",
+      "interpretation": "A left fold that passes each updated accumulator to the next list element.",
+      "name": "Left accumulation",
+      "paper_match": "Matches sequential summation rather than a different reduction order.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies exact positive exponential values.",
+      "id": "D047",
+      "interpretation": "The standard real exponential function.",
+      "name": "Real exponential",
+      "paper_match": "Matches exp(x_i); evaluation error is introduced separately.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports exact finite real summation.",
+      "id": "D048",
+      "interpretation": "The usual commutative additive structure of the reals.",
+      "name": "Exact-sum additive structure",
+      "paper_match": "Appropriate for s and s̃ without changing the rounded summation order.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Computes signed errors between real quantities.",
+      "id": "D049",
+      "interpretation": "Real subtraction as addition of the negative.",
+      "name": "Real subtraction",
+      "paper_match": "Matches the source error decomposition.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Determines whether the current index is zero.",
+      "id": "D050",
+      "interpretation": "The ordinary decision procedure for equality of natural numbers.",
+      "name": "Index equality decision",
+      "paper_match": "Supports the exact first-term case without a numerical assumption.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Connects subtraction notation to real subtraction.",
+      "id": "D051",
+      "interpretation": "Uses the underlying ordinary subtraction operation.",
+      "name": "Subtraction dispatch",
+      "paper_match": "Preserves the intended signed differences.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Selects first-term copying or a rounded subsequent addition.",
+      "id": "D052",
+      "interpretation": "An ordinary conditional expression.",
+      "name": "First-term conditional",
+      "paper_match": "Matches exact addition to zero followed by n−1 potentially rounded additions.",
+      "status": "pass"
+    }
+  ],
+  "implications": {
+    "candidate_implies_source": {
+      "reasoning": "The candidate covers every positive n, real input vector, and admissible local rounding-error sequence. Its computed sum matches Algorithm 3.1. It states ŝ=s+Δs and |Δs|≤(n+1)us+2^(n+1)su². For fixed n and x, the quadratic coefficient is finite and independent of all local errors, yielding precisely (3.3).",
+      "verdict": "yes"
+    },
+    "source_implies_candidate": {
+      "reasoning": "Equation (3.3) specifies an asymptotic quadratic remainder without a numerical constant or a guarantee throughout 0≤u≤1. That assertion does not itself supply the candidate's explicit remainder bound 2^(n+1)su² on the entire stated interval.",
+      "verdict": "no"
+    }
+  },
+  "mismatches": [],
+  "paper_sha256": "7247047bc49218e001195edc8a2d66131eea7596d252503f34b0ace6328981cd",
+  "rationale": "The candidate preserves the selected positive exponential-sum result, both error sources, and the actual sequential computation. It genuinely strengthens the asymptotic conclusion by supplying an explicit uniform quadratic remainder on 0≤u≤1. The roundoff interval includes the source's unit roundoffs, and no successful-run or other additional domain condition is imposed.",
+  "requires_adjudication": false,
+  "role": "direct-judge",
+  "semantic_checklist": [
+    {
+      "candidate_evidence": "The target concerns the unshifted exponential sum and its total error.",
+      "id": "S01",
+      "paper_evidence": "Section 3, Algorithm 3.1 and equations (3.1)–(3.3), printed pages 2316–2318.",
+      "reasoning": "The selected result is the sum bound (3.3), rather than a later logarithm or softmax theorem.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Positive natural n; real input coordinates, u, and two real local-error vectors.",
+      "id": "S02",
+      "paper_evidence": "Real x∈R^n and scalar local relative errors bounded by unit roundoff.",
+      "reasoning": "The types and positive dimension match, with harmless zero-based indexing.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Universally quantifies n, x, u, δ, and ε subject only to the stated bounds.",
+      "id": "S03",
+      "paper_evidence": "The analysis applies to all admissible inputs and local rounding errors.",
+      "reasoning": "No favorable error sequence is selected; the remainder is independent of the errors.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Assumes n>0, 0≤u≤1, and |δ_i|,|ε_i|≤u.",
+      "id": "S04",
+      "paper_evidence": "The standard model (1.7), exponential model (3.1), and absence of overflow or underflow.",
+      "reasoning": "These encode the source's admissible model. The interval for u includes ordinary unit roundoffs and introduces no small-nu restriction.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Asserts both ŝ=s+Δs and |Δs|≤((n+1)u+2^(n+1)u²)s.",
+      "id": "S05",
+      "paper_evidence": "Equation (3.3) asserts ŝ=s+Δs and |Δs|≤(n+1)us+O(u²).",
+      "reasoning": "Both components of the selected conclusion are present.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Uses ordinary real exponential, finite sums, arithmetic, absolute value, and an ordered left accumulation.",
+      "id": "S06",
+      "paper_evidence": "The source uses positive exponentials and ordinary sequential floating-point addition.",
+      "reasoning": "The supplied definitions retain the mathematical operations and their intended roles.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Separately defines exact exponentials, computed exponentials, their exact sum, and their rounded recursive sum.",
+      "id": "S07",
+      "paper_evidence": "The source distinguishes w_i, ŵ_i, s, s̃, and ŝ.",
+      "reasoning": "No exact quantity is substituted for a computed quantity.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The bounded output is a left fold over increasing indices with relative errors at subsequent additions.",
+      "id": "S08",
+      "paper_evidence": "Algorithm 3.1 evaluates each exponential and accumulates from left to right.",
+      "reasoning": "The first addition to zero is exact; all remaining additions follow the source model.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Uses ordinary scalar absolute value for Δs and local errors.",
+      "id": "S09",
+      "paper_evidence": "Equation (3.3) bounds |Δs|.",
+      "reasoning": "There is no substituted vector norm or altered scalar magnitude.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The linear coefficient is exactly n+1; coordinates range from 0 through n−1.",
+      "id": "S10",
+      "paper_evidence": "Equation (3.3) has coefficient n+1 and the algorithm indexes 1 through n.",
+      "reasoning": "Reindexing preserves the order, term count, and required coefficient.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Computed values are real expressions with bounded multiplicative errors; no run-existence premise appears.",
+      "id": "S11",
+      "paper_evidence": "The source excludes overflow and underflow and uses the standard relative-error model.",
+      "reasoning": "The abstraction covers all source-admissible executions without introducing exceptional-value or successful-operation restrictions.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Provides an exact identity and a non-strict finite upper bound with an explicit quadratic term.",
+      "id": "S12",
+      "paper_evidence": "The source provides the identity and an asymptotic non-strict upper bound.",
+      "reasoning": "The candidate strengthens the quantitative remainder guarantee.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Δs is the total forward difference ŝ−s, decomposed through s̃.",
+      "id": "S13",
+      "paper_evidence": "The source combines exponential evaluation and summation errors before (3.3).",
+      "reasoning": "The bound measures the same absolute forward error and includes both contributions.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The remainder is 2^(n+1)su².",
+      "id": "S14",
+      "paper_evidence": "Equation (3.3) retains an O(u²) remainder.",
+      "reasoning": "For fixed n and x, its coefficient is finite and uniform over admissible local errors; the linear coefficient remains exactly n+1.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Covers all positive dimensions and real input vectors, with explicit finite control for 0≤u≤1.",
+      "id": "S15",
+      "paper_evidence": "The selected source domain consists of positive-length inputs under the stated floating-point model.",
+      "reasoning": "No proper subset of source-admissible inputs is selected; the additional quantitative control is a genuine strengthening.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Zero local errors are admissible for every positive n and every real input vector; the recursive computation is total.",
+      "id": "S16",
+      "paper_evidence": "The result concerns nonempty sums of strictly positive exact exponentials.",
+      "reasoning": "The hypotheses are satisfiable, s>0, and the conclusion is neither assumed nor made vacuous.",
+      "status": "pass"
+    }
+  ],
+  "uncertainties": []
+}

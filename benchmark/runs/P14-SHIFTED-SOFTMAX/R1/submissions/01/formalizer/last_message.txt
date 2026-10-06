@@ -1,0 +1,3 @@
+Wrote the source-faithful Theorem 4.3 statement in [Candidate.lean](/workspace/Candidate.lean). It covers every maximal-index choice, all softmax outputs, the ordered recursive sum, and uniform local rounding errors. The only proof hole is the required target `sorry`.
+
+`lean --root . -o Candidate.olean Candidate.lean` compiles with the expected `sorry` warning.

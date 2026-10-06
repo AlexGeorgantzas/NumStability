@@ -1,0 +1,17 @@
+2026-09-25T01:20:20.117223Z ERROR codex_core::tools::router: error=apply_patch verification failed: invalid patch: multiple operations target /workspace/Candidate.lean
+2026-09-25T01:39:53.243099Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:
+          have hmStr : 2 ^ (F.precision - 1) + 1 ≤ m := by omega
+          have hpStr : (2 : ℝ) ^ F.precision ≤ 2 * (m : ℝ) - 1 := by
+            rw [hpowR]
+            exact_mod_cast (show 2 * 2 ^ (F.precision - 1) ≤ 2 * m - 1 by omega)
+2026-09-25T01:41:47.263839Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:
+    have h := F.rounding_add_le_u_abs ha hb hy
+    rw [hzero] at h
+    simp only [abs_zero, mul_zero, nonpos_iff_eq_zero] at h
+    have he : a + b = 0 := by linarith
+2026-09-25T01:43:30.356636Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:
+          |b| + (n : ℝ) * F.unitRoundoff * A := add_le_add hsmall hprev
+          _ ≤ ((n + 1 : ℕ) : ℝ) * F.unitRoundoff * (A + |b|) := by
+            have hprod : 0 ≤ ((n + 1 : ℕ) : ℝ) * F.unitRoundoff * |b| := by positivity
+            push_cast
+            nlinarith

@@ -1,0 +1,3 @@
+[Candidate.lean](/workspace/Candidate.lean:42) now states the fixed three-level superblock forward-error bound with consecutive length-`b` blocks, rounded products, two outer summation levels, and the `gamma fp (b + 2 * (m - 1))` radius.
+
+The paper PDF hash matches `source/task.md`. `Candidate.lean` compiles; its sole proof hole is the required `sorry` for `target`. This is a correlated reserve from the same paper as Proposition 3.2, not an independent-paper replicate.

@@ -1,0 +1,34 @@
+{
+  "schema_version": "formalization-source-packet-1",
+  "task_id": "CAST08-FIXED3",
+  "scientific_role": "candidate_pending_independent_source_review",
+  "selected_result": "Castaldo–Whaley–Chronopoulos Section 3.1: forward-error bound for the fixed-block, three-level superblock dot product of Figure 3.1(b)",
+  "bibliographic_source": {
+    "authors": ["Anthony M. Castaldo", "R. Clint Whaley", "Anthony T. Chronopoulos"],
+    "title": "Reducing Floating Point Error in Dot Product Using the Superblock Family of Algorithms",
+    "venue": "SIAM Journal on Scientific Computing 31(2), 2008, 1156–1174",
+    "year": 2008,
+    "source_url": "https://www.cs.utsa.edu/~atc/pub/J42.pdf"
+  },
+  "paper_pdf": {
+    "path_basename": "CAST08.pdf",
+    "sha256": "ffdea8e2136c7f4226e4c0d382d512fef190cd207133a1a0c88c8ef7b9ebeeb2"
+  },
+  "paper_locations": [
+    {"section": "Section 1.1", "printed_pages": "1157", "pdf_pages": "2", "anchor": "Relative-error model for rounded multiplication and addition, gamma notation, and explicit exclusion of overflow and underflow"},
+    {"section": "Section 3, Figure 3.1(b)", "printed_pages": "1163", "pdf_pages": "8", "anchor": "Three-level fixed-N_b superblock dot product: length-N_b inner dot, sum over blocks in a superblock, then sum superblocks"},
+    {"section": "Section 3.1", "printed_pages": "1165", "pdf_pages": "10", "anchor": "Integral nonzero block-size assumption and forward-error radius gamma_(N_b+2*(sqrt(N/N_b)-1)) times |x|^T|y|"}
+  ],
+  "task_clarification": [
+    "Choose positive integers b and m with N=b*m*m and process arbitrary signed x,y in their original order. Compute each consecutive length-b inner dot product with rounded multiplication and addition; recursively sum m inner-dot totals within each superblock; finally recursively sum the m superblock totals, exactly as Figure 3.1(b) intends.",
+    "Under the source's standard floating-point model excluding both overflow and underflow, and the gamma-validity condition, formalize |computed−exact x^T y| ≤ gamma_(b+2*(m−1))*sum_i |x_i*y_i|. Here b=N_b and m=sqrt(N/N_b), so this is the printed Section 3.1 radius.",
+    "This task selects the Section 3.1 fixed-three-level claim, not the already-proved two-level postload block result or the separate general t-level Proposition 3.2."
+  ],
+  "scope_constraints": [
+    "Retain the three actual summation levels and all product roundings. A task-local abstract final error contract that assumes this conclusion is not acceptable.",
+    "Preserve the paper's integral, nonzero block-size calculations and full input sign/cancellation domain. Do not silently specialize m, b, or N to a convenient fixed number.",
+    "The factor is gamma_(b+2*(m−1)), not gamma_(b+m−1) or an unspecified O(u) coefficient. Retain the |x|^T|y| scale.",
+    "Figure 3.1(b) resets the middle and inner accumulators at their loop boundaries and advances the vector pointers after each inner block; it does not reset those pointers. Any Lean indexing must preserve consecutive input order and the source's three-level grouping.",
+    "This is a correlated reserve from the same paper as Proposition 3.2; report it as such and do not treat it as an independent-paper replicate."
+  ]
+}

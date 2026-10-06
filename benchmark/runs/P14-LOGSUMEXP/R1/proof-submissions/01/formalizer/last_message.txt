@@ -1,0 +1,1 @@
+The unchanged audited target in [Candidate.lean](/workspace/Candidate.lean:171) now has a complete proof. The documented compilation command succeeds, the file contains no `sorry` or `admit`, and Lean reports only standard axioms for `target`: `propext`, `Classical.choice`, and `Quot.sound`.

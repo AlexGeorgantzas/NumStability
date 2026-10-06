@@ -1,0 +1,76 @@
+{
+  "schema_version": "formalization-source-packet-1",
+  "task_id": "P14-T2",
+  "selected_result": "Theorem 3.3 forward-error bound for the basic softmax algorithm",
+  "bibliographic_source": {
+    "authors": [
+      "Pierre Blanchard",
+      "Desmond J. Higham",
+      "Nicholas J. Higham"
+    ],
+    "title": "Accurately Computing the Log-Sum-Exp and Softmax Functions",
+    "venue": "IMA Journal of Numerical Analysis",
+    "volume": "41",
+    "issue": "4",
+    "year": 2021,
+    "pages": "2311-2330",
+    "doi": "10.1093/imanum/draa038"
+  },
+  "paper_pdf": {
+    "path_basename": "P14_Accurately computing the log-sum-exp and softmax functions.pdf",
+    "sha256": "7247047bc49218e001195edc8a2d66131eea7596d252503f34b0ace6328981cd"
+  },
+  "paper_locations": [
+    {
+      "section": "Section 1",
+      "printed_pages": "2311",
+      "pdf_pages": "1",
+      "anchor": "Softmax definition (1.2)"
+    },
+    {
+      "section": "Section 1",
+      "printed_pages": "2314",
+      "pdf_pages": "4",
+      "anchor": "Standard floating-point model (1.7)"
+    },
+    {
+      "section": "Section 3",
+      "printed_pages": "2316",
+      "pdf_pages": "6",
+      "anchor": "Algorithm 3.1 for the basic log-sum-exp and softmax evaluation"
+    },
+    {
+      "section": "Section 3",
+      "printed_pages": "2317",
+      "pdf_pages": "7",
+      "anchor": "Exponential and recursive-summation error models (3.1)-(3.2)"
+    },
+    {
+      "section": "Section 3",
+      "printed_pages": "2318",
+      "pdf_pages": "8",
+      "anchor": "Componentwise softmax error derivation following equation (3.5)"
+    },
+    {
+      "section": "Section 3",
+      "printed_pages": "2319",
+      "pdf_pages": "9",
+      "anchor": "Theorem 3.3 and equation (3.6)"
+    }
+  ],
+  "task_clarification": [
+    "For a positive integer n and x in R^n, let g be the exact softmax vector, g_j = exp(x_j)/(sum_i exp(x_i)).",
+    "Model the basic softmax part of Algorithm 3.1: compute each exponential, form the denominator by recursive floating-point summation, and perform the final componentwise divisions.",
+    "In the absence of overflow and underflow, formalize Theorem 3.3: the computed vector ghat satisfies ||g-ghat||_infinity/||g||_infinity <= (n+3)*u + O(u^2).",
+    "The preceding derivation expresses the componentwise result as ghat_j = g_j*(1+tau_j), with |tau_j| <= (n+3)*u + O(u^2).",
+    "Interpret O(u^2) uniformly over admissible local rounding errors: for fixed n and x, there exist constants C > 0 and u_0 > 0, independent of u and of the admissible local errors, such that every admissible run with 0 < u <= u_0 has the stated componentwise and normwise error bounded by (n+3)*u + C*u^2."
+  ],
+  "scope_constraints": [
+    "Use positive dimension, nonnegative unit roundoff u, and the exact softmax definition from the paper.",
+    "Retain the exponentiation relative errors, recursive denominator summation, and final divisions under the paper's standard model.",
+    "Preserve the source assumption that overflow and underflow are absent.",
+    "Use the packet's explicit uniform quantified-remainder meaning for O(u^2); do not replace it by an unrelated finite error radius or allow C and u_0 to vary with u or the local errors.",
+    "The selected algorithm is the unshifted basic Algorithm 3.1, not a shifted or alternative softmax method.",
+    "Represent the computation and its local error assumptions rather than assuming the requested output-error conclusion."
+  ]
+}

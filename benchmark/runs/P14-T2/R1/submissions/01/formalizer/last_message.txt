@@ -1,0 +1,3 @@
+The statement is in [Candidate.lean](/workspace/Candidate.lean:37). It models the unshifted softmax algorithm with separate local errors for exponentiation, recursive summation, and division, and states the uniform componentwise and infinity-norm bounds.
+
+`lean --root . -o Candidate.olean Candidate.lean` compiled successfully with the expected `sorry` warning. The target proof consists only of `sorry`; there are no other proof holes.

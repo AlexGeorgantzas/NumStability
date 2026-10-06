@@ -1,0 +1,403 @@
+[
+  {
+    "task_id": "CAST08-FIXED3",
+    "statement_names": [
+      "NumStability.FPModel",
+      "NumStability.fl_dotProduct",
+      "NumStability.fl_recursiveSum",
+      "NumStability.gamma",
+      "NumStability.gammaValid"
+    ],
+    "substantive_statement_names": [
+      "NumStability.fl_dotProduct",
+      "NumStability.fl_recursiveSum"
+    ],
+    "proof_names": [
+      "NumStability.FPModel",
+      "NumStability.dotProduct_backward_error",
+      "NumStability.fl_dotProduct",
+      "NumStability.fl_recursiveSum",
+      "NumStability.gamma",
+      "NumStability.gammaValid",
+      "NumStability.gammaValid_mono",
+      "NumStability.gamma_mul",
+      "NumStability.recursiveSum_backward_error"
+    ],
+    "statement_count": 5,
+    "substantive_statement_count": 2,
+    "proof_count": 9,
+    "algorithm_statement": 1,
+    "error_proof": 1,
+    "formal_attempts_L": 1,
+    "proof_attempts_L": 1,
+    "time_gain_pct": 35.929523617185616,
+    "formal_gain_pct": 8.567067770600001,
+    "proof_time_gain_pct": 42.90349122780566,
+    "token_gain_pct": -122.72098385857034,
+    "proof_line_gain_pct": 32.0
+  },
+  {
+    "task_id": "P14-T1",
+    "statement_names": [
+      "NumStability.FPModel",
+      "NumStability.FPModel.u",
+      "NumStability.fl_recursiveSum"
+    ],
+    "substantive_statement_names": [
+      "NumStability.FPModel.u",
+      "NumStability.fl_recursiveSum"
+    ],
+    "proof_names": [
+      "NumStability.FPModel",
+      "NumStability.FPModel.fl_add",
+      "NumStability.FPModel.fl_add_zero",
+      "NumStability.FPModel.model_add",
+      "NumStability.FPModel.u",
+      "NumStability.FPModel.u_nonneg",
+      "NumStability.fl_recursiveSum"
+    ],
+    "statement_count": 3,
+    "substantive_statement_count": 2,
+    "proof_count": 7,
+    "algorithm_statement": 1,
+    "error_proof": 0,
+    "formal_attempts_L": 1,
+    "proof_attempts_L": 1,
+    "time_gain_pct": 24.945738410282402,
+    "formal_gain_pct": 2.6224017324862903,
+    "proof_time_gain_pct": 34.11742592100222,
+    "token_gain_pct": -47.86234464380068,
+    "proof_line_gain_pct": -12.935323383084578
+  },
+  {
+    "task_id": "HI21-LEM2.2",
+    "statement_names": [
+      "NumStability.SumTree",
+      "NumStability.SumTree.exactSum",
+      "NumStability.SumTree.leaf",
+      "NumStability.SumTree.node"
+    ],
+    "substantive_statement_names": [
+      "NumStability.SumTree",
+      "NumStability.SumTree.exactSum",
+      "NumStability.SumTree.leaf",
+      "NumStability.SumTree.node"
+    ],
+    "proof_names": [
+      "NumStability.SumTree",
+      "NumStability.SumTree.exactSum",
+      "NumStability.SumTree.leaf",
+      "NumStability.SumTree.node"
+    ],
+    "statement_count": 4,
+    "substantive_statement_count": 4,
+    "proof_count": 4,
+    "algorithm_statement": 1,
+    "error_proof": 0,
+    "formal_attempts_L": 1,
+    "proof_attempts_L": 1,
+    "time_gain_pct": -47.11291398316175,
+    "formal_gain_pct": -52.57860289717787,
+    "proof_time_gain_pct": -27.277603351130427,
+    "token_gain_pct": -182.5549796185396,
+    "proof_line_gain_pct": -25.641025641025642
+  },
+  {
+    "task_id": "CAST08-PROP3.1",
+    "statement_names": [
+      "NumStability.FPModel",
+      "NumStability.fl_recursiveSum",
+      "NumStability.gamma",
+      "NumStability.gammaValid"
+    ],
+    "substantive_statement_names": [
+      "NumStability.fl_recursiveSum"
+    ],
+    "proof_names": [
+      "NumStability.FPModel",
+      "NumStability.FPModel.u",
+      "NumStability.fl_recursiveSum",
+      "NumStability.gamma",
+      "NumStability.gammaValid",
+      "NumStability.gammaValid_mono",
+      "NumStability.gamma_nonneg",
+      "NumStability.gamma_sum_le",
+      "NumStability.recursiveSum_forward_error_bound"
+    ],
+    "statement_count": 4,
+    "substantive_statement_count": 1,
+    "proof_count": 9,
+    "algorithm_statement": 1,
+    "error_proof": 1,
+    "formal_attempts_L": 1,
+    "proof_attempts_L": 1,
+    "time_gain_pct": 35.46254062548555,
+    "formal_gain_pct": -6.102373322009077,
+    "proof_time_gain_pct": 46.36215608550516,
+    "token_gain_pct": -33.627132926058565,
+    "proof_line_gain_pct": 46.38069705093834
+  },
+  {
+    "task_id": "P14-T2",
+    "statement_names": [],
+    "substantive_statement_names": [],
+    "proof_names": [
+      "NumStability.FPModel",
+      "NumStability.FPModel.exactWithUnitRoundoff",
+      "NumStability.FPModel.u",
+      "NumStability.FPModel.u_nonneg",
+      "NumStability.foldl_add_mul_one_add_suffix_expansion",
+      "NumStability.gamma",
+      "NumStability.gammaValid",
+      "NumStability.gammaValid_mono",
+      "NumStability.gamma_mono",
+      "NumStability.gamma_nonneg",
+      "NumStability.prod_error_bound",
+      "NumStability.sumSuffixErrorProduct",
+      "NumStability.sumSuffixErrorProduct_exists_theta_le_gamma"
+    ],
+    "statement_count": 0,
+    "substantive_statement_count": 0,
+    "proof_count": 13,
+    "algorithm_statement": 0,
+    "error_proof": 1,
+    "formal_attempts_L": 1,
+    "proof_attempts_L": 1,
+    "time_gain_pct": 14.636309400955538,
+    "formal_gain_pct": 0.545111299843168,
+    "proof_time_gain_pct": 17.868657907740108,
+    "token_gain_pct": -4.243788450875294,
+    "proof_line_gain_pct": 5.21978021978022
+  },
+  {
+    "task_id": "RUMP12-THM3.4",
+    "statement_names": [
+      "NumStability.FloatingPointFormat",
+      "NumStability.FloatingPointFormat.beta",
+      "NumStability.FloatingPointFormat.emax",
+      "NumStability.FloatingPointFormat.finiteSystem",
+      "NumStability.FloatingPointFormat.nearestRoundingIn",
+      "NumStability.FloatingPointFormat.normalizedMantissa",
+      "NumStability.FloatingPointFormat.normalizedValue",
+      "NumStability.FloatingPointFormat.unitRoundoff"
+    ],
+    "substantive_statement_names": [
+      "NumStability.FloatingPointFormat.beta",
+      "NumStability.FloatingPointFormat.emax",
+      "NumStability.FloatingPointFormat.finiteSystem",
+      "NumStability.FloatingPointFormat.nearestRoundingIn",
+      "NumStability.FloatingPointFormat.normalizedMantissa",
+      "NumStability.FloatingPointFormat.normalizedValue",
+      "NumStability.FloatingPointFormat.unitRoundoff"
+    ],
+    "proof_names": [
+      "NumStability.FloatingPointFormat",
+      "NumStability.FloatingPointFormat.beta",
+      "NumStability.FloatingPointFormat.betaR",
+      "NumStability.FloatingPointFormat.betaR_pos",
+      "NumStability.FloatingPointFormat.betaR_zpow_pos",
+      "NumStability.FloatingPointFormat.emax",
+      "NumStability.FloatingPointFormat.finiteNormalRange",
+      "NumStability.FloatingPointFormat.finiteOverflowRange",
+      "NumStability.FloatingPointFormat.finiteSystem",
+      "NumStability.FloatingPointFormat.finiteSystem_abs_le_maxFiniteMagnitude",
+      "NumStability.FloatingPointFormat.finiteSystem_add_finiteSystem_of_finiteUnderflowRange",
+      "NumStability.FloatingPointFormat.finiteSystem_neg",
+      "NumStability.FloatingPointFormat.finiteUnderflowRange",
+      "NumStability.FloatingPointFormat.machineEpsilon",
+      "NumStability.FloatingPointFormat.machineEpsilon.eq_1",
+      "NumStability.FloatingPointFormat.maxFiniteMagnitude",
+      "NumStability.FloatingPointFormat.maxFiniteMagnitude.eq_1",
+      "NumStability.FloatingPointFormat.maxFiniteMagnitude_lt_beta_pow_emax",
+      "NumStability.FloatingPointFormat.maxFiniteMagnitude_mem_normalizedSystem",
+      "NumStability.FloatingPointFormat.minNormalMagnitude",
+      "NumStability.FloatingPointFormat.minNormalMantissa",
+      "NumStability.FloatingPointFormat.minNormalMantissa_normalized",
+      "NumStability.FloatingPointFormat.nearestRoundingIn",
+      "NumStability.FloatingPointFormat.nearestRoundingIn_minimal",
+      "NumStability.FloatingPointFormat.nearestRoundingToFinite",
+      "NumStability.FloatingPointFormat.nearestRoundingToFinite_signedRelErrorWitness_of_finiteNormalRange",
+      "NumStability.FloatingPointFormat.normalizedMantissa",
+      "NumStability.FloatingPointFormat.normalizedSystem",
+      "NumStability.FloatingPointFormat.normalizedValue",
+      "NumStability.FloatingPointFormat.normalizedValue_false_minNormalMantissa_succ_eq_beta_pow",
+      "NumStability.FloatingPointFormat.normalizedValue_not_eq_neg",
+      "NumStability.FloatingPointFormat.subnormalSystem",
+      "NumStability.FloatingPointFormat.t",
+      "NumStability.FloatingPointFormat.t_pos",
+      "NumStability.FloatingPointFormat.unitRoundoff",
+      "NumStability.FloatingPointFormat.unitRoundoff._proof_1",
+      "NumStability.FloatingPointFormat.unitRoundoff.eq_1",
+      "NumStability.FloatingPointFormat.unitRoundoff_nonneg",
+      "NumStability.signedRelErrorWitness"
+    ],
+    "statement_count": 8,
+    "substantive_statement_count": 7,
+    "proof_count": 39,
+    "algorithm_statement": 1,
+    "error_proof": 1,
+    "formal_attempts_L": 1,
+    "proof_attempts_L": 1,
+    "time_gain_pct": 21.018297707970707,
+    "formal_gain_pct": -47.578717014356265,
+    "proof_time_gain_pct": 30.843031098829144,
+    "token_gain_pct": 0.08285917026237268,
+    "proof_line_gain_pct": 44.40734557595993
+  },
+  {
+    "task_id": "P14-LOGSUMEXP",
+    "statement_names": [
+      "NumStability.FPModel",
+      "NumStability.FPModel.u",
+      "NumStability.fl_recursiveSum"
+    ],
+    "substantive_statement_names": [
+      "NumStability.FPModel.u",
+      "NumStability.fl_recursiveSum"
+    ],
+    "proof_names": [
+      "NumStability.FPModel",
+      "NumStability.FPModel.u",
+      "NumStability.fl_recursiveSum",
+      "NumStability.gamma",
+      "NumStability.gamma.eq_1",
+      "NumStability.gammaValid",
+      "NumStability.gamma_nonneg",
+      "NumStability.recursiveSum_forward_error_bound"
+    ],
+    "statement_count": 3,
+    "substantive_statement_count": 2,
+    "proof_count": 8,
+    "algorithm_statement": 1,
+    "error_proof": 1,
+    "formal_attempts_L": 1,
+    "proof_attempts_L": 1,
+    "time_gain_pct": 10.49653856152489,
+    "formal_gain_pct": 28.4929488530403,
+    "proof_time_gain_pct": 5.03777694124325,
+    "token_gain_pct": -18.137914070186948,
+    "proof_line_gain_pct": -25.980392156862745
+  },
+  {
+    "task_id": "H20-8",
+    "statement_names": [
+      "NumStability.LSNormwiseBackwardErrorFeasible",
+      "NumStability.frobNormRect",
+      "NumStability.lsNormwiseBackwardErrorMatrixOnlyEtaF",
+      "NumStability.rectLSRhs",
+      "NumStability.vecNorm2"
+    ],
+    "substantive_statement_names": [
+      "NumStability.LSNormwiseBackwardErrorFeasible",
+      "NumStability.frobNormRect",
+      "NumStability.lsNormwiseBackwardErrorMatrixOnlyEtaF",
+      "NumStability.rectLSRhs",
+      "NumStability.vecNorm2"
+    ],
+    "proof_names": [
+      "NumStability.IsLeastSquaresMinimizer",
+      "NumStability.IsLeastSquaresMinimizer.rectLSNormalEquations",
+      "NumStability.LSNormwiseBackwardErrorFeasible",
+      "NumStability.RectLSNormalEquations",
+      "NumStability.RectLSNormalEquations.isLeastSquaresMinimizer",
+      "NumStability.finiteTranspose",
+      "NumStability.frobNormRect",
+      "NumStability.frobNormRect_outerProduct",
+      "NumStability.frobNormSqRect",
+      "NumStability.lsNormwiseBackwardErrorMatrixOnlyEtaF",
+      "NumStability.lsNormwiseBackwardErrorMatrixOnlyEtaF_eq_zero_of_isLeastSquaresMinimizer",
+      "NumStability.lsNormwiseBackwardErrorMatrixOnlyEtaF_le_frobNorm_of_feasible",
+      "NumStability.lsNormwiseBackwardErrorMatrixOnlyValuesF",
+      "NumStability.lsNormwiseBackwardErrorMatrixOnlyValuesF.nonempty",
+      "NumStability.matMulVec",
+      "NumStability.rectLSGram",
+      "NumStability.rectLSRhs",
+      "NumStability.rectMatMulVec",
+      "NumStability.vecNorm2",
+      "NumStability.vecNorm2Sq",
+      "NumStability.vecNorm2_eq_zero_iff",
+      "NumStability.vecNorm2_neg",
+      "NumStability.vecNorm2_nonneg",
+      "NumStability.vecNorm2_rectMatMulVec_finiteTranspose_le_frobNormRect_mul",
+      "NumStability.vecNorm2_smul",
+      "NumStability.vecNorm2_sq"
+    ],
+    "statement_count": 5,
+    "substantive_statement_count": 5,
+    "proof_count": 26,
+    "algorithm_statement": 1,
+    "error_proof": 1,
+    "formal_attempts_L": 1,
+    "proof_attempts_L": 1,
+    "time_gain_pct": 55.539239724928755,
+    "formal_gain_pct": -11.902905352283753,
+    "proof_time_gain_pct": 65.59334748863681,
+    "token_gain_pct": 39.11249171266603,
+    "proof_line_gain_pct": 31.275720164609055
+  },
+  {
+    "task_id": "CAST08-PROP3.2",
+    "statement_names": [
+      "NumStability.FPModel",
+      "NumStability.FPModel.fl_mul",
+      "NumStability.fl_recursiveSum",
+      "NumStability.gamma",
+      "NumStability.gammaValid"
+    ],
+    "substantive_statement_names": [
+      "NumStability.FPModel.fl_mul",
+      "NumStability.fl_recursiveSum"
+    ],
+    "proof_names": [
+      "NumStability.FPModel",
+      "NumStability.FPModel.fl_mul",
+      "NumStability.FPModel.model_mul",
+      "NumStability.FPModel.u",
+      "NumStability.fl_recursiveSum",
+      "NumStability.gamma",
+      "NumStability.gammaValid",
+      "NumStability.gammaValid_mono",
+      "NumStability.gamma_mul",
+      "NumStability.recursiveSum_backward_error",
+      "NumStability.u_le_gamma"
+    ],
+    "statement_count": 5,
+    "substantive_statement_count": 2,
+    "proof_count": 11,
+    "algorithm_statement": 1,
+    "error_proof": 1,
+    "formal_attempts_L": 1,
+    "proof_attempts_L": 1,
+    "time_gain_pct": 31.625166218268603,
+    "formal_gain_pct": 20.190998679950752,
+    "proof_time_gain_pct": 35.43705077704322,
+    "token_gain_pct": -164.22339854561528,
+    "proof_line_gain_pct": 25.53191489361702
+  },
+  {
+    "task_id": "P14-SHIFTED-SOFTMAX",
+    "statement_names": [
+      "NumStability.infNormVec"
+    ],
+    "substantive_statement_names": [
+      "NumStability.infNormVec"
+    ],
+    "proof_names": [
+      "NumStability.abs_le_infNormVec",
+      "NumStability.infNormVec",
+      "NumStability.infNormVec_le_of_abs_le"
+    ],
+    "statement_count": 1,
+    "substantive_statement_count": 1,
+    "proof_count": 3,
+    "algorithm_statement": 0,
+    "error_proof": 0,
+    "formal_attempts_L": 1,
+    "proof_attempts_L": 1,
+    "time_gain_pct": -3.7974440331566632,
+    "formal_gain_pct": -23.07736821145821,
+    "proof_time_gain_pct": -0.3241151085249163,
+    "token_gain_pct": -10.96124741542856,
+    "proof_line_gain_pct": -2.494802494802495
+  }
+]

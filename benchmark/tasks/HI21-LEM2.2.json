@@ -1,0 +1,29 @@
+{
+  "schema_version": "formalization-source-packet-1",
+  "task_id": "HI21-LEM2.2",
+  "selected_result": "Lemma 2.2 first explicit forward-error expression for a general binary summation tree",
+  "bibliographic_source": {
+    "authors": ["Eric Hallman", "Ilse C. F. Ipsen"],
+    "title": "Deterministic and Probabilistic Error Bounds for Floating Point Summation Algorithms",
+    "venue": "arXiv preprint",
+    "year": 2021,
+    "source_url": "https://arxiv.org/pdf/2107.01604"
+  },
+  "paper_pdf": {
+    "path_basename": "HI21.pdf",
+    "sha256": "cce25923a86d5d2051a079ad4ae7ea965f1dde97ffb6d3bf6462d069968fd1c6"
+  },
+  "paper_locations": [
+    {"section": "Section 2.1", "printed_pages": "3-4", "pdf_pages": "3-4", "anchor": "Algorithm 2.1, computational tree, equation (2.1), and Lemma 2.2 equation (2.3)"}
+  ],
+  "task_clarification": [
+    "For an arbitrary finite binary summation tree with real leaves x_1,...,x_n and one rounded addition at each internal node, let s_k be each exact partial sum and delta_k the relative error of its actual addition, |delta_k|<=u. Child computations, not exact child sums, are the operands of each rounded addition.",
+    "Formalize the exact Lemma 2.2 identity: final computed sum minus exact sum is the sum over all internal nodes k of s_k*delta_k times the product of (1+delta_j) for strict internal ancestors j of k, through the root. A flattened list of node contributions carrying their ancestor-product factors is acceptable if it has the same complete tree-wide content.",
+    "The result holds for arbitrary tree shape and arbitrary signs and includes the one-leaf zero-error case. No probabilistic assumptions or later Theorem 2.4 bound belong to this task."
+  ],
+  "scope_constraints": [
+    "Retain an actual binary summation execution linked to the local delta witnesses; do not simply assume the final error identity.",
+    "Every internal node, including the root, contributes once, and the ancestor product includes no factor from the node itself.",
+    "The target must not collapse the identity to a bare restatement of the local error recurrence."
+  ]
+}

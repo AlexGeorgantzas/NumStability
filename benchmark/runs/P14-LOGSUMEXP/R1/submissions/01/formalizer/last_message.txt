@@ -1,0 +1,3 @@
+The statement is in [Candidate.lean](/workspace/Candidate.lean:26). It models bounded relative errors in each exponential, the library’s recursive rounded sum, and a final rounded logarithm. The quadratic remainder is uniform over admissible executions for each positive `n` and real input `x`, including cases where the exact output is zero.
+
+`lean --root . -o Candidate.olean Candidate.lean` succeeds. The target’s entire proof is `sorry`, and it is the only proof hole. The PDF SHA-256 matches `source/task.md`; the candidate SHA-256 is `5089bca13edb5f1e22d403b4c3885d3c97d3406377fe0b5c2271bc23875f00c7`.

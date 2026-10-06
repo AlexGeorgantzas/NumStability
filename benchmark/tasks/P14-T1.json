@@ -1,0 +1,36 @@
+{
+  "schema_version": "formalization-source-packet-1",
+  "task_id": "P14-T1",
+  "selected_result": "The basic positive exponential-sum error analysis culminating in equation (3.3)",
+  "bibliographic_source": {
+    "authors": ["Pierre Blanchard", "Desmond J. Higham", "Nicholas J. Higham"],
+    "title": "Accurately Computing the Log-Sum-Exp and Softmax Functions",
+    "venue": "IMA Journal of Numerical Analysis",
+    "volume": "41",
+    "issue": "4",
+    "year": 2021,
+    "pages": "2311-2330",
+    "doi": "10.1093/imanum/draa038"
+  },
+  "paper_pdf": {
+    "path_basename": "P14_Accurately computing the log-sum-exp and softmax functions.pdf",
+    "sha256": "7247047bc49218e001195edc8a2d66131eea7596d252503f34b0ace6328981cd"
+  },
+  "paper_locations": [
+    {"section": "Section 3", "printed_pages": "2316", "pdf_pages": "6", "anchor": "Basic Algorithm 3.1"},
+    {"section": "Section 3", "printed_pages": "2317", "pdf_pages": "7", "anchor": "Exponential errors (3.1), summation analysis and weighted error (3.2)"},
+    {"section": "Section 3", "printed_pages": "2318", "pdf_pages": "8", "anchor": "First-order positive sum error (3.3)"}
+  ],
+  "task_clarification": [
+    "For positive n and real inputs x_i, compute w_i = exp(x_i) without overflow or underflow and sum the computed exponentials from left to right in the standard floating-point model.",
+    "Each computed exponential satisfies what the paper labels (3.1), namely wHat_i = exp(x_i)*(1+delta_i) with |delta_i| <= u. Let s = sum_i exp(x_i), sTilde = sum_i wHat_i exactly, and sHat be their recursively computed sum.",
+    "Formalize the derivation culminating in (3.3): sHat = s + Delta s and |Delta s| <= (n+1)*u*s + O(u^2). Preserve the positive-sum setting and the contribution of both exponential evaluation and recursive summation.",
+    "A finite bound stronger than the displayed first-order estimate is acceptable only if it demonstrably yields the exact (n+1) first-order coefficient and a quadratic remainder that is uniform over admissible local rounding errors for fixed n and x."
+  ],
+  "scope_constraints": [
+    "Do not formalize only a generic summation theorem while omitting the exponential stage or the link to the actual computed sum.",
+    "Do not assume the requested Delta s bound as an execution premise.",
+    "The basic unshifted Algorithm 3.1 is selected, not the shifted log-sum-exp method.",
+    "No result-bearing common Lean definitions or source-faithful skeleton are supplied to either condition."
+  ]
+}

@@ -1,0 +1,3 @@
+[Candidate.lean](/workspace/Candidate.lean:1) now states Proposition 3.1 as one Lean target. It defines the recursive equal-block rounded sum, gives the `gamma fp (t * (b - 1))` forward bound for arbitrary signed inputs, and states the integral blocking optimum with equality for equal factors. The only proof hole is the target’s required `sorry`.
+
+`lean --root . -o Candidate.olean Candidate.lean` succeeds.

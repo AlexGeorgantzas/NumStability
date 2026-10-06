@@ -1,0 +1,585 @@
+{
+  "accepted": true,
+  "candidate_semantic_sha256": "d4c37db5b3d9bd52e307f234b023ea7e368b86979bd2df7f5635ea5cb8fbd671",
+  "classification": "faithful-equivalent",
+  "dependency_coverage": [
+    {
+      "effect_on_target": "Supplies the asserted minimum value.",
+      "id": "D001",
+      "interpretation": "Zero when b = 0; otherwise ||Aᵀb||₂/||b||₂.",
+      "name": "Piecewise backward-error value",
+      "paper_match": "Matches the selected evaluation over the full b domain.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Defines admissible perturbations, instantiated with y = 0 and Δb = 0.",
+      "id": "D002",
+      "interpretation": "The given vector minimizes the least-squares objective for A + ΔA and b + Δb.",
+      "name": "Perturbed least-squares admissibility",
+      "paper_match": "Matches the constraint in equation (20.20).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Measures the perturbation being minimized.",
+      "id": "D003",
+      "interpretation": "Square root of the sum of squared matrix entries.",
+      "name": "Frobenius norm",
+      "paper_match": "Exactly the required matrix norm.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Defines the error value; the target separately asserts attainment and minimality.",
+      "id": "D004",
+      "interpretation": "Infimum of admissible matrix-perturbation norms.",
+      "name": "Matrix-only backward error",
+      "paper_match": "Equivalent to the source minimum because the target supplies an attaining global minimizer.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Ensures global least-squares optimality.",
+      "id": "D005",
+      "interpretation": "The squared residual at the designated vector is no greater than at every competing vector.",
+      "name": "Least-squares minimizer",
+      "paper_match": "Minimizing squared Euclidean residual is equivalent to minimizing Euclidean residual.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Provides the radicand for the matrix norm.",
+      "id": "D006",
+      "interpretation": "Sum over all rows and columns of squared entries.",
+      "name": "Squared Frobenius norm",
+      "paper_match": "Matches the Frobenius norm definition.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Restricts optimization to perturbations leaving b unchanged.",
+      "id": "D007",
+      "interpretation": "Set of Frobenius norms of matrices ΔA making the designated vector a least-squares minimizer with Δb = 0.",
+      "name": "Admissible perturbation costs",
+      "paper_match": "Matches the θ = ∞ convention.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms the vector in the numerator.",
+      "id": "D008",
+      "interpretation": "Its jth coordinate is the sum of Aᵢⱼbᵢ over rows.",
+      "name": "Transpose matrix-vector product",
+      "paper_match": "Exactly Aᵀb.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Measures both numerator and denominator vectors.",
+      "id": "D009",
+      "interpretation": "Square root of the sum of squared coordinates.",
+      "name": "Euclidean vector norm",
+      "paper_match": "Exactly the required vector norm.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Defines the objective used in least-squares comparisons.",
+      "id": "D010",
+      "interpretation": "Sum of squares of the coordinates of Ax − b.",
+      "name": "Squared residual objective",
+      "paper_match": "Has precisely the source's least-squares minimizers.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports vector norms and the residual objective.",
+      "id": "D011",
+      "interpretation": "Sum of squared vector coordinates.",
+      "name": "Squared Euclidean norm",
+      "paper_match": "Matches Euclidean geometry.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms the residual before its squared norm is taken.",
+      "id": "D012",
+      "interpretation": "The vector Ax − b.",
+      "name": "Residual vector",
+      "paper_match": "Its sign relative to b − Ax leaves the objective unchanged.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Implements matrix action in the residual.",
+      "id": "D013",
+      "interpretation": "Its ith coordinate is the sum of Aᵢⱼxⱼ over columns.",
+      "name": "Matrix-vector product",
+      "paper_match": "Matches ordinary real matrix multiplication.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Requires the value formula, attainment, and minimality together.",
+      "id": "D014",
+      "interpretation": "Logical conjunction.",
+      "name": "Conjunction",
+      "paper_match": "Preserves all required conclusions simultaneously.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses exact values and the zero-vector test.",
+      "id": "D015",
+      "interpretation": "Mathematical equality.",
+      "name": "Equality",
+      "paper_match": "Matches exact evaluation rather than an approximation.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Asserts existence of an attaining perturbation.",
+      "id": "D016",
+      "interpretation": "Existential quantification.",
+      "name": "Existence",
+      "paper_match": "Captures attainment required by a minimum.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Indexes every matrix entry and vector coordinate.",
+      "id": "D017",
+      "interpretation": "Finite index set of the indicated cardinality.",
+      "name": "Finite coordinate indices",
+      "paper_match": "Represents the source's finite-dimensional spaces.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses dimension restrictions and objective comparisons.",
+      "id": "D018",
+      "interpretation": "Non-strict order for the selected numeric type.",
+      "name": "Order comparison",
+      "paper_match": "Matches n ≤ m and global minimization inequalities.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Types dimensions and exponents.",
+      "id": "D019",
+      "interpretation": "Nonnegative integers.",
+      "name": "Natural numbers",
+      "paper_match": "Appropriate for finite dimensions and squaring.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets zero and exponent literals.",
+      "id": "D020",
+      "interpretation": "Numeric literals in the selected type.",
+      "name": "Numeral interpretation",
+      "paper_match": "Preserves the source constants.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Makes y = 0 and Δb = 0 coordinatewise exact.",
+      "id": "D021",
+      "interpretation": "The function whose every coordinate is zero.",
+      "name": "Zero vector",
+      "paper_match": "Matches the selected argument and fixed right-hand side.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Sets the scalar domain for all data and norms.",
+      "id": "D022",
+      "interpretation": "Real numbers.",
+      "name": "Real scalar domain",
+      "paper_match": "Matches the source's real matrices and vectors.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Orders objective values and perturbation norms.",
+      "id": "D023",
+      "interpretation": "Usual order on real numbers.",
+      "name": "Real order",
+      "paper_match": "Matches minimization over real costs.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies scalar and coordinate zeros.",
+      "id": "D024",
+      "interpretation": "The real number zero.",
+      "name": "Real zero",
+      "paper_match": "Matches zero error and zero perturbations.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Connects zero notation to scalar and vector zeros.",
+      "id": "D025",
+      "interpretation": "Interprets the numeral zero using the selected zero element.",
+      "name": "Zero literal",
+      "paper_match": "No change to mathematical meaning.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Enforces n ≤ m.",
+      "id": "D026",
+      "interpretation": "Usual order on natural numbers.",
+      "name": "Dimension order",
+      "paper_match": "Exactly the source dimension restriction.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies division for the norm ratio.",
+      "id": "D027",
+      "interpretation": "Division inherited from the scalar arithmetic structure.",
+      "name": "Scalar division operation",
+      "paper_match": "Resolves to ordinary real division.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Ensures sums cover all coordinates.",
+      "id": "D028",
+      "interpretation": "Enumeration of every index in a finite coordinate space.",
+      "name": "Finite coordinate enumeration",
+      "paper_match": "Matches complete row and column indexing.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports the b = 0 case distinction.",
+      "id": "D029",
+      "interpretation": "Equality of finite vectors determined by equality at every coordinate.",
+      "name": "Finite vector equality decision",
+      "paper_match": "Imposes no restriction on b.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms perturbed matrix and vector entries.",
+      "id": "D030",
+      "interpretation": "Addition in the selected scalar type.",
+      "name": "Addition operation",
+      "paper_match": "Matches A + ΔA and b + Δb.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms the ratio of Euclidean norms.",
+      "id": "D031",
+      "interpretation": "Division in the selected scalar type.",
+      "name": "Division notation",
+      "paper_match": "Matches the stated quotient.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Extracts the lower endpoint of admissible costs.",
+      "id": "D032",
+      "interpretation": "Infimum operation.",
+      "name": "Infimum operator",
+      "paper_match": "Agrees with the minimum because attainment is also asserted.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports exact zero testing of coordinates.",
+      "id": "D033",
+      "interpretation": "Logical decision of equality between real numbers.",
+      "name": "Real equality decision",
+      "paper_match": "Introduces no approximate test or computational hypothesis.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Adds perturbations coordinatewise.",
+      "id": "D034",
+      "interpretation": "Usual real addition.",
+      "name": "Real addition",
+      "paper_match": "Matches source arithmetic.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Provides exact real division in the closed form.",
+      "id": "D035",
+      "interpretation": "Real multiplication, inversion, and division.",
+      "name": "Real division structure",
+      "paper_match": "The denominator is positive on the nonzero-b branch.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Gives the real infimum used for backward error.",
+      "id": "D036",
+      "interpretation": "Real infimum defined through the supremum of the negated set.",
+      "name": "Real infimum",
+      "paper_match": "Admissible costs are nonnegative and the target asserts attainment, so exceptional infimum defaults are irrelevant.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Converts sums of squares into norms.",
+      "id": "D037",
+      "interpretation": "Nonnegative real square root on nonnegative inputs.",
+      "name": "Square root",
+      "paper_match": "All relevant inputs are sums of squares.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Routes addition notation to real addition.",
+      "id": "D038",
+      "interpretation": "Addition inherited from the selected scalar operation.",
+      "name": "Addition interpretation",
+      "paper_match": "Preserves ordinary perturbation arithmetic.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Routes division notation to real division.",
+      "id": "D039",
+      "interpretation": "Division inherited from the selected scalar operation.",
+      "name": "Division interpretation",
+      "paper_match": "Preserves the exact norm quotient.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Selects zero error for b = 0 and the quotient otherwise.",
+      "id": "D040",
+      "interpretation": "Conditional selection based on a proposition.",
+      "name": "Case distinction",
+      "paper_match": "Covers both source cases.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Builds products and sums of squares.",
+      "id": "D041",
+      "interpretation": "Exact finite summation.",
+      "name": "Finite sum",
+      "paper_match": "Matches the finite-dimensional formulas.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Makes each coordinate sum exhaustive.",
+      "id": "D042",
+      "interpretation": "The set containing all indices of a finite type.",
+      "name": "Complete index set",
+      "paper_match": "No rows or columns are omitted.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms matrix-vector product terms.",
+      "id": "D043",
+      "interpretation": "Multiplication in the selected scalar type.",
+      "name": "Multiplication operation",
+      "paper_match": "Matches real scalar multiplication.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms squared entries and coordinates.",
+      "id": "D044",
+      "interpretation": "Exponentiation in the selected types.",
+      "name": "Power operation",
+      "paper_match": "Used with exponent two as required.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets squaring as a natural-number power.",
+      "id": "D045",
+      "interpretation": "Repeated multiplication for nonnegative integer exponents.",
+      "name": "Natural powers",
+      "paper_match": "Matches ordinary squares.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies the arithmetic underlying finite sums.",
+      "id": "D046",
+      "interpretation": "Real addition with zero and its associative, commutative structure.",
+      "name": "Real summation structure",
+      "paper_match": "Matches exact sums over coordinates.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies multiplication and natural powers.",
+      "id": "D047",
+      "interpretation": "Real multiplication with identity.",
+      "name": "Real multiplication structure",
+      "paper_match": "Matches exact products and squares.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Multiplies entries in matrix-vector products.",
+      "id": "D048",
+      "interpretation": "Usual real multiplication.",
+      "name": "Real multiplication",
+      "paper_match": "Matches source arithmetic.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Represents the collection of admissible costs.",
+      "id": "D049",
+      "interpretation": "A set represented by its membership predicate.",
+      "name": "Sets",
+      "paper_match": "Matches the feasible set in the minimum definition.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Routes product notation to real multiplication.",
+      "id": "D050",
+      "interpretation": "Multiplication inherited from the scalar operation.",
+      "name": "Multiplication interpretation",
+      "paper_match": "Preserves the matrix and vector formulas.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Routes exponent notation to natural powers.",
+      "id": "D051",
+      "interpretation": "Exponentiation inherited from the selected power operation.",
+      "name": "Power interpretation",
+      "paper_match": "Preserves sum-of-squares semantics.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies the exponent two.",
+      "id": "D052",
+      "interpretation": "Natural-number numerals.",
+      "name": "Natural numeral interpretation",
+      "paper_match": "Uses exactly the required exponent.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Constructs the admissible-cost set from feasibility and norm equality.",
+      "id": "D053",
+      "interpretation": "Set comprehension.",
+      "name": "Predicate-defined set",
+      "paper_match": "Matches the source's constrained cost collection.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms the residual coordinate differences.",
+      "id": "D054",
+      "interpretation": "Subtraction in the selected scalar type.",
+      "name": "Subtraction operation",
+      "paper_match": "Matches the residual objective.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Subtracts b from Ax.",
+      "id": "D055",
+      "interpretation": "Usual real subtraction.",
+      "name": "Real subtraction",
+      "paper_match": "Matches exact residual arithmetic.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Routes subtraction notation to real subtraction.",
+      "id": "D056",
+      "interpretation": "Subtraction inherited from the scalar operation.",
+      "name": "Subtraction interpretation",
+      "paper_match": "Preserves the least-squares residual.",
+      "status": "pass"
+    }
+  ],
+  "implications": {
+    "candidate_implies_source": {
+      "reasoning": "For every real m-by-n matrix with n ≤ m and every real b, the candidate gives the required piecewise value at y = 0, fixes Δb = 0, and asserts an admissible perturbation attaining that value with norm no greater than every admissible competitor. This establishes the full source minimum.",
+      "verdict": "yes"
+    },
+    "source_implies_candidate": {
+      "reasoning": "The selected evaluation, including attainment, yields the candidate's feasible witness and global minimality. A attained minimum of this nonnegative cost set equals its real infimum. Squared-residual minimization and the coordinate definitions express the same least-squares problem and norms.",
+      "verdict": "yes"
+    }
+  },
+  "mismatches": [],
+  "paper_sha256": "7ca85d5caf3ffd5ae90fb315e9b4e00912e174881bcf969e7ba0a7b3ce9ec814",
+  "rationale": "The candidate faithfully expresses Problem 20.8 using equation (20.20) with Δb = 0. It covers both zero and nonzero b and includes attainment and global minimality. Defining the error through an infimum does not weaken the proposition because the target separately supplies a minimizing perturbation.",
+  "requires_adjudication": false,
+  "role": "direct-judge",
+  "semantic_checklist": [
+    {
+      "candidate_evidence": "The target evaluates matrix-only backward error at the zero vector.",
+      "id": "S01",
+      "paper_evidence": "Problem 20.8, printed page 406, asks for η_F(0) with θ = ∞ and Δb ≡ 0.",
+      "reasoning": "The selected problem is matched, rather than the nonzero-y formula of Theorem 20.5.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Dimensions are natural numbers with n ≤ m; A, b, and perturbations have the corresponding real coordinate types.",
+      "id": "S02",
+      "paper_evidence": "Theorem 20.5 specifies A ∈ R^(m×n), m ≥ n, and b ∈ R^m.",
+      "reasoning": "All dimensions and scalar types agree.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "All dimensions, A, and b are universally quantified; an attaining perturbation exists for each input; all feasible competitors are compared.",
+      "id": "S03",
+      "paper_evidence": "The selected minimum is evaluated for arbitrary admissible A and b.",
+      "reasoning": "The witness depends on the data, and minimality ranges over every admissible perturbation.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The sole data restriction is n ≤ m.",
+      "id": "S04",
+      "paper_evidence": "The selected result imposes no nonzero-b, rank, or successful-operation hypothesis.",
+      "reasoning": "No additional assumption or certificate restricts the source domain.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Asserts the piecewise value, feasible attainment, equality of the witness norm to that value, and global minimality.",
+      "id": "S05",
+      "paper_evidence": "The source asks to evaluate a minimum, and the packet explicitly requires attainment.",
+      "reasoning": "Both value and attainment are present.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Expanded dependencies give ordinary transpose products, residuals, finite sums, and least-squares optimality.",
+      "id": "S06",
+      "paper_evidence": "Equation (20.20) minimizes perturbation norm subject to least-squares optimality.",
+      "reasoning": "The imported operations preserve the mathematical meanings.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "All quantities use exact real arithmetic and exact equality.",
+      "id": "S07",
+      "paper_evidence": "Problem 20.8 requests an exact backward-error evaluation.",
+      "reasoning": "No computed surrogate replaces a source quantity.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The target contains no solver or execution premise.",
+      "id": "S08",
+      "paper_evidence": "The selected result concerns the prescribed vector zero, independent of how it was obtained.",
+      "reasoning": "No algorithm linkage is required.",
+      "status": "not-applicable"
+    },
+    {
+      "candidate_evidence": "Matrix norms are square roots of all entry squares; vector norms are square roots of coordinate squares.",
+      "id": "S09",
+      "paper_evidence": "Equation (20.20) uses Frobenius perturbation norm and Euclidean residual norm.",
+      "reasoning": "The norms match exactly; squaring the residual norm preserves minimizers.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Uses zero in the zero-b branch and ||Aᵀb||₂/||b||₂ otherwise, with complete row and column sums.",
+      "id": "S10",
+      "paper_evidence": "The packet identifies this exact evaluation of Problem 20.8.",
+      "reasoning": "No factor, normalization, or index range is changed.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Exact reals are used; b = 0 has a separate branch; square roots receive nonnegative sums of squares.",
+      "id": "S11",
+      "paper_evidence": "The selected result has no floating-point model and includes b = 0.",
+      "reasoning": "The nonzero-b denominator is positive, and feasible costs are nonempty and bounded below, so totalized operations do not alter the result.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Gives exact equality and an attained global minimum.",
+      "id": "S12",
+      "paper_evidence": "The source asks for the value of a minimum.",
+      "reasoning": "The candidate neither substitutes a bound nor omits attainment.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Minimizes the absolute Frobenius norm of ΔA while keeping Δb = 0.",
+      "id": "S13",
+      "paper_evidence": "The θ = ∞ discussion on printed page 393 forces Δb = 0.",
+      "reasoning": "This is the same matrix-only normwise backward error, without relative normalization.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The conclusion is an exact formula with no remainder.",
+      "id": "S14",
+      "paper_evidence": "The selected evaluation is exact, with no asymptotic truncation.",
+      "reasoning": "No higher-order terms require comparison.",
+      "status": "not-applicable"
+    },
+    {
+      "candidate_evidence": "Covers every A and b of the specified dimensions, with y fixed at zero.",
+      "id": "S15",
+      "paper_evidence": "Problem 20.8 selects precisely y = 0 and matrix-only perturbations.",
+      "reasoning": "The candidate covers the full selected domain, including both b cases.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "No contradictory premise or run-existence condition appears; feasibility and attainment are conclusions.",
+      "id": "S16",
+      "paper_evidence": "The selected optimization has admissible matrix perturbations for every input.",
+      "reasoning": "The domain is inhabited and the feasible cost set is nonempty: a perturbation can make the perturbed matrix zero. The assertion is substantive.",
+      "status": "pass"
+    }
+  ],
+  "uncertainties": []
+}

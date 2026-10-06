@@ -1,0 +1,273 @@
+{
+  "schema_version": "ten-task-phase-aligned-use-1",
+  "task_count": 10,
+  "source_sha256": {
+    "source_task_ledger.json": "44b56e635d45f124ac3f3267a81fb595f045c7fa8d31ebbdc072219df9ae6904",
+    "declaration_scan.json": "cdb75163997154f3ce46655ec12f8997e8d8552229e6a748f6893b77972185c9",
+    "usage_metric_points.json": "80062bb05253db65785cdc4fb35ff89aebe645257bf012d98fb5a5bf338c9e3f"
+  },
+  "definitions": {
+    "statement": "Distinct direct NumStability constants in accepted elaborated target type and statement-local definitions.",
+    "proof_term": "Distinct direct NumStability constants in accepted proof term and proof-local helper bodies; names may also occur in the statement.",
+    "proof_exclusive": "Proof-term names absent from the statement set; not a complete proof-use measure.",
+    "union": "Deduplicated union of direct statement and proof-term names.",
+    "recursive_statement_note": "The separately reported recursive semantic dossier roots at the target type and explicitly excludes the target proof.",
+    "outcomes": "N-to-L percentage gains by phase, positive favoring L; active times and net-new tokens exclude the one-time scout; statement/proof code-line definitions follow source_task_ledger.json."
+  },
+  "rows": [
+    {
+      "number": 1,
+      "task_id": "CAST08-FIXED3",
+      "usage": {
+        "statement": 5,
+        "proof_term": 9,
+        "proof_exclusive": 4,
+        "union": 9
+      },
+      "gains": {
+        "formalization_time_gain_pct": 8.567067770600001,
+        "formalization_tokens_gain_pct": -171.9422098177639,
+        "proof_time_gain_pct": 42.90349122780566,
+        "proof_tokens_gain_pct": -98.42515431056606,
+        "total_time_gain_pct": 35.929523617185616,
+        "total_tokens_gain_pct": -122.72098385857034,
+        "statement_lines_gain_pct": 23.880597014925375,
+        "proof_line_gain_pct": 32.0,
+        "total_code_lines_gain_pct": 30.612244897959183
+      }
+    },
+    {
+      "number": 2,
+      "task_id": "P14-T1",
+      "usage": {
+        "statement": 3,
+        "proof_term": 7,
+        "proof_exclusive": 4,
+        "union": 7
+      },
+      "gains": {
+        "formalization_time_gain_pct": 2.6224017324862903,
+        "formalization_tokens_gain_pct": -207.1232964979542,
+        "proof_time_gain_pct": 34.11742592100222,
+        "proof_tokens_gain_pct": 40.38094218033167,
+        "total_time_gain_pct": 24.945738410282402,
+        "total_tokens_gain_pct": -47.86234464380068,
+        "statement_lines_gain_pct": -5.0,
+        "proof_line_gain_pct": -12.935323383084578,
+        "total_code_lines_gain_pct": -11.618257261410788
+      }
+    },
+    {
+      "number": 3,
+      "task_id": "HI21-LEM2.2",
+      "usage": {
+        "statement": 4,
+        "proof_term": 4,
+        "proof_exclusive": 0,
+        "union": 4
+      },
+      "gains": {
+        "formalization_time_gain_pct": -52.57860289717787,
+        "formalization_tokens_gain_pct": -228.52214793784535,
+        "proof_time_gain_pct": -27.277603351130427,
+        "proof_tokens_gain_pct": 33.01360057265569,
+        "total_time_gain_pct": -47.11291398316175,
+        "total_tokens_gain_pct": -182.5549796185396,
+        "statement_lines_gain_pct": -15.909090909090908,
+        "proof_line_gain_pct": -25.641025641025642,
+        "total_code_lines_gain_pct": -20.481927710843372
+      }
+    },
+    {
+      "number": 4,
+      "task_id": "CAST08-PROP3.1",
+      "usage": {
+        "statement": 4,
+        "proof_term": 9,
+        "proof_exclusive": 5,
+        "union": 9
+      },
+      "gains": {
+        "formalization_time_gain_pct": -6.102373322009077,
+        "formalization_tokens_gain_pct": -157.65433259673705,
+        "proof_time_gain_pct": 46.36215608550516,
+        "proof_tokens_gain_pct": 35.66728397493991,
+        "total_time_gain_pct": 35.46254062548555,
+        "total_tokens_gain_pct": -33.627132926058565,
+        "statement_lines_gain_pct": 5.084745762711864,
+        "proof_line_gain_pct": 46.38069705093834,
+        "total_code_lines_gain_pct": 40.74074074074074
+      }
+    },
+    {
+      "number": 5,
+      "task_id": "P14-T2",
+      "usage": {
+        "statement": 0,
+        "proof_term": 13,
+        "proof_exclusive": 13,
+        "union": 13
+      },
+      "gains": {
+        "formalization_time_gain_pct": 0.545111299843168,
+        "formalization_tokens_gain_pct": -134.99006445984588,
+        "proof_time_gain_pct": 17.868657907740108,
+        "proof_tokens_gain_pct": 44.704516175856874,
+        "total_time_gain_pct": 14.636309400955538,
+        "total_tokens_gain_pct": -4.243788450875294,
+        "statement_lines_gain_pct": -5.660377358490566,
+        "proof_line_gain_pct": 5.21978021978022,
+        "total_code_lines_gain_pct": 3.8369304556354917
+      }
+    },
+    {
+      "number": 6,
+      "task_id": "RUMP12-THM3.4",
+      "usage": {
+        "statement": 8,
+        "proof_term": 39,
+        "proof_exclusive": 31,
+        "union": 39
+      },
+      "gains": {
+        "formalization_time_gain_pct": -47.578717014356265,
+        "formalization_tokens_gain_pct": -200.89090685973738,
+        "proof_time_gain_pct": 30.843031098829144,
+        "proof_tokens_gain_pct": 44.0734692123387,
+        "total_time_gain_pct": 21.018297707970707,
+        "total_tokens_gain_pct": 0.08285917026237268,
+        "statement_lines_gain_pct": 12.244897959183673,
+        "proof_line_gain_pct": 44.40734557595993,
+        "total_code_lines_gain_pct": 41.97530864197531
+      }
+    },
+    {
+      "number": 7,
+      "task_id": "P14-LOGSUMEXP",
+      "usage": {
+        "statement": 3,
+        "proof_term": 8,
+        "proof_exclusive": 5,
+        "union": 8
+      },
+      "gains": {
+        "formalization_time_gain_pct": 28.4929488530403,
+        "formalization_tokens_gain_pct": -95.03026694452714,
+        "proof_time_gain_pct": 5.03777694124325,
+        "proof_tokens_gain_pct": 35.99022004889976,
+        "total_time_gain_pct": 10.49653856152489,
+        "total_tokens_gain_pct": -18.137914070186948,
+        "statement_lines_gain_pct": 6.976744186046512,
+        "proof_line_gain_pct": -25.980392156862745,
+        "total_code_lines_gain_pct": -20.242914979757085
+      }
+    },
+    {
+      "number": 8,
+      "task_id": "H20-8",
+      "usage": {
+        "statement": 5,
+        "proof_term": 26,
+        "proof_exclusive": 21,
+        "union": 26
+      },
+      "gains": {
+        "formalization_time_gain_pct": -11.902905352283753,
+        "formalization_tokens_gain_pct": 1.3964957204163406,
+        "proof_time_gain_pct": 65.59334748863681,
+        "proof_tokens_gain_pct": 56.39120611748349,
+        "total_time_gain_pct": 55.539239724928755,
+        "total_tokens_gain_pct": 39.11249171266603,
+        "statement_lines_gain_pct": 24.324324324324323,
+        "proof_line_gain_pct": 31.275720164609055,
+        "total_code_lines_gain_pct": 30.357142857142858
+      }
+    },
+    {
+      "number": 9,
+      "task_id": "CAST08-PROP3.2",
+      "usage": {
+        "statement": 5,
+        "proof_term": 11,
+        "proof_exclusive": 6,
+        "union": 11
+      },
+      "gains": {
+        "formalization_time_gain_pct": 20.190998679950752,
+        "formalization_tokens_gain_pct": -246.43863570109804,
+        "proof_time_gain_pct": 35.43705077704322,
+        "proof_tokens_gain_pct": -124.65627435697584,
+        "total_time_gain_pct": 31.625166218268603,
+        "total_tokens_gain_pct": -164.22339854561528,
+        "statement_lines_gain_pct": 12.068965517241379,
+        "proof_line_gain_pct": 25.53191489361702,
+        "total_code_lines_gain_pct": 23.51421188630491
+      }
+    },
+    {
+      "number": 10,
+      "task_id": "P14-SHIFTED-SOFTMAX",
+      "usage": {
+        "statement": 1,
+        "proof_term": 3,
+        "proof_exclusive": 2,
+        "union": 3
+      },
+      "gains": {
+        "formalization_time_gain_pct": -23.07736821145821,
+        "formalization_tokens_gain_pct": -99.18906304694488,
+        "proof_time_gain_pct": -0.3241151085249163,
+        "proof_tokens_gain_pct": 22.341628128899654,
+        "total_time_gain_pct": -3.7974440331566632,
+        "total_tokens_gain_pct": -10.96124741542856,
+        "statement_lines_gain_pct": -23.333333333333332,
+        "proof_line_gain_pct": -2.494802494802495,
+        "total_code_lines_gain_pct": -4.805914972273568
+      }
+    }
+  ],
+  "spearman": {
+    "formalization": {
+      "formalization_time_gain_pct": {
+        "spearman_rho": -0.12347796442943935,
+        "n": 10
+      },
+      "formalization_tokens_gain_pct": {
+        "spearman_rho": -0.31486880929507033,
+        "n": 10
+      },
+      "statement_lines_gain_pct": {
+        "spearman_rho": 0.7902589723484119,
+        "n": 10
+      }
+    },
+    "proof": {
+      "proof_time_gain_pct": {
+        "spearman_rho": 0.5592731001856595,
+        "n": 10
+      },
+      "proof_tokens_gain_pct": {
+        "spearman_rho": 0.49848254581765294,
+        "n": 10
+      },
+      "proof_line_gain_pct": {
+        "spearman_rho": 0.6383008208640678,
+        "n": 10
+      }
+    },
+    "total": {
+      "total_time_gain_pct": {
+        "spearman_rho": 0.5592731001856595,
+        "n": 10
+      },
+      "total_tokens_gain_pct": {
+        "spearman_rho": 0.5410359338752574,
+        "n": 10
+      },
+      "total_code_lines_gain_pct": {
+        "spearman_rho": 0.7173285415424762,
+        "n": 10
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "candidate_semantic_sha256": "49902039bc2e5b353a2622b2d8d0cee6951a9a5debc3c4286b4370fc37737bd8",
+  "classification": "faithful-stronger",
+  "implications": {
+    "candidate_implies_source": {
+      "reasoning": "Every source-admissible execution is represented by a finite binary tree labeled with its actual local rounding errors. The candidate uses computed children as operands and retains every internal node's exact partial-sum contribution with precisely its strict-ancestor factors. It therefore covers the complete source identity.",
+      "verdict": "yes"
+    },
+    "source_implies_candidate": {
+      "reasoning": "The PDF restricts the stated result to floating-point inputs and actual rounded additions without overflow or underflow. The candidate additionally quantifies over arbitrary real inputs, bounded real perturbation assignments, and nonnegative bounds, including cases outside those executions. The source statement does not assert this broader domain.",
+      "verdict": "no"
+    }
+  },
+  "mismatches": [],
+  "paper_sha256": "cce25923a86d5d2051a079ad4ae7ea965f1dde97ffb6d3bf6462d069968fd1c6",
+  "rationale": "The candidate genuinely generalizes the execution domain while preserving the full exact signed-error identity. All finite binary shapes, arbitrary signs, every internal-node occurrence, the root's empty ancestor product, and the one-leaf zero-error case are covered. Its recursive evaluation is total and imposes no additional execution-existence restriction. The source's algebraic reasoning extends to this broader domain, but that does not make the stated propositions equivalent.",
+  "remaining_uncertainties": [],
+  "resolved_items": [
+    {
+      "item": "direct and round-trip classifications differ",
+      "primary_evidence": "PDF Section 1.2, page 2, assumes floating-point inputs and no overflow or underflow; Algorithm 2.1, page 3, retains that input domain. Lemma 2.2, equation (2.3), page 4, states the complete error identity. The dossier's target and recursive dependency bodies, corroborated by the blind translation, quantify over arbitrary real leaves and bounded real node perturbations.",
+      "resolution": "Resolve as faithful-stronger. The direct judgment correctly establishes complete source coverage but treats the broader perturbation model as the source's stated domain. The PDF controls: the candidate extends beyond actual floating-point executions while retaining every source-admissible case and the entire conclusion."
+    }
+  ],
+  "role": "adjudicator",
+  "trigger": [
+    "direct and round-trip classifications differ"
+  ],
+  "verdict": "faithful"
+}

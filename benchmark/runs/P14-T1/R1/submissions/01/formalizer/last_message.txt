@@ -1,0 +1,3 @@
+[Candidate.lean](/workspace/Candidate.lean) now contains one target proposition for equation (3.3). It links the modeled exponential evaluations to the actual left-to-right rounded sum and states an explicit quadratic remainder.
+
+The required Lean command compiles successfully. The target’s `sorry` is the only proof hole.

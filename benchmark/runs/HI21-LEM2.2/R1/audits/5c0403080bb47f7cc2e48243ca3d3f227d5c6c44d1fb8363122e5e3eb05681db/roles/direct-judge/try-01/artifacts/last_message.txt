@@ -1,0 +1,761 @@
+{
+  "accepted": true,
+  "candidate_semantic_sha256": "5c0403080bb47f7cc2e48243ca3d3f227d5c6c44d1fb8363122e5e3eb05681db",
+  "classification": "faithful-equivalent",
+  "dependency_coverage": [
+    {
+      "effect_on_target": "Imposes the source's local relative-error bounds at every addition.",
+      "id": "D001",
+      "interpretation": "Recursive predicate requiring |δ| ≤ u at each internal node, with no condition at leaves.",
+      "name": "Local roundoff bounds",
+      "paper_match": "Matches the standard relative-error model.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies precisely one rounding parameter per addition.",
+      "id": "D002",
+      "interpretation": "Tree-indexed collection of real internal-node errors.",
+      "name": "Tree error assignment",
+      "paper_match": "Represents the local errors associated with the computational tree.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Links the final computed value to all local rounding parameters.",
+      "id": "D003",
+      "interpretation": "Leaves return their inputs; each internal node returns the sum of its computed children multiplied by 1+δ.",
+      "name": "Computed tree sum",
+      "paper_match": "Matches the rounded addition preceding equation (2.1).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Provides the complete right-hand side of the selected identity.",
+      "id": "D004",
+      "interpretation": "Lists all internal-node contributions A s δ, passing A(1+δ) to both children and starting with A=1.",
+      "name": "Ancestor-weighted contributions",
+      "paper_match": "Each contribution contains exactly the strict-ancestor factors in equation (2.3).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Quantifies over arbitrary finite binary summation shapes.",
+      "id": "D005",
+      "interpretation": "Finite full binary trees indexed by their number of leaves.",
+      "name": "Summation tree",
+      "paper_match": "Matches the computational trees of Algorithm 2.1.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Defines both the exact total and exact partial sums used in contributions.",
+      "id": "D006",
+      "interpretation": "Recursive unrounded sum of the real leaves in a subtree.",
+      "name": "Exact tree sum",
+      "paper_match": "Matches the exact partial sums s_k.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Defines the local-bound predicate by leaf and internal-node cases.",
+      "id": "D007",
+      "interpretation": "Case analysis on a tree error assignment with a real parameter.",
+      "name": "Parameterized error cases",
+      "paper_match": "Structural implementation of the source tree model; adds no assumption.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Makes both children's recursive values available.",
+      "id": "D008",
+      "interpretation": "Packages recursive data for proper subtrees of an error assignment.",
+      "name": "Error recursion data",
+      "paper_match": "Preserves the binary tree structure.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports the computed sum, bounds, and contribution-list definitions.",
+      "id": "D009",
+      "interpretation": "Structural recursion over a tree error assignment using subtree data.",
+      "name": "Error-tree recursion",
+      "paper_match": "Traverses all source computational nodes.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Introduces no rounding operation at a leaf.",
+      "id": "D010",
+      "interpretation": "Error-assignment constructor for a single input.",
+      "name": "Leaf error assignment",
+      "paper_match": "Matches exact input storage and zero leaf error.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Connects two child computations with one local error.",
+      "id": "D011",
+      "interpretation": "Combines two child error assignments and a real δ.",
+      "name": "Internal error assignment",
+      "paper_match": "Matches one rounded addition per internal node.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Permits indexing the unique input at a leaf.",
+      "id": "D012",
+      "interpretation": "The natural number 1 is nonzero.",
+      "name": "Singleton index admissibility",
+      "paper_match": "Indexing infrastructure; imposes no restriction on inputs.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports evaluation and contribution generation with leaf values.",
+      "id": "D013",
+      "interpretation": "Case analysis on error assignments paired with a real input vector.",
+      "name": "Input-dependent error cases",
+      "paper_match": "Preserves the source's leaf and addition cases.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Makes exact child sums available in recursive evaluation.",
+      "id": "D014",
+      "interpretation": "Packages recursive data for proper subtrees.",
+      "name": "Tree recursion data",
+      "paper_match": "Structural support for exact partial sums.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Defines exact evaluation for every finite tree.",
+      "id": "D015",
+      "interpretation": "Structural recursion on leaf-count-indexed binary trees.",
+      "name": "Tree recursion",
+      "paper_match": "Covers arbitrary source tree shapes.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Justifies selecting index zero in a singleton input vector.",
+      "id": "D016",
+      "interpretation": "The natural-number inequality 0<1.",
+      "name": "Singleton index bound",
+      "paper_match": "Indexing infrastructure without mathematical restriction.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Separates the leaf and internal-node definitions of exact evaluation.",
+      "id": "D017",
+      "interpretation": "Case analysis on a tree together with its real input vector.",
+      "name": "Input-dependent tree cases",
+      "paper_match": "Matches exact binary summation.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Includes the one-input, zero-addition case.",
+      "id": "D018",
+      "interpretation": "A binary tree with exactly one leaf.",
+      "name": "Leaf tree",
+      "paper_match": "Matches the one-leaf case specified in the source packet.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Allows arbitrary binary combinations and tracks total leaf count.",
+      "id": "D019",
+      "interpretation": "Joins trees with m and n leaves into a tree with m+n leaves.",
+      "name": "Binary tree join",
+      "paper_match": "Matches an addition joining two existing partial sums.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Implements recursive evaluation without restricting assignments.",
+      "id": "D020",
+      "interpretation": "Returns an error-tree recursive result together with its subtree data.",
+      "name": "Error recursion accumulator",
+      "paper_match": "Structural infrastructure consistent with the source tree.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Provides exhaustive leaf and internal-node cases.",
+      "id": "D021",
+      "interpretation": "Elimination by the two error-assignment constructors.",
+      "name": "Error assignment cases",
+      "paper_match": "No source execution case is omitted.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Ensures recursion covers both children and their local error.",
+      "id": "D022",
+      "interpretation": "Induction and recursion principle for tree error assignments.",
+      "name": "Error assignment recursor",
+      "paper_match": "Matches the complete internal-node structure.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports exact recursive evaluation of all subtrees.",
+      "id": "D023",
+      "interpretation": "Returns a tree-recursive result together with subtree data.",
+      "name": "Tree recursion accumulator",
+      "paper_match": "Structural infrastructure without additional hypotheses.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Provides exhaustive cases for exact evaluation.",
+      "id": "D024",
+      "interpretation": "Elimination by leaf and binary-join constructors.",
+      "name": "Binary tree cases",
+      "paper_match": "Matches all finite full binary summation trees.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports definitions over arbitrary finite tree shapes.",
+      "id": "D025",
+      "interpretation": "Induction and recursion principle for leaf-count-indexed binary trees.",
+      "name": "Binary tree recursor",
+      "paper_match": "Preserves the generality of the source tree model.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Makes the conclusion an exact identity.",
+      "id": "D026",
+      "interpretation": "Equality of two values of the same type.",
+      "name": "Equality",
+      "paper_match": "Matches the equality in equation (2.3).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Indexes precisely the n real leaves.",
+      "id": "D027",
+      "interpretation": "Natural indices from zero through n−1.",
+      "name": "Finite input indices",
+      "paper_match": "Equivalent to indexing the source inputs from 1 through n.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms computed sum minus exact sum.",
+      "id": "D028",
+      "interpretation": "Subtraction operator specialized to real numbers.",
+      "name": "Subtraction operation",
+      "paper_match": "Matches the source's forward-error sign.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Aggregates every listed internal-node contribution.",
+      "id": "D029",
+      "interpretation": "Exact finite-list sum with empty sum zero.",
+      "name": "Contribution sum",
+      "paper_match": "Equivalent to the finite sum in equation (2.3).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Provides finite leaf counts and indices.",
+      "id": "D030",
+      "interpretation": "Natural numbers.",
+      "name": "Natural counts",
+      "paper_match": "Matches finite input counts.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets numeric constants in their intended types.",
+      "id": "D031",
+      "interpretation": "Natural-number literal interpretation.",
+      "name": "Numeric literals",
+      "paper_match": "Preserves zero and one in the source formula.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies the initial ancestor factor and the unit in 1+δ.",
+      "id": "D032",
+      "interpretation": "Interpretation of numeral one as the multiplicative unit.",
+      "name": "Unit literal",
+      "paper_match": "Matches the source's unit factors.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Provides the domain for inputs, errors, and exact arithmetic.",
+      "id": "D033",
+      "interpretation": "Real numbers.",
+      "name": "Real scalar domain",
+      "paper_match": "Matches the real-valued error model.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Adds exact values and forms unrounded operand sums.",
+      "id": "D034",
+      "interpretation": "Ordinary real addition.",
+      "name": "Real addition",
+      "paper_match": "Rounding is separately represented by the local factors, as in the source.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Sets the empty ancestor product to one.",
+      "id": "D035",
+      "interpretation": "The real number one.",
+      "name": "Real unit",
+      "paper_match": "Matches the root's empty ancestor product.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Defines signed forward error.",
+      "id": "D036",
+      "interpretation": "Real subtraction as addition of the additive inverse.",
+      "name": "Real subtraction",
+      "paper_match": "Matches computed minus exact.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Makes the empty contribution sum zero.",
+      "id": "D037",
+      "interpretation": "The real additive identity.",
+      "name": "Real zero",
+      "paper_match": "Matches zero error for a single input.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Routes the target's subtraction to ordinary real subtraction.",
+      "id": "D038",
+      "interpretation": "Adapter from a subtraction structure to the binary subtraction operator.",
+      "name": "Subtraction adapter",
+      "paper_match": "Does not change the source error notion.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Requires both child bounds and the current node's bound.",
+      "id": "D039",
+      "interpretation": "Logical conjunction.",
+      "name": "Conjunction",
+      "paper_match": "Enforces all local bounds simultaneously.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Restricts the input vector to the left child's leaves.",
+      "id": "D040",
+      "interpretation": "Embeds a left-block index into the combined input block without changing its value.",
+      "name": "Left input embedding",
+      "paper_match": "Preserves each left-subtree input exactly once.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Selects the unique leaf input using numeral zero.",
+      "id": "D041",
+      "interpretation": "Numeral interpretation in a nonempty finite index type.",
+      "name": "Finite index literal",
+      "paper_match": "Correctly selects the sole input in the singleton case.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Constructs valid leaf indices.",
+      "id": "D042",
+      "interpretation": "A natural index together with a proof that it is below the index bound.",
+      "name": "Bounded index construction",
+      "paper_match": "Indexing infrastructure preserving the input domain.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Restricts the input vector to the right child's leaves.",
+      "id": "D043",
+      "interpretation": "Embeds a right-block index by adding the left block's length.",
+      "name": "Right input embedding",
+      "paper_match": "Complements the left block without overlap or omission.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Adds leaf counts and real values according to their types.",
+      "id": "D044",
+      "interpretation": "Binary addition operator.",
+      "name": "Addition operation",
+      "paper_match": "Uses ordinary natural and real addition.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Combines both subtree contribution lists and the root contribution.",
+      "id": "D045",
+      "interpretation": "Concatenation operator specialized to lists.",
+      "name": "Concatenation operation",
+      "paper_match": "Preserves complete tree-wide content.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms local error terms and accumulated ancestor factors.",
+      "id": "D046",
+      "interpretation": "Multiplication operator specialized to real numbers.",
+      "name": "Multiplication operation",
+      "paper_match": "Matches the products in equation (2.3).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses the inclusive roundoff bound.",
+      "id": "D047",
+      "interpretation": "Non-strict ordering relation.",
+      "name": "Non-strict comparison",
+      "paper_match": "Matches |δ| ≤ u.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Represents finitely many contributions with multiplicity.",
+      "id": "D048",
+      "interpretation": "Finite ordered lists.",
+      "name": "Finite contribution lists",
+      "paper_match": "Permitted flattened representation of the internal-node sum.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Inserts one contribution for the current internal node.",
+      "id": "D049",
+      "interpretation": "Adds a head element to a list.",
+      "name": "Contribution insertion",
+      "paper_match": "Ensures each internal node, including the root, contributes once.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Combines contributions without removing duplicates.",
+      "id": "D050",
+      "interpretation": "Ordinary list concatenation.",
+      "name": "List concatenation",
+      "paper_match": "Equal-valued contributions from distinct nodes remain distinct summands.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Gives leaves no local contribution.",
+      "id": "D051",
+      "interpretation": "Empty list.",
+      "name": "Empty contributions",
+      "paper_match": "Matches absence of rounding at input leaves.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies ordinary negation and additive operations for absolute value.",
+      "id": "D052",
+      "interpretation": "The additive group structure of the real numbers.",
+      "name": "Real additive group",
+      "paper_match": "Matches standard real error arithmetic.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Compares error magnitudes with u.",
+      "id": "D053",
+      "interpretation": "Ordinary real less-than-or-equal relation.",
+      "name": "Real order",
+      "paper_match": "Matches the standard local bound.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Computes all rounding and ancestor factors exactly in the model.",
+      "id": "D054",
+      "interpretation": "Ordinary real multiplication.",
+      "name": "Real multiplication",
+      "paper_match": "Matches the mathematical products in the identity.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies maximum for the definition of absolute value.",
+      "id": "D055",
+      "interpretation": "The usual lattice structure on the ordered real numbers.",
+      "name": "Real lattice",
+      "paper_match": "Gives the standard scalar magnitude.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Makes the leaf-bound condition unconditional.",
+      "id": "D056",
+      "interpretation": "The always-true proposition.",
+      "name": "Trivial leaf condition",
+      "paper_match": "A leaf performs no rounded addition.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Measures local relative-error magnitude.",
+      "id": "D057",
+      "interpretation": "Absolute value defined as max(a,−a).",
+      "name": "Scalar absolute value",
+      "paper_match": "Exactly the magnitude used in |δ| ≤ u.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Tracks total leaf counts and input offsets.",
+      "id": "D058",
+      "interpretation": "Ordinary natural-number addition.",
+      "name": "Count addition",
+      "paper_match": "Correctly combines subtree sizes.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Routes addition to the intended scalar or count operation.",
+      "id": "D059",
+      "interpretation": "Adapter from addition structures to binary addition.",
+      "name": "Addition adapter",
+      "paper_match": "Preserves ordinary addition semantics.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Routes contribution concatenation to list append.",
+      "id": "D060",
+      "interpretation": "Adapter from append structures to concatenation.",
+      "name": "Concatenation adapter",
+      "paper_match": "Preserves the complete contribution list.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Routes all scalar products to real multiplication.",
+      "id": "D061",
+      "interpretation": "Adapter from multiplication structures to binary multiplication.",
+      "name": "Multiplication adapter",
+      "paper_match": "Preserves the source product semantics.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets leaf counts and indices as ordinary numerals.",
+      "id": "D062",
+      "interpretation": "Natural-number literal interpretation by the same natural number.",
+      "name": "Natural literals",
+      "paper_match": "No change to constants or indexing.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Maintains dependent index consistency during case analysis.",
+      "id": "D063",
+      "interpretation": "Transport along equality.",
+      "name": "Equality transport",
+      "paper_match": "Logical infrastructure; adds no source hypothesis.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports identity-preserving transports.",
+      "id": "D064",
+      "interpretation": "Every value equals itself.",
+      "name": "Equality reflexivity",
+      "paper_match": "Standard logic with no change to the proposition.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Reorients equalities used in dependent case analysis.",
+      "id": "D065",
+      "interpretation": "Equality is symmetric.",
+      "name": "Equality symmetry",
+      "paper_match": "Standard logic with no domain restriction.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Relates tree-indexed data while their indices are identified.",
+      "id": "D066",
+      "interpretation": "Equality allowing initially different dependent types.",
+      "name": "Dependent equality",
+      "paper_match": "Indexing infrastructure; does not weaken numerical equality.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports dependent case analysis.",
+      "id": "D067",
+      "interpretation": "Reflexivity of dependent equality.",
+      "name": "Dependent equality reflexivity",
+      "paper_match": "Standard logical infrastructure.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses finite-index validity.",
+      "id": "D068",
+      "interpretation": "Strict order operator.",
+      "name": "Strict comparison",
+      "paper_match": "Used for input indexing, not to alter the error bound.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Validates natural-number index bounds.",
+      "id": "D069",
+      "interpretation": "Ordinary partial order on natural numbers.",
+      "name": "Natural order",
+      "paper_match": "Matches standard finite indexing.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Allows numeral indexing of the singleton input.",
+      "id": "D070",
+      "interpretation": "Predicate asserting that a value is nonzero.",
+      "name": "Nonzero predicate",
+      "paper_match": "Applied to the index size one, not to input values or partial sums.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Packages recursive results from both children.",
+      "id": "D071",
+      "interpretation": "Product of two types or sorts.",
+      "name": "Recursive data pairs",
+      "paper_match": "Structural support without additional mathematical conditions.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Represents the absence of recursive child data at a leaf.",
+      "id": "D072",
+      "interpretation": "A type with one element.",
+      "name": "Empty recursion data",
+      "paper_match": "Matches the leaf base case.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies inherited order operations for index bounds.",
+      "id": "D073",
+      "interpretation": "Extracts a preorder from a partial order.",
+      "name": "Order structure projection",
+      "paper_match": "Does not change natural-number ordering.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies the strict comparison used in finite indices.",
+      "id": "D074",
+      "interpretation": "Extracts strict order from a preorder.",
+      "name": "Strict order projection",
+      "paper_match": "Preserves ordinary index-bound semantics.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports the nonzero singleton-size condition.",
+      "id": "D075",
+      "interpretation": "Constructs a zero structure from numeral zero.",
+      "name": "Zero literal adapter",
+      "paper_match": "Preserves the standard zero constant.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Resolves dependent index equalities during case analysis.",
+      "id": "D076",
+      "interpretation": "Converts dependent equality to ordinary equality when the types coincide.",
+      "name": "Dependent equality conversion",
+      "paper_match": "Logical infrastructure without numerical assumptions.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Builds paired recursive results.",
+      "id": "D077",
+      "interpretation": "Constructor pairing two values.",
+      "name": "Recursive pair construction",
+      "paper_match": "Preserves both child computations.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Initializes recursive data at leaves.",
+      "id": "D078",
+      "interpretation": "The unique value of the singleton data type.",
+      "name": "Leaf recursion datum",
+      "paper_match": "Matches the recursion base case.",
+      "status": "pass"
+    }
+  ],
+  "implications": {
+    "candidate_implies_source": {
+      "reasoning": "Every source-admissible execution gives a finite binary tree, its leaf values, and one bounded relative-error witness per internal addition. The candidate's computed evaluation reproduces that execution. Its contribution list contains each exact partial sum times its local error and precisely the strict-ancestor factors, so its equality yields the full selected identity.",
+      "verdict": "yes"
+    },
+    "source_implies_candidate": {
+      "reasoning": "The candidate represents the source's real relative-error tree model directly. Its recursive computed values obey the source's local addition equation, and its flattened sum is the same internal-node sum as equation (2.3), with reordered real summands. The singleton case reduces to zero equals the empty sum.",
+      "verdict": "yes"
+    }
+  },
+  "mismatches": [],
+  "paper_sha256": "cce25923a86d5d2051a079ad4ae7ea965f1dde97ffb6d3bf6462d069968fd1c6",
+  "rationale": "The candidate faithfully expresses Lemma 2.2's first explicit forward-error identity. It retains arbitrary binary tree shapes, arbitrary signed real inputs, exact partial sums, and computed-child operands linked to local rounding witnesses. The flattened contribution list includes every internal node once and accumulates only strict-ancestor factors. It adds no successful-run or existence restriction and retains all higher-order products.",
+  "requires_adjudication": false,
+  "role": "direct-judge",
+  "semantic_checklist": [
+    {
+      "candidate_evidence": "The target equates computed minus exact tree sum with the sum of ancestor-weighted internal-node contributions.",
+      "id": "S01",
+      "paper_evidence": "Lemma 2.2, equation (2.3), on printed page 4.",
+      "reasoning": "This is the selected first explicit expression, not a later error bound or alternative formula.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Binders range over a natural leaf count, a tree of that size, real leaf values, tree-indexed real errors, and a real bound.",
+      "id": "S02",
+      "paper_evidence": "Algorithm 2.1 and its computational tree use n inputs, exact partial sums, and local relative errors.",
+      "reasoning": "The dependent types preserve the correspondence among inputs, tree shape, and local errors.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "All trees, leaf vectors, error assignments, and bounds are universally quantified before the local-bound implication.",
+      "id": "S03",
+      "paper_evidence": "The identity applies to general summation with the actual local errors of each computation.",
+      "reasoning": "No existential choice or restricted tree family narrows the result.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The sole substantive premise requires |δ| ≤ u recursively at each internal node.",
+      "id": "S04",
+      "paper_evidence": "Section 1.2 supplies the standard local relative-error bound; Lemma 2.2 has no probabilistic premise.",
+      "reasoning": "There are no sign, independence, nonzero-sum, or successful-operation assumptions.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Both subtree lists are concatenated with one current-node contribution; leaves contribute an empty list.",
+      "id": "S05",
+      "paper_evidence": "Equation (2.3) sums over every internal node, including the root.",
+      "reasoning": "The complete tree-wide expression is present, rather than just the local recurrence.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Arithmetic specializes to ordinary real operations, and contribution aggregation is an exact finite-list sum.",
+      "id": "S06",
+      "paper_evidence": "The selected formula uses ordinary real sums and products.",
+      "reasoning": "Imported operations preserve the intended mathematical meanings.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Exact evaluation uses unrounded child sums; computed evaluation multiplies the computed-child sum by 1+δ. Contributions use exact evaluation.",
+      "id": "S07",
+      "paper_evidence": "The discussion following equation (2.4) emphasizes that equation (2.3) uses exact partial sums.",
+      "reasoning": "Exact and computed quantities remain correctly distinguished.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Computed evaluation recursively performs one modeled rounded addition per internal node using the same error assignment as the conclusion.",
+      "id": "S08",
+      "paper_evidence": "The source specifies ŝ_k=(x̂+ŷ)(1+δ_k) for the actual computed children.",
+      "reasoning": "The target is linked to a binary summation execution and does not assume the final identity.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Absolute value appears only in the scalar local-error bound and is the usual real absolute value.",
+      "id": "S09",
+      "paper_evidence": "The standard model uses |δ_k| ≤ u; the selected conclusion is a signed identity.",
+      "reasoning": "No vector norm or alternative magnitude changes the statement.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The initial ancestor factor is one; a node's own δ enters its contribution once, while 1+δ is passed only to descendants.",
+      "id": "S10",
+      "paper_evidence": "The product in equation (2.3) ranges over strict ancestors through the root.",
+      "reasoning": "The root has an empty ancestor product, and finite leaf indexing covers both child blocks exactly.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Finite real computations are represented through bounded relative-error multipliers; leaves are returned unchanged.",
+      "id": "S11",
+      "paper_evidence": "Section 1.2 assumes exactly stored inputs and no overflow or underflow.",
+      "reasoning": "This is the source's abstract real relative-error model. Exceptional values are outside that model, and no extra run-definedness condition is added.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The conclusion is equality in the real numbers.",
+      "id": "S12",
+      "paper_evidence": "Lemma 2.2 asserts an exact equality.",
+      "reasoning": "Neither an inequality nor an approximation replaces the identity.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The left-hand side is computed total minus exact total.",
+      "id": "S13",
+      "paper_evidence": "The source defines e_n=ŝ_n−s_n.",
+      "reasoning": "The candidate preserves signed forward error, without normalization or a backward-error substitution.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Ancestor factors are recursively multiplied in full.",
+      "id": "S14",
+      "paper_evidence": "Equation (2.3) retains the full product of 1+δ_j.",
+      "reasoning": "No higher-order terms are dropped and no remainder is introduced.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Trees are built from unrestricted leaf and binary-join constructors; inputs and local errors may have arbitrary signs.",
+      "id": "S15",
+      "paper_evidence": "The selected result covers general binary summation; the packet explicitly includes arbitrary signs and the one-leaf case.",
+      "reasoning": "The representation covers the full selected domain. Leaf ordering can encode any source summation ordering.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Every tree admits an error assignment; zero errors satisfy the bound for nonnegative u, and leaves require no bound witnesses.",
+      "id": "S16",
+      "paper_evidence": "The source includes ordinary finite summation executions and the packet includes the zero-error singleton case.",
+      "reasoning": "The hypotheses are realizable, all source-admissible executions are representable, and the conclusion is not assumed.",
+      "status": "pass"
+    }
+  ],
+  "uncertainties": []
+}

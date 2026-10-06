@@ -1,0 +1,135 @@
+{
+  "accepted": true,
+  "candidate_semantic_sha256": "b9345a25220702bc210e984ec696289aedd645027f3ad56a9f55f6a48acf2b54",
+  "classification": "faithful-equivalent",
+  "implications": {
+    "candidate_implies_source": {
+      "reasoning": "Set the source dimension N=n+1 and relabel coordinates. The candidate models Algorithm 3.1's exponential evaluations, recursive summation, and divisions, and supplies both the source componentwise bound and Theorem 3.3's relative infinity-norm bound with the required uniform quadratic remainder.",
+      "verdict": "yes"
+    },
+    "source_implies_candidate": {
+      "reasoning": "The source packet specifies uniformity over all admissible local errors for fixed dimension and input. The componentwise derivation preceding Theorem 3.3 and its normwise consequence give exactly the candidate conclusions after reindexing. The summation recurrence omits only the exact initial addition to zero.",
+      "verdict": "yes"
+    }
+  },
+  "mismatches": [],
+  "paper_sha256": "7247047bc49218e001195edc8a2d66131eea7596d252503f34b0ace6328981cd",
+  "rationale": "The translation preserves the selected result and its packet-specified uniform asymptotic interpretation. Its dimension n+1 covers every positive source dimension, and its coefficient n+4 is precisely dimension plus three. The componentwise conclusion is explicitly present in the source derivation and packet. The abstract relative-error model represents the source's computation in the absence of overflow and underflow; no additional format-specific theorem is required. Standard supremum-norm and sequential-fold meanings resolve the translation's implementation-frontier observations without leaving a mathematical uncertainty.",
+  "requires_adjudication": false,
+  "role": "roundtrip-judge",
+  "semantic_checklist": [
+    {
+      "id": "S01",
+      "paper_evidence": "Theorem 3.3, printed page 2319, bounds the basic softmax algorithm's relative infinity-norm error by (N+3)u+O(u²).",
+      "reasoning": "The selected theorem, algorithm, and adjoining componentwise derivation are correctly identified. The PDF hash matches the supplied hash.",
+      "status": "pass",
+      "translation_evidence": "The candidate bounds the computed normalized exponential vector using the basic exponential-sum-division computation."
+    },
+    {
+      "id": "S02",
+      "paper_evidence": "The packet specifies a positive integer dimension N and x∈ℝ^N.",
+      "reasoning": "N=n+1 gives exactly all positive dimensions; all scalar and vector types agree.",
+      "status": "pass",
+      "translation_evidence": "For every natural n, x and the exponential and division errors have n+1 real coordinates; addition errors have n coordinates."
+    },
+    {
+      "id": "S03",
+      "paper_evidence": "For fixed dimension and input, the packet places C>0 and u₀>0 before u and all admissible local errors.",
+      "reasoning": "The quantifier order preserves uniformity and permits the output error vector to depend on the run.",
+      "status": "pass",
+      "translation_evidence": "For every n,x there exist C,u₀>0 such that for every 0<u≤u₀ and all bounded error vectors there exists one vector τ satisfying all conclusions."
+    },
+    {
+      "id": "S04",
+      "paper_evidence": "Section 3 assumes no overflow or underflow; equations (1.7) and (3.1) bound operation and exponential relative errors by u.",
+      "reasoning": "The candidate imposes the corresponding local error assumptions without restricting input magnitudes or assuming the desired output bound.",
+      "status": "pass",
+      "translation_evidence": "All exponential, addition, and division errors have absolute value at most u; x is arbitrary."
+    },
+    {
+      "id": "S05",
+      "paper_evidence": "Page 2318 gives ĝ_j=g_j(1+τ_j), |τ_j|≤(N+3)u+O(u²); Theorem 3.3 gives the relative infinity-norm inequality.",
+      "reasoning": "Both componentwise and normwise conclusions appear, with a common uniform bound.",
+      "status": "pass",
+      "translation_evidence": "The candidate asserts the exact multiplicative identity, every componentwise error bound, and the relative supremum-norm bound."
+    },
+    {
+      "id": "S06",
+      "paper_evidence": "Softmax uses the ordinary exponential, a sum over all coordinates, and division; Algorithm 3.1 accumulates the denominator sequentially.",
+      "reasoning": "The translated mathematical definitions preserve these operations and their indexing.",
+      "status": "pass",
+      "translation_evidence": "E_i=exp(x_i), T=Σ_i E_i, y_i=E_i/T, and S is defined by an increasing-index recurrence."
+    },
+    {
+      "id": "S07",
+      "paper_evidence": "The source distinguishes exact exponentials and their exact sum from computed exponentials and the recursively computed denominator.",
+      "reasoning": "The candidate keeps exact and computed quantities distinct and reuses each computed exponential in numerator and denominator.",
+      "status": "pass",
+      "translation_evidence": "The exact vector uses E_i and T; the computed vector uses w_i=E_i(1+δexp_i) and the perturbed sum S."
+    },
+    {
+      "id": "S08",
+      "paper_evidence": "Algorithm 3.1 starts s=0, evaluates each exponential, accumulates s, and finally computes g_i=w_i/s.",
+      "reasoning": "Initializing the recurrence with the first computed exponential matches the exact addition of that floating-point value to zero. There are N−1 substantive additions. The logarithm computation does not feed the softmax output.",
+      "status": "pass",
+      "translation_evidence": "s_0=w_0; s_{k+1}=(s_k+w_{k+1})(1+δadd_k); ŷ_j=(w_j/S)(1+δdiv_j)."
+    },
+    {
+      "id": "S09",
+      "paper_evidence": "Equation (3.6) uses ‖g−ĝ‖∞/‖g‖∞.",
+      "reasoning": "The candidate uses the same maximum absolute coordinate norm and exact-vector normalization.",
+      "status": "pass",
+      "translation_evidence": "The translation explicitly defines ‖v‖∞=max_j|v_j| and coordinatewise subtraction."
+    },
+    {
+      "id": "S10",
+      "paper_evidence": "The source coefficient is N+3 for N coordinates, indexed 1 through N.",
+      "reasoning": "The candidate's n+4 equals N+3 because N=n+1. Zero-based indexing changes no quantity.",
+      "status": "pass",
+      "translation_evidence": "The coefficient is ((n+1)+3), with output indices 0 through n and addition indices 0 through n−1."
+    },
+    {
+      "id": "S11",
+      "paper_evidence": "The source uses the standard multiplicative floating-point model and excludes overflow and underflow throughout Section 3.",
+      "reasoning": "The abstract real-error recurrence captures this model without introducing exceptional-value behavior. Taking a smaller witnessing threshold below 1 makes all exponential and addition factors positive, so the computed denominator is positive. Totalized division therefore does not alter the local asymptotic claim.",
+      "status": "pass",
+      "translation_evidence": "The candidate uses bounded multiplicative real errors. It specifies totalized division but permits an existentially chosen positive small-u threshold."
+    },
+    {
+      "id": "S12",
+      "paper_evidence": "The source gives non-strict upper error bounds and an exact identity ĝ_j=g_j(1+τ_j).",
+      "reasoning": "The candidate preserves the relation directions and strengths.",
+      "status": "pass",
+      "translation_evidence": "All error comparisons use ≤, and the componentwise representation is an equality."
+    },
+    {
+      "id": "S13",
+      "paper_evidence": "The source bounds componentwise relative forward error and normwise relative forward error against the exact softmax.",
+      "reasoning": "No backward-error or absolute-error substitute is introduced.",
+      "status": "pass",
+      "translation_evidence": "|τ_j| bounds the multiplicative error relative to y_j; the norm error is divided by ‖y‖∞."
+    },
+    {
+      "id": "S14",
+      "paper_evidence": "The packet interprets O(u²) as C u² with C,u₀>0 independent of u and all admissible errors for fixed dimension and input.",
+      "reasoning": "The candidate states exactly that quantified remainder, without dropping higher-order terms or allowing run-dependent constants.",
+      "status": "pass",
+      "translation_evidence": "The same preselected C and u₀ govern every admissible run and both error conclusions."
+    },
+    {
+      "id": "S15",
+      "paper_evidence": "The result applies to arbitrary real inputs in every positive dimension and to the unshifted basic algorithm.",
+      "reasoning": "All dimensions and inputs are covered. The candidate's positive-u asymptotic interval matches the packet; u=0 yields zero local errors and exact output directly.",
+      "status": "pass",
+      "translation_evidence": "n ranges over all natural numbers, including zero; x is unrestricted; the model contains no shift or alternative exponential formula."
+    },
+    {
+      "id": "S16",
+      "paper_evidence": "Exact softmax coordinates are positive, and the packet requires positive remainder constants and a positive threshold.",
+      "reasoning": "The admissible interval is nonempty, zero local errors always supply an admissible run, and the exact normalization denominator is positive. The singleton dimension retains a substantive output conclusion.",
+      "status": "pass",
+      "translation_evidence": "C,u₀>0; all-zero error vectors satisfy the hypotheses; T>0 and ‖y‖∞>0; the output has n+1 coordinates."
+    }
+  ],
+  "uncertainties": []
+}

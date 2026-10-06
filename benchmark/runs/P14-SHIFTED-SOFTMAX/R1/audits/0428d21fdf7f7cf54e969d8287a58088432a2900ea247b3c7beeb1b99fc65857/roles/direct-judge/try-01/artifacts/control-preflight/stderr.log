@@ -1,0 +1,2 @@
+2026-09-25T02:40:44.019390Z ERROR codex_models_manager::manager: failed to write models cache: background task failed
+2026-09-25T02:40:44.020805Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest("http/request failed: error sending request for url (https://chatgpt.com/backend-api/ps/mcp)")))

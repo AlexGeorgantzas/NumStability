@@ -1,0 +1,3 @@
+The statement is in [Candidate.lean](/workspace/Candidate.lean). It models exponential evaluation and left to right summation, then bounds the total error by `(n+1)us` plus an explicit quadratic remainder.
+
+The file compiles. `target` has the single required `sorry`; no proof was added.

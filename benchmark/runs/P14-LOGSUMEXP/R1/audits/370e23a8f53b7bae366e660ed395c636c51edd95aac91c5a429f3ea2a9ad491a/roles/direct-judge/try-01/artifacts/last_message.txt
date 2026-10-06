@@ -1,0 +1,577 @@
+{
+  "accepted": true,
+  "candidate_semantic_sha256": "370e23a8f53b7bae366e660ed395c636c51edd95aac91c5a429f3ea2a9ad491a",
+  "classification": "faithful-equivalent",
+  "dependency_coverage": [
+    {
+      "effect_on_target": "Defines the computed output whose error is bounded.",
+      "id": "D001",
+      "interpretation": "The logarithm of the recursively rounded sum of exp(x_i)(1+δ_i), multiplied by 1+ε.",
+      "name": "Computed log-sum-exp",
+      "paper_match": "Matches Algorithm 3.1, exponential errors (3.1), and final logarithm rounding (3.4).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Defines the exact reference value.",
+      "id": "D002",
+      "interpretation": "y = log(Σ_i exp(x_i)).",
+      "name": "Exact log-sum-exp",
+      "paper_match": "Matches the exact y in the selected absolute error bound.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies the arithmetic model quantified over by the target.",
+      "id": "D003",
+      "interpretation": "A structure containing a nonnegative unit roundoff, arithmetic operations, and relative-error axioms.",
+      "name": "Relative-error arithmetic model",
+      "paper_match": "Represents the standard arithmetic model (1.7) in the absence of overflow and underflow.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Determines the local error limits and every occurrence of u in the bound.",
+      "id": "D004",
+      "interpretation": "The real unit-roundoff parameter of an arithmetic model.",
+      "name": "Unit roundoff",
+      "paper_match": "Matches the source parameter u.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Specifies admissible arithmetic models without assuming the target error estimate.",
+      "id": "D005",
+      "interpretation": "Requires nonnegative u, exact addition to a zero accumulator, and relative-error bounds for arithmetic operations, with appropriate division and square-root domains.",
+      "name": "Arithmetic model axioms",
+      "paper_match": "Addition satisfies (1.7); exact initialization agrees with the source's n−1 effective summation additions. Unused operations can be supplied exactly and impose no restriction on x.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Links the computed output to actual sequential summation.",
+      "id": "D006",
+      "interpretation": "Starts at zero and successively applies the model's rounded addition to each indexed term.",
+      "name": "Recursive rounded sum",
+      "paper_match": "Matches lines 1–5 of Algorithm 3.1.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Provides the rounded operation used at each summation step.",
+      "id": "D007",
+      "interpretation": "The binary addition operation stored in the arithmetic model.",
+      "name": "Rounded addition",
+      "paper_match": "Matches floating-point addition under (1.7).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Combines positivity conditions and error-model requirements.",
+      "id": "D008",
+      "interpretation": "Logical conjunction.",
+      "name": "Conjunction",
+      "paper_match": "Preserves the simultaneous requirements in the source interpretation.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses existence of remainder constants and bounded local rounding errors.",
+      "id": "D009",
+      "interpretation": "Existential quantification.",
+      "name": "Existence",
+      "paper_match": "Matches the existential constants in the uniform O(u²) interpretation.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Indexes the input vector and its exponential errors.",
+      "id": "D010",
+      "interpretation": "The finite index set with n elements, numbered from zero.",
+      "name": "Finite coordinate indices",
+      "paper_match": "Equivalent to the paper's indices 1 through n by reindexing.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms exact sums in formulas and the error bound.",
+      "id": "D011",
+      "interpretation": "Addition, instantiated as real addition.",
+      "name": "Addition operator",
+      "paper_match": "Matches ordinary mathematical addition.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms multiplicative error factors and bound terms.",
+      "id": "D012",
+      "interpretation": "Multiplication, instantiated as real multiplication.",
+      "name": "Multiplication operator",
+      "paper_match": "Matches ordinary mathematical multiplication.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses the quadratic remainder.",
+      "id": "D013",
+      "interpretation": "Exponentiation, here a real base raised to a natural exponent.",
+      "name": "Power operator",
+      "paper_match": "Interprets u² as the ordinary square.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms the difference between exact and computed outputs.",
+      "id": "D014",
+      "interpretation": "Subtraction, instantiated over the reals.",
+      "name": "Subtraction operator",
+      "paper_match": "Matches y−ŷ.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses error bounds and the upper limit on u.",
+      "id": "D015",
+      "interpretation": "Non-strict order.",
+      "name": "Non-strict inequality",
+      "paper_match": "Matches the source's ≤ relations.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses positivity of n, C, u₀, and u.",
+      "id": "D016",
+      "interpretation": "Strict order on the applicable number type.",
+      "name": "Strict inequality",
+      "paper_match": "Matches positive dimension and the positive constants used for the asymptotic bound.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Gives repeated-multiplication semantics to u².",
+      "id": "D017",
+      "interpretation": "Natural powers in a multiplicative monoid.",
+      "name": "Natural exponentiation",
+      "paper_match": "Matches the quadratic remainder's exponent.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Types the dimension and power exponent.",
+      "id": "D018",
+      "interpretation": "Natural numbers.",
+      "name": "Natural-number domain",
+      "paper_match": "The explicit positivity assumption selects exactly positive integer dimensions.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Allows n to appear in a real-valued bound.",
+      "id": "D019",
+      "interpretation": "The canonical embedding of natural numbers into the reals.",
+      "name": "Dimension conversion",
+      "paper_match": "Preserves the exact coefficient n+1.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets numerical constants.",
+      "id": "D020",
+      "interpretation": "Numeral interpretation in the specified number type.",
+      "name": "Numerals",
+      "paper_match": "The constants 0, 1, and 2 have their ordinary meanings.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies one in multiplicative perturbations and n+1.",
+      "id": "D021",
+      "interpretation": "The numeral one obtained from the multiplicative identity.",
+      "name": "Identity numeral",
+      "paper_match": "Matches the source's constant 1.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Types inputs, outputs, errors, and remainder constants.",
+      "id": "D022",
+      "interpretation": "The real numbers.",
+      "name": "Real-number domain",
+      "paper_match": "Matches x ∈ Rⁿ and the real error analysis.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Implements exact real addition in mathematical expressions.",
+      "id": "D023",
+      "interpretation": "Ordinary addition of real numbers.",
+      "name": "Real addition",
+      "paper_match": "Matches source arithmetic outside explicitly rounded operations.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports subtraction, negation, and absolute value.",
+      "id": "D024",
+      "interpretation": "The additive group structure of the reals.",
+      "name": "Real additive structure",
+      "paper_match": "Supplies the ordinary algebra used in the source.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets all real-valued upper bounds.",
+      "id": "D025",
+      "interpretation": "The usual non-strict order on real numbers.",
+      "name": "Real non-strict order",
+      "paper_match": "Matches ordinary real inequalities.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets positivity of real parameters.",
+      "id": "D026",
+      "interpretation": "The usual strict order on real numbers.",
+      "name": "Real strict order",
+      "paper_match": "Matches ordinary real positivity conditions.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports real natural powers.",
+      "id": "D027",
+      "interpretation": "Real multiplication with identity.",
+      "name": "Real multiplicative structure",
+      "paper_match": "Gives the expected meaning to u².",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Implements the products in perturbations and estimates.",
+      "id": "D028",
+      "interpretation": "Ordinary multiplication of real numbers.",
+      "name": "Real multiplication",
+      "paper_match": "Matches the source products exactly.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Represents the integer dimension exactly as a real number.",
+      "id": "D029",
+      "interpretation": "The canonical natural-to-real embedding.",
+      "name": "Real dimension embedding",
+      "paper_match": "Introduces no rounding or change to n+1.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies the real multiplicative identity.",
+      "id": "D030",
+      "interpretation": "The real number one.",
+      "name": "Real one",
+      "paper_match": "Matches 1 in the source formulas.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Computes the exact real output difference.",
+      "id": "D031",
+      "interpretation": "Real subtraction defined by addition of the negative.",
+      "name": "Real subtraction",
+      "paper_match": "Matches the mathematical error y−ŷ, without additional rounding.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Initializes the accumulator and supplies positivity thresholds.",
+      "id": "D032",
+      "interpretation": "The real number zero.",
+      "name": "Real zero",
+      "paper_match": "Matches the initial s=0 and ordinary zero.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Provides the maximum operation used to define absolute value.",
+      "id": "D033",
+      "interpretation": "The usual lattice order on the reals.",
+      "name": "Real lattice order",
+      "paper_match": "Ensures scalar absolute value has its standard meaning.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets zero literals.",
+      "id": "D034",
+      "interpretation": "The numeral zero obtained from the additive identity.",
+      "name": "Zero numeral",
+      "paper_match": "Matches the source's constant 0.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Measures output error, exact-output magnitude, and local errors.",
+      "id": "D035",
+      "interpretation": "For a real a, max(a,−a).",
+      "name": "Scalar absolute value",
+      "paper_match": "Matches every absolute value in the selected bound and its assumptions.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Connects addition notation to the chosen real operation.",
+      "id": "D036",
+      "interpretation": "Uses the underlying addition for same-type operands.",
+      "name": "Addition interpretation",
+      "paper_match": "Preserves ordinary real addition.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Connects multiplication notation to real multiplication.",
+      "id": "D037",
+      "interpretation": "Uses the underlying multiplication for same-type operands.",
+      "name": "Multiplication interpretation",
+      "paper_match": "Preserves ordinary real products.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Connects power notation to natural powers of real numbers.",
+      "id": "D038",
+      "interpretation": "Uses the specified power operation.",
+      "name": "Power interpretation",
+      "paper_match": "Preserves the square u².",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Connects subtraction notation to real subtraction.",
+      "id": "D039",
+      "interpretation": "Uses the underlying subtraction for same-type operands.",
+      "name": "Subtraction interpretation",
+      "paper_match": "Preserves the output-error difference.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets the positive-dimension requirement.",
+      "id": "D040",
+      "interpretation": "The ordinary strict order on natural numbers.",
+      "name": "Natural-number strict order",
+      "paper_match": "Makes 0<n exactly the positive-integer condition.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies natural-number literals for dimension tests and exponents.",
+      "id": "D041",
+      "interpretation": "A natural numeral denotes that natural number.",
+      "name": "Natural numerals",
+      "paper_match": "Preserves zero and the exponent two.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Enumerates all input coordinates for the exact sum.",
+      "id": "D042",
+      "interpretation": "The finite enumeration of the n coordinate indices.",
+      "name": "Coordinate enumeration",
+      "paper_match": "Contains exactly the n terms required by the source.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms the exact exponential sum defining y.",
+      "id": "D043",
+      "interpretation": "Finite summation in an additive commutative monoid.",
+      "name": "Exact finite sum",
+      "paper_match": "Matches Σ_i exp(x_i); the computed sum is separately recursive and rounded.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Selects every coordinate in the exact sum.",
+      "id": "D044",
+      "interpretation": "The full finite index set.",
+      "name": "All-coordinate set",
+      "paper_match": "No source coordinate is omitted.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Defines exact exponential terms before their explicit relative perturbations.",
+      "id": "D045",
+      "interpretation": "The ordinary real exponential function.",
+      "name": "Real exponential",
+      "paper_match": "Matches exp(x_i) in the exact function and equation (3.1).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports the exact finite sum of real exponentials.",
+      "id": "D046",
+      "interpretation": "The additive commutative monoid of real numbers.",
+      "name": "Exact summation structure",
+      "paper_match": "Matches ordinary exact real summation.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Defines the exact logarithm and the logarithm before final rounding.",
+      "id": "D047",
+      "interpretation": "Natural logarithm on positive reals, with a total extension elsewhere.",
+      "name": "Real logarithm",
+      "paper_match": "The exact sum is positive; for sufficiently small u, perturbed terms and rounded partial sums are positive. The extension outside the positive domain does not change the selected result.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports the auxiliary division model but is unused in the computed log-sum-exp.",
+      "id": "D048",
+      "interpretation": "Extracts division from a multiplicative structure with inversion.",
+      "name": "Division operation selection",
+      "paper_match": "Compatible with the general arithmetic context; no division occurs in the selected output.",
+      "status": "not-applicable"
+    },
+    {
+      "effect_on_target": "States the exact identities defining local rounding models.",
+      "id": "D049",
+      "interpretation": "Equality of mathematical objects.",
+      "name": "Equality",
+      "paper_match": "Matches the equalities in the source's relative-error model.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Fixes the sequential order of rounded accumulation.",
+      "id": "D050",
+      "interpretation": "A left fold through indices 0 to n−1.",
+      "name": "Ordered finite accumulation",
+      "paper_match": "Matches the increasing-index loop in Algorithm 3.1 after reindexing.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets division in an unused arithmetic-model field.",
+      "id": "D051",
+      "interpretation": "Division, instantiated over real numbers.",
+      "name": "Division operator",
+      "paper_match": "Does not alter the selected log-sum-exp computation or estimate.",
+      "status": "not-applicable"
+    },
+    {
+      "effect_on_target": "Restricts the auxiliary division axiom to nonzero denominators.",
+      "id": "D052",
+      "interpretation": "Negation of equality.",
+      "name": "Inequality of values",
+      "paper_match": "A standard division-domain condition, with no restriction on the target's input vectors.",
+      "status": "not-applicable"
+    },
+    {
+      "effect_on_target": "Supplies real division for an unused arithmetic-model field.",
+      "id": "D053",
+      "interpretation": "Real multiplication, inversion, and division.",
+      "name": "Real division structure",
+      "paper_match": "Compatible auxiliary arithmetic; absent from the selected algorithm's log-sum-exp output.",
+      "status": "not-applicable"
+    },
+    {
+      "effect_on_target": "Appears only in the auxiliary square-root error model.",
+      "id": "D054",
+      "interpretation": "The nonnegative real square root on nonnegative inputs.",
+      "name": "Real square root",
+      "paper_match": "Unused by the selected computation and imposes no input restriction.",
+      "status": "not-applicable"
+    },
+    {
+      "effect_on_target": "Connects division notation to the auxiliary real division operation.",
+      "id": "D055",
+      "interpretation": "Uses the underlying division operation for same-type operands.",
+      "name": "Division interpretation",
+      "paper_match": "Has no effect on the selected output or its bound.",
+      "status": "not-applicable"
+    }
+  ],
+  "implications": {
+    "candidate_implies_source": {
+      "reasoning": "For every positive n and real input vector, the candidate supplies positive C and u₀ before quantifying over arithmetic models and local exponential and logarithm errors. Its computed output follows the unshifted recursive algorithm, and its conclusion is exactly |y−ŷ| ≤ u|y|+(n+1)u+C u². Source-admissible arithmetic is represented by the relative-error model; auxiliary unused operations can be supplied exactly. Thus it covers the full selected absolute bound, including y=0.",
+      "verdict": "yes"
+    },
+    "source_implies_candidate": {
+      "reasoning": "The selected source bound, with the packet's uniform interpretation of O(u²), gives precisely the candidate's positive C and u₀ for each fixed n and x. Every candidate computation satisfies the source's local relative-error assumptions and recursive summation model. The source estimate therefore applies uniformly to all quantified models and local errors.",
+      "verdict": "yes"
+    }
+  },
+  "mismatches": [],
+  "paper_sha256": "7247047bc49218e001195edc8a2d66131eea7596d252503f34b0ace6328981cd",
+  "rationale": "The candidate faithfully expresses the absolute forward-error estimate immediately preceding Theorem 3.2. It preserves the exact reference value, perturbed exponentials, recursive rounded summation, final logarithm rounding, coefficient n+1, and an execution-independent quadratic remainder. Exact zero initialization agrees with the source summation analysis. The arithmetic model is inhabited, its unused operations introduce no restriction on the inputs, and positivity for sufficiently small u makes the logarithm's total extension irrelevant.",
+  "requires_adjudication": false,
+  "role": "direct-judge",
+  "semantic_checklist": [
+    {
+      "candidate_evidence": "The target bounds the absolute difference between exact and computed log-sum-exp.",
+      "id": "S01",
+      "paper_evidence": "Printed page 2318 displays |y−ŷ| ≤ u|y|+(n+1)u+O(u²) immediately before Theorem 3.2.",
+      "reasoning": "The comparison uses the selected absolute estimate, not the subsequent relative quotient.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "n is a positive natural number; x and exponential errors have n real coordinates; logarithm error, C, u₀, and u are real.",
+      "id": "S02",
+      "paper_evidence": "Algorithm 3.1 takes x ∈ Rⁿ, and the selected packet specifies positive n.",
+      "reasoning": "The number types and domains agree.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "For each n and x, positive C and u₀ are chosen before every arithmetic model and local error vector.",
+      "id": "S03",
+      "paper_evidence": "The packet requires remainder constants independent of individual executions at fixed n and x.",
+      "reasoning": "The quantifier order provides exactly the required uniformity.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Assumptions are 0<u≤u₀, bounded exponential and logarithm errors, and the arithmetic model axioms.",
+      "id": "S04",
+      "paper_evidence": "Equations (1.7), (3.1), and (3.4) supply the relative-error assumptions; Section 3 excludes overflow and underflow.",
+      "reasoning": "No output estimate, nonzero-y assumption, or successful-run premise is added. Auxiliary arithmetic fields can be filled with exact operations.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The conclusion is |y−ŷ| ≤ u|y|+(n+1)u+C u².",
+      "id": "S05",
+      "paper_evidence": "The selected conclusion is |y−ŷ| ≤ u|y|+(n+1)u+O(u²).",
+      "reasoning": "All terms of the selected estimate are present.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The dependencies supply ordinary real arithmetic, exponential, natural logarithm, exact finite summation, and ordered rounded accumulation.",
+      "id": "S06",
+      "paper_evidence": "The source uses these same mathematical operations in Algorithm 3.1 and its error analysis.",
+      "reasoning": "Imported operations preserve their intended meanings; the logarithm agrees on the relevant positive domain.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The exact reference uses an exact sum; the computed output uses perturbed exponentials and rounded additions.",
+      "id": "S07",
+      "paper_evidence": "The source distinguishes s, the exact sum of computed exponentials, and the recursively computed sum.",
+      "reasoning": "The candidate maintains the essential exact-versus-computed distinction.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The accumulator starts at zero and applies rounded addition sequentially, followed by a relatively rounded logarithm.",
+      "id": "S08",
+      "paper_evidence": "Algorithm 3.1, lines 1–6, performs exactly these operations.",
+      "reasoning": "The output is linked to the unshifted basic algorithm rather than an arbitrary approximation or shifted formula.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Magnitude is ordinary scalar real absolute value.",
+      "id": "S09",
+      "paper_evidence": "The selected estimate uses |y−ŷ| and |y|.",
+      "reasoning": "There is no vector-norm substitution or normalization.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The first-order terms have coefficients 1 and n+1; the remainder uses exponent 2; all n coordinates are included.",
+      "id": "S10",
+      "paper_evidence": "The selected bound has u|y|+(n+1)u+O(u²), and the algorithm visits indices 1 through n.",
+      "reasoning": "Zero-based indexing is equivalent, and exact addition to the zero accumulator agrees with the source's effective summation count.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Rounded addition has bounded multiplicative error; exponential and logarithm errors are separately bounded by u.",
+      "id": "S11",
+      "paper_evidence": "Section 3 assumes no overflow or underflow and uses the standard relative model.",
+      "reasoning": "The real-valued abstraction matches that model. Shrinking the existential threshold below 1 guarantees positive perturbed exponentials and partial sums, so exceptional logarithm inputs are irrelevant.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The estimate is a non-strict upper bound for every admissible execution.",
+      "id": "S12",
+      "paper_evidence": "The source states the same non-strict asymptotic upper bound.",
+      "reasoning": "The relation is neither weakened to an average nor strengthened to equality.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The left side is the absolute difference from the exact output at the original input.",
+      "id": "S13",
+      "paper_evidence": "The selected result is an absolute forward-error estimate.",
+      "reasoning": "The candidate introduces neither backward error nor division by y and therefore includes y=0.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "There exist C>0 and u₀>0 such that the remainder is bounded by C u² for every admissible model and local error choice.",
+      "id": "S14",
+      "paper_evidence": "The packet explicitly permits this uniform interpretation of O(u²).",
+      "reasoning": "The remainder has the correct order and cannot depend on the individual execution.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Every positive n and every real input vector are included, with no extra input-domain condition.",
+      "id": "S15",
+      "paper_evidence": "The selected source applies to the basic algorithm on positive-dimensional real inputs under its arithmetic assumptions.",
+      "reasoning": "The candidate neither specializes the input domain nor replaces the selected algorithm with a different one.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Exact arithmetic operations satisfy the model axioms for any nonnegative error allowance; zero local errors are admissible.",
+      "id": "S16",
+      "paper_evidence": "The source assumptions describe nonempty classes of computations, including zero local rounding errors.",
+      "reasoning": "For every positive threshold there are models with 0<u≤u₀. The candidate is consistent and its quantified execution class is nonempty.",
+      "status": "pass"
+    }
+  ],
+  "uncertainties": []
+}

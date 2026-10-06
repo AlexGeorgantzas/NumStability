@@ -1,0 +1,3 @@
+I wrote the formalization in [Candidate.lean](/workspace/Candidate.lean). It states Rump’s Theorem 3.4 for positive-length, ordered binary floating-point inputs, using nearest rounding and the exact factor `(n − 1)u`.
+
+The file compiles. The target proof is exactly `by sorry`, and it is the only proof hole.

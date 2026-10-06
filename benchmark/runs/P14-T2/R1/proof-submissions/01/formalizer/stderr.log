@@ -1,0 +1,1 @@
+2026-09-25T00:27:55.010632Z ERROR codex_core::tools::router: error=apply_patch verification failed: invalid patch: multiple operations target /workspace/Candidate.lean

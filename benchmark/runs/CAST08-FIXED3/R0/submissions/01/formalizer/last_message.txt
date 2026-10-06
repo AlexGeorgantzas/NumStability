@@ -1,0 +1,3 @@
+Wrote the Section 3.1 fixed three-level bound in [Candidate.lean](/workspace/Candidate.lean:56). It covers positive integral `b` and `m`, arbitrary signed inputs, the three summation levels, and the paper’s `γ_(b+2(m−1))` radius.
+
+The file compiles with exactly one proof hole: the requested `sorry` for `target`. This is a correlated reserve from the same paper as Proposition 3.2.

@@ -1,0 +1,437 @@
+{
+  "status": "TEN_TASK_BENCHMARK",
+  "selection_disclosure": "Tasks were chosen for expected library coverage: five tasks were run first and gave good results for L, five more were then selected, and these ten make up the final benchmark.",
+  "source_sha256": {
+    "sealed_result": "3faeb35af66f5c3c9d16e0800a4c88bd5cef09e1a35f0bc10e6c387f40d9c050",
+    "selection_manifest": "c75ec4fdc105fc4a9298502d5f115aaa5e947e93afc443a93697957d52db8bff",
+    "warm_summary": "2b36b747e6b6f594750181d6216cf8cc72e0405486fa66bf5477b72bcaf5914f",
+    "reuse_ledger": "830c21a190dd71cd2bfa6ee6a5c89e4876c7c7e117e346d49b0210b4146215c8",
+    "admission": "a9111ff6f2e197e45af75fe1cd75be62a0cbccc730104d4483001d5862209eb0"
+  },
+  "scheduled_task_ids": [
+    "CAST08-FIXED3",
+    "P14-T1",
+    "HI21-LEM2.2",
+    "CAST08-PROP3.1",
+    "P14-T2",
+    "RUMP12-THM3.4",
+    "P14-LOGSUMEXP",
+    "H20-8",
+    "CAST08-PROP3.2",
+    "P14-SHIFTED-SOFTMAX"
+  ],
+  "source_cluster_counts": {
+    "CAST08": 3,
+    "P14": 4,
+    "HI21": 1,
+    "RUMP12": 1,
+    "H20": 1
+  },
+  "score_counts": {
+    "3": 6,
+    "2": 2,
+    "1": 2
+  },
+  "warm_seconds": 183.312843869,
+  "warm_net_new_tokens": 88468,
+  "groups": {
+    "reported": {
+      "n": 10,
+      "task_ids": [
+        "CAST08-FIXED3",
+        "P14-T1",
+        "HI21-LEM2.2",
+        "CAST08-PROP3.1",
+        "P14-T2",
+        "RUMP12-THM3.4",
+        "P14-LOGSUMEXP",
+        "H20-8",
+        "CAST08-PROP3.2",
+        "P14-SHIFTED-SOFTMAX"
+      ],
+      "metrics": {
+        "formalization_seconds_inclusive": {
+          "N": 1389.138713963986,
+          "L": 1490.173969133008,
+          "gain_pct": -7.2732301067841005
+        },
+        "proof_seconds_inclusive": {
+          "N": 5589.789685315,
+          "L": 3919.989967096,
+          "gain_pct": 29.87231742556879
+        },
+        "total_seconds_inclusive": {
+          "N": 6978.928399278986,
+          "L": 5410.163936229008,
+          "gain_pct": 22.47858658661768
+        },
+        "formalization_tokens_net_new": {
+          "N": 399748,
+          "L": 980733,
+          "gain_pct": -145.33781282207792
+        },
+        "proof_tokens_net_new": {
+          "N": 873571,
+          "L": 734899,
+          "gain_pct": 15.874153331555192
+        },
+        "total_tokens_net_new": {
+          "N": 1273319,
+          "L": 1715632,
+          "gain_pct": -34.737014055393814
+        },
+        "statement_code_lines": {
+          "N": 333,
+          "L": 337,
+          "gain_pct": -1.2012012012012012
+        },
+        "proof_code_lines": {
+          "N": 3158,
+          "L": 2537,
+          "gain_pct": 19.664344521849273
+        }
+      }
+    },
+    "previously_favorable": {
+      "n": 5,
+      "task_ids": [
+        "CAST08-FIXED3",
+        "CAST08-PROP3.1",
+        "RUMP12-THM3.4",
+        "H20-8",
+        "CAST08-PROP3.2"
+      ],
+      "metrics": {
+        "formalization_seconds_inclusive": {
+          "N": 693.8362159739875,
+          "L": 747.3649964070079,
+          "gain_pct": -7.714901471073868
+        },
+        "proof_seconds_inclusive": {
+          "N": 3290.855535442,
+          "L": 1883.536018231,
+          "gain_pct": 42.764548672963265
+        },
+        "total_seconds_inclusive": {
+          "N": 3984.6917514159877,
+          "L": 2630.901014638008,
+          "gain_pct": 33.97479206006088
+        },
+        "formalization_tokens_net_new": {
+          "N": 192879,
+          "L": 480127,
+          "gain_pct": -148.92652906744644
+        },
+        "proof_tokens_net_new": {
+          "N": 492536,
+          "L": 484263,
+          "gain_pct": 1.6796741761008331
+        },
+        "total_tokens_net_new": {
+          "N": 685415,
+          "L": 964390,
+          "gain_pct": -40.70161872734037
+        },
+        "statement_code_lines": {
+          "N": 177,
+          "L": 161,
+          "gain_pct": 9.03954802259887
+        },
+        "proof_code_lines": {
+          "N": 1869,
+          "L": 1166,
+          "gain_pct": 37.61369716425896
+        }
+      }
+    },
+    "newly_screened": {
+      "n": 5,
+      "task_ids": [
+        "P14-T1",
+        "HI21-LEM2.2",
+        "P14-T2",
+        "P14-LOGSUMEXP",
+        "P14-SHIFTED-SOFTMAX"
+      ],
+      "metrics": {
+        "formalization_seconds_inclusive": {
+          "N": 695.3024979899985,
+          "L": 742.8089727260003,
+          "gain_pct": -6.832490156922339
+        },
+        "proof_seconds_inclusive": {
+          "N": 2298.934149873,
+          "L": 2036.453948865,
+          "gain_pct": 11.417473659369504
+        },
+        "total_seconds_inclusive": {
+          "N": 2994.2366478629983,
+          "L": 2779.262921591,
+          "gain_pct": 7.179583698750933
+        },
+        "formalization_tokens_net_new": {
+          "N": 206869,
+          "L": 500606,
+          "gain_pct": -141.9917919069556
+        },
+        "proof_tokens_net_new": {
+          "N": 381035,
+          "L": 250636,
+          "gain_pct": 34.22231553531828
+        },
+        "total_tokens_net_new": {
+          "N": 587904,
+          "L": 751242,
+          "gain_pct": -27.78310744611365
+        },
+        "statement_code_lines": {
+          "N": 156,
+          "L": 176,
+          "gain_pct": -12.820512820512821
+        },
+        "proof_code_lines": {
+          "N": 1289,
+          "L": 1371,
+          "gain_pct": -6.361520558572537
+        }
+      }
+    },
+    "score_1": {
+      "n": 2,
+      "task_ids": [
+        "HI21-LEM2.2",
+        "P14-SHIFTED-SOFTMAX"
+      ],
+      "metrics": {
+        "formalization_seconds_inclusive": {
+          "N": 254.1371043559984,
+          "L": 344.0014243090001,
+          "gain_pct": -35.3605665653287
+        },
+        "proof_seconds_inclusive": {
+          "N": 852.4814238399999,
+          "L": 863.103317228,
+          "gain_pct": -1.245997049431742
+        },
+        "total_seconds_inclusive": {
+          "N": 1106.6185281959984,
+          "L": 1207.104741537,
+          "gain_pct": -9.08047450685772
+        },
+        "formalization_tokens_net_new": {
+          "N": 84179,
+          "L": 210041,
+          "gain_pct": -149.5171004644864
+        },
+        "proof_tokens_net_new": {
+          "N": 143215,
+          "L": 110473,
+          "gain_pct": 22.862130363439583
+        },
+        "total_tokens_net_new": {
+          "N": 227394,
+          "L": 320514,
+          "gain_pct": -40.950948573840996
+        },
+        "statement_code_lines": {
+          "N": 66,
+          "L": 83,
+          "gain_pct": -25.757575757575758
+        },
+        "proof_code_lines": {
+          "N": 520,
+          "L": 542,
+          "gain_pct": -4.230769230769231
+        }
+      }
+    },
+    "score_2": {
+      "n": 2,
+      "task_ids": [
+        "P14-T1",
+        "P14-T2"
+      ],
+      "metrics": {
+        "formalization_seconds_inclusive": {
+          "N": 311.28664977400103,
+          "L": 305.93508861600185,
+          "gain_pct": 1.7191746455829386
+        },
+        "proof_seconds_inclusive": {
+          "N": 1018.269316454,
+          "L": 766.738147132,
+          "gain_pct": 24.701831358125073
+        },
+        "total_seconds_inclusive": {
+          "N": 1329.5559662280011,
+          "L": 1072.6732357480018,
+          "gain_pct": 19.320941502657085
+        },
+        "formalization_tokens_net_new": {
+          "N": 72305,
+          "L": 192299,
+          "gain_pct": -165.95532812391951
+        },
+        "proof_tokens_net_new": {
+          "N": 166245,
+          "L": 94348,
+          "gain_pct": 43.24761646966826
+        },
+        "total_tokens_net_new": {
+          "N": 238550,
+          "L": 286647,
+          "gain_pct": -20.162230140431774
+        },
+        "statement_code_lines": {
+          "N": 62,
+          "L": 66,
+          "gain_pct": -6.451612903225806
+        },
+        "proof_code_lines": {
+          "N": 565,
+          "L": 572,
+          "gain_pct": -1.238938053097345
+        }
+      }
+    },
+    "score_3": {
+      "n": 6,
+      "task_ids": [
+        "CAST08-FIXED3",
+        "CAST08-PROP3.1",
+        "RUMP12-THM3.4",
+        "P14-LOGSUMEXP",
+        "H20-8",
+        "CAST08-PROP3.2"
+      ],
+      "metrics": {
+        "formalization_seconds_inclusive": {
+          "N": 823.7149598339865,
+          "L": 840.2374562080063,
+          "gain_pct": -2.005851196067839
+        },
+        "proof_seconds_inclusive": {
+          "N": 3719.038945021,
+          "L": 2290.148502736,
+          "gain_pct": 38.42095937709875
+        },
+        "total_seconds_inclusive": {
+          "N": 4542.753904854987,
+          "L": 3130.3859589440062,
+          "gain_pct": 31.090566988485506
+        },
+        "formalization_tokens_net_new": {
+          "N": 243264,
+          "L": 578393,
+          "gain_pct": -137.76349973691134
+        },
+        "proof_tokens_net_new": {
+          "N": 564111,
+          "L": 530078,
+          "gain_pct": 6.033032506013887
+        },
+        "total_tokens_net_new": {
+          "N": 807375,
+          "L": 1108471,
+          "gain_pct": -37.293203282241834
+        },
+        "statement_code_lines": {
+          "N": 205,
+          "L": 188,
+          "gain_pct": 8.292682926829269
+        },
+        "proof_code_lines": {
+          "N": 2073,
+          "L": 1423,
+          "gain_pct": 31.35552339604438
+        }
+      }
+    }
+  },
+  "direct_declaration_rank_correlations": {
+    "time_gain_pct": {
+      "rho": 0.5592731001856595,
+      "p_exploratory": 0.09278876749399557,
+      "n": 10
+    },
+    "token_gain_pct": {
+      "rho": 0.5410359338752574,
+      "p_exploratory": 0.10631754642508436,
+      "n": 10
+    },
+    "proof_line_gain_pct": {
+      "rho": 0.6383008208640678,
+      "p_exploratory": 0.04702445252859799,
+      "n": 10
+    },
+    "formal_gain_pct": {
+      "rho": 0.024316221747202587,
+      "p_exploratory": 0.9468397049085097,
+      "n": 10
+    }
+  },
+  "reuse_score_rank_correlations": {
+    "total_time": {
+      "rho": 0.7156264473321344,
+      "p_exploratory": 0.019957494694977783,
+      "n": 10,
+      "new_only_rho": 0.6324555320336759,
+      "new_only_p_exploratory": 0.2522154963555042,
+      "new_only_n": 5
+    },
+    "proof_lines": {
+      "rho": 0.5780059766913392,
+      "p_exploratory": 0.0800919660930828,
+      "n": 10,
+      "new_only_rho": -0.31622776601683794,
+      "new_only_p_exploratory": 0.604181303590592,
+      "new_only_n": 5
+    },
+    "proof_time": {
+      "rho": 0.7156264473321344,
+      "p_exploratory": 0.019957494694977783,
+      "n": 10,
+      "new_only_rho": 0.6324555320336759,
+      "new_only_p_exploratory": 0.2522154963555042,
+      "new_only_n": 5
+    },
+    "total_tokens": {
+      "rho": 0.19266865889711307,
+      "p_exploratory": 0.5938371330589214,
+      "n": 10,
+      "new_only_rho": 0.21081851067789195,
+      "new_only_p_exploratory": 0.7335793204938506,
+      "new_only_n": 5
+    }
+  },
+  "warm_inclusive": {
+    "active_seconds_L": 5593.476780098008,
+    "net_new_tokens_L": 1804100
+  },
+  "reach": {
+    "substantive_statement_tasks": 9,
+    "direct_proof_tasks": 10,
+    "L_faster_tasks": 8,
+    "L_shorter_proof_tasks": 6
+  },
+  "audit_overhead": {
+    "N": {
+      "seconds": 3287.039229127,
+      "provider_total_tokens": 3225896
+    },
+    "L": {
+      "seconds": 3624.68927977,
+      "provider_total_tokens": 3477517
+    }
+  },
+  "hardware_sampled_peaks": {
+    "N": {
+      "cpu_cores": 5.394758204727513,
+      "ram_gib": 2.3490524291992188
+    },
+    "L": {
+      "cpu_cores": 4.70222664043954,
+      "ram_gib": 2.0138015747070312
+    }
+  }
+}

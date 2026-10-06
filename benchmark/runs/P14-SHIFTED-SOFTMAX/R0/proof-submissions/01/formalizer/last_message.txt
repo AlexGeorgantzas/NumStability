@@ -1,0 +1,1 @@
+The audited target is fully proved in [Candidate.lean](/workspace/Candidate.lean:386). The documented Lean command succeeds, the file contains no proof holes, and the target depends only on Lean’s standard axioms.

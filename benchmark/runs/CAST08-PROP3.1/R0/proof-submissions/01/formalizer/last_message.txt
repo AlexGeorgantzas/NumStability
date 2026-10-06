@@ -1,0 +1,1 @@
+The audited target now has a complete proof in [Candidate.lean](/workspace/Candidate.lean). The documented Lean command compiles it, the file contains no `sorry` or `admit`, and the theorem uses only Lean’s standard axioms.

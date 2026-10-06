@@ -1,0 +1,1 @@
+The unchanged audited statement is fully proved in [Candidate.lean](/workspace/Candidate.lean:164). The documented Lean command succeeds, and the file contains no `sorry` or `admit`.

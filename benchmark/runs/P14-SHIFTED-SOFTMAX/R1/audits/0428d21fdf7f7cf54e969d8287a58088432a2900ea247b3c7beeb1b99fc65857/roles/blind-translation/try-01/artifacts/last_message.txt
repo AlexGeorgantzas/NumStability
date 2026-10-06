@@ -1,0 +1,631 @@
+{
+  "ambiguities": [
+    "The proposition specifies an abstract real-valued perturbation model. It does not specify a floating-point format, rounding rule, or treatment of overflow and underflow.",
+    "The existential constants C and ε have no prescribed numerical values or uniformity across different n, x, or maximizing indices k."
+  ],
+  "dependency_coverage": [
+    {
+      "effect_on_target": "Requires every entry of all four perturbation vectors to have magnitude at most u, including entries unused by the summation algorithm.",
+      "id": "D001",
+      "meaning": "For any natural n, real u, and functions δsub, δexp, δadd, δdiv from {0,...,n−1} to the reals, this predicate means: for every i, |δsub_i|≤u, |δexp_i|≤u, |δadd_i|≤u, and |δdiv_i|≤u.",
+      "name": "Uniform perturbation bounds",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the perturbed output vector whose relative error is bounded. The outer addition of 1 has no perturbation, and the numerator formula also applies at i=k.",
+      "id": "D002",
+      "meaning": "For any natural n, real vector x, index k, four real perturbation vectors, and index i, define ŷ_i=(â_i/(1+Ŝ))(1+δdiv_i), where â_i is D006 and Ŝ is D005.",
+      "name": "Perturbed normalized output",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the reference vector in both the error difference and its normalizing norm. Because a_k=1, it equals the usual vector with entries exp(x_i)/Σ_j exp(x_j).",
+      "id": "D003",
+      "meaning": "For any natural n, real vector x, and indices k,i, define y_i=a_i/(1+S), with a_i from D008 and S from D007.",
+      "name": "Exact normalized output",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The target uses relative maximum-norm error, ||ŷ−y||∞/||y||∞.",
+      "id": "D004",
+      "meaning": "For any natural n and real vector v indexed by Fin n, take its finite-product norm: ||v||∞=max_i |v_i| when n>0, and 0 for the empty vector.",
+      "name": "Maximum norm",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Fixes the exact summation order and perturbation placement in the denominator. Under n≥2 there are n−1 summands and n−2 perturbed additions; the first summand is used directly.",
+      "id": "D005",
+      "meaning": "For any natural n, vector x, index k, and perturbations δsub, δexp, δadd, let L be D010. If L is empty, set Ŝ=0. Otherwise write L=[j₁,...,j_m], initialize A₁=â_{j₁}, and for r=2,...,m set A_r=(A_{r−1}+â_{j_r})(1+δadd_{j_r}); return Ŝ=A_m.",
+      "name": "Sequential perturbed sum excluding k",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Models a relative perturbation of each shifted subtraction followed by a relative perturbation of its exponential. At i=k it gives â_k=1+δexp_k.",
+      "id": "D006",
+      "meaning": "For any natural n, real vector x, indices k,i, and perturbations δsub, δexp, define â_i=exp((x_i−x_k)(1+δsub_i))(1+δexp_i).",
+      "name": "Perturbed shifted exponential",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the exact denominator contribution excluding the maximizing coordinate; 1+S is the sum of all exact shifted exponentials.",
+      "id": "D007",
+      "meaning": "For any natural n, real vector x, and index k, map i↦exp(x_i−x_k) over the ordered list D010 and add the resulting real numbers. Thus S=Σ_{i≠k} exp(x_i−x_k), with empty sum 0.",
+      "name": "Exact sum excluding k",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines exact numerator values, which are positive; under the maximizing-index hypothesis they are at most 1, and a_k=1.",
+      "id": "D008",
+      "meaning": "For any natural n, real vector x, and indices k,i, define a_i=exp(x_i−x_k).",
+      "name": "Exact shifted exponential",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Implements the empty-list and first-element branches of D005 without adding a mathematical hypothesis.",
+      "id": "D009",
+      "meaning": "For any natural n, any family M assigning a type or proposition to each list of Fin n, a list L, a function h₀:Unit→M([]), and a function h₁ assigning an element of M(i::rest) to each i and rest, return h₀(unit) if L=[], and h₁(i,rest) if L=i::rest.",
+      "name": "Dependent list case distinction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Excludes exactly k from both denominator sums and determines the order of the perturbed left fold.",
+      "id": "D010",
+      "meaning": "For any natural n and k∈Fin n, start with the increasing list [0,...,n−1] and retain exactly indices i with i≠k.",
+      "name": "Ordered indices excluding k",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Combines C≥0, ε>0, the uniform estimate, and the four perturbation bounds.",
+      "id": "D011",
+      "meaning": "For propositions P and Q, P∧Q asserts that both hold.",
+      "name": "Logical conjunction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Selects real division for both normalized vectors and the relative-error quotient.",
+      "id": "D012",
+      "meaning": "For any type G equipped with a division-inverse monoid structure, extract its binary division operation.",
+      "name": "Division from an inverse monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses existence of C and ε and the nonemptiness needed for the finite minimum.",
+      "id": "D013",
+      "meaning": "For any type or sort A and predicate P on A, ∃a∈A, P(a) asserts the existence of a witness satisfying P.",
+      "name": "Existential quantification",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Uses k and its membership in the universal finite set to certify that the minimum of x is over a nonempty set.",
+      "id": "D014",
+      "meaning": "For any type or sort A, predicate P, witness w∈A, and proof of P(w), conclude ∃a∈A, P(a).",
+      "name": "Existential witness introduction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Restricts every coordinate and perturbation index to one of exactly n positions.",
+      "id": "D015",
+      "meaning": "For a natural number n, Fin n is the type of natural numbers i satisfying 0≤i<n.",
+      "name": "Finite coordinate domain",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Enables the full-coordinate finite minimum and finite-product norm.",
+      "id": "D016",
+      "meaning": "For every natural n, equips Fin n with a complete, duplicate-free enumeration given by [0,...,n−1].",
+      "name": "Finite enumeration of coordinates",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the finite collection of all coordinates over which the minimum is taken.",
+      "id": "D017",
+      "meaning": "For any type A, Finset A is the type of finite sets of elements of A, with no repeated elements.",
+      "name": "Finite sets",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The expression Finset.univ.inf' x is exactly min_{i∈Fin n} x_i; its nonemptiness witness is k.",
+      "id": "D018",
+      "meaning": "For types A and B, an infimum-semilattice structure on A, a nonempty finite subset s of B, and f:B→A, return the finite infimum of f over s. The implementation adjoins a top element, folds infimum, and removes the top wrapper using nonemptiness.",
+      "name": "Nonempty finite infimum",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets membership in the finite coordinate set when establishing nonemptiness.",
+      "id": "D019",
+      "meaning": "For any type A, regards a finite set as the set of elements occurring in its underlying multiset; this interpretation is injective.",
+      "name": "Finite sets as sets",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Certifies k∈Finset.univ, supplying the witness for the minimum.",
+      "id": "D020",
+      "meaning": "For every finitely enumerated type A and every x∈A, x belongs to the universal finite set of A.",
+      "name": "Membership in the universal finite set",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes the minimum range over every coordinate, including k.",
+      "id": "D021",
+      "meaning": "For any finitely enumerated type A, the universal finite set is the complete finite enumeration stored in its finiteness structure.",
+      "name": "Universal finite set",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets additions in the coefficient, bound, and perturbation model as the selected real or natural addition.",
+      "id": "D022",
+      "meaning": "For types A,B,C with a specified heterogeneous addition, extract its map A×B→C.",
+      "name": "Addition operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the displayed quotients using real division.",
+      "id": "D023",
+      "meaning": "For types A,B,C with a specified heterogeneous division, extract its map A×B→C.",
+      "name": "Division operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets products in the perturbation factors and error estimate as real multiplication.",
+      "id": "D024",
+      "meaning": "For types A,B,C with a specified heterogeneous multiplication, extract its map A×B→C.",
+      "name": "Multiplication operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets u² as a real base raised to the natural exponent 2.",
+      "id": "D025",
+      "meaning": "For types A,B,C with a specified heterogeneous exponentiation, extract its map A×B→C.",
+      "name": "Power operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets shifted inputs, coordinate errors, and x_k−min_i x_i as real differences.",
+      "id": "D026",
+      "meaning": "For types A,B,C with a specified heterogeneous subtraction, extract its map A×B→C.",
+      "name": "Subtraction operation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides all non-strict comparisons, including n≥2, the maximizing-index condition, perturbation bounds, and the final estimate.",
+      "id": "D027",
+      "meaning": "For a type A with a specified non-strict comparison relation, extract the relation ≤ on A.",
+      "name": "Non-strict comparison",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses strict positivity of ε.",
+      "id": "D028",
+      "meaning": "For a type A with a specified strict comparison relation, extract the relation < on A.",
+      "name": "Strict comparison",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses membership of k in the universal coordinate set.",
+      "id": "D029",
+      "meaning": "For element type A and collection type G with a membership structure, extract the relation assigning to a collection s and element a the proposition a∈s.",
+      "name": "Membership relation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes u² the ordinary product u·u, with no alternative real-exponent interpretation.",
+      "id": "D030",
+      "meaning": "For any monoid M, define powers with natural exponents by its repeated-multiplication operation, with a⁰=1.",
+      "name": "Natural powers in a monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the dimension n, coordinate values, and exponent 2.",
+      "id": "D031",
+      "meaning": "The natural numbers are the nonnegative integers 0,1,2,... .",
+      "name": "Natural numbers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Converts the natural dimension n into the real coefficient n in the error estimate.",
+      "id": "D032",
+      "meaning": "For any type R equipped with a natural-number cast, maps each natural number to its designated image in R.",
+      "name": "Natural-number cast",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supports constructing the real numeral 2; it introduces no additional hypothesis about the target dimension.",
+      "id": "D033",
+      "meaning": "For any nonzero natural number m, m+1 is at least 2.",
+      "name": "Successor of a nonzero natural is at least two",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Certifies that 1 is nonzero when constructing the numeral 2.",
+      "id": "D034",
+      "meaning": "For every natural number m, m+1 is nonzero.",
+      "name": "Natural successors are nonzero",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the typed constants 0, 1, and 2 used throughout the proposition and definitions.",
+      "id": "D035",
+      "meaning": "For any type A, natural numeral m, and specified interpretation of m in A, extract that element of A.",
+      "name": "Typed numeral interpretation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "All inputs, perturbations, outputs, constants, and error quantities are real-valued.",
+      "id": "D036",
+      "meaning": "The type of real numbers.",
+      "name": "Real numbers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes every real addition in the formulas ordinary addition.",
+      "id": "D037",
+      "meaning": "Equips the real numbers with their usual binary addition.",
+      "name": "Real addition",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Fixes the semantics of normalization and relative-error division. Division is total in Lean, with a/0=0, although the exact reference norm is positive here.",
+      "id": "D038",
+      "meaning": "Equips the reals with their multiplicative monoid, inverse, division a/b=a·b⁻¹, and integer powers defined from multiplication and inverse.",
+      "name": "Real inverse and division structure",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The hypotheses and error inequality use the usual real order.",
+      "id": "D039",
+      "meaning": "Equips the reals with their usual non-strict order ≤.",
+      "name": "Real non-strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The condition 0<ε has its ordinary strict real meaning.",
+      "id": "D040",
+      "meaning": "Equips the reals with their usual strict order <.",
+      "name": "Real strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supports ordinary natural powers of u and the multiplication underlying real division.",
+      "id": "D041",
+      "meaning": "The reals under multiplication form a monoid with identity 1, obtained from their monoid-with-zero structure.",
+      "name": "Real multiplicative monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides all ordinary real products in the model and bound.",
+      "id": "D042",
+      "meaning": "Equips the reals with their usual binary multiplication.",
+      "name": "Real multiplication",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Ensures that n and the real numeral 2 have their usual numerical values.",
+      "id": "D043",
+      "meaning": "Embeds each natural number in the reals, implemented through its image in the rational Cauchy completion.",
+      "name": "Natural numbers embedded in the reals",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Turns the finite infimum in the coefficient into an ordinary minimum of real coordinates.",
+      "id": "D044",
+      "meaning": "Equips the reals with their infimum-semilattice structure, whose binary infimum is minimum.",
+      "name": "Real minimum structure",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines all real differences, including the input range and coordinate errors.",
+      "id": "D045",
+      "meaning": "Real subtraction is defined by a−b=a+(−b).",
+      "name": "Real subtraction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the zero used in nonnegativity assumptions and empty sums.",
+      "id": "D046",
+      "meaning": "The distinguished zero element of the real numbers.",
+      "name": "Real zero",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects finite-set membership with its underlying set interpretation in the nonemptiness certificate.",
+      "id": "D047",
+      "meaning": "For types A and B with an injective set interpretation A→Set B, define b∈a to mean that b lies in the set interpreting a.",
+      "name": "Membership induced by set interpretation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the literal 0 as the real additive identity where required.",
+      "id": "D048",
+      "meaning": "For any type A with a chosen zero, interpret the numeral 0 as that zero.",
+      "name": "Zero numeral instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Routes addition notation to ordinary real or natural addition.",
+      "id": "D049",
+      "meaning": "For any type A with addition A×A→A, use that same operation as its heterogeneous-addition instance.",
+      "name": "Homogeneous addition adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Routes division notation to real division.",
+      "id": "D050",
+      "meaning": "For any type A with division A×A→A, use that same operation as its heterogeneous-division instance.",
+      "name": "Homogeneous division adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Routes multiplication notation to real multiplication.",
+      "id": "D051",
+      "meaning": "For any type A with multiplication A×A→A, use that same operation as its heterogeneous-multiplication instance.",
+      "name": "Homogeneous multiplication adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects the power notation u² with real natural-number powers.",
+      "id": "D052",
+      "meaning": "For types A and B with a power operation A×B→A, use it as the corresponding heterogeneous-power operation.",
+      "name": "Power notation adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Routes subtraction notation to real subtraction.",
+      "id": "D053",
+      "meaning": "For any type A with subtraction A×A→A, use that same operation as its heterogeneous-subtraction instance.",
+      "name": "Homogeneous subtraction adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The domain restriction 2≤n is ordinary natural-number comparison.",
+      "id": "D054",
+      "meaning": "Equips the natural numbers with their usual non-strict order.",
+      "name": "Natural-number order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets each real literal 2 through the usual natural-number embedding.",
+      "id": "D055",
+      "meaning": "For any type R with a natural-number cast and any natural m≥2, interpret the numeral m in R as the cast of m.",
+      "name": "Numerals at least two via casting",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Gives the natural literals in the dimension restriction, exponent, and numeral certificates their ordinary values.",
+      "id": "D056",
+      "meaning": "For every natural m, interpret the numeral m in the natural numbers as m itself.",
+      "name": "Natural numeral instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Applies the chosen finite-product norm in D004.",
+      "id": "D057",
+      "meaning": "For any type E with a designated real-valued norm function, extract that function E→R.",
+      "name": "Norm evaluation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Allows the standard real normed commutative ring to supply each coordinate's normed-ring structure.",
+      "id": "D058",
+      "meaning": "For any normed commutative ring A, forget multiplicative commutativity and retain its normed-ring structure.",
+      "name": "Forgetting commutativity of a normed ring",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Extracts the finite-product norm used for output and error vectors.",
+      "id": "D059",
+      "meaning": "For any normed ring A, retain its designated norm function.",
+      "name": "Norm underlying a normed ring",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the 1 in perturbation factors and denominators as the real multiplicative identity.",
+      "id": "D060",
+      "meaning": "For any type A with a chosen multiplicative identity, interpret the numeral 1 as that element.",
+      "name": "One numeral instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Selects the maximum norm on Fin n→R, rather than a sum or Euclidean norm.",
+      "id": "D061",
+      "meaning": "For a finite index type I and a family of normed rings R_i, equips the dependent product Π_i R_i with pointwise ring operations and the finite supremum norm, together with its induced metric and normed-ring laws.",
+      "name": "Finite-product normed ring",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies negation in the definition |δ|=max(δ,−δ).",
+      "id": "D062",
+      "meaning": "The real numbers form a group under addition, with zero and additive inverses, inherited from their ring structure.",
+      "name": "Real additive group",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the exact denominator contribution from the reference coordinate and the unit parts of perturbation factors.",
+      "id": "D063",
+      "meaning": "The distinguished multiplicative identity 1 of the real numbers.",
+      "name": "Real one",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supports both the coordinate minimum and the absolute values used in the perturbation constraints.",
+      "id": "D064",
+      "meaning": "The usual lattice structure on the reals, with infimum=min and supremum=max.",
+      "name": "Real lattice",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the absolute-value coordinate norm from which the vector maximum norm is formed.",
+      "id": "D065",
+      "meaning": "Equips the reals with their usual commutative ring operations, norm |a|, and metric |a−b|, satisfying the normed-ring laws including ||ab||≤||a||||b||.",
+      "name": "Standard real normed commutative ring",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes the four perturbation bounds symmetric in positive and negative errors.",
+      "id": "D066",
+      "meaning": "For any type with a lattice and additive-group structure, define |a| as the supremum of a and −a. On the reals this is the usual absolute value max(a,−a).",
+      "name": "Absolute value",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Preserves the order of coordinates in the summation algorithm.",
+      "id": "D067",
+      "meaning": "For any type A, List A consists of finite ordered sequences of elements of A.",
+      "name": "Finite lists",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Applies perturbed additions successively in increasing coordinate order, after the initial summand.",
+      "id": "D068",
+      "meaning": "For types A,B, an update f:A×B→A, initial accumulator a, and list [b₁,...,b_m], return f(...f(f(a,b₁),b₂)...,b_m). For an empty list return a.",
+      "name": "Left fold",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Transforms the list of non-k indices into the corresponding exact shifted exponentials.",
+      "id": "D069",
+      "meaning": "For any types A,B, function f:A→B, and list [a₁,...,a_m], return [f(a₁),...,f(a_m)], preserving order and length.",
+      "name": "Mapping a function over a list",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the exact sum S with no perturbations.",
+      "id": "D070",
+      "meaning": "For any type with addition and zero, sum a list using a right fold: sum([])=0 and sum(a::rest)=a+sum(rest). For real entries this is the ordinary finite sum.",
+      "name": "List sum",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the exponential in both exact and perturbed shifted numerators.",
+      "id": "D071",
+      "meaning": "The real exponential sends t to the real part of the complex exponential of t embedded in the complex numbers; this is the usual e^t.",
+      "name": "Real exponential",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides a dummy argument for the empty-list branch of D009 and introduces no model parameter.",
+      "id": "D072",
+      "meaning": "A type containing exactly one element.",
+      "name": "Singleton type",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Turns the decidable condition i≠k into the Boolean predicate used to filter indices.",
+      "id": "D073",
+      "meaning": "For any decidable proposition P, return true when P holds and false when its negation holds.",
+      "name": "Boolean decision of a proposition",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Determines whether an index is the excluded coordinate k.",
+      "id": "D074",
+      "meaning": "For any type or sort A and a,b∈A, a=b asserts equality of those elements.",
+      "name": "Equality",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Implements the list case split used to initialize the perturbed sum.",
+      "id": "D075",
+      "meaning": "For a type A, a family M over lists of A, a list L, a value in M([]), and a value in M(head::tail) for every head and tail, select the appropriate value according to whether L is empty or a head followed by a tail. No induction hypothesis is supplied to the nonempty branch.",
+      "name": "List case eliminator",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Represents the first summand and the remaining ordered indices.",
+      "id": "D076",
+      "meaning": "For any type A, element a∈A, and list L of A, form the list a::L by prepending a.",
+      "name": "List head constructor",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Removes k while preserving the increasing order of all other indices.",
+      "id": "D077",
+      "meaning": "For any type A, Boolean predicate p on A, and list L, retain exactly the entries on which p returns true, preserving their order and multiplicities.",
+      "name": "Order-preserving list filter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the increasing coordinate enumeration used by the perturbed algorithm and by the finiteness structure.",
+      "id": "D078",
+      "meaning": "For every natural n, construct the list [0,1,...,n−1] of elements of Fin n by tabulating the identity function.",
+      "name": "Increasing finite index list",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the empty-list case whose perturbed and exact sums are zero; this case does not occur for D010 under n≥2.",
+      "id": "D079",
+      "meaning": "For any type A, the empty list of elements of A.",
+      "name": "Empty list",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "States the exclusion criterion i≠k.",
+      "id": "D080",
+      "meaning": "For any type or sort A and elements a,b, a≠b is defined as the negation of a=b.",
+      "name": "Inequality of elements",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the dummy argument when evaluating the empty-list branch.",
+      "id": "D081",
+      "meaning": "The unique element of the singleton type Unit.",
+      "name": "Singleton element",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes the test for removing k computationally decidable without adding an assumption.",
+      "id": "D082",
+      "meaning": "For every natural n and indices i,j∈Fin n, decide i=j by deciding equality of their underlying natural-number values.",
+      "name": "Decidable equality of finite indices",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Converts decidable equality of i and k into decidable inequality for the filter.",
+      "id": "D083",
+      "meaning": "For any proposition P with a decision procedure, decide its negation by reversing the true and false cases.",
+      "name": "Decidability of negation",
+      "status": "understood"
+    }
+  ],
+  "role": "blind-translation",
+  "semantic_sha256": "0428d21fdf7f7cf54e969d8287a58088432a2900ea247b3c7beeb1b99fc65857",
+  "translation": {
+    "binders": [
+      "For every natural number n and hypothesis hn:2≤n.",
+      "For every real vector x:Fin n→R and index k∈Fin n, with hypothesis hk:∀i∈Fin n, x_i≤x_k.",
+      "There exist real numbers C and ε, chosen after n,x,k and their hypotheses, such that C≥0 and ε>0.",
+      "For every real u and every four real vectors δsub, δexp, δadd, δdiv:Fin n→R, the estimate holds whenever 0≤u≤ε and all their coordinate magnitudes are at most u. C and ε are independent of these subsequently quantified choices."
+    ],
+    "conclusions": [
+      "For every admissible u and perturbation tuple, ||ŷ−y||∞/||y||∞ ≤ (n+2+2(x_k−min_{i∈Fin n} x_i))u + C u², where n in this real expression is the real cast of the natural dimension.",
+      "The coefficient is n+2+2(max_i x_i−min_i x_i), since k is a maximizing index.",
+      "This is a uniform local bound over all permitted perturbation vectors for each fixed n,x,k, with an explicit linear coefficient and a nonnegative quadratic remainder constant."
+    ],
+    "hypotheses": [
+      "n is a natural number with n≥2.",
+      "x has arbitrary real coordinates.",
+      "k is a coordinate attaining the maximum of x; ties are allowed.",
+      "C≥0 and ε>0 are required properties of the existential witnesses.",
+      "For the conditional estimate, u is real with 0≤u≤ε.",
+      "For every coordinate i, |δsub_i|≤u, |δexp_i|≤u, |δadd_i|≤u, and |δdiv_i|≤u. No probabilistic or independence assumption is imposed."
+    ],
+    "mathematical_definitions": [
+      "Fin n={0,...,n−1}. Let [j₁,...,j_m] be this list in increasing order with k removed. Under the target hypotheses, m=n−1≥1.",
+      "The exact shifted exponential is a_i=exp(x_i−x_k). Define S=Σ_{i≠k}a_i and y_i=a_i/(1+S). Since a_k=1, the exact denominator equals Σ_i a_i.",
+      "The perturbed shifted exponential is â_i=exp((x_i−x_k)(1+δsub_i))(1+δexp_i), for every coordinate including k.",
+      "The perturbed sum is initialized with A₁=â_{j₁}. For r=2,...,m, set A_r=(A_{r−1}+â_{j_r})(1+δadd_{j_r}). Define Ŝ=A_m. In the general empty-list branch of the definition, Ŝ=0.",
+      "The perturbed output is ŷ_i=(â_i/(1+Ŝ))(1+δdiv_i). The addition of 1 to Ŝ has no separate error factor. The perturbation δadd_k and the perturbation at the first retained summand are unused.",
+      "The vector norm is ||v||∞=max_i|v_i| for the nonempty coordinate domain of the target.",
+      "The minimum is the finite infimum over all coordinates, whose nonemptiness is certified by k. Set R=x_k−min_i x_i≥0.",
+      "All operations are exact real operations except for the explicitly inserted perturbation factors. Lean's real division is total, assigning a/0=0."
+    ],
+    "proposition_plain_english": "For every dimension n≥2, every real vector x of length n, and every coordinate k attaining its maximum, there exist C≥0 and ε>0, depending on these fixed data, such that the following holds uniformly for all real 0≤u≤ε and all four coordinatewise perturbation vectors bounded in absolute value by u. Compute shifted exponentials with the specified subtraction and exponential perturbations, sum the non-k terms in increasing index order with a perturbed left fold initialized by the first term, add an exact 1 to that sum, and divide each perturbed numerator by this denominator with its specified final division perturbation. The resulting vector differs from the exact normalized exponential vector by relative maximum-norm error at most (n+2+2(x_k−min_i x_i))u+C u²."
+  },
+  "vacuity_risks": [
+    "There is no empty-coordinate vacuity: n≥2, and k is an actual coordinate. The list excluding k is nonempty.",
+    "There is no empty small-u range: ε must be strictly positive, so positive admissible u exist. For every nonnegative u, the all-zero perturbation tuple satisfies the perturbation bounds.",
+    "At u=0 all perturbations are forced to vanish, the algorithm returns the exact vector, and the inequality reduces to 0≤0. The claim also covers positive u, so it is not only this trivial case.",
+    "The relative-error denominator is not zero: every exact exponential is positive, 1+S>0, and y_k=1/(1+S)>0. Thus ||y||∞>0.",
+    "No explicit positivity hypothesis is placed on the perturbed denominator. Its definition remains meaningful through total real division. For sufficiently small u<1, all perturbed exponentials and accumulation factors are positive, so 1+Ŝ>0; the existential ε can be restricted to such a range.",
+    "The theorem provides no uniform C or ε over all input vectors or dimensions. Arbitrarily small positive ε and input-dependent C are allowed, so the result is local rather than a global finite-precision guarantee."
+  ]
+}

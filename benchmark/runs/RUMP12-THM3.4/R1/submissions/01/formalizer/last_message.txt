@@ -1,0 +1,3 @@
+Wrote [Candidate.lean](/workspace/Candidate.lean) with one target proposition for Rump’s Theorem 3.4. It covers positive lengths, representable binary inputs, ordered nearest-rounded additions with arbitrary tie choices, finite results without an underflow restriction, and the exact `(n−1)u` bound.
+
+The paper PDF hash matches `source/task.md`. `Candidate.lean` compiles; the target’s `sorry` is its only proof hole.

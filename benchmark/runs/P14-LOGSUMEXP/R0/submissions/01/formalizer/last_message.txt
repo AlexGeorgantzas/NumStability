@@ -1,0 +1,1 @@
+The paper’s absolute forward-error statement is in [Candidate.lean](/workspace/Candidate.lean:29), with definitions for the ordered computation and uniform \(O(u^2)\) remainder. It compiles successfully; the target’s required `sorry` is the only proof hole.

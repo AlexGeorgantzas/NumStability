@@ -1,0 +1,681 @@
+{
+  "accepted": true,
+  "candidate_semantic_sha256": "dc50fc3f0795ba6edc8cfa1d1ca8af805b95b4db3c95c8316b829e9906b2c314",
+  "classification": "faithful-equivalent",
+  "dependency_coverage": [
+    {
+      "effect_on_target": "Defines the computed quantity whose error is bounded.",
+      "id": "D001",
+      "interpretation": "Computes length-b inner dot products, sums m of them per superblock, then sums m superblocks.",
+      "name": "Three-level superblock computation",
+      "paper_match": "Matches Figure 3.1(b) with N=b*m*m.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies arithmetic operations and their error assumptions.",
+      "id": "D002",
+      "interpretation": "A structure containing a nonnegative rounding parameter and modeled arithmetic operations.",
+      "name": "Floating-point arithmetic model",
+      "paper_match": "Represents the standard relative-error model of Section 1.1.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Determines the exact error coefficient.",
+      "id": "D003",
+      "interpretation": "The real-valued function gamma_n=n*u/(1-n*u).",
+      "name": "Gamma coefficient",
+      "paper_match": "Matches equation (1.2).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Ensures the gamma denominator is positive.",
+      "id": "D004",
+      "interpretation": "The condition n*u<1.",
+      "name": "Gamma validity",
+      "paper_match": "Matches the validity condition in Lemma 1.1.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Preserves consecutive input order and the three-level grouping.",
+      "id": "D005",
+      "interpretation": "Maps superblock s, block j, and position i to (s*m+j)*b+i.",
+      "name": "Consecutive block indexing",
+      "paper_match": "Matches the pointer advances in Figure 3.1(b).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Constrains addition and multiplication errors and makes initial additions to zero exact.",
+      "id": "D006",
+      "interpretation": "Requires u>=0, relative-error laws with |delta|<=u, and addition of zero on the left to be exact; also carries unused arithmetic operations.",
+      "name": "Arithmetic model assumptions",
+      "paper_match": "Matches the source model and exact initialization on computed floating-point values. Unused operations admit exact choices and impose no restriction on the selected computation.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies u to gamma and its validity condition.",
+      "id": "D007",
+      "interpretation": "Extracts the nonnegative rounding-error parameter.",
+      "name": "Unit roundoff parameter",
+      "paper_match": "Matches the role of u in Section 1.1.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Retains every product rounding and the ordered inner accumulation.",
+      "id": "D008",
+      "interpretation": "For a nonempty block, starts with its rounded first product and successively adds the remaining rounded products; returns zero for an empty block.",
+      "name": "Sequential inner dot product",
+      "paper_match": "Matches the inner computation in Figure 3.1(b); the empty case is excluded by b>0.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Implements the middle and outer summation levels with fresh accumulators.",
+      "id": "D009",
+      "interpretation": "Accumulates a finite sequence in increasing index order using modeled addition, starting at zero.",
+      "name": "Rounded sequential summation",
+      "paper_match": "Matches the superblock and final accumulations in Figure 3.1(b).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Makes every block access a valid vector access.",
+      "id": "D010",
+      "interpretation": "Establishes (s*m+j)*b+i<b*m*m for the specified bounded indices.",
+      "name": "Block index bound",
+      "paper_match": "Supports the source's consecutive partition without adding a hypothesis.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Performs all rounded additions.",
+      "id": "D011",
+      "interpretation": "Extracts the model's binary addition operation.",
+      "name": "Modeled addition",
+      "paper_match": "Matches rounded addition in the source algorithm.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Performs each input-product rounding.",
+      "id": "D012",
+      "interpretation": "Extracts the model's binary multiplication operation.",
+      "name": "Modeled multiplication",
+      "paper_match": "Matches rounded multiplication in the source algorithm.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Permits selection of the first entry in a nonempty block.",
+      "id": "D013",
+      "interpretation": "Every successor natural number is nonzero.",
+      "name": "Positive-length nonzeroness",
+      "paper_match": "Bookkeeping consistent with the source's nonzero block sizes.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Selects the empty or nonempty inner-dot computation.",
+      "id": "D014",
+      "interpretation": "Splits a vector length into zero and successor cases while preserving its vector types.",
+      "name": "Length case distinction",
+      "paper_match": "The positive branch implements the source's inner loop.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Types vector positions and loop indices.",
+      "id": "D015",
+      "interpretation": "Natural indices strictly below a specified length.",
+      "name": "Bounded indices",
+      "paper_match": "Matches finite vector and loop domains.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Makes all vector positions available to exact sums.",
+      "id": "D016",
+      "interpretation": "Enumerates every bounded index exactly once.",
+      "name": "Finite index enumeration",
+      "paper_match": "Matches summation over the entire input vector.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms the exact dot product and the exact absolute-product scale.",
+      "id": "D017",
+      "interpretation": "An exact finite sum in an additive commutative monoid.",
+      "name": "Exact finite summation",
+      "paper_match": "Matches the mathematical sums in the source bound.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Ensures neither exact sum omits any coordinate.",
+      "id": "D018",
+      "interpretation": "The finite set of all elements of a finite type.",
+      "name": "Full index set",
+      "paper_match": "Matches the full length-N dot product.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses ordinary arithmetic addition in dimensions, indices, and model equations.",
+      "id": "D019",
+      "interpretation": "Dispatches addition to the chosen operand types.",
+      "name": "Addition operator",
+      "paper_match": "Resolves to ordinary natural or real addition where used.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses dimension products, exact products, and error coefficients.",
+      "id": "D020",
+      "interpretation": "Dispatches multiplication to the chosen operand types.",
+      "name": "Multiplication operator",
+      "paper_match": "Preserves the source's exact arithmetic expressions.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses the error difference, gamma denominator, and m-1.",
+      "id": "D021",
+      "interpretation": "Dispatches subtraction to real or natural arithmetic.",
+      "name": "Subtraction operator",
+      "paper_match": "Natural subtraction agrees with integer subtraction here because m>0.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses the non-strict error bound and rounding constraints.",
+      "id": "D022",
+      "interpretation": "The less-than-or-equal relation for the selected type.",
+      "name": "Non-strict comparison",
+      "paper_match": "Matches the source's non-strict inequalities.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses positive dimensions and strict gamma validity.",
+      "id": "D023",
+      "interpretation": "The strict less-than relation for the selected type.",
+      "name": "Strict comparison",
+      "paper_match": "Matches positive block sizes and n*u<1.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Types lengths, block counts, and indices.",
+      "id": "D024",
+      "interpretation": "The nonnegative integers.",
+      "name": "Natural numbers",
+      "paper_match": "Positivity hypotheses recover the source's nonzero integral sizes.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets numerical constants in their required types.",
+      "id": "D025",
+      "interpretation": "Typed natural-number literals.",
+      "name": "Numerical literals",
+      "paper_match": "Preserves the constants zero, one, and two.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Types input values, computed values, and error quantities.",
+      "id": "D026",
+      "interpretation": "The real numbers.",
+      "name": "Real scalar domain",
+      "paper_match": "Matches real-valued floating-point error analysis and permits arbitrary signs.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports exact finite sums.",
+      "id": "D027",
+      "interpretation": "Ordinary real addition with zero and commutative associative laws.",
+      "name": "Real additive summation structure",
+      "paper_match": "Matches exact mathematical summation.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supports negation and absolute values.",
+      "id": "D028",
+      "interpretation": "The ordinary additive group of real numbers.",
+      "name": "Real additive group",
+      "paper_match": "Matches signed real error quantities.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Orders error magnitudes and rounding parameters.",
+      "id": "D029",
+      "interpretation": "The usual non-strict order on real numbers.",
+      "name": "Real non-strict order",
+      "paper_match": "Matches the source inequality.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms exact coordinate products and scalar coefficients.",
+      "id": "D030",
+      "interpretation": "Ordinary exact real multiplication.",
+      "name": "Exact real multiplication",
+      "paper_match": "Keeps exact products distinct from rounded multiplication.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms the exact computed-minus-exact difference and denominator.",
+      "id": "D031",
+      "interpretation": "Ordinary exact real subtraction.",
+      "name": "Exact real subtraction",
+      "paper_match": "Matches the source's mathematical error expression.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies the maximum operation used in absolute value.",
+      "id": "D032",
+      "interpretation": "The usual lattice order of the real numbers.",
+      "name": "Real lattice order",
+      "paper_match": "Produces standard real absolute-value semantics.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Measures scalar error and coordinate-product magnitudes.",
+      "id": "D033",
+      "interpretation": "Absolute value, defined as the maximum of a value and its negation.",
+      "name": "Absolute value",
+      "paper_match": "Matches both |computed-exact| and |x_i*y_i|.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms dimensions, offsets, and the gamma index.",
+      "id": "D034",
+      "interpretation": "Ordinary natural-number addition.",
+      "name": "Natural addition",
+      "paper_match": "Preserves integral indexing and error-factor counts.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Connects addition notation to ordinary arithmetic.",
+      "id": "D035",
+      "interpretation": "Uses a type's addition as its binary addition operator.",
+      "name": "Addition dispatch",
+      "paper_match": "Introduces no altered arithmetic semantics.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Connects multiplication notation to ordinary arithmetic.",
+      "id": "D036",
+      "interpretation": "Uses a type's multiplication as its binary multiplication operator.",
+      "name": "Multiplication dispatch",
+      "paper_match": "Introduces no altered arithmetic semantics.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Connects subtraction notation to the selected arithmetic.",
+      "id": "D037",
+      "interpretation": "Uses a type's subtraction as its binary subtraction operator.",
+      "name": "Subtraction dispatch",
+      "paper_match": "Preserves the intended real and natural subtractions.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Enforces positive sizes and valid index bounds.",
+      "id": "D038",
+      "interpretation": "The usual strict order on natural numbers.",
+      "name": "Natural strict order",
+      "paper_match": "Matches nonzero integral block sizes and loop bounds.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Forms b*m*m, flattened offsets, and 2*(m-1).",
+      "id": "D039",
+      "interpretation": "Ordinary natural-number multiplication.",
+      "name": "Natural multiplication",
+      "paper_match": "Matches the source's dimension and error-count arithmetic.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies natural constants in dimensions and counts.",
+      "id": "D040",
+      "interpretation": "Interprets a natural-number literal as itself.",
+      "name": "Natural literals",
+      "paper_match": "Preserves all integer constants.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Computes m-1 in the gamma index.",
+      "id": "D041",
+      "interpretation": "Truncated natural subtraction.",
+      "name": "Natural subtraction",
+      "paper_match": "Equals ordinary m-1 throughout the admitted domain m>0.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies division for the exact gamma expression.",
+      "id": "D042",
+      "interpretation": "Extracts division from the underlying arithmetic structure.",
+      "name": "Division structure projection",
+      "paper_match": "Resolves to ordinary real division.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses gamma's quotient and the unused division model.",
+      "id": "D043",
+      "interpretation": "Dispatches division to the chosen operand types.",
+      "name": "Division operator",
+      "paper_match": "Preserves exact real quotient semantics.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Converts the error-factor count into a real coefficient.",
+      "id": "D044",
+      "interpretation": "The canonical embedding of natural numbers into the selected numeric type.",
+      "name": "Natural-number embedding",
+      "paper_match": "Makes n*u an exact real product.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies one in gamma and relative-error factors.",
+      "id": "D045",
+      "interpretation": "Interprets the literal one using the type's multiplicative identity.",
+      "name": "Unit literal",
+      "paper_match": "Matches 1-n*u and 1+delta.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Provides exact real division in gamma.",
+      "id": "D046",
+      "interpretation": "Ordinary real multiplication, inversion, and division.",
+      "name": "Real division structure",
+      "paper_match": "The validity condition excludes the zero denominator.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Expresses strict gamma validity.",
+      "id": "D047",
+      "interpretation": "The usual strict order on real numbers.",
+      "name": "Real strict order",
+      "paper_match": "Matches n*u<1.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Interprets integer error counts exactly as real numbers.",
+      "id": "D048",
+      "interpretation": "The canonical natural-to-real embedding.",
+      "name": "Real embedding of counts",
+      "paper_match": "Introduces no rounding into the coefficient.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies the real multiplicative identity.",
+      "id": "D049",
+      "interpretation": "The real number one.",
+      "name": "Real unit",
+      "paper_match": "Matches constants in the error model and gamma.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Connects quotient notation to real division.",
+      "id": "D050",
+      "interpretation": "Uses a type's division as its binary division operator.",
+      "name": "Division dispatch",
+      "paper_match": "Introduces no computed or rounded quotient into gamma.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Pairs each error bound with its operation equation.",
+      "id": "D051",
+      "interpretation": "Logical conjunction.",
+      "name": "Conjunction",
+      "paper_match": "Requires both parts of each relative-error assertion.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "States operation-model equations and exact initialization.",
+      "id": "D052",
+      "interpretation": "Ordinary equality.",
+      "name": "Equality",
+      "paper_match": "Matches exact identities in the source model.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Allows a bounded rounding error for each operation and operand pair.",
+      "id": "D053",
+      "interpretation": "Existential quantification.",
+      "name": "Existence of local rounding errors",
+      "paper_match": "Does not force distinct operations to share one rounding error.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Fixes the sequential order of rounded accumulations.",
+      "id": "D054",
+      "interpretation": "A left fold through bounded indices in increasing order.",
+      "name": "Ordered finite accumulation",
+      "paper_match": "Matches the increasing-index loops in Figure 3.1(b).",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Selects the initial coordinate of a nonempty inner block.",
+      "id": "D055",
+      "interpretation": "Interprets numerical indices within a nonempty bounded index type.",
+      "name": "Bounded-index literals",
+      "paper_match": "The zero index selects exactly the first element.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Packages flattened offsets as valid vector indices.",
+      "id": "D056",
+      "interpretation": "Constructs a bounded index from its value and strict upper bound.",
+      "name": "Bounded-index construction",
+      "paper_match": "Preserves the source's intended coordinate access.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Visits the remaining inner-block entries after the first product.",
+      "id": "D057",
+      "interpretation": "Maps index i to i+1 in the next larger bounded range.",
+      "name": "Index successor",
+      "paper_match": "Matches the inner loop beginning at position one.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies integer coordinates for flattening.",
+      "id": "D058",
+      "interpretation": "Extracts a bounded index's natural-number value.",
+      "name": "Index value",
+      "paper_match": "Preserves the numerical loop positions.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Restricts the unused division model to nonzero divisors.",
+      "id": "D059",
+      "interpretation": "Inequality as negated equality.",
+      "name": "Non-equality",
+      "paper_match": "Has no effect on the selected addition-and-multiplication computation.",
+      "status": "not-applicable"
+    },
+    {
+      "effect_on_target": "Forms exact sums and relative-error equations.",
+      "id": "D060",
+      "interpretation": "Ordinary exact real addition.",
+      "name": "Exact real addition",
+      "paper_match": "Keeps mathematical addition distinct from modeled rounded addition.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Initializes accumulators and expresses nonnegativity.",
+      "id": "D061",
+      "interpretation": "The real number zero.",
+      "name": "Real zero",
+      "paper_match": "Matches the source's accumulator resets.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Appears only in an unused arithmetic-model field.",
+      "id": "D062",
+      "interpretation": "The nonnegative real square root on nonnegative arguments.",
+      "name": "Real square root",
+      "paper_match": "Does not compute block counts; m parameterizes the integral square root of N/b.",
+      "status": "not-applicable"
+    },
+    {
+      "effect_on_target": "Supplies typed zero constants.",
+      "id": "D063",
+      "interpretation": "Interprets zero using the selected type's additive identity.",
+      "name": "Zero literal",
+      "paper_match": "Matches zero initialization and nonnegative parameter bounds.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Separates empty and nonempty inner-dot definitions.",
+      "id": "D064",
+      "interpretation": "Case analysis on whether a natural number is zero or a successor.",
+      "name": "Natural case analysis",
+      "paper_match": "Adds no restriction to positive source block sizes.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Represents nonempty vector lengths.",
+      "id": "D065",
+      "interpretation": "The operation n maps to n+1.",
+      "name": "Natural successor",
+      "paper_match": "Supports the inner dot's first-element initialization.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Represents the empty length in the auxiliary case split.",
+      "id": "D066",
+      "interpretation": "The natural number zero.",
+      "name": "Natural zero",
+      "paper_match": "The target's positive sizes exclude the empty computation.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Ensures the first bounded index exists.",
+      "id": "D067",
+      "interpretation": "The proposition that a value is nonzero.",
+      "name": "Nonzero property",
+      "paper_match": "Derived for successor lengths rather than imposed as an extra target restriction.",
+      "status": "pass"
+    },
+    {
+      "effect_on_target": "Supplies zero for nonzero-length bookkeeping.",
+      "id": "D068",
+      "interpretation": "Obtains a type's zero from its zero numeral.",
+      "name": "Zero interpretation",
+      "paper_match": "Introduces no mathematical change to the source domain.",
+      "status": "pass"
+    }
+  ],
+  "implications": {
+    "candidate_implies_source": {
+      "reasoning": "For every selected source case, take b=N_b and m=sqrt(N/N_b), giving N=b*m*m. The candidate computes the same ordered three-level dot product and states exactly the source's absolute forward-error bound. Its arithmetic model accommodates every source-admissible computation: initial additions to zero are exact, operations obey the relative-error laws, and total extensions outside the computation introduce no run restriction.",
+      "verdict": "yes"
+    },
+    "source_implies_candidate": {
+      "reasoning": "The source's fixed-three-level claim under its standard relative-error model applies to arbitrary positive integral b and m, arbitrary signed inputs, and valid gamma index. The candidate instantiates that same computation and model and uses the identical exact reference, scale, and coefficient. Its unused arithmetic fields do not alter the result.",
+      "verdict": "yes"
+    }
+  },
+  "mismatches": [],
+  "paper_sha256": "ffdea8e2136c7f4226e4c0d382d512fef190cd207133a1a0c88c8ef7b9ebeeb2",
+  "rationale": "The candidate faithfully represents the Section 3.1 fixed-block three-level result. The indexing preserves every input in its original order, all products are rounded, and both outer accumulation levels remain present. Exact addition to zero accounts for m-1 effective additions at each outer level. The abstract arithmetic model adds no successful-run or input-domain restriction; unused operations can be exact, and totalization outside source-admissible operations does not change their computed values. This is the correlated same-paper result identified in the packet, not an independent-paper replicate.",
+  "requires_adjudication": false,
+  "role": "direct-judge",
+  "semantic_checklist": [
+    {
+      "candidate_evidence": "The target bounds a nested three-level computation with index b+2*(m-1).",
+      "id": "S01",
+      "paper_evidence": "Section 3.1, printed page 1165, selects Figure 3.1(b) and gamma_(N_b+2*(sqrt(N/N_b)-1)).",
+      "reasoning": "The selected result is the fixed-block three-level claim, not the two-level or general t-level result.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Positive natural b and m; two real vectors indexed by b*m*m positions; an arithmetic model with nonnegative u.",
+      "id": "S02",
+      "paper_evidence": "The source assumes nonzero integral block calculations and real-valued dot-product inputs.",
+      "reasoning": "These types represent exactly the packet's N=b*m*m parameterization and signed scalar domain.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Universal quantification over the arithmetic model, b, m, x, and y, subject to positivity and gamma validity.",
+      "id": "S03",
+      "paper_evidence": "The bound applies generally to the selected algorithm under the standard rounding model.",
+      "reasoning": "No input, size, or rounding instance is fixed; local rounding errors may depend on operands.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The target requires b>0, m>0, and (b+2*(m-1))*u<1, with relative-error assumptions carried by the arithmetic model.",
+      "id": "S04",
+      "paper_evidence": "Section 3.1 requires nonzero integral sizes; Section 1.1 supplies the rounding model and gamma validity.",
+      "reasoning": "No sign, cancellation, successful-operation, or run-existence condition is added.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "|computed-sum_i x_i*y_i| <= gamma_(b+2*(m-1))*sum_i |x_i*y_i|.",
+      "id": "S05",
+      "paper_evidence": "The selected forward-error radius is gamma_(N_b+2*(sqrt(N/N_b)-1))*|x|^T|y|.",
+      "reasoning": "Both the full coefficient and the full absolute-product scale are retained.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Definitions expose the actual nested computation, exact finite sums, ordinary arithmetic, absolute value, and gamma.",
+      "id": "S06",
+      "paper_evidence": "Figure 3.1(b), equation (1.1), and equation (1.2) specify these operations.",
+      "reasoning": "The dependencies implement the source semantics without replacing computation by an assumed final error contract.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Only the modeled additions and multiplications compute the algorithm; the reference sum, scale, and gamma use exact real arithmetic.",
+      "id": "S07",
+      "paper_evidence": "The source distinguishes the computed dot product from its exact value and exact error bound.",
+      "reasoning": "No rounded reference value or computed estimate replaces an exact quantity.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Inner products use increasing positions; the middle and outer sums each start at zero; offsets are (s*m+j)*b+i.",
+      "id": "S08",
+      "paper_evidence": "Figure 3.1(b) resets accumulators at their respective boundaries and advances vector pointers after each block.",
+      "reasoning": "The computation matches all three summation levels, all product roundings, and consecutive input order.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Uses real absolute value for the scalar error and sums absolute coordinate products.",
+      "id": "S09",
+      "paper_evidence": "The source scale is |x|^T|y|.",
+      "reasoning": "For real inputs, sum_i |x_i*y_i| equals sum_i |x_i|*|y_i|; cancellation remains allowed.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "N=b*m*m and the coefficient index is b+2*(m-1), with m>0.",
+      "id": "S10",
+      "paper_evidence": "The printed index is N_b+2*(sqrt(N/N_b)-1).",
+      "reasoning": "The parameterization gives sqrt(N/b)=m, and natural subtraction yields ordinary m-1 throughout the domain.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Modeled operations satisfy relative-error laws over real values; addition to zero is exact; no exceptional-value or partial-run predicates occur.",
+      "id": "S11",
+      "paper_evidence": "Section 1.1 uses bounded relative errors and explicitly ignores overflow and underflow.",
+      "reasoning": "The total real model represents the source's exception-free arithmetic. Its values contain no NaNs or infinities, and total extension adds no restriction on source-admissible runs.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The conclusion is a non-strict upper bound with the exact selected radius.",
+      "id": "S12",
+      "paper_evidence": "The selected claim is a worst-case forward-error upper bound.",
+      "reasoning": "The candidate neither weakens the bound to an asymptotic estimate nor strengthens it to an unsupported equality or strict inequality.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Measures the absolute difference between the computed dot product and the exact input dot product.",
+      "id": "S13",
+      "paper_evidence": "The source states a forward-error result.",
+      "reasoning": "This is the same absolute forward error, including when the exact dot product is zero.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Gamma is the exact rational expression k*u/(1-k*u).",
+      "id": "S14",
+      "paper_evidence": "Equation (1.2) defines gamma with the same denominator.",
+      "reasoning": "No higher-order rounding terms are discarded.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "Allows every positive integral b and m and arbitrary signed vectors of length b*m*m.",
+      "id": "S15",
+      "paper_evidence": "The selected scope requires all nonzero integral fixed-three-level block configurations and unrestricted signs.",
+      "reasoning": "There is no fixed-size specialization or proper-subset coverage; parameterizing N by b and m preserves the selected domain.",
+      "status": "pass"
+    },
+    {
+      "candidate_evidence": "The model admits exact arithmetic, the positivity and gamma conditions are jointly satisfiable, and no conclusion is assumed as a premise.",
+      "id": "S16",
+      "paper_evidence": "The source concerns actual nonempty computations under an admissible rounding model.",
+      "reasoning": "The candidate has a nonempty domain and directly defines its computed value; its conclusion is not vacuous or circular.",
+      "status": "pass"
+    }
+  ],
+  "uncertainties": []
+}

@@ -1,0 +1,541 @@
+{
+  "ambiguities": [
+    "The rounding operations are arbitrary total functions on real pairs satisfying the stated relative-error model. No floating-point format, rounding mode, representable set, overflow behavior, or probabilistic independence is specified.",
+    "Some external declarations have only types or bodies referring to unexpanded library internals. Their standard mathematical meanings are used; the dossier does not independently expose all foundational implementations."
+  ],
+  "dependency_coverage": [
+    {
+      "effect_on_target": "This is the hypothesis imposed on both rounding functions, with the same uniform error bound u.",
+      "id": "D001",
+      "meaning": "For u ∈ ℝ and A, M : ℝ × ℝ → ℝ, the predicate asserts both: for every a,b ∈ ℝ there exists δ ∈ ℝ with |δ| ≤ u and A(a,b) = (a+b)(1+δ); and for every a,b ∈ ℝ there exists δ ∈ ℝ with |δ| ≤ u and M(a,b) = ab(1+δ). The witnesses may depend on the operands and on which operation is used.",
+      "name": "Uniform relative-error model",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the error coefficient at k = levels·(blockSize−1)+1. The target hypothesis makes its denominator strictly positive.",
+      "id": "D002",
+      "meaning": "For every real u and natural k, define γ_k(u) = ((k : ℝ)u)/(1−(k : ℝ)u). This definition itself has no denominator restriction; Lean real division is total, including division by zero.",
+      "name": "Gamma error coefficient",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Defines the computed scalar whose absolute error is bounded.",
+      "id": "D003",
+      "meaning": "Given A,M : ℝ × ℝ → ℝ, natural numbers L,b, and x,y : Fin(b^L) → ℝ, form the ordered list [M(x_i,y_i)] for i = 0,…,b^L−1 and apply the recursive reduction of D004 with addition A, block size b, and depth L.",
+      "name": "Hierarchically computed dot product",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Fixes the precise reduction tree and the contiguous grouping of products. Each level uses a sequential reduction of b child results, giving at most b−1 rounded additions per level along any leaf's path.",
+      "id": "D004",
+      "meaning": "For A : ℝ × ℝ → ℝ and b ∈ ℕ, define T_0(v) as the first entry of the real list v, or 0 if v is empty. For ℓ ∈ ℕ, define T_{ℓ+1}(v) = S_A([T_ℓ(take(b^ℓ, drop(j·b^ℓ,v)))]_{j=0}^{b−1}), where S_A is D005. This is defined for every list length and every natural b and depth; slices truncate at the list end, and entries beyond the selected blocks are ignored.",
+      "name": "Recursive contiguous-block reduction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Determines the addition order within each node. A node with b positive-numbered children performs b−1 rounded additions, without an initial rounded addition to zero.",
+      "id": "D005",
+      "meaning": "For A : ℝ × ℝ → ℝ, S_A([])=0 and S_A(a::v)=foldl(A,a,v). Thus S_A([a₀,…,a_{m−1}]) is the left-associated application of A starting from a₀; a singleton is returned unchanged.",
+      "name": "Sequential nonempty-list summation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Selects the depth-zero or successor-depth branch of D004 while keeping its input list fixed.",
+      "id": "D006",
+      "meaning": "For any universe-polymorphic family P : ℕ → List(ℝ) → Sort, n ∈ ℕ, list v, a branch h₀ assigning an element of P(0,w) to every list w, and a branch hₛ assigning an element of P(m+1,w) to every m and w, return h₀(v) when n=0 and hₛ(m,v) when n=m+1. The result has type P(n,v).",
+      "name": "Depth case selector",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Selects the empty and nonempty branches of D005.",
+      "id": "D007",
+      "meaning": "For any family P : List(ℝ) → Sort, list v, h₀ : Unit → P([]), and h_c assigning an element of P(a::w) to every real a and real list w, return h₀(()) if v is empty and h_c(a,w) if v=a::w.",
+      "name": "Real-list case selector",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes each input vector have exactly blockSize^levels real coordinates.",
+      "id": "D008",
+      "meaning": "For n ∈ ℕ, Fin(n) is the finite type of natural indices i satisfying 0 ≤ i < n.",
+      "name": "Bounded natural indices",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Enables summation over every coordinate of the input vectors.",
+      "id": "D009",
+      "meaning": "For each n ∈ ℕ, supplies a finite enumeration of Fin(n) from the list of all its indices, with no duplicates and with every index included.",
+      "name": "Finite enumeration of bounded indices",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Both the reference dot product and the sum of absolute products use exact finite real summation.",
+      "id": "D010",
+      "meaning": "For arbitrary types I and M, an additive commutative monoid structure on M, a finite subset s of I, and f : I → M, define ∑_{i∈s} f(i) by mapping f over the underlying multiset and summing it. The empty sum is zero.",
+      "name": "Finite-set sum",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Ensures that neither sum omits any index in Fin(blockSize^levels).",
+      "id": "D011",
+      "meaning": "For any type α equipped with a finite enumeration, univ is the finite set containing every element of α.",
+      "name": "Universal finite set",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets addition in the natural error-count expression and the exact real expressions in the rounding model.",
+      "id": "D012",
+      "meaning": "For types α,β,γ and a heterogeneous addition structure HAdd(α,β,γ), returns its operation α × β → γ.",
+      "name": "Addition operation projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets natural products in the operation count and block offsets, and exact real products in the model, dot product, and error bound.",
+      "id": "D013",
+      "meaning": "For types α,β,γ and a heterogeneous multiplication structure HMul(α,β,γ), returns its operation α × β → γ.",
+      "name": "Multiplication operation projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets blockSize^levels and the powers defining recursive block lengths.",
+      "id": "D014",
+      "meaning": "For types α,β,γ and a power structure HPow(α,β,γ), returns its operation α × β → γ.",
+      "name": "Power operation projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets natural blockSize−1, real computed-minus-exact error, and the real gamma denominator.",
+      "id": "D015",
+      "meaning": "For types α,β,γ and a heterogeneous subtraction structure HSub(α,β,γ), returns its operation α × β → γ.",
+      "name": "Subtraction operation projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses u ≥ 0, the relative-error bounds, and the final non-strict error inequality.",
+      "id": "D016",
+      "meaning": "For any type α with a supplied relation LE, returns that binary proposition-valued relation, denoted ≤.",
+      "name": "Non-strict comparison projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Expresses positive depth, positive block size, and the strict condition ku < 1.",
+      "id": "D017",
+      "meaning": "For any type α with a supplied relation LT, returns that binary proposition-valued relation, denoted <.",
+      "name": "Strict comparison projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes the size and block-length powers ordinary natural powers.",
+      "id": "D018",
+      "meaning": "For any monoid M, supplies exponentiation by natural numbers using the monoid's natural-power operation: a⁰=1 and a^{n+1}=aⁿa.",
+      "name": "Natural powers in a monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Depth, block size, vector length, recursive offsets, and the error-count parameter are natural numbers.",
+      "id": "D019",
+      "meaning": "ℕ is the type of nonnegative integers, including zero.",
+      "name": "Natural numbers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Embeds the natural number levels·(blockSize−1)+1 into ℝ before multiplication by u.",
+      "id": "D020",
+      "meaning": "For any type R carrying a natural-number cast, returns its specified map ℕ → R.",
+      "name": "Natural-number cast",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the multiplicative structure used to interpret natural powers of blockSize.",
+      "id": "D021",
+      "meaning": "The natural numbers form a monoid under ordinary multiplication, with identity 1; this structure is obtained from their commutative monoid structure.",
+      "name": "Natural multiplicative monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the natural and real numerals 0 and 1 appearing throughout the proposition and algorithm.",
+      "id": "D022",
+      "meaning": "For a type α, natural numeral n, and a structure specifying the interpretation of n in α, returns that specified element of α.",
+      "name": "Numeral interpretation",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes real numeral 1 the real multiplicative identity in the rounding factors, gamma denominator, and strict threshold.",
+      "id": "D023",
+      "meaning": "For any type α with a designated element 1, supplies the numeral-1 interpretation using that element.",
+      "name": "Numeral one from a unit element",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "All coordinates, errors, computed values, and arithmetic bounds lie in ℝ.",
+      "id": "D024",
+      "meaning": "ℝ is the type of real numbers.",
+      "name": "Real numbers",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides exact, order-independent finite real sums in the reference value and the bound.",
+      "id": "D025",
+      "meaning": "The real numbers form an additive commutative monoid under ordinary addition with identity zero, inherited from their commutative ring structure.",
+      "name": "Real additive commutative monoid",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies additive inverses used in real absolute value.",
+      "id": "D026",
+      "meaning": "The real numbers form an additive group under ordinary addition, with zero and additive inverses, inherited from their ring structure.",
+      "name": "Real additive group",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes all real non-strict comparisons ordinary real inequalities.",
+      "id": "D027",
+      "meaning": "Supplies the standard non-strict order ≤ on ℝ.",
+      "name": "Real non-strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes ku < 1 an ordinary strict real inequality.",
+      "id": "D028",
+      "meaning": "Supplies the standard strict order < on ℝ.",
+      "name": "Real strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "All explicit real multiplications are exact, including x_i y_i, factors 1+δ, and the right-hand error bound.",
+      "id": "D029",
+      "meaning": "Supplies ordinary real multiplication.",
+      "name": "Real multiplication",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The count k enters the gamma coefficient as its usual real value.",
+      "id": "D030",
+      "meaning": "Supplies the canonical embedding ℕ → ℝ, implemented by casting into the Cauchy completion of the rationals and converting that completion element into a real number.",
+      "name": "Canonical natural-to-real embedding",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Fixes the exact constant 1 in the model and gamma condition.",
+      "id": "D031",
+      "meaning": "Supplies the real number 1 as the designated multiplicative identity.",
+      "name": "Real one",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The error is the ordinary real difference between computed and exact values; the gamma denominator is 1−ku.",
+      "id": "D032",
+      "meaning": "Defines real subtraction by a−b = a+(−b).",
+      "name": "Real subtraction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Fixes zero in u ≥ 0 and in empty-list and missing-head defaults.",
+      "id": "D033",
+      "meaning": "Supplies the real number 0.",
+      "name": "Real zero",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides the supremum operation used to define absolute value.",
+      "id": "D034",
+      "meaning": "Supplies the usual lattice structure on ℝ, with binary supremum equal to maximum and binary infimum equal to minimum, inherited from its distributive lattice.",
+      "name": "Real lattice",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets real numeral 0 using the designated real zero.",
+      "id": "D035",
+      "meaning": "For any type α with a designated zero, supplies its numeral-0 interpretation using that zero.",
+      "name": "Numeral zero from a zero element",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The error measure is scalar real absolute value, and the scaling term is ∑|x_i y_i|. No vector norm is explicitly used.",
+      "id": "D036",
+      "meaning": "For any type α with a lattice and additive group structure, define abs(a)=a∨(−a). For ℝ this is |a|=max(a,−a).",
+      "name": "Absolute value",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Adds the final 1 to levels·(blockSize−1) in the natural error count.",
+      "id": "D037",
+      "meaning": "Supplies ordinary addition on ℕ.",
+      "name": "Natural addition",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects the overloaded addition notation to the specified natural or real addition.",
+      "id": "D038",
+      "meaning": "For any type α with an addition operation, makes it a heterogeneous addition operation α × α → α using exactly the same function.",
+      "name": "Homogeneous addition adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects overloaded multiplication to ordinary natural or real multiplication.",
+      "id": "D039",
+      "meaning": "For any type α with multiplication, makes it a heterogeneous multiplication operation α × α → α using the same function.",
+      "name": "Homogeneous multiplication adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects the power notation to the natural-power operation used for vector and block lengths.",
+      "id": "D040",
+      "meaning": "For arbitrary types α,β with an operation Pow(α,β), supplies HPow(α,β,α) with the same map α × β → α.",
+      "name": "Power notation adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects subtraction notation to natural truncated subtraction or real subtraction according to the operand type.",
+      "id": "D041",
+      "meaning": "For any type α with subtraction, supplies HSub(α,α,α) using its existing subtraction operation.",
+      "name": "Homogeneous subtraction adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The assumptions 0 < levels and 0 < blockSize require positive natural numbers.",
+      "id": "D042",
+      "meaning": "Supplies ordinary strict comparison on ℕ.",
+      "name": "Natural strict order",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Computes levels·(blockSize−1) and the recursive slice offset j·blockSize^ℓ in ℕ.",
+      "id": "D043",
+      "meaning": "Supplies ordinary multiplication on ℕ.",
+      "name": "Natural multiplication",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The natural constants 0 and 1 have their usual values.",
+      "id": "D044",
+      "meaning": "For every n ∈ ℕ, interprets the numeral n in ℕ as n itself.",
+      "name": "Natural numeral instance",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The expression blockSize−1 is computed in ℕ before the error count is cast to ℝ. Since blockSize > 0, it equals the ordinary nonnegative difference.",
+      "id": "D045",
+      "meaning": "Supplies truncated natural subtraction: a−b = max(a−b,0), where the difference inside the maximum is the integer difference.",
+      "name": "Truncated natural subtraction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Requires both operation models, and within each model requires both the error bound and its exact defining equality.",
+      "id": "D046",
+      "meaning": "For propositions P and Q, P ∧ Q asserts that both hold.",
+      "name": "Logical conjunction",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Supplies the real division operation used by the gamma definition.",
+      "id": "D047",
+      "meaning": "For any type G with a division-and-inversion monoid structure, extracts its division structure.",
+      "name": "Division structure projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The rounding-model formulas are exact equalities with existential relative-error factors.",
+      "id": "D048",
+      "meaning": "For any type or sort α and elements a,b of α, Eq(a,b) asserts their equality.",
+      "name": "Equality",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Allows a possibly different relative-error witness for each operand pair and each operation.",
+      "id": "D049",
+      "meaning": "For any type or sort α and predicate P : α → Prop, ∃a : α, P(a) asserts that an element satisfying P exists.",
+      "name": "Existential quantification",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Interprets the quotient in γ_k(u).",
+      "id": "D050",
+      "meaning": "For types α,β,γ and a heterogeneous division structure HDiv(α,β,γ), returns its operation α × β → γ.",
+      "name": "Division operation projection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Places all rounded coordinate products into the list in increasing index order, fixing the subsequent contiguous grouping.",
+      "id": "D051",
+      "meaning": "For any type α, natural n, and f : Fin(n) → α, constructs the list [f(0),…,f(n−1)] by a right fold that prepends entries to the empty list.",
+      "name": "List from an indexed function",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "The exact addition inside the model and factors 1+δ uses ordinary real addition.",
+      "id": "D052",
+      "meaning": "Supplies ordinary real addition.",
+      "name": "Real addition",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Gives the gamma formula its real division semantics. The target only uses a positive denominator.",
+      "id": "D053",
+      "meaning": "Equips ℝ with its multiplicative monoid, reciprocal, and division a/b=a·b⁻¹, together with recursively defined integer powers and their zero, successor, and negative-exponent laws. Real reciprocal and division are total; in particular 0⁻¹=0.",
+      "name": "Real division and inversion structure",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Connects overloaded division notation to the real division operation.",
+      "id": "D054",
+      "meaning": "For any type α with division, supplies HDiv(α,α,α) using the same map α × α → α.",
+      "name": "Homogeneous division adapter",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Represents ordered product arrays and ordered child results; order matters because rounded addition is not assumed associative.",
+      "id": "D055",
+      "meaning": "For any type α, List(α) is the type of finite ordered lists of elements of α, including the empty list and allowing repeated elements.",
+      "name": "Finite ordered lists",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Moves to the starting position j·b^ℓ of each recursive block.",
+      "id": "D056",
+      "meaning": "For any type α, n ∈ ℕ, and list v, drop(n,v) removes its first n entries, or returns [] if n exceeds its length. Recursively, drop(0,v)=v, drop(n+1,[])=[], and drop(n+1,a::v)=drop(n,v).",
+      "name": "List prefix removal",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "At depth zero the reduction returns the first entry, defaulting to real zero for an empty list.",
+      "id": "D057",
+      "meaning": "For any type α, list v, and fallback d ∈ α, headD([],d)=d and headD(a::v,d)=a.",
+      "name": "List head with fallback",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Computes one recursive result per block index and preserves their order for sequential summation.",
+      "id": "D058",
+      "meaning": "For types α,β, function f : α → β, and finite list v, map(f,v) applies f to each entry in order: map(f,[])=[] and map(f,a::v)=f(a)::map(f,v).",
+      "name": "Entrywise list mapping",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Enumerates precisely the child blocks j=0,…,blockSize−1 in ascending order.",
+      "id": "D059",
+      "meaning": "For n ∈ ℕ, range(n) is the list [0,1,…,n−1], empty for n=0. The supplied body delegates construction to range.loop with an initially empty list.",
+      "name": "Initial natural-number range",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Limits each recursively processed block to b^ℓ consecutive entries.",
+      "id": "D060",
+      "meaning": "For any type α, n ∈ ℕ, and list v, take(n,v) returns its first at most n entries. Recursively, take(0,v)=[], take(n+1,[])=[], and take(n+1,a::v)=a::take(n,v).",
+      "name": "List prefix selection",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "In the recursive reduction, the first component at depth ℓ+1 supplies the already-defined reduction function at depth ℓ; it also supports list slicing implementations.",
+      "id": "D061",
+      "meaning": "For a family P : ℕ → Sort, Below_P(0) is a one-element sort and Below_P(n+1)=P(n) × Below_P(n), using universe-polymorphic products. Thus Below_P(n) stores values of the family at every smaller natural index.",
+      "name": "Course-of-values recursion history",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Implements the well-founded recursion on reduction depth and the natural-number recursion used for list slices.",
+      "id": "D062",
+      "meaning": "For P : ℕ → Sort, t ∈ ℕ, and F assigning an element of P(n) to every n and history in Below_P(n), course-of-values recursion constructs an element of P(t). Its history contains the recursively constructed values at all smaller indices.",
+      "name": "Natural course-of-values recursion",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Distinguishes positive recursion depth ℓ+1 from depth zero.",
+      "id": "D063",
+      "meaning": "The successor function sends every natural n to n+1.",
+      "name": "Natural successor",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Makes each node's rounded additions proceed left to right with the accumulated value as the first argument.",
+      "id": "D064",
+      "meaning": "For types α,β, update function f : α × β → α, initial accumulator a ∈ α, and list v of β-elements, foldl(f,a,[])=a and foldl(f,a,b::v)=foldl(f,f(a,b),v).",
+      "name": "Left fold",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Implements the zero-versus-successor dispatch in D006 without itself adding a recursion hypothesis.",
+      "id": "D065",
+      "meaning": "For P : ℕ → Sort, t ∈ ℕ, z ∈ P(0), and s assigning an element of P(n+1) to every n, natural case analysis returns z when t=0 and s(n) when t=n+1. Its result lies in P(t).",
+      "name": "Natural case analysis",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Provides a dummy input for the empty-list branch of the generated list selector.",
+      "id": "D066",
+      "meaning": "Unit is a type with exactly one element, defined as the corresponding universe instance of PUnit.",
+      "name": "Singleton type",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Implements the empty-versus-cons dispatch used in D007 and hence D005.",
+      "id": "D067",
+      "meaning": "For any type α, family P : List(α) → Sort, list v, z ∈ P([]), and c assigning an element of P(a::w) to every a ∈ α and list w, list case analysis returns z on [] and c(a,w) on a::w. No recursive result for the tail is passed to c.",
+      "name": "List case analysis",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Represents nonempty lists whose first entry initializes sequential summation, and constructs ordered lists in supporting operations.",
+      "id": "D068",
+      "meaning": "For any type α, element a ∈ α, and list v of α-elements, cons(a,v)=a::v is the list with head a and tail v.",
+      "name": "List prepend constructor",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Represents empty slices and empty lists, for which the reduction definitions specify zero.",
+      "id": "D069",
+      "meaning": "For every type α, nil is its empty list [].",
+      "name": "Empty-list constructor",
+      "status": "understood"
+    },
+    {
+      "effect_on_target": "Invokes the empty-list handler in D007; it contributes no numerical value or assumption.",
+      "id": "D070",
+      "meaning": "The unique element () of Unit, defined as the corresponding PUnit constructor.",
+      "name": "Singleton inhabitant",
+      "status": "understood"
+    }
+  ],
+  "role": "blind-translation",
+  "semantic_sha256": "59a03e84f4317ecb81f46adce83009b757e2e40b01db3812a0fee008d26f2ca0",
+  "translation": {
+    "binders": [
+      "Universally quantify levels L ∈ ℕ and blockSize b ∈ ℕ.",
+      "Assume hlevels : 0 < L and hblock : 0 < b.",
+      "Universally quantify u ∈ ℝ and assume hu : 0 ≤ u.",
+      "Universally quantify roundAdd A : ℝ × ℝ → ℝ and roundMul M : ℝ × ℝ → ℝ.",
+      "Assume hround: A and M satisfy the uniform relative-error model with bound u.",
+      "Assume hgamma: ((L·(b−1)+1 : ℕ) : ℝ)u < 1.",
+      "For these choices, universally quantify x,y : Fin(b^L) → ℝ."
+    ],
+    "conclusions": [
+      "Writing N=b^L, k=L·(b−1)+1, and D̂=T_L([M(x_i,y_i)]_{i=0}^{N−1}), the conclusion is |D̂−∑_{i=0}^{N−1}x_i y_i| ≤ ((k : ℝ)u/(1−(k : ℝ)u))·∑_{i=0}^{N−1}|x_i y_i|."
+    ],
+    "hypotheses": [
+      "L and b are strictly positive natural numbers.",
+      "u is a nonnegative real number.",
+      "For every a,b' ∈ ℝ, there exists a real δ_A depending on these operands such that |δ_A| ≤ u and A(a,b')=(a+b')(1+δ_A).",
+      "For every a,b' ∈ ℝ, there exists a real δ_M depending on these operands such that |δ_M| ≤ u and M(a,b')=ab'(1+δ_M). These witnesses are separate from the addition witnesses.",
+      "For the natural number k=L·(b−1)+1, its real cast satisfies ku<1. The subtraction b−1 is natural truncated subtraction; b>0 makes it ordinary subtraction here.",
+      "The inputs x and y are arbitrary real-valued functions on the N=b^L indices. No sign, magnitude, nonzero-coordinate, or nonzero-dot-product restriction is imposed."
+    ],
+    "mathematical_definitions": [
+      "Fin(N) consists of indices 0,…,N−1. All sums in the conclusion are exact real sums over this entire finite index set.",
+      "Define S_A([])=0 and S_A([a₀,…,a_{m−1}]) by left-folding A through the entries after a₀ with initial accumulator a₀. In particular S_A([a₀])=a₀.",
+      "For fixed A and b, define T_0(v)=headD(v,0), the first entry of v or zero if empty.",
+      "For ℓ ∈ ℕ, define T_{ℓ+1}(v)=S_A([T_ℓ(take(b^ℓ,drop(j·b^ℓ,v)))]_{j=0}^{b−1}). The children are ordered by increasing j, and each slice is a consecutive block.",
+      "The computed dot product first makes the list of rounded products M(x_i,y_i) in increasing index order and then applies T_L. It performs one rounded multiplication per coordinate and sequential rounded additions within every recursive node.",
+      "Define γ_k(u)=((k : ℝ)u)/(1−(k : ℝ)u). In the target, k≥1 and 0≤ku<1, so the denominator is positive and γ_k(u)≥0.",
+      "Absolute value is |a|=max(a,−a). The factor ∑|x_i y_i| is the sum of absolute coordinatewise products, equivalently the ℓ¹ norm of their product vector."
+    ],
+    "proposition_plain_english": "For every positive natural depth L and positive natural block size b, every nonnegative real error bound u, and every pair of total real addition and multiplication functions satisfying the stated relative-error model, if (L(b−1)+1)u<1, then for every two real vectors of length b^L the recursively grouped dot product defined above has absolute forward error at most γ_{L(b−1)+1}(u) times the sum of the absolute exact coordinate products. The algorithm groups consecutive entries into b equal subblocks recursively and combines each node's b results by sequential left-associated rounded addition starting from its first result."
+  },
+  "vacuity_risks": [
+    "The hypotheses are satisfiable: for any positive L and b, exact real addition and multiplication satisfy the model with δ=0, and u=0 satisfies every numerical hypothesis. There is no global contradiction or universal vacuity.",
+    "For choices with L=0, b=0, u<0, ku≥1, or rounding functions violating the model, the conditional proposition provides no error guarantee.",
+    "The input index set is nonempty because b>0 implies b^L≥1. On the specified input length, the recursive slices have their required lengths, so empty-list fallbacks do not trivialize the target.",
+    "The allowed case b=1 has N=1 and k=1 for every positive L. Every reduction node returns its sole child unchanged, and the target bounds only the one rounded multiplication.",
+    "When u=0, the model forces both operations to be exact and the conclusion has zero right-hand side.",
+    "If ∑|x_i y_i|=0, every exact coordinate product is zero. The relative-error model forces those rounded products and their subsequent sums to be zero, so the conclusion becomes 0≤0.",
+    "The model forces an exactly zero result whenever the corresponding exact sum or product is zero. Its uniform applicability to all real operands is a substantive assumption; no concrete machine implementation is asserted to satisfy it."
+  ]
+}

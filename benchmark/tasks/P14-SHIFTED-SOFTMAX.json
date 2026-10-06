@@ -1,0 +1,32 @@
+{
+  "schema_version": "formalization-source-packet-1",
+  "task_id": "P14-SHIFTED-SOFTMAX",
+  "selected_result": "Theorem 4.3 shifted softmax normwise first-order forward-error bound",
+  "bibliographic_source": {
+    "authors": ["Pierre Blanchard", "Desmond J. Higham", "Nicholas J. Higham"],
+    "title": "Accurately Computing the Log-Sum-Exp and Softmax Functions",
+    "venue": "IMA Journal of Numerical Analysis",
+    "volume": "41",
+    "issue": "4",
+    "year": 2021,
+    "pages": "2311-2330",
+    "doi": "10.1093/imanum/draa038"
+  },
+  "paper_pdf": {
+    "path_basename": "P14_Accurately computing the log-sum-exp and softmax functions.pdf",
+    "sha256": "7247047bc49218e001195edc8a2d66131eea7596d252503f34b0ace6328981cd"
+  },
+  "paper_locations": [
+    {"section": "Section 4", "printed_pages": "2321-2324", "pdf_pages": "11-14", "anchor": "Algorithm 4.1, shifted exponential sum error (4.6), and Theorem 4.3 equation (4.11)"}
+  ],
+  "task_clarification": [
+    "For any real vector with at least two entries, choose any maximal entry a=x_k, evaluate every shifted exponential with one rounded subtraction and relative exponential error, recursively sum all nonmaximal computed exponentials, and divide each computed exponential by 1+the computed sum with a rounded division.",
+    "Formalize the source Theorem 4.3: infinity-norm forward error of the computed softmax divided by the infinity norm of exact softmax is at most [n+2+2(xmax-xmin)]u+O(u^2). Preserve the full componentwise bound used immediately before the theorem if included.",
+    "The quadratic remainder is uniform over admissible local errors for fixed input/order."
+  ],
+  "scope_constraints": [
+    "Keep all n softmax outputs, including the selected maximum, and omit only the selected maximum from the shifted denominator sum.",
+    "The source first-order model treats 1+the computed sum as the denominator of the final rounded division; do not insert an additional independently rounded denominator step that changes the displayed coefficient.",
+    "Do not narrow to a particular location of the maximum, drop the recursive sum, or assume the result as an execution certificate."
+  ]
+}
