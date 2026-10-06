@@ -1,0 +1,1 @@
+{"decls":{},"directImports":[["NumStability.Algorithms.MatMul",false,false,false]],"module":"P08_MatMul_check","references":{"{\"c\":{\"m\":\"NumStability.Algorithms.MatMul\",\"n\":\"NumStability.matMul_error_bound\"}}":{"definition":null,"usages":[[2,7,2,38,"_check"]]}},"version":5}

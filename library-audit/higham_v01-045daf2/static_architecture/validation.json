@@ -1,0 +1,26 @@
+{
+  "schema_version": "numstability-static-architecture/1.0.0",
+  "sample": [
+    "import NumStability.Analysis -- sorry\n",
+    "/- outer /- nested sorry -/ comment -/ theorem ok : True := by trivial\n",
+    "def s := \"sorry -- not comment\"\n",
+    "axiom projectAssumption : True\n"
+  ],
+  "assertions": {
+    "import_preserved": true,
+    "line_comment_removed": true,
+    "nested_block_comment_removed": true,
+    "string_removed_from_code": true,
+    "axiom_preserved": true,
+    "balanced_state": true,
+    "root_module_mapping": true,
+    "nested_module_mapping": true,
+    "physical_layer_mapping": true,
+    "canonical_chapter_mapping": true,
+    "numstability_prefix_not_false_perturbation": true,
+    "workflow_camelcase_detected": true,
+    "householder_not_old_signal": true,
+    "source_import_orientation_rank": true
+  },
+  "passed": true
+}

@@ -1,0 +1,1 @@
+{"decls":{},"directImports":[["NumStability.Analysis.PerturbationTheory",false,false,false]],"module":"P07_Perturbation_check","references":{"{\"c\":{\"m\":\"NumStability.Analysis.PerturbationTheory\",\"n\":\"NumStability.forward_error_from_residual\"}}":{"definition":null,"usages":[[2,7,2,47,"_check"]]}},"version":5}

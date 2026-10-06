@@ -1,0 +1,12 @@
+command=lake update
+cwd=<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree
+start_utc=2026-09-03T08:07:51Z
+start_local=2026-09-03T11:07:51+0300
+pre_root_build_exists=no
+exit_status=0
+end_utc=2026-09-03T08:11:56Z
+end_local=2026-09-03T11:11:56+0300
+post_root_build_exists=no
+git_status_begin
+## HEAD (no branch)
+git_status_end

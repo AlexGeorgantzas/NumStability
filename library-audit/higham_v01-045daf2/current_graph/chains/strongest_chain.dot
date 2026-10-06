@@ -1,0 +1,19 @@
+digraph "CrossChapter LU solver reuse" {
+  rankdir="LR";
+  graph [bgcolor="white"]; node [shape=box, style="rounded,filled", fillcolor="#EEF4FB", fontname="Helvetica", fontsize=9];
+  n0 [label="higham12_6_rectRoundedLoop_lu_solve_SolverWBound_source\nSource.Higham.CrossChapter.LUSolverWeights.Doolittle"];
+  n1 [label="higham9_4_rectRoundedLoop_square_lu_solve_backward_error_source\nSource.Higham.Chapter09.DoolittleClosure"];
+  n2 [label="higham9_3_rectRoundedLoop_square_to_LUBackwardError_source\nSource.Higham.Chapter09.DoolittleClosure"];
+  n3 [label="higham9_3_rectRoundedLoop_source_backward_error\nSource.Higham.Chapter09.DoolittleClosure"];
+  n4 [label="higham9_2_rectRoundedLoopSourceCertificate\nSource.Higham.Chapter09.DoolittleClosure"];
+  n5 [label="higham9_2_rectFlDoolittleLEntry_source_residual_abs_le\nSource.Higham.Chapter09.DoolittleClosure"];
+  n6 [label="higham9_2_flMulSubFold_div_source_residual_abs_le\nSource.Higham.Chapter09.DoolittleClosure"];
+  n7 [label="gamma_mul\nAnalysis.Rounding"];
+  n0 -> n1 [label="body"];
+  n1 -> n2 [label="body"];
+  n2 -> n3 [label="body"];
+  n3 -> n4 [label="body"];
+  n4 -> n5 [label="body"];
+  n5 -> n6 [label="body"];
+  n6 -> n7 [label="body"];
+}

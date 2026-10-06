@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1660" viewBox="0 0 2200 1660" role="img" aria-labelledby="title desc">
+<title id="title">CrossChapter LU/solver dependency chain</title>
+<desc id="desc">A verified seven-edge body-proof spine from a CrossChapter solver theorem through Chapter 9 Doolittle results to gamma calculus, plus its direct Chapter 12 semantic branch.</desc>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#2463A5"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#21835A"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#B43A3A"/></marker>
+<linearGradient id="heat" x1="0" x2="1"><stop offset="0%" stop-color="#F7FBFF"/><stop offset="45%" stop-color="#9ECAE1"/><stop offset="100%" stop-color="#084594"/></linearGradient>
+</defs>
+<rect x="0" y="0" width="2200" height="1660" fill="#FFFFFF"/>
+<g font-family="Inter, Helvetica, Arial, sans-serif" fill="#172433">
+<text x="1100.0" y="56" text-anchor="middle" font-size="34" font-weight="700" fill="#172433">Verified CrossChapter LU/solver reuse chain</text>
+<text x="1100.0" y="96" text-anchor="middle" font-size="18" font-weight="400" fill="#536273">Every arrow is a raw elaborated edge; consumer → dependency</text>
+<rect x="820" y="160" width="1260" height="125" rx="13" fill="#FFF2CC" stroke="#C89B2C" stroke-width="2.5"/>
+<text x="844" y="191" text-anchor="start" font-size="16" font-weight="700" fill="#172433">NumStability.higham12_6_rectRoundedLoop_lu_solve_SolverWBound_source</text>
+<text x="844" y="237" text-anchor="start" font-size="13" font-weight="400" fill="#4D5A67">theorem · Source · Source.Higham.CrossChapter.LUSolverWeights.Doolittle:59</text>
+<rect x="820" y="318" width="1260" height="125" rx="13" fill="#FFF2CC" stroke="#C89B2C" stroke-width="2.5"/>
+<text x="844" y="349" text-anchor="start" font-size="16" font-weight="700" fill="#172433">NumStability.higham9_4_rectRoundedLoop_square_lu_solve_backward_error_source</text>
+<text x="844" y="395" text-anchor="start" font-size="13" font-weight="400" fill="#4D5A67">theorem · Source · Source.Higham.Chapter09.DoolittleClosure:738</text>
+<rect x="820" y="476" width="1260" height="125" rx="13" fill="#FFF2CC" stroke="#C89B2C" stroke-width="2.5"/>
+<text x="844" y="507" text-anchor="start" font-size="16" font-weight="700" fill="#172433">NumStability.higham9_3_rectRoundedLoop_square_to_LUBackwardError_source</text>
+<text x="844" y="553" text-anchor="start" font-size="13" font-weight="400" fill="#4D5A67">theorem · Source · Source.Higham.Chapter09.DoolittleClosure:666</text>
+<rect x="820" y="634" width="1260" height="125" rx="13" fill="#FFF2CC" stroke="#C89B2C" stroke-width="2.5"/>
+<text x="844" y="665" text-anchor="start" font-size="16" font-weight="700" fill="#172433">NumStability.higham9_3_rectRoundedLoop_source_backward_error</text>
+<text x="844" y="711" text-anchor="start" font-size="13" font-weight="400" fill="#4D5A67">theorem · Source · Source.Higham.Chapter09.DoolittleClosure:644</text>
+<rect x="820" y="792" width="1260" height="125" rx="13" fill="#FFF2CC" stroke="#C89B2C" stroke-width="2.5"/>
+<text x="844" y="823" text-anchor="start" font-size="16" font-weight="700" fill="#172433">NumStability.higham9_2_rectRoundedLoopSourceCertificate</text>
+<text x="844" y="869" text-anchor="start" font-size="13" font-weight="400" fill="#4D5A67">theorem · Source · Source.Higham.Chapter09.DoolittleClosure:544</text>
+<rect x="820" y="950" width="1260" height="125" rx="13" fill="#FFF2CC" stroke="#C89B2C" stroke-width="2.5"/>
+<text x="844" y="981" text-anchor="start" font-size="16" font-weight="700" fill="#172433">NumStability.higham9_2_rectFlDoolittleLEntry_source_residual_abs_le</text>
+<text x="844" y="1027" text-anchor="start" font-size="13" font-weight="400" fill="#4D5A67">theorem · Source · Source.Higham.Chapter09.DoolittleClosure:428</text>
+<rect x="820" y="1108" width="1260" height="125" rx="13" fill="#FFF2CC" stroke="#C89B2C" stroke-width="2.5"/>
+<text x="844" y="1139" text-anchor="start" font-size="16" font-weight="700" fill="#172433">NumStability.higham9_2_flMulSubFold_div_source_residual_abs_le</text>
+<text x="844" y="1185" text-anchor="start" font-size="13" font-weight="400" fill="#4D5A67">theorem · Source · Source.Higham.Chapter09.DoolittleClosure:288</text>
+<rect x="820" y="1266" width="1260" height="125" rx="13" fill="#DCEBFA" stroke="#2463A5" stroke-width="2.5"/>
+<text x="844" y="1297" text-anchor="start" font-size="16" font-weight="700" fill="#172433">NumStability.gamma_mul</text>
+<text x="844" y="1343" text-anchor="start" font-size="13" font-weight="400" fill="#4D5A67">theorem · Analysis · Analysis.Rounding:415</text>
+<line x1="1450.0" y1="288" x2="1450.0" y2="288" stroke="#2463A5" stroke-width="3.5"/>
+<polygon points="1450.0,308 1439.0,287 1461.0,287" fill="#2463A5"/>
+<text x="1478.0" y="305.5" text-anchor="start" font-size="13" font-weight="400" fill="#2463A5">body</text>
+<line x1="1450.0" y1="446" x2="1450.0" y2="446" stroke="#2463A5" stroke-width="3.5"/>
+<polygon points="1450.0,466 1439.0,445 1461.0,445" fill="#2463A5"/>
+<text x="1478.0" y="463.5" text-anchor="start" font-size="13" font-weight="400" fill="#2463A5">body</text>
+<line x1="1450.0" y1="604" x2="1450.0" y2="604" stroke="#2463A5" stroke-width="3.5"/>
+<polygon points="1450.0,624 1439.0,603 1461.0,603" fill="#2463A5"/>
+<text x="1478.0" y="621.5" text-anchor="start" font-size="13" font-weight="400" fill="#2463A5">body</text>
+<line x1="1450.0" y1="762" x2="1450.0" y2="762" stroke="#2463A5" stroke-width="3.5"/>
+<polygon points="1450.0,782 1439.0,761 1461.0,761" fill="#2463A5"/>
+<text x="1478.0" y="779.5" text-anchor="start" font-size="13" font-weight="400" fill="#2463A5">body</text>
+<line x1="1450.0" y1="920" x2="1450.0" y2="920" stroke="#2463A5" stroke-width="3.5"/>
+<polygon points="1450.0,940 1439.0,919 1461.0,919" fill="#2463A5"/>
+<text x="1478.0" y="937.5" text-anchor="start" font-size="13" font-weight="400" fill="#2463A5">body</text>
+<line x1="1450.0" y1="1078" x2="1450.0" y2="1078" stroke="#2463A5" stroke-width="3.5"/>
+<polygon points="1450.0,1098 1439.0,1077 1461.0,1077" fill="#2463A5"/>
+<text x="1478.0" y="1095.5" text-anchor="start" font-size="13" font-weight="400" fill="#2463A5">body</text>
+<line x1="1450.0" y1="1236" x2="1450.0" y2="1236" stroke="#2463A5" stroke-width="3.5"/>
+<polygon points="1450.0,1256 1439.0,1235 1461.0,1235" fill="#2463A5"/>
+<text x="1478.0" y="1253.5" text-anchor="start" font-size="13" font-weight="400" fill="#2463A5">body</text>
+<rect x="60" y="215" width="635" height="180" rx="13" fill="#FFF2CC" stroke="#C89B2C" stroke-width="2.5"/>
+<text x="82" y="249" text-anchor="start" font-size="16" font-weight="700" fill="#172433">NumStability.higham12_1_SolverWBound</text>
+<text x="82" y="315" text-anchor="start" font-size="14" font-weight="400" fill="#4D5A67">theorem · Source · Chapter 12</text>
+<text x="82" y="337" text-anchor="start" font-size="14" font-weight="400" fill="#4D5A67">solver-error weight predicate</text>
+<path d="M 820 222.5 C 755 222.5, 755 305.0, 725 305.0" fill="none" stroke="#2463A5" stroke-width="3.5"/>
+<polygon points="705,305.0 727,294.0 727,316.0" fill="#2463A5"/>
+<text x="752" y="292.0" text-anchor="end" font-size="13" font-weight="400" fill="#2463A5">type + body</text>
+<rect x="60" y="1420" width="635" height="190" rx="14" fill="#F7F8FA" stroke="#CDD3DA"/>
+<text x="82" y="1456" text-anchor="start" font-size="19" font-weight="700" fill="#172433">Ownership re-check</text>
+<text x="82" y="1492" text-anchor="start" font-size="16" font-weight="400" fill="#44515F">96 Chapter-12-owned starts →</text>
+<text x="82" y="1518" text-anchor="start" font-size="16" font-weight="400" fill="#44515F">6,081 Chapter-9-owned targets:</text>
+<text x="82" y="1544" text-anchor="start" font-size="16" font-weight="400" fill="#44515F">0 direct or transitive paths.</text>
+<text x="82" y="1584" text-anchor="start" font-size="15" font-weight="650" fill="#9D5C14">The verified composition is CrossChapter-owned.</text>
+<rect x="820" y="1420" width="1260" height="190" rx="14" fill="#EEF5FB" stroke="#AFC8E3"/>
+<text x="846" y="1456" text-anchor="start" font-size="19" font-weight="700" fill="#172433">Interpretation</text>
+<text x="846" y="1492" text-anchor="start" font-size="15" font-weight="400" fill="#44515F">The endpoint formally consumes a Chapter 9 factorization/solve chain and the Chapter 12</text>
+<text x="846" y="1517" text-anchor="start" font-size="15" font-weight="400" fill="#44515F">solver-bound predicate; the Chapter 9 proof spine reaches the reusable gamma_mul lemma</text>
+<text x="846" y="1542" text-anchor="start" font-size="15" font-weight="400" fill="#44515F">(81 direct and 4,739 transitive downstream project consumers). This proves formal reuse,</text>
+<text x="846" y="1567" text-anchor="start" font-size="15" font-weight="400" fill="#44515F">not source faithfulness, numerical sharpness, or universal API convenience.</text>
+<text x="2080" y="1628" text-anchor="end" font-size="13" font-weight="400" fill="#66717E">Raw rows: current_graph/chains/representative_chain_edges.csv and representative_chain_branch_edges.csv</text>
+</g>
+</svg>

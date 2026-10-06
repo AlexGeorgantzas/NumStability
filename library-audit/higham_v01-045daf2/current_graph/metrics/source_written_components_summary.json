@@ -1,0 +1,52 @@
+{
+  "edge_filter": "direct project pair with both endpoints in the named universe",
+  "edge_orientation": "consumer -> dependency",
+  "induced_direct_pairs": 368602,
+  "inputs": {
+    "current_graph/metrics/components.csv": "601e9e81255facfe6cae1bf48befe71532b324768c5f21277ee97b6fa08eae90",
+    "current_graph/metrics/declaration_origins_and_authorship.csv": "bc5c4772ee198cd87a17720d4a56d4da1b50cf27b2ebf1e03c85d6888fa08ca5",
+    "current_graph/metrics/direct_project_dependencies.csv.gz": "32a7518b532d6e1567f8eee9665e2045908650869eb52130b02491f96a81eee8"
+  },
+  "interpretation": [
+    "Weak connectedness forgets edge direction and is not reuse or usefulness.",
+    "Strong components identify directed cycles only within the induced source-written graph.",
+    "The authorship classifier is conservative source-origin evidence, not proof of human authorship."
+  ],
+  "outputs": {
+    "memberships": "current_graph/metrics/source_written_component_memberships.csv.gz",
+    "size_distribution": "current_graph/metrics/source_written_component_size_distribution.csv",
+    "validation_log": "current_graph/source_written_components_validation.log"
+  },
+  "schema_version": "numstability-source-written-components/1.0.0",
+  "strong_components": {
+    "count": 49573,
+    "declarations_in_nontrivial": 0,
+    "largest_size": 1,
+    "nontrivial_count": 0,
+    "nontrivial_members": []
+  },
+  "tool": {
+    "path": "current_graph/analyze_source_written_components.py",
+    "sha256": "df53e2de72028c1797fc5e0a68613e5bfe3f5bd1b8fbf43aa23932971f6dc05f"
+  },
+  "universe": {
+    "declarations": 49573,
+    "filter": "authorship_class=confirmed_source_written; public and nonpublic retained",
+    "name": "confirmed_source_written"
+  },
+  "validation": {
+    "membership_rows_cover_universe_exactly": true,
+    "source_written_public_weak_distribution_matches_v2_analyzer": true,
+    "source_written_universe_expected_49573": true,
+    "toy_weak_and_strong_components_passed": true
+  },
+  "weak_components": {
+    "count": 319,
+    "largest_coverage_denominator": 49573,
+    "largest_coverage_numerator": 48066,
+    "largest_coverage_percent": 96.960039,
+    "largest_size": 48066,
+    "nontrivial_count": 151,
+    "singleton_count": 168
+  }
+}

@@ -1,0 +1,1 @@
+{"decls":{},"directImports":[["NumStability.Algorithms.LinearSystems.Triangular.ForwardSubstitution",false,false,false]],"module":"P09_TriangularSolve_check","references":{"{\"c\":{\"m\":\"NumStability.Algorithms.LinearSystems.Triangular.ForwardSubstitution\",\"n\":\"NumStability.forwardSub_backward_error\"}}":{"definition":null,"usages":[[2,7,2,45,"_check"]]}},"version":5}

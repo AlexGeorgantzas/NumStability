@@ -1,0 +1,5 @@
+NumStability.lu_backward_error_gamma (fp : NumStability.FPModel) (n : ℕ) (A L_hat U_hat : Fin n → Fin n → ℝ)
+  (hn : NumStability.gammaValid fp n) (hLU : NumStability.LUBackwardError n A L_hat U_hat (NumStability.gamma fp n)) :
+  ∃ ΔA,
+    (∀ (i j : Fin n), |ΔA i j| ≤ NumStability.gamma fp n * ∑ k, |L_hat i k| * |U_hat k j|) ∧
+      ∀ (i j : Fin n), ∑ k, L_hat i k * U_hat k j = A i j + ΔA i j

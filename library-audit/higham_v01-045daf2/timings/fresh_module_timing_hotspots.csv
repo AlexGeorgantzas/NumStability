@@ -1,0 +1,7 @@
+module,real_seconds,threshold_class,effective_architectural_layer,domain_guess,chapter_guess,code_bearing_lines,selection_stratum,selection_reason,interpretation
+NumStability.Source.Higham.Chapter09.Section11,56.840000,priority_gt_40s,Source,HighamSourceOther,09,37178,largest_source,large Chapter 9 source module,Skill threshold flags review priority; it does not imply a split or defect.
+NumStability.Source.Higham.Chapter11.Section01.Tridiagonal,55.950000,priority_gt_40s,Source,HighamSourceOther,11,51482,largest_source,largest library source by code-bearing lines,Skill threshold flags review priority; it does not imply a split or defect.
+NumStability.Source.Higham.Chapter20.Theorem03.QRSolve,52.100000,priority_gt_40s,Source,QR,20,22416,large_source_domain,large source-facing QR theorem module,Skill threshold flags review priority; it does not imply a split or defect.
+NumStability.Source.Higham.Chapter19.Core,45.860000,priority_gt_40s,Source,HighamSourceOther,19,36307,largest_source,large Chapter 19 source module,Skill threshold flags review priority; it does not imply a split or defect.
+NumStability,28.240000,review_gt_20s,Root,Other,,1,entry_point,library root,Skill threshold flags review priority; it does not imply a split or defect.
+NumStability.Analysis.Perturbation.LeastSquares.Basic,27.230000,review_gt_20s,Analysis,LeastSquares,,21598,large_domain,large least-squares analysis module,Skill threshold flags review priority; it does not imply a split or defect.

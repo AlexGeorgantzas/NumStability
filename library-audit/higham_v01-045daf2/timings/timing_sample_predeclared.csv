@@ -1,0 +1,31 @@
+sample_index,module,selection_stratum,selection_reason,source_path,effective_architectural_layer,domain_guess,chapter_guess,physical_lines,code_bearing_lines,static_declaration_starter_count
+1,NumStability,entry_point,library root,NumStability.lean,Root,Other,,9,1,0
+2,NumStability.All,entry_point,complete public aggregate,NumStability/All.lean,Root,Other,,11,4,0
+3,NumStability.FloatingPoint,entry_point,FloatingPoint aggregate,NumStability/FloatingPoint.lean,FloatingPoint,FloatingPoint,,11,4,0
+4,NumStability.Analysis,entry_point,Analysis aggregate,NumStability/Analysis.lean,Analysis,Other,,149,143,0
+5,NumStability.Algorithms,entry_point,Algorithms aggregate,NumStability/Algorithms.lean,Algorithms,Other,,177,171,0
+6,NumStability.Source,entry_point,Source aggregate,NumStability/Source.lean,Source,Other,,42,35,0
+7,NumStability.Source.Higham,entry_point,Higham source aggregate,NumStability/Source/Higham.lean,Source,HighamSourceOther,,72,63,0
+8,NumStability.FloatingPoint.Model,layer_domain,floating-point model foundation,NumStability/FloatingPoint/Model.lean,FloatingPoint,FloatingPoint,,189,120,7
+9,NumStability.FloatingPoint.FusedMultiplyAdd.Core,layer_domain,floating-point FMA foundation,NumStability/FloatingPoint/FusedMultiplyAdd/Core.lean,FloatingPoint,FloatingPoint,,323,86,10
+10,NumStability.Analysis.FloatingPointArithmetic.Rounding,layer_domain,rounding analysis,NumStability/Analysis/FloatingPointArithmetic/Rounding.lean,Analysis,FloatingPoint,,5835,5427,238
+11,NumStability.Analysis.Error.RoundingProducts.Core,layer_domain,gamma/rounding-product analysis,NumStability/Analysis/Error/RoundingProducts/Core.lean,Analysis,FloatingPoint,,451,314,10
+12,NumStability.Analysis.MatrixNorms.Basic,layer_domain,matrix norms,NumStability/Analysis/MatrixNorms/Basic.lean,Analysis,Norms,,1143,938,91
+13,NumStability.Analysis.VectorNorms.Basic,layer_domain,vector norms,NumStability/Analysis/VectorNorms/Basic.lean,Analysis,Norms,,1627,1364,118
+14,NumStability.Analysis.Conditioning.InversePerturbation,layer_domain,conditioning and perturbation,NumStability/Analysis/Conditioning/InversePerturbation.lean,Analysis,Norms,,2702,2283,78
+15,NumStability.Analysis.Perturbation.LeastSquares.Basic,large_domain,large least-squares analysis module,NumStability/Analysis/Perturbation/LeastSquares/Basic.lean,Analysis,LeastSquares,,23400,21598,299
+16,NumStability.Algorithms.DotProduct,layer_domain,dot-product algorithm,NumStability/Algorithms/DotProduct.lean,Algorithms,DotProduct,,791,608,26
+17,NumStability.Algorithms.MatMul,layer_domain,matrix multiplication,NumStability/Algorithms/MatMul.lean,Algorithms,MatrixMultiplication,,930,748,29
+18,NumStability.Algorithms.MatMulBackwardError,layer_domain,matrix-multiplication backward error,NumStability/Algorithms/MatMulBackwardError.lean,Algorithms,MatrixMultiplication,,366,268,10
+19,NumStability.Algorithms.LU.LUSolve,layer_domain,LU solver,NumStability/Algorithms/LU/LUSolve.lean,Algorithms,LU,,523,413,5
+20,NumStability.Algorithms.LinearSystems.QR.QRSolve,large_domain,QR solver,NumStability/Algorithms/LinearSystems/QR/QRSolve.lean,Algorithms,QR,,5525,4783,143
+21,NumStability.Algorithms.Summation.Insertion.Schedule,large_domain,largest Algorithms source by code-bearing lines,NumStability/Algorithms/Summation/Insertion/Schedule.lean,Algorithms,Summation,,9821,9122,193
+22,NumStability.Algorithms.MatrixEquations.Sylvester.Solvers.QuasiTriangularBartelsStewart.BlockTraversal,large_domain,large matrix-equation solver module,NumStability/Algorithms/MatrixEquations/Sylvester/Solvers/QuasiTriangularBartelsStewart/BlockTraversal.lean,Algorithms,MatrixEquations,,18514,6263,247
+23,NumStability.Source.Higham.Chapter09,chapter_entry,Chapter 9 source entry point,NumStability/Source/Higham/Chapter09.lean,Source,HighamSourceOther,09,28,22,0
+24,NumStability.Source.Higham.Chapter12,chapter_entry,Chapter 12 source entry point,NumStability/Source/Higham/Chapter12.lean,Source,HighamSourceOther,12,12,3,0
+25,NumStability.Source.Higham.Chapter09.Section11,largest_source,large Chapter 9 source module,NumStability/Source/Higham/Chapter09/Section11.lean,Source,HighamSourceOther,09,41224,37178,1038
+26,NumStability.Source.Higham.Chapter11.Section01.Tridiagonal,largest_source,largest library source by code-bearing lines,NumStability/Source/Higham/Chapter11/Section01/Tridiagonal.lean,Source,HighamSourceOther,11,57688,51482,1832
+27,NumStability.Source.Higham.Chapter19.Core,largest_source,large Chapter 19 source module,NumStability/Source/Higham/Chapter19/Core.lean,Source,HighamSourceOther,19,40752,36307,972
+28,NumStability.Source.Higham.Chapter20.Theorem03.QRSolve,large_source_domain,large source-facing QR theorem module,NumStability/Source/Higham/Chapter20/Theorem03/QRSolve.lean,Source,QR,20,24613,22416,534
+29,NumStability.Source.Higham.Chapter12.IterativeRefinement.Results.Theorems,cross_chapter_endpoint,Chapter 12 iterative-refinement endpoint,NumStability/Source/Higham/Chapter12/IterativeRefinement/Results/Theorems.lean,Source,HighamSourceOther,12,743,551,28
+30,NumStability.Source.Higham.Chapter03.Lemma01.RoundingProducts.All,source_bridge,source-facing rounding-products bridge,NumStability/Source/Higham/Chapter03/Lemma01/RoundingProducts/All.lean,Source,FloatingPoint,03,7,1,0

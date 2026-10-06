@@ -1,0 +1,46 @@
+{
+  "audited_commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+  "edge_orientation": "consumer \u2192 dependency",
+  "generator": {
+    "path": "<library-repo>/tmp/library_audit/higham_v01-045daf2/figures/generate_figures.py",
+    "sha256": "fb5e10f1102ff70358603dd4cd7122002bf2ff5569553e2be93ceac48da8ae65"
+  },
+  "inputs": [
+    {
+      "path": "<library-repo>/tmp/library_audit/higham_v01-045daf2/current_graph/metrics/layer_dependency_matrix.csv",
+      "sha256": "45a28f8f71e8cbe8dda9abd34783e8d5ff03e419fa82c1c99db7a3c610c39dab"
+    },
+    {
+      "path": "<library-repo>/tmp/library_audit/higham_v01-045daf2/current_graph/metrics/domain_dependency_matrix.csv",
+      "sha256": "9b300a9e20b090f848f1e87268d9b5a510bdf6fa0cbad389152307b1b69106c3"
+    },
+    {
+      "path": "<library-repo>/tmp/library_audit/higham_v01-045daf2/current_graph/chains/representative_chain_nodes.csv",
+      "sha256": "b91b3a5518e477a2a23496f4b2105c6702fc2fc9fef365ac51289079cd4bd47d"
+    },
+    {
+      "path": "<library-repo>/tmp/library_audit/higham_v01-045daf2/current_graph/chains/representative_chain_edges.csv",
+      "sha256": "edbaa180e74c2d188f5dee869d4f5d5138711a50e78f4cce4a0a83d8aed3e6ac"
+    },
+    {
+      "path": "<library-repo>/tmp/library_audit/higham_v01-045daf2/current_graph/chains/representative_chain_branch_edges.csv",
+      "sha256": "a2d93fe249fa7efe1f455f2fb9f1e47f3cc305a12b221f55c5eff23c956bb7f6"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "<library-repo>/tmp/library_audit/higham_v01-045daf2/figures/layer_dependency_diagram.svg",
+      "sha256": "68a3081729850f8882a170931ff5a989133d7284ab52348796e20c26b6962fc8"
+    },
+    {
+      "path": "<library-repo>/tmp/library_audit/higham_v01-045daf2/figures/domain_dependency_heatmap.svg",
+      "sha256": "a5893e7de97f1101afd2377e32ba1cb9509a7a5118f014ab3a3d0844df14fe39"
+    },
+    {
+      "path": "<library-repo>/tmp/library_audit/higham_v01-045daf2/figures/crosschapter_lu_solver_chain.svg",
+      "sha256": "bdea0d512b51372dd3ab2e13f45611cd5b39bf6e1b35d7e82853da657115b68c"
+    }
+  ],
+  "rendering": "Deterministic UTF-8 SVG generated with Python standard library only; vector format is suitable for A4 scaling.",
+  "schema_version": "numstability-audit-figures/1.0.0"
+}

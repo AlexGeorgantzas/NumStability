@@ -1,0 +1,12 @@
+module,entry_kind,declaration_free_static,compatibility_candidate_static,direct_internal_import_count,reachable_project_module_count_including_entry,reachable_declaration_bearing_module_count_including_entry,reachable_static_declaration_starter_count,reachable_Source_modules,reachability_semantics
+NumStability,root_entry,true,true,1,2130,1635,46719,1356,Source-import transitive closure over modules present in this snapshot; not declaration visibility proof.
+NumStability.Core,root_entry,true,false,6,17,14,818,0,Source-import transitive closure over modules present in this snapshot; not declaration visibility proof.
+NumStability.FloatingPoint,root_entry,true,false,4,17,14,1302,0,Source-import transitive closure over modules present in this snapshot; not declaration visibility proof.
+NumStability.Analysis,root_entry,true,false,143,728,609,25011,253,Source-import transitive closure over modules present in this snapshot; not declaration visibility proof.
+NumStability.Algorithms,root_entry,true,false,171,1774,1474,43552,1123,Source-import transitive closure over modules present in this snapshot; not declaration visibility proof.
+NumStability.Source,root_entry,true,false,35,1885,1569,45326,1355,Source-import transitive closure over modules present in this snapshot; not declaration visibility proof.
+NumStability.Source.Higham,root_entry,true,false,63,1884,1569,45326,1354,Source-import transitive closure over modules present in this snapshot; not declaration visibility proof.
+NumStability.All,root_entry,true,false,4,2129,1635,46719,1356,Source-import transitive closure over modules present in this snapshot; not declaration visibility proof.
+NumStability.Higham,root_entry,true,true,1,1885,1569,45326,1355,Source-import transitive closure over modules present in this snapshot; not declaration visibility proof.
+NumStability.Algorithms.Summation,documented_aggregate,true,false,8,104,83,4003,25,Source-import transitive closure over modules present in this snapshot; not declaration visibility proof.
+NumStability.Algorithms.LinearSystems.LeastSquares,documented_aggregate,true,false,14,153,149,9193,35,Source-import transitive closure over modules present in this snapshot; not declaration visibility proof.

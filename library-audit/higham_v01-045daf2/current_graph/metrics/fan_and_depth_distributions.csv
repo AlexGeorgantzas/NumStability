@@ -1,0 +1,19 @@
+universe,metric,percentile_method,count,mean,p00,p25,p50,p75,p90,p95,p99,p100
+all_project_environment,direct_fan_in,nearest-rank sorted[ceil(q*n)-1]; p0=min,77246,5.934469,0,0,1,2,6,13,66,13255
+all_project_environment,direct_fan_out,nearest-rank sorted[ceil(q*n)-1]; p0=min,77246,5.934469,0,1,4,8,15,21,28,130
+all_project_environment,transitive_downstream_consumers,nearest-rank sorted[ceil(q*n)-1]; p0=min,77246,55.164397,0,0,3,14,62,176,1031,13992
+all_project_environment,transitive_project_dependencies,nearest-rank sorted[ceil(q*n)-1]; p0=min,77246,55.164397,0,1,9,43,232,324,492,1042
+all_project_environment,dependency_depth,nearest-rank sorted[ceil(q*n)-1]; p0=min,77246,7.625676,0,1,4,10,22,33,42,65
+all_project_environment,downstream_depth,nearest-rank sorted[ceil(q*n)-1]; p0=min,77246,4.749165,0,0,2,6,13,19,37,65
+environment_public,direct_fan_in,nearest-rank sorted[ceil(q*n)-1]; p0=min,58120,7.390021,0,0,1,3,8,16,90,13255
+environment_public,direct_fan_out,nearest-rank sorted[ceil(q*n)-1]; p0=min,58120,7.3867,0,3,5,10,17,22,30,130
+environment_public,transitive_downstream_consumers,nearest-rank sorted[ceil(q*n)-1]; p0=min,58120,59.39575,0,0,3,15,70,195,1054,13992
+environment_public,transitive_project_dependencies,nearest-rank sorted[ceil(q*n)-1]; p0=min,58120,71.827667,0,4,16,70,274,352,498,1042
+environment_public,dependency_depth,nearest-rank sorted[ceil(q*n)-1]; p0=min,58120,9.676204,0,3,6,12,27,34,43,65
+environment_public,downstream_depth,nearest-rank sorted[ceil(q*n)-1]; p0=min,58120,4.846387,0,0,2,6,13,20,38,65
+confirmed_source_written_public,direct_fan_in,nearest-rank sorted[ceil(q*n)-1]; p0=min,47890,8.668824,0,0,1,3,9,19,112,13255
+confirmed_source_written_public,direct_fan_out,nearest-rank sorted[ceil(q*n)-1]; p0=min,47890,8.025204,0,3,6,11,19,22,31,130
+confirmed_source_written_public,transitive_downstream_consumers,nearest-rank sorted[ceil(q*n)-1]; p0=min,47890,68.579766,0,0,4,20,86,231,1255,13992
+confirmed_source_written_public,transitive_project_dependencies,nearest-rank sorted[ceil(q*n)-1]; p0=min,47890,83.304594,0,5,22,93,302,365,513,1042
+confirmed_source_written_public,dependency_depth,nearest-rank sorted[ceil(q*n)-1]; p0=min,47890,10.548799,0,3,7,14,31,34,43,65
+confirmed_source_written_public,downstream_depth,nearest-rank sorted[ceil(q*n)-1]; p0=min,47890,5.515243,0,0,3,7,14,22,40,65

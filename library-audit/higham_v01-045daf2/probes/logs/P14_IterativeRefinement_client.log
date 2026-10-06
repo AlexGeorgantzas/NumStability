@@ -1,0 +1,6 @@
+NumStability.one_step_refinement_error_identity (n : ℕ) (A : Fin n → Fin n → ℝ) (x x₀ d_hat r_hat : Fin n → ℝ)
+  (ΔA_solve : Fin n → Fin n → ℝ) (b : Fin n → ℝ) (hAx : ∀ (i : Fin n), ∑ j, A i j * x j = b i) (r : Fin n → ℝ)
+  (hr : ∀ (i : Fin n), r i = b i - ∑ j, A i j * x₀ j)
+  (hsolve : ∀ (i : Fin n), ∑ j, (A i j + ΔA_solve i j) * d_hat j = r_hat i) (x₁ : Fin n → ℝ)
+  (hx₁ : ∀ (i : Fin n), x₁ i = x₀ i + d_hat i) (i : Fin n) :
+  ∑ j, A i j * (x j - x₁ j) = ∑ j, ΔA_solve i j * d_hat j + (r i - r_hat i)

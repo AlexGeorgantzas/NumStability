@@ -1,0 +1,21 @@
+{
+  "schema_version": "numstability.phase10a-source-replay.v1",
+  "source_commit": "d21a4ed5b91008a8a5bc60741765f27fcdf86edf",
+  "tool": "phase10a_exact/tools/architecture/generate_baseline.py::scan_sources",
+  "tool_sha256": "fc5863b2ca4e8f2dd03d2f012c40df9f26666849073a4e5b1babc65a671d6a94",
+  "input_method": "git archive of NumStability.lean and NumStability/**/*.lean",
+  "replayed_at": "2026-09-03T11:16:50+03:00",
+  "results": {
+    "byte_count": 69590164,
+    "direct_import_count": 4009,
+    "external_direct_import_count": 1367,
+    "internal_direct_import_count": 2642,
+    "line_count": 1467997,
+    "module_count": 957,
+    "nonblank_line_count": 1401875,
+    "source_tree_sha256": "cd5be41c56cf8f6dec940b89324298aa3bd5e3dd14853afecdd2017b08fb0cb1",
+    "unresolved_project_import_count": 0
+  },
+  "matches_committed_phase10a_json": true,
+  "scope_limit": "This replay independently validates source and source-import fields only. The compiled declaration fields are supported by the clean --check record at commit 21e130ac and were not independently rebuilt in this sub-audit."
+}

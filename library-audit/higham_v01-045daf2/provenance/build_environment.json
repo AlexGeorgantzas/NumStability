@@ -1,0 +1,71 @@
+{
+  "schema_version": "numstability-build-environment-v1",
+  "audit_commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+  "git": {
+    "isolated_head": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+    "isolated_head_mode": "detached",
+    "local_higham_v01": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+    "origin_higham_v01": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+    "local_remote_agree": true,
+    "source_clean_before_and_after": true
+  },
+  "timestamp": {
+    "final_capture_utc": "2026-09-03T08:19:42Z",
+    "final_capture_local": "2026-09-03T11:19:42+0300",
+    "timezone": "Europe/Athens",
+    "timezone_abbreviation": "EEST"
+  },
+  "platform": {
+    "os": "macOS",
+    "os_version": "26.5.2",
+    "os_build": "25F84",
+    "kernel": "Darwin 25.5.0",
+    "architecture": "arm64",
+    "logical_cpu": 8,
+    "physical_cpu": 8,
+    "memory_bytes": 17179869184
+  },
+  "toolchain": {
+    "lean_toolchain": "leanprover/lean4:v4.29.0-rc3",
+    "lean_version": "4.29.0-rc3",
+    "lean_commit": "5d86aa4032284a5242470e95fbe25f1ff506763d",
+    "lake_version": "5.0.0-src+5d86aa4",
+    "mathlib_revision": "e8ea1afc32790ce1d4e1a4e45cc412ba9388716b",
+    "mathlib_describe": "v4.29.0-rc3-80-ge8ea1afc32",
+    "elan_version": "4.2.0",
+    "input_sha256": {
+      "lean-toolchain": "fdf7ccfe204caff50fab1913b9f13a763be5384e87d14555c9fdcb2be2b9f7f8",
+      "lakefile.toml": "a4c00f6534596883069d57bbe529adb6bb5b295019eb32b8d4c2fb6a34c021ce",
+      "lake-manifest.json": "ccfe8a72d6d227aebfe4e58575ddf2a2aef03b795052f97b770c36f684cc5774"
+    }
+  },
+  "root_target": {
+    "lake_default_target": "NumStability",
+    "root_module": "NumStability",
+    "root_direct_import": "NumStability.All",
+    "all_direct_imports": [
+      "NumStability.Algorithms",
+      "NumStability.Analysis",
+      "NumStability.FloatingPoint",
+      "NumStability.Source"
+    ],
+    "project_library_source_files": 2839
+  },
+  "build_conclusion": {
+    "fresh_full_build_completed": false,
+    "fresh_full_build_blocker": "insufficient host disk capacity; first attempt ENOSPC and second deliberately capacity-stopped",
+    "cached_same_commit_full_build_exit_status": 0,
+    "cached_same_commit_real_seconds": 2.80,
+    "cached_same_commit_timing_is_clean_compilation": false,
+    "cached_same_commit_built_log_records": 0,
+    "cached_same_commit_replayed_log_records": 160,
+    "cached_same_commit_error_records": 0
+  },
+  "raw_artifacts": {
+    "attempt_table": "build/build_attempts.csv",
+    "first_fresh_output": "build/full_build_stdout_stderr.log",
+    "second_fresh_output": "build/full_build_fresh_cached_deps_stdout_stderr.log",
+    "cached_output": "build/full_build_cached_same_commit_stdout_stderr.log",
+    "final_environment": "provenance/final_environment_and_refs.log"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": "numstability.proof-hygiene.v1",
+  "commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+  "universes": {
+    "compiled_project_owned_declarations": 77246,
+    "compiled_metadata_rows": 77246,
+    "all_direct_dependency_edges_project_to_project_or_external": 3963823,
+    "source_files": 2839
+  },
+  "compiled": {
+    "bodyless_total": 1689,
+    "bodyless_by_classification": {
+      "expected_environment_declaration": 1683,
+      "lean_generated_native_decide_axiom": 6
+    },
+    "axiom_kind_total": 6,
+    "recognized_generated_native_decide_axioms": 6,
+    "unrecognized_project_axioms_requiring_review": 0,
+    "unsafe_declarations": 0,
+    "partial_declarations": 126,
+    "generated_internal_partial_recursion_helpers": 126,
+    "other_partial_declarations_requiring_review": 0,
+    "direct_dependency_edges_to_sorryAx": 0,
+    "direct_dependency_edges_to_project_owned_axioms": 6,
+    "distinct_project_declarations_directly_using_project_owned_axioms": 6,
+    "axiom_direct_consumer_counts": {
+      "NumStability.FloatingPointFormat.ieeeDoubleFormat_normalizedExponentParameterCount._native.native_decide.ax_1_2": 1,
+      "NumStability.FloatingPointFormat.ieeeSingleFormat_normalizedExponentParameterCount._native.native_decide.ax_1_2": 1,
+      "NumStability.FloatingPointFormat.problem2_1_ieeeDouble_normalizedNumberParameterCount._native.native_decide.ax_1_6": 1,
+      "NumStability.FloatingPointFormat.problem2_1_ieeeSingle_normalizedNumberParameterCount._native.native_decide.ax_1_6": 1,
+      "NumStability.codyPowerTestExact_displayedDecimal21_abs_error_lt_half_last_place._native.native_decide.ax_1_5": 1,
+      "NumStability.codyPowerTestExact_displayedTableDecimal17_abs_error_lt_half_last_place._native.native_decide.ax_1_5": 1
+    }
+  },
+  "source_lexical": {
+    "all_occurrences_by_term_and_location": {
+      "admit|comment|": 40,
+      "axiom_word|code|print_axioms_diagnostic_command": 5,
+      "axiom_word|comment|": 94,
+      "native_decide|code|native_decide_tactic": 6,
+      "native_decide|comment|": 23,
+      "opaque|comment|": 10,
+      "placeholder_marker|comment|": 11,
+      "sorry|comment|": 40,
+      "unsafe|comment|": 8
+    },
+    "code_occurrences_by_term": {
+      "axiom_word": 5,
+      "native_decide": 6
+    },
+    "axiom_declaration_commands": 0,
+    "print_axioms_diagnostic_commands": 5,
+    "explicitly_documented_legacy_placeholder_interfaces": 4
+  },
+  "interpretation": {
+    "opaque": "Opacity is not treated as evidence of a placeholder.",
+    "native_decide": "Generated native_decide axiom helpers are separated from explicit source axiom commands. They are trusted-code evidence, not proof holes and not source-introduced mathematical assumptions.",
+    "source_matches": "Comment and string matches are not counted as source proof commands.",
+    "dependency_scope": "sorryAx and project-axiom counts use direct elaborated dependency rows."
+  },
+  "raw_artifacts": {
+    "metadata": "raw/declaration_metadata.csv",
+    "declarations": "raw/declarations.csv.gz",
+    "dependencies": "raw/direct_dependencies.csv.gz",
+    "source_occurrences": "hygiene/source_proof_hygiene_occurrences.csv"
+  }
+}

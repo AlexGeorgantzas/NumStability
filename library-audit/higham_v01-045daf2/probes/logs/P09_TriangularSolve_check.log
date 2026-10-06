@@ -1,0 +1,5 @@
+NumStability.forwardSub_backward_error (fp : NumStability.FPModel) (n : ℕ) (L : Fin n → Fin n → ℝ) (b : Fin n → ℝ)
+  (hL : ∀ (i : Fin n), L i i ≠ 0) (hLT : ∀ (i j : Fin n), ↑i < ↑j → L i j = 0) (hn : NumStability.gammaValid fp n) :
+  ∃ ΔL,
+    (∀ (i j : Fin n), |ΔL i j| ≤ NumStability.gamma fp n * |L i j|) ∧
+      ∀ (i : Fin n), ∑ j, (L i j + ΔL i j) * NumStability.fl_forwardSub fp n L b j = b i

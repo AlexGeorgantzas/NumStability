@@ -1,0 +1,9 @@
+{
+  "schema_version": "numstability.fresh-module-timing-sample.v1",
+  "commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+  "sample_predeclared_before_measurement": true,
+  "sample_size": 30,
+  "timeout_seconds_per_module": 900,
+  "cache_class": "fresh target outputs with exact cached imported modules",
+  "interpretation": "Times measure re-elaboration and fresh .olean/.ilean emission for only the selected target file. Imported module artifacts are cached. This is not a clean whole-library build and the percentiles are sample-only."
+}

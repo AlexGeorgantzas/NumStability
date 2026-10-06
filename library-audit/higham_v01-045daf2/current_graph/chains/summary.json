@@ -1,0 +1,36 @@
+{
+  "all_selected_edges_directly_verified": true,
+  "all_selected_edges_exactly_matched_to_compiled_raw_rows": true,
+  "all_selected_nodes_exist": true,
+  "builder_sha256": "e3911db08f101e56cd7167aebdcb36344ed2e27598fcbc974dafd257778f3a5a",
+  "chains": 12,
+  "chapter09_chapter12_recheck": {
+    "chapter09_owned_target_declarations": 6081,
+    "chapter09_owned_target_reached": null,
+    "chapter12_owned_start_declarations": 96,
+    "direct_or_transitive_paths_found": 0,
+    "edge_direction": "consumer -> dependency",
+    "interpretation": "No direct/transitive consumer-to-dependency path from a Chapter12-owned declaration to a Chapter09-owned declaration was found. The verified LU/solver bridge is owned by Source.Higham.CrossChapter.LUSolverWeights.",
+    "schema_version": "numstability-representative-dependency-chains/1.1.0",
+    "source_commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+    "union_reachable_excluding_chapter12_starts": 72,
+    "union_reachable_from_chapter12_owned_declarations": 168
+  },
+  "edge_direction": "consumer -> dependency",
+  "input_sha256": {
+    "current_graph/metrics/declaration_metrics.csv.gz": "eda468932d7e4275eef1f500a6e70fdc257785867da411d7130f5b4bbf23bb33",
+    "current_graph/metrics/direct_project_dependencies.csv.gz": "32a7518b532d6e1567f8eee9665e2045908650869eb52130b02491f96a81eee8",
+    "raw/declaration_metadata.csv": "4a7690857c722bfec228ee25a0461e30c528d0b06d88b5d1930d499603f17fa2",
+    "raw/direct_dependencies.csv.gz": "cf64609f72a23ad4df78a6ac30f04db78449bcb4d5b0b6ba9721f820d108c240"
+  },
+  "limitations": [
+    "Selection is stratified and evidence-driven but not a random sample.",
+    "A path is formal reuse, not source-faithfulness evidence.",
+    "Downstream counts include all project declarations, including generated/private names; authorship is reported separately.",
+    "Path/domain/chapter labels are deterministic ownership classifications and source-name signals."
+  ],
+  "schema_version": "numstability-representative-dependency-chains/1.1.0",
+  "selected_branch_edges": 5,
+  "selected_path_edges": 59,
+  "source_commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e"
+}

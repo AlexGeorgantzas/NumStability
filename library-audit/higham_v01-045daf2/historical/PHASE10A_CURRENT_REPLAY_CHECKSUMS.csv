@@ -1,0 +1,6 @@
+artifact,representation,bytes,sha256,retained,notes
+../raw/phase10a_exact_current.tsv.gz,gzip,4213380,bca79605b72534a4784a4a458008b6b283fb5a05e8336370abde6163cc3e5e84,true,"Exact Phase 10A extractor format-2 output at 045daf28056a6e4358d5de7c22c7a9d7acc2e80e; compressed after extraction"
+../raw/phase10a_exact_current.tsv,uncompressed_logical_stream,124996640,3d3d5dc5b329b4b48ea76d95b615967ee1c9f624cae0f508f99c4f95cd36eaa9,false,"Logical decompressed bytes of the retained gzip; streamed through FIFO; 770151 rows"
+phase10a_exact_current_summary.json,json,11998,264b53838599b48f071f8122a5efb61bc38f23bde2a9f7c6aff2362cf401d701,true,"Literal sorted/indented JSON returned by exact recovered summarize_declaration_tsv"
+../raw/phase10a_exact_extraction.log,text,0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,true,"Extractor standard output/error log; empty on success"
+../raw/phase10a_exact_extraction.time,text,777,a2e33e474c24a48ac40bf7681773c9a61afc51f8a00a2af69d06154cbb3cf4f3,true,"macOS /usr/bin/time output; 95.11 seconds is extraction over available compiled outputs, not a clean build"

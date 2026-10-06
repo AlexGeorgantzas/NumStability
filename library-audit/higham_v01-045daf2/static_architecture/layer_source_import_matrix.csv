@@ -1,0 +1,25 @@
+importer_layer,imported_layer,unique_source_import_edges,orientation
+Algorithms,Algorithms,2793,consumer/importer -> imported dependency candidate
+Algorithms,Analysis,1421,consumer/importer -> imported dependency candidate
+Algorithms,FloatingPoint,139,consumer/importer -> imported dependency candidate
+Algorithms,Source,1091,consumer/importer -> imported dependency candidate
+Analysis,Algorithms,203,consumer/importer -> imported dependency candidate
+Analysis,Analysis,1241,consumer/importer -> imported dependency candidate
+Analysis,FloatingPoint,41,consumer/importer -> imported dependency candidate
+Analysis,Source,251,consumer/importer -> imported dependency candidate
+Analysis,Upstream,4,consumer/importer -> imported dependency candidate
+FloatingPoint,Analysis,11,consumer/importer -> imported dependency candidate
+FloatingPoint,FloatingPoint,10,consumer/importer -> imported dependency candidate
+Root,Algorithms,1,consumer/importer -> imported dependency candidate
+Root,Analysis,6,consumer/importer -> imported dependency candidate
+Root,FloatingPoint,2,consumer/importer -> imported dependency candidate
+Root,Root,1,consumer/importer -> imported dependency candidate
+Root,Source,1,consumer/importer -> imported dependency candidate
+Source,Algorithms,2991,consumer/importer -> imported dependency candidate
+Source,Analysis,2606,consumer/importer -> imported dependency candidate
+Source,FloatingPoint,283,consumer/importer -> imported dependency candidate
+Source,Source,5683,consumer/importer -> imported dependency candidate
+Source,Upstream,17,consumer/importer -> imported dependency candidate
+SourceCompat,Algorithms,1,consumer/importer -> imported dependency candidate
+SourceCompat,Source,17,consumer/importer -> imported dependency candidate
+Upstream,Upstream,4,consumer/importer -> imported dependency candidate

@@ -1,0 +1,6 @@
+NumStability.complexMatrixLpNorm_upper_bound_by_columnMax_lpNorm {m n : ℕ} {p : ℝ} (hp : 1 ≤ p)
+  (A : NumStability.CMatrix m n) :
+  NumStability.MixedSubordinateMatrixBound (NumStability.complexVecLpNorm (ENNReal.ofReal p))
+    (NumStability.complexVecLpNorm (ENNReal.ofReal p)) A
+    (↑n ^ (1 - p⁻¹) *
+      NumStability.complexMatrixColumnMaxVectorNorm (NumStability.complexVecLpNorm (ENNReal.ofReal p)) A)

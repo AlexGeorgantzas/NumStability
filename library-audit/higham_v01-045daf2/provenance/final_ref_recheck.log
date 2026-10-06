@@ -1,0 +1,26 @@
+Command working directory:
+  <library-repo>
+
+Commands:
+  date '+%Y-%m-%dT%H:%M:%S%z %Z'
+  git rev-parse higham_v01
+  git rev-parse origin/higham_v01
+  git ls-remote origin refs/heads/higham_v01
+  git -C tmp/library_audit/higham_v01-045daf2/_worktree rev-parse HEAD
+  git -C tmp/library_audit/higham_v01-045daf2/_worktree status --porcelain=v1 --untracked-files=all
+  git status --short --branch
+
+Output captured 2026-09-03T12:40:18+0300 EEST:
+  local higham_v01:        045daf28056a6e4358d5de7c22c7a9d7acc2e80e
+  local origin/higham_v01: 045daf28056a6e4358d5de7c22c7a9d7acc2e80e
+  remote higham_v01:       045daf28056a6e4358d5de7c22c7a9d7acc2e80e
+  isolated worktree HEAD:  045daf28056a6e4358d5de7c22c7a9d7acc2e80e
+  isolated status output:  empty (clean, including untracked files)
+  caller checkout status:
+    ## higham_v01...origin/higham_v01
+    ?? paper_bencmark/
+
+Interpretation:
+  All three branch references and the isolated detached worktree still agreed
+  at the end-of-audit recheck. The caller's pre-existing untracked
+  paper_bencmark/ directory remained untouched.

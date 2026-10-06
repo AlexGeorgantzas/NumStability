@@ -1,0 +1,1750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1949" height="1989" viewBox="0 0 1949 1989" role="img" aria-labelledby="title desc">
+<title id="title">NumStability domain dependency heatmap</title>
+<desc id="desc">Log-scaled unique declaration-pair counts. Rows consume columns; empty cells have no elaborated project declaration edge.</desc>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#2463A5"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#21835A"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#B43A3A"/></marker>
+<linearGradient id="heat" x1="0" x2="1"><stop offset="0%" stop-color="#F7FBFF"/><stop offset="45%" stop-color="#9ECAE1"/><stop offset="100%" stop-color="#084594"/></linearGradient>
+</defs>
+<rect x="0" y="0" width="1949" height="1989" fill="#FFFFFF"/>
+<g font-family="Inter, Helvetica, Arial, sans-serif" fill="#172433">
+<text x="974.5" y="58" text-anchor="middle" font-size="34" font-weight="700" fill="#172433">Domain-level elaborated dependency matrix</text>
+<text x="974.5" y="98" text-anchor="middle" font-size="18" font-weight="400" fill="#536273">Rows consume columns (consumer → dependency); cell area is uniform, color is log10(count + 1)</text>
+<text x="1117.0" y="148" text-anchor="middle" font-size="20" font-weight="650" fill="#344454">Dependency domain</text>
+<text x="40" y="1067.0" transform="rotate(-90 40 1067.0)" text-anchor="middle" font-size="20" font-weight="650" fill="#344454">Consumer domain</text>
+<text x="413.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 413.5 312)">Arithmetic</text>
+<text x="364" y="372" text-anchor="end" font-size="14" font-weight="550" fill="#344454">Arithmetic</text>
+<text x="480.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 480.5 312)">Cholesky</text>
+<text x="364" y="439" text-anchor="end" font-size="14" font-weight="550" fill="#344454">Cholesky</text>
+<text x="547.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 547.5 312)">DotProduct</text>
+<text x="364" y="506" text-anchor="end" font-size="14" font-weight="550" fill="#344454">DotProduct</text>
+<text x="614.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 614.5 312)">FFT</text>
+<text x="364" y="573" text-anchor="end" font-size="14" font-weight="550" fill="#344454">FFT</text>
+<text x="681.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 681.5 312)">FloatingPoint</text>
+<text x="364" y="640" text-anchor="end" font-size="14" font-weight="550" fill="#344454">FloatingPoint</text>
+<text x="748.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 748.5 312)">HighamSourceOther</text>
+<text x="364" y="707" text-anchor="end" font-size="14" font-weight="550" fill="#344454">HighamSourceOther</text>
+<text x="815.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 815.5 312)">LU</text>
+<text x="364" y="774" text-anchor="end" font-size="14" font-weight="550" fill="#344454">LU</text>
+<text x="882.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 882.5 312)">LeastSquares</text>
+<text x="364" y="841" text-anchor="end" font-size="14" font-weight="550" fill="#344454">LeastSquares</text>
+<text x="949.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 949.5 312)">MatrixEquations</text>
+<text x="364" y="908" text-anchor="end" font-size="14" font-weight="550" fill="#344454">MatrixEquations</text>
+<text x="1016.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 1016.5 312)">MatrixMultiplication</text>
+<text x="364" y="975" text-anchor="end" font-size="14" font-weight="550" fill="#344454">MatrixMultiplication</text>
+<text x="1083.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 1083.5 312)">MatrixPowers</text>
+<text x="364" y="1042" text-anchor="end" font-size="14" font-weight="550" fill="#344454">MatrixPowers</text>
+<text x="1150.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 1150.5 312)">Nonlinear</text>
+<text x="364" y="1109" text-anchor="end" font-size="14" font-weight="550" fill="#344454">Nonlinear</text>
+<text x="1217.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 1217.5 312)">Norms</text>
+<text x="364" y="1176" text-anchor="end" font-size="14" font-weight="550" fill="#344454">Norms</text>
+<text x="1284.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 1284.5 312)">Other</text>
+<text x="364" y="1243" text-anchor="end" font-size="14" font-weight="550" fill="#344454">Other</text>
+<text x="1351.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 1351.5 312)">Perturbation</text>
+<text x="364" y="1310" text-anchor="end" font-size="14" font-weight="550" fill="#344454">Perturbation</text>
+<text x="1418.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 1418.5 312)">Polynomials</text>
+<text x="364" y="1377" text-anchor="end" font-size="14" font-weight="550" fill="#344454">Polynomials</text>
+<text x="1485.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 1485.5 312)">ProbabilityStatistics</text>
+<text x="364" y="1444" text-anchor="end" font-size="14" font-weight="550" fill="#344454">ProbabilityStatistics</text>
+<text x="1552.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 1552.5 312)">QR</text>
+<text x="364" y="1511" text-anchor="end" font-size="14" font-weight="550" fill="#344454">QR</text>
+<text x="1619.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 1619.5 312)">Spectral</text>
+<text x="364" y="1578" text-anchor="end" font-size="14" font-weight="550" fill="#344454">Spectral</text>
+<text x="1686.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 1686.5 312)">Summation</text>
+<text x="364" y="1645" text-anchor="end" font-size="14" font-weight="550" fill="#344454">Summation</text>
+<text x="1753.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 1753.5 312)">SymmetricIndefinite</text>
+<text x="364" y="1712" text-anchor="end" font-size="14" font-weight="550" fill="#344454">SymmetricIndefinite</text>
+<text x="1820.5" y="312" font-size="13" font-weight="600" fill="#344454" text-anchor="start" transform="rotate(-55 1820.5 312)">TestMatrices</text>
+<text x="364" y="1779" text-anchor="end" font-size="14" font-weight="550" fill="#344454">TestMatrices</text>
+<g><title>Arithmetic → Arithmetic: 1,022 unique declaration pairs</title>
+<rect x="380" y="330" width="67" height="67" fill="#74A5CC" stroke="#46596B" stroke-width="1.8"/>
+<text x="413.5" y="369" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1.0k</text>
+</g>
+<g><title>Arithmetic → Cholesky: 0 unique declaration pairs</title>
+<rect x="447" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → DotProduct: 0 unique declaration pairs</title>
+<rect x="514" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → FloatingPoint: 901 unique declaration pairs</title>
+<rect x="648" y="330" width="67" height="67" fill="#77A8CD" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="369" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">901</text>
+</g>
+<g><title>Arithmetic → HighamSourceOther: 0 unique declaration pairs</title>
+<rect x="715" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → LU: 0 unique declaration pairs</title>
+<rect x="782" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → LeastSquares: 0 unique declaration pairs</title>
+<rect x="849" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → MatrixEquations: 0 unique declaration pairs</title>
+<rect x="916" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → MatrixMultiplication: 0 unique declaration pairs</title>
+<rect x="983" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → MatrixPowers: 0 unique declaration pairs</title>
+<rect x="1050" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → Norms: 0 unique declaration pairs</title>
+<rect x="1184" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → Other: 3 unique declaration pairs</title>
+<rect x="1251" y="330" width="67" height="67" fill="#DFEEF7" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="369" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">3</text>
+</g>
+<g><title>Arithmetic → Perturbation: 0 unique declaration pairs</title>
+<rect x="1318" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → ProbabilityStatistics: 0 unique declaration pairs</title>
+<rect x="1452" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → QR: 0 unique declaration pairs</title>
+<rect x="1519" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → Spectral: 0 unique declaration pairs</title>
+<rect x="1586" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → Summation: 0 unique declaration pairs</title>
+<rect x="1653" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → SymmetricIndefinite: 0 unique declaration pairs</title>
+<rect x="1720" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Arithmetic → TestMatrices: 0 unique declaration pairs</title>
+<rect x="1787" y="330" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Cholesky → Arithmetic: 25 unique declaration pairs</title>
+<rect x="380" y="397" width="67" height="67" fill="#BFDCEC" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="413.5" y="436" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">25</text>
+</g>
+<g><title>Cholesky → Cholesky: 1,558 unique declaration pairs</title>
+<rect x="447" y="397" width="67" height="67" fill="#6A9CC7" stroke="#46596B" stroke-width="1.8"/>
+<text x="480.5" y="436" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1.6k</text>
+</g>
+<g><title>Cholesky → DotProduct: 0 unique declaration pairs</title>
+<rect x="514" y="397" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Cholesky → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="397" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Cholesky → FloatingPoint: 399 unique declaration pairs</title>
+<rect x="648" y="397" width="67" height="67" fill="#8BB9D7" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="436" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">399</text>
+</g>
+<g><title>Cholesky → HighamSourceOther: 68 unique declaration pairs</title>
+<rect x="715" y="397" width="67" height="67" fill="#AED3E6" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="436" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">68</text>
+</g>
+<g><title>Cholesky → LU: 156 unique declaration pairs</title>
+<rect x="782" y="397" width="67" height="67" fill="#A0CBE2" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="815.5" y="436" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">156</text>
+</g>
+<g><title>Cholesky → LeastSquares: 0 unique declaration pairs</title>
+<rect x="849" y="397" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Cholesky → MatrixEquations: 0 unique declaration pairs</title>
+<rect x="916" y="397" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Cholesky → MatrixMultiplication: 0 unique declaration pairs</title>
+<rect x="983" y="397" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Cholesky → MatrixPowers: 0 unique declaration pairs</title>
+<rect x="1050" y="397" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Cholesky → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="397" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Cholesky → Norms: 42 unique declaration pairs</title>
+<rect x="1184" y="397" width="67" height="67" fill="#B6D7E9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1217.5" y="436" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">42</text>
+</g>
+<g><title>Cholesky → Other: 288 unique declaration pairs</title>
+<rect x="1251" y="397" width="67" height="67" fill="#92C0DB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="436" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">288</text>
+</g>
+<g><title>Cholesky → Perturbation: 0 unique declaration pairs</title>
+<rect x="1318" y="397" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Cholesky → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="397" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Cholesky → ProbabilityStatistics: 0 unique declaration pairs</title>
+<rect x="1452" y="397" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Cholesky → QR: 0 unique declaration pairs</title>
+<rect x="1519" y="397" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Cholesky → Spectral: 3 unique declaration pairs</title>
+<rect x="1586" y="397" width="67" height="67" fill="#DFEEF7" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1619.5" y="436" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">3</text>
+</g>
+<g><title>Cholesky → Summation: 6 unique declaration pairs</title>
+<rect x="1653" y="397" width="67" height="67" fill="#D6E9F4" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1686.5" y="436" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">6</text>
+</g>
+<g><title>Cholesky → SymmetricIndefinite: 0 unique declaration pairs</title>
+<rect x="1720" y="397" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Cholesky → TestMatrices: 17 unique declaration pairs</title>
+<rect x="1787" y="397" width="67" height="67" fill="#C5E0EE" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1820.5" y="436" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">17</text>
+</g>
+<g><title>DotProduct → Arithmetic: 0 unique declaration pairs</title>
+<rect x="380" y="464" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>DotProduct → Cholesky: 0 unique declaration pairs</title>
+<rect x="447" y="464" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>DotProduct → DotProduct: 429 unique declaration pairs</title>
+<rect x="514" y="464" width="67" height="67" fill="#89B7D6" stroke="#46596B" stroke-width="1.8"/>
+<text x="547.5" y="503" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">429</text>
+</g>
+<g><title>DotProduct → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="464" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>DotProduct → FloatingPoint: 356 unique declaration pairs</title>
+<rect x="648" y="464" width="67" height="67" fill="#8DBBD8" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="503" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">356</text>
+</g>
+<g><title>DotProduct → HighamSourceOther: 0 unique declaration pairs</title>
+<rect x="715" y="464" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>DotProduct → LU: 0 unique declaration pairs</title>
+<rect x="782" y="464" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>DotProduct → LeastSquares: 0 unique declaration pairs</title>
+<rect x="849" y="464" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>DotProduct → MatrixEquations: 0 unique declaration pairs</title>
+<rect x="916" y="464" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>DotProduct → MatrixMultiplication: 0 unique declaration pairs</title>
+<rect x="983" y="464" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>DotProduct → MatrixPowers: 0 unique declaration pairs</title>
+<rect x="1050" y="464" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>DotProduct → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="464" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>DotProduct → Norms: 0 unique declaration pairs</title>
+<rect x="1184" y="464" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>DotProduct → Other: 32 unique declaration pairs</title>
+<rect x="1251" y="464" width="67" height="67" fill="#BBDAEB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="503" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">32</text>
+</g>
+<g><title>DotProduct → Perturbation: 3 unique declaration pairs</title>
+<rect x="1318" y="464" width="67" height="67" fill="#DFEEF7" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1351.5" y="503" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">3</text>
+</g>
+<g><title>DotProduct → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="464" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>DotProduct → ProbabilityStatistics: 0 unique declaration pairs</title>
+<rect x="1452" y="464" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>DotProduct → QR: 0 unique declaration pairs</title>
+<rect x="1519" y="464" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>DotProduct → Spectral: 0 unique declaration pairs</title>
+<rect x="1586" y="464" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>DotProduct → Summation: 82 unique declaration pairs</title>
+<rect x="1653" y="464" width="67" height="67" fill="#ABD1E5" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1686.5" y="503" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">82</text>
+</g>
+<g><title>DotProduct → SymmetricIndefinite: 0 unique declaration pairs</title>
+<rect x="1720" y="464" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>DotProduct → TestMatrices: 0 unique declaration pairs</title>
+<rect x="1787" y="464" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → Arithmetic: 0 unique declaration pairs</title>
+<rect x="380" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → Cholesky: 0 unique declaration pairs</title>
+<rect x="447" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → DotProduct: 0 unique declaration pairs</title>
+<rect x="514" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → FFT: 432 unique declaration pairs</title>
+<rect x="581" y="531" width="67" height="67" fill="#89B7D6" stroke="#46596B" stroke-width="1.8"/>
+<text x="614.5" y="570" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">432</text>
+</g>
+<g><title>FFT → FloatingPoint: 48 unique declaration pairs</title>
+<rect x="648" y="531" width="67" height="67" fill="#B4D6E8" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="570" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">48</text>
+</g>
+<g><title>FFT → HighamSourceOther: 95 unique declaration pairs</title>
+<rect x="715" y="531" width="67" height="67" fill="#A9D0E5" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="570" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">95</text>
+</g>
+<g><title>FFT → LU: 0 unique declaration pairs</title>
+<rect x="782" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → LeastSquares: 0 unique declaration pairs</title>
+<rect x="849" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → MatrixEquations: 0 unique declaration pairs</title>
+<rect x="916" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → MatrixMultiplication: 0 unique declaration pairs</title>
+<rect x="983" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → MatrixPowers: 0 unique declaration pairs</title>
+<rect x="1050" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → Norms: 0 unique declaration pairs</title>
+<rect x="1184" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → Other: 0 unique declaration pairs</title>
+<rect x="1251" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → Perturbation: 0 unique declaration pairs</title>
+<rect x="1318" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → ProbabilityStatistics: 0 unique declaration pairs</title>
+<rect x="1452" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → QR: 0 unique declaration pairs</title>
+<rect x="1519" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → Spectral: 0 unique declaration pairs</title>
+<rect x="1586" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → Summation: 0 unique declaration pairs</title>
+<rect x="1653" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → SymmetricIndefinite: 0 unique declaration pairs</title>
+<rect x="1720" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FFT → TestMatrices: 0 unique declaration pairs</title>
+<rect x="1787" y="531" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FloatingPoint → Arithmetic: 53 unique declaration pairs</title>
+<rect x="380" y="598" width="67" height="67" fill="#B2D5E8" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="413.5" y="637" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">53</text>
+</g>
+<g><title>FloatingPoint → Cholesky: 0 unique declaration pairs</title>
+<rect x="447" y="598" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FloatingPoint → DotProduct: 3 unique declaration pairs</title>
+<rect x="514" y="598" width="67" height="67" fill="#DFEEF7" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="547.5" y="637" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">3</text>
+</g>
+<g><title>FloatingPoint → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="598" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FloatingPoint → FloatingPoint: 46,488 unique declaration pairs</title>
+<rect x="648" y="598" width="67" height="67" fill="#1A559D" stroke="#46596B" stroke-width="1.8"/>
+<text x="681.5" y="637" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">46.5k</text>
+</g>
+<g><title>FloatingPoint → HighamSourceOther: 157 unique declaration pairs</title>
+<rect x="715" y="598" width="67" height="67" fill="#A0CBE2" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="637" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">157</text>
+</g>
+<g><title>FloatingPoint → LU: 6 unique declaration pairs</title>
+<rect x="782" y="598" width="67" height="67" fill="#D6E9F4" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="815.5" y="637" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">6</text>
+</g>
+<g><title>FloatingPoint → LeastSquares: 0 unique declaration pairs</title>
+<rect x="849" y="598" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FloatingPoint → MatrixEquations: 0 unique declaration pairs</title>
+<rect x="916" y="598" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FloatingPoint → MatrixMultiplication: 0 unique declaration pairs</title>
+<rect x="983" y="598" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FloatingPoint → MatrixPowers: 73 unique declaration pairs</title>
+<rect x="1050" y="598" width="67" height="67" fill="#ADD2E6" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1083.5" y="637" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">73</text>
+</g>
+<g><title>FloatingPoint → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="598" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FloatingPoint → Norms: 41 unique declaration pairs</title>
+<rect x="1184" y="598" width="67" height="67" fill="#B7D8E9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1217.5" y="637" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">41</text>
+</g>
+<g><title>FloatingPoint → Other: 930 unique declaration pairs</title>
+<rect x="1251" y="598" width="67" height="67" fill="#77A7CD" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="637" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">930</text>
+</g>
+<g><title>FloatingPoint → Perturbation: 51 unique declaration pairs</title>
+<rect x="1318" y="598" width="67" height="67" fill="#B3D6E8" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1351.5" y="637" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">51</text>
+</g>
+<g><title>FloatingPoint → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="598" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FloatingPoint → ProbabilityStatistics: 87 unique declaration pairs</title>
+<rect x="1452" y="598" width="67" height="67" fill="#AAD1E5" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1485.5" y="637" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">87</text>
+</g>
+<g><title>FloatingPoint → QR: 0 unique declaration pairs</title>
+<rect x="1519" y="598" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FloatingPoint → Spectral: 0 unique declaration pairs</title>
+<rect x="1586" y="598" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FloatingPoint → Summation: 0 unique declaration pairs</title>
+<rect x="1653" y="598" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FloatingPoint → SymmetricIndefinite: 0 unique declaration pairs</title>
+<rect x="1720" y="598" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>FloatingPoint → TestMatrices: 58 unique declaration pairs</title>
+<rect x="1787" y="598" width="67" height="67" fill="#B1D4E7" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1820.5" y="637" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">58</text>
+</g>
+<g><title>HighamSourceOther → Arithmetic: 47 unique declaration pairs</title>
+<rect x="380" y="665" width="67" height="67" fill="#B4D6E9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="413.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">47</text>
+</g>
+<g><title>HighamSourceOther → Cholesky: 265 unique declaration pairs</title>
+<rect x="447" y="665" width="67" height="67" fill="#94C1DC" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="480.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">265</text>
+</g>
+<g><title>HighamSourceOther → DotProduct: 167 unique declaration pairs</title>
+<rect x="514" y="665" width="67" height="67" fill="#9FCAE1" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="547.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">167</text>
+</g>
+<g><title>HighamSourceOther → FFT: 247 unique declaration pairs</title>
+<rect x="581" y="665" width="67" height="67" fill="#96C3DD" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="614.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">247</text>
+</g>
+<g><title>HighamSourceOther → FloatingPoint: 27,484 unique declaration pairs</title>
+<rect x="648" y="665" width="67" height="67" fill="#2660A4" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">27.5k</text>
+</g>
+<g><title>HighamSourceOther → HighamSourceOther: 98,745 unique declaration pairs</title>
+<rect x="715" y="665" width="67" height="67" fill="#084594" stroke="#46596B" stroke-width="1.8"/>
+<text x="748.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">98.7k</text>
+</g>
+<g><title>HighamSourceOther → LU: 11,231 unique declaration pairs</title>
+<rect x="782" y="665" width="67" height="67" fill="#3C73AE" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="815.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">11.2k</text>
+</g>
+<g><title>HighamSourceOther → LeastSquares: 3,375 unique declaration pairs</title>
+<rect x="849" y="665" width="67" height="67" fill="#588CBD" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="882.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">3.4k</text>
+</g>
+<g><title>HighamSourceOther → MatrixEquations: 4,486 unique declaration pairs</title>
+<rect x="916" y="665" width="67" height="67" fill="#5186BA" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="949.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">4.5k</text>
+</g>
+<g><title>HighamSourceOther → MatrixMultiplication: 113 unique declaration pairs</title>
+<rect x="983" y="665" width="67" height="67" fill="#A6CEE4" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1016.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">113</text>
+</g>
+<g><title>HighamSourceOther → MatrixPowers: 119 unique declaration pairs</title>
+<rect x="1050" y="665" width="67" height="67" fill="#A5CEE3" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1083.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">119</text>
+</g>
+<g><title>HighamSourceOther → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="665" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>HighamSourceOther → Norms: 4,628 unique declaration pairs</title>
+<rect x="1184" y="665" width="67" height="67" fill="#5185B9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1217.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">4.6k</text>
+</g>
+<g><title>HighamSourceOther → Other: 21,853 unique declaration pairs</title>
+<rect x="1251" y="665" width="67" height="67" fill="#2C65A6" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">21.9k</text>
+</g>
+<g><title>HighamSourceOther → Perturbation: 1,035 unique declaration pairs</title>
+<rect x="1318" y="665" width="67" height="67" fill="#74A5CB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1351.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1.0k</text>
+</g>
+<g><title>HighamSourceOther → Polynomials: 697 unique declaration pairs</title>
+<rect x="1385" y="665" width="67" height="67" fill="#7DADD0" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1418.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">697</text>
+</g>
+<g><title>HighamSourceOther → ProbabilityStatistics: 383 unique declaration pairs</title>
+<rect x="1452" y="665" width="67" height="67" fill="#8CBAD8" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1485.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">383</text>
+</g>
+<g><title>HighamSourceOther → QR: 6,938 unique declaration pairs</title>
+<rect x="1519" y="665" width="67" height="67" fill="#477DB4" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1552.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">6.9k</text>
+</g>
+<g><title>HighamSourceOther → Spectral: 3,958 unique declaration pairs</title>
+<rect x="1586" y="665" width="67" height="67" fill="#5489BB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1619.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">4.0k</text>
+</g>
+<g><title>HighamSourceOther → Summation: 1,121 unique declaration pairs</title>
+<rect x="1653" y="665" width="67" height="67" fill="#72A3CB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1686.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1.1k</text>
+</g>
+<g><title>HighamSourceOther → SymmetricIndefinite: 5,952 unique declaration pairs</title>
+<rect x="1720" y="665" width="67" height="67" fill="#4B80B6" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1753.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">6.0k</text>
+</g>
+<g><title>HighamSourceOther → TestMatrices: 337 unique declaration pairs</title>
+<rect x="1787" y="665" width="67" height="67" fill="#8FBCD9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1820.5" y="704" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">337</text>
+</g>
+<g><title>LU → Arithmetic: 0 unique declaration pairs</title>
+<rect x="380" y="732" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>LU → Cholesky: 218 unique declaration pairs</title>
+<rect x="447" y="732" width="67" height="67" fill="#99C6DE" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="480.5" y="771" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">218</text>
+</g>
+<g><title>LU → DotProduct: 14 unique declaration pairs</title>
+<rect x="514" y="732" width="67" height="67" fill="#C8E1EF" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="547.5" y="771" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">14</text>
+</g>
+<g><title>LU → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="732" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>LU → FloatingPoint: 1,101 unique declaration pairs</title>
+<rect x="648" y="732" width="67" height="67" fill="#73A4CB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="771" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1.1k</text>
+</g>
+<g><title>LU → HighamSourceOther: 182 unique declaration pairs</title>
+<rect x="715" y="732" width="67" height="67" fill="#9DC9E1" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="771" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">182</text>
+</g>
+<g><title>LU → LU: 10,872 unique declaration pairs</title>
+<rect x="782" y="732" width="67" height="67" fill="#3C73AF" stroke="#46596B" stroke-width="1.8"/>
+<text x="815.5" y="771" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">10.9k</text>
+</g>
+<g><title>LU → LeastSquares: 0 unique declaration pairs</title>
+<rect x="849" y="732" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>LU → MatrixEquations: 43 unique declaration pairs</title>
+<rect x="916" y="732" width="67" height="67" fill="#B6D7E9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="949.5" y="771" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">43</text>
+</g>
+<g><title>LU → MatrixMultiplication: 30 unique declaration pairs</title>
+<rect x="983" y="732" width="67" height="67" fill="#BCDAEB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1016.5" y="771" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">30</text>
+</g>
+<g><title>LU → MatrixPowers: 0 unique declaration pairs</title>
+<rect x="1050" y="732" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>LU → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="732" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>LU → Norms: 827 unique declaration pairs</title>
+<rect x="1184" y="732" width="67" height="67" fill="#79AACE" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1217.5" y="771" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">827</text>
+</g>
+<g><title>LU → Other: 849 unique declaration pairs</title>
+<rect x="1251" y="732" width="67" height="67" fill="#79A9CE" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="771" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">849</text>
+</g>
+<g><title>LU → Perturbation: 4 unique declaration pairs</title>
+<rect x="1318" y="732" width="67" height="67" fill="#DBECF6" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1351.5" y="771" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">4</text>
+</g>
+<g><title>LU → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="732" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>LU → ProbabilityStatistics: 0 unique declaration pairs</title>
+<rect x="1452" y="732" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>LU → QR: 178 unique declaration pairs</title>
+<rect x="1519" y="732" width="67" height="67" fill="#9ECAE1" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1552.5" y="771" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">178</text>
+</g>
+<g><title>LU → Spectral: 37 unique declaration pairs</title>
+<rect x="1586" y="732" width="67" height="67" fill="#B8D9EA" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1619.5" y="771" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">37</text>
+</g>
+<g><title>LU → Summation: 49 unique declaration pairs</title>
+<rect x="1653" y="732" width="67" height="67" fill="#B4D6E8" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1686.5" y="771" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">49</text>
+</g>
+<g><title>LU → SymmetricIndefinite: 367 unique declaration pairs</title>
+<rect x="1720" y="732" width="67" height="67" fill="#8DBBD8" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1753.5" y="771" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">367</text>
+</g>
+<g><title>LU → TestMatrices: 0 unique declaration pairs</title>
+<rect x="1787" y="732" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>LeastSquares → Arithmetic: 0 unique declaration pairs</title>
+<rect x="380" y="799" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>LeastSquares → Cholesky: 7 unique declaration pairs</title>
+<rect x="447" y="799" width="67" height="67" fill="#D3E7F3" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="480.5" y="838" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">7</text>
+</g>
+<g><title>LeastSquares → DotProduct: 16 unique declaration pairs</title>
+<rect x="514" y="799" width="67" height="67" fill="#C6E0EF" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="547.5" y="838" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">16</text>
+</g>
+<g><title>LeastSquares → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="799" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>LeastSquares → FloatingPoint: 2,893 unique declaration pairs</title>
+<rect x="648" y="799" width="67" height="67" fill="#5C8FBF" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="838" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">2.9k</text>
+</g>
+<g><title>LeastSquares → HighamSourceOther: 1,034 unique declaration pairs</title>
+<rect x="715" y="799" width="67" height="67" fill="#74A5CB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="838" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1.0k</text>
+</g>
+<g><title>LeastSquares → LU: 33 unique declaration pairs</title>
+<rect x="782" y="799" width="67" height="67" fill="#BADAEB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="815.5" y="838" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">33</text>
+</g>
+<g><title>LeastSquares → LeastSquares: 24,269 unique declaration pairs</title>
+<rect x="849" y="799" width="67" height="67" fill="#2963A5" stroke="#46596B" stroke-width="1.8"/>
+<text x="882.5" y="838" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">24.3k</text>
+</g>
+<g><title>LeastSquares → MatrixEquations: 0 unique declaration pairs</title>
+<rect x="916" y="799" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>LeastSquares → MatrixMultiplication: 2 unique declaration pairs</title>
+<rect x="983" y="799" width="67" height="67" fill="#E4F1F9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1016.5" y="838" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">2</text>
+</g>
+<g><title>LeastSquares → MatrixPowers: 0 unique declaration pairs</title>
+<rect x="1050" y="799" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>LeastSquares → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="799" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>LeastSquares → Norms: 188 unique declaration pairs</title>
+<rect x="1184" y="799" width="67" height="67" fill="#9CC9E0" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1217.5" y="838" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">188</text>
+</g>
+<g><title>LeastSquares → Other: 9,488 unique declaration pairs</title>
+<rect x="1251" y="799" width="67" height="67" fill="#4076B1" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="838" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">9.5k</text>
+</g>
+<g><title>LeastSquares → Perturbation: 99 unique declaration pairs</title>
+<rect x="1318" y="799" width="67" height="67" fill="#A8CFE4" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1351.5" y="838" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">99</text>
+</g>
+<g><title>LeastSquares → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="799" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>LeastSquares → ProbabilityStatistics: 0 unique declaration pairs</title>
+<rect x="1452" y="799" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>LeastSquares → QR: 6,593 unique declaration pairs</title>
+<rect x="1519" y="799" width="67" height="67" fill="#487EB5" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1552.5" y="838" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">6.6k</text>
+</g>
+<g><title>LeastSquares → Spectral: 897 unique declaration pairs</title>
+<rect x="1586" y="799" width="67" height="67" fill="#77A8CD" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1619.5" y="838" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">897</text>
+</g>
+<g><title>LeastSquares → Summation: 0 unique declaration pairs</title>
+<rect x="1653" y="799" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>LeastSquares → SymmetricIndefinite: 0 unique declaration pairs</title>
+<rect x="1720" y="799" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>LeastSquares → TestMatrices: 0 unique declaration pairs</title>
+<rect x="1787" y="799" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixEquations → Arithmetic: 0 unique declaration pairs</title>
+<rect x="380" y="866" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixEquations → Cholesky: 0 unique declaration pairs</title>
+<rect x="447" y="866" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixEquations → DotProduct: 0 unique declaration pairs</title>
+<rect x="514" y="866" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixEquations → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="866" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixEquations → FloatingPoint: 465 unique declaration pairs</title>
+<rect x="648" y="866" width="67" height="67" fill="#87B6D5" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="905" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">465</text>
+</g>
+<g><title>MatrixEquations → HighamSourceOther: 69 unique declaration pairs</title>
+<rect x="715" y="866" width="67" height="67" fill="#AED3E6" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="905" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">69</text>
+</g>
+<g><title>MatrixEquations → LU: 14 unique declaration pairs</title>
+<rect x="782" y="866" width="67" height="67" fill="#C8E1EF" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="815.5" y="905" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">14</text>
+</g>
+<g><title>MatrixEquations → LeastSquares: 0 unique declaration pairs</title>
+<rect x="849" y="866" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixEquations → MatrixEquations: 9,010 unique declaration pairs</title>
+<rect x="916" y="866" width="67" height="67" fill="#4177B1" stroke="#46596B" stroke-width="1.8"/>
+<text x="949.5" y="905" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">9.0k</text>
+</g>
+<g><title>MatrixEquations → MatrixMultiplication: 4 unique declaration pairs</title>
+<rect x="983" y="866" width="67" height="67" fill="#DBECF6" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1016.5" y="905" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">4</text>
+</g>
+<g><title>MatrixEquations → MatrixPowers: 0 unique declaration pairs</title>
+<rect x="1050" y="866" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixEquations → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="866" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixEquations → Norms: 12 unique declaration pairs</title>
+<rect x="1184" y="866" width="67" height="67" fill="#CBE3F0" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1217.5" y="905" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">12</text>
+</g>
+<g><title>MatrixEquations → Other: 2,630 unique declaration pairs</title>
+<rect x="1251" y="866" width="67" height="67" fill="#5E91C0" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="905" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">2.6k</text>
+</g>
+<g><title>MatrixEquations → Perturbation: 0 unique declaration pairs</title>
+<rect x="1318" y="866" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixEquations → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="866" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixEquations → ProbabilityStatistics: 2 unique declaration pairs</title>
+<rect x="1452" y="866" width="67" height="67" fill="#E4F1F9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1485.5" y="905" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">2</text>
+</g>
+<g><title>MatrixEquations → QR: 0 unique declaration pairs</title>
+<rect x="1519" y="866" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixEquations → Spectral: 138 unique declaration pairs</title>
+<rect x="1586" y="866" width="67" height="67" fill="#A2CCE2" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1619.5" y="905" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">138</text>
+</g>
+<g><title>MatrixEquations → Summation: 0 unique declaration pairs</title>
+<rect x="1653" y="866" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixEquations → SymmetricIndefinite: 0 unique declaration pairs</title>
+<rect x="1720" y="866" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixEquations → TestMatrices: 0 unique declaration pairs</title>
+<rect x="1787" y="866" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → Arithmetic: 0 unique declaration pairs</title>
+<rect x="380" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → Cholesky: 0 unique declaration pairs</title>
+<rect x="447" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → DotProduct: 6 unique declaration pairs</title>
+<rect x="514" y="933" width="67" height="67" fill="#D6E9F4" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="547.5" y="972" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">6</text>
+</g>
+<g><title>MatrixMultiplication → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → FloatingPoint: 175 unique declaration pairs</title>
+<rect x="648" y="933" width="67" height="67" fill="#9ECAE1" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="972" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">175</text>
+</g>
+<g><title>MatrixMultiplication → HighamSourceOther: 0 unique declaration pairs</title>
+<rect x="715" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → LU: 0 unique declaration pairs</title>
+<rect x="782" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → LeastSquares: 0 unique declaration pairs</title>
+<rect x="849" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → MatrixEquations: 0 unique declaration pairs</title>
+<rect x="916" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → MatrixMultiplication: 930 unique declaration pairs</title>
+<rect x="983" y="933" width="67" height="67" fill="#77A7CD" stroke="#46596B" stroke-width="1.8"/>
+<text x="1016.5" y="972" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">930</text>
+</g>
+<g><title>MatrixMultiplication → MatrixPowers: 0 unique declaration pairs</title>
+<rect x="1050" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → Norms: 0 unique declaration pairs</title>
+<rect x="1184" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → Other: 138 unique declaration pairs</title>
+<rect x="1251" y="933" width="67" height="67" fill="#A2CCE2" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="972" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">138</text>
+</g>
+<g><title>MatrixMultiplication → Perturbation: 0 unique declaration pairs</title>
+<rect x="1318" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → ProbabilityStatistics: 0 unique declaration pairs</title>
+<rect x="1452" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → QR: 0 unique declaration pairs</title>
+<rect x="1519" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → Spectral: 0 unique declaration pairs</title>
+<rect x="1586" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → Summation: 0 unique declaration pairs</title>
+<rect x="1653" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → SymmetricIndefinite: 0 unique declaration pairs</title>
+<rect x="1720" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixMultiplication → TestMatrices: 0 unique declaration pairs</title>
+<rect x="1787" y="933" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixPowers → Arithmetic: 0 unique declaration pairs</title>
+<rect x="380" y="1000" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixPowers → Cholesky: 7 unique declaration pairs</title>
+<rect x="447" y="1000" width="67" height="67" fill="#D3E7F3" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="480.5" y="1039" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">7</text>
+</g>
+<g><title>MatrixPowers → DotProduct: 10 unique declaration pairs</title>
+<rect x="514" y="1000" width="67" height="67" fill="#CEE4F1" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="547.5" y="1039" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">10</text>
+</g>
+<g><title>MatrixPowers → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="1000" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixPowers → FloatingPoint: 46 unique declaration pairs</title>
+<rect x="648" y="1000" width="67" height="67" fill="#B5D7E9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="1039" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">46</text>
+</g>
+<g><title>MatrixPowers → HighamSourceOther: 8 unique declaration pairs</title>
+<rect x="715" y="1000" width="67" height="67" fill="#D1E6F2" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="1039" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">8</text>
+</g>
+<g><title>MatrixPowers → LU: 0 unique declaration pairs</title>
+<rect x="782" y="1000" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixPowers → LeastSquares: 0 unique declaration pairs</title>
+<rect x="849" y="1000" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixPowers → MatrixEquations: 0 unique declaration pairs</title>
+<rect x="916" y="1000" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixPowers → MatrixMultiplication: 0 unique declaration pairs</title>
+<rect x="983" y="1000" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixPowers → MatrixPowers: 1,760 unique declaration pairs</title>
+<rect x="1050" y="1000" width="67" height="67" fill="#679AC5" stroke="#46596B" stroke-width="1.8"/>
+<text x="1083.5" y="1039" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1.8k</text>
+</g>
+<g><title>MatrixPowers → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="1000" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixPowers → Norms: 292 unique declaration pairs</title>
+<rect x="1184" y="1000" width="67" height="67" fill="#92BFDB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1217.5" y="1039" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">292</text>
+</g>
+<g><title>MatrixPowers → Other: 534 unique declaration pairs</title>
+<rect x="1251" y="1000" width="67" height="67" fill="#84B3D4" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="1039" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">534</text>
+</g>
+<g><title>MatrixPowers → Perturbation: 0 unique declaration pairs</title>
+<rect x="1318" y="1000" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixPowers → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="1000" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixPowers → ProbabilityStatistics: 0 unique declaration pairs</title>
+<rect x="1452" y="1000" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixPowers → QR: 0 unique declaration pairs</title>
+<rect x="1519" y="1000" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixPowers → Spectral: 54 unique declaration pairs</title>
+<rect x="1586" y="1000" width="67" height="67" fill="#B2D5E8" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1619.5" y="1039" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">54</text>
+</g>
+<g><title>MatrixPowers → Summation: 0 unique declaration pairs</title>
+<rect x="1653" y="1000" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixPowers → SymmetricIndefinite: 0 unique declaration pairs</title>
+<rect x="1720" y="1000" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>MatrixPowers → TestMatrices: 0 unique declaration pairs</title>
+<rect x="1787" y="1000" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Nonlinear → Arithmetic: 0 unique declaration pairs</title>
+<rect x="380" y="1067" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Nonlinear → Cholesky: 0 unique declaration pairs</title>
+<rect x="447" y="1067" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Nonlinear → DotProduct: 0 unique declaration pairs</title>
+<rect x="514" y="1067" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Nonlinear → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="1067" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Nonlinear → FloatingPoint: 138 unique declaration pairs</title>
+<rect x="648" y="1067" width="67" height="67" fill="#A2CCE2" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="1106" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">138</text>
+</g>
+<g><title>Nonlinear → HighamSourceOther: 48 unique declaration pairs</title>
+<rect x="715" y="1067" width="67" height="67" fill="#B4D6E8" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="1106" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">48</text>
+</g>
+<g><title>Nonlinear → LU: 0 unique declaration pairs</title>
+<rect x="782" y="1067" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Nonlinear → LeastSquares: 0 unique declaration pairs</title>
+<rect x="849" y="1067" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Nonlinear → MatrixEquations: 0 unique declaration pairs</title>
+<rect x="916" y="1067" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Nonlinear → MatrixMultiplication: 1 unique declaration pairs</title>
+<rect x="983" y="1067" width="67" height="67" fill="#EBF4FB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1016.5" y="1106" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1</text>
+</g>
+<g><title>Nonlinear → MatrixPowers: 0 unique declaration pairs</title>
+<rect x="1050" y="1067" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Nonlinear → Nonlinear: 468 unique declaration pairs</title>
+<rect x="1117" y="1067" width="67" height="67" fill="#87B5D5" stroke="#46596B" stroke-width="1.8"/>
+<text x="1150.5" y="1106" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">468</text>
+</g>
+<g><title>Nonlinear → Norms: 28 unique declaration pairs</title>
+<rect x="1184" y="1067" width="67" height="67" fill="#BDDBEB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1217.5" y="1106" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">28</text>
+</g>
+<g><title>Nonlinear → Other: 33 unique declaration pairs</title>
+<rect x="1251" y="1067" width="67" height="67" fill="#BADAEB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="1106" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">33</text>
+</g>
+<g><title>Nonlinear → Perturbation: 0 unique declaration pairs</title>
+<rect x="1318" y="1067" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Nonlinear → Polynomials: 2 unique declaration pairs</title>
+<rect x="1385" y="1067" width="67" height="67" fill="#E4F1F9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1418.5" y="1106" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">2</text>
+</g>
+<g><title>Nonlinear → ProbabilityStatistics: 0 unique declaration pairs</title>
+<rect x="1452" y="1067" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Nonlinear → QR: 3 unique declaration pairs</title>
+<rect x="1519" y="1067" width="67" height="67" fill="#DFEEF7" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1552.5" y="1106" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">3</text>
+</g>
+<g><title>Nonlinear → Spectral: 0 unique declaration pairs</title>
+<rect x="1586" y="1067" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Nonlinear → Summation: 0 unique declaration pairs</title>
+<rect x="1653" y="1067" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Nonlinear → SymmetricIndefinite: 0 unique declaration pairs</title>
+<rect x="1720" y="1067" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Nonlinear → TestMatrices: 0 unique declaration pairs</title>
+<rect x="1787" y="1067" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Norms → Arithmetic: 0 unique declaration pairs</title>
+<rect x="380" y="1134" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Norms → Cholesky: 12 unique declaration pairs</title>
+<rect x="447" y="1134" width="67" height="67" fill="#CBE3F0" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="480.5" y="1173" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">12</text>
+</g>
+<g><title>Norms → DotProduct: 6 unique declaration pairs</title>
+<rect x="514" y="1134" width="67" height="67" fill="#D6E9F4" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="547.5" y="1173" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">6</text>
+</g>
+<g><title>Norms → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="1134" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Norms → FloatingPoint: 129 unique declaration pairs</title>
+<rect x="648" y="1134" width="67" height="67" fill="#A3CDE3" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="1173" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">129</text>
+</g>
+<g><title>Norms → HighamSourceOther: 60 unique declaration pairs</title>
+<rect x="715" y="1134" width="67" height="67" fill="#B0D4E7" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="1173" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">60</text>
+</g>
+<g><title>Norms → LU: 55 unique declaration pairs</title>
+<rect x="782" y="1134" width="67" height="67" fill="#B2D5E8" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="815.5" y="1173" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">55</text>
+</g>
+<g><title>Norms → LeastSquares: 52 unique declaration pairs</title>
+<rect x="849" y="1134" width="67" height="67" fill="#B3D5E8" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="882.5" y="1173" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">52</text>
+</g>
+<g><title>Norms → MatrixEquations: 639 unique declaration pairs</title>
+<rect x="916" y="1134" width="67" height="67" fill="#7FAFD1" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="949.5" y="1173" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">639</text>
+</g>
+<g><title>Norms → MatrixMultiplication: 4 unique declaration pairs</title>
+<rect x="983" y="1134" width="67" height="67" fill="#DBECF6" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1016.5" y="1173" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">4</text>
+</g>
+<g><title>Norms → MatrixPowers: 10 unique declaration pairs</title>
+<rect x="1050" y="1134" width="67" height="67" fill="#CEE4F1" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1083.5" y="1173" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">10</text>
+</g>
+<g><title>Norms → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="1134" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Norms → Norms: 13,097 unique declaration pairs</title>
+<rect x="1184" y="1134" width="67" height="67" fill="#386FAD" stroke="#46596B" stroke-width="1.8"/>
+<text x="1217.5" y="1173" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">13.1k</text>
+</g>
+<g><title>Norms → Other: 3,187 unique declaration pairs</title>
+<rect x="1251" y="1134" width="67" height="67" fill="#598DBE" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="1173" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">3.2k</text>
+</g>
+<g><title>Norms → Perturbation: 84 unique declaration pairs</title>
+<rect x="1318" y="1134" width="67" height="67" fill="#ABD1E5" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1351.5" y="1173" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">84</text>
+</g>
+<g><title>Norms → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="1134" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Norms → ProbabilityStatistics: 56 unique declaration pairs</title>
+<rect x="1452" y="1134" width="67" height="67" fill="#B1D5E8" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1485.5" y="1173" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">56</text>
+</g>
+<g><title>Norms → QR: 0 unique declaration pairs</title>
+<rect x="1519" y="1134" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Norms → Spectral: 709 unique declaration pairs</title>
+<rect x="1586" y="1134" width="67" height="67" fill="#7DADD0" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1619.5" y="1173" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">709</text>
+</g>
+<g><title>Norms → Summation: 4 unique declaration pairs</title>
+<rect x="1653" y="1134" width="67" height="67" fill="#DBECF6" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1686.5" y="1173" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">4</text>
+</g>
+<g><title>Norms → SymmetricIndefinite: 0 unique declaration pairs</title>
+<rect x="1720" y="1134" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Norms → TestMatrices: 78 unique declaration pairs</title>
+<rect x="1787" y="1134" width="67" height="67" fill="#ACD2E6" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1820.5" y="1173" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">78</text>
+</g>
+<g><title>Other → Arithmetic: 0 unique declaration pairs</title>
+<rect x="380" y="1201" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Other → Cholesky: 0 unique declaration pairs</title>
+<rect x="447" y="1201" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Other → DotProduct: 25 unique declaration pairs</title>
+<rect x="514" y="1201" width="67" height="67" fill="#BFDCEC" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="547.5" y="1240" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">25</text>
+</g>
+<g><title>Other → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="1201" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Other → FloatingPoint: 1,570 unique declaration pairs</title>
+<rect x="648" y="1201" width="67" height="67" fill="#6A9CC6" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="1240" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1.6k</text>
+</g>
+<g><title>Other → HighamSourceOther: 2 unique declaration pairs</title>
+<rect x="715" y="1201" width="67" height="67" fill="#E4F1F9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="1240" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">2</text>
+</g>
+<g><title>Other → LU: 1 unique declaration pairs</title>
+<rect x="782" y="1201" width="67" height="67" fill="#EBF4FB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="815.5" y="1240" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1</text>
+</g>
+<g><title>Other → LeastSquares: 0 unique declaration pairs</title>
+<rect x="849" y="1201" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Other → MatrixEquations: 0 unique declaration pairs</title>
+<rect x="916" y="1201" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Other → MatrixMultiplication: 9 unique declaration pairs</title>
+<rect x="983" y="1201" width="67" height="67" fill="#CFE5F2" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1016.5" y="1240" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">9</text>
+</g>
+<g><title>Other → MatrixPowers: 5 unique declaration pairs</title>
+<rect x="1050" y="1201" width="67" height="67" fill="#D8EAF5" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1083.5" y="1240" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">5</text>
+</g>
+<g><title>Other → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="1201" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Other → Norms: 135 unique declaration pairs</title>
+<rect x="1184" y="1201" width="67" height="67" fill="#A3CCE3" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1217.5" y="1240" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">135</text>
+</g>
+<g><title>Other → Other: 6,401 unique declaration pairs</title>
+<rect x="1251" y="1201" width="67" height="67" fill="#497FB5" stroke="#46596B" stroke-width="1.8"/>
+<text x="1284.5" y="1240" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">6.4k</text>
+</g>
+<g><title>Other → Perturbation: 5 unique declaration pairs</title>
+<rect x="1318" y="1201" width="67" height="67" fill="#D8EAF5" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1351.5" y="1240" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">5</text>
+</g>
+<g><title>Other → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="1201" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Other → ProbabilityStatistics: 16 unique declaration pairs</title>
+<rect x="1452" y="1201" width="67" height="67" fill="#C6E0EF" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1485.5" y="1240" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">16</text>
+</g>
+<g><title>Other → QR: 0 unique declaration pairs</title>
+<rect x="1519" y="1201" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Other → Spectral: 0 unique declaration pairs</title>
+<rect x="1586" y="1201" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Other → Summation: 1 unique declaration pairs</title>
+<rect x="1653" y="1201" width="67" height="67" fill="#EBF4FB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1686.5" y="1240" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1</text>
+</g>
+<g><title>Other → SymmetricIndefinite: 0 unique declaration pairs</title>
+<rect x="1720" y="1201" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Other → TestMatrices: 0 unique declaration pairs</title>
+<rect x="1787" y="1201" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Perturbation → Arithmetic: 7 unique declaration pairs</title>
+<rect x="380" y="1268" width="67" height="67" fill="#D3E7F3" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="413.5" y="1307" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">7</text>
+</g>
+<g><title>Perturbation → Cholesky: 0 unique declaration pairs</title>
+<rect x="447" y="1268" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Perturbation → DotProduct: 2 unique declaration pairs</title>
+<rect x="514" y="1268" width="67" height="67" fill="#E4F1F9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="547.5" y="1307" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">2</text>
+</g>
+<g><title>Perturbation → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="1268" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Perturbation → FloatingPoint: 462 unique declaration pairs</title>
+<rect x="648" y="1268" width="67" height="67" fill="#87B6D5" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="1307" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">462</text>
+</g>
+<g><title>Perturbation → HighamSourceOther: 409 unique declaration pairs</title>
+<rect x="715" y="1268" width="67" height="67" fill="#8AB8D7" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="1307" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">409</text>
+</g>
+<g><title>Perturbation → LU: 169 unique declaration pairs</title>
+<rect x="782" y="1268" width="67" height="67" fill="#9FCAE1" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="815.5" y="1307" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">169</text>
+</g>
+<g><title>Perturbation → LeastSquares: 18 unique declaration pairs</title>
+<rect x="849" y="1268" width="67" height="67" fill="#C4DFEE" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="882.5" y="1307" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">18</text>
+</g>
+<g><title>Perturbation → MatrixEquations: 1,654 unique declaration pairs</title>
+<rect x="916" y="1268" width="67" height="67" fill="#699BC6" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="949.5" y="1307" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1.7k</text>
+</g>
+<g><title>Perturbation → MatrixMultiplication: 0 unique declaration pairs</title>
+<rect x="983" y="1268" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Perturbation → MatrixPowers: 0 unique declaration pairs</title>
+<rect x="1050" y="1268" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Perturbation → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="1268" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Perturbation → Norms: 64 unique declaration pairs</title>
+<rect x="1184" y="1268" width="67" height="67" fill="#AFD3E7" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1217.5" y="1307" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">64</text>
+</g>
+<g><title>Perturbation → Other: 1,245 unique declaration pairs</title>
+<rect x="1251" y="1268" width="67" height="67" fill="#70A1C9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="1307" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1.2k</text>
+</g>
+<g><title>Perturbation → Perturbation: 1,026 unique declaration pairs</title>
+<rect x="1318" y="1268" width="67" height="67" fill="#74A5CC" stroke="#46596B" stroke-width="1.8"/>
+<text x="1351.5" y="1307" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1.0k</text>
+</g>
+<g><title>Perturbation → Polynomials: 60 unique declaration pairs</title>
+<rect x="1385" y="1268" width="67" height="67" fill="#B0D4E7" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1418.5" y="1307" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">60</text>
+</g>
+<g><title>Perturbation → ProbabilityStatistics: 59 unique declaration pairs</title>
+<rect x="1452" y="1268" width="67" height="67" fill="#B1D4E7" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1485.5" y="1307" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">59</text>
+</g>
+<g><title>Perturbation → QR: 19 unique declaration pairs</title>
+<rect x="1519" y="1268" width="67" height="67" fill="#C3DFEE" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1552.5" y="1307" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">19</text>
+</g>
+<g><title>Perturbation → Spectral: 412 unique declaration pairs</title>
+<rect x="1586" y="1268" width="67" height="67" fill="#8AB8D7" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1619.5" y="1307" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">412</text>
+</g>
+<g><title>Perturbation → Summation: 0 unique declaration pairs</title>
+<rect x="1653" y="1268" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Perturbation → SymmetricIndefinite: 0 unique declaration pairs</title>
+<rect x="1720" y="1268" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Perturbation → TestMatrices: 0 unique declaration pairs</title>
+<rect x="1787" y="1268" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Polynomials → Arithmetic: 2 unique declaration pairs</title>
+<rect x="380" y="1335" width="67" height="67" fill="#E4F1F9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="413.5" y="1374" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">2</text>
+</g>
+<g><title>Polynomials → Cholesky: 0 unique declaration pairs</title>
+<rect x="447" y="1335" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Polynomials → DotProduct: 0 unique declaration pairs</title>
+<rect x="514" y="1335" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Polynomials → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="1335" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Polynomials → FloatingPoint: 767 unique declaration pairs</title>
+<rect x="648" y="1335" width="67" height="67" fill="#7BABCF" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="1374" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">767</text>
+</g>
+<g><title>Polynomials → HighamSourceOther: 70 unique declaration pairs</title>
+<rect x="715" y="1335" width="67" height="67" fill="#AED3E6" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="1374" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">70</text>
+</g>
+<g><title>Polynomials → LU: 6 unique declaration pairs</title>
+<rect x="782" y="1335" width="67" height="67" fill="#D6E9F4" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="815.5" y="1374" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">6</text>
+</g>
+<g><title>Polynomials → LeastSquares: 0 unique declaration pairs</title>
+<rect x="849" y="1335" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Polynomials → MatrixEquations: 0 unique declaration pairs</title>
+<rect x="916" y="1335" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Polynomials → MatrixMultiplication: 12 unique declaration pairs</title>
+<rect x="983" y="1335" width="67" height="67" fill="#CBE3F0" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1016.5" y="1374" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">12</text>
+</g>
+<g><title>Polynomials → MatrixPowers: 0 unique declaration pairs</title>
+<rect x="1050" y="1335" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Polynomials → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="1335" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Polynomials → Norms: 98 unique declaration pairs</title>
+<rect x="1184" y="1335" width="67" height="67" fill="#A8CFE4" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1217.5" y="1374" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">98</text>
+</g>
+<g><title>Polynomials → Other: 170 unique declaration pairs</title>
+<rect x="1251" y="1335" width="67" height="67" fill="#9FCAE1" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="1374" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">170</text>
+</g>
+<g><title>Polynomials → Perturbation: 5 unique declaration pairs</title>
+<rect x="1318" y="1335" width="67" height="67" fill="#D8EAF5" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1351.5" y="1374" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">5</text>
+</g>
+<g><title>Polynomials → Polynomials: 5,260 unique declaration pairs</title>
+<rect x="1385" y="1335" width="67" height="67" fill="#4E83B8" stroke="#46596B" stroke-width="1.8"/>
+<text x="1418.5" y="1374" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">5.3k</text>
+</g>
+<g><title>Polynomials → ProbabilityStatistics: 0 unique declaration pairs</title>
+<rect x="1452" y="1335" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Polynomials → QR: 0 unique declaration pairs</title>
+<rect x="1519" y="1335" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Polynomials → Spectral: 8 unique declaration pairs</title>
+<rect x="1586" y="1335" width="67" height="67" fill="#D1E6F2" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1619.5" y="1374" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">8</text>
+</g>
+<g><title>Polynomials → Summation: 0 unique declaration pairs</title>
+<rect x="1653" y="1335" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Polynomials → SymmetricIndefinite: 0 unique declaration pairs</title>
+<rect x="1720" y="1335" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Polynomials → TestMatrices: 28 unique declaration pairs</title>
+<rect x="1787" y="1335" width="67" height="67" fill="#BDDBEB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1820.5" y="1374" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">28</text>
+</g>
+<g><title>ProbabilityStatistics → Arithmetic: 0 unique declaration pairs</title>
+<rect x="380" y="1402" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>ProbabilityStatistics → Cholesky: 0 unique declaration pairs</title>
+<rect x="447" y="1402" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>ProbabilityStatistics → DotProduct: 0 unique declaration pairs</title>
+<rect x="514" y="1402" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>ProbabilityStatistics → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="1402" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>ProbabilityStatistics → FloatingPoint: 207 unique declaration pairs</title>
+<rect x="648" y="1402" width="67" height="67" fill="#9AC7DF" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="1441" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">207</text>
+</g>
+<g><title>ProbabilityStatistics → HighamSourceOther: 39 unique declaration pairs</title>
+<rect x="715" y="1402" width="67" height="67" fill="#B8D8EA" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="1441" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">39</text>
+</g>
+<g><title>ProbabilityStatistics → LU: 0 unique declaration pairs</title>
+<rect x="782" y="1402" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>ProbabilityStatistics → LeastSquares: 3 unique declaration pairs</title>
+<rect x="849" y="1402" width="67" height="67" fill="#DFEEF7" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="882.5" y="1441" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">3</text>
+</g>
+<g><title>ProbabilityStatistics → MatrixEquations: 0 unique declaration pairs</title>
+<rect x="916" y="1402" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>ProbabilityStatistics → MatrixMultiplication: 0 unique declaration pairs</title>
+<rect x="983" y="1402" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>ProbabilityStatistics → MatrixPowers: 0 unique declaration pairs</title>
+<rect x="1050" y="1402" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>ProbabilityStatistics → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="1402" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>ProbabilityStatistics → Norms: 14 unique declaration pairs</title>
+<rect x="1184" y="1402" width="67" height="67" fill="#C8E1EF" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1217.5" y="1441" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">14</text>
+</g>
+<g><title>ProbabilityStatistics → Other: 181 unique declaration pairs</title>
+<rect x="1251" y="1402" width="67" height="67" fill="#9DC9E1" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="1441" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">181</text>
+</g>
+<g><title>ProbabilityStatistics → Perturbation: 0 unique declaration pairs</title>
+<rect x="1318" y="1402" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>ProbabilityStatistics → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="1402" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>ProbabilityStatistics → ProbabilityStatistics: 1,745 unique declaration pairs</title>
+<rect x="1452" y="1402" width="67" height="67" fill="#689AC5" stroke="#46596B" stroke-width="1.8"/>
+<text x="1485.5" y="1441" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1.7k</text>
+</g>
+<g><title>ProbabilityStatistics → QR: 60 unique declaration pairs</title>
+<rect x="1519" y="1402" width="67" height="67" fill="#B0D4E7" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1552.5" y="1441" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">60</text>
+</g>
+<g><title>ProbabilityStatistics → Spectral: 25 unique declaration pairs</title>
+<rect x="1586" y="1402" width="67" height="67" fill="#BFDCEC" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1619.5" y="1441" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">25</text>
+</g>
+<g><title>ProbabilityStatistics → Summation: 2 unique declaration pairs</title>
+<rect x="1653" y="1402" width="67" height="67" fill="#E4F1F9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1686.5" y="1441" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">2</text>
+</g>
+<g><title>ProbabilityStatistics → SymmetricIndefinite: 0 unique declaration pairs</title>
+<rect x="1720" y="1402" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>ProbabilityStatistics → TestMatrices: 161 unique declaration pairs</title>
+<rect x="1787" y="1402" width="67" height="67" fill="#A0CBE2" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1820.5" y="1441" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">161</text>
+</g>
+<g><title>QR → Arithmetic: 0 unique declaration pairs</title>
+<rect x="380" y="1469" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>QR → Cholesky: 0 unique declaration pairs</title>
+<rect x="447" y="1469" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>QR → DotProduct: 24 unique declaration pairs</title>
+<rect x="514" y="1469" width="67" height="67" fill="#C0DDEC" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="547.5" y="1508" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">24</text>
+</g>
+<g><title>QR → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="1469" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>QR → FloatingPoint: 2,043 unique declaration pairs</title>
+<rect x="648" y="1469" width="67" height="67" fill="#6497C3" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="1508" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">2.0k</text>
+</g>
+<g><title>QR → HighamSourceOther: 1 unique declaration pairs</title>
+<rect x="715" y="1469" width="67" height="67" fill="#EBF4FB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="1508" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1</text>
+</g>
+<g><title>QR → LU: 0 unique declaration pairs</title>
+<rect x="782" y="1469" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>QR → LeastSquares: 1,191 unique declaration pairs</title>
+<rect x="849" y="1469" width="67" height="67" fill="#71A2CA" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="882.5" y="1508" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1.2k</text>
+</g>
+<g><title>QR → MatrixEquations: 0 unique declaration pairs</title>
+<rect x="916" y="1469" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>QR → MatrixMultiplication: 0 unique declaration pairs</title>
+<rect x="983" y="1469" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>QR → MatrixPowers: 0 unique declaration pairs</title>
+<rect x="1050" y="1469" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>QR → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="1469" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>QR → Norms: 99 unique declaration pairs</title>
+<rect x="1184" y="1469" width="67" height="67" fill="#A8CFE4" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1217.5" y="1508" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">99</text>
+</g>
+<g><title>QR → Other: 4,174 unique declaration pairs</title>
+<rect x="1251" y="1469" width="67" height="67" fill="#5388BB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="1508" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">4.2k</text>
+</g>
+<g><title>QR → Perturbation: 21 unique declaration pairs</title>
+<rect x="1318" y="1469" width="67" height="67" fill="#C2DEED" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1351.5" y="1508" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">21</text>
+</g>
+<g><title>QR → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="1469" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>QR → ProbabilityStatistics: 0 unique declaration pairs</title>
+<rect x="1452" y="1469" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>QR → QR: 12,524 unique declaration pairs</title>
+<rect x="1519" y="1469" width="67" height="67" fill="#3970AD" stroke="#46596B" stroke-width="1.8"/>
+<text x="1552.5" y="1508" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">12.5k</text>
+</g>
+<g><title>QR → Spectral: 141 unique declaration pairs</title>
+<rect x="1586" y="1469" width="67" height="67" fill="#A2CCE2" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1619.5" y="1508" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">141</text>
+</g>
+<g><title>QR → Summation: 0 unique declaration pairs</title>
+<rect x="1653" y="1469" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>QR → SymmetricIndefinite: 0 unique declaration pairs</title>
+<rect x="1720" y="1469" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>QR → TestMatrices: 0 unique declaration pairs</title>
+<rect x="1787" y="1469" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Spectral → Arithmetic: 0 unique declaration pairs</title>
+<rect x="380" y="1536" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Spectral → Cholesky: 28 unique declaration pairs</title>
+<rect x="447" y="1536" width="67" height="67" fill="#BDDBEB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="480.5" y="1575" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">28</text>
+</g>
+<g><title>Spectral → DotProduct: 3 unique declaration pairs</title>
+<rect x="514" y="1536" width="67" height="67" fill="#DFEEF7" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="547.5" y="1575" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">3</text>
+</g>
+<g><title>Spectral → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="1536" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Spectral → FloatingPoint: 461 unique declaration pairs</title>
+<rect x="648" y="1536" width="67" height="67" fill="#87B6D5" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="1575" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">461</text>
+</g>
+<g><title>Spectral → HighamSourceOther: 239 unique declaration pairs</title>
+<rect x="715" y="1536" width="67" height="67" fill="#97C4DD" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="1575" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">239</text>
+</g>
+<g><title>Spectral → LU: 280 unique declaration pairs</title>
+<rect x="782" y="1536" width="67" height="67" fill="#93C0DB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="815.5" y="1575" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">280</text>
+</g>
+<g><title>Spectral → LeastSquares: 8 unique declaration pairs</title>
+<rect x="849" y="1536" width="67" height="67" fill="#D1E6F2" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="882.5" y="1575" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">8</text>
+</g>
+<g><title>Spectral → MatrixEquations: 173 unique declaration pairs</title>
+<rect x="916" y="1536" width="67" height="67" fill="#9ECAE1" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="949.5" y="1575" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">173</text>
+</g>
+<g><title>Spectral → MatrixMultiplication: 0 unique declaration pairs</title>
+<rect x="983" y="1536" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Spectral → MatrixPowers: 2 unique declaration pairs</title>
+<rect x="1050" y="1536" width="67" height="67" fill="#E4F1F9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1083.5" y="1575" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">2</text>
+</g>
+<g><title>Spectral → Nonlinear: 5 unique declaration pairs</title>
+<rect x="1117" y="1536" width="67" height="67" fill="#D8EAF5" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1150.5" y="1575" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">5</text>
+</g>
+<g><title>Spectral → Norms: 363 unique declaration pairs</title>
+<rect x="1184" y="1536" width="67" height="67" fill="#8DBBD8" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1217.5" y="1575" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">363</text>
+</g>
+<g><title>Spectral → Other: 1,187 unique declaration pairs</title>
+<rect x="1251" y="1536" width="67" height="67" fill="#71A2CA" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="1575" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1.2k</text>
+</g>
+<g><title>Spectral → Perturbation: 0 unique declaration pairs</title>
+<rect x="1318" y="1536" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Spectral → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="1536" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Spectral → ProbabilityStatistics: 23 unique declaration pairs</title>
+<rect x="1452" y="1536" width="67" height="67" fill="#C0DDED" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1485.5" y="1575" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">23</text>
+</g>
+<g><title>Spectral → QR: 0 unique declaration pairs</title>
+<rect x="1519" y="1536" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Spectral → Spectral: 4,030 unique declaration pairs</title>
+<rect x="1586" y="1536" width="67" height="67" fill="#5488BB" stroke="#46596B" stroke-width="1.8"/>
+<text x="1619.5" y="1575" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">4.0k</text>
+</g>
+<g><title>Spectral → Summation: 0 unique declaration pairs</title>
+<rect x="1653" y="1536" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Spectral → SymmetricIndefinite: 70 unique declaration pairs</title>
+<rect x="1720" y="1536" width="67" height="67" fill="#AED3E6" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1753.5" y="1575" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">70</text>
+</g>
+<g><title>Spectral → TestMatrices: 169 unique declaration pairs</title>
+<rect x="1787" y="1536" width="67" height="67" fill="#9FCAE1" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1820.5" y="1575" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">169</text>
+</g>
+<g><title>Summation → Arithmetic: 0 unique declaration pairs</title>
+<rect x="380" y="1603" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Summation → Cholesky: 40 unique declaration pairs</title>
+<rect x="447" y="1603" width="67" height="67" fill="#B7D8E9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="480.5" y="1642" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">40</text>
+</g>
+<g><title>Summation → DotProduct: 0 unique declaration pairs</title>
+<rect x="514" y="1603" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Summation → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="1603" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Summation → FloatingPoint: 3,997 unique declaration pairs</title>
+<rect x="648" y="1603" width="67" height="67" fill="#5488BB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="1642" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">4.0k</text>
+</g>
+<g><title>Summation → HighamSourceOther: 52 unique declaration pairs</title>
+<rect x="715" y="1603" width="67" height="67" fill="#B3D5E8" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="1642" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">52</text>
+</g>
+<g><title>Summation → LU: 2 unique declaration pairs</title>
+<rect x="782" y="1603" width="67" height="67" fill="#E4F1F9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="815.5" y="1642" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">2</text>
+</g>
+<g><title>Summation → LeastSquares: 0 unique declaration pairs</title>
+<rect x="849" y="1603" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Summation → MatrixEquations: 0 unique declaration pairs</title>
+<rect x="916" y="1603" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Summation → MatrixMultiplication: 0 unique declaration pairs</title>
+<rect x="983" y="1603" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Summation → MatrixPowers: 0 unique declaration pairs</title>
+<rect x="1050" y="1603" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Summation → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="1603" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Summation → Norms: 112 unique declaration pairs</title>
+<rect x="1184" y="1603" width="67" height="67" fill="#A6CEE4" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1217.5" y="1642" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">112</text>
+</g>
+<g><title>Summation → Other: 126 unique declaration pairs</title>
+<rect x="1251" y="1603" width="67" height="67" fill="#A4CDE3" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="1642" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">126</text>
+</g>
+<g><title>Summation → Perturbation: 6 unique declaration pairs</title>
+<rect x="1318" y="1603" width="67" height="67" fill="#D6E9F4" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1351.5" y="1642" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">6</text>
+</g>
+<g><title>Summation → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="1603" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Summation → ProbabilityStatistics: 8 unique declaration pairs</title>
+<rect x="1452" y="1603" width="67" height="67" fill="#D1E6F2" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1485.5" y="1642" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">8</text>
+</g>
+<g><title>Summation → QR: 0 unique declaration pairs</title>
+<rect x="1519" y="1603" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Summation → Spectral: 197 unique declaration pairs</title>
+<rect x="1586" y="1603" width="67" height="67" fill="#9BC8E0" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1619.5" y="1642" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">197</text>
+</g>
+<g><title>Summation → Summation: 11,850 unique declaration pairs</title>
+<rect x="1653" y="1603" width="67" height="67" fill="#3A72AE" stroke="#46596B" stroke-width="1.8"/>
+<text x="1686.5" y="1642" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">11.8k</text>
+</g>
+<g><title>Summation → SymmetricIndefinite: 0 unique declaration pairs</title>
+<rect x="1720" y="1603" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>Summation → TestMatrices: 10 unique declaration pairs</title>
+<rect x="1787" y="1603" width="67" height="67" fill="#CEE4F1" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1820.5" y="1642" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">10</text>
+</g>
+<g><title>SymmetricIndefinite → Arithmetic: 1 unique declaration pairs</title>
+<rect x="380" y="1670" width="67" height="67" fill="#EBF4FB" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="413.5" y="1709" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">1</text>
+</g>
+<g><title>SymmetricIndefinite → Cholesky: 0 unique declaration pairs</title>
+<rect x="447" y="1670" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>SymmetricIndefinite → DotProduct: 60 unique declaration pairs</title>
+<rect x="514" y="1670" width="67" height="67" fill="#B0D4E7" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="547.5" y="1709" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">60</text>
+</g>
+<g><title>SymmetricIndefinite → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="1670" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>SymmetricIndefinite → FloatingPoint: 8,703 unique declaration pairs</title>
+<rect x="648" y="1670" width="67" height="67" fill="#4278B2" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="1709" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">8.7k</text>
+</g>
+<g><title>SymmetricIndefinite → HighamSourceOther: 3,127 unique declaration pairs</title>
+<rect x="715" y="1670" width="67" height="67" fill="#5A8EBE" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="1709" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">3.1k</text>
+</g>
+<g><title>SymmetricIndefinite → LU: 2,114 unique declaration pairs</title>
+<rect x="782" y="1670" width="67" height="67" fill="#6396C3" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="815.5" y="1709" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">2.1k</text>
+</g>
+<g><title>SymmetricIndefinite → LeastSquares: 0 unique declaration pairs</title>
+<rect x="849" y="1670" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>SymmetricIndefinite → MatrixEquations: 4 unique declaration pairs</title>
+<rect x="916" y="1670" width="67" height="67" fill="#DBECF6" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="949.5" y="1709" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">4</text>
+</g>
+<g><title>SymmetricIndefinite → MatrixMultiplication: 0 unique declaration pairs</title>
+<rect x="983" y="1670" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>SymmetricIndefinite → MatrixPowers: 0 unique declaration pairs</title>
+<rect x="1050" y="1670" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>SymmetricIndefinite → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="1670" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>SymmetricIndefinite → Norms: 155 unique declaration pairs</title>
+<rect x="1184" y="1670" width="67" height="67" fill="#A0CBE2" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1217.5" y="1709" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">155</text>
+</g>
+<g><title>SymmetricIndefinite → Other: 5,032 unique declaration pairs</title>
+<rect x="1251" y="1670" width="67" height="67" fill="#4F84B8" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="1709" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">5.0k</text>
+</g>
+<g><title>SymmetricIndefinite → Perturbation: 14 unique declaration pairs</title>
+<rect x="1318" y="1670" width="67" height="67" fill="#C8E1EF" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1351.5" y="1709" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">14</text>
+</g>
+<g><title>SymmetricIndefinite → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="1670" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>SymmetricIndefinite → ProbabilityStatistics: 0 unique declaration pairs</title>
+<rect x="1452" y="1670" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>SymmetricIndefinite → QR: 0 unique declaration pairs</title>
+<rect x="1519" y="1670" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>SymmetricIndefinite → Spectral: 6 unique declaration pairs</title>
+<rect x="1586" y="1670" width="67" height="67" fill="#D6E9F4" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1619.5" y="1709" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">6</text>
+</g>
+<g><title>SymmetricIndefinite → Summation: 10 unique declaration pairs</title>
+<rect x="1653" y="1670" width="67" height="67" fill="#CEE4F1" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1686.5" y="1709" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">10</text>
+</g>
+<g><title>SymmetricIndefinite → SymmetricIndefinite: 26,322 unique declaration pairs</title>
+<rect x="1720" y="1670" width="67" height="67" fill="#2761A4" stroke="#46596B" stroke-width="1.8"/>
+<text x="1753.5" y="1709" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">26.3k</text>
+</g>
+<g><title>SymmetricIndefinite → TestMatrices: 0 unique declaration pairs</title>
+<rect x="1787" y="1670" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>TestMatrices → Arithmetic: 0 unique declaration pairs</title>
+<rect x="380" y="1737" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>TestMatrices → Cholesky: 16 unique declaration pairs</title>
+<rect x="447" y="1737" width="67" height="67" fill="#C6E0EF" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="480.5" y="1776" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">16</text>
+</g>
+<g><title>TestMatrices → DotProduct: 0 unique declaration pairs</title>
+<rect x="514" y="1737" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>TestMatrices → FFT: 0 unique declaration pairs</title>
+<rect x="581" y="1737" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>TestMatrices → FloatingPoint: 123 unique declaration pairs</title>
+<rect x="648" y="1737" width="67" height="67" fill="#A4CDE3" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="681.5" y="1776" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">123</text>
+</g>
+<g><title>TestMatrices → HighamSourceOther: 459 unique declaration pairs</title>
+<rect x="715" y="1737" width="67" height="67" fill="#87B6D5" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="748.5" y="1776" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">459</text>
+</g>
+<g><title>TestMatrices → LU: 48 unique declaration pairs</title>
+<rect x="782" y="1737" width="67" height="67" fill="#B4D6E8" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="815.5" y="1776" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">48</text>
+</g>
+<g><title>TestMatrices → LeastSquares: 0 unique declaration pairs</title>
+<rect x="849" y="1737" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>TestMatrices → MatrixEquations: 0 unique declaration pairs</title>
+<rect x="916" y="1737" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>TestMatrices → MatrixMultiplication: 0 unique declaration pairs</title>
+<rect x="983" y="1737" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>TestMatrices → MatrixPowers: 0 unique declaration pairs</title>
+<rect x="1050" y="1737" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>TestMatrices → Nonlinear: 0 unique declaration pairs</title>
+<rect x="1117" y="1737" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>TestMatrices → Norms: 21 unique declaration pairs</title>
+<rect x="1184" y="1737" width="67" height="67" fill="#C2DEED" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1217.5" y="1776" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">21</text>
+</g>
+<g><title>TestMatrices → Other: 438 unique declaration pairs</title>
+<rect x="1251" y="1737" width="67" height="67" fill="#88B7D6" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1284.5" y="1776" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">438</text>
+</g>
+<g><title>TestMatrices → Perturbation: 0 unique declaration pairs</title>
+<rect x="1318" y="1737" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>TestMatrices → Polynomials: 0 unique declaration pairs</title>
+<rect x="1385" y="1737" width="67" height="67" fill="#FFFFFF" stroke="#D6DCE2" stroke-width="0.75"/>
+</g>
+<g><title>TestMatrices → ProbabilityStatistics: 171 unique declaration pairs</title>
+<rect x="1452" y="1737" width="67" height="67" fill="#9ECAE1" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1485.5" y="1776" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">171</text>
+</g>
+<g><title>TestMatrices → QR: 99 unique declaration pairs</title>
+<rect x="1519" y="1737" width="67" height="67" fill="#A8CFE4" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1552.5" y="1776" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">99</text>
+</g>
+<g><title>TestMatrices → Spectral: 9 unique declaration pairs</title>
+<rect x="1586" y="1737" width="67" height="67" fill="#CFE5F2" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1619.5" y="1776" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">9</text>
+</g>
+<g><title>TestMatrices → Summation: 13 unique declaration pairs</title>
+<rect x="1653" y="1737" width="67" height="67" fill="#CAE2F0" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1686.5" y="1776" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">13</text>
+</g>
+<g><title>TestMatrices → SymmetricIndefinite: 47 unique declaration pairs</title>
+<rect x="1720" y="1737" width="67" height="67" fill="#B4D6E9" stroke="#D6DCE2" stroke-width="0.75"/>
+<text x="1753.5" y="1776" text-anchor="middle" font-size="10" font-weight="650" fill="#172433">47</text>
+</g>
+<g><title>TestMatrices → TestMatrices: 2,534 unique declaration pairs</title>
+<rect x="1787" y="1737" width="67" height="67" fill="#5F92C1" stroke="#46596B" stroke-width="1.8"/>
+<text x="1820.5" y="1776" text-anchor="middle" font-size="10" font-weight="650" fill="#FFFFFF">2.5k</text>
+</g>
+<rect x="380" y="1876" width="500" height="24" fill="url(#heat)" stroke="#9AA5B1"/>
+<text x="380" y="1928" text-anchor="start" font-size="13" font-weight="400" fill="#536273">0</text>
+<text x="630" y="1928" text-anchor="middle" font-size="13" font-weight="400" fill="#536273">log-scaled edge count</text>
+<text x="880" y="1928" text-anchor="end" font-size="13" font-weight="400" fill="#536273">max 98,745</text>
+<text x="1854" y="1884" text-anchor="end" font-size="14" font-weight="400" fill="#536273">Exact counts and type/body splits:</text>
+<text x="1854" y="1910" text-anchor="end" font-size="14" font-weight="400" fill="#536273">current_graph/metrics/domain_dependency_matrix.csv</text>
+<text x="1854" y="1959" text-anchor="end" font-size="13" font-weight="400" fill="#66717E">Audited commit 045daf28056a6e4358d5de7c22c7a9d7acc2e80e</text>
+</g>
+</svg>

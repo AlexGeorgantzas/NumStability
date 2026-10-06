@@ -1,0 +1,1 @@
+name,module,kind,is_internal,is_private,is_reserved_name,has_body,is_unsafe,is_partial,is_instance,is_structure,is_class,reducibility_kind,has_docstring,range_start_line,range_start_column,range_end_line,range_end_column,selection_start_line,selection_start_column,selection_end_line,selection_end_column

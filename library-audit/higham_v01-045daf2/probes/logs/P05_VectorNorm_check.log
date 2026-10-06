@@ -1,0 +1,2 @@
+NumStability.complexVecLpNorm_two_ofLp_eq {n : ℕ} (x : EuclideanSpace ℂ (Fin n)) :
+  NumStability.complexVecLpNorm (ENNReal.ofReal 2) x.ofLp = ‖x‖

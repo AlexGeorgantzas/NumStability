@@ -1,0 +1,164 @@
+{
+  "commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+  "evidence_dependencies": {
+    "compatibility_candidates": "<library-repo>/tmp/library_audit/higham_v01-045daf2/static_architecture/compatibility_shim_candidates.csv",
+    "compatibility_candidates_sha256": "4a4f2ff426f0bbb9f84b48352fba7b305fef20fbd25f8beba05815249212d036",
+    "compiled_declaration_metadata": "<library-repo>/tmp/library_audit/higham_v01-045daf2/raw/declarations.csv.gz",
+    "compiled_declaration_metadata_sha256": "235238fd68eb6ac31bdf30fe344e1d60755377d49ba5701efbd52f53e298f03f",
+    "compiled_direct_dependencies": "<library-repo>/tmp/library_audit/higham_v01-045daf2/raw/direct_dependencies.csv.gz",
+    "compiled_direct_dependencies_sha256": "cf64609f72a23ad4df78a6ac30f04db78449bcb4d5b0b6ba9721f820d108c240",
+    "entrypoint_metrics": "<library-repo>/tmp/library_audit/higham_v01-045daf2/static_architecture/entry_points.csv",
+    "entrypoint_metrics_sha256": "f1cf9bbc3f7d99962c6872ca200bf04ded09ce028ba6433e3b1c7836f1e4daf5",
+    "source_import_graph": "<library-repo>/tmp/library_audit/higham_v01-045daf2/static_architecture/source_imports.csv",
+    "source_import_graph_sha256": "56f2aa80f05aef8acc1fc137df0875324189bfe51810536e04e4dfc6b7b409c3"
+  },
+  "generated_utc": "2026-09-03T08:57:44.893317+00:00",
+  "headline_metrics": {
+    "client_theorem_success": {
+      "denominator": 15,
+      "formula": "passing fresh-output client theorem compilations / predeclared probes",
+      "numerator": 15,
+      "percentage": 100.0,
+      "raw_artifact": "<library-repo>/tmp/library_audit/higham_v01-045daf2/probes/results.csv",
+      "raw_column": "client_status"
+    },
+    "compiled_environment_public": {
+      "denominator": 15,
+      "formula": "selected environment declarations with is_internal=false and is_private=false / predeclared declarations",
+      "numerator": 15,
+      "percentage": 100.0,
+      "raw_artifact": "<library-repo>/tmp/library_audit/higham_v01-045daf2/probes/selected_declaration_environment_metadata.csv",
+      "raw_columns": [
+        "is_internal",
+        "is_private"
+      ]
+    },
+    "direct_project_type_edges_outside_source_layer": {
+      "denominator": 49,
+      "formula": "direct project type-dependency rows whose target module is outside NumStability.Source / all selected direct project type-dependency rows",
+      "numerator": 49,
+      "percentage": 100.0,
+      "raw_artifact": "<library-repo>/tmp/library_audit/higham_v01-045daf2/probes/selected_api_direct_project_type_dependencies.csv",
+      "raw_column": "target_is_source_layer"
+    },
+    "direct_project_type_edges_outside_static_compatibility_modules": {
+      "denominator": 49,
+      "formula": "direct project type-dependency rows whose target module is not a static compatibility candidate / all selected direct project type-dependency rows",
+      "numerator": 49,
+      "percentage": 100.0,
+      "raw_artifact": "<library-repo>/tmp/library_audit/higham_v01-045daf2/probes/selected_api_direct_project_type_dependencies.csv",
+      "raw_column": "target_module_is_static_compatibility_candidate"
+    },
+    "direct_project_type_edges_to_public_targets": {
+      "denominator": 49,
+      "formula": "direct project type-dependency rows whose target has is_internal=false and is_private=false / all selected direct project type-dependency rows",
+      "numerator": 49,
+      "percentage": 100.0,
+      "raw_artifact": "<library-repo>/tmp/library_audit/higham_v01-045daf2/probes/selected_api_direct_project_type_dependencies.csv",
+      "raw_columns": [
+        "target_is_internal",
+        "target_is_private"
+      ]
+    },
+    "exact_source_line_validation": {
+      "denominator": 15,
+      "formula": "manifest source lines containing the exact declaration basename / predeclared declarations",
+      "numerator": 15,
+      "percentage": 100.0,
+      "raw_artifact": "<library-repo>/tmp/library_audit/higham_v01-045daf2/probes/results.csv",
+      "raw_column": "source_line_validated"
+    },
+    "outside_static_compatibility_candidates": {
+      "denominator": 15,
+      "formula": "owning imports absent from static compatibility-candidate module set / predeclared imports",
+      "numerator": 15,
+      "percentage": 100.0,
+      "raw_artifact": "<library-repo>/tmp/library_audit/higham_v01-045daf2/probes/results.csv",
+      "raw_column": "compatibility_candidate_module"
+    },
+    "selected_declarations_with_adjacent_docstrings": {
+      "denominator": 15,
+      "formula": "selected declaration introducers with a conservatively detected immediately preceding /-- docstring / predeclared declarations",
+      "numerator": 14,
+      "percentage": 93.33333333333333,
+      "raw_artifact": "<library-repo>/tmp/library_audit/higham_v01-045daf2/probes/results.csv",
+      "raw_column": "has_adjacent_source_docstring"
+    },
+    "selected_declarations_with_bodies": {
+      "denominator": 15,
+      "formula": "selected environment declarations with has_body=true / predeclared declarations",
+      "numerator": 15,
+      "percentage": 100.0,
+      "raw_artifact": "<library-repo>/tmp/library_audit/higham_v01-045daf2/probes/selected_declaration_environment_metadata.csv",
+      "raw_column": "has_body"
+    },
+    "selected_type_surfaces_without_private_internal_source_or_compat_targets": {
+      "denominator": 15,
+      "formula": "selected declaration types with zero direct project targets that are private, internal, Source-layer, or static compatibility candidates / predeclared declarations",
+      "numerator": 15,
+      "percentage": 100.0,
+      "raw_artifact": "<library-repo>/tmp/library_audit/higham_v01-045daf2/probes/results.csv",
+      "raw_columns": [
+        "direct_private_or_internal_type_dependency_count",
+        "direct_source_layer_type_dependency_count",
+        "direct_static_compatibility_type_dependency_count"
+      ]
+    },
+    "source_free_narrow_import_closure": {
+      "denominator": 15,
+      "formula": "probe imports whose static transitive source-import closure contains zero NumStability.Source modules / predeclared imports",
+      "numerator": 15,
+      "percentage": 100.0,
+      "raw_artifact": "<library-repo>/tmp/library_audit/higham_v01-045daf2/probes/narrow_import_closure.csv",
+      "raw_column": "reachable_source_modules"
+    },
+    "visibility_success": {
+      "denominator": 15,
+      "formula": "passing independent #check compilations / predeclared probes",
+      "numerator": 15,
+      "percentage": 100.0,
+      "raw_artifact": "<library-repo>/tmp/library_audit/higham_v01-045daf2/probes/results.csv",
+      "raw_column": "check_status"
+    }
+  },
+  "limitations": [
+    "The stratified sample is not random and does not estimate library-wide public API success.",
+    "A successful #check proves visibility only.",
+    "A successful client theorem proves usability only for that exact import, statement, assumptions, and Lean environment.",
+    "Static source-import closure is not an elaborated logical dependency or declaration-visibility graph.",
+    "The client examples mostly forward a declared theorem; they test importability, name resolution, parameter elaboration, and stated assumptions, not ergonomic proof discovery from scratch."
+  ],
+  "mode": "audit_read_only",
+  "sample": {
+    "count": 15,
+    "declaration_universe": "15 exact source-inspected declarations outside Source/Higham, private/internal, generated, and static compatibility-candidate modules",
+    "manifest": "<library-repo>/tmp/library_audit/higham_v01-045daf2/probes/PREDECLARED_SAMPLE.csv",
+    "manifest_sha256": "f7196f6b5813bc4d93c4196195db882a7efc73d2c65e2704da631e30797d623c",
+    "selection": "predeclared stratified canonical public sample"
+  },
+  "schema_version": "numstability-public-api-probes/v1",
+  "timing": {
+    "check_seconds": {
+      "max": 7.43,
+      "median_nearest_rank": 4.35,
+      "min": 3.46,
+      "p95_nearest_rank": 7.43,
+      "sum": 67.81
+    },
+    "classification": "fresh probe outputs; cached imported dependencies; not clean library compilation",
+    "client_seconds": {
+      "max": 6.01,
+      "median_nearest_rank": 4.32,
+      "min": 3.4,
+      "p95_nearest_rank": 6.01,
+      "sum": 66.09
+    },
+    "percentile_definition": "nearest-rank: sorted[ceil(p*n)-1]"
+  },
+  "validation": {
+    "interpretation": "The harness distinguishes visibility from an ill-typed external theorem.",
+    "known_visible_bad_client_exit": 1,
+    "known_visible_check_exit": 0,
+    "raw_artifact": "<library-repo>/tmp/library_audit/higham_v01-045daf2/probes/VALIDATION_RESULTS.csv"
+  }
+}

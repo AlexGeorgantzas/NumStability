@@ -1,0 +1,3 @@
+NumStability.forward_error_from_residual (n : ℕ) (A A_inv : Fin n → Fin n → ℝ) (x y b : Fin n → ℝ)
+  (hInv : NumStability.IsLeftInverse n A A_inv) (hAx : ∀ (i : Fin n), ∑ j, A i j * x j = b i) (i : Fin n) :
+  |x i - y i| ≤ ∑ j, |A_inv i j| * |NumStability.residualVec n A y b j|

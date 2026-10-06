@@ -1,0 +1,46 @@
+{
+  "connected_component_coverage": {
+    "largest_weak_component_declarations": 69427,
+    "largest_weak_component_percent": 89.8778,
+    "public_declarations_in_largest_weak_component": 56143,
+    "public_largest_weak_component_percent": 96.5984
+  },
+  "counts": {
+    "apparent_leaves": 26714,
+    "cross_module_declaration_edges": 268231,
+    "declarations": 77246,
+    "declarations_used_by_project": 50532,
+    "declarations_used_outside_module": 13549,
+    "direct_project_import_edges": 16512,
+    "isolated_declarations": 5450,
+    "project_direct_edges": 458414,
+    "project_modules_in_compiled_graph": 2130,
+    "project_modules_with_declarations": 1649,
+    "public_apparent_leaves": 19108,
+    "public_declarations": 58120,
+    "public_declarations_used_by_project": 39012,
+    "public_declarations_used_outside_module": 12966,
+    "public_isolated_declarations": 170,
+    "strong_components": 71747,
+    "weak_components": 5592
+  },
+  "edge_direction": "A -> B means declaration A directly depends on declaration B",
+  "limitations": [
+    "No incoming project edge means unused by declarations in this build, not necessarily redundant or unsuitable as a public endpoint.",
+    "The logical declaration graph does not record syntax, macro, tactic, attribute, or other elaboration-only dependencies.",
+    "Generated, internal, and private declarations are retained and separately labelled.",
+    "Duplicate or near-duplicate semantics require a separate statement-normalization analysis and human review.",
+    "Transitive counts are exact for NumStability declarations reachable through the exported direct project graph; external transitive closure is not materialized."
+  ],
+  "module_import_vs_declaration_use": {
+    "declaration_module_pairs_without_direct_import": 2432,
+    "direct_imports_without_direct_declaration_use": 10179
+  },
+  "schema_version": 1,
+  "usage_rates": {
+    "declarations_used_outside_their_module_percent": 17.5401,
+    "declarations_with_any_incoming_project_reference_percent": 65.417,
+    "public_declarations_used_outside_their_module_percent": 22.309,
+    "public_declarations_with_any_incoming_project_reference_percent": 67.1232
+  }
+}

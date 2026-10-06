@@ -1,0 +1,7 @@
+schema_version=numstability-reuse-leaders/1.0.0
+command=python3 current_graph/build_reuse_leaders_by_universe.py
+toy_cases=3/3 PASS
+declarations=77246
+legacy_rows_reproduced=500
+output_rows=3200
+all_validations=PASS

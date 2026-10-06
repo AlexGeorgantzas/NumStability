@@ -1,0 +1,21 @@
+{
+  "adapter_sha256": "b56c1340f716c2851c489b45372d234312a3fbb3ab2e549ef38791c734ca5380",
+  "definitions": {
+    "cross_module_incoming_count": "count of unique incoming project declaration pairs whose source_module differs from target_module",
+    "incoming_project_reference_count": "direct_project_consumer_count",
+    "is_apparent_leaf": "no_incoming_project_edge",
+    "is_project_foundational": "no_outgoing_project_edge",
+    "is_project_isolated": "isolated_in_project_graph",
+    "is_used_outside_module": "used_by_different_module"
+  },
+  "edges_input": "current_graph/metrics/direct_project_dependencies.csv.gz",
+  "edges_input_sha256": "32a7518b532d6e1567f8eee9665e2045908650869eb52130b02491f96a81eee8",
+  "limitation": "Compatibility view for the bundled priority-review script; it does not use recovered SCC or transitive fields.",
+  "metrics_input": "current_graph/metrics/declaration_metrics.csv.gz",
+  "metrics_input_sha256": "eda468932d7e4275eef1f500a6e70fdc257785867da411d7130f5b4bbf23bb33",
+  "output": "current_graph/priority_review_metrics_compat.csv",
+  "output_sha256": "b940d4de91303dfd4f022f129de85f1cf6ed9013d83e4d64361df7a7817aaad9",
+  "rows": 77246,
+  "schema_version": "numstability-priority-review-metrics-adapter/1.0.0",
+  "source_commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e"
+}

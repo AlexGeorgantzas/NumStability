@@ -1,0 +1,22 @@
+timestamp_utc=2026-09-03T08:16:19Z
+timestamp_local=2026-09-03T11:16:19+0300
+045daf28056a6e4358d5de7c22c7a9d7acc2e80e
+## HEAD (no branch)
+drwxr-xr-x@ 3 georgiosalexandrosgeorgantzas  staff   96 Sep  3 11:16 <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake
+lrwxr-xr-x@ 1 georgiosalexandrosgeorgantzas  staff  120 Sep  3 11:16 <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages -> <cache-home>/lean-fp-analysis/lake-packages/leanprover-lean4-v4.29.0-rc3-54d24c7bebd8e87d
+packages_symlink_target=<cache-home>/lean-fp-analysis/lake-packages/leanprover-lean4-v4.29.0-rc3-54d24c7bebd8e87d
+root_build_exists=no
+manifest_mathlib_rev=e8ea1afc32790ce1d4e1a4e45cc412ba9388716b
+mathlib=e8ea1afc32790ce1d4e1a4e45cc412ba9388716b
+plausible=2b93f2523263a6df8a8fbbe3dd28b7f028087480
+LeanSearchClient=c5d5b8fe6e5158def25cd28eb94e4141ad97c843
+importGraph=ea1e51a85f6bd53b6a84239b00593eebd03d522b
+proofwidgets=212dc300449e436298804f09b264f624667106f8
+aesop=6f8999a4e31701d2c905262d3788a8c0d21b3f1f
+Qq=5bb0ac23f6e6c4c3ba1b084f2d65cb1bd2a9cf7a
+batteries=ed250d06b33e67aa5dc5f2cc349a5a35e8b6b390
+Cli=0c688ceba0d380f6e56f977009fc2bb2322af5a3
+Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s5   228Gi   197Gi   7.1Gi    97%    2.3M   74M    3%   /System/Volumes/Data
+Filesystem   1024-blocks      Used Available Capacity iused    ifree %iused  Mounted on
+/dev/disk3s5   239362496 206073312   7421972    97% 2309682 74219720    3%   /System/Volumes/Data

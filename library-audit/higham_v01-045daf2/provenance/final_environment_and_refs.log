@@ -1,0 +1,428 @@
+captured_utc=2026-09-03T08:19:42Z
+captured_local=2026-09-03T11:19:42+0300 EEST
+etc_localtime=/var/db/timezone/zoneinfo/Europe/Athens
+git_refs_begin
+isolated_head=045daf28056a6e4358d5de7c22c7a9d7acc2e80e
+isolated_symbolic_ref=DETACHED
+local_higham_v01=045daf28056a6e4358d5de7c22c7a9d7acc2e80e
+origin_higham_v01=045daf28056a6e4358d5de7c22c7a9d7acc2e80e
+local_remote_agree=yes
+commit=045daf28056a6e4358d5de7c22c7a9d7acc2e80e
+commit_author_date=2026-08-28T17:26:56+03:00
+commit_committer_date=2026-08-28T17:26:56+03:00
+commit_subject=Fix final NumStability build failures
+## HEAD (no branch)
+git_refs_end
+versions_begin
+Lake version 5.0.0-src+5d86aa4 (Lean version 4.29.0-rc3)
+Lean (version 4.29.0-rc3, arm64-apple-darwin24.6.0, commit 5d86aa4032284a5242470e95fbe25f1ff506763d, Release)
+Lean (version 4.29.0-rc3, arm64-apple-darwin24.6.0, commit 5d86aa4032284a5242470e95fbe25f1ff506763d, Release)
+elan 4.2.0 (861dbdae2 2026-02-25)
+lean_toolchain=leanprover/lean4:v4.29.0-rc3
+mathlib_head=e8ea1afc32790ce1d4e1a4e45cc412ba9388716b
+mathlib_describe=v4.29.0-rc3-80-ge8ea1afc32
+mathlib_commit_date=2026-03-03T09:28:55+00:00
+mathlib_subject=chore: rename theorems to comply with mathlib standards (#36026)
+versions_end
+platform_begin
+Darwin Georgioss-MacBook-Air-2.local 25.5.0 Darwin Kernel Version 25.5.0: Tue Jun  9 22:26:46 PDT 2026; root:xnu-12377.121.10~1/RELEASE_ARM64_T8103 arm64
+ProductName:		macOS
+ProductVersion:		26.5.2
+BuildVersion:		25F84
+architecture=arm64
+logical_cpu=8
+physical_cpu=8
+memory_bytes=17179869184
+platform_end
+aggregate_imports_begin
+module_file=NumStability.lean
+import NumStability.All
+module_file=NumStability/All.lean
+import NumStability.Algorithms
+import NumStability.Analysis
+import NumStability.FloatingPoint
+import NumStability.Source
+module_file=NumStability/Core.lean
+import NumStability.Analysis.Error.Measures.All
+import NumStability.Analysis.FirstOrderFramework
+import NumStability.Analysis.FloatingPointArithmetic.ErrorModels.All
+import NumStability.Analysis.Rounding
+import NumStability.Analysis.Stability
+import NumStability.FloatingPoint.Model
+module_file=NumStability/FloatingPoint.lean
+import NumStability.FloatingPoint.FusedMultiplyAdd.All
+import NumStability.FloatingPoint.IEEE
+import NumStability.FloatingPoint.Model
+import NumStability.FloatingPoint.OperationLaws
+module_file=NumStability/Analysis.lean
+import NumStability.Algorithms.LinearSystems.CramersRule.Core
+import NumStability.Algorithms.MatrixEquations.Sylvester.BackwardError.Specification
+import NumStability.Algorithms.MatrixEquations.Sylvester.Conditioning.FirstOrder
+import NumStability.Algorithms.MatrixEquations.Sylvester.Conditioning.SingularValue
+import NumStability.Algorithms.MatrixEquations.Sylvester.Conditioning.StructuredLyapunov
+import NumStability.Algorithms.MatrixEquations.Sylvester.Conditioning.StructuredSylvester
+import NumStability.Algorithms.MatrixEquations.Sylvester.Equation.Basic
+import NumStability.Algorithms.MatrixEquations.Sylvester.Equation.Diagonal
+import NumStability.Algorithms.MatrixEquations.Sylvester.Equation.Lyapunov
+import NumStability.Algorithms.MatrixEquations.Sylvester.Perturbation.Basic
+import NumStability.Analysis.AlternativeNumberSystems
+import NumStability.Analysis.Approximation.SineTaylor.OddDegreeFiveError.Theorems
+import NumStability.Analysis.Asymptotics
+import NumStability.Analysis.BeneficialRounding
+import NumStability.Analysis.BrentBaseOptimality
+import NumStability.Analysis.Chopping
+import NumStability.Analysis.ComplexArithmetic
+import NumStability.Analysis.ComplexSqrt
+import NumStability.Analysis.ConditionEstimatorLowerBound
+import NumStability.Analysis.Conditioning
+import NumStability.Analysis.CStarMatrices
+import NumStability.Analysis.Equidistribution
+import NumStability.Analysis.Error.MatrixProducts
+import NumStability.Analysis.Error.Measures.All
+import NumStability.Analysis.Error.RoundingProducts.All
+import NumStability.Analysis.Error.RoundingProducts.Core
+import NumStability.Analysis.FiniteProbability
+import NumStability.Analysis.FirstOrder
+import NumStability.Analysis.FirstOrderFramework
+import NumStability.Analysis.FloatingPointArithmetic.DoubleRounding.All
+import NumStability.Analysis.FloatingPointArithmetic.ErrorModels.All
+import NumStability.Analysis.FloatingPointArithmetic.Format
+import NumStability.Analysis.FloatingPointArithmetic.IeeeSpecialValueOperations.Results
+import NumStability.Analysis.FloatingPointArithmetic.MidpointRounding.All
+import NumStability.Analysis.FloatingPointArithmetic.MidpointRounding.DecimalTieExamples
+import NumStability.Analysis.FloatingPointArithmetic.NearestRoundingError
+import NumStability.Analysis.FloatingPointArithmetic.TrigonometricCancellation.All
+import NumStability.Analysis.FloatingPointArithmetic.TrigonometricCancellation.Core
+import NumStability.Analysis.ForwardError
+import NumStability.Analysis.FunctionalCalculus
+import NumStability.Analysis.Heron
+import NumStability.Analysis.LeadingDigits
+import NumStability.Analysis.LinearOperators
+import NumStability.Analysis.LinearOperators.MatrixPowers.Semiconvergence.All
+import NumStability.Analysis.MatrixAlgebra
+import NumStability.Analysis.MatrixEquations.SylvesterExistence
+import NumStability.Analysis.MatrixNorms
+import NumStability.Analysis.MatrixSpectral
+import NumStability.Analysis.Monotonicity
+import NumStability.Analysis.Nonassociativity
+import NumStability.Analysis.OperatorNorms
+import NumStability.Analysis.Perturbation
+import NumStability.Analysis.PerturbationTheory
+import NumStability.Analysis.Polynomials
+import NumStability.Analysis.Probability
+import NumStability.Analysis.Probability.Haar.NormalizedOrthogonalMatrixLaw
+import NumStability.Analysis.ProblemDependentStability.All
+import NumStability.Analysis.ProblemDependentStability.HessenbergDeterminant
+import NumStability.Analysis.Quadratic
+import NumStability.Analysis.RelativePrecision
+import NumStability.Analysis.Rounding
+import NumStability.Analysis.SemiconvergentSpectral
+import NumStability.Analysis.SingularValues
+import NumStability.Analysis.Stability
+import NumStability.Analysis.StatisticalRounding
+import NumStability.Analysis.Statistics.SampleVariance.All
+import NumStability.Analysis.Statistics.SampleVariance.RoundingErrorBounds.Theorems
+import NumStability.Analysis.SubtractionFold
+import NumStability.Analysis.Summation
+import NumStability.Analysis.TestMatrices
+import NumStability.Analysis.TieRules
+import NumStability.Analysis.VectorNorms
+import NumStability.FloatingPoint.FusedMultiplyAdd.Core
+import NumStability.FloatingPoint.FusedMultiplyAdd.DotProductCounts
+import NumStability.Source.Higham.Chapter01.Problem01.RelativeError.All
+import NumStability.Source.Higham.Chapter01.Problem02.NearIntegerTable.Basic
+import NumStability.Source.Higham.Chapter01.Problem03.CancellationRewrites.Algebra
+import NumStability.Source.Higham.Chapter01.Problem05.CompensatedLogarithm.Basic
+import NumStability.Source.Higham.Chapter01.Problem06.CalculatorWords.Basic
+import NumStability.Source.Higham.Chapter01.Problem08.MullerRecurrence.Basic
+import NumStability.Source.Higham.Chapter01.Problem09.CramersRule.ForwardError
+import NumStability.Source.Higham.Chapter01.Problem10.TwoPassSampleVariance.RemainderBound.Theorem
+import NumStability.Source.Higham.Chapter01.Section03.ErrorSources.All
+import NumStability.Source.Higham.Chapter01.Section07.Cancellation.All
+import NumStability.Source.Higham.Chapter01.Section07.TrigonometricCancellation.Example
+import NumStability.Source.Higham.Chapter01.Section09.SampleVariance.IeeeSingleOnePassCounterexample.Results
+import NumStability.Source.Higham.Chapter01.Section10.CramersRule.PrintedComparison
+import NumStability.Source.Higham.Chapter01.Section11.Accumulation.Basic
+import NumStability.Source.Higham.Chapter01.Section12.InstabilityWithoutCancellation.PivotingExample
+import NumStability.Source.Higham.Chapter01.Section13.IncreasingPrecision.BinaryStorageExamples
+import NumStability.Source.Higham.Chapter01.Section14.CancellationOfRoundingErrors.Algorithm02RoundedCore
+import NumStability.Source.Higham.Chapter01.Section16.ProblemDependentStability.ExactExample
+import NumStability.Source.Higham.Chapter01.Section16.ProblemDependentStability.Table13IeeeSingle
+import NumStability.Source.Higham.Chapter01.Section17
+import NumStability.Source.Higham.Chapter02.Problem01.FloatingPointCounts.Basic
+import NumStability.Source.Higham.Chapter02.Problem03.AdjacentPrecisionValues.Results.Theorems
+import NumStability.Source.Higham.Chapter02.Problem05.BinaryOneTenth.Basic
+import NumStability.Source.Higham.Chapter02.Problem06.IntegerRepresentability.Basic
+import NumStability.Source.Higham.Chapter02.Problem08.MidpointRounding.Counterexample
+import NumStability.Source.Higham.Chapter02.Problem09.DoubleRounding.Counterexample.Results
+import NumStability.Source.Higham.Chapter02.Problem10.DivisionRoundTrip.ExhaustiveBinary64.Results
+import NumStability.Source.Higham.Chapter02.Problem12.ReciprocalProduct.Results.Theorems
+import NumStability.Source.Higham.Chapter02.Problem13.ReciprocalProductThreshold.Results.Theorems
+import NumStability.Source.Higham.Chapter02.Problem14.UnitRoundoffProbe.IeeeExamples.Results
+import NumStability.Source.Higham.Chapter02.Problem18.ExactSubtractionCounterexample.Basic
+import NumStability.Source.Higham.Chapter02.Problem19.GradualUnderflowExactness.Basic
+import NumStability.Source.Higham.Chapter02.Problem20.SquareRootIdentities.Basic
+import NumStability.Source.Higham.Chapter02.Problem21.HypotenuseNormalization.StandardModelCounterexample.Results
+import NumStability.Source.Higham.Chapter02.Problem24.GuardDigitCancellation.Basic
+import NumStability.Source.Higham.Chapter02.Problem25.NonzeroEvaluation.IeeeFiniteSystems.Results
+import NumStability.Source.Higham.Chapter02.Problem26.ExactProduct.Discrepancy
+import NumStability.Source.Higham.Chapter02.Problem27.KahanDeterminant.Basic
+import NumStability.Source.Higham.Chapter02.Problem28.IterativeDivisionTermination.UnderflowAwareConvergence.Results
+import NumStability.Source.Higham.Chapter02.Problems15And16.SpecialValueProbes.Basic
+import NumStability.Source.Higham.Chapter02.Section04.NoGuardModel.All
+import NumStability.Source.Higham.Chapter02.Section06.Discriminant.FusedMultiplyAdd.Counterexample.Results
+import NumStability.Source.Higham.Chapter02.Section06.Discriminant.StandardModel.Counterexample.Results
+import NumStability.Source.Higham.Chapter02.Section06.FusedMultiplyAdd.DotProductCount
+import NumStability.Source.Higham.Chapter02.Section06.ReciprocalIteration.Basic
+import NumStability.Source.Higham.Chapter02.Section10.ArctangentRange.Counterexample.Results
+import NumStability.Source.Higham.Chapter02.Section10.Tablemaker.FiniteSeparation.Basic
+import NumStability.Source.Higham.Chapter02.Section10.Tablemaker.FiniteSeparation.Results.Theorems
+import NumStability.Source.Higham.Chapter02.Section11.AccuracyTests.CodySineResults.Theorems
+import NumStability.Source.Higham.Chapter03.Problem02.ProductBounds.PositiveFactors
+import NumStability.Source.Higham.Chapter06
+import NumStability.Source.Higham.Chapter07.Equation17.KahanConditioningExample
+import NumStability.Source.Higham.Chapter07.LinearSystemsConditioning.Theorem03.RectangularResults
+import NumStability.Source.Higham.Chapter07.LinearSystemsConditioning.Theorem05.RowInfinityScaleCounterexample.Theorems
+import NumStability.Source.Higham.Chapter16.Foundations.Core
+import NumStability.Source.Higham.Chapter16.Section02.SylvesterAndLyapunovBackwardError.Equation10
+import NumStability.Source.Higham.Chapter16.Section02.SylvesterAndLyapunovBackwardError.Equation11
+import NumStability.Source.Higham.Chapter16.Section02.SylvesterAndLyapunovBackwardError.Equation12
+import NumStability.Source.Higham.Chapter16.Section02.SylvesterAndLyapunovBackwardError.Equation21
+import NumStability.Source.Higham.Chapter16.Section02.SylvesterAndLyapunovBackwardError.LyapunovDefinition
+import NumStability.Source.Higham.Chapter16.Section03.PerturbationAndConditioning.Equation22
+import NumStability.Source.Higham.Chapter16.Section03.PerturbationAndConditioning.Equation23
+import NumStability.Source.Higham.Chapter16.Section03.PerturbationAndConditioning.Equation24
+import NumStability.Source.Higham.Chapter16.Section03.PerturbationAndConditioning.Equation25
+import NumStability.Source.Higham.Chapter16.Section03.PerturbationAndConditioning.Equation26
+import NumStability.Source.Higham.Chapter16.Section03.PerturbationAndConditioning.Equation27
+import NumStability.Source.Higham.Chapter16.Section04.PracticalErrorBounds.Equation28
+import NumStability.Source.Higham.Chapter17.Equation22
+import NumStability.Source.Higham.Chapter18.Section01.MatrixPowerBounds.NamedBounds.SpijkerKreissUnconditional
+module_file=NumStability/Algorithms.lean
+import NumStability.Algorithms.AitkenDenominator
+import NumStability.Algorithms.Arithmetic.DotProduct.NoGuard
+import NumStability.Algorithms.BlockDotProduct
+import NumStability.Algorithms.Cholesky.CholeskyDemmel
+import NumStability.Algorithms.Cholesky.CholeskyFl
+import NumStability.Algorithms.Cholesky.CholeskyNonsym
+import NumStability.Algorithms.Cholesky.CholeskySpec
+import NumStability.Algorithms.ComplexBackwardError
+import NumStability.Algorithms.CondEstimation
+import NumStability.Algorithms.ContinuedFraction
+import NumStability.Algorithms.DotProduct
+import NumStability.Algorithms.ExtendedPrecisionDotProduct
+import NumStability.Algorithms.FastMatMul
+import NumStability.Algorithms.GridPoints
+import NumStability.Algorithms.LinearSystems
+import NumStability.Algorithms.LinearSystems.Cholesky.ErrorAnalysis.PositivePivots.Certificate
+import NumStability.Algorithms.LinearSystems.Cholesky.Perturbation
+import NumStability.Algorithms.LinearSystems.Cholesky.PositiveSemidefinite.KahanTelescope.Identity
+import NumStability.Algorithms.LinearSystems.Cholesky.PositiveSemidefinite.PivotedFactorization.Existence
+import NumStability.Algorithms.LinearSystems.Cholesky.PositiveSemidefinite.StageEmbedding.InteriorMass
+import NumStability.Algorithms.LinearSystems.Cholesky.Solve
+import NumStability.Algorithms.LinearSystems.Iterative.Stationary.Semiconvergence.All
+import NumStability.Algorithms.LinearSystems.LeastSquares
+import NumStability.Algorithms.LinearSystems.LU.BlockLU
+import NumStability.Algorithms.LinearSystems.LU.Doolittle.Assembly.Core
+import NumStability.Algorithms.LinearSystems.QR.GivensMatrixStep
+import NumStability.Algorithms.LinearSystems.QR.GivensQR
+import NumStability.Algorithms.LinearSystems.QR.GivensSpec
+import NumStability.Algorithms.LinearSystems.QR.GramSchmidt
+import NumStability.Algorithms.LinearSystems.QR.GramSchmidtPolar
+import NumStability.Algorithms.LinearSystems.QR.HouseholderApply
+import NumStability.Algorithms.LinearSystems.QR.HouseholderConstruction2
+import NumStability.Algorithms.LinearSystems.QR.HouseholderMatrixStep
+import NumStability.Algorithms.LinearSystems.QR.HouseholderOneStep
+import NumStability.Algorithms.LinearSystems.QR.HouseholderQR
+import NumStability.Algorithms.LinearSystems.QR.HouseholderReflector
+import NumStability.Algorithms.LinearSystems.QR.HouseholderSpec
+import NumStability.Algorithms.LinearSystems.QR.QRSolve
+import NumStability.Algorithms.LinearSystems.SymmetricIndefinite.Aasen.AasenCoupledFp
+import NumStability.Algorithms.LinearSystems.SymmetricIndefinite.Aasen.AasenFactorResidual
+import NumStability.Algorithms.LinearSystems.SymmetricIndefinite.BlockLDLT.BunchTridiagonalFactorBound
+import NumStability.Algorithms.LinearSystems.SymmetricIndefinite.BlockLDLT.BunchTridiagonalGrowth
+import NumStability.Algorithms.LinearSystems.SymmetricIndefinite.BlockLDLT.BunchTridiagonalGrowthInvariant
+import NumStability.Algorithms.LinearSystems.SymmetricIndefinite.BlockLDLT.BunchTridiagonalSparseFactor
+import NumStability.Algorithms.LinearSystems.SymmetricIndefinite.BlockLDLT.BunchTridiagonalSparseSolve
+import NumStability.Algorithms.LinearSystems.SymmetricIndefinite.ErrorAnalysis
+import NumStability.Algorithms.LinearSystems.SymmetricIndefinite.Pivoting
+import NumStability.Algorithms.LinearSystems.Underdetermined.MinimumNorm.Solvers.Executor.Core
+import NumStability.Algorithms.LogExpProduct
+import NumStability.Algorithms.LU.GaussianElimination
+import NumStability.Algorithms.LU.GrowthFactor
+import NumStability.Algorithms.LU.LUSolve
+import NumStability.Algorithms.LU.SpecialMatrices
+import NumStability.Algorithms.LU.Tridiagonal
+import NumStability.Algorithms.LU.TridiagonalCond
+import NumStability.Algorithms.LU.TridiagonalRecurrence
+import NumStability.Algorithms.MatMul
+import NumStability.Algorithms.MatMulBackwardError
+import NumStability.Algorithms.MatrixEquations
+import NumStability.Algorithms.MatrixInversion.LUFactors
+import NumStability.Algorithms.MatrixInversion.Residuals
+import NumStability.Algorithms.MatrixInversion.Triangular
+import NumStability.Algorithms.MatSeqProduct
+import NumStability.Algorithms.MatVec
+import NumStability.Algorithms.MMatrix
+import NumStability.Algorithms.NeumaierCompensatedFiniteFormat
+import NumStability.Algorithms.Norm2
+import NumStability.Algorithms.NormEstimation
+import NumStability.Algorithms.OuterProduct
+import NumStability.Algorithms.PolynomialEvaluation.DerivativeEvaluation.ErrorBounds
+import NumStability.Algorithms.PriestAccuracy
+import NumStability.Algorithms.PriestDefectBounded
+import NumStability.Algorithms.Quadrature
+import NumStability.Algorithms.RankOneUpdate
+import NumStability.Algorithms.SquareDifference
+import NumStability.Algorithms.Summation
+import NumStability.Algorithms.Sylvester
+import NumStability.Algorithms.TestMatrices.UpperTriangularStress
+import NumStability.Algorithms.TreeDotProduct
+import NumStability.Analysis.ConditionEstimatorLowerBound
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra
+import NumStability.Analysis.LinearOperators.MatrixPowers.ExactNormBounds.NormalMatrices
+import NumStability.Analysis.LinearOperators.MatrixPowers.Henrici.NormalCharacterization
+import NumStability.Analysis.LinearOperators.MatrixPowers.Henrici.SchurBinomialBounds
+import NumStability.Analysis.LinearOperators.MatrixPowers.Semiconvergence.All
+import NumStability.Analysis.LinearOperators.MatrixPowers.Spijker.ArcLengthPowerBounds
+import NumStability.Analysis.LinearOperators.MatrixPowers.Spijker.FiniteDimensionalPowerBounds
+import NumStability.Analysis.LinearOperators.MatrixPowers.Spijker.PlanarArcLength
+import NumStability.Analysis.LinearOperators.MatrixPowers.Spijker.PlanarCrossingBounds
+import NumStability.Analysis.LinearOperators.MatrixPowers.Spijker.ResolventCoefficients
+import NumStability.Analysis.LinearOperators.NumericalRadius.Berger.GeneralPowerInequality
+import NumStability.Analysis.LinearOperators.Schur.Complex.NormalTriangular
+import NumStability.Analysis.MatrixEquations.SylvesterExistence
+import NumStability.Analysis.MatrixNorms.SpectralExtrema.PrincipalSubmatrices.Bounds
+import NumStability.Analysis.Perturbation.LeastSquares
+import NumStability.Analysis.Probability.Gaussian.AbsoluteMoment
+import NumStability.Analysis.SemiconvergentExistenceGaps
+import NumStability.Analysis.SemiconvergentSpectral
+import NumStability.Source.Higham.Chapter03.Problem11.KahanAbsoluteValue.IeeeDoubleTrace.Results
+import NumStability.Source.Higham.Chapter04
+import NumStability.Source.Higham.Chapter04.Problem02.WilkinsonAttainability.IeeeDoubleTrace.Results
+import NumStability.Source.Higham.Chapter05.Algorithm01.ComplexHorner.ErrorBounds.Theorems
+import NumStability.Source.Higham.Chapter05.Section02.BidiagonalDerivativeAnalysis.Results.Theorems
+import NumStability.Source.Higham.Chapter05.Section02.DerivativeError.Results.Theorems
+import NumStability.Source.Higham.Chapter05.Section04.PatersonStockmeyer.Results.Theorems
+import NumStability.Source.Higham.Chapter05.Section05.FastPolynomialEvaluation.Results.Theorems
+import NumStability.Source.Higham.Chapter06.Asides
+import NumStability.Source.Higham.Chapter06.BlockAntidiagonalNorm
+import NumStability.Source.Higham.Chapter06.Lemma06
+import NumStability.Source.Higham.Chapter06.Lemma06.OperatorTwoNormBound
+import NumStability.Source.Higham.Chapter07.Equation26.RumpCycle.Results.Theorems
+import NumStability.Source.Higham.Chapter08.Equation02.TriangularSubstitution.RelativeInfinityNormBounds.Theorems
+import NumStability.Source.Higham.Chapter08.Equation15.FanInExecutor.FirstOrderResidual
+import NumStability.Source.Higham.Chapter08.Equation15.GlobalEnvelopeCounterexample.LocalCancellationResults.Theorems
+import NumStability.Source.Higham.Chapter08.Equation18.FanInExecutor.FirstOrderForwardError
+import NumStability.Source.Higham.Chapter08.Problem02.ComparisonMatrixWitness.ArbitraryRatios.Theorems
+import NumStability.Source.Higham.Chapter08.Problem07.DiagonalScaling.Results.Theorems
+import NumStability.Source.Higham.Chapter08.Problem08.SingleEntrySingularity.Results.Theorems
+import NumStability.Source.Higham.Chapter08.Problem09.KahanSingularValues.Results.Theorems
+import NumStability.Source.Higham.Chapter08.Section03.TriangularSystems.ComparisonConditioningResults.Theorems
+import NumStability.Source.Higham.Chapter08.Section03.TriangularSystems.InverseNormResults.Theorems
+import NumStability.Source.Higham.Chapter09
+import NumStability.Source.Higham.Chapter10.Equation07.AbsoluteFactorNorm
+import NumStability.Source.Higham.Chapter10.Equation29.Mathias
+import NumStability.Source.Higham.Chapter10.Equation29.Mathias.RoundedSchur.Bounds
+import NumStability.Source.Higham.Chapter10.Equation30.ComplexPositiveDefinite.NoPivotLU.SourceBounds
+import NumStability.Source.Higham.Chapter10.Lemma11.PivotSequenceStability
+import NumStability.Source.Higham.Chapter10.Lemma13.KahanSharpness
+import NumStability.Source.Higham.Chapter10.Lemma13.KahanSharpness.OperatorNorm.SourceBound
+import NumStability.Source.Higham.Chapter10.Lemma13.KahanSharpness.UnboundedGrowth.Construction
+import NumStability.Source.Higham.Chapter10.Problem01.PositiveSemidefiniteEntries.EntryBounds.Results
+import NumStability.Source.Higham.Chapter10.Problem03.ArbitraryEvaluationOrder
+import NumStability.Source.Higham.Chapter10.Problem04.UnpivotedGrowth.PositivePivots.Bounds
+import NumStability.Source.Higham.Chapter10.Section01.Factorization.ExistenceUniqueness.Results
+import NumStability.Source.Higham.Chapter10.Section02.ErrorAnalysis.FactorizationAndSolve.Bounds
+import NumStability.Source.Higham.Chapter10.Section03.PositiveSemidefinite.ConstructiveFactorization.Existence
+import NumStability.Source.Higham.Chapter10.Section03.PositiveSemidefinite.PivotingAndScaling.Results
+import NumStability.Source.Higham.Chapter10.Section03.PositiveSemidefinite.QuadraticFormBounds.WeightedNorm
+import NumStability.Source.Higham.Chapter10.Section03.PositiveSemidefinite.TrailingTermination.Bound
+import NumStability.Source.Higham.Chapter10.Section04.PositiveDefiniteSymmetricPart.LUGrowth.Equation29
+import NumStability.Source.Higham.Chapter10.Section04.PositiveDefiniteSymmetricPart.SchurStages.Bounds
+import NumStability.Source.Higham.Chapter10.Theorem06.RoundedCholesky.ForwardError.ActualAlgorithm
+import NumStability.Source.Higham.Chapter10.Theorem07.FailureVacuity
+import NumStability.Source.Higham.Chapter10.Theorem07.SuccessThreshold.Factorization
+import NumStability.Source.Higham.Chapter10.Theorem08.ComponentwisePerturbation.NormalizedResolvent.SourceBound
+import NumStability.Source.Higham.Chapter10.Theorem08.NormwiseDiscrepancy.Counterexample.Uniqueness
+import NumStability.Source.Higham.Chapter10.Theorem14.CompletePivotedPSD
+import NumStability.Source.Higham.Chapter10.Theorem14.CompletePivotedPSD.ActualComputation.ErrorBounds
+import NumStability.Source.Higham.Chapter10.Theorem14.CompletePivotedPSD.RankSensitiveError.Bounds
+import NumStability.Source.Higham.Chapter10.Theorem14.CompletePivotedPSD.RoundedErrorAnalysis.Bounds
+import NumStability.Source.Higham.Chapter10.Theorem14.CompletePivotedPSD.SchurPerturbation.Family
+import NumStability.Source.Higham.Chapter10.Theorem14.CompletePivotedPSD.SuccessfulRun.StageBounds
+import NumStability.Source.Higham.Chapter11
+import NumStability.Source.Higham.Chapter11.Theorem07.TridiagonalTwoByTwoResidual
+import NumStability.Source.Higham.Chapter12
+import NumStability.Source.Higham.Chapter13.BlockLU
+import NumStability.Source.Higham.Chapter13.DemmelSharpMultiplier
+import NumStability.Source.Higham.Chapter14
+import NumStability.Source.Higham.Chapter14.Section03.ResidualOperatorTwoNorm
+import NumStability.Source.Higham.Chapter15
+import NumStability.Source.Higham.Chapter17
+import NumStability.Source.Higham.Chapter17.Results.All
+import NumStability.Source.Higham.Chapter18.Section01.MatrixPowerBounds.NamedBounds.SpijkerKreissUnconditional
+import NumStability.Source.Higham.Chapter19
+import NumStability.Source.Higham.Chapter20
+import NumStability.Source.Higham.Chapter22
+import NumStability.Source.Higham.Chapter24
+import NumStability.Source.Higham.Chapter25
+import NumStability.Source.Higham.Chapter26
+import NumStability.Source.Higham.Chapter27
+import NumStability.Source.Higham.Chapter28
+module_file=NumStability/Source.lean
+import NumStability.Source.Higham
+import NumStability.Source.Higham.Chapter01.Problem10.TwoPassSampleVariance.RemainderBound.Theorem
+import NumStability.Source.Higham.Chapter01.Section09.SampleVariance.IeeeSingleOnePassCounterexample.Results
+import NumStability.Source.Higham.Chapter01.Section13.IncreasingPrecision.BinaryStorageExamples
+import NumStability.Source.Higham.Chapter01.Section14.CancellationOfRoundingErrors.Algorithm02RoundedCore
+import NumStability.Source.Higham.Chapter02.Problem03.AdjacentPrecisionValues.Results.Theorems
+import NumStability.Source.Higham.Chapter02.Problem12.ReciprocalProduct.Results.Theorems
+import NumStability.Source.Higham.Chapter02.Problem13.ReciprocalProductThreshold.Results.Theorems
+import NumStability.Source.Higham.Chapter02.Problem14.UnitRoundoffProbe.IeeeExamples.Results
+import NumStability.Source.Higham.Chapter02.Problem21.HypotenuseNormalization.StandardModelCounterexample.Results
+import NumStability.Source.Higham.Chapter02.Problem28.IterativeDivisionTermination.UnderflowAwareConvergence.Results
+import NumStability.Source.Higham.Chapter02.Section06.Discriminant.FusedMultiplyAdd.Counterexample.Results
+import NumStability.Source.Higham.Chapter02.Section06.Discriminant.StandardModel.Counterexample.Results
+import NumStability.Source.Higham.Chapter02.Section10.ArctangentRange.Counterexample.Results
+import NumStability.Source.Higham.Chapter02.Section10.Tablemaker.FiniteSeparation.Results.Theorems
+import NumStability.Source.Higham.Chapter02.Section11.AccuracyTests.CodySineResults.Theorems
+import NumStability.Source.Higham.Chapter03.Problem11.KahanAbsoluteValue.IeeeDoubleTrace.Results
+import NumStability.Source.Higham.Chapter04.Problem02.WilkinsonAttainability.IeeeDoubleTrace.Results
+import NumStability.Source.Higham.Chapter05.Algorithm01.ComplexHorner.ErrorBounds.Theorems
+import NumStability.Source.Higham.Chapter05.Section02.BidiagonalDerivativeAnalysis.Results.Theorems
+import NumStability.Source.Higham.Chapter05.Section02.DerivativeError.Results.Theorems
+import NumStability.Source.Higham.Chapter05.Section04.PatersonStockmeyer.Results.Theorems
+import NumStability.Source.Higham.Chapter05.Section05.FastPolynomialEvaluation.Results.Theorems
+import NumStability.Source.Higham.Chapter07.Equation17.KahanConditioningExample
+import NumStability.Source.Higham.Chapter07.Equation26.RumpCycle.Results.Theorems
+import NumStability.Source.Higham.Chapter07.LinearSystemsConditioning.Theorem03.RectangularResults
+import NumStability.Source.Higham.Chapter07.LinearSystemsConditioning.Theorem05.RowInfinityScaleCounterexample.Theorems
+import NumStability.Source.Higham.Chapter08.Equation02.TriangularSubstitution.RelativeInfinityNormBounds.Theorems
+import NumStability.Source.Higham.Chapter08.Equation15.GlobalEnvelopeCounterexample.LocalCancellationResults.Theorems
+import NumStability.Source.Higham.Chapter08.Problem02.ComparisonMatrixWitness.ArbitraryRatios.Theorems
+import NumStability.Source.Higham.Chapter08.Problem07.DiagonalScaling.Results.Theorems
+import NumStability.Source.Higham.Chapter08.Problem08.SingleEntrySingularity.Results.Theorems
+import NumStability.Source.Higham.Chapter08.Problem09.KahanSingularValues.Results.Theorems
+import NumStability.Source.Higham.Chapter08.Section03.TriangularSystems.ComparisonConditioningResults.Theorems
+import NumStability.Source.Higham.Chapter08.Section03.TriangularSystems.InverseNormResults.Theorems
+module_file=NumStability/Higham.lean
+import NumStability.Source.Higham
+aggregate_imports_end
+numstability_tree_lean_files=2838
+root_lean_file_exists=yes
+hashes_begin
+fdf7ccfe204caff50fab1913b9f13a763be5384e87d14555c9fdcb2be2b9f7f8  <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/lean-toolchain
+a4c00f6534596883069d57bbe529adb6bb5b295019eb32b8d4c2fb6a34c021ce  <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/lakefile.toml
+ccfe8a72d6d227aebfe4e58575ddf2a2aef03b795052f97b770c36f684cc5774  <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/lake-manifest.json
+hashes_end
+cached_build_log_classification_counts_begin
+built_lines=0
+replayed_lines=160
+failed_lines=0
+cached_build_log_classification_counts_end
+final_status_begin
+## HEAD (no branch)
+Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s5   228Gi   197Gi   7.1Gi    97%    2.3M   74M    3%   /System/Volumes/Data
+final_status_end

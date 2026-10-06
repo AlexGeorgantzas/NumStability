@@ -1,0 +1,14 @@
+schema_version=numstability-public-type-exposure/1.0.0
+command=python3 current_graph/analyze_public_type_exposure.py
+toy_cases=8/8 PASS
+source_universe=47890
+type_pairs_from_source_universe=227954
+candidate_edge_union=2233
+candidate_source_union=1452
+entry_modules=479
+entry_exposure_rows=1437
+entry_compiled_closure=439
+entry_validated_static_fallback=40
+preexisting_observed_entry_rows_reproduced=939
+preexisting_unobserved_zero_rows_superseded=117
+all_validations=PASS

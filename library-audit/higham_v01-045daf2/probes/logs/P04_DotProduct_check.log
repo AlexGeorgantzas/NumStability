@@ -1,0 +1,3 @@
+NumStability.dotProduct_error_bound (fp : NumStability.FPModel) (n : ℕ) (x y : Fin n → ℝ)
+  (hn : NumStability.gammaValid fp n) :
+  |NumStability.fl_dotProduct fp n x y - ∑ i, x i * y i| ≤ NumStability.gamma fp n * ∑ i, |x i| * |y i|

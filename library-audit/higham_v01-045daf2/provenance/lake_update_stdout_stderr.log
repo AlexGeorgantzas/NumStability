@@ -1,0 +1,46 @@
+info: leanprover-community/mathlib: cloning https://github.com/leanprover-community/mathlib4
+info: leanprover-community/mathlib: checking out revision 'e8ea1afc32790ce1d4e1a4e45cc412ba9388716b'
+info: toolchain not updated; already up-to-date
+info: plausible: cloning https://github.com/leanprover-community/plausible
+info: plausible: checking out revision '2b93f2523263a6df8a8fbbe3dd28b7f028087480'
+info: LeanSearchClient: cloning https://github.com/leanprover-community/LeanSearchClient
+info: LeanSearchClient: checking out revision 'c5d5b8fe6e5158def25cd28eb94e4141ad97c843'
+info: importGraph: cloning https://github.com/leanprover-community/import-graph
+info: importGraph: checking out revision 'ea1e51a85f6bd53b6a84239b00593eebd03d522b'
+info: proofwidgets: cloning https://github.com/leanprover-community/ProofWidgets4
+info: proofwidgets: checking out revision '212dc300449e436298804f09b264f624667106f8'
+info: aesop: cloning https://github.com/leanprover-community/aesop
+info: aesop: checking out revision '6f8999a4e31701d2c905262d3788a8c0d21b3f1f'
+info: Qq: cloning https://github.com/leanprover-community/quote4
+info: Qq: checking out revision '5bb0ac23f6e6c4c3ba1b084f2d65cb1bd2a9cf7a'
+info: batteries: cloning https://github.com/leanprover-community/batteries
+info: batteries: checking out revision 'ed250d06b33e67aa5dc5f2cc349a5a35e8b6b390'
+info: Cli: cloning https://github.com/leanprover/lean4-cli
+info: Cli: checking out revision '0c688ceba0d380f6e56f977009fc2bb2322af5a3'
+info: mathlib: running post-update hooks
+✔ [3/23] Built Cache.Init (272ms)
+✔ [4/23] Built Cache.Lean (358ms)
+✔ [7/23] Built Batteries.Data.String.Basic (289ms)
+✔ [8/23] Built Batteries.Data.Array.Match (539ms)
+✔ [9/23] Built Batteries.Data.String.Matcher (232ms)
+✔ [10/23] Built Cache.IO (957ms)
+✔ [11/23] Built Cache.Hashing (456ms)
+✔ [12/23] Built Cache.Init:c.o (1.6s)
+✔ [13/23] Built Batteries.Data.Array.Match:c.o (996ms)
+✔ [14/23] Built Batteries.Data.String.Basic:c.o (1.2s)
+✔ [15/23] Built Cache.Lean:c.o (1.6s)
+✔ [16/23] Built Batteries.Data.String.Matcher:c.o (782ms)
+✔ [17/23] Built Cache.Hashing:c.o (814ms)
+✔ [18/23] Built Cache.Requests (931ms)
+✔ [19/23] Built Cache.IO:c.o (1.5s)
+✔ [20/23] Built Cache.Main (501ms)
+✔ [21/23] Built Cache.Main:c.o (352ms)
+✔ [22/23] Built Cache.Requests:c.o (927ms)
+✔ [23/23] Built cache:exe (1.8s)
+Fetching ProofWidgets cloud release... done!
+Current branch: HEAD
+Using cache (Azure) from origin: leanprover-community/mathlib4
+No files to download
+Decompressing 8030 file(s) (3 already decompressed)
+Decompressed in 21807 ms
+Completed successfully!

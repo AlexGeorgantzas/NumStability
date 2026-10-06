@@ -1,0 +1,38 @@
+import NumStability.Algorithms.LU.LUSolve
+import NumStability.Algorithms.LinearSystems.QR.QRSolve
+import NumStability.Source.Higham.Chapter12.IterativeRefinement.Results.Theorems
+import NumStability.Algorithms.MatMulBackwardError
+import NumStability.Algorithms.DotProduct
+import NumStability.Analysis.Perturbation.LeastSquares.Basic
+import NumStability.Source.Higham.Chapter02.Section11.AccuracyTests.Basic
+import NumStability.Source.Higham.Chapter02.Problem01.FloatingPointCounts.Basic
+
+-- Predeclared high-level endpoints sampled across LU, QR, iterative
+-- refinement, matrix multiplication, dot product, and least squares.
+#eval IO.println "AXIOM_PROBE|NumStability.lu_solve_backward_error_factor_gamma"
+#print axioms NumStability.lu_solve_backward_error_factor_gamma
+#eval IO.println "AXIOM_PROBE|NumStability.fl_householderQR_solve_backward_error_gammaHigham_closedInputBounds_of_global_gammaValid"
+#print axioms NumStability.fl_householderQR_solve_backward_error_gammaHigham_closedInputBounds_of_global_gammaValid
+#eval IO.println "AXIOM_PROBE|NumStability.higham12_4_from_solver"
+#print axioms NumStability.higham12_4_from_solver
+#eval IO.println "AXIOM_PROBE|NumStability.matMulWeightedBackwardFeasible_residual_entry_le"
+#print axioms NumStability.matMulWeightedBackwardFeasible_residual_entry_le
+#eval IO.println "AXIOM_PROBE|NumStability.dotProduct_isRelBackwardStable"
+#print axioms NumStability.dotProduct_isRelBackwardStable
+#eval IO.println "AXIOM_PROBE|NumStability.ls_qr_forward_error"
+#print axioms NumStability.ls_qr_forward_error
+
+-- Every source theorem whose compilation generated a project-owned internal
+-- native_decide axiom helper, listed separately from the endpoint sample.
+#eval IO.println "AXIOM_PROBE|NumStability.codyPowerTestExact_displayedTableDecimal17_abs_error_lt_half_last_place"
+#print axioms NumStability.codyPowerTestExact_displayedTableDecimal17_abs_error_lt_half_last_place
+#eval IO.println "AXIOM_PROBE|NumStability.codyPowerTestExact_displayedDecimal21_abs_error_lt_half_last_place"
+#print axioms NumStability.codyPowerTestExact_displayedDecimal21_abs_error_lt_half_last_place
+#eval IO.println "AXIOM_PROBE|NumStability.FloatingPointFormat.ieeeSingleFormat_normalizedExponentParameterCount"
+#print axioms NumStability.FloatingPointFormat.ieeeSingleFormat_normalizedExponentParameterCount
+#eval IO.println "AXIOM_PROBE|NumStability.FloatingPointFormat.ieeeDoubleFormat_normalizedExponentParameterCount"
+#print axioms NumStability.FloatingPointFormat.ieeeDoubleFormat_normalizedExponentParameterCount
+#eval IO.println "AXIOM_PROBE|NumStability.FloatingPointFormat.problem2_1_ieeeSingle_normalizedNumberParameterCount"
+#print axioms NumStability.FloatingPointFormat.problem2_1_ieeeSingle_normalizedNumberParameterCount
+#eval IO.println "AXIOM_PROBE|NumStability.FloatingPointFormat.problem2_1_ieeeDouble_normalizedNumberParameterCount"
+#print axioms NumStability.FloatingPointFormat.problem2_1_ieeeDouble_normalizedNumberParameterCount

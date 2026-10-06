@@ -1,0 +1,4 @@
+NumStability.inversion_residual_bound (n : ℕ) (fp : NumStability.FPModel) (A A_inv : Fin n → Fin n → ℝ) (b : Fin n → ℝ)
+  (hInv : NumStability.IsRightInverse n A A_inv) (hn : NumStability.gammaValid fp n) :
+  have x_hat := NumStability.fl_matVec fp n n A_inv b;
+  ∀ (i : Fin n), |b i - ∑ j, A i j * x_hat j| ≤ NumStability.gamma fp n * ∑ j, |A i j| * ∑ k, |A_inv j k| * |b k|

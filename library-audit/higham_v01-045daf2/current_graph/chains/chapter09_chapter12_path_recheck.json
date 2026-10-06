@@ -1,0 +1,12 @@
+{
+  "chapter09_owned_target_declarations": 6081,
+  "chapter09_owned_target_reached": null,
+  "chapter12_owned_start_declarations": 96,
+  "direct_or_transitive_paths_found": 0,
+  "edge_direction": "consumer -> dependency",
+  "interpretation": "No direct/transitive consumer-to-dependency path from a Chapter12-owned declaration to a Chapter09-owned declaration was found. The verified LU/solver bridge is owned by Source.Higham.CrossChapter.LUSolverWeights.",
+  "schema_version": "numstability-representative-dependency-chains/1.1.0",
+  "source_commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+  "union_reachable_excluding_chapter12_starts": 72,
+  "union_reachable_from_chapter12_owned_declarations": 168
+}

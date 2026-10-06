@@ -1,0 +1,3 @@
+import NumStability.Algorithms.LinearSystems.Triangular.ForwardSubstitution
+
+#check NumStability.forwardSub_backward_error

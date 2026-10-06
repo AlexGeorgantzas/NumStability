@@ -1,0 +1,22 @@
+timestamp_utc=2026-09-03T08:14:19Z
+Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s5   228Gi   203Gi   184Mi   100%    2.4M  1.9M   56%   /System/Volumes/Data
+Filesystem   1024-blocks      Used Available Capacity iused   ifree %iused  Mounted on
+/dev/disk3s5   239362496 213306692    188592   100% 2428052 1885920   56%   /System/Volumes/Data
+6.8G	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake
+6.7G	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages
+107M	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build
+456K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/Cli
+5.1M	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/LeanSearchClient
+6.3M	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/importGraph
+ 11M	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/plausible
+ 23M	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/Qq
+ 44M	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/proofwidgets
+142M	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/aesop
+157M	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/batteries
+6.4G	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib
+ 22M	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib
+ 85M	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir
+      61
+      61
+## HEAD (no branch)

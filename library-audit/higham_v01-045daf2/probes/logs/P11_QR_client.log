@@ -1,0 +1,2 @@
+NumStability.givensRotation_orthogonal (n : ℕ) (p q : Fin n) (c s : ℝ) (hpq : p ≠ q) (hcs : c ^ 2 + s ^ 2 = 1) :
+  NumStability.IsOrthogonal n (NumStability.givensRotation n p q c s)

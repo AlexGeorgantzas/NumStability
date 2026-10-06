@@ -1,0 +1,41 @@
+{
+  "edge_orientation": "consumer -> dependency",
+  "inputs": {
+    "current_graph/metrics/declaration_metrics.csv.gz": "eda468932d7e4275eef1f500a6e70fdc257785867da411d7130f5b4bbf23bb33",
+    "current_graph/metrics/declaration_origins_and_authorship.csv": "bc5c4772ee198cd87a17720d4a56d4da1b50cf27b2ebf1e03c85d6888fa08ca5",
+    "current_graph/metrics/incoming_and_cross_boundary_coverage.csv": "0b1f669fbb1be770ea6c9f6c7cec50fbcbadabd940d77b86b09962d7392b3ec3",
+    "raw/declaration_metadata.csv": "4a7690857c722bfec228ee25a0461e30c528d0b06d88b5d1930d499603f17fa2",
+    "raw/declaration_origins.csv": "a2bb52d24c753e556ae17ff8b61b5e954b4eb53ec04ebbcc9e835926e4e5a4f6",
+    "raw/declarations.csv.gz": "235238fd68eb6ac31bdf30fe344e1d60755377d49ba5701efbd52f53e298f03f",
+    "raw/direct_dependencies.csv.gz": "cf64609f72a23ad4df78a6ac30f04db78449bcb4d5b0b6ba9721f820d108c240"
+  },
+  "metrics": {
+    "at_least_one_incoming_project_reference": "direct_project_consumer_count >= 1",
+    "neither_incoming_nor_outgoing_project_edge": "isolated_in_project_graph=true; no incoming and no outgoing direct project pair",
+    "no_incoming_project_edge": "no_incoming_project_edge=true, equivalently direct_project_consumer_count=0",
+    "no_outgoing_project_edge": "no_outgoing_project_edge=true, equivalently direct_project_dependency_count=0",
+    "participates_in_nontrivial_multistep_chain": "dependency_depth_scc_condensation >= 2 OR downstream_depth_scc_condensation >= 2",
+    "used_by_at_least_one_different_layer": "used_by_different_layer=true; at least one direct project consumer has a different path-derived layer",
+    "used_by_at_least_one_different_module": "used_by_different_module=true; at least one direct project consumer has a different owner module",
+    "used_by_multiple_consumer_domains": "used_by_multiple_domains=true; direct project consumers occupy at least two audit-classified domains",
+    "used_by_multiple_consumer_modules": "used_by_multiple_modules=true; direct project consumers occupy at least two owner modules"
+  },
+  "output": "current_graph/metrics/incoming_and_cross_boundary_coverage_contract.csv",
+  "rows": 27,
+  "schema_version": "numstability-coverage-metric-contract/1.0.0",
+  "tool": {
+    "path": "current_graph/build_coverage_metric_contract.py",
+    "sha256": "1967659d5b85cd5114bfbc7dc87d41e8c09269e8cae4991d82b829f3e9de6e1a"
+  },
+  "universes": {
+    "all_project_environment": "all rows; owner module is NumStability or NumStability.*",
+    "confirmed_source_written_public": "is_public=true and authorship_class=confirmed_source_written; the latter requires nonreserved name, direct Lean selection range, and exact selected source token matching the terminal name or namespace-qualified suffix",
+    "environment_public": "is_public=true, equivalently is_internal=false and is_private=false"
+  },
+  "validation": {
+    "all_percentages_match_within_1e_6_percentage_points": true,
+    "coverage_rows_recomputed_exactly": 27,
+    "declaration_universe_rows": 77246,
+    "expected_rows": 27
+  }
+}

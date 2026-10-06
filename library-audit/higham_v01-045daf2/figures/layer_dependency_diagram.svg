@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2100" height="1180" viewBox="0 0 2100 1180" role="img" aria-labelledby="title desc">
+<title id="title">NumStability elaborated layer-dependency architecture</title>
+<desc id="desc">Unique declaration-pair edges at the audited commit. Arrows point from consuming declarations to referenced declarations.</desc>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#2463A5"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#21835A"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#B43A3A"/></marker>
+<linearGradient id="heat" x1="0" x2="1"><stop offset="0%" stop-color="#F7FBFF"/><stop offset="45%" stop-color="#9ECAE1"/><stop offset="100%" stop-color="#084594"/></linearGradient>
+</defs>
+<rect x="0" y="0" width="2100" height="1180" fill="#FFFFFF"/>
+<g font-family="Inter, Helvetica, Arial, sans-serif" fill="#172433">
+<text x="1050.0" y="64" text-anchor="middle" font-size="34" font-weight="700" fill="#172433">NumStability elaborated layer dependencies</text>
+<text x="1050.0" y="102" text-anchor="middle" font-size="18" font-weight="400" fill="#536273">Commit 045daf28056a · consumer → dependency · unique project declaration pairs</text>
+<rect x="70" y="270" width="290" height="142" rx="18" fill="#F4F5F7" stroke="#99A2AD" stroke-width="3" stroke-dasharray="9 7"/>
+<text x="215.0" y="312" text-anchor="middle" font-size="24" font-weight="700" fill="#172433">Examples</text>
+<text x="215.0" y="348" text-anchor="middle" font-size="16" font-weight="400" fill="#44515F">not present as a layer</text>
+<text x="215.0" y="378" text-anchor="middle" font-size="15" font-weight="400" fill="#44515F">0 within-layer edges</text>
+<rect x="450" y="270" width="290" height="142" rx="18" fill="#FFF2CC" stroke="#C89B2C" stroke-width="3"/>
+<text x="595.0" y="312" text-anchor="middle" font-size="24" font-weight="700" fill="#172433">Source</text>
+<text x="595.0" y="348" text-anchor="middle" font-size="16" font-weight="400" fill="#44515F">48,663 declarations</text>
+<text x="595.0" y="378" text-anchor="middle" font-size="15" font-weight="400" fill="#44515F">168,575 within-layer edges</text>
+<rect x="830" y="270" width="290" height="142" rx="18" fill="#DDF3E7" stroke="#26855B" stroke-width="3"/>
+<text x="975.0" y="312" text-anchor="middle" font-size="24" font-weight="700" fill="#172433">Algorithms</text>
+<text x="975.0" y="348" text-anchor="middle" font-size="16" font-weight="400" fill="#44515F">13,775 declarations</text>
+<text x="975.0" y="378" text-anchor="middle" font-size="15" font-weight="400" fill="#44515F">43,703 within-layer edges</text>
+<rect x="1210" y="270" width="290" height="142" rx="18" fill="#DCEBFA" stroke="#2463A5" stroke-width="3"/>
+<text x="1355.0" y="312" text-anchor="middle" font-size="24" font-weight="700" fill="#172433">Analysis</text>
+<text x="1355.0" y="348" text-anchor="middle" font-size="16" font-weight="400" fill="#44515F">14,414 declarations</text>
+<text x="1355.0" y="378" text-anchor="middle" font-size="15" font-weight="400" fill="#44515F">68,029 within-layer edges</text>
+<rect x="1590" y="270" width="290" height="142" rx="18" fill="#E8E0F6" stroke="#6E4FA3" stroke-width="3"/>
+<text x="1735.0" y="312" text-anchor="middle" font-size="24" font-weight="700" fill="#172433">FloatingPoint</text>
+<text x="1735.0" y="348" text-anchor="middle" font-size="16" font-weight="400" fill="#44515F">140 declarations</text>
+<text x="1735.0" y="378" text-anchor="middle" font-size="15" font-weight="400" fill="#44515F">343 within-layer edges</text>
+<line x1="368" y1="341.0" x2="420" y2="341.0" stroke="#21835A" stroke-width="5" stroke-dasharray="8 7"/>
+<polygon points="438,341.0 416,329.0 416,353.0" fill="#21835A"/>
+<text x="405.0" y="323.0" text-anchor="middle" font-size="16" font-weight="650" fill="#1D714F">intended only</text>
+<line x1="748" y1="341.0" x2="800" y2="341.0" stroke="#21835A" stroke-width="5"/>
+<polygon points="818,341.0 796,329.0 796,353.0" fill="#21835A"/>
+<text x="785.0" y="323.0" text-anchor="middle" font-size="16" font-weight="650" fill="#1D714F">49,424</text>
+<line x1="1128" y1="341.0" x2="1180" y2="341.0" stroke="#21835A" stroke-width="5"/>
+<polygon points="1198,341.0 1176,329.0 1176,353.0" fill="#21835A"/>
+<text x="1165.0" y="323.0" text-anchor="middle" font-size="16" font-weight="650" fill="#1D714F">13,507</text>
+<line x1="1508" y1="341.0" x2="1560" y2="341.0" stroke="#21835A" stroke-width="5"/>
+<polygon points="1578,341.0 1556,329.0 1556,353.0" fill="#21835A"/>
+<text x="1545.0" y="323.0" text-anchor="middle" font-size="16" font-weight="650" fill="#1D714F">4,128</text>
+<text x="70" y="495" text-anchor="start" font-size="22" font-weight="700" fill="#172433">Additional edges in the intended direction</text>
+<rect x="85" y="535" width="580" height="85" rx="12" fill="#F1F8F4" stroke="#86BDA2"/>
+<text x="375" y="569" text-anchor="middle" font-size="18" font-weight="650" fill="#1D714F">Source → Analysis</text>
+<text x="375" y="600" text-anchor="middle" font-size="16" font-weight="400" fill="#44515F">71,085 declaration-pair edges</text>
+<rect x="720" y="535" width="580" height="85" rx="12" fill="#F1F8F4" stroke="#86BDA2"/>
+<text x="1010" y="569" text-anchor="middle" font-size="18" font-weight="650" fill="#1D714F">Source → FloatingPoint</text>
+<text x="1010" y="600" text-anchor="middle" font-size="16" font-weight="400" fill="#44515F">18,562 declaration-pair edges</text>
+<rect x="1355" y="535" width="580" height="85" rx="12" fill="#F1F8F4" stroke="#86BDA2"/>
+<text x="1645" y="569" text-anchor="middle" font-size="18" font-weight="650" fill="#1D714F">Algorithms → FloatingPoint</text>
+<text x="1645" y="600" text-anchor="middle" font-size="16" font-weight="400" fill="#44515F">4,508 declaration-pair edges</text>
+<text x="70" y="705" text-anchor="start" font-size="22" font-weight="700" fill="#9D2F2F">Residual edges against the intended direction</text>
+<rect x="70" y="745" width="455" height="100" rx="12" fill="#FFF0F0" stroke="#D88989" stroke-width="2"/>
+<text x="297.5" y="784" text-anchor="middle" font-size="18" font-weight="650" fill="#9D2F2F">Algorithms → Source</text>
+<text x="297.5" y="817" text-anchor="middle" font-size="16" font-weight="400" fill="#6E3A3A">1,114 declaration-pair edges</text>
+<rect x="570" y="745" width="455" height="100" rx="12" fill="#FFF0F0" stroke="#D88989" stroke-width="2"/>
+<text x="797.5" y="784" text-anchor="middle" font-size="18" font-weight="650" fill="#9D2F2F">Analysis → Algorithms</text>
+<text x="797.5" y="817" text-anchor="middle" font-size="16" font-weight="400" fill="#6E3A3A">13,998 declaration-pair edges</text>
+<rect x="1070" y="745" width="455" height="100" rx="12" fill="#FFF0F0" stroke="#D88989" stroke-width="2"/>
+<text x="1297.5" y="784" text-anchor="middle" font-size="18" font-weight="650" fill="#9D2F2F">Analysis → Source</text>
+<text x="1297.5" y="817" text-anchor="middle" font-size="16" font-weight="400" fill="#6E3A3A">791 declaration-pair edges</text>
+<rect x="1570" y="745" width="455" height="100" rx="12" fill="#FFF0F0" stroke="#D88989" stroke-width="2"/>
+<text x="1797.5" y="784" text-anchor="middle" font-size="18" font-weight="650" fill="#9D2F2F">FloatingPoint → Analysis</text>
+<text x="1797.5" y="817" text-anchor="middle" font-size="16" font-weight="400" fill="#6E3A3A">146 declaration-pair edges</text>
+<rect x="70" y="915" width="1960" height="170" rx="14" fill="#F7F8FA" stroke="#CDD3DA"/>
+<text x="105" y="958" text-anchor="start" font-size="17" font-weight="400" fill="#44515F">• Counts combine type and body/proof references after deduplicating ordered declaration pairs.</text>
+<text x="105" y="996" text-anchor="start" font-size="17" font-weight="400" fill="#44515F">• A red edge is an architectural review signal, not by itself a defect; generated/private ownership can create apparent inversions.</text>
+<text x="105" y="1034" text-anchor="start" font-size="17" font-weight="400" fill="#44515F">• The Root layer (254 declarations; 1 cross-layer edge Source → Root) is omitted for visual clarity.</text>
+<text x="2030" y="1148" text-anchor="end" font-size="14" font-weight="400" fill="#66717E">Raw data: current_graph/metrics/layer_dependency_matrix.csv</text>
+</g>
+</svg>

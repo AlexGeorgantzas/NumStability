@@ -1,0 +1,1 @@
+{"decls":{},"directImports":[["NumStability.Analysis.Rounding",false,false,false]],"module":"P02_Gamma_check","references":{"{\"c\":{\"m\":\"NumStability.Analysis.Rounding\",\"n\":\"NumStability.gamma_nonneg\"}}":{"definition":null,"usages":[[2,7,2,32,"_check"]]}},"version":5}

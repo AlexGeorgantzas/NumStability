@@ -1,0 +1,25 @@
+{
+  "schema": "numstability-reference-set-layer-matrix/1.0.0",
+  "audited_commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+  "universe": "is_public=true AND authorship_class=confirmed_source_written",
+  "edge_rule": "induced: both endpoints in the universe; consumer -> dependency",
+  "status": "derived measurement outside the audit metric contract",
+  "inputs": {
+    "higham_v01-045daf2/current_graph/metrics/declaration_metrics.csv.gz": "eda468932d7e4275eef1f500a6e70fdc257785867da411d7130f5b4bbf23bb33",
+    "higham_v01-045daf2/current_graph/metrics/direct_project_dependencies.csv.gz": "32a7518b532d6e1567f8eee9665e2045908650869eb52130b02491f96a81eee8"
+  },
+  "layer_sizes": {
+    "Algorithms": 7829,
+    "Analysis": 9654,
+    "FloatingPoint": 64,
+    "Root": 54,
+    "Source": 30289
+  },
+  "induced_pairs_total": 359542,
+  "cross_checks": {
+    "reference_set_size": 47890,
+    "source_layer_size": 30289,
+    "m9_source_using_lower_layers": 22062,
+    "isolated_in_project_graph": 143
+  }
+}

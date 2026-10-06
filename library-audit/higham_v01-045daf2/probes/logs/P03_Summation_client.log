@@ -1,0 +1,4 @@
+NumStability.fl_sum_error (fp : NumStability.FPModel) (n : ℕ) (v : Fin n → ℝ) (hn : NumStability.gammaValid fp n) :
+  ∃ θ,
+    (∀ (i : Fin n), |θ i| ≤ NumStability.gamma fp n) ∧
+      Fin.foldl n (fun acc i => fp.fl_add acc (v i)) 0 = ∑ i, v i * (1 + θ i)

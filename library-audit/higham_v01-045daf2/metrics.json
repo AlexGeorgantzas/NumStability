@@ -1,0 +1,1249 @@
+{
+  "schema_version": "numstability-library-audit/1.0.0",
+  "mode": "audit_read_only",
+  "source": {
+    "requested_ref": "origin/higham_v01",
+    "audited_commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+    "expected_commit_from_request": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+    "local_branch_commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+    "remote_tracking_commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+    "live_remote_commit_at_final_recheck": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+    "local_remote_agree": true,
+    "isolated_worktree_mode": "detached",
+    "isolated_source_clean_before_and_after": true,
+    "caller_checkout_switched": false,
+    "audited_lean_source_modified": false,
+    "provenance_artifact": "provenance/build_environment.json"
+  },
+  "capture": {
+    "final_environment_local": "2026-09-03T11:19:42+0300",
+    "final_reference_recheck_local": "2026-09-03T12:40:18+0300",
+    "timezone": "Europe/Athens",
+    "timezone_abbreviation": "EEST",
+    "platform": {
+      "os": "macOS",
+      "os_version": "26.5.2",
+      "os_build": "25F84",
+      "kernel": "Darwin 25.5.0",
+      "architecture": "arm64",
+      "logical_cpu": 8,
+      "physical_cpu": 8,
+      "memory_bytes": 17179869184
+    },
+    "toolchain": {
+      "lean_toolchain": "leanprover/lean4:v4.29.0-rc3",
+      "lean_version": "4.29.0-rc3",
+      "lean_commit": "5d86aa4032284a5242470e95fbe25f1ff506763d",
+      "lake_version": "5.0.0-src+5d86aa4",
+      "mathlib_revision": "e8ea1afc32790ce1d4e1a4e45cc412ba9388716b",
+      "mathlib_describe": "v4.29.0-rc3-80-ge8ea1afc32",
+      "manifest_package_revisions_matching": 9,
+      "manifest_package_revisions_checked": 9,
+      "package_revision_artifact": "provenance/package_revision_validation.csv"
+    }
+  },
+  "audit_scope": {
+    "source_globs": [
+      "NumStability.lean",
+      "NumStability/**/*.lean"
+    ],
+    "source_discovery_command": "rg --files -uu",
+    "compiled_project_prefix": "NumStability",
+    "lake_default_target": "NumStability",
+    "root_module": "NumStability",
+    "root_direct_import": "NumStability.All",
+    "all_direct_imports": [
+      "NumStability.Algorithms",
+      "NumStability.Analysis",
+      "NumStability.FloatingPoint",
+      "NumStability.Source"
+    ],
+    "audited_entry_modules": [
+      "NumStability",
+      "NumStability.All",
+      "NumStability.Core",
+      "NumStability.FloatingPoint",
+      "NumStability.Analysis",
+      "NumStability.Algorithms",
+      "NumStability.Source",
+      "NumStability.Source.Higham",
+      "NumStability.Higham"
+    ],
+    "entrypoint_inventory_artifact": "static_architecture/entry_points.csv"
+  },
+  "build": {
+    "fresh_full_build_completed": false,
+    "fresh_full_build_status": "infrastructure_blocked",
+    "fresh_full_build_blocker": "insufficient host disk capacity",
+    "fresh_attempts": [
+      {
+        "classification": "fresh NumStability project outputs with newly materialized pinned dependencies",
+        "exit_status": 1,
+        "terminal_condition": "ENOSPC after partial compilation; not a Lean theorem failure",
+        "observed_project_olean_count": 61,
+        "observed_task_progress": "4232/6031",
+        "timing_classification": "incomplete; not a clean compilation time"
+      },
+      {
+        "classification": "fresh NumStability project outputs with cached exact-revision dependencies",
+        "exit_status": 130,
+        "real_seconds": 17.49,
+        "terminal_condition": "deliberately interrupted before projected 8.2 GiB output exceeded about 7.1 GiB free",
+        "observed_project_olean_count": 16,
+        "timing_classification": "incomplete; not a clean compilation time"
+      }
+    ],
+    "cached_same_commit_verification": {
+      "classification": "cached same-commit full-build verification",
+      "exit_status": 0,
+      "real_seconds": 2.8,
+      "built_log_records": 0,
+      "replayed_log_records": 160,
+      "error_records": 0,
+      "timing_is_clean_compilation": false,
+      "timing_is_incremental_compilation_benchmark": false
+    },
+    "raw_artifact": "build/build_attempts.csv",
+    "raw_columns": [
+      "episode",
+      "command",
+      "classification",
+      "exit_status",
+      "real_seconds",
+      "dependency_state",
+      "terminal_condition",
+      "source_clean_after"
+    ]
+  },
+  "tooling": {
+    "current_graph_schema": "numstability-elaborated-architecture/2.1.0",
+    "representative_chain_schema": "numstability-representative-dependency-chains/1.1.0",
+    "static_architecture_schema": "numstability-static-architecture/1.0.0",
+    "public_probe_schema": "numstability-public-api-probes/v1",
+    "coverage_contract_schema": "numstability-coverage-metric-contract/1.0.0",
+    "public_type_exposure_schema": "numstability-public-type-exposure/1.0.0",
+    "source_written_components_schema": "numstability-source-written-components/1.0.0",
+    "reuse_leaders_schema": "numstability-reuse-leaders/1.0.0",
+    "timing_schema": "numstability.fresh-module-timing-summary.v1",
+    "proof_hygiene_schema": "numstability.proof-hygiene.v1",
+    "sha256": {
+      "phase10a_declaration_dependencies_lean": "30186d3470320983e2ada2e61fce7efaa7e6230c71348c5d37a9801526be2acd",
+      "phase10a_generate_baseline_py": "fc5863b2ca4e8f2dd03d2f012c40df9f26666849073a4e5b1babc65a671d6a94",
+      "recovered_DeclarationGraph_lean": "ef2731b1b9270b5d6185c4a9a2caa611d113ca1ba19ca4e8785e004bbd25c8f1",
+      "recovered_DeclarationFingerprints_lean": "cd8f2a8e60fc65841a4b9bf551205688c44591ebbd7fb72185f7cde58cd66142",
+      "recovered_analyze_graph_py": "03811e8519bd000d6d00620eb8f2780f52e59e5a3812b416b2ea91137b51d7ac",
+      "skill_DeclarationOrigins_lean": "61a38f911a8d0da2c28d082ceaa5d2345eb7e9498cfd2f0c3cbe670e37a777ea",
+      "current_DeclarationMetadata_lean": "8ad62709b4a031931414421b83cbe92787a49be0d4e3d4a337ce6b4cade7d628",
+      "current_graph_analyzer": "543159b9dd6645a19c736a27cda585701b66fe6134d457b4eb891dd26c842d45",
+      "current_graph_regression_tests": "b9059413dc37bff39a2c38f5e52b091891aceaed2b53077e897b5dc92cb6b14a",
+      "static_architecture_analyzer": "dfba978902ba0bbc19453eede1e01c74c7b9a59cc4bcdd96bb4e89198b8d7efe",
+      "phase10a_source_scan_replay_wrapper": "ffefca5ec3163c6ec5c2f4cb896e7534ade0d4c68156e37c9927db4a8bbf5eeb",
+      "public_probe_runner": "0ce84d1c9f9d9e346da6eeac873dd710691cb95033914ed8a1040515c72f1668",
+      "public_probe_summarizer": "7096ae700138060b001509678f9bcd87e2ee23a0dec2405d3a209ab14ab038e3",
+      "fresh_module_timing_runner": "10a4b7e0770e50291cb5da83e15a478fba9dd08daee3654cbc19824017c3b8c6",
+      "timing_summarizer": "0ead4c898f30364dab85fdce5ca85e0ffd48d03b64745f786c3e1392de1d63cd",
+      "proof_hygiene_analyzer": "88fed21fb61d4ba013d2a38ad87db0cc93d321dad2ac91ecef28b29bef1003f4",
+      "representative_axiom_parser": "805f9f21072128b519af0549dac2ac436f6bdbae2dc914f8edf6b0babc94b4e1",
+      "priority_review_builder": "0c7fc186aea208ec8c672dd63a43ca8a945c0ea20c2560da3b2998e867bb4094",
+      "priority_review_adapter": "b56c1340f716c2851c489b45372d234312a3fbb3ab2e549ef38791c734ca5380",
+      "representative_chain_builder": "e3911db08f101e56cd7167aebdcb36344ed2e27598fcbc974dafd257778f3a5a",
+      "figure_generator": "fb5e10f1102ff70358603dd4cd7122002bf2ff5569553e2be93ceac48da8ae65",
+      "coverage_contract_builder": "1967659d5b85cd5114bfbc7dc87d41e8c09269e8cae4991d82b829f3e9de6e1a",
+      "public_type_exposure_analyzer": "1fb91f07610320ed420698e0ddd9c89bc16307c3fe81796885beed9ec7fbaf60",
+      "source_written_components_analyzer": "df53e2de72028c1797fc5e0a68613e5bfe3f5bd1b8fbf43aa23932971f6dc05f",
+      "reuse_leaders_by_universe_builder": "a7c171d48b8c8c8295c2116866ee1a29c8f32737a53eb4867ffb8678a01abd26"
+    },
+    "recovered_analyzer_validation_notice": "metrics/recovered_library_audit_schema/INVALID_SCC_TRANSITIVE_NOTICE.md",
+    "recovered_analyzer_invalid_fields": [
+      "strong component identifiers and counts",
+      "SCC-condensed transitive reachability",
+      "SCC-condensed depths"
+    ],
+    "recovered_analyzer_unaffected_fields": [
+      "raw extraction",
+      "direct edge counts",
+      "incoming counts",
+      "cross-boundary counts",
+      "union-find weak components"
+    ]
+  },
+  "metric_contract": {
+    "edge_orientation": "consumer -> dependency; A -> B means A directly references B in its elaborated type or body/proof",
+    "direct_edge_count": "unique ordered project declaration pairs; occurs_in_type and occurs_in_body overlap; both is their intersection",
+    "incoming_coverage": "target declarations in the named universe with at least one distinct incoming direct edge from any project declaration divided by declaration count of that universe",
+    "cross_module_use": "target declarations in the named universe with at least one incoming direct edge whose consumer module differs divided by declaration count of that universe",
+    "transitive_downstream_count": "exact distinct reverse-reachable project declarations excluding self after SCC condensation",
+    "depth": "longest path in the SCC condensation DAG",
+    "component_coverage": "largest weak component of the universe-induced undirected project graph divided by declarations in the universe; connectedness, not reuse",
+    "graph_percentiles": "nearest-rank sorted[ceil(q*n)-1], with p0=min",
+    "timing_percentiles": "R-7 linear interpolation h=(n-1)p",
+    "public_current": "is_internal=false and is_private=false",
+    "confirmed_source_written": "nonreserved declaration with a direct Lean selection range whose exact source slice equals the terminal declaration-name component or an exact namespace-qualified suffix",
+    "authorship_limitation": "source-token confirmation is declaration-origin evidence, not proof of human authorship; macro-generated declarations can inherit ranges",
+    "classification_limitation": "layer, domain, and chapter are deterministic audit classifications, not kernel facts or semantic proof",
+    "coverage_contract": {
+      "schema_version": "numstability-coverage-metric-contract/1.0.0",
+      "authoritative_artifact": "current_graph/metrics/incoming_and_cross_boundary_coverage_contract.csv",
+      "summary_artifact": "current_graph/metrics/incoming_and_cross_boundary_coverage_contract_summary.json",
+      "rows": 27,
+      "percentage_formula": "100 * numerator / denominator",
+      "universes": [
+        "all_project_environment",
+        "environment_public",
+        "confirmed_source_written_public"
+      ],
+      "predicates": 9,
+      "consumer_and_dependency_universe": "all_project_environment; direct pairs require both endpoints project-owned",
+      "authorship_artifact": "current_graph/metrics/declaration_origins_and_authorship.csv",
+      "authorship_columns": [
+        "name",
+        "module",
+        "is_public",
+        "is_internal",
+        "is_private",
+        "is_reserved_name",
+        "has_direct_selection_range",
+        "selection_source_token",
+        "authorship_class",
+        "classifier_evidence"
+      ],
+      "contract_columns": [
+        "universe",
+        "metric",
+        "numerator",
+        "denominator",
+        "percent",
+        "percentage_formula",
+        "exact_universe_filter",
+        "exact_metric_filter",
+        "consumer_and_dependency_universe",
+        "materialized_artifact",
+        "materialized_columns",
+        "authorship_artifact",
+        "authorship_columns",
+        "underlying_raw_artifacts",
+        "underlying_raw_columns",
+        "interpretation"
+      ],
+      "validation": "all 27 rows recomputed exactly; percentages match within 1e-6 percentage points"
+    }
+  },
+  "raw_artifact_hashes": {
+    "raw/declarations.csv.gz": "235238fd68eb6ac31bdf30fe344e1d60755377d49ba5701efbd52f53e298f03f",
+    "raw/direct_dependencies.csv.gz": "cf64609f72a23ad4df78a6ac30f04db78449bcb4d5b0b6ba9721f820d108c240",
+    "raw/module_imports.csv.gz": "15c94ae361e0b13a2eb8f3d62b209ad54835c150cec748e21d8b3489508ea99d",
+    "raw/declaration_metadata.csv": "4a7690857c722bfec228ee25a0461e30c528d0b06d88b5d1930d499603f17fa2",
+    "raw/declaration_origins.csv": "a2bb52d24c753e556ae17ff8b61b5e954b4eb53ec04ebbcc9e835926e4e5a4f6",
+    "raw/phase10a_exact_current.tsv.gz": "bca79605b72534a4784a4a458008b6b283fb5a05e8336370abde6163cc3e5e84",
+    "historical/phase10a_exact_current_summary.json": "264b53838599b48f071f8122a5efb61bc38f23bde2a9f7c6aff2362cf401d701",
+    "current_graph/metrics/incoming_and_cross_boundary_coverage_contract.csv": "a7a7802daf9c441d9736438f2698abc798a9dbb95366fd21da5afc6de3a8a55e",
+    "current_graph/metrics/incoming_and_cross_boundary_coverage_contract_summary.json": "3d46761be6f306634974f19f614db6ed69351a0a1f539777f5902c655b7e66ee",
+    "current_graph/metrics/source_written_components_summary.json": "67cc25d3a547643d5c0787244b0ec552840ae1520375d858467c3ab4bbb324f0",
+    "current_graph/metrics/source_written_component_memberships.csv.gz": "0f2c091ddeb7226a34b878391a551306d746ba42896e9b166389a1296ed4f7b2",
+    "current_graph/metrics/source_written_component_size_distribution.csv": "12a69450357ee8fd3371299feb5dfc01f8488bc1e01faba429c854f76ecd2132",
+    "current_graph/metrics/reuse_leaders_by_universe_summary.json": "5bfeec034d357093eacf5a09a00d5a0761dfcfef589ebe0d4c7c5b55d398e783",
+    "current_graph/metrics/reuse_leaders_by_universe.csv": "74c532bed83a77c695586fe22865b313ffa04374c8a4d465f2070fd38b0ee0e3",
+    "current_graph/metrics/public_type_exposure_summary.json": "fcdc8849ef7bcb6fb1bed8511d0285229141274c79b364c6e2fbbb0f98fb67f3",
+    "current_graph/metrics/public_type_exposure_declarations.csv": "8362f38772646d07e4bee6c5155690bc31c72de325c81f1ea8c2bcc374d3ad19",
+    "current_graph/metrics/public_type_exposure_edges.csv": "c2be7b3a5bdfa6b98954c34c03fcb32f7deff29db79145e895f56f15669e4ed1",
+    "current_graph/metrics/environment_public_type_nonpublic_exposure_edges.csv": "6171b530c5e2a2f1eb49a7fb6be6d2a4641cba4a7c8d91d529f37f0addf120e4",
+    "current_graph/metrics/public_entrypoint_exposure_all.csv": "cc07ecc8526ae5097720b4c7bc7b75eda027ff67db88bcc9c4483ad2ed5481bd"
+  },
+  "source_inventory": {
+    "lean_source_files": 2839,
+    "modules": 2839,
+    "physical_lines": 3660946,
+    "code_bearing_lines": 1183374,
+    "blank_lines": 2315180,
+    "static_declaration_starters": 46719,
+    "source_import_commands_static_parser": 30324,
+    "unique_internal_source_import_pairs": 18818,
+    "source_import_nontrivial_sccs": 0,
+    "static_declaration_bearing_modules": 1635,
+    "static_declaration_free_modules": 1204,
+    "source_modules": 1414,
+    "source_modules_exact_chapter_hierarchy": {
+      "numerator": 1405,
+      "denominator": 1414,
+      "percent": 99.363508,
+      "formula": "Source modules whose path begins NumStability.Source.Higham.ChapterNN / all physical Source modules",
+      "filters": "physical_layer=Source and exact ChapterNN path pattern",
+      "raw_artifacts": [
+        "static_architecture/chapter_hierarchy.csv",
+        "static_architecture/modules.csv"
+      ],
+      "raw_columns": [
+        "module",
+        "source_path",
+        "physical_layer"
+      ],
+      "chapter_root_presence_artifact": "static_architecture/chapter_hierarchy.csv",
+      "chapter_root_presence_columns": [
+        "chapter",
+        "canonical_aggregate_module_present"
+      ]
+    },
+    "raw_artifact": "static_architecture/modules.csv",
+    "raw_columns": [
+      "module",
+      "physical_layer",
+      "physical_lines",
+      "code_bearing_lines",
+      "static_declaration_starter_count",
+      "direct_internal_import_count"
+    ]
+  },
+  "declaration_inventory": {
+    "all_project_environment": 77246,
+    "owner_modules": 1649,
+    "environment_public": 58120,
+    "environment_private_or_internal": 19126,
+    "environment_private": 4516,
+    "environment_internal": 19126,
+    "reserved": 7691,
+    "confirmed_source_written": 49573,
+    "confirmed_source_written_public": 47890,
+    "generated_or_authorship_unresolved": 27673,
+    "with_bodies": 75557,
+    "without_bodies": 1689,
+    "with_docstrings": 39157,
+    "unsafe": 0,
+    "partial": 126,
+    "by_refined_mutually_exclusive_kind": {
+      "theorem": 62115,
+      "definition": 9344,
+      "abbreviation": 3844,
+      "constructor": 711,
+      "recursor": 486,
+      "structure": 365,
+      "instance": 254,
+      "inductive": 121,
+      "axiom": 6
+    },
+    "by_layer": {
+      "Source": 48663,
+      "Analysis": 14414,
+      "Algorithms": 13775,
+      "Root": 254,
+      "FloatingPoint": 140
+    },
+    "raw_artifacts": [
+      "raw/declarations.csv.gz",
+      "raw/declaration_metadata.csv",
+      "raw/declaration_origins.csv",
+      "current_graph/metrics/declaration_inventory.csv",
+      "current_graph/metrics/declaration_origins_and_authorship.csv"
+    ],
+    "raw_columns": [
+      "name",
+      "module",
+      "kind",
+      "refined_kind",
+      "is_internal",
+      "is_private",
+      "is_reserved_name",
+      "authorship_class",
+      "has_body",
+      "has_docstring",
+      "layer"
+    ]
+  },
+  "direct_project_graph": {
+    "nodes": 77246,
+    "unique_ordered_pairs": 458414,
+    "type_pairs": 283049,
+    "body_or_proof_pairs": 406528,
+    "both_type_and_body_pairs": 231163,
+    "intra_module_pairs": 190183,
+    "cross_module_pairs": 268231,
+    "cross_namespace_pairs": 148458,
+    "cross_layer_pairs": 177264,
+    "cross_domain_pairs": 177642,
+    "cross_chapter_pairs": 4507,
+    "against_intended_layer_direction_pairs": 16049,
+    "identity": "type_pairs + body_or_proof_pairs - both_type_and_body_pairs = unique_ordered_pairs",
+    "raw_artifact": "current_graph/metrics/direct_project_dependencies.csv.gz",
+    "raw_columns": [
+      "source",
+      "target",
+      "source_module",
+      "target_module",
+      "occurs_in_type",
+      "occurs_in_body",
+      "same_module",
+      "cross_namespace",
+      "cross_layer",
+      "against_intended_layer_direction",
+      "cross_domain",
+      "cross_chapter"
+    ]
+  },
+  "reuse_coverage": {
+    "raw_artifact": "current_graph/metrics/incoming_and_cross_boundary_coverage_contract.csv",
+    "raw_columns": [
+      "universe",
+      "metric",
+      "numerator",
+      "denominator",
+      "percent",
+      "percentage_formula",
+      "exact_universe_filter",
+      "exact_metric_filter",
+      "consumer_and_dependency_universe",
+      "materialized_artifact",
+      "materialized_columns",
+      "authorship_artifact",
+      "authorship_columns",
+      "underlying_raw_artifacts",
+      "underlying_raw_columns"
+    ],
+    "universe_filter_note": "target declaration belongs to named universe; consumers may be any project declaration",
+    "all_project_environment": {
+      "denominator": 77246,
+      "at_least_one_incoming_project_reference": {"numerator": 50532, "percent": 65.41698},
+      "used_by_at_least_one_different_module": {"numerator": 13549, "percent": 17.540067},
+      "used_by_at_least_one_different_layer": {"numerator": 6276, "percent": 8.124693},
+      "used_by_multiple_consumer_modules": {"numerator": 10143, "percent": 13.130777},
+      "used_by_multiple_consumer_domains": {"numerator": 5520, "percent": 7.146001},
+      "no_incoming_project_edge": {"numerator": 26714, "percent": 34.58302},
+      "no_outgoing_project_edge": {"numerator": 15530, "percent": 20.104601},
+      "neither_incoming_nor_outgoing_project_edge": {"numerator": 5450, "percent": 7.055382},
+      "participates_in_nontrivial_multistep_chain": {"numerator": 68598, "percent": 88.804598}
+    },
+    "environment_public": {
+      "filters": "is_internal=false and is_private=false",
+      "denominator": 58120,
+      "at_least_one_incoming_project_reference": {"numerator": 39012, "percent": 67.123193},
+      "used_by_at_least_one_different_module": {"numerator": 12966, "percent": 22.309016},
+      "used_by_at_least_one_different_layer": {"numerator": 6103, "percent": 10.500688},
+      "used_by_multiple_consumer_modules": {"numerator": 9565, "percent": 16.45733},
+      "used_by_multiple_consumer_domains": {"numerator": 5264, "percent": 9.057123},
+      "no_incoming_project_edge": {"numerator": 19108, "percent": 32.876807},
+      "no_outgoing_project_edge": {"numerator": 2763, "percent": 4.753957},
+      "neither_incoming_nor_outgoing_project_edge": {"numerator": 170, "percent": 0.292498},
+      "participates_in_nontrivial_multistep_chain": {"numerator": 56246, "percent": 96.775637}
+    },
+    "confirmed_source_written_public": {
+      "filters": "environment-public and authorship_class=confirmed_source_written",
+      "denominator": 47890,
+      "at_least_one_incoming_project_reference": {"numerator": 35889, "percent": 74.940489},
+      "used_by_at_least_one_different_module": {"numerator": 12584, "percent": 26.276885},
+      "used_by_at_least_one_different_layer": {"numerator": 5962, "percent": 12.449363},
+      "used_by_multiple_consumer_modules": {"numerator": 9260, "percent": 19.335978},
+      "used_by_multiple_consumer_domains": {"numerator": 5126, "percent": 10.703696},
+      "no_incoming_project_edge": {"numerator": 12001, "percent": 25.059511},
+      "no_outgoing_project_edge": {"numerator": 2385, "percent": 4.980163},
+      "neither_incoming_nor_outgoing_project_edge": {"numerator": 143, "percent": 0.298601},
+      "participates_in_nontrivial_multistep_chain": {"numerator": 46811, "percent": 97.74692}
+    },
+    "contract_validation": {
+      "schema_version": "numstability-coverage-metric-contract/1.0.0",
+      "rows": 27,
+      "coverage_rows_recomputed_exactly": 27,
+      "all_percentages_match_within_1e_6_percentage_points": true,
+      "summary_artifact": "current_graph/metrics/incoming_and_cross_boundary_coverage_contract_summary.json"
+    },
+    "interpretation": "incoming and cross-boundary coverage establish internal formal consumption under exact filters; no-incoming does not imply unused, and rates are not API-quality scores"
+  },
+  "components_and_depth": {
+    "all_project_environment": {
+      "declarations": 77246,
+      "weak_components_induced": 5592,
+      "largest_weak_component": {
+        "numerator": 69427,
+        "denominator": 77246,
+        "percent": 89.877793
+      }
+    },
+    "environment_public": {
+      "filters": "is_internal=false and is_private=false",
+      "declarations": 58120,
+      "weak_components_induced": 348,
+      "largest_weak_component": {
+        "numerator": 55915,
+        "denominator": 58120,
+        "percent": 96.206125
+      }
+    },
+    "confirmed_source_written_public": {
+      "filters": "environment-public and authorship_class=confirmed_source_written",
+      "declarations": 47890,
+      "weak_components_induced": 318,
+      "largest_weak_component": {
+        "numerator": 46445,
+        "denominator": 47890,
+        "percent": 96.982669
+      }
+    },
+    "confirmed_source_written_all_visibilities": {
+      "schema_version": "numstability-source-written-components/1.0.0",
+      "filters": "authorship_class=confirmed_source_written; public and nonpublic declarations retained",
+      "declarations": 49573,
+      "induced_direct_pairs": 368602,
+      "edge_filter": "direct project pair with both endpoints in the confirmed_source_written universe",
+      "weak_components_induced": 319,
+      "weak_singleton_components": 168,
+      "weak_nontrivial_components": 151,
+      "largest_weak_component": {
+        "numerator": 48066,
+        "denominator": 49573,
+        "percent": 96.960039,
+        "formula": "100 * declarations in largest weak component / confirmed-source-written declarations",
+        "raw_artifact": "current_graph/metrics/source_written_component_size_distribution.csv",
+        "raw_columns": [
+          "universe",
+          "universe_declarations",
+          "component_kind",
+          "component_size",
+          "component_count",
+          "declarations_covered",
+          "percent_of_universe",
+          "edge_filter",
+          "raw_artifacts",
+          "raw_columns"
+        ]
+      },
+      "strong_components_induced": 49573,
+      "nontrivial_strong_components": 0,
+      "strong_singleton_components": 49573,
+      "raw_artifacts": [
+        "current_graph/metrics/source_written_components_summary.json",
+        "current_graph/metrics/source_written_component_memberships.csv.gz",
+        "current_graph/metrics/source_written_component_size_distribution.csv"
+      ],
+      "interpretation": "weak connectedness forgets edge direction and is not reuse, usefulness, or public-interface evidence; a singleton in this induced graph can connect through excluded generated or unresolved declarations"
+    },
+    "strong_components_all": 77245,
+    "nontrivial_strong_components_all": 1,
+    "declarations_in_nontrivial_strong_components": 2,
+    "maximum_dependency_depth_scc_condensation": 65,
+    "maximum_downstream_depth_scc_condensation": 65,
+    "longest_retained_path_edges": 65,
+    "raw_artifacts": [
+      "current_graph/metrics/components.csv",
+      "current_graph/metrics/weak_component_memberships.csv.gz",
+      "current_graph/metrics/strong_component_memberships.csv.gz",
+      "current_graph/metrics/fan_and_depth_distributions.csv",
+      "current_graph/metrics/longest_dependency_path.csv"
+    ],
+    "raw_columns": [
+      "universe",
+      "component_kind",
+      "component_id",
+      "size",
+      "name",
+      "dependency_depth_scc_condensation",
+      "downstream_depth_scc_condensation"
+    ],
+    "interpretation": "weak-component coverage is connectedness after forgetting direction, not reuse or usefulness"
+  },
+  "selected_fan_and_depth_percentiles": {
+    "method": "nearest-rank sorted[ceil(q*n)-1], with p0=min",
+    "raw_artifact": "current_graph/metrics/fan_and_depth_distributions.csv",
+    "all_project_environment": {
+      "count": 77246,
+      "direct_fan_in": {"p50": 1, "p90": 6, "p95": 13, "p99": 66, "p100": 13255},
+      "direct_fan_out": {"p50": 4, "p90": 15, "p95": 21, "p99": 28, "p100": 130},
+      "transitive_downstream_consumers": {"p50": 3, "p90": 62, "p95": 176, "p99": 1031, "p100": 13992},
+      "dependency_depth": {"p50": 4, "p90": 22, "p95": 33, "p99": 42, "p100": 65}
+    },
+    "confirmed_source_written_public": {
+      "count": 47890,
+      "direct_fan_in": {"p50": 1, "p90": 9, "p95": 19, "p99": 112, "p100": 13255},
+      "direct_fan_out": {"p50": 6, "p90": 19, "p95": 22, "p99": 31, "p100": 130},
+      "transitive_downstream_consumers": {"p50": 4, "p90": 86, "p95": 231, "p99": 1255, "p100": 13992},
+      "dependency_depth": {"p50": 7, "p90": 31, "p95": 34, "p99": 43, "p100": 65}
+    }
+  },
+  "reuse_leader_rankings": {
+    "schema_version": "numstability-reuse-leaders/1.0.0",
+    "ranked_declaration_universes": {
+      "all_project_environment": 77246,
+      "environment_public": 58120,
+      "confirmed_source_written": 49573,
+      "confirmed_source_written_public": 47890
+    },
+    "consumer_universe": "all_project_environment for every direct and transitive consumer count",
+    "metrics": [
+      "direct_fan_in",
+      "transitive_downstream_consumers",
+      "downstream_consumer_modules",
+      "downstream_consumer_layers",
+      "downstream_consumer_domains",
+      "downstream_consumer_chapters",
+      "downstream_depth",
+      "reused_low_in_hierarchy_product"
+    ],
+    "top_n_per_metric_and_universe": 100,
+    "output_rows": 3200,
+    "reused_low_in_hierarchy_product": {
+      "formula": "transitive_downstream_consumer_count * (1 + downstream_depth_scc_condensation)",
+      "top_declaration_in_all_four_ranked_universes": "NumStability.FPModel",
+      "top_declaration_value": 727584,
+      "top_declaration_inputs": {
+        "transitive_downstream_consumer_count": 13992,
+        "downstream_depth_scc_condensation": 51
+      },
+      "interpretation": "heuristic rank combining reverse reach and reverse-consumer depth",
+      "limitations": "not a cohesion score and not aggregable; it conflates reach and depth, is dominated by reach, and does not establish API quality or source faithfulness"
+    },
+    "raw_artifacts": [
+      "current_graph/metrics/reuse_leaders_by_universe.csv",
+      "current_graph/metrics/reuse_leaders_by_universe_summary.json",
+      "current_graph/metrics/declaration_metrics.csv.gz"
+    ],
+    "raw_columns": [
+      "universe",
+      "universe_declarations",
+      "consumer_universe",
+      "rank_metric",
+      "rank",
+      "value",
+      "metric_source_column_or_formula",
+      "name",
+      "module",
+      "authorship_class",
+      "is_public",
+      "transitive_downstream_consumers",
+      "downstream_modules",
+      "downstream_layers",
+      "downstream_domains",
+      "downstream_chapters",
+      "downstream_depth",
+      "dependency_depth"
+    ],
+    "validation": "three toy/product/tie-break cases passed and all 500 applicable legacy all-project ranking rows were reproduced"
+  },
+  "module_and_import_graph": {
+    "direct_compiled_project_import_pairs": 16512,
+    "cross_module_logical_dependency_pairs": 8765,
+    "direct_imports_without_direct_logical_pair": 10179,
+    "logical_pairs_without_direct_import": 2432,
+    "logical_pairs_available_only_through_transitive_import": 2411,
+    "logical_pairs_without_compiled_import_reachability": 21,
+    "declaration_pairs_without_compiled_import_reachability": 27,
+    "compiled_import_nontrivial_sccs": 0,
+    "logical_module_dependency_nontrivial_sccs": 1,
+    "logical_scc_interpretation": "the sole two-module SCC is supported by generated/reserved auxiliaries and is not a compiled import cycle or source-written implementation cycle",
+    "raw_artifacts": [
+      "current_graph/metrics/module_import_vs_logical_dependencies.csv",
+      "current_graph/metrics/module_graph_components.csv",
+      "current_graph/metrics/logical_module_scc_edge_evidence.csv",
+      "current_graph/metrics/module_metrics.csv"
+    ],
+    "import_caution": "an import with no direct logical pair can still supply notation, tactics, macros, attributes, or instances"
+  },
+  "layering": {
+    "intended_order": "Examples -> Source -> Algorithms -> Analysis -> FloatingPoint",
+    "edge_orientation": "consumer -> dependency",
+    "all_environment_against_direction": {
+      "numerator": 16049,
+      "denominator": 458414,
+      "percent": 3.501,
+      "formula": "direct project pairs with against_intended_layer_direction=true / all unique direct project pairs",
+      "filters": "all project-owned environment declarations at both endpoints",
+      "raw_artifact": "current_graph/metrics/direct_project_dependencies.csv.gz",
+      "raw_columns": [
+        "source_layer",
+        "target_layer",
+        "against_intended_layer_direction"
+      ]
+    },
+    "confirmed_source_written_public_both_endpoints_against_direction": {
+      "numerator": 15306,
+      "denominator": 359542,
+      "percent": 4.2571,
+      "formula": "against-direction pairs / all direct pairs after both endpoints are filtered to confirmed-source-written public",
+      "filters": "source and target is_public=true and authorship_class=confirmed_source_written",
+      "raw_artifacts": [
+        "current_graph/metrics/direct_project_dependencies.csv.gz",
+        "current_graph/metrics/declaration_origins_and_authorship.csv"
+      ],
+      "raw_columns": [
+        "source",
+        "target",
+        "source_layer",
+        "target_layer",
+        "is_public",
+        "authorship_class"
+      ]
+    },
+    "reverse_cells_all_environment": {
+      "Algorithms_to_Source": 1114,
+      "Analysis_to_Algorithms": 13998,
+      "Analysis_to_Source": 791,
+      "FloatingPoint_to_Analysis": 146
+    },
+    "source_written_public_Source_consuming_lower_layers": {
+      "numerator": 22062,
+      "denominator": 30289,
+      "percent": 72.8383,
+      "unique_pairs": 119339,
+      "distinct_lower_layer_targets": 5118,
+      "formula": "distinct confirmed-source-written public Source consumers with at least one direct edge to a confirmed-source-written public Algorithms, Analysis, or FloatingPoint target / all confirmed-source-written public Source declarations",
+      "raw_artifacts": [
+        "current_graph/metrics/direct_project_dependencies.csv.gz",
+        "current_graph/metrics/declaration_origins_and_authorship.csv"
+      ],
+      "raw_columns": [
+        "source",
+        "target",
+        "source_layer",
+        "target_layer",
+        "is_public",
+        "authorship_class"
+      ]
+    },
+    "static_compatibility_and_reexport_evidence": {
+      "source_or_chapter_labelled_paths_under_canonical_layers": 393,
+      "such_paths_static_declaration_free": 393,
+      "legacy_NumStability_Higham_modules": 14,
+      "legacy_modules_static_declaration_free": 14,
+      "declaration_bearing_canonical_modules_importing_static_compatibility_candidates": 0,
+      "declaration_bearing_canonical_modules_importing_legacy_Higham_modules": 0
+    },
+    "raw_artifacts": [
+      "current_graph/metrics/layer_dependency_matrix.csv",
+      "static_architecture/implementation_layer_inversion_candidates.csv",
+      "static_architecture/import_only_layer_inversion_candidates.csv",
+      "static_architecture/compatibility_shim_candidates.csv"
+    ]
+  },
+  "exact_statement_review": {
+    "equivalence_groups": 1710,
+    "member_declarations": 3533,
+    "groups_with_direct_peer_body_edge": 1419,
+    "groups_without_direct_peer_body_edge": 291,
+    "same_statement_body_edges": 1480,
+    "cross_module_same_statement_body_edges": 829,
+    "intra_module_same_statement_body_edges": 651,
+    "Source_to_lower_same_statement_body_edges": 771,
+    "lower_to_Source_same_statement_body_edges": 4,
+    "raw_artifacts": [
+      "current_graph/priority_reviews/exact_statement_groups.csv",
+      "current_graph/priority_reviews/same_statement_body_edges.csv",
+      "current_graph/priority_reviews/canonical_member_review.csv",
+      "current_graph/priority_reviews/summary.json"
+    ],
+    "interpretation": "exact elaborated statement equality plus a direct body edge is proof-delegation evidence, not proof of redundancy or authorization to remove a name"
+  },
+  "representative_dependency_chains": {
+    "schema_version": "numstability-representative-dependency-chains/1.1.0",
+    "selected_chains": 12,
+    "selected_path_edges": 59,
+    "selected_branch_edges": 5,
+    "deepest_representative_path_edges": 14,
+    "strongest_cross_chapter_start": "NumStability.higham12_6_rectRoundedLoop_lu_solve_SolverWBound_source",
+    "strongest_cross_chapter_end": "NumStability.gamma_mul",
+    "strongest_cross_chapter_main_path_edges": 7,
+    "chapter09_chapter12_recheck": {
+      "chapter12_owned_start_declarations": 96,
+      "chapter09_owned_target_declarations": 6081,
+      "direct_or_transitive_paths_found": 0,
+      "interpretation": "the verified LU/solver bridge is owned by Source.Higham.CrossChapter.LUSolverWeights, not Chapter12"
+    },
+    "raw_artifacts": [
+      "current_graph/chains/representative_dependency_chains.csv",
+      "current_graph/chains/representative_chain_nodes.csv",
+      "current_graph/chains/representative_chain_edges.csv",
+      "current_graph/chains/representative_chain_branch_edges.csv",
+      "current_graph/chains/representative_chain_raw_compiled_rows.csv",
+      "current_graph/chains/chapter09_chapter12_path_recheck.json"
+    ],
+    "interpretation": "each adjacent edge is elaborated formal reuse; a multi-edge start-to-end relationship is transitive; neither establishes source faithfulness"
+  },
+  "public_api_consumability": {
+    "schema_version": "numstability-public-api-probes/v1",
+    "sample_selection": "predeclared stratified canonical public sample outside Source/Higham, private/internal, generated, and static compatibility-candidate declarations",
+    "sample_size": 15,
+    "complete_entrypoint_exposure": {
+      "schema_version": "numstability-public-type-exposure/1.0.0",
+      "entry_modules": 479,
+      "universes_per_entry": 3,
+      "rows": 1437,
+      "entries_using_compiled_import_closure": 439,
+      "declaration_free_entries_using_validated_static_fallback": 40,
+      "observed_static_compiled_closure_mismatches": 0,
+      "preexisting_observed_rows_reproduced_exactly": 939,
+      "preexisting_unobserved_zero_rows_superseded": 117,
+      "root_entry_headline_rows": [
+        {"entry_module": "NumStability", "universe": "environment_public", "numerator": 58120, "denominator": 58120, "percent": 100.0, "closure_basis": "compiled transitive project-module import closure plus entry module"},
+        {"entry_module": "NumStability", "universe": "confirmed_source_written_public", "numerator": 47890, "denominator": 47890, "percent": 100.0, "closure_basis": "compiled transitive project-module import closure plus entry module"},
+        {"entry_module": "NumStability.All", "universe": "environment_public", "numerator": 58120, "denominator": 58120, "percent": 100.0, "closure_basis": "compiled transitive project-module import closure plus entry module"},
+        {"entry_module": "NumStability.All", "universe": "confirmed_source_written_public", "numerator": 47890, "denominator": 47890, "percent": 100.0, "closure_basis": "compiled transitive project-module import closure plus entry module"},
+        {"entry_module": "NumStability.Algorithms", "universe": "environment_public", "numerator": 54149, "denominator": 58120, "percent": 93.167584, "closure_basis": "compiled transitive project-module import closure plus entry module"},
+        {"entry_module": "NumStability.Algorithms", "universe": "confirmed_source_written_public", "numerator": 44770, "denominator": 47890, "percent": 93.48507, "closure_basis": "compiled transitive project-module import closure plus entry module"},
+        {"entry_module": "NumStability.Analysis", "universe": "environment_public", "numerator": 29543, "denominator": 58120, "percent": 50.831039, "closure_basis": "compiled transitive project-module import closure plus entry module"},
+        {"entry_module": "NumStability.Analysis", "universe": "confirmed_source_written_public", "numerator": 25467, "denominator": 47890, "percent": 53.178117, "closure_basis": "compiled transitive project-module import closure plus entry module"},
+        {"entry_module": "NumStability.FloatingPoint", "universe": "environment_public", "numerator": 1653, "denominator": 58120, "percent": 2.844116, "closure_basis": "compiled transitive project-module import closure plus entry module"},
+        {"entry_module": "NumStability.FloatingPoint", "universe": "confirmed_source_written_public", "numerator": 1347, "denominator": 47890, "percent": 2.812696, "closure_basis": "compiled transitive project-module import closure plus entry module"},
+        {"entry_module": "NumStability.Core", "universe": "environment_public", "numerator": 1007, "denominator": 58120, "percent": 1.732622, "closure_basis": "validated static source-import closure plus compiled declaration ownership"},
+        {"entry_module": "NumStability.Core", "universe": "confirmed_source_written_public", "numerator": 849, "denominator": 47890, "percent": 1.772813, "closure_basis": "validated static source-import closure plus compiled declaration ownership"},
+        {"entry_module": "NumStability.Source", "universe": "environment_public", "numerator": 56401, "denominator": 58120, "percent": 97.042326, "closure_basis": "compiled transitive project-module import closure plus entry module"},
+        {"entry_module": "NumStability.Source", "universe": "confirmed_source_written_public", "numerator": 46499, "denominator": 47890, "percent": 97.095427, "closure_basis": "compiled transitive project-module import closure plus entry module"},
+        {"entry_module": "NumStability.Source.Higham", "universe": "environment_public", "numerator": 56401, "denominator": 58120, "percent": 97.042326, "closure_basis": "compiled transitive project-module import closure plus entry module"},
+        {"entry_module": "NumStability.Source.Higham", "universe": "confirmed_source_written_public", "numerator": 46499, "denominator": 47890, "percent": 97.095427, "closure_basis": "compiled transitive project-module import closure plus entry module"},
+        {"entry_module": "NumStability.Higham", "universe": "environment_public", "numerator": 56401, "denominator": 58120, "percent": 97.042326, "closure_basis": "validated static source-import closure plus compiled declaration ownership"},
+        {"entry_module": "NumStability.Higham", "universe": "confirmed_source_written_public", "numerator": 46499, "denominator": 47890, "percent": 97.095427, "closure_basis": "validated static source-import closure plus compiled declaration ownership"}
+      ],
+      "authoritative_artifact": "current_graph/metrics/public_entrypoint_exposure_all.csv",
+      "superseded_artifact": "current_graph/metrics/public_entrypoint_exposure.csv",
+      "universe_filters": {
+        "environment_public": "is_public=true, equivalently is_internal=false AND is_private=false",
+        "confirmed_source_written_public": "is_public=true AND authorship_class=confirmed_source_written"
+      },
+      "raw_columns": [
+        "entry_module",
+        "entry_kind",
+        "entry_seen_in_root_compiled_module_graph",
+        "closure_basis",
+        "reachable_project_modules_including_entry",
+        "universe",
+        "reachable_declarations",
+        "universe_declarations",
+        "percent",
+        "coverage_status",
+        "raw_artifacts",
+        "raw_columns"
+      ],
+      "percentage_formula": "100 * reachable_declarations / universe_declarations",
+      "interpretation": "module-ownership reachability is not practical usability; the separately compiled client probes provide stronger evidence for their predeclared sample"
+    },
+    "exhaustive_direct_type_exposure": {
+      "schema_version": "numstability-public-type-exposure/1.0.0",
+      "edge_orientation": "consumer -> dependency",
+      "edge_filter": "unique direct project declaration pairs with occurs_in_type=true",
+      "all_project_type_pairs": 283049,
+      "type_pairs_from_confirmed_source_written_public_sources": 227954,
+      "environment_public_to_nonpublic_target": {
+        "numerator": 2259,
+        "denominator": 58120,
+        "percent": 3.886786,
+        "formula": "100 * distinct environment-public source declarations with at least one direct type edge to an environment-nonpublic project target / all environment-public project declarations",
+        "filters": "source is_public=true; target is_internal=true OR is_private=true; generated and authorship-unresolved source declarations retained",
+        "direct_pairs": 3467,
+        "distinct_targets": 1630,
+        "raw_artifact": "current_graph/metrics/environment_public_type_nonpublic_exposure_edges.csv",
+        "raw_columns": [
+          "source",
+          "source_module",
+          "source_authorship_class",
+          "target",
+          "target_module",
+          "target_is_internal",
+          "target_is_private",
+          "target_is_reserved_name",
+          "target_authorship_class",
+          "occurs_in_body_also"
+        ]
+      },
+      "confirmed_source_written_public_universe": {
+        "denominator": 47890,
+        "filters": "source is_public=true AND authorship_class=confirmed_source_written",
+        "nonpublic_target": {
+          "numerator": 650,
+          "percent": 1.357277,
+          "formula": "100 * distinct source declarations with at least one direct type edge to an environment-nonpublic project target / 47890",
+          "direct_pairs": 882,
+          "distinct_targets": 231
+        },
+        "generated_or_authorship_unresolved_target_any_visibility": {
+          "numerator": 794,
+          "percent": 1.657966,
+          "formula": "100 * distinct source declarations with at least one direct type edge to a target outside authorship_class=confirmed_source_written / 47890",
+          "direct_pairs": 1002,
+          "distinct_targets": 215
+        },
+        "reserved_target": {
+          "numerator": 0,
+          "percent": 0.0,
+          "formula": "100 * distinct source declarations with at least one direct type edge to a target with is_reserved_name=true / 47890",
+          "direct_pairs": 0,
+          "distinct_targets": 0
+        },
+        "any_review_signal_union": {
+          "numerator": 1452,
+          "percent": 3.031948,
+          "formula": "100 * distinct source declarations with at least one retained overlapping review signal / 47890",
+          "unique_direct_pair_union": 2233
+        },
+        "raw_artifacts": [
+          "current_graph/metrics/public_type_exposure_declarations.csv",
+          "current_graph/metrics/public_type_exposure_edges.csv",
+          "current_graph/metrics/public_type_exposure_summary.json",
+          "current_graph/metrics/declaration_origins_and_authorship.csv"
+        ],
+        "raw_columns": [
+          "source",
+          "source_layer",
+          "nonpublic_target_edges",
+          "generated_or_authorship_unresolved_target_edges",
+          "reserved_target_edges",
+          "candidate_reasons",
+          "target",
+          "exposure_nonpublic_target",
+          "exposure_generated_or_authorship_unresolved_target",
+          "exposure_reserved_target",
+          "exposure_canonical_to_source",
+          "exposure_to_static_compatibility_candidate",
+          "exposure_to_examples_candidate",
+          "is_public",
+          "authorship_class"
+        ]
+      },
+      "canonical_confirmed_source_written_public_universe": {
+        "denominator": 17547,
+        "filters": "source is_public=true AND authorship_class=confirmed_source_written AND effective layer in Algorithms, Analysis, or FloatingPoint",
+        "nonpublic_target": {
+          "numerator": 75,
+          "percent": 0.427423,
+          "formula": "100 * distinct canonical source declarations with the signal / 17547",
+          "direct_pairs": 87
+        },
+        "generated_or_authorship_unresolved_target_any_visibility": {
+          "numerator": 133,
+          "percent": 0.757964,
+          "formula": "100 * distinct canonical source declarations with the signal / 17547",
+          "direct_pairs": 149
+        },
+        "Source_layer_target": {
+          "numerator": 605,
+          "percent": 3.447883,
+          "formula": "100 * distinct canonical source declarations with the signal / 17547",
+          "direct_pairs": 1150
+        },
+        "static_compatibility_candidate_target": {
+          "numerator": 0,
+          "percent": 0.0,
+          "formula": "100 * distinct canonical source declarations with the signal / 17547",
+          "direct_pairs": 0
+        },
+        "Examples_layer_target": {
+          "numerator": 0,
+          "percent": 0.0,
+          "formula": "100 * distinct canonical source declarations with the signal / 17547",
+          "direct_pairs": 0
+        },
+        "reserved_target": {
+          "numerator": 0,
+          "percent": 0.0,
+          "formula": "100 * distinct canonical source declarations with the signal / 17547",
+          "direct_pairs": 0
+        },
+        "any_review_signal_union": {
+          "numerator": 743,
+          "percent": 4.234342,
+          "formula": "100 * distinct canonical source declarations with at least one retained overlapping review signal / 17547",
+          "unique_direct_pair_union": 1304
+        },
+        "nonpublic_and_generated_overlap": {
+          "source_declarations": 70,
+          "direct_pairs": 82
+        },
+        "Source_signal_disjoint_from_nonpublic_and_generated_signals": true,
+        "raw_artifacts": [
+          "current_graph/metrics/public_type_exposure_declarations.csv",
+          "current_graph/metrics/public_type_exposure_edges.csv",
+          "current_graph/metrics/public_type_exposure_summary.json"
+        ],
+        "raw_columns": [
+          "source",
+          "source_layer",
+          "nonpublic_target_edges",
+          "generated_or_authorship_unresolved_target_edges",
+          "reserved_target_edges",
+          "canonical_to_source_edges",
+          "static_compatibility_candidate_edges",
+          "examples_candidate_edges",
+          "candidate_reasons",
+          "target",
+          "exposure_nonpublic_target",
+          "exposure_generated_or_authorship_unresolved_target",
+          "exposure_reserved_target",
+          "exposure_canonical_to_source",
+          "exposure_to_static_compatibility_candidate",
+          "exposure_to_examples_candidate"
+        ]
+      },
+      "signal_overlap_warning": "signals overlap; the canonical 743-declaration and 1304-pair unions are not sums of category rows",
+      "interpretation": "direct type-exposure strata are review signals, not defects, API-quality measures, or cohesion scores; the scan does not pretty-print signatures, unfold definitions, or measure discoverability or external compatibility"
+    },
+    "visibility_success": {
+      "numerator": 15,
+      "denominator": 15,
+      "percent": 100.0,
+      "formula": "passing independent #check compilations / predeclared probes",
+      "raw_artifact": "probes/results.csv",
+      "raw_column": "check_status"
+    },
+    "client_theorem_success": {
+      "numerator": 15,
+      "denominator": 15,
+      "percent": 100.0,
+      "formula": "passing fresh-output client theorem compilations / predeclared probes",
+      "raw_artifact": "probes/results.csv",
+      "raw_column": "client_status"
+    },
+    "source_free_narrow_import_closure": {
+      "numerator": 15,
+      "denominator": 15,
+      "percent": 100.0,
+      "formula": "selected imports with zero NumStability.Source modules in static transitive source-import closure / selected imports",
+      "raw_artifact": "probes/narrow_import_closure.csv",
+      "raw_column": "reachable_source_modules"
+    },
+    "adjacent_source_docstrings": {
+      "numerator": 14,
+      "denominator": 15,
+      "percent": 93.333333,
+      "formula": "selected source introducers with conservatively detected adjacent docstring / selected declarations",
+      "raw_artifact": "probes/results.csv",
+      "raw_column": "has_adjacent_source_docstring"
+    },
+    "selected_direct_project_type_edges": 49,
+    "selected_type_edges_to_public_targets": {
+      "numerator": 49,
+      "denominator": 49,
+      "percent": 100.0,
+      "filters": "target is_internal=false and is_private=false",
+      "raw_artifact": "probes/selected_api_direct_project_type_dependencies.csv",
+      "raw_columns": ["target_is_internal", "target_is_private"]
+    },
+    "selected_type_edges_outside_Source": {
+      "numerator": 49,
+      "denominator": 49,
+      "percent": 100.0,
+      "filters": "target module does not begin NumStability.Source",
+      "raw_artifact": "probes/selected_api_direct_project_type_dependencies.csv",
+      "raw_column": "target_is_source_layer"
+    },
+    "selected_type_edges_outside_static_compatibility_modules": {
+      "numerator": 49,
+      "denominator": 49,
+      "percent": 100.0,
+      "filters": "target module absent from static compatibility-candidate set",
+      "raw_artifact": "probes/selected_api_direct_project_type_dependencies.csv",
+      "raw_column": "target_module_is_static_compatibility_candidate"
+    },
+    "timing_classification": "fresh probe outputs; cached imported dependencies; not clean library compilation",
+    "limitations": [
+      "the sample is stratified and nonrandom",
+      "#check proves visibility only",
+      "a compiled minimal client proves usability only for that exact import, statement, assumptions, and environment",
+      "most clients are thin forwarding corollaries rather than proof-discovery tasks"
+    ],
+    "raw_artifacts": [
+      "probes/PREDECLARED_SAMPLE.csv",
+      "probes/results.csv",
+      "probes/selected_declaration_environment_metadata.csv",
+      "probes/selected_api_direct_project_type_dependencies.csv",
+      "probes/narrow_import_closure.csv",
+      "probes/VALIDATION_RESULTS.csv"
+    ]
+  },
+  "module_timing_sample": {
+    "schema_version": "numstability.fresh-module-timing-summary.v1",
+    "measurement_class": "fresh target .olean/.ilean with exact cached imports",
+    "predeclared_sample_size": 30,
+    "successful": 30,
+    "failed": 0,
+    "timed_out": 0,
+    "over_20_seconds": 6,
+    "over_40_seconds": 4,
+    "seconds": {
+      "median_R7": 9.265,
+      "p90_R7": 46.484,
+      "p95_R7": 54.2175,
+      "maximum": 56.84
+    },
+    "slowest_module": "NumStability.Source.Higham.Chapter09.Section11",
+    "raw_artifacts": [
+      "timings/timing_sample_predeclared.csv",
+      "timings/fresh_module_timings_effective.csv",
+      "timings/fresh_module_timing_percentiles.csv",
+      "timings/fresh_module_timing_hotspots.csv"
+    ],
+    "limitations": "sample statistics only; imports cached; host- and load-specific; not a clean whole-library timing"
+  },
+  "proof_hygiene": {
+    "schema_version": "numstability.proof-hygiene.v1",
+    "source_files_scanned": 2839,
+    "source_code_sorry": 0,
+    "source_code_admit": 0,
+    "source_code_sorryAx": 0,
+    "source_axiom_declaration_commands": 0,
+    "source_code_unsafe": 0,
+    "source_native_decide_occurrences": 6,
+    "source_print_axioms_diagnostics": 5,
+    "compiled_direct_dependency_edges_examined": 3963823,
+    "compiled_direct_edges_to_sorryAx": 0,
+    "compiled_project_declarations": 77246,
+    "compiled_unsafe_declarations": 0,
+    "compiled_unrecognized_project_axioms": 0,
+    "compiled_generated_native_decide_axioms": 6,
+    "compiled_bodyless_declarations": 1689,
+    "compiled_unexpected_bodyless_declarations": 0,
+    "compiled_generated_internal_partial_helpers": 126,
+    "compiled_other_partial_declarations_for_review": 0,
+    "representative_high_level_endpoint_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "legacy_placeholder_interfaces": 4,
+    "raw_artifacts": [
+      "hygiene/proof_hygiene_results.csv",
+      "hygiene/source_proof_hygiene_occurrences.csv",
+      "hygiene/compiled_bodyless_declarations.csv",
+      "hygiene/compiled_project_axioms.csv",
+      "hygiene/compiled_project_axiom_dependency_edges.csv",
+      "hygiene/compiled_sorryAx_dependency_edges.csv",
+      "hygiene/compiled_unsafe_declarations.csv",
+      "hygiene/compiled_partial_declarations.csv",
+      "hygiene/placeholder_like_source_declarations.csv",
+      "hygiene/representative_endpoint_axioms.csv"
+    ],
+    "interpretation": "native_decide helpers are trusted-code evidence, not missing proofs or explicit mathematical assumptions; opacity alone is not a placeholder"
+  },
+  "phase10a_comparison": {
+    "exact_historical_tooling_recovered": true,
+    "effective_historical_source_commit": "d21a4ed5b91008a8a5bc60741765f27fcdf86edf",
+    "literal_candidate_head_recorded_in_snapshot": "899003baca0fdca2714344a69c10eef4b2d3c306",
+    "clean_historical_validation_commit": "21e130ac8355de8ec1a74f22a73bf103e00bc48f",
+    "current_commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+    "aggregate_comparison_valid": true,
+    "aggregate_comparison_valid_only_for": "fields replayed with byte-identical Phase 10A tooling, schema 1 / TSV FORMAT 2, and original filters",
+    "historical_raw_declaration_tsv_recovered": false,
+    "detailed_name_edge_move_chain_comparison_valid": false,
+    "historical_public_filter": "not isPrivateName(name) and not Name.isInternalDetail(name); no reserved or source-written filter",
+    "historical_edge_contract": "unique direct project declaration pairs; type and body retained separately and union deduplicated; recursor rule RHS included; self edges not explicitly removed",
+    "json_field_paths": {
+      "historical_baseline": {
+        "public_nodes": "declarations.visibility_counts.public",
+        "edge_counts": "declarations.edge_counts.*",
+        "graph_metrics": "declarations.graph_metrics.*"
+      },
+      "current_exact_schema_replay": {
+        "public_nodes": "visibility_counts.public",
+        "edge_counts": "edge_counts.*",
+        "graph_metrics": "graph_metrics.*"
+      }
+    },
+    "aggregate_declaration_metrics": {
+      "declaration_nodes": {"phase10a": 81950, "current": 77246},
+      "declaration_bearing_owner_modules": {"phase10a": 803, "current": 1649},
+      "historical_schema_public_nodes": {"phase10a": 56187, "current": 52332},
+      "type_body_union_pairs": {"phase10a": 491557, "current": 458631},
+      "cross_module_union_pairs": {"phase10a": 222319, "current": 268228},
+      "public_nodes_with_incoming_pair": {"phase10a": 40963, "current": 37997},
+      "public_nodes_used_by_another_owner_module": {"phase10a": 8371, "current": 12795},
+      "largest_all_node_weak_component": {"phase10a": 73995, "current": 69427},
+      "largest_public_induced_weak_component": {"phase10a": 54301, "current": 50410},
+      "all_node_isolates": {"phase10a": 5881, "current": 5450}
+    },
+    "percentage_point_change_basis": "current minus Phase 10A computed from the unrounded numerator/denominator ratios, then rounded to three decimal places",
+    "denominator_aware_metrics": {
+      "public_incoming_coverage": {
+        "phase10a": {"numerator": 40963, "denominator": 56187, "percent": 72.905},
+        "current": {"numerator": 37997, "denominator": 52332, "percent": 72.608},
+        "percentage_point_change": -0.297
+      },
+      "public_cross_module_utilization": {
+        "phase10a": {"numerator": 8371, "denominator": 56187, "percent": 14.898},
+        "current": {"numerator": 12795, "denominator": 52332, "percent": 24.45},
+        "percentage_point_change": 9.551
+      },
+      "cross_module_share_of_union_pairs": {
+        "phase10a": {"numerator": 222319, "denominator": 491557, "percent": 45.228},
+        "current": {"numerator": 268228, "denominator": 458631, "percent": 58.484},
+        "percentage_point_change": 13.257
+      },
+      "largest_all_node_weak_component_coverage": {
+        "phase10a": {"numerator": 73995, "denominator": 81950, "percent": 90.293},
+        "current": {"numerator": 69427, "denominator": 77246, "percent": 89.878},
+        "percentage_point_change": -0.415
+      },
+      "largest_public_induced_weak_component_coverage": {
+        "phase10a": {"numerator": 54301, "denominator": 56187, "percent": 96.643},
+        "current": {"numerator": 50410, "denominator": 52332, "percent": 96.327},
+        "percentage_point_change": -0.316
+      }
+    },
+    "exact_source_scan": {
+      "modules": {"phase10a": 957, "current": 2839},
+      "physical_lines": {"phase10a": 1467997, "current": 3660946},
+      "nonblank_lines": {"phase10a": 1401875, "current": 1345766},
+      "normalized_bytes": {"phase10a": 69590164, "current": 69455337},
+      "direct_import_occurrences": {"phase10a": 4009, "current": 30334},
+      "unique_internal_direct_import_pairs": {"phase10a": 2642, "current": 18818},
+      "external_direct_import_occurrences": {"phase10a": 1367, "current": 11516},
+      "cyclic_source_import_sccs": {"phase10a": 0, "current": 0}
+    },
+    "raw_artifacts": [
+      "historical/phase10a_exact/docs/architecture/baselines/2026-07-24-organization-phase10a.json",
+      "historical/phase10a_exact_current_summary.json",
+      "historical/phase10a_exact_current_source_scan.json",
+      "raw/phase10a_exact_current.tsv.gz",
+      "historical/PHASE10A_RECOVERY.json"
+    ],
+    "comparison_caution": "cross-module changes are boundary-confounded; a module split can change cross-module status without changing a logical declaration pair"
+  },
+  "headline_claims": {
+    "strongest_cohesion": "35,889/47,890 confirmed-source-written public declarations have an incoming project reference; 12,584/47,890 are used across owner modules; 46,811/47,890 participate in a multi-step chain",
+    "strongest_chain": "the CrossChapter LU/solver theorem branches directly to Chapter 9 factorization evidence and the Chapter 12 SolverWBound predicate, then reaches gamma_mul through a seven-edge proof spine",
+    "strongest_public_consumability": "15/15 predeclared narrow #check probes and 15/15 separately compiled minimal clients succeeded with fresh probe outputs and cached exact-commit imports",
+    "strongest_reorganization": "exact historical replay shows 957 to 2,839 modules and 803 to 1,649 declaration-bearing owner modules while normalized source bytes fell slightly",
+    "most_important_limitation": "no successful clean-output full build was completed because host storage was insufficient"
+  },
+  "interpretation_safeguards": [
+    "successful compilation proves acceptance by the recorded Lean environment, not source faithfulness",
+    "a later declaration depending on an earlier declaration proves formal reuse and compositional typechecking, not either statement's faithfulness to Higham",
+    "error propagation through dependencies is evidence of integration, not a source-faithfulness audit",
+    "weak connectedness is not reuse",
+    "an import edge is not necessarily a logical theorem dependency",
+    "an import without a logical edge can still be required for elaboration, notation, tactics, attributes, macros, or instances",
+    "no incoming project edge does not imply redundancy or lack of external API purpose",
+    "generated declarations are not handwritten public API",
+    "direct and transitive dependencies must not be conflated",
+    "exact-statement equality does not prove semantic or API redundancy",
+    "high fan-in is internal-consumption evidence, not automatically interface quality",
+    "a successful temporary client proves usability only for that probe",
+    "direct public-type exposure signals are review strata, not proof of an API defect or an aggregate API-quality score",
+    "entry-module reachability is module-ownership exposure, not practical usability",
+    "the reused-low-in-hierarchy product is a per-declaration ranking heuristic, not a cohesion score and not an aggregable library metric",
+    "confirmed-source-written induced weak-component coverage is connectedness, not directional reuse; excluded generated or unresolved intermediates can affect induced singleton status"
+  ],
+  "primary_artifacts": {
+    "report": "REPORT.md",
+    "dependency_chains": "DEPENDENCY_CHAINS.md",
+    "public_api_consumability": "PUBLIC_API_CONSUMABILITY.md",
+    "architecture_review": "ARCHITECTURE_REVIEW.md",
+    "historical_comparison": "HISTORICAL_COMPARISON.md",
+    "thesis_evidence": "THESIS_EVIDENCE.md",
+    "timings_and_proof_hygiene": "TIMINGS_AND_PROOF_HYGIENE.md",
+    "reproduction": "REPRODUCE.md",
+    "limitations": "LIMITATIONS.md",
+    "current_graph_schema": "current_graph/metrics/SCHEMA.md",
+    "current_graph_summary": "current_graph/metrics/summary.json",
+    "coverage_metric_contract": "current_graph/metrics/incoming_and_cross_boundary_coverage_contract.csv",
+    "coverage_metric_contract_summary": "current_graph/metrics/incoming_and_cross_boundary_coverage_contract_summary.json",
+    "source_written_components_summary": "current_graph/metrics/source_written_components_summary.json",
+    "source_written_component_memberships": "current_graph/metrics/source_written_component_memberships.csv.gz",
+    "source_written_component_size_distribution": "current_graph/metrics/source_written_component_size_distribution.csv",
+    "reuse_leaders_by_universe": "current_graph/metrics/reuse_leaders_by_universe.csv",
+    "reuse_leaders_by_universe_summary": "current_graph/metrics/reuse_leaders_by_universe_summary.json",
+    "public_type_exposure_summary": "current_graph/metrics/public_type_exposure_summary.json",
+    "public_type_exposure_declarations": "current_graph/metrics/public_type_exposure_declarations.csv",
+    "public_type_exposure_edges": "current_graph/metrics/public_type_exposure_edges.csv",
+    "environment_public_type_nonpublic_exposure_edges": "current_graph/metrics/environment_public_type_nonpublic_exposure_edges.csv",
+    "public_entrypoint_exposure": "current_graph/metrics/public_entrypoint_exposure_all.csv",
+    "chain_summary": "current_graph/chains/summary.json",
+    "public_probe_summary": "probes/summary.json",
+    "timing_summary": "timings/timing_summary.json",
+    "proof_hygiene_summary": "hygiene/proof_hygiene_summary.json",
+    "layer_figure_svg": "figures/layer_dependency_diagram.svg",
+    "domain_heatmap_svg": "figures/domain_dependency_heatmap.svg",
+    "declaration_chain_figure_svg": "figures/crosschapter_lu_solver_chain.svg"
+  },
+  "limitations_artifact": "LIMITATIONS.md"
+}

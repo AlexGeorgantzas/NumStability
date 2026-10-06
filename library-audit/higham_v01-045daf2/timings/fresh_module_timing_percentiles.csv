@@ -1,0 +1,7 @@
+group,successful_n,min_seconds,p25_seconds,p50_seconds,p75_seconds,p90_seconds,p95_seconds,max_seconds,mean_seconds,percentile_definition,universe
+all_predeclared_sample,30,2.600000,5.597500,9.265000,15.372500,46.484000,54.217500,56.840000,15.569667,R-7 linear interpolation h=(n-1)p,successful members of the predeclared 30-module stratified sample
+effective_layer:Algorithms,8,5.310000,5.812500,8.695000,12.582500,14.786000,15.178000,15.570000,9.511250,R-7 linear interpolation h=(n-1)p,successful members of the predeclared 30-module stratified sample
+effective_layer:Analysis,7,8.470000,9.265000,10.740000,14.135000,20.462000,23.846000,27.230000,13.320000,R-7 linear interpolation h=(n-1)p,successful members of the predeclared 30-module stratified sample
+effective_layer:FloatingPoint,3,2.600000,2.875000,3.150000,3.300000,3.390000,3.420000,3.450000,3.066667,R-7 linear interpolation h=(n-1)p,successful members of the predeclared 30-module stratified sample
+effective_layer:Root,2,14.780000,18.145000,21.510000,24.875000,26.894000,27.567000,28.240000,21.510000,R-7 linear interpolation h=(n-1)p,successful members of the predeclared 30-module stratified sample
+effective_layer:Source,10,3.670000,5.277500,8.060000,50.540000,56.039000,56.439500,56.840000,24.554000,R-7 linear interpolation h=(n-1)p,successful members of the predeclared 30-module stratified sample

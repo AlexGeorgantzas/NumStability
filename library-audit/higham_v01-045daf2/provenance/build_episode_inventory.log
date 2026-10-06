@@ -1,0 +1,140 @@
+--- build artifact files ---
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff     0B Sep  3 11:12 <library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_time.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff    48K Sep  3 11:14 <library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_stdout_stderr.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   1.3K Sep  3 11:17 <library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_fresh_cached_deps_metadata.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   1.5K Sep  3 11:17 <library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_fresh_cached_deps_stdout_stderr.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   202B Sep  3 11:17 <library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_fresh_cached_deps_disk_monitor.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   394K Sep  3 11:18 <library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_cached_same_commit_stdout_stderr.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   634B Sep  3 11:14 <library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_metadata.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   777B Sep  3 11:17 <library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_fresh_cached_deps_time.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   777B Sep  3 11:18 <library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_cached_same_commit_time.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   975B Sep  3 11:18 <library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_cached_same_commit_metadata.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_cached_same_commit_metadata.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_cached_same_commit_stdout_stderr.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_cached_same_commit_time.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_fresh_cached_deps_disk_monitor.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_fresh_cached_deps_metadata.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_fresh_cached_deps_stdout_stderr.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_fresh_cached_deps_time.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_metadata.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_stdout_stderr.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/build/full_build_time.log
+--- provenance artifact files ---
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   1.6K Sep  3 11:16 <library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/recreated_worktree_preflight.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   2.2K Sep  3 11:14 <library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/disk_failure_snapshot.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   2.6K Sep  3 11:11 <library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/lake_update_stdout_stderr.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   224K Sep  3 11:07 <library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/environment_and_roots_raw.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   3.5K Sep  3 11:18 <library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/build_episode_inventory.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   381B Sep  3 11:11 <library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/lake_update_metadata.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   5.8K Sep  3 11:07 <library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/preflight_raw.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   6.6K Sep  3 11:14 <library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/storage_breakdown.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   777B Sep  3 11:11 <library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/lake_update_time.log
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   861B Sep  3 11:18 <library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/cached_same_commit_preflight.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/build_episode_inventory.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/cached_same_commit_preflight.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/disk_failure_snapshot.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/environment_and_roots_raw.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/lake_update_metadata.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/lake_update_stdout_stderr.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/lake_update_time.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/preflight_raw.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/recreated_worktree_preflight.log
+<library-repo>/tmp/library_audit/higham_v01-045daf2/provenance/storage_breakdown.log
+--- first fresh attempt metadata ---
+command=lake build
+resolved_default_target=NumStability
+resolved_root_module=NumStability
+root_source=NumStability.lean
+root_direct_import=NumStability.All
+cwd=<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree
+start_utc=2026-09-03T08:12:21Z
+start_local=2026-09-03T11:12:21+0300
+pre_root_build_exists=no
+pre_git_status_begin
+## HEAD (no branch)
+pre_git_status_end
+exit_status=1
+end_utc=2026-09-03T08:14:02Z
+end_local=2026-09-03T11:14:02+0300
+post_root_build_exists=yes
+post_git_status_begin
+## HEAD (no branch)
+post_git_status_end
+project_olean_count=61
+project_ilean_count=61
+--- second fresh attempt metadata ---
+command=lake build
+classification=fresh NumStability project outputs; cached/prebuilt locked dependencies
+dependency_setup=preinstalled package cache symlink; no lake update in recreated worktree
+resolved_default_target=NumStability
+resolved_root_module=NumStability
+root_source=NumStability.lean
+root_direct_import=NumStability.All
+cwd=<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree
+start_utc=2026-09-03T08:17:06Z
+start_local=2026-09-03T11:17:06+0300
+pre_root_build_exists=no
+packages_symlink=<cache-home>/lean-fp-analysis/lake-packages/leanprover-lean4-v4.29.0-rc3-54d24c7bebd8e87d
+pre_git_status_begin
+## HEAD (no branch)
+pre_git_status_end
+pre_disk_begin
+Filesystem   1024-blocks      Used Available Capacity iused    ifree %iused  Mounted on
+/dev/disk3s5   239362496 206070956   7424328    97% 2309681 74243280    3%   /System/Volumes/Data
+pre_disk_end
+exit_status=130
+end_utc=2026-09-03T08:17:23Z
+end_local=2026-09-03T11:17:23+0300
+post_root_build_exists=yes
+post_git_status_begin
+## HEAD (no branch)
+post_git_status_end
+post_disk_begin
+Filesystem   1024-blocks      Used Available Capacity iused    ifree %iused  Mounted on
+/dev/disk3s5   239362496 206107180   7388104    97% 2309858 73881040    3%   /System/Volumes/Data
+post_disk_end
+project_olean_count=16
+project_ilean_count=16
+--- second fresh attempt timing ---
+       17.49 real        30.97 user        21.68 sys
+          3001548800  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+             2635421  page reclaims
+               84527  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+               52423  voluntary context switches
+              435401  involuntary context switches
+         29963631818  instructions retired
+         11754189261  cycles elapsed
+           284632512  peak memory footprint
+--- second fresh attempt output tail ---
+⚠ [3159/3233] Built NumStability.Algorithms.FastMatMul.Internal.LegacyBounds (5.3s)
+warning: NumStability/Algorithms/FastMatMul/Internal/LegacyBounds.lean:51:5: unused variable `hn`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [3160/3233] Built NumStability.Analysis.Summation.Signs (5.6s)
+✔ [3161/3233] Built NumStability.FloatingPoint.Model (6.5s)
+✔ [3163/3233] Built NumStability.Analysis.FloatingPointArithmetic.IeeeValue (7.7s)
+✔ [3164/3246] Built NumStability.Algorithms.FastMatMul.Recurrences (2.6s)
+✔ [3165/3246] Built NumStability.Source.Higham.Chapter23.BilinearAlgorithm (2.4s)
+✔ [3166/3262] Built NumStability.Analysis.Asymptotics.ExponentialBounds (8.9s)
+✔ [3167/3262] Built NumStability.Algorithms.ComplexBackwardError (8.9s)
+✔ [3168/3262] Built NumStability.Algorithms.ContinuedFraction (8.9s)
+✔ [3170/3262] Built NumStability.Source.Higham.Chapter23.BlockAlgorithms (3.8s)
+✔ [3173/3262] Built NumStability.Analysis.Error.Measures.ScalarDefinitions (2.6s)
+✔ [3174/3262] Built NumStability.Algorithms.OuterProduct (3.2s)
+✔ [3175/3262] Built NumStability.Source.Higham.Chapter23.ErrorRecurrences (3.0s)
+✔ [3176/3262] Built NumStability.Source.Higham.Chapter23.Theorem02.RecursiveMatrix (2.9s)
+✔ [3177/3264] Built NumStability.Analysis.FloatingPointArithmetic.ErrorModels.Additive (2.4s)
+✔ [3178/3264] Built NumStability.Analysis.Error.Measures.ScalarWitnesses (2.7s)
+time: command terminated abnormally
+--- second fresh attempt disk monitor ---
+timestamp_utc=2026-09-03T08:17:06Z available_kib=7424316 used_kib=206070968 capacity=97%
+timestamp_utc=2026-09-03T08:17:21Z available_kib=7391084 used_kib=206104200 capacity=97% project_build_kib=32844

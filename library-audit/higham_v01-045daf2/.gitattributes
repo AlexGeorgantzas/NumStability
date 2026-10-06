@@ -1,0 +1,6 @@
+# Preserve the historical audit tables byte-for-byte. Their CRLF line endings
+# are part of the checksum-verified artifacts and are not whitespace defects.
+**/*.csv -text whitespace=cr-at-eol
+**/*.tsv -text whitespace=cr-at-eol
+**/*.md whitespace=-blank-at-eof
+**/*.log -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

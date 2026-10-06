@@ -1,0 +1,46 @@
+AXIOM_PROBE|NumStability.lu_solve_backward_error_factor_gamma
+'NumStability.lu_solve_backward_error_factor_gamma' depends on axioms: [propext, Classical.choice, Quot.sound]
+AXIOM_PROBE|NumStability.fl_householderQR_solve_backward_error_gammaHigham_closedInputBounds_of_global_gammaValid
+'NumStability.fl_householderQR_solve_backward_error_gammaHigham_closedInputBounds_of_global_gammaValid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+AXIOM_PROBE|NumStability.higham12_4_from_solver
+'NumStability.higham12_4_from_solver' depends on axioms: [propext, Classical.choice, Quot.sound]
+AXIOM_PROBE|NumStability.matMulWeightedBackwardFeasible_residual_entry_le
+'NumStability.matMulWeightedBackwardFeasible_residual_entry_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+AXIOM_PROBE|NumStability.dotProduct_isRelBackwardStable
+'NumStability.dotProduct_isRelBackwardStable' depends on axioms: [propext, Classical.choice, Quot.sound]
+AXIOM_PROBE|NumStability.ls_qr_forward_error
+'NumStability.ls_qr_forward_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+AXIOM_PROBE|NumStability.codyPowerTestExact_displayedTableDecimal17_abs_error_lt_half_last_place
+'NumStability.codyPowerTestExact_displayedTableDecimal17_abs_error_lt_half_last_place' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ NumStability.codyPowerTestExact_displayedTableDecimal17_abs_error_lt_half_last_place._native.native_decide.ax_1_5]
+AXIOM_PROBE|NumStability.codyPowerTestExact_displayedDecimal21_abs_error_lt_half_last_place
+'NumStability.codyPowerTestExact_displayedDecimal21_abs_error_lt_half_last_place' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ NumStability.codyPowerTestExact_displayedDecimal21_abs_error_lt_half_last_place._native.native_decide.ax_1_5]
+AXIOM_PROBE|NumStability.FloatingPointFormat.ieeeSingleFormat_normalizedExponentParameterCount
+'NumStability.FloatingPointFormat.ieeeSingleFormat_normalizedExponentParameterCount' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ NumStability.FloatingPointFormat.ieeeSingleFormat_normalizedExponentParameterCount._native.native_decide.ax_1_2]
+AXIOM_PROBE|NumStability.FloatingPointFormat.ieeeDoubleFormat_normalizedExponentParameterCount
+'NumStability.FloatingPointFormat.ieeeDoubleFormat_normalizedExponentParameterCount' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ NumStability.FloatingPointFormat.ieeeDoubleFormat_normalizedExponentParameterCount._native.native_decide.ax_1_2]
+AXIOM_PROBE|NumStability.FloatingPointFormat.problem2_1_ieeeSingle_normalizedNumberParameterCount
+'NumStability.FloatingPointFormat.problem2_1_ieeeSingle_normalizedNumberParameterCount' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ NumStability.FloatingPointFormat.problem2_1_ieeeSingle_normalizedNumberParameterCount._native.native_decide.ax_1_6]
+AXIOM_PROBE|NumStability.FloatingPointFormat.problem2_1_ieeeDouble_normalizedNumberParameterCount
+'NumStability.FloatingPointFormat.problem2_1_ieeeDouble_normalizedNumberParameterCount' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ NumStability.FloatingPointFormat.problem2_1_ieeeDouble_normalizedNumberParameterCount._native.native_decide.ax_1_6]

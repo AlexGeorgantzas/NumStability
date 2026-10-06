@@ -1,0 +1,17 @@
+consumer_layer,dependency_layer,unique_declaration_pairs,distinct_consumer_declarations,distinct_dependency_declarations
+Algorithms,Algorithms,29630,6722,5471
+Algorithms,Analysis,11754,4029,569
+Algorithms,FloatingPoint,3361,2083,22
+Algorithms,Source,972,237,303
+Analysis,Algorithms,13436,1715,579
+Analysis,Analysis,55353,9014,6968
+Analysis,FloatingPoint,3170,2227,23
+Analysis,Source,780,432,26
+FloatingPoint,Analysis,118,39,30
+FloatingPoint,FloatingPoint,130,60,42
+Root,Root,65,39,22
+Source,Algorithms,43605,12111,3226
+Source,Analysis,60024,17560,1856
+Source,FloatingPoint,15710,9139,36
+Source,Root,1,1,1
+Source,Source,121433,25446,21455

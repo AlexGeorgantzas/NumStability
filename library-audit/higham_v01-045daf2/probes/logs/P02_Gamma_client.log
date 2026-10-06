@@ -1,0 +1,2 @@
+NumStability.gamma_nonneg (fp : NumStability.FPModel) {n : ℕ} (hn : NumStability.gammaValid fp n) :
+  0 ≤ NumStability.gamma fp n

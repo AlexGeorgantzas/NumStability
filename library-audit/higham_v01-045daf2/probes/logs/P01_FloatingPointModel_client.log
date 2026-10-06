@@ -1,0 +1,5 @@
+NumStability.FPModel.model_basicOp (fp : NumStability.FPModel) (op : NumStability.BasicOp) (x y : ℝ)
+  (hy : op = NumStability.BasicOp.div → y ≠ 0) : ∃ δ, |δ| ≤ fp.u ∧ fp.round op x y = op.exact x y * (1 + δ)
+real 6.01
+user 2.71
+sys 2.73

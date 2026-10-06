@@ -1,0 +1,176 @@
+timestamp_utc=2026-09-03T08:07:13Z
+timestamp_local=2026-09-03T11:07:13+0300
+worktree=<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree
+<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree
+045daf28056a6e4358d5de7c22c7a9d7acc2e80e
+045daf28056a6e4358d5de7c22c7a9d7acc2e80e
+045daf28056a6e4358d5de7c22c7a9d7acc2e80e
+## HEAD (no branch)
+worktree <library-repo>
+HEAD 045daf28056a6e4358d5de7c22c7a9d7acc2e80e
+branch refs/heads/higham_v01
+
+worktree <codex-home>/worktrees/1ccc/lean-fp-analysis
+HEAD d91de926313eb5aa2b1c7dae7394d8af72bdb33b
+detached
+
+worktree <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree
+HEAD 045daf28056a6e4358d5de7c22c7a9d7acc2e80e
+detached
+
+Darwin Georgioss-MacBook-Air-2.local 25.5.0 Darwin Kernel Version 25.5.0: Tue Jun  9 22:26:46 PDT 2026; root:xnu-12377.121.10~1/RELEASE_ARM64_T8103 arm64
+Darwin
+arm64
+ProductName:		macOS
+ProductVersion:		26.5.2
+BuildVersion:		25F84
+--- top level ---
+.git
+.gitattributes
+.github
+.github/workflows
+.gitignore
+CONTRIBUTING.md
+LICENSE
+LICENSES
+LICENSES/Apache-2.0.txt
+NumStability
+NumStability.lean
+NumStability/Algorithms
+NumStability/Algorithms.lean
+NumStability/All.lean
+NumStability/Analysis
+NumStability/Analysis.lean
+NumStability/Core.lean
+NumStability/FloatingPoint
+NumStability/FloatingPoint.lean
+NumStability/Higham
+NumStability/Higham.lean
+NumStability/Source
+NumStability/Source.lean
+NumStability/Upstream
+README.md
+THIRD_PARTY_NOTICES.md
+docs
+docs/LIBRARY_LOOKUP.md
+docs/LibraryLookupChecks.lean
+docs/README.md
+lake-manifest.json
+lakefile.toml
+lean-toolchain
+--- lake paths ---
+.lake ABSENT
+--- key files ---
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff  3160 Sep  3 11:05 <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/lake-manifest.json
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff   247 Sep  3 11:05 <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/lakefile.toml
+-rw-r--r--@ 1 georgiosalexandrosgeorgantzas  staff    28 Sep  3 11:05 <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/lean-toolchain
+--- lean-toolchain ---
+leanprover/lean4:v4.29.0-rc3--- lakefile.toml ---
+name = "numStability"
+version = "0.1.0"
+defaultTargets = ["NumStability"]
+weakLeanArgs = ["-j", "1"]
+
+[[lean_lib]]
+name = "NumStability"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "e8ea1afc32790ce1d4e1a4e45cc412ba9388716b"
+--- manifest packages ---
+{"version": "1.1.0",
+ "packagesDir": ".lake/packages",
+ "packages":
+ [{"url": "https://github.com/leanprover-community/mathlib4",
+   "type": "git",
+   "subDir": null,
+   "scope": "leanprover-community",
+   "rev": "e8ea1afc32790ce1d4e1a4e45cc412ba9388716b",
+   "name": "mathlib",
+   "manifestFile": "lake-manifest.json",
+   "inputRev": "e8ea1afc32790ce1d4e1a4e45cc412ba9388716b",
+   "inherited": false,
+   "configFile": "lakefile.lean"},
+  {"url": "https://github.com/leanprover-community/plausible",
+   "type": "git",
+   "subDir": null,
+   "scope": "leanprover-community",
+   "rev": "2b93f2523263a6df8a8fbbe3dd28b7f028087480",
+   "name": "plausible",
+   "manifestFile": "lake-manifest.json",
+   "inputRev": "main",
+   "inherited": true,
+   "configFile": "lakefile.toml"},
+  {"url": "https://github.com/leanprover-community/LeanSearchClient",
+   "type": "git",
+   "subDir": null,
+   "scope": "leanprover-community",
+   "rev": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+   "name": "LeanSearchClient",
+   "manifestFile": "lake-manifest.json",
+   "inputRev": "main",
+   "inherited": true,
+   "configFile": "lakefile.toml"},
+  {"url": "https://github.com/leanprover-community/import-graph",
+   "type": "git",
+   "subDir": null,
+   "scope": "leanprover-community",
+   "rev": "ea1e51a85f6bd53b6a84239b00593eebd03d522b",
+   "name": "importGraph",
+   "manifestFile": "lake-manifest.json",
+   "inputRev": "main",
+   "inherited": true,
+   "configFile": "lakefile.toml"},
+  {"url": "https://github.com/leanprover-community/ProofWidgets4",
+   "type": "git",
+   "subDir": null,
+   "scope": "leanprover-community",
+   "rev": "212dc300449e436298804f09b264f624667106f8",
+   "name": "proofwidgets",
+   "manifestFile": "lake-manifest.json",
+   "inputRev": "v0.0.90",
+   "inherited": true,
+   "configFile": "lakefile.lean"},
+  {"url": "https://github.com/leanprover-community/aesop",
+   "type": "git",
+   "subDir": null,
+   "scope": "leanprover-community",
+   "rev": "6f8999a4e31701d2c905262d3788a8c0d21b3f1f",
+   "name": "aesop",
+   "manifestFile": "lake-manifest.json",
+   "inputRev": "master",
+   "inherited": true,
+   "configFile": "lakefile.toml"},
+  {"url": "https://github.com/leanprover-community/quote4",
+   "type": "git",
+   "subDir": null,
+   "scope": "leanprover-community",
+   "rev": "5bb0ac23f6e6c4c3ba1b084f2d65cb1bd2a9cf7a",
+   "name": "Qq",
+   "manifestFile": "lake-manifest.json",
+   "inputRev": "master",
+   "inherited": true,
+   "configFile": "lakefile.toml"},
+  {"url": "https://github.com/leanprover-community/batteries",
+   "type": "git",
+   "subDir": null,
+   "scope": "leanprover-community",
+   "rev": "ed250d06b33e67aa5dc5f2cc349a5a35e8b6b390",
+   "name": "batteries",
+   "manifestFile": "lake-manifest.json",
+   "inputRev": "main",
+   "inherited": true,
+   "configFile": "lakefile.toml"},
+  {"url": "https://github.com/leanprover/lean4-cli",
+   "type": "git",
+   "subDir": null,
+   "scope": "leanprover",
+   "rev": "0c688ceba0d380f6e56f977009fc2bb2322af5a3",
+   "name": "Cli",
+   "manifestFile": "lake-manifest.json",
+   "inputRev": "v4.29.0-rc3",
+   "inherited": true,
+   "configFile": "lakefile.toml"}],
+ "name": "numStability",
+ "lakeDir": ".lake"}

@@ -1,0 +1,9 @@
+{
+  "anchor_only_links_not_checked": 1,
+  "csv": "provenance/MARKDOWN_LINK_VALIDATION.csv",
+  "links_checked": 445,
+  "resolved": 445,
+  "schema_version": "numstability-markdown-link-validation/v1",
+  "scope": "current audit Markdown; recovered archival trees and isolated worktree excluded; fenced code ignored",
+  "unresolved": 0
+}

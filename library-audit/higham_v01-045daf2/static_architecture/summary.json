@@ -1,0 +1,236 @@
+{
+  "by_domain_guess_modules": {
+    "Arithmetic": 7,
+    "Cholesky": 92,
+    "DotProduct": 12,
+    "FFT": 14,
+    "FloatingPoint": 100,
+    "HighamSourceOther": 904,
+    "LU": 114,
+    "LeastSquares": 176,
+    "MatrixEquations": 151,
+    "MatrixMultiplication": 17,
+    "MatrixPowers": 145,
+    "Nonlinear": 7,
+    "Norms": 206,
+    "Other": 282,
+    "Perturbation": 41,
+    "Polynomials": 25,
+    "ProbabilityStatistics": 49,
+    "QR": 77,
+    "Spectral": 102,
+    "Summation": 87,
+    "SymmetricIndefinite": 128,
+    "TestMatrices": 103
+  },
+  "by_physical_layer": {
+    "Algorithms": {
+      "blank_lines": 400560,
+      "code_bearing_lines": 173874,
+      "comment_only_lines": 36756,
+      "modules": 944,
+      "physical_lines": 608335,
+      "static_declaration_starters": 7416
+    },
+    "Analysis": {
+      "blank_lines": 126101,
+      "code_bearing_lines": 249606,
+      "comment_only_lines": 32530,
+      "modules": 448,
+      "physical_lines": 405930,
+      "static_declaration_starters": 9566
+    },
+    "FloatingPoint": {
+      "blank_lines": 512,
+      "code_bearing_lines": 439,
+      "comment_only_lines": 147,
+      "modules": 7,
+      "physical_lines": 1085,
+      "static_declaration_starters": 47
+    },
+    "Other": {
+      "blank_lines": 26,
+      "code_bearing_lines": 17,
+      "comment_only_lines": 79,
+      "modules": 13,
+      "physical_lines": 109,
+      "static_declaration_starters": 0
+    },
+    "Root": {
+      "blank_lines": 16,
+      "code_bearing_lines": 365,
+      "comment_only_lines": 49,
+      "modules": 8,
+      "physical_lines": 422,
+      "static_declaration_starters": 0
+    },
+    "Source": {
+      "blank_lines": 1787803,
+      "code_bearing_lines": 757981,
+      "comment_only_lines": 103204,
+      "modules": 1414,
+      "physical_lines": 2643659,
+      "static_declaration_starters": 29613
+    },
+    "Upstream": {
+      "blank_lines": 162,
+      "code_bearing_lines": 1092,
+      "comment_only_lines": 162,
+      "modules": 5,
+      "physical_lines": 1406,
+      "static_declaration_starters": 77
+    }
+  },
+  "limitations": [
+    "Source imports are not elaborated logical declaration dependencies.",
+    "Static declaration-introducer matches neither enumerate generated declarations nor prove explicit authorship.",
+    "Path-derived layers, chapters, and domains are deterministic classifications, not semantic proof.",
+    "No-import logical edges and elaboration-only import requirements cannot be resolved by this analyzer.",
+    "A declaration-free static result must be checked against the compiled environment before claiming a true environment-declaration-free shim."
+  ],
+  "metric_definitions": {
+    "aggregate_candidate_static": "Declaration-free static module with imports and a root/.All/documented aggregate signal.",
+    "code_bearing_lines": "Lines with non-whitespace text after a lexical pass removes comments and string contents.",
+    "declaration_free_static": "Zero source lines matching the recorded declaration-introducer regex; not an environment claim.",
+    "domain_guess": "Deterministic path-name regex heuristic in the recorded script.",
+    "hygiene_location_class": "Lexical code/comment/string state at each matched term occurrence.",
+    "layer_inversion": "Source import from a lower-ranked canonical layer to a higher-ranked layer under Examples > Source > Algorithms > Analysis > FloatingPoint.",
+    "many_imports_few_declarations": "direct_import_count >= 20 and static_declaration_starter_count <= 5; a review signal only.",
+    "physical_lines": "Python splitlines(keepends=True) count for each included UTF-8 source file.",
+    "source_import_edge": "One parsed Lean import command; orientation importer/consumer -> imported candidate dependency.",
+    "source_module_static_size_bucket": "For declaration-bearing Source modules: small iff code-bearing lines <=100 and declaration starters <=5; substantial iff code-bearing lines >500 or declaration starters >20; otherwise medium. This does not establish proof delegation."
+  },
+  "module_distributions_nearest_rank_percentiles": {
+    "code_bearing_lines": {
+      "0.5": 51,
+      "0.75": 237,
+      "0.9": 689,
+      "0.95": 1261,
+      "0.99": 6160,
+      "1.0": 51482
+    },
+    "direct_internal_import_count": {
+      "0.5": 3,
+      "0.75": 7,
+      "0.9": 16,
+      "0.95": 23,
+      "0.99": 58,
+      "1.0": 171
+    },
+    "physical_lines": {
+      "0.5": 106,
+      "0.75": 522,
+      "0.9": 2005,
+      "0.95": 7858,
+      "0.99": 26235,
+      "1.0": 57688
+    },
+    "static_declaration_starter_count": {
+      "0.5": 2,
+      "0.75": 11,
+      "0.9": 30,
+      "0.95": 51,
+      "0.99": 238,
+      "1.0": 1832
+    }
+  },
+  "proof_hygiene_static_counts": {
+    "admit:comment": 40,
+    "axiom_command:code": 5,
+    "axiom_command:comment": 94,
+    "placeholder_word:comment": 11,
+    "sorry:comment": 40,
+    "unsafe_keyword:comment": 8
+  },
+  "root_entry_modules": [
+    "NumStability",
+    "NumStability.Algorithms",
+    "NumStability.All",
+    "NumStability.Analysis",
+    "NumStability.Core",
+    "NumStability.FloatingPoint",
+    "NumStability.Higham",
+    "NumStability.Source",
+    "NumStability.Source.Higham"
+  ],
+  "schema_version": "numstability-static-architecture/1.0.0",
+  "scope": {
+    "excluded": "All non-Lean files and Lean files outside the NumStability library root.",
+    "included_globs": [
+      "NumStability.lean",
+      "NumStability/**/*.lean"
+    ],
+    "root": "<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree"
+  },
+  "static_declaration_starters_by_kind": {
+    "abbrev": 232,
+    "axiom": 0,
+    "class": 0,
+    "constant": 0,
+    "def": 8546,
+    "example": 0,
+    "inductive": 80,
+    "instance": 138,
+    "lemma": 2181,
+    "opaque": 0,
+    "structure": 365,
+    "theorem": 35177
+  },
+  "totals": {
+    "Algorithms_modules_with_Source_implementation_import_inversion": 21,
+    "Algorithms_to_Source_implementation_import_inversion_edges": 70,
+    "NumStability_All_reachable_modules_including_entry": 2129,
+    "NumStability_All_reachable_static_declaration_starters": 46719,
+    "NumStability_All_unreachable_declaration_bearing_modules_static": 0,
+    "NumStability_All_unreachable_modules": 710,
+    "aggregate_candidates_static": 479,
+    "apparent_reverse_layer_edges_from_declaration_bearing_modules": 280,
+    "apparent_reverse_layer_edges_from_import_only_modules": 1124,
+    "apparent_reverse_layer_source_import_edges_all": 1573,
+    "apparent_reverse_layer_source_import_edges_canonical_implementation_layers": 1404,
+    "blank_lines": 2315180,
+    "broad_aggregate_import_edges": 11,
+    "bytes": 69455337,
+    "canonical_layer_source_label_path_signals": 393,
+    "canonical_layer_source_label_path_signals_declaration_bearing": 0,
+    "code_bearing_lines": 1183374,
+    "comment_only_lines": 172927,
+    "compatibility_candidates_static": 576,
+    "declaration_bearing_Source_modules": 1054,
+    "declaration_bearing_Source_modules_with_direct_lower_layer_import": 867,
+    "declaration_bearing_Source_modules_with_transitive_lower_layer_import_reach": 1015,
+    "declaration_bearing_Source_modules_without_lower_layer_import_reach": 39,
+    "declaration_bearing_modules_static": 1635,
+    "declaration_bearing_modules_with_apparent_reverse_layer_import": 81,
+    "declaration_bearing_source_modules_importing_algorithms_directly": 692,
+    "declaration_bearing_source_to_algorithms_direct_import_edges": 2930,
+    "declaration_free_static_modules": 1204,
+    "empty_no_import_modules_static": 6,
+    "external_source_imports": 11506,
+    "implementation_imports_of_detected_aggregates": 82,
+    "implementation_imports_of_detected_aggregates_width_ge_50_modules": 47,
+    "implementation_modules_with_broad_aggregate_import": 10,
+    "import_only_modules_with_apparent_reverse_layer_import": 528,
+    "internal_source_import_edges": 18818,
+    "lean_source_files": 2839,
+    "legacy_NumStability_Higham_declaration_free_static_modules": 14,
+    "legacy_NumStability_Higham_modules": 14,
+    "many_imports_few_declarations_review_candidates": 202,
+    "module_size_review_candidates_gt_10000_physical_or_code_lines": 101,
+    "modules": 2839,
+    "modules_gt_10000_code_bearing_lines": 16,
+    "modules_gt_25000_code_bearing_lines": 7,
+    "modules_gt_25000_physical_lines": 49,
+    "physical_lines": 3660946,
+    "source_import_commands": 30324,
+    "source_import_cyclic_scc_count": 0,
+    "source_to_algorithms_direct_import_edges": 2991,
+    "static_declaration_starters": 46719,
+    "workflow_name_signal_modules": 206
+  },
+  "workflow_signal_rows_by_physical_layer": {
+    "Algorithms": 121,
+    "Analysis": 5,
+    "Source": 99
+  }
+}

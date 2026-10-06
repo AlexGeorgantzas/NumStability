@@ -1,0 +1,2 @@
+NumStability.condOneNumber_ge_scaled_estimator {n : ℕ} (hn : 0 < n) (A B : Fin n → Fin n → ℝ) :
+  NumStability.oneNorm A * NumStability.lapackNormEstimator hn B ≤ NumStability.condOneNumber A B

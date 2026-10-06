@@ -1,0 +1,64 @@
+{
+  "schema_version": "numstability.timing-hygiene-provenance.v1",
+  "commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+  "detached_head": true,
+  "source_tree_clean_after": true,
+  "source_status_porcelain": [],
+  "captured_at": "2026-09-03T12:18:52.046316+03:00",
+  "timezone": "Europe/Athens (EEST, UTC+03:00 at capture)",
+  "platform": {
+    "os": "macOS",
+    "os_version": "26.5.2",
+    "os_build": "25F84",
+    "kernel": "Darwin 25.5.0",
+    "architecture": "arm64",
+    "logical_cpu": 8,
+    "physical_cpu": 8,
+    "memory_bytes": 17179869184
+  },
+  "toolchain": {
+    "lean_toolchain": "leanprover/lean4:v4.29.0-rc3",
+    "lean_version": "4.29.0-rc3",
+    "lean_commit": "5d86aa4032284a5242470e95fbe25f1ff506763d",
+    "lake_version": "5.0.0-src+5d86aa4",
+    "mathlib_revision": "e8ea1afc32790ce1d4e1a4e45cc412ba9388716b",
+    "mathlib_describe": "v4.29.0-rc3-80-ge8ea1afc32",
+    "elan_version": "4.2.0",
+    "input_sha256": {
+      "lean-toolchain": "fdf7ccfe204caff50fab1913b9f13a763be5384e87d14555c9fdcb2be2b9f7f8",
+      "lakefile.toml": "a4c00f6534596883069d57bbe529adb6bb5b295019eb32b8d4c2fb6a34c021ce",
+      "lake-manifest.json": "ccfe8a72d6d227aebfe4e58575ddf2a2aef03b795052f97b770c36f684cc5774"
+    }
+  },
+  "timing": {
+    "sample_size": 30,
+    "first_original_started_at": "2026-09-03T12:01:15+0300",
+    "last_effective_started_at": "2026-09-03T12:10:13+0300",
+    "class": "fresh target .olean/.ilean with exact cached imports",
+    "output_paths_initially_absent": true,
+    "output_artifacts_removed_after_hashing": true,
+    "known_interference_rows_replaced": [
+      25,
+      26
+    ]
+  },
+  "axiom_probe": {
+    "command": "lake env lean <audit>/hygiene/RepresentativeAxioms.lean",
+    "return_code": 0,
+    "cache_class": "diagnostic elaboration with exact cached imports; not a performance measurement"
+  },
+  "tool_sha256": {
+    "timings/run_fresh_module_timings.py": "10a4b7e0770e50291cb5da83e15a478fba9dd08daee3654cbc19824017c3b8c6",
+    "timings/rerun_interfered_timings.py": "e7448497b4878699867e4bc4232734f77991fee0e7643897234cdbc68e45757f",
+    "timings/summarize_timings.py": "0ead4c898f30364dab85fdce5ca85e0ffd48d03b64745f786c3e1392de1d63cd",
+    "hygiene/RepresentativeAxioms.lean": "28de4cc4beb63a201a9871bc9df38c017dbf9f8292c04bcfcaf9dca7f19e22ed",
+    "hygiene/parse_axiom_probe.py": "805f9f21072128b519af0549dac2ac436f6bdbae2dc914f8edf6b0babc94b4e1",
+    "hygiene/analyze_proof_hygiene.py": "88fed21fb61d4ba013d2a38ad87db0cc93d321dad2ac91ecef28b29bef1003f4",
+    "tooling/current_audit/DeclarationMetadata.lean": "8ad62709b4a031931414421b83cbe92787a49be0d4e3d4a337ce6b4cade7d628",
+    "static_architecture/static_architecture.py": "dfba978902ba0bbc19453eede1e01c74c7b9a59cc4bcdd96bb4e89198b8d7efe"
+  },
+  "metric_contract_thresholds": {
+    "fresh_output_review_seconds_strictly_greater_than": 20,
+    "fresh_output_priority_seconds_strictly_greater_than": 40
+  }
+}

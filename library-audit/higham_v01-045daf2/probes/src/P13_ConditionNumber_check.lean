@@ -1,0 +1,3 @@
+import NumStability.Analysis.ConditionEstimatorLowerBound
+
+#check NumStability.condOneNumber_ge_scaled_estimator

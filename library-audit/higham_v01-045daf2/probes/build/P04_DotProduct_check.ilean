@@ -1,0 +1,1 @@
+{"decls":{},"directImports":[["NumStability.Algorithms.DotProduct",false,false,false]],"module":"P04_DotProduct_check","references":{"{\"c\":{\"m\":\"NumStability.Algorithms.DotProduct\",\"n\":\"NumStability.dotProduct_error_bound\"}}":{"definition":null,"usages":[[2,7,2,42,"_check"]]}},"version":5}

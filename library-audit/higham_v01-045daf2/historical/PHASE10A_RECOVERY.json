@@ -1,0 +1,187 @@
+{
+  "schema_version": "numstability.phase10a-recovery.v2",
+  "recovered_at": "2026-09-03T11:16:50+03:00",
+  "audit_target": {
+    "commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+    "ref": "origin/higham_v01"
+  },
+  "phase10a": {
+    "candidate_base_recorded_in_snapshot": "899003baca0fdca2714344a69c10eef4b2d3c306",
+    "effective_source_commit": "d21a4ed5b91008a8a5bc60741765f27fcdf86edf",
+    "clean_validation_evidence_commit": "21e130ac8355de8ec1a74f22a73bf103e00bc48f",
+    "effective_source_commit_is_ancestor_of_target": true,
+    "source_tree_sha256": "cd5be41c56cf8f6dec940b89324298aa3bd5e3dd14853afecdd2017b08fb0cb1",
+    "source_tree_digest_recomputed_from_effective_commit": true,
+    "lean_toolchain": "leanprover/lean4:v4.29.0-rc3",
+    "lean_revision": "5d86aa4032284a5242470e95fbe25f1ff506763d",
+    "mathlib_revision": "e8ea1afc32790ce1d4e1a4e45cc412ba9388716b",
+    "capture_platform": "x86_64-w64-windows-gnu",
+    "historical_build_classification": "cache-preserving/incremental, not a clean-output timing",
+    "historical_build_status": "passed",
+    "raw_dependency_tsv_recovered": false,
+    "aggregate_json_recovered": true,
+    "exact_tooling_recovered": true,
+    "exact_extractor_sha256": "30186d3470320983e2ada2e61fce7efaa7e6230c71348c5d37a9801526be2acd",
+    "exact_generator_sha256": "fc5863b2ca4e8f2dd03d2f012c40df9f26666849073a4e5b1babc65a671d6a94"
+  },
+  "current_exact_phase10a_schema_replay": {
+    "commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+    "root_module": "NumStability",
+    "extractor_unmodified": true,
+    "summarize_declaration_tsv_unmodified": true,
+    "exact_extractor_sha256": "30186d3470320983e2ada2e61fce7efaa7e6230c71348c5d37a9801526be2acd",
+    "exact_generator_sha256": "fc5863b2ca4e8f2dd03d2f012c40df9f26666849073a4e5b1babc65a671d6a94",
+    "compressed_raw_artifact": "../raw/phase10a_exact_current.tsv.gz",
+    "compressed_raw_bytes": 4213380,
+    "compressed_raw_sha256": "bca79605b72534a4784a4a458008b6b283fb5a05e8336370abde6163cc3e5e84",
+    "decompressed_raw_bytes": 124996640,
+    "decompressed_raw_sha256": "3d3d5dc5b329b4b48ea76d95b615967ee1c9f624cae0f508f99c4f95cd36eaa9",
+    "raw_row_count": 770151,
+    "raw_row_accounting": {
+      "format_markers": 1,
+      "declarations": 77246,
+      "signature_edges": 283049,
+      "body_or_proof_edges": 409855
+    },
+    "summary_artifact": "phase10a_exact_current_summary.json",
+    "summary_sha256": "264b53838599b48f071f8122a5efb61bc38f23bde2a9f7c6aff2362cf401d701",
+    "checksum_manifest": "PHASE10A_CURRENT_REPLAY_CHECKSUMS.csv",
+    "stream_transport": "gzip decompression through a FIFO; no second uncompressed copy retained",
+    "summarizer_wall_seconds": 2.23,
+    "extractor_wall_seconds": 95.11,
+    "extractor_timing_classification": "compiled-environment extraction over already available outputs; not a clean or fresh-output library build",
+    "metrics": {
+      "declaration_count": 77246,
+      "declaration_bearing_module_count": 1649,
+      "environment_public_count": 52332,
+      "public_with_incoming_direct_project_edge": 37997,
+      "public_with_incoming_direct_project_edge_percentage": 72.608,
+      "public_used_from_another_module": 12795,
+      "public_cross_module_utilization_percentage": 24.45,
+      "signature_edges": 283049,
+      "body_or_proof_edges": 409855,
+      "union_edges": 458631,
+      "cross_module_union_edges": 268228,
+      "cross_module_union_edge_percentage": 58.484,
+      "largest_weak_component_all": 69427,
+      "largest_weak_component_all_percentage": 89.878,
+      "largest_weak_component_public_induced": 50410,
+      "largest_weak_component_public_induced_percentage": 96.327,
+      "project_isolated_all": 5450,
+      "project_isolated_public": 148
+    }
+  },
+  "headline_metrics": {
+    "public_declarations": {
+      "numerator": 56187,
+      "denominator": 81950,
+      "universe": "uniquely owned environment declarations attributed to modules named NumStability or NumStability.* in the environment obtained by importing NumStability",
+      "filter": "not isPrivateName(name) and not name.isInternalDetail",
+      "artifact": "phase10a_exact/docs/architecture/baselines/2026-07-24-organization-phase10a.json",
+      "column": "declarations.visibility_counts.public"
+    },
+    "public_with_incoming_project_reference": {
+      "numerator": 40963,
+      "denominator": 56187,
+      "percentage": 72.905,
+      "formula": "count(public target B where exists unique union edge A -> B)",
+      "artifact": "phase10a_exact/docs/architecture/baselines/2026-07-24-organization-phase10a.json",
+      "column": "declarations.graph_metrics.public_referenced_somewhere"
+    },
+    "public_used_from_another_module": {
+      "numerator": 8371,
+      "denominator": 56187,
+      "percentage": 14.898,
+      "formula": "count(public target B where exists unique union edge A -> B and owner(A) != owner(B))",
+      "artifact": "phase10a_exact/docs/architecture/baselines/2026-07-24-organization-phase10a.json",
+      "column": "declarations.graph_metrics.public_referenced_from_another_module"
+    },
+    "cross_module_union_edges": {
+      "numerator": 222319,
+      "denominator": 491557,
+      "percentage": 45.228,
+      "formula": "cardinality of {(A,B) in signature_edges union body_edges | owner(A) != owner(B)}",
+      "artifact": "phase10a_exact/docs/architecture/baselines/2026-07-24-organization-phase10a.json",
+      "column": "declarations.edge_counts.cross_module_union"
+    }
+  },
+  "edge_contract": {
+    "direction": "A -> B means the elaborated type or body/proof of A directly references B",
+    "signature_edges": 305425,
+    "body_or_proof_edges": 439195,
+    "signature_and_body_overlap": 253063,
+    "body_or_proof_only_edges": 186132,
+    "union_edges": 491557,
+    "deduplication": "each edge set is a set of declaration-name pairs; repeated occurrences are removed; a pair in type and body is counted once in union",
+    "module_ownership": "Environment.getModuleIdxFor? selects the unique originating module; repeated re-exported moduleData entries are discarded",
+    "direct_not_transitive": true
+  },
+  "authorship_and_generated_names": {
+    "explicit_source_authorship_recovered": false,
+    "generated_declarations_included": true,
+    "reserved_declarations_excluded": false,
+    "public_is_environment_visibility_not_handwritten_api": true,
+    "evidence": "The exact extractor has no isReservedName or source-origin filter. The snapshot counts constructors and recursors and the Phase 10A migration record explicitly identifies a generated congr_simp theorem classified public."
+  },
+  "recovered_library_audit": {
+    "source_untracked_tree_commit": "8f9125c74f0cf3d3a5ed28f2f8b7774a84b6478d",
+    "parent_stash_commit": "698c08e9897941ee4d5b19e944a7ad49836d2b67",
+    "stash_base_commit": "2bb76d004b7dddd0e6dfb61f84c0be8e6816fa19",
+    "capture_timestamp_for_existing_2bb76d0_output": "2026-07-21T17:03:21.362192+00:00",
+    "stash_timestamp": "2026-07-24T19:32:51+03:00",
+    "byte_identical_later_stash_untracked_tree": "163a1134a6cadae7538fdb27859bfc25d9f00005",
+    "generated_phase10a_headline_metrics": false,
+    "relationship_to_2bb76d0": "The existing ignored 2bb76d0 CSV/JSON files have the exact schemas produced by this recovered tree and their metadata records commit 2bb76d0 with untracked tools; however no contemporaneous tool-hash manifest was stored, so byte identity at the July 21 execution time is strongly supported but not cryptographically proven.",
+    "known_example_test_status": "passed on 2026-09-03",
+    "can_run_against_target": "DeclarationGraph.lean and analyze_graph.py run from the external recovery location without source changes. capture_baseline.py derives the repository root from its own location and therefore must either be copied byte-for-byte to <isolated-worktree>/tools/library_audit or invoked through a path-only wrapper/adaptation."
+  },
+  "comparison_assessment": {
+    "status": "valid for exact Phase 10A aggregate fields; invalid for detailed name/edge comparison and invalid across different schemas",
+    "aggregate_comparison_valid": true,
+    "aggregate_compatibility_basis": [
+      "The current replay used the exact recovered Phase 10A extractor and summarize_declaration_tsv implementation.",
+      "Both snapshots use the NumStability root-module universe and the exact Phase 10A visibility and edge filters.",
+      "d21a4ed is an ancestor of 045daf2 and both commits pin the same Lean and Mathlib revisions.",
+      "The current raw TSV and exact summary are retained and hashed."
+    ],
+    "required_label": "environment-public under the Phase 10A filter, not source-written public",
+    "aggregate_deltas_current_minus_phase10a": {
+      "declaration_count": -4704,
+      "declaration_count_relative_percentage": -5.74,
+      "declaration_bearing_module_count": 846,
+      "declaration_bearing_module_count_relative_percentage": 105.355,
+      "environment_public_count": -3855,
+      "environment_public_count_relative_percentage": -6.861,
+      "signature_edges": -22376,
+      "signature_edges_relative_percentage": -7.326,
+      "body_or_proof_edges": -29340,
+      "body_or_proof_edges_relative_percentage": -6.68,
+      "union_edges": -32926,
+      "union_edges_relative_percentage": -6.698,
+      "cross_module_union_edges": 45909,
+      "cross_module_union_edges_relative_percentage": 20.65,
+      "public_with_incoming_direct_project_edge": -2966,
+      "public_incoming_coverage_percentage_points": -0.297,
+      "public_used_from_another_module": 4424,
+      "public_cross_module_utilization_percentage_points": 9.551,
+      "largest_weak_component_all_coverage_percentage_points": -0.415,
+      "largest_weak_component_public_induced_coverage_percentage_points": -0.316,
+      "cross_module_share_of_union_edges_percentage_points": 13.257
+    },
+    "percentage_point_change_basis": "current minus Phase 10A computed from unrounded numerator/denominator ratios, then rounded to three decimal places",
+    "interpretation": {
+      "incoming_reference_coverage": "Nearly unchanged under the historical environment-public schema (72.905% to 72.608%).",
+      "weak_component_coverage": "Nearly unchanged; this is connectedness, not reuse or usefulness.",
+      "cross_module_utilization": "Higher under current ownership boundaries, but strongly confounded by the 105.355% increase in declaration-bearing modules caused by reorganization and splitting.",
+      "stable_edge_change": "Unavailable because the historical raw declaration and edge rows were not recovered."
+    },
+    "why_recovered_library_audit_is_not_a_drop_in_schema_match": [
+      "It uses Name.isInternal while Phase 10A uses Name.isInternalDetail.",
+      "It erases self references while Phase 10A does not explicitly erase them.",
+      "It obtains bodies through ConstantInfo.value? true and therefore omits recursor-rule RHS dependencies that Phase 10A explicitly collects.",
+      "Its public weak-component metric counts public nodes in the largest all-declaration component, whereas Phase 10A computes the largest component of the public-induced graph."
+    ],
+    "detailed_name_and_edge_diff_available_from_recovered_phase10a_json": false,
+    "additional_evidence_needed_for_detailed_diff": "Regenerate the Phase 10A raw format-2 TSV at d21a4ed with the exact recovered extractor, then compare it to an exact-schema target extraction."
+  }
+}

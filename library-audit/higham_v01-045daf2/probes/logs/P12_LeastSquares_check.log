@@ -1,0 +1,2 @@
+NumStability.RectLSNormalEquations.isLeastSquaresMinimizer {m n : ℕ} {A : Fin m → Fin n → ℝ} {b : Fin m → ℝ}
+  {x : Fin n → ℝ} (h : NumStability.RectLSNormalEquations A b x) : NumStability.IsLeastSquaresMinimizer A b x

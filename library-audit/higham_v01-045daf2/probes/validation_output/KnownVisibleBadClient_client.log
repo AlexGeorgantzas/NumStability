@@ -1,0 +1,8 @@
+NumStability.gamma_nonneg (fp : NumStability.FPModel) {n : ℕ} (hn : NumStability.gammaValid fp n) :
+  0 ≤ NumStability.gamma fp n
+<library-repo>/tmp/library_audit/higham_v01-045daf2/probes/validation/KnownVisibleBadClient_client.lean:8:2: error: Type mismatch
+  True.intro
+has type
+  True
+but is expected to have type
+  False

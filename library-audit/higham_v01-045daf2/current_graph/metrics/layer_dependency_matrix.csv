@@ -1,0 +1,17 @@
+consumer_category,dependency_category,unique_declaration_pairs,type_pairs,body_pairs,both_pairs,distinct_consumer_declarations,distinct_dependency_declarations,orientation
+Algorithms,Algorithms,43703,23739,39074,19110,10259,8600,consumer -> dependency; A -> B means A directly references B in its elaborated type or body/proof
+Algorithms,Analysis,13507,8632,12284,7409,4735,595,consumer -> dependency; A -> B means A directly references B in its elaborated type or body/proof
+Algorithms,FloatingPoint,4508,3540,4218,3250,2822,32,consumer -> dependency; A -> B means A directly references B in its elaborated type or body/proof
+Algorithms,Source,1114,511,1004,401,281,319,consumer -> dependency; A -> B means A directly references B in its elaborated type or body/proof
+Analysis,Algorithms,13998,11854,12371,10227,1957,598,consumer -> dependency; A -> B means A directly references B in its elaborated type or body/proof
+Analysis,Analysis,68029,39196,62108,33275,11601,8880,consumer -> dependency; A -> B means A directly references B in its elaborated type or body/proof
+Analysis,FloatingPoint,4128,3373,3842,3087,2590,34,consumer -> dependency; A -> B means A directly references B in its elaborated type or body/proof
+Analysis,Source,791,718,783,710,437,28,consumer -> dependency; A -> B means A directly references B in its elaborated type or body/proof
+FloatingPoint,Analysis,146,106,135,95,56,32,consumer -> dependency; A -> B means A directly references B in its elaborated type or body/proof
+FloatingPoint,FloatingPoint,343,207,283,147,127,83,consumer -> dependency; A -> B means A directly references B in its elaborated type or body/proof
+Root,Root,500,240,428,168,160,170,consumer -> dependency; A -> B means A directly references B in its elaborated type or body/proof
+Source,Algorithms,49424,37484,38580,26640,14181,3433,consumer -> dependency; A -> B means A directly references B in its elaborated type or body/proof
+Source,Analysis,71085,42018,62697,33630,20458,1987,consumer -> dependency; A -> B means A directly references B in its elaborated type or body/proof
+Source,FloatingPoint,18562,15821,17610,14869,10915,43,consumer -> dependency; A -> B means A directly references B in its elaborated type or body/proof
+Source,Root,1,0,1,0,1,1,consumer -> dependency; A -> B means A directly references B in its elaborated type or body/proof
+Source,Source,168575,95610,151110,78145,35843,30966,consumer -> dependency; A -> B means A directly references B in its elaborated type or body/proof

@@ -1,0 +1,16 @@
+probe_id,narrow_import,reachable_project_modules_including_import,reachable_source_modules,source_modules,direct_project_imports,static_compatibility_candidate,semantics
+P01,NumStability.FloatingPoint.Model,1,0,,0,false,Static source-import transitive closure; not elaborated declaration reachability.
+P02,NumStability.Analysis.Rounding,2,0,,1,false,Static source-import transitive closure; not elaborated declaration reachability.
+P03,NumStability.Analysis.Summation.ErrorBounds,4,0,,3,false,Static source-import transitive closure; not elaborated declaration reachability.
+P04,NumStability.Algorithms.DotProduct,18,0,,7,false,Static source-import transitive closure; not elaborated declaration reachability.
+P05,NumStability.Analysis.VectorNorms.Basic,1,0,,0,false,Static source-import transitive closure; not elaborated declaration reachability.
+P06,NumStability.Analysis.MatrixNorms.Lp,7,0,,1,false,Static source-import transitive closure; not elaborated declaration reachability.
+P07,NumStability.Analysis.PerturbationTheory,8,0,,1,false,Static source-import transitive closure; not elaborated declaration reachability.
+P08,NumStability.Algorithms.MatMul,21,0,,4,false,Static source-import transitive closure; not elaborated declaration reachability.
+P09,NumStability.Algorithms.LinearSystems.Triangular.ForwardSubstitution,4,0,,3,false,Static source-import transitive closure; not elaborated declaration reachability.
+P10,NumStability.Algorithms.LU.GaussianElimination,23,0,,4,false,Static source-import transitive closure; not elaborated declaration reachability.
+P11,NumStability.Algorithms.LinearSystems.QR.GivensSpec,21,0,,4,false,Static source-import transitive closure; not elaborated declaration reachability.
+P12,NumStability.Algorithms.LinearSystems.LeastSquares.NormalEquations,49,0,,7,false,Static source-import transitive closure; not elaborated declaration reachability.
+P13,NumStability.Analysis.ConditionEstimatorLowerBound,36,0,,2,false,Static source-import transitive closure; not elaborated declaration reachability.
+P14,NumStability.Algorithms.LinearSystems.IterativeRefinement.Core,28,0,,7,false,Static source-import transitive closure; not elaborated declaration reachability.
+P15,NumStability.Algorithms.MatrixInversion.Residuals.MatrixInversion,45,0,,15,false,Static source-import transitive closure; not elaborated declaration reachability.

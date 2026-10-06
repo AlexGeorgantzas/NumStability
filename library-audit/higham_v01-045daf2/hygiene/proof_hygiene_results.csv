@@ -1,0 +1,14 @@
+check,numerator,denominator,universe,filters,artifact,column
+source_sorry_commands,0,2839,all NumStability Lean source files,"lexically located in code, excluding comments and strings",hygiene/source_proof_hygiene_code_occurrences.csv,term=sorry
+source_admit_commands,0,2839,all NumStability Lean source files,"lexically located in code, excluding comments and strings",hygiene/source_proof_hygiene_code_occurrences.csv,term=admit
+source_sorryAx_references,0,2839,all NumStability Lean source files,"lexically located in code, excluding comments and strings",hygiene/source_proof_hygiene_code_occurrences.csv,term=sorryAx
+source_axiom_declaration_commands,0,2839,all NumStability Lean source files,code lines whose introducer is axiom or axioms; excludes #print axioms,hygiene/source_proof_hygiene_code_occurrences.csv,command_class=axiom_declaration_command
+compiled_edges_to_sorryAx,0,3963823,all extracted direct dependency edges from project declarations to project or external declarations,target equals sorryAx or ends with .sorryAx,hygiene/compiled_sorryAx_dependency_edges.csv,target
+compiled_unsafe_declarations,0,77246,all project-owned compiled environment declarations,DeclarationInfo.isUnsafe=true,hygiene/compiled_unsafe_declarations.csv,is_unsafe
+source_native_decide_tactics,6,2839,all NumStability Lean source files,"native_decide token lexically located in code, excluding comments and strings",hygiene/source_proof_hygiene_code_occurrences.csv,term=native_decide
+compiled_generated_native_decide_axioms,6,77246,all project-owned compiled environment declarations,kind=axiom and generated name contains ._native.native_decide.ax_,hygiene/compiled_project_axioms.csv,classification
+compiled_unrecognized_project_axioms,0,77246,all project-owned compiled environment declarations,kind=axiom excluding recognized native_decide generated helpers,hygiene/compiled_project_axioms.csv,classification
+compiled_unexpected_bodyless_declarations,0,77246,all project-owned compiled environment declarations,"has_body=false excluding constructors, recursors, inductives, and recognized native_decide axiom helpers",hygiene/compiled_bodyless_declarations.csv,classification
+compiled_generated_internal_partial_recursion_helpers,126,77246,all project-owned compiled environment declarations,"is_partial=true, is_internal=true, generated name suffix ._unsafe_rec",hygiene/compiled_partial_declarations.csv,classification
+compiled_other_partial_declarations_requiring_review,0,77246,all project-owned compiled environment declarations,is_partial=true excluding recognized internal ._unsafe_rec generated helpers,hygiene/compiled_partial_declarations.csv,classification
+explicitly_documented_legacy_placeholder_interfaces,4,77246,all project-owned compiled environment declarations,source declaration explicitly described as a legacy placeholder in its doc comment; conservative lexical review,hygiene/placeholder_like_source_declarations.csv,classification

@@ -1,0 +1,73 @@
+{
+  "consumer_universe": "all_project_environment for every direct and transitive consumer count",
+  "edge_orientation": "consumer -> dependency",
+  "input": {
+    "path": "current_graph/metrics/declaration_metrics.csv.gz",
+    "sha256": "eda468932d7e4275eef1f500a6e70fdc257785867da411d7130f5b4bbf23bb33"
+  },
+  "output": "current_graph/metrics/reuse_leaders_by_universe.csv",
+  "output_rows": 3200,
+  "ranked_declaration_universes": {
+    "all_project_environment": 77246,
+    "confirmed_source_written": 49573,
+    "confirmed_source_written_public": 47890,
+    "environment_public": 58120
+  },
+  "rankings": {
+    "direct_fan_in": {
+      "formula_or_definition": "number of distinct project declarations with a direct edge to the ranked declaration",
+      "source_column": "direct_project_consumer_count"
+    },
+    "downstream_consumer_chapters": {
+      "formula_or_definition": "number of audit-classified chapters among transitive downstream consumers",
+      "source_column": "transitive_downstream_chapter_count"
+    },
+    "downstream_consumer_domains": {
+      "formula_or_definition": "number of audit-classified domains among transitive downstream consumers",
+      "source_column": "transitive_downstream_domain_count"
+    },
+    "downstream_consumer_layers": {
+      "formula_or_definition": "number of audit-classified layers among transitive downstream consumers",
+      "source_column": "transitive_downstream_layer_count"
+    },
+    "downstream_consumer_modules": {
+      "formula_or_definition": "number of distinct owner modules among transitive downstream consumers",
+      "source_column": "transitive_downstream_module_count"
+    },
+    "downstream_depth": {
+      "formula_or_definition": "longest reverse-consumer path length in the SCC condensation DAG",
+      "source_column": "downstream_depth_scc_condensation"
+    },
+    "reused_low_in_hierarchy_product": {
+      "formula_or_definition": "transitive_downstream_consumer_count * (1 + downstream_depth_scc_condensation)",
+      "source_column": "derived"
+    },
+    "transitive_downstream_consumers": {
+      "formula_or_definition": "number of distinct reverse-reachable project consumer declarations, excluding self",
+      "source_column": "transitive_downstream_consumer_count"
+    }
+  },
+  "reused_low_in_hierarchy_product": {
+    "formula": "transitive_downstream_consumer_count * (1 + downstream_depth_scc_condensation)",
+    "interpretation": "ranking heuristic for declarations combining broad reverse reach with a long reverse-consumer chain",
+    "limitations": [
+      "It is not a cohesion score and must not be aggregated across the library.",
+      "The multiplicative scale conflates two different properties and is dominated by large reach values.",
+      "Depth is measured on the SCC condensation graph and layers/domains are not part of the formula.",
+      "A high value shows internal consumption, not public API quality or source faithfulness."
+    ]
+  },
+  "schema_version": "numstability-reuse-leaders/1.0.0",
+  "tool": {
+    "path": "current_graph/build_reuse_leaders_by_universe.py",
+    "sha256": "a7c171d48b8c8c8295c2116866ee1a29c8f32737a53eb4867ffb8678a01abd26"
+  },
+  "top_n_per_metric_and_universe": 100,
+  "validation": {
+    "declaration_rows_unique": true,
+    "expected_legacy_rows": 500,
+    "legacy_all_project_ranking_rows_reproduced": 500,
+    "toy_product_and_tie_break_cases_passed": 3,
+    "universe_sizes_match_inventory": true
+  }
+}

@@ -1,0 +1,20 @@
+⚠ [3159/3233] Built NumStability.Algorithms.FastMatMul.Internal.LegacyBounds (5.3s)
+warning: NumStability/Algorithms/FastMatMul/Internal/LegacyBounds.lean:51:5: unused variable `hn`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [3160/3233] Built NumStability.Analysis.Summation.Signs (5.6s)
+✔ [3161/3233] Built NumStability.FloatingPoint.Model (6.5s)
+✔ [3163/3233] Built NumStability.Analysis.FloatingPointArithmetic.IeeeValue (7.7s)
+✔ [3164/3246] Built NumStability.Algorithms.FastMatMul.Recurrences (2.6s)
+✔ [3165/3246] Built NumStability.Source.Higham.Chapter23.BilinearAlgorithm (2.4s)
+✔ [3166/3262] Built NumStability.Analysis.Asymptotics.ExponentialBounds (8.9s)
+✔ [3167/3262] Built NumStability.Algorithms.ComplexBackwardError (8.9s)
+✔ [3168/3262] Built NumStability.Algorithms.ContinuedFraction (8.9s)
+✔ [3170/3262] Built NumStability.Source.Higham.Chapter23.BlockAlgorithms (3.8s)
+✔ [3173/3262] Built NumStability.Analysis.Error.Measures.ScalarDefinitions (2.6s)
+✔ [3174/3262] Built NumStability.Algorithms.OuterProduct (3.2s)
+✔ [3175/3262] Built NumStability.Source.Higham.Chapter23.ErrorRecurrences (3.0s)
+✔ [3176/3262] Built NumStability.Source.Higham.Chapter23.Theorem02.RecursiveMatrix (2.9s)
+✔ [3177/3264] Built NumStability.Analysis.FloatingPointArithmetic.ErrorModels.Additive (2.4s)
+✔ [3178/3264] Built NumStability.Analysis.Error.Measures.ScalarWitnesses (2.7s)
+time: command terminated abnormally

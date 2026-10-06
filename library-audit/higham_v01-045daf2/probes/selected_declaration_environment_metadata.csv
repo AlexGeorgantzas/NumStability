@@ -1,0 +1,16 @@
+name,module,kind,is_internal,is_private,has_body,type_direct_count,body_direct_count
+NumStability.FPModel.model_basicOp,NumStability.FloatingPoint.Model,theorem,false,false,true,27,39
+NumStability.gamma_nonneg,NumStability.Analysis.Rounding,theorem,false,false,true,10,146
+NumStability.fl_sum_error,NumStability.Analysis.Summation.ErrorBounds,theorem,false,false,true,31,214
+NumStability.dotProduct_error_bound,NumStability.Algorithms.DotProduct,theorem,false,false,true,22,247
+NumStability.complexVecLpNorm_two_ofLp_eq,NumStability.Analysis.VectorNorms.Basic,theorem,false,false,true,25,41
+NumStability.complexMatrixLpNorm_upper_bound_by_columnMax_lpNorm,NumStability.Analysis.MatrixNorms.Lp,theorem,false,false,true,25,86
+NumStability.forward_error_from_residual,NumStability.Analysis.PerturbationTheory,theorem,false,false,true,21,181
+NumStability.matMul_error_bound,NumStability.Algorithms.MatMul,theorem,false,false,true,22,6
+NumStability.forwardSub_backward_error,NumStability.Algorithms.LinearSystems.Triangular.ForwardSubstitution,theorem,false,false,true,32,172
+NumStability.lu_backward_error_gamma,NumStability.Algorithms.LU.GaussianElimination,theorem,false,false,true,25,9
+NumStability.givensRotation_orthogonal,NumStability.Algorithms.LinearSystems.QR.GivensSpec,theorem,false,false,true,18,232
+NumStability.RectLSNormalEquations.isLeastSquaresMinimizer,NumStability.Algorithms.LinearSystems.LeastSquares.NormalEquations,theorem,false,false,true,5,134
+NumStability.condOneNumber_ge_scaled_estimator,NumStability.Analysis.ConditionEstimatorLowerBound,theorem,false,false,true,15,10
+NumStability.one_step_refinement_error_identity,NumStability.Algorithms.LinearSystems.IterativeRefinement.Core,theorem,false,false,true,17,152
+NumStability.inversion_residual_bound,NumStability.Algorithms.MatrixInversion.Residuals.MatrixInversion,theorem,false,false,true,23,179

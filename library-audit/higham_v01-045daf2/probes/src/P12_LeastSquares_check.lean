@@ -1,0 +1,3 @@
+import NumStability.Algorithms.LinearSystems.LeastSquares.NormalEquations
+
+#check NumStability.RectLSNormalEquations.isLeastSquaresMinimizer

@@ -1,0 +1,3 @@
+import NumStability.Analysis.MatrixNorms.Lp
+
+#check NumStability.complexMatrixLpNorm_upper_bound_by_columnMax_lpNorm

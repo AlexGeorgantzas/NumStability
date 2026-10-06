@@ -1,0 +1,138 @@
+{
+  "canonical_source_written_public_universe": {
+    "declarations": 17547,
+    "filter": "confirmed_source_written_public and effective layer in Algorithms, Analysis, or FloatingPoint"
+  },
+  "complete_entrypoint_exposure": {
+    "All_aggregates": 127,
+    "declaration_free_entries_using_validated_static_fallback": 40,
+    "documented_aggregates": 343,
+    "entries_using_compiled_import_closure": 439,
+    "entry_modules": 479,
+    "observed_entry_static_compiled_closure_mismatches": 0,
+    "preexisting_observed_entry_rows_reproduced_exactly": 939,
+    "preexisting_unobserved_zero_rows_superseded_by_validated_static_fallback": 117,
+    "root_entries": 9,
+    "rows_three_universes_each": 1437
+  },
+  "definitions": {
+    "canonical_to_source": "source layer is Algorithms, Analysis, or FloatingPoint and target layer is Source",
+    "confirmed_source_written_nonpublic_target": "nonpublic target whose source range/token passes the conservative source-origin classifier",
+    "generated_or_authorship_unresolved_target": "target of any visibility whose authorship_class is not confirmed_source_written; this is a generated-or-unresolved review signal, not proof of generation",
+    "generated_or_unresolved_nonpublic_target": "nonpublic target whose authorship_class is not confirmed_source_written",
+    "nonpublic_target": "target is environment-private or environment-internal under the v2 visibility fields",
+    "reserved_target": "target has Environment.isReservedName=true; kept separate from the broader generated-or-authorship-unresolved signal",
+    "static_compatibility_candidate": "target owner module is marked compatibility_candidate_static=true by the static module classifier",
+    "to_examples_candidate": "source is not Examples and target layer is Examples"
+  },
+  "edge_orientation": "consumer -> dependency",
+  "edge_universe": {
+    "all_project_type_pairs": 283049,
+    "filter": "source in source universe and occurs_in_type=true; one row per unique ordered project pair",
+    "name": "direct_project_type_pairs_from_source_universe",
+    "pairs_from_source_universe": 227954
+  },
+  "environment_public_nonpublic_edge_target_authorship_distribution": {
+    "confirmed_source_written": 91,
+    "internal_no_direct_range": 3373,
+    "range_present_token_mismatch_generated_or_unresolved": 3
+  },
+  "environment_public_source_universe": {
+    "declarations": 58120,
+    "filter": "is_public=true; generated and authorship-unresolved names retained",
+    "name": "environment_public"
+  },
+  "inputs": {
+    "current_graph/metrics/declaration_origins_and_authorship.csv": "bc5c4772ee198cd87a17720d4a56d4da1b50cf27b2ebf1e03c85d6888fa08ca5",
+    "current_graph/metrics/public_entrypoint_exposure.csv": "6a1c6969967dc40d6bf15941a7f09156d74948641454bd2b92494c5f507def83",
+    "current_graph/metrics/type_project_dependencies.csv.gz": "bf3ee894975978572e370efd4d034dc34e0a653a74803495e7851f629409feb2",
+    "raw/module_imports.csv.gz": "15c94ae361e0b13a2eb8f3d62b209ad54835c150cec748e21d8b3489508ea99d",
+    "static_architecture/entry_points.csv": "f1cf9bbc3f7d99962c6872ca200bf04ded09ce028ba6433e3b1c7836f1e4daf5",
+    "static_architecture/modules.csv": "9cf8779896ba801e8f95cb7f2db1110b92a29fb6553c729a68fb47f7ac11fe0f",
+    "static_architecture/source_imports.csv": "56f2aa80f05aef8acc1fc137df0875324189bfe51810536e04e4dfc6b7b409c3"
+  },
+  "interpretation": [
+    "Every row is a direct elaborated type dependency, not a textual match or import edge.",
+    "A review signal is not proof of an API defect: generated proof helpers can be benign elaboration artifacts, and a Source dependency may be intentional ownership debt.",
+    "The scan does not pretty-print user-visible signatures or measure transitive unfolding, namespace discoverability, or external compatibility."
+  ],
+  "nonpublic_edge_target_authorship_distribution": {
+    "confirmed_source_written": 81,
+    "internal_no_direct_range": 801
+  },
+  "nonpublic_edge_target_kind_distribution": {
+    "definition": 81,
+    "theorem": 801
+  },
+  "outputs": {
+    "complete_entrypoint_exposure": "current_graph/metrics/public_entrypoint_exposure_all.csv",
+    "declaration_rows": "current_graph/metrics/public_type_exposure_declarations.csv",
+    "edge_rows": "current_graph/metrics/public_type_exposure_edges.csv",
+    "environment_public_nonpublic_edge_rows": "current_graph/metrics/environment_public_type_nonpublic_exposure_edges.csv",
+    "validation_log": "current_graph/public_type_exposure_validation.log"
+  },
+  "review_signals": {
+    "candidate_edges_union": 2233,
+    "canonical_candidate_edge_union": 1304,
+    "canonical_distinct_generated_or_authorship_unresolved_targets": 61,
+    "canonical_distinct_nonpublic_targets": 52,
+    "canonical_edges_in_nonpublic_and_generated_overlap": 82,
+    "canonical_edges_to_generated_or_authorship_unresolved_target": 149,
+    "canonical_edges_to_nonpublic_target": 87,
+    "canonical_source_declarations_in_nonpublic_and_generated_overlap": 70,
+    "canonical_source_declarations_with_Source_target": 605,
+    "canonical_source_declarations_with_any_review_signal": 743,
+    "canonical_source_written_public_declarations_with_generated_or_authorship_unresolved_target": 133,
+    "canonical_source_written_public_declarations_with_nonpublic_target": 75,
+    "canonical_to_Source_edges": 1150,
+    "distinct_Source_targets_from_canonical": 81,
+    "distinct_generated_or_authorship_unresolved_targets": 215,
+    "distinct_nonpublic_targets": 231,
+    "distinct_reserved_targets": 0,
+    "edges_to_Examples_target": 0,
+    "edges_to_confirmed_source_written_nonpublic_target": 81,
+    "edges_to_generated_or_authorship_unresolved_target": 1002,
+    "edges_to_generated_or_unresolved_nonpublic_target": 801,
+    "edges_to_nonpublic_target": 882,
+    "edges_to_reserved_target": 0,
+    "edges_to_static_compatibility_target": 0,
+    "environment_public_distinct_nonpublic_targets": 1630,
+    "environment_public_edges_to_nonpublic_target": 3467,
+    "environment_public_edges_to_private_target": 99,
+    "environment_public_nonpublic_edges_also_in_body": 1332,
+    "environment_public_nonpublic_type_only_edges": 2135,
+    "environment_public_source_declarations_with_nonpublic_target": 2259,
+    "source_declarations_with_Examples_target": 0,
+    "source_declarations_with_any_review_signal": 1452,
+    "source_declarations_with_confirmed_source_written_nonpublic_target": 59,
+    "source_declarations_with_generated_or_authorship_unresolved_target": 794,
+    "source_declarations_with_generated_or_unresolved_nonpublic_target": 597,
+    "source_declarations_with_nonpublic_target": 650,
+    "source_declarations_with_reserved_target": 0,
+    "source_declarations_with_static_compatibility_target": 0,
+    "source_written_public_edges_to_private_target": 85,
+    "source_written_public_nonpublic_edges_also_in_body": 808,
+    "source_written_public_nonpublic_type_only_edges": 74
+  },
+  "schema_version": "numstability-public-type-exposure/1.0.0",
+  "source_universe": {
+    "declarations": 47890,
+    "filter": "is_public=true and authorship_class=confirmed_source_written",
+    "name": "confirmed_source_written_public"
+  },
+  "tool": {
+    "path": "current_graph/analyze_public_type_exposure.py",
+    "sha256": "1fb91f07610320ed420698e0ddd9c89bc16307c3fe81796885beed9ec7fbaf60"
+  },
+  "validation": {
+    "all_edge_endpoints_have_metadata": true,
+    "all_preexisting_observed_entrypoint_exposure_rows_reproduced": true,
+    "all_type_rows_marked_occurs_in_type": true,
+    "candidate_rows_have_at_least_one_signal": true,
+    "canonical_Source_signal_disjoint_from_nonpublic_and_generated_signals": true,
+    "source_universe_expected_47890": true,
+    "static_and_compiled_closures_match_for_observed_entries": true,
+    "toy_cases_passed": 8,
+    "type_pairs_unique": true
+  }
+}

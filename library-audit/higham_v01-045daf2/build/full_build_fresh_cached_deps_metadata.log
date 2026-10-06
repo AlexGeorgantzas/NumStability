@@ -1,0 +1,32 @@
+command=lake build
+classification=fresh NumStability project outputs; cached/prebuilt locked dependencies
+dependency_setup=preinstalled package cache symlink; no lake update in recreated worktree
+resolved_default_target=NumStability
+resolved_root_module=NumStability
+root_source=NumStability.lean
+root_direct_import=NumStability.All
+cwd=<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree
+start_utc=2026-09-03T08:17:06Z
+start_local=2026-09-03T11:17:06+0300
+pre_root_build_exists=no
+packages_symlink=<cache-home>/lean-fp-analysis/lake-packages/leanprover-lean4-v4.29.0-rc3-54d24c7bebd8e87d
+pre_git_status_begin
+## HEAD (no branch)
+pre_git_status_end
+pre_disk_begin
+Filesystem   1024-blocks      Used Available Capacity iused    ifree %iused  Mounted on
+/dev/disk3s5   239362496 206070956   7424328    97% 2309681 74243280    3%   /System/Volumes/Data
+pre_disk_end
+exit_status=130
+end_utc=2026-09-03T08:17:23Z
+end_local=2026-09-03T11:17:23+0300
+post_root_build_exists=yes
+post_git_status_begin
+## HEAD (no branch)
+post_git_status_end
+post_disk_begin
+Filesystem   1024-blocks      Used Available Capacity iused    ifree %iused  Mounted on
+/dev/disk3s5   239362496 206107180   7388104    97% 2309858 73881040    3%   /System/Volumes/Data
+post_disk_end
+project_olean_count=16
+project_ilean_count=16

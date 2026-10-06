@@ -1,0 +1,412 @@
+✔ [3160/3233] Built NumStability.Analysis.Summation.Signs (12s)
+✔ [3161/3233] Built NumStability.FloatingPoint.Model (12s)
+✔ [3162/3233] Built NumStability.Algorithms.ComplexBackwardError (12s)
+✔ [3163/3233] Built NumStability.Analysis.Asymptotics.ExponentialBounds (12s)
+✔ [3164/3253] Built NumStability.Algorithms.ContinuedFraction (12s)
+✔ [3165/3262] Built NumStability.Analysis.FloatingPointArithmetic.IeeeValue (14s)
+✔ [3166/3262] Built NumStability.Analysis.Error.Measures.ScalarDefinitions (9.2s)
+⚠ [3167/3262] Built NumStability.Algorithms.FastMatMul.Internal.LegacyBounds (11s)
+warning: NumStability/Algorithms/FastMatMul/Internal/LegacyBounds.lean:51:5: unused variable `hn`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [3168/3262] Built NumStability.Algorithms.FastMatMul.Recurrences (11s)
+✔ [3169/3262] Built NumStability.Source.Higham.Chapter23.BilinearAlgorithm (10s)
+✔ [3172/3262] Built NumStability.Algorithms.OuterProduct (11s)
+✔ [3173/3262] Built NumStability.Source.Higham.Chapter23.BlockAlgorithms (12s)
+✔ [3175/3262] Built NumStability.Analysis.FiniteProbability (25s)
+✔ [3176/3262] Built NumStability.Analysis.FloatingPointArithmetic.ErrorModels.Additive (3.3s)
+✔ [3177/3262] Built NumStability.Analysis.Error.Measures.ScalarWitnesses (3.7s)
+✔ [3178/3262] Built NumStability.Analysis.Error.Measures.ScalarProperties (4.2s)
+✔ [3179/3264] Built NumStability.Source.Higham.Chapter23.ErrorRecurrences (3.5s)
+✔ [3180/3264] Built NumStability.Source.Higham.Chapter23.Theorem02.RecursiveMatrix (4.4s)
+✔ [3182/3264] Built NumStability.Analysis.FloatingPointArithmetic.ErrorModels.NoGuardBasic (3.7s)
+✔ [3183/3265] Built NumStability.Analysis.Error.Measures.Componentwise (3.6s)
+✔ [3185/3265] Built NumStability.Analysis.FloatingPointArithmetic.Format (9.9s)
+✔ [3186/3267] Built NumStability.Analysis.FloatingPointArithmetic.ErrorModels.NoGuardModel (3.2s)
+✔ [3188/3275] Built NumStability.Source.Higham.Chapter23.Problem08 (4.8s)
+✔ [3213/3318] Built NumStability.Analysis.Stability (3.8s)
+✔ [3266/3808] Built NumStability.Analysis.StatisticalRounding (10s)
+⚠ [3273/3830] Built NumStability.Source.Higham.Chapter23.Theorem02.ErrorRelations (5.6s)
+info: NumStability/Source/Higham/Chapter23/Theorem02/ErrorRelations.lean:172:35: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ErrorRelations.lean:172:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: NumStability/Source/Higham/Chapter23/Theorem02/ErrorRelations.lean:194:35: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ErrorRelations.lean:194:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: NumStability/Source/Higham/Chapter23/Theorem02/ErrorRelations.lean:226:35: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ErrorRelations.lean:226:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ErrorRelations.lean:447:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ErrorRelations.lean:459:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ErrorRelations.lean:470:80: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ErrorRelations.lean:473:81: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ErrorRelations.lean:485:80: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ErrorRelations.lean:488:81: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ErrorRelations.lean:521:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [3274/3836] Built NumStability.Analysis.Asymptotics.Bounds (3.2s)
+✔ [3277/3836] Built NumStability.Algorithms.TestMatrices.UpperTriangularStress (2.2s)
+✔ [3278/3836] Built NumStability.Algorithms.LinearSystems.LU.BlockLU.DiagonalDominance (2.9s)
+✔ [3279/3836] Built NumStability.Analysis.LinearOperators.Triangularization (5.2s)
+✔ [3280/3836] Built NumStability.Analysis.Rounding (19s)
+✔ [3281/3836] Built NumStability.Analysis.MatrixNorms.HadamardDeterminant (5.6s)
+✔ [3282/3836] Built NumStability.Analysis.FirstOrder.AsymptoticFamilies (4.2s)
+✔ [3283/3836] Built NumStability.Analysis.VectorNorms.Basic (19s)
+✔ [3284/3836] Built NumStability.Algorithms.LinearSystems.LU.BlockLU.VaryingBlocks.Basic (3.5s)
+✔ [3285/3836] Built NumStability.Analysis.LinearOperators.Schur.Complex.BlockEmbedding (5.8s)
+✔ [3286/3836] Built NumStability.Analysis.LinearOperators.Schur.Complex.Deflation (5.6s)
+✔ [3287/3836] Built NumStability.Algorithms.MatrixEquations.Sylvester.Solvers.HessenbergSchur.All (394ms)
+✔ [3288/3836] Built NumStability.Analysis.LinearOperators.Schur.Real.QuasiTriangular.BlockEmbedding (4.1s)
+✔ [3289/3873] Built NumStability.Analysis.LinearOperators.Schur.Real.InvariantSubspace.Complexification (5.3s)
+✔ [3290/3873] Built NumStability.Analysis.LinearOperators.Schur.Real.QuasiTriangular.Deflation (4.3s)
+✔ [3292/3873] Built NumStability.Analysis.LinearOperators.Schur.Real.InvariantSubspace.TwoByTwo (8.8s)
+✔ [3293/3873] Built NumStability.Algorithms.Summation.Compensated.CorrectionFormula (3.4s)
+✔ [3294/3873] Built NumStability.Analysis.LinearOperators.Schur.Real.QuasiTriangular.Reindex (4.8s)
+⚠ [3295/3873] Built NumStability.Source.Higham.Chapter23.Theorem03.Certificates (4.1s)
+warning: NumStability/Source/Higham/Chapter23/Theorem03/Certificates.lean:79:5: unused variable `hxExact`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NumStability/Source/Higham/Chapter23/Theorem03/Certificates.lean:81:5: unused variable `he`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NumStability/Source/Higham/Chapter23/Theorem03/Certificates.lean:82:5: unused variable `hXexact`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: NumStability/Source/Higham/Chapter23/Theorem03/Certificates.lean:110:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem03/Certificates.lean:110:43: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [3296/3873] Built NumStability.Analysis.FirstOrder.FixedPrecision (5.8s)
+✔ [3297/3873] Built NumStability.Analysis.SubtractionFold (6.2s)
+⚠ [3298/3873] Built NumStability.Source.Higham.Chapter23.Theorem02.ExactMajorant (7.7s)
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean:115:39: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean:116:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean:118:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean:118:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean:119:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean:119:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean:144:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean:146:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean:146:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean:147:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean:147:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean:170:36: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean:172:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean:174:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean:174:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean:175:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean:175:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [3299/3873] Built NumStability.Analysis.Summation.ErrorBounds (8.0s)
+✔ [3300/3873] Built NumStability.Analysis.VectorNorms.Attainment (4.7s)
+✔ [3301/3873] Built NumStability.Algorithms.AitkenDenominator (8.7s)
+✔ [3302/3873] Built NumStability.Analysis.VectorNorms.Duality (7.2s)
+✖ [3303/3873] Building NumStability.Analysis.LinearOperators.Schur.Complex.Triangulation (50ms)
+error: resource exhausted (error code: 28, no space left on device)
+✔ [3304/3873] Built NumStability.Algorithms.MatrixEquations.Sylvester.Solvers.HessenbergSchur (340ms)
+✖ [3307/3873] Building NumStability.Analysis.LinearOperators.Schur.Real.InvariantSubspace.Existence (76ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3309/3873] Building NumStability.Analysis.Probability.Haar.HomogeneousSpaceUniqueness (56ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3310/3873] Building NumStability.Algorithms.LinearSystems.LU.BlockLU.FirstOrderModels (32ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3311/3873] Building NumStability.Analysis.LinearOperators.Schur.Real.QuasiTriangular.Basic (67ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3312/3873] Building NumStability.Algorithms.LinearSystems.Triangular.BackSubstitution (36ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3313/3873] Building NumStability.Algorithms.LinearSystems.Triangular.ForwardSubstitution (26ms)
+error: resource exhausted (error code: 28, no space left on device)
+✔ [3314/3873] Built NumStability.Algorithms.LinearSystems.LU.BlockLU.VaryingBlocks.Algebra (4.7s)
+✖ [3315/3873] Building NumStability.Algorithms.LinearSystems.Triangular.ErrorAnalysis.NoGuardBackward (29ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3316/3873] Building NumStability.Algorithms.Summation.Recursive.Core (28ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3317/3918] Building NumStability.Algorithms.GridPoints (62ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3318/3918] Building NumStability.Algorithms.LinearSystems.LU.BlockLU.VaryingBlocks.SchurComplement (27ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3330/3918] Building NumStability.Algorithms.LogExpProduct (40ms)
+error: resource exhausted (error code: 28, no space left on device)
+✔ [3372/4117] Built NumStability.Analysis.LinearOperators.Basic (5.0s)
+✖ [3373/4117] Building NumStability.Analysis.OperatorNorms.Basic (60ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3467/4117] Building NumStability.Analysis.Error.Measures.AccuracyPrecision (25ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3468/4117] Building NumStability.Analysis.FloatingPointArithmetic.ErrorModels.AdditiveProperties (31ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3469/4117] Building NumStability.Algorithms.Summation.DoublyCompensated (33ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3470/4117] Building NumStability.Analysis.ComplexArithmetic (36ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3472/4117] Building NumStability.Algorithms.Summation.Compensated.Kahan.Core (27ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3473/4117] Building NumStability.Source.Higham.Chapter04.Equation07.AbstractModelCounterexample (52ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3474/4117] Building NumStability.Algorithms.Summation.Compensated.NoGuard.CorrectionFormula (63ms)
+error: resource exhausted (error code: 28, no space left on device)
+✔ [3491/4117] Built NumStability.Source.Higham.Chapter04.Equation10.Neumaier.AdaptiveBound (358ms)
+✔ [3492/4117] Built NumStability.Source.Higham.Chapter04.Equation10.Neumaier.FiniteBound (369ms)
+✖ [3493/4117] Building NumStability.Source.Higham.Chapter02.Section04.NoGuardModel.BinaryT3Example (30ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3495/4117] Building NumStability.Algorithms.Summation.Insertion.ActiveList (17ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3500/4217] Building NumStability.Analysis.TestMatrices.Gaussian.GaussianOrthogonal (54ms)
+error: resource exhausted (error code: 28, no space left on device)
+✔ [3518/4217] Built NumStability.Source.Higham.Chapter04.Equation10.Neumaier.ResidualBound (378ms)
+✖ [3521/4241] Building NumStability.Analysis.LinearOperators.MatrixPowers.ExactNormBounds.Schur (63ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3527/4241] Building NumStability.Analysis.LinearOperators.MatrixPowers.Henrici.BinomialPowerBound (51ms)
+error: resource exhausted (error code: 28, no space left on device)
+✔ [3531/4241] Built NumStability.Source.Higham.Chapter16.Section03.PerturbationAndConditioning.AutomaticBounds.All (389ms)
+✖ [3533/4241] Building NumStability.Analysis.LinearOperators.Schur.Real.Triangularization.SplitCharpoly (56ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3539/4241] Building NumStability.Analysis.FunctionalCalculus.Resolvent.Analyticity (65ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3541/4241] Building NumStability.Analysis.LinearOperators.Pseudospectra.Resolvent.LowerBounds (48ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3544/4241] Building NumStability.Analysis.LinearOperators.MatrixPowers.Spijker.ProjectionIntegral (64ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3545/4265] Building NumStability.Source.Higham.Chapter16.Problem02.LyapunovIntegral.Results (60ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3562/4331] Building NumStability.Analysis.LinearOperators.NumericalRadius.Core.Basic (51ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3579/4331] Building NumStability.Analysis.Probability.Gaussian.AbsoluteMoment (25ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Analysis/Probability/Gaussian
+✖ [3592/4368] Building NumStability.Analysis.SemiconvergentSpectral (47ms)
+error: resource exhausted (error code: 28, no space left on device)
+✔ [3598/4443] Built NumStability.Source.Higham.Chapter16.Section03.PerturbationAndConditioning.AutomaticBounds (413ms)
+✖ [3601/4443] Building NumStability.Source.Higham.Chapter04.Problem04 (64ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3604/4443] Building NumStability.Source.Higham.Chapter05.Section04.PatersonStockmeyer.Basic (85ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3609/4443] Building NumStability.Source.Higham.Chapter06.Equation01 (57ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3612/4600] Building NumStability.Source.Higham.Chapter06.Asides.EuclideanNormDifferentiability (87ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3620/4860] Building NumStability.Source.Higham.Chapter13.Algorithm01 (36ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3622/4860] Building NumStability.Source.Higham.Chapter13.Equation01 (30ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3623/4860] Building NumStability.Source.Higham.Chapter13.Equation02 (35ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3624/4860] Building NumStability.Source.Higham.Chapter13.Equation03 (46ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3625/4860] Building NumStability.Source.Higham.Chapter13.Theorem08.OneStep (55ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3626/4860] Building NumStability.Source.Higham.Chapter13.Equation20 (51ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3627/4860] Building NumStability.Source.Higham.Chapter08.Equation15.GlobalEnvelopeCounterexample.LocalCancellation (452ms)
+trace: .> LEAN_PATH=<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/Cli/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/batteries/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/Qq/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/aesop/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/proofwidgets/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/importGraph/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/LeanSearchClient/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/plausible/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean <elan-home>/toolchains/leanprover--lean4---v4.29.0-rc3/bin/lean -j 1 <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/NumStability/Source/Higham/Chapter08/Equation15/GlobalEnvelopeCounterexample/LocalCancellation.lean -o <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Source/Higham/Chapter08/Equation15/GlobalEnvelopeCounterexample/LocalCancellation.olean -i <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Source/Higham/Chapter08/Equation15/GlobalEnvelopeCounterexample/LocalCancellation.ilean -c <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Source/Higham/Chapter08/Equation15/GlobalEnvelopeCounterexample/LocalCancellation.c --setup <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Source/Higham/Chapter08/Equation15/GlobalEnvelopeCounterexample/LocalCancellation.setup.json --json
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3628/4860] Building NumStability.Source.Higham.Chapter13.Equation24 (67ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3629/4860] Building NumStability.Source.Higham.Chapter13.Problem08 (40ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3630/4860] Building NumStability.Source.Higham.Chapter13.Theorem05.Recurrences (26ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3634/4978] Building NumStability.Source.Higham.Chapter13.Table01.DiagonalDominance.Bounds (33ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Source/Higham/Chapter13/Table01/DiagonalDominance/Bounds.setup.json
+✖ [3636/4978] Building NumStability.Source.Higham.Chapter13.Problem01 (33ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Source/Higham/Chapter13/Problem01.setup.json
+✖ [3637/4978] Building NumStability.Source.Higham.Chapter13.Problem07 (37ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3638/4978] Building NumStability.Source.Higham.Chapter13.Problem09 (35ms)
+error: resource exhausted (error code: 28, no space left on device)
+✖ [3639/4978] Building NumStability.Source.Higham.Chapter13.Theorem07.OneStep (51ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Source/Higham/Chapter13/Theorem07/OneStep.setup.json
+✖ [3737/5267] Building NumStability.Algorithms.Summation.Compensated.Kahan.Internal.FinFold (2.3s)
+trace: .> LEAN_PATH=<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/Cli/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/batteries/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/Qq/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/aesop/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/proofwidgets/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/importGraph/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/LeanSearchClient/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/plausible/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean <elan-home>/toolchains/leanprover--lean4---v4.29.0-rc3/bin/lean -j 1 <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/NumStability/Algorithms/Summation/Compensated/Kahan/Internal/FinFold.lean -o <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Algorithms/Summation/Compensated/Kahan/Internal/FinFold.olean -i <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Algorithms/Summation/Compensated/Kahan/Internal/FinFold.ilean -c <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Algorithms/Summation/Compensated/Kahan/Internal/FinFold.c --setup <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Algorithms/Summation/Compensated/Kahan/Internal/FinFold.setup.json --json
+info: stderr:
+failed to write '<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Algorithms/Summation/Compensated/Kahan/Internal/FinFold.olean': failed to create file '<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Algorithms/Summation/Compensated/Kahan/Internal/FinFold.olean'
+error: Lean exited with code 1
+✖ [3748/5267] Building NumStability.Source.Higham.Chapter26.Equation02 (3ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Source/Higham/Chapter26
+✖ [3749/5267] Building NumStability.Source.Higham.Chapter26.CubicRoots.DepressedCubic (2ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Source/Higham/Chapter26
+✖ [3752/5267] Building NumStability.Source.Higham.Chapter26.Equation01 (2ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Source/Higham/Chapter26
+✖ [3753/5267] Building NumStability.Source.Higham.Chapter26.Equation05.ComplexBranches (20ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Source/Higham/Chapter26
+✖ [3755/5267] Building NumStability.Source.Higham.Chapter26.Equation05.RealBranches (16ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Source/Higham/Chapter26
+✖ [3760/5267] Building NumStability.Source.Higham.Chapter26.Equation08 (24ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Source/Higham/Chapter26
+✖ [3761/5267] Building NumStability.Source.Higham.Chapter26.IntervalArithmetic.ExactOperations (23ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Source/Higham/Chapter26
+✖ [3763/5267] Building NumStability.Source.Higham.Chapter02.FloatingPointArithmetic.Environment (8ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Source/Higham/Chapter02/FloatingPointArithmetic
+✖ [3766/5267] Building NumStability.Analysis.LinearOperators.Jordan.NormalForm.PrimaryDecomposition (21ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Analysis/LinearOperators/Jordan
+✖ [3845/5475] Building NumStability.Upstream.Lindemann.MonoidAlgebraCompat (5ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Upstream
+✖ [3898/5475] Building NumStability.Upstream.Lindemann.FinsuppQuotient (3ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Upstream
+✖ [3904/5537] Building NumStability.Analysis.AlternativeNumberSystems (40ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Analysis/AlternativeNumberSystems.setup.json
+✖ [3905/5537] Building NumStability.Analysis.Asymptotics (54ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Analysis/Asymptotics.setup.json
+✖ [3906/5537] Building NumStability.Analysis.BrentBaseOptimality (59ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Analysis/BrentBaseOptimality.setup.json
+✖ [3907/5537] Building NumStability.Analysis.ComplexSqrt (50ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Analysis/ComplexSqrt.setup.json
+✖ [3916/5537] Building NumStability.Analysis.Equidistribution.AddCircle (13ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Analysis/Equidistribution
+✖ [3921/5537] Building NumStability.Analysis.LeadingDigits.Decimal (7ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Analysis/LeadingDigits
+✖ [3922/5537] Building NumStability.Analysis.LeadingDigits.LogarithmicDistribution (19ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Analysis/LeadingDigits
+✖ [3924/5537] Building NumStability.Analysis.LeadingDigits.Empirical (16ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Analysis/LeadingDigits
+✖ [4148/5888] Building NumStability.Analysis.RelativePrecision (42ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Analysis/RelativePrecision.setup.json
+✖ [4149/5888] Building NumStability.Analysis.Summation (30ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Analysis/Summation.setup.json
+✖ [4150/5888] Building NumStability.Source.Higham.Chapter01.Problem01.RelativeError.Bounds (5ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Source/Higham/Chapter01
+✖ [4152/5888] Building NumStability.Source.Higham.Chapter01.Problem02.NearIntegerTable.Basic (3ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Source/Higham/Chapter01
+✖ [4153/5888] Building NumStability.Source.Higham.Chapter01.Problem06.CalculatorWords.Basic (17ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Source/Higham/Chapter01
+✖ [4154/5888] Building NumStability.Source.Higham.Chapter01.Problem08.MullerRecurrence.Basic (16ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Source/Higham/Chapter01
+✖ [4155/5888] Building NumStability.Source.Higham.Chapter01.Section03.ErrorSources.Core (11ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Source/Higham/Chapter01
+✖ [4157/5888] Building NumStability.Source.Higham.Chapter01.Section07.Cancellation.Basic (8ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Source/Higham/Chapter01
+✖ [4176/6031] Building NumStability.Upstream.Lindemann.SymmetricEval (8ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Upstream
+✖ [4178/6031] Building NumStability.Source.Higham.Chapter06.Equation02 (48ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Source/Higham/Chapter06/Equation02.setup.json
+✖ [4179/6031] Building NumStability.FloatingPoint.IEEE.NaiveMaximum (5ms)
+error: resource exhausted (error code: 28, no space left on device)
+  file: <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/FloatingPoint/IEEE
+✖ [4201/6031] Building NumStability.Analysis.Error.RoundingProducts.Core (19s)
+trace: .> LEAN_PATH=<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/Cli/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/batteries/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/Qq/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/aesop/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/proofwidgets/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/importGraph/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/LeanSearchClient/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/plausible/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean <elan-home>/toolchains/leanprover--lean4---v4.29.0-rc3/bin/lean -j 1 <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/NumStability/Analysis/Error/RoundingProducts/Core.lean -o <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Analysis/Error/RoundingProducts/Core.olean -i <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Analysis/Error/RoundingProducts/Core.ilean -c <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Analysis/Error/RoundingProducts/Core.c --setup <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Analysis/Error/RoundingProducts/Core.setup.json --json
+info: stderr:
+failed to write '<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Analysis/Error/RoundingProducts/Core.olean': failed to create file '<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Analysis/Error/RoundingProducts/Core.olean'
+error: Lean exited with code 1
+✖ [4208/6031] Building NumStability.Analysis.VectorNorms.Interpolation (12s)
+trace: .> LEAN_PATH=<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/Cli/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/batteries/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/Qq/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/aesop/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/proofwidgets/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/importGraph/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/LeanSearchClient/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/plausible/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean <elan-home>/toolchains/leanprover--lean4---v4.29.0-rc3/bin/lean -j 1 <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/NumStability/Analysis/VectorNorms/Interpolation.lean -o <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Analysis/VectorNorms/Interpolation.olean -i <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Analysis/VectorNorms/Interpolation.ilean -c <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Analysis/VectorNorms/Interpolation.c --setup <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Analysis/VectorNorms/Interpolation.setup.json --json
+info: stderr:
+failed to write '<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Analysis/VectorNorms/Interpolation.olean': failed to create file '<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Analysis/VectorNorms/Interpolation.olean'
+error: Lean exited with code 1
+✖ [4232/6031] Building NumStability.Analysis.FloatingPointArithmetic.IeeeExceptions (27s)
+trace: .> LEAN_PATH=<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/Cli/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/batteries/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/Qq/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/aesop/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/proofwidgets/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/importGraph/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/LeanSearchClient/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/plausible/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/.lake/build/lib/lean:<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean <elan-home>/toolchains/leanprover--lean4---v4.29.0-rc3/bin/lean -j 1 <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/NumStability/Analysis/FloatingPointArithmetic/IeeeExceptions.lean -o <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Analysis/FloatingPointArithmetic/IeeeExceptions.olean -i <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Analysis/FloatingPointArithmetic/IeeeExceptions.ilean -c <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Analysis/FloatingPointArithmetic/IeeeExceptions.c --setup <library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/ir/NumStability/Analysis/FloatingPointArithmetic/IeeeExceptions.setup.json --json
+info: stderr:
+failed to write '<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Analysis/FloatingPointArithmetic/IeeeExceptions.olean': failed to create file '<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/build/lib/lean/NumStability/Analysis/FloatingPointArithmetic/IeeeExceptions.olean'
+error: Lean exited with code 1
+PANIC at _private.Lake.Build.Run.0.Lake.print! Lake.Build.Run:89:4: [_private.Lake.Build.Run.0.Lake.print! failed: resource exhausted (error code: 28, no space left on device)] "Some required targets logged failures:\n"
+backtrace:
+0   libleanshared.dylib                 0x0000000118668404 _ZN4leanL15print_backtraceEb + 60
+1   libleanshared.dylib                 0x000000011865e920 _ZN4leanL15lean_panic_implEPKcmb + 176
+2   libleanshared.dylib                 0x000000011865ea3c lean_panic_fn + 40
+3   libLake_shared.dylib                0x0000000105855a94 Lake.reportResult [private] + 964
+4   libLake_shared.dylib                0x0000000105858444 Lake.Workspace.finalizeBuild [arity↓, private] + 212
+5   libLake_shared.dylib                0x0000000105625008 Lake.lake.build [private] + 6080
+6   libleanshared.dylib                 0x000000011866e88c <apply/3> + 144
+7   libLake_shared.dylib                0x00000001055c9748 Lake.CliM.run [arity↓, private] + 416
+8   lake                                0x00000001047509c8 main + 204
+9   dyld                                0x000000018900be00 start + 6992
+backtrace:
+0   libleanshared.dylib                 0x0000000118668404 _ZN4leanL15print_backtraceEb + 60
+backtrace:
+backtrace:

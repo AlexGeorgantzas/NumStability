@@ -1,0 +1,28 @@
+{
+  "schema_version": "numstability-static-architecture-provenance/1.0.0",
+  "audit_commit": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+  "git_tree": "be637aeb2c6ca84bcf714b5ef38ea7292a4b50a1",
+  "local_higham_v01": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+  "origin_higham_v01": "045daf28056a6e4358d5de7c22c7a9d7acc2e80e",
+  "local_and_remote_agree": true,
+  "isolated_worktree_head_mode": "detached",
+  "isolated_worktree_clean_after_analysis": true,
+  "final_analysis_output_timestamp": "2026-09-03T11:29:27+03:00",
+  "metadata_check_timestamp": "2026-09-03T11:30:40+03:00",
+  "timezone": "Europe/Athens (UTC+03:00 at audit time)",
+  "operating_system": "macOS 26.5.2 (Darwin 25.5.0)",
+  "architecture": "arm64",
+  "python": "3.14.6",
+  "worktree": "<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree",
+  "artifact_directory": "<library-repo>/tmp/library_audit/higham_v01-045daf2/static_architecture",
+  "tool_sha256": "dfba978902ba0bbc19453eede1e01c74c7b9a59cc4bcdd96bb4e89198b8d7efe",
+  "summary_sha256_before_report_generation": "e2f418bb7978b3ebb494852010b8b0429f23f58a7054509348e868f287b6a610",
+  "validation_sha256": "d1ba250e0b204424207c005079b064885f302f4596186c23dac6fd979e4baa98",
+  "modules_csv_sha256": "9cf8779896ba801e8f95cb7f2db1110b92a29fb6553c729a68fb47f7ac11fe0f",
+  "source_imports_csv_sha256": "56f2aa80f05aef8acc1fc137df0875324189bfe51810536e04e4dfc6b7b409c3",
+  "scope": [
+    "NumStability.lean",
+    "every tracked NumStability/**/*.lean file present at the audited commit"
+  ],
+  "measurement_class": "read-only static source analysis; no Lean build or elaborated dependency extraction performed by this sub-audit"
+}

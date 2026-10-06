@@ -1,0 +1,3 @@
+test,expected_exit,actual_exit,expected_interpretation,result
+KnownVisible_check,0,0,"A visible declaration with a narrow import compiles",pass
+KnownVisibleBadClient_client,nonzero,1,"A visible #check does not mask an ill-typed client theorem",pass

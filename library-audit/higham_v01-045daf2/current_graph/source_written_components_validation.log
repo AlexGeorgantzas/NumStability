@@ -1,0 +1,11 @@
+schema_version=numstability-source-written-components/1.0.0
+command=python3 current_graph/analyze_source_written_components.py
+toy_components=PASS
+source_written_nodes=49573
+induced_edges=368602
+weak_components=319
+largest_weak=48066
+strong_components=49573
+nontrivial_strong_components=0
+source_written_public_crosscheck=PASS
+all_validations=PASS

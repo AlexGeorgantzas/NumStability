@@ -1,0 +1,54 @@
+--- isolated mathlib package breakdown ---
+4.0K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/.gitignore
+4.0K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/.gitpod.yml
+4.0K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/.pre-commit-config.yaml
+4.0K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/Archive.lean
+4.0K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/CITATION.md
+4.0K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/Counterexamples.lean
+4.0K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/bors.toml
+4.0K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/docs.lean
+4.0K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/lake-manifest.json
+4.0K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/lean-toolchain
+8.0K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/.devcontainer
+8.0K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/CODE_OF_CONDUCT.md
+8.0K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/lakefile.lean
+ 12K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/.docker
+ 12K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/LICENSE
+ 12K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/README.md
+ 16K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/DownstreamTest
+ 20K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/.vscode
+ 40K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/widget
+ 96K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/Cache
+296K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/Counterexamples
+372K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/.github
+400K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/docs
+408K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/Mathlib.lean
+644K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/scripts
+788K	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/Archive
+2.1M	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/MathlibTest
+100M	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/Mathlib
+491M	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/.git
+5.8G	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/.lake
+--- isolated mathlib build breakdown ---
+118M	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/.lake/build/bin
+387M	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/.lake/build/ir
+5.3G	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree/.lake/packages/mathlib/.lake/build/lib
+--- main checkout build sizes for capacity estimate only ---
+8.2G	<library-repo>/.lake/build
+  0B	<library-repo>/.lake/packages
+ 51M	<library-repo>/.lake/build/packages
+3.3G	<library-repo>/.lake/build/lib
+4.9G	<library-repo>/.lake/build/ir
+--- audit root size ---
+  0B	<library-repo>/tmp/library_audit/higham_v01-045daf2/figures
+  0B	<library-repo>/tmp/library_audit/higham_v01-045daf2/metrics
+  0B	<library-repo>/tmp/library_audit/higham_v01-045daf2/probes
+  0B	<library-repo>/tmp/library_audit/higham_v01-045daf2/raw
+  0B	<library-repo>/tmp/library_audit/higham_v01-045daf2/review
+ 52K	<library-repo>/tmp/library_audit/higham_v01-045daf2/build
+208K	<library-repo>/tmp/library_audit/higham_v01-045daf2/tooling
+256K	<library-repo>/tmp/library_audit/higham_v01-045daf2/provenance
+1.7M	<library-repo>/tmp/library_audit/higham_v01-045daf2/historical
+ 33M	<library-repo>/tmp/library_audit/higham_v01-045daf2/static_architecture
+6.9G	<library-repo>/tmp/library_audit/higham_v01-045daf2
+6.9G	<library-repo>/tmp/library_audit/higham_v01-045daf2/_worktree

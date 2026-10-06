@@ -1,0 +1,6 @@
+schema_version=numstability-coverage-metric-contract/1.0.0
+command=python3 current_graph/build_coverage_metric_contract.py
+coverage_rows=27
+declaration_rows=77246
+all_numerators_denominators_percentages=PASS
+all_validations=PASS
