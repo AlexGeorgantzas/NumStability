@@ -1,0 +1,24 @@
+/.lake
+/.venv/
+.DS_Store
+__pycache__/
+/.agents/
+/.codex/
+
+# Local auto-formalization workspace. Do not commit or push.
+/chapter_splitting/
+/benchmark/
+/benchmark-results/
+/scratch/
+/tmp/
+/worktrees/
+*.aux
+*.log
+*.out
+/docs/benchmarking/higham_exercise_candidates.pdf
+thesis/
+references/
+References/
+/docs/paper_benchmark/
+/scripts/
+/docs/chapter13/
