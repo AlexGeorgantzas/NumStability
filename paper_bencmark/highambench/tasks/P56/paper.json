@@ -1,0 +1,82 @@
+{
+  "annotation": {
+    "method": "Codex extracted and read all nine pages in physical order, covering Sections 1-5, every proposition, theorem, lemma, corollary and proof, all examples and comparisons, and all 16 references; separated the cited Chebyshev approximation theorem, spectral theory, and operator-algebra facts from the paper's own deductions; audited Mathlib and the exact frozen 44-object NumStability surface; and compiled exact private N/L proofs before retaining P56-T3.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P56 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Stephen Demko",
+    "William F. Moss",
+    "Philip W. Smith"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P56-T3"
+  ],
+  "paper_id": "P56",
+  "paper_version": "Mathematics of Computation 43(168), October 1984, pages 491-499",
+  "publication": {
+    "version_date": "1984-10",
+    "year": 1984
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Proposition 2.1",
+      "reason": "The reciprocal best-approximation formula is explicitly presented as a corollary of Chebyshev's result, so rebuilding it would turn cited approximation theory into a P56 proof obligation."
+    },
+    {
+      "candidate": "Propositions 2.2-2.3 and Theorem 2.4",
+      "reason": "Their exact infinite-dimensional statements combine Proposition 2.1 with cited spectral theory. The frozen library has generic finite-matrix spectral wrappers but no band-support or Chebyshev-decay theorem, so it supplies neither a qualifying one-result nor two-result shortcut; supplying the cited approximation and spectral conclusions as assumptions leaves a much shorter deduction."
+    },
+    {
+      "candidate": "Theorem 4.1 and Corollaries 4.3-4.5",
+      "reason": "These results additionally use cited Calkin-algebra, compact-operator, open-mapping, or generalized-inverse background. No exact result obtains a substantial NumStability shortcut, and the self-contained new approximation work is isolated faithfully in Lemma 4.2."
+    },
+    {
+      "candidate": "Proposition 5.1 and the closing examples",
+      "reason": "Proposition 5.1's proof is omitted as a repetition of Proposition 2.2, and the examples are applications or qualitative illustrations rather than a better source-faithful tier target."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No internally proved P56 result needs one substantial non-Mathlib declaration from the frozen library. Generic matrix spectral wrappers do not provide the missing Chebyshev or band-decay argument and are not a material one-result shortcut."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No exact source-proved P56 result receives two distinct substantial compiled NumStability shortcuts; the central approximation and band-support arguments are absent from the library."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Selected the exact constructive heart of Lemma 4.2: extending an interval reciprocal approximant to finitely many exceptional positive points with controlled degree and a fixed multiplicative error constant. Exact N/L proofs establish substantial polynomial, interpolation, degree, and product-bound work with no NumStability shortcut.",
+      "task_id": "P56-T3",
+      "theorem_name": "p56_t3_exceptional_point_approximation"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only statements and proof content present in P56.",
+    "Treat Proposition 2.1 and the named spectral/operator facts as cited background rather than P56 proof obligations.",
+    "Represent Lemma 4.2 by the correction-polynomial construction and explicit constant proved in its text.",
+    "Do not replace infinite-dimensional cited theory with a stronger invented finite-matrix claim.",
+    "Assign a tier only after exact private N and L proofs compile."
+  ],
+  "short_name": "Demko--Moss--Smith (1984)",
+  "source": {
+    "lawful_source_locator": "local user-supplied journal PDF",
+    "local_path": "paper_bencmark/reference_papers/P56 Decay Rates for Inverses of Band Matrices.pdf",
+    "page_map": "Physical pages 1-9 carry printed pages 491-499.",
+    "pdf_pages": 9,
+    "rights_note": "Retain the local source path and cryptographic hash for benchmark provenance; do not redistribute the source PDF.",
+    "sha256": "b86b6b357e70e5076fb8d86a4feb12f85a7aa28e849fd1ae56a38438e6014c85"
+  },
+  "title": "Decay Rates for Inverses of Band Matrices"
+}

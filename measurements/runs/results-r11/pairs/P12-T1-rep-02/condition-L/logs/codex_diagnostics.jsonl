@@ -1,0 +1,5 @@
+{"monotonic_ns":128058016594149,"raw_line":"\u001b[2m2026-09-21T22:52:31.959824Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:","record_type":"app_server_stderr","sequence":1,"unix_ns":1790031151959855296}
+{"monotonic_ns":128058016656519,"raw_line":"      have heq : |x - y| = fmt.betaR ^ min ex ey :=","record_type":"app_server_stderr","sequence":2,"unix_ns":1790031151959917908}
+{"monotonic_ns":128058016680334,"raw_line":"        le_antisymm hmag (le_of_not_gt hstrict)","record_type":"app_server_stderr","sequence":3,"unix_ns":1790031151959941737}
+{"monotonic_ns":128058016698427,"raw_line":"      have hemin : nfmt.emin ≤ min ex ey := by","record_type":"app_server_stderr","sequence":4,"unix_ns":1790031151959959835}
+{"monotonic_ns":128058016719356,"raw_line":"        exact le_min hx'.2.1 hy'.2.1","record_type":"app_server_stderr","sequence":5,"unix_ns":1790031151959980771}

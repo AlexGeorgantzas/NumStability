@@ -1,0 +1,4 @@
+{"monotonic_ns":133815775908807,"raw_line":"\u001b[2m2026-09-22T00:28:29.719063Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:","record_type":"app_server_stderr","sequence":1,"unix_ns":1790036909719168304}
+{"monotonic_ns":133815776178016,"raw_line":"    _ ≤ (1 + u) * p33Gamma u n + u := by","record_type":"app_server_stderr","sequence":2,"unix_ns":1790036909719438960}
+{"monotonic_ns":133815776295841,"raw_line":"      have hu1 : 0 ≤ 1 + u := by positivity","record_type":"app_server_stderr","sequence":3,"unix_ns":1790036909719556669}
+{"monotonic_ns":133815776403141,"raw_line":"      nlinarith [mul_nonneg hu1 hgn]","record_type":"app_server_stderr","sequence":4,"unix_ns":1790036909719664054}

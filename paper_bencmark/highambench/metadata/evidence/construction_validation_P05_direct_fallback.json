@@ -1,0 +1,96 @@
+{
+  "canonical_evidence": "metadata/evidence/construction_validation_P05.json",
+  "canonical_evidence_sha256": "a608b51311c2f56e1650b246e81c04596628ba6db066c2d518d9de19907b6f71",
+  "canonical_isolated_pass": false,
+  "direct_fallback_pass": true,
+  "generated_at_utc": "2026-08-06T02:09:39Z",
+  "host_limitation": {
+    "canonical_failure_occurs_before_lean_starts": true,
+    "message": "bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted",
+    "scope": "All six canonical P05 checks on this LXC host",
+    "tool": "/usr/bin/bwrap"
+  },
+  "kind": "highambench-direct-exact-path-construction-fallback",
+  "paper_id": "P05",
+  "pinned_lean": {
+    "commit": "5d86aa4032284a5242470e95fbe25f1ff506763d",
+    "version": "4.29.0-rc3"
+  },
+  "results": [
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "ce6389599e8c209ef7066c5190de64c308f43402b628acfc3ece9f56a72798d5",
+        "library_declarations": [
+          "NumStability.exists_summation_source_coefficients_of_abs_le_mul_sum_abs",
+          "NumStability.abs_summationAbsSign",
+          "NumStability.summationAbsSign",
+          "NumStability.summationAbsSign_mul_eq_abs"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "1cb814124a42e8f0aa2404135497ca4028816dba7f2bdafc28e1d22a444881f0",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "23f5b3761aa4c7b0641e34d71b832225d8e91893117d04a7bf97cca512307408",
+      "target_theorem": "HighamBench.p05_t1_uniform_backward_coefficients",
+      "task_id": "P05-T1"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "b7ce3c0043b6f6c917463ea555025d21a3dc6eeead009831d8249f75c89589c4",
+        "library_declarations": [
+          "NumStability.Finset.sum_abs_mul"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "1be580226d0b613f6244e217bdfb5b2012068658864cf6ef30332299f2764bd8",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "2ad0285ce2bb990d3d8fe2709531887d27677205d670f26be9b509532d9e9fe2",
+      "target_theorem": "HighamBench.p05_t2_square_lu_backward_error",
+      "task_id": "P05-T2"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "39a4867e162915356fe1657062193c57d65d20b45e3f5d0f581f76f2de339452",
+        "library_declarations": [
+          "NumStability.matMul",
+          "NumStability.matTranspose",
+          "NumStability.matTranspose_matMul"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "47c85d4bc757f9e93f45c818f8d3416401cf228a2c1a83b1e6a306fcdd4b3029",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "c7f9b7ce7d229dbc4ad8209d2a2f863c20aab142c8417b57ca3c4c7392b1a760",
+      "target_theorem": "HighamBench.p05_t3_cholesky_backward_error",
+      "task_id": "P05-T3"
+    }
+  ],
+  "schema_version": 1,
+  "verification_basis": {
+    "condition_l_path": "The exact P05 shared bundle, frozen pruned package objects, and frozen NumStability object tree; no project .lake/build path.",
+    "condition_n_path": "The exact P05 shared bundle and frozen pruned package objects; no NumStability source or object path and no project .lake/build path.",
+    "negative_probe": "Direct pinned-Lean imports of HighamBench.P04Definitions and NumStability fail under the condition-N LEAN_PATH.",
+    "p05_definitions_olean_sha256": "3513f86b56ce8e445df12470f371fd34f34fb0c02e48473273def1f3bdd7e64d",
+    "p05_definitions_source_sha256": "8e8bb59f7812723c6db2adb54ee7c79a133ed8463c2c76b8a3fff363c77d12b7",
+    "semantic_check": "Each private L theorem was compared by Meta.isDefEq with a separately compiled renamed copy of the frozen target using tools/dependency_audit.lean.",
+    "shared_core_olean_sha256": "f5a07f5bd1021c7565b5863278abe123a8796eeb482978ebade11579893d740b"
+  }
+}

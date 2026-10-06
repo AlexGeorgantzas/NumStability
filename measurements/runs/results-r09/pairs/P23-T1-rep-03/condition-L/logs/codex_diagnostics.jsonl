@@ -1,0 +1,2 @@
+{"monotonic_ns":34842484054916,"raw_line":"\u001b[2m2026-09-16T23:02:53.427115Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: Failed to find expected lines in <tmp>/P23Scratch.lean:","record_type":"app_server_stderr","sequence":1,"unix_ns":1789599773427155112}
+{"monotonic_ns":34842490060190,"raw_line":"lemma p23RoundedDotProduct_error (fp : P23FPModel) (n : ℕ)","record_type":"app_server_stderr","sequence":2,"unix_ns":1789599773433160574}

@@ -1,0 +1,63 @@
+import NumStability.Algorithms.LinearSystems.Cholesky
+import NumStability.Algorithms.LinearSystems.CramersRule.All
+import NumStability.Algorithms.LinearSystems.GaussJordan
+import NumStability.Algorithms.LinearSystems.Iterative.Stationary.Convergence.Singular.FixedSubspaces
+import NumStability.Algorithms.LinearSystems.Iterative.Stationary.ErrorAnalysis.Forward.ComplementDecomposition
+import NumStability.Algorithms.LinearSystems.Iterative.Stationary.ErrorAnalysis.Local.OneStep
+import NumStability.Algorithms.LinearSystems.Iterative.Stationary.ErrorAnalysis.Residual.Identities
+import NumStability.Algorithms.LinearSystems.Iterative.Stationary.Execution.Computed.Model
+import NumStability.Algorithms.LinearSystems.Iterative.Stationary.Projectors.Drazin.Algebra
+import NumStability.Algorithms.LinearSystems.Iterative.Stationary.Recurrences.Affine.Unrolling
+import NumStability.Algorithms.LinearSystems.Iterative.Stationary.Semiconvergence.All
+import NumStability.Algorithms.LinearSystems.Iterative.Stationary.Splittings.Core.Definitions
+import NumStability.Algorithms.LinearSystems.Iterative.Stationary.Splittings.Scaling.Diagonal
+import NumStability.Algorithms.LinearSystems.IterativeRefinement.All
+import NumStability.Algorithms.LinearSystems.LeastSquares
+import NumStability.Algorithms.LinearSystems.LU
+import NumStability.Algorithms.LinearSystems.QR
+import NumStability.Algorithms.LinearSystems.SymmetricIndefinite
+import NumStability.Algorithms.LinearSystems.Triangular
+import NumStability.Algorithms.LinearSystems.Underdetermined.BackwardError.Normwise.UnderdeterminedSolve
+import NumStability.Algorithms.LinearSystems.Underdetermined.BackwardError.Rowwise.UnderdeterminedSolve
+import NumStability.Algorithms.LinearSystems.Underdetermined.Conditioning.Componentwise.Radius
+import NumStability.Algorithms.LinearSystems.Underdetermined.Conditioning.Componentwise.UnderdeterminedSolve
+import NumStability.Algorithms.LinearSystems.Underdetermined.MinimumNorm.Solvers.Executor.Core
+import NumStability.Algorithms.LinearSystems.Underdetermined.MinimumNorm.Solvers.UnderdeterminedSolve
+import NumStability.Algorithms.LinearSystems.Underdetermined.MinimumNorm.Specifications.UnderdeterminedSolve
+import NumStability.Algorithms.LinearSystems.Underdetermined.Perturbation.Bounds.Core
+import NumStability.Algorithms.LinearSystems.Underdetermined.Perturbation.Componentwise.Radius
+import NumStability.Algorithms.LinearSystems.Underdetermined.Perturbation.Componentwise.UnderdeterminedSolve
+import NumStability.Algorithms.LinearSystems.Underdetermined.Perturbation.FixedRadius.Radius
+import NumStability.Algorithms.LinearSystems.Underdetermined.Perturbation.Radius.Core
+import NumStability.Algorithms.LinearSystems.Underdetermined.Projectors.ComplementNorm.ProjectorNorm
+import NumStability.Algorithms.LinearSystems.Underdetermined.QR.Foundations.UnderdeterminedSolve
+import NumStability.Algorithms.LinearSystems.Underdetermined.QR.Givens.BackwardError.Core
+import NumStability.Algorithms.LinearSystems.Underdetermined.QR.Givens.EndToEnd.Core
+import NumStability.Algorithms.LinearSystems.Underdetermined.QR.Givens.Rounded.Core
+import NumStability.Algorithms.LinearSystems.Underdetermined.QR.Givens.StoredReplay.EndToEnd.Core
+import NumStability.Algorithms.LinearSystems.Underdetermined.QR.Givens.StoredReplay.RoundedReplay
+import NumStability.Algorithms.LinearSystems.Underdetermined.QR.ModifiedGramSchmidt.CorrectedRecurrence.Core
+import NumStability.Algorithms.LinearSystems.Underdetermined.QR.ModifiedGramSchmidt.Rounded.Core
+import NumStability.Algorithms.LinearSystems.Underdetermined.QR.ModifiedGramSchmidt.RoundedReplay.RoundedReplay
+import NumStability.Algorithms.LinearSystems.Underdetermined.RankStability.FullRowRank.UnderdeterminedSolve
+import NumStability.Algorithms.LinearSystems.Underdetermined.SeminormalEquations.ConditionTransfer.Core
+import NumStability.Algorithms.LinearSystems.Underdetermined.SeminormalEquations.EndToEnd.Core
+import NumStability.Algorithms.LinearSystems.Underdetermined.SeminormalEquations.ForwardError.ComputedOutput.Core
+import NumStability.Algorithms.LinearSystems.Underdetermined.SeminormalEquations.ForwardError.Forward
+import NumStability.Algorithms.LinearSystems.Underdetermined.SeminormalEquations.ForwardError.RemainderBounds
+import NumStability.Algorithms.LinearSystems.Underdetermined.SeminormalEquations.ForwardError.UnderdeterminedSolve
+import NumStability.Algorithms.LinearSystems.Underdetermined.SeminormalEquations.Householder.EndToEnd
+import NumStability.Algorithms.LinearSystems.Underdetermined.SeminormalEquations.Householder.Uniform
+import NumStability.Algorithms.LinearSystems.Underdetermined.SeminormalEquations.QRTransfer.EnvelopeTransfer
+import NumStability.Algorithms.LinearSystems.Underdetermined.SeminormalEquations.QRTransfer.QRMajorant
+import NumStability.Algorithms.LinearSystems.Underdetermined.SeminormalEquations.QRTransfer.Signed
+import NumStability.Algorithms.LinearSystems.Underdetermined.SeminormalEquations.TriangularSolves.EnvelopeTransfer
+import NumStability.Algorithms.LinearSystems.Underdetermined.SeminormalEquations.TriangularSolves.UnderdeterminedSolve
+import NumStability.Algorithms.LinearSystems.Underdetermined.SeminormalEquations.Uniform.Core
+
+/-!
+# Linear systems
+
+Declaration-free aggregate for the canonical linear-system algorithm families,
+including the reviewed Chapter 11 source-backed symmetric-indefinite surface.
+-/

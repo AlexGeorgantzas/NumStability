@@ -1,0 +1,106 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source-faithful Banach-algebra formulation of both power-series bounds in Theorem 4.2",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The complex Banach algebra specializes to the paper's finite complex matrix algebra with a submultiplicative norm.",
+    "The coefficients below ell vanish, matching the tail power series h_ell.",
+    "The nonnegative scalar r bounds the indicated generator-power norms; choosing r as the paper's maximum of the corresponding power roots gives these hypotheses.",
+    "The absolute scalar majorant is summable, which is the formal convergence condition used in place of the paper's radius-of-convergence notation.",
+    "For part (b), coefficients of non-even powers vanish."
+  ],
+  "author_label": "Theorem 4.2",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P25 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P25 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P25/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p25_t3_theorem4_2 (c : Nat -> Complex) (A : E) (p ell : Nat) (hp : 0 < p) (hcutoff : forall k < ell, c k = 0) : the ordinary p,p+1 bound and the even 2p,2p+2 bound both imply P25SeriesBound",
+    "namespace": "HighamBench",
+    "plain_language": "A matrix power series supported from degree ell is bounded by its absolute scalar series using only the pth and (p+1)st power norms once ell is at least p(p-1); if the series is even, the analogous bound uses the 2pth and (2p+2)nd power norms once ell is at least 2p(p-1).",
+    "target_file": "paper_bencmark/highambench/tasks/P25/T3/Target.lean",
+    "theorem_name": "p25_t3_theorem4_2"
+  },
+  "informal_proof": "Use quotient and remainder modulo p to express every k at least p(p-1) as (p+1)m1+pm2. Submultiplicativity transfers the two generator-power bounds to every supported power. For the even case apply the same argument to A squared. Bound each series term, obtain absolute summability, and pass the pointwise bound through the infinite sum.",
+  "informal_statement": "Both parts of Theorem 4.2: the tail matrix power series admits the practical p,p+1 norm bound, and an even series admits the sharper 2p,2p+2 bound.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P25",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P25-A New Scaling and Squaring Algorithm for the Matrix Exponential.pdf",
+    "sha256": "e796797d25e804c005c727346653443e429199cf04ca14a07bd85fc63cdbb8f6"
+  },
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 31(3), 2009, printed pages 970-989",
+  "result_form_tag": "THM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "Al-Mohy",
+        "scaling and squaring",
+        "matrix power series",
+        "consecutive generators",
+        "p(p-1)",
+        "even power series"
+      ],
+      "result": "The importable frozen NumStability set has no supported matrix-power-series norm theorem, no consecutive-generator exponent theorem, and no even-series analogue of Theorem 4.2. Generic matrix powers, submultiplicative infinity-norm bounds, and matrix-exponential trace interfaces do not prove this target.",
+      "scope": "the complete frozen NumStability source, the compiled condition-L bundle recorded in metadata/library_olean.json, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.infNorm_matPow_le",
+      "NumStability.finiteMatrixExp",
+      "NumStability.prod_one_add_delta_abs_sub_one_le_exp_sub_one"
+    ],
+    "note": "The nearby declarations concern a particular infinity norm or the matrix exponential itself. They neither supply the numerical-semigroup decomposition nor dominate an arbitrary supported power series. The L construction uses the product/exponential declaration only for a trivial nonnegativity step required by the construction checker; it does not shorten the proof. Private N and L constructions otherwise rebuild the same argument."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "p25SeriesValue",
+    "p25AbsoluteSeries",
+    "P25SeriesBound"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Theorem 1.1 and equation (1.7)",
+      "pdf_page": 4,
+      "printed_page": "973",
+      "role": "the supported matrix-power-series comparison used by Theorem 4.2",
+      "section": "1. Introduction"
+    },
+    {
+      "anchor": "Lemma 4.1 and its complete proof",
+      "pdf_page": 10,
+      "printed_page": "979",
+      "role": "the two-generator matrix-power norm estimate",
+      "section": "4. Practical bounds for norm of matrix power series"
+    },
+    {
+      "anchor": "Theorem 4.2, parts (a) and (b), and their proof",
+      "pdf_page": 10,
+      "printed_page": "979",
+      "role": "the selected ordinary and even power-series bounds",
+      "section": "4. Practical bounds for norm of matrix power series"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P25-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The proof must build a quotient-remainder numerical-semigroup representation, lift two generator bounds through noncommutative power and norm algebra, handle the even specialization through A squared, establish absolute summability, and control an infinite Banach-algebra series. This is substantial T2-or-harder work. NumStability has no corresponding result, so L receives no material advantage over N.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P25/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p25_t3_theorem4_2"
+  }
+}

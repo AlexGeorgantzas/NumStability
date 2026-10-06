@@ -1,0 +1,106 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source selection, tier label, and concise combination of paper arguments",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "There are exactly 2^r real inputs; their signs are unrestricted.",
+    "Each rounded addition follows the shared standard addition rule.",
+    "The shared recursiveSum definition copies the first input exactly. It does not call rounded addition from zero; that separate model field is kept only for the common interface and library adapters.",
+    "(2^r - 1)*u < 1, written GammaValid u (2^r - 1).",
+    "Overflow, underflow, and other exceptional machine behavior are outside the mathematical model."
+  ],
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P01/T2/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p01_t2_recursive_running_and_pairwise_bounds\n    (fp : StandardAddModel) (r : \u2115) (v : Fin (2 ^ r) \u2192 \u211d)\n    (hvalid : GammaValid fp.u (2 ^ r - 1)) :\n    |recursiveSum fp.fl_add (2 ^ r) v - \u2211 i : Fin (2 ^ r), v i| \u2264\n        fp.u * \u2211 i : Fin (2 ^ r), |recursivePreRound fp.fl_add v i| \u2227\n    |recursiveSum fp.fl_add (2 ^ r) v - \u2211 i : Fin (2 ^ r), v i| \u2264\n        gamma fp.u (2 ^ r - 1) * \u2211 i : Fin (2 ^ r), |v i| \u2227\n    |pairwiseSum fp.fl_add r v - \u2211 i : Fin (2 ^ r), v i| \u2264\n        gamma fp.u r * \u2211 i : Fin (2 ^ r), |v i|",
+    "namespace": "HighamBench",
+    "plain_language": "Prove the recursive running-error bound, the recursive worst-case bound, and the independent pairwise bound.",
+    "target_file": "paper_bencmark/highambench/tasks/P01/T2/Target.lean",
+    "theorem_name": "p01_t2_recursive_running_and_pairwise_bounds"
+  },
+  "informal_proof": "Sum the local recursive-summation rounding errors from equation (2.1) and apply the triangle inequality for the running-error bound. Use equation (2.6) for the independent recursive worst-case analysis and equation (3.6) for the balanced pairwise analysis. Prove r <= 2^r-1 so the larger validity condition also validates r.",
+  "informal_statement": "For the same 2^r inputs, prove the recursive running-error estimate, the recursive gamma bound, and the pairwise gamma bound.",
+  "interpretation_warning": "The running-error conjunct uses the exact pre-rounding sums from equation (2.1); bounding those local errors directly gives the factor u form before equation (2.7) rewrites them using rounded partial sums.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P01",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P01_THE ACCURACY OF FLOATING POINT SUMMATION.pdf",
+    "sha256": "d5ad99fac5022da54dbe02721ea57116df3cec15badddd7c96c344328718fea7"
+  },
+  "paper_version": "journal version; volume 14, issue 4, July 1993, printed pages 783-799",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.recursiveSum_running_error_bound",
+      "NumStability.recursiveSum_forward_error_bound",
+      "NumStability.pairwiseSum_forward_error_bound",
+      "NumStability.gammaValid_mono"
+    ],
+    "note": "The three separate analyses exist, but the exact three-part shared-surface target does not."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "StandardAddModel",
+    "GammaValid",
+    "gamma",
+    "pairwiseSum",
+    "recursiveSum",
+    "recursivePreRound"
+  ],
+  "source_locations": [
+    {
+      "anchor": "unnumbered display immediately after equation (2.2)",
+      "pdf_page": 2,
+      "printed_page": 784,
+      "role": "finite-product estimate used by the exact gamma bound",
+      "section": "2. Orderings of Recursive Summation"
+    },
+    {
+      "equation": "(2.6)",
+      "pdf_page": 3,
+      "printed_page": 785,
+      "role": "recursive summation error bound",
+      "section": "2. Orderings of Recursive Summation"
+    },
+    {
+      "anchor": "equations (2.7)--(2.8) and their preceding local-error derivation",
+      "pdf_page": 3,
+      "printed_page": 785,
+      "role": "recursive running-error representation and bound",
+      "section": "2. Orderings of Recursive Summation"
+    },
+    {
+      "equation": "(3.6)",
+      "pdf_page": 6,
+      "printed_page": 788,
+      "role": "pairwise summation error bound",
+      "section": "3. Other Methods"
+    }
+  ],
+  "source_tags": [
+    "EQN",
+    "TXT"
+  ],
+  "task_id": "P01-T2",
+  "tier": "T2",
+  "tier_label": "combine",
+  "tier_rationale": "The proof needs three substantial results unavailable in Mathlib: NumStability.recursiveSum_running_error_bound, NumStability.recursiveSum_forward_error_bound, and NumStability.pairwiseSum_forward_error_bound. The running-error theorem requires a separate induction over local rounding errors and cannot be recovered by a short algebraic step from either gamma bound. Rebuilding all three analyses in N is substantially more work than P01-T1.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P01/T2/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p01_t2_recursive_running_and_pairwise_bounds"
+  }
+}

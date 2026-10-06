@@ -1,0 +1,4 @@
+tier,completed_task_count,total_task_count,N_mean_time_seconds,N_mean_observed_tokens,N_token_usage_complete_all_tasks,N_mean_physical_loc,N_mean_proof_region_loc,L_mean_time_seconds,L_mean_observed_tokens,L_token_usage_complete_all_tasks,L_mean_physical_loc,L_mean_proof_region_loc
+T1,12,12,764.8879817777778,1258602.111111111,False,302.1944444444444,67.19444444444444,368.83539294444444,958787.3055555555,False,182.11111111111111,81.16666666666664
+T2,3,3,1531.088185888889,3671569.6666666665,False,677.3333333333334,41.77777777777778,465.18553622222225,1148527.6666666667,False,269.1111111111111,74.88888888888887
+T3,0,23,,,,,,,,,,

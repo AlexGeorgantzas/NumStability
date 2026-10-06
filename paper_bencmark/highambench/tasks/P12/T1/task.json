@@ -1,0 +1,108 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source selection, equation-(1) radix model, and equation-(8) exact-subtraction implication",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The format has an arbitrary integer radix beta >= 2, positive precision p, and an inclusive finite exponent interval [emin, emax] as in equation (1).",
+    "The finite system is equation (1) written in its equivalent canonical split into zero, normalized values, and values at the lower-exponent subnormal lattice.",
+    "The exponents ex and ey are normalized exponents; subtracting p from either gives an equation-(1) exponent for the corresponding input.",
+    "The operands x and y have normalized representations in the same format.",
+    "The exact difference satisfies the magnitude premise of equation (8), reindexed as |x-y| <= beta^min(ex,ey).",
+    "The strict upper-exponent premise expresses the paper's absence-of-overflow qualification, including the equality endpoint of the magnitude bound.",
+    "The computed subtraction is faithfully rounded, with no fixed tie rule.",
+    "The real-valued model has no infinities, NaNs, exception flags, or signed-zero distinction."
+  ],
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P12 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P12 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P12/T1/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p12_t1_exact_subtraction (fmt : P12RadixFormat) (x y rounded : Real) (ex ey : Int) (hx : P12NormalizedExponentRepresentation fmt x ex) (hy : P12NormalizedExponentRepresentation fmt y ey) (hmag : abs (x-y) <= fmt.betaR ^ min ex ey) (hnoOverflow : min ex ey < fmt.normalEmax) (hround : p12FaithfulInFormat fmt (x-y) rounded) : p12FiniteSystem fmt (x-y) and rounded=x-y",
+    "namespace": "HighamBench",
+    "plain_language": "Equation (8): a nonoverflowing difference that remains within one radix binade of the operands' common lattice is representable, so faithful subtraction returns the exact difference.",
+    "target_file": "paper_bencmark/highambench/tasks/P12/T1/Target.lean",
+    "theorem_name": "p12_t1_exact_subtraction"
+  },
+  "informal_proof": "Write both operands on the lower of their two radix lattices. The magnitude bound limits the signed integer coefficient of their difference to p digits. Renormalize that coefficient, or place it on the lower-exponent lattice if it remains subnormal; the equality endpoint is a minimum-mantissa value at the next exponent and the overflow premise keeps that exponent in range. Since the exact difference belongs to F, faithful rounding must return it.",
+  "informal_statement": "The exact-subtraction implication numbered (8) in the proof of Theorem 2, including its common-radix-lattice, magnitude, absence-of-overflow, representability, and faithful-rounding content.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P12",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P12_A note on Dekker\u2019s FastTwoSum algorithm.pdf",
+    "sha256": "0569d969cebaabe42de69fef10fa91002af12d62149af7485d0712414b53c2a1"
+  },
+  "paper_version": "published journal version; volume 145, issue 2, 2020, printed pages 383-403; corrected open-access publication 2021",
+  "result_form_tag": "EQ",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.FloatingPointFormat.fergusonMagnitudeExponentConditionLe_sub_finiteSystem",
+      "NumStability.FloatingPointFormat.minNormalMantissa_normalized",
+      "NumStability.FloatingPointFormat.normalizedValue_false_minNormalMantissa_eq"
+    ],
+    "note": "The first declaration supplies the one substantial strict-magnitude representability step. The latter two are simple endpoint facts. No frozen declaration states the paper's full non-strict equation-(8) implication together with the faithful-rounding conclusion."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P12RadixFormat",
+    "P12RadixFormat.betaR",
+    "P12RadixFormat.minNormalMantissa",
+    "P12RadixFormat.normalizedMantissa",
+    "P12RadixFormat.subnormalMantissa",
+    "P12RadixFormat.normalEmin",
+    "P12RadixFormat.normalEmax",
+    "P12RadixFormat.normalizedExponentInRange",
+    "P12RadixFormat.normalizedValue",
+    "P12RadixFormat.subnormalValue",
+    "P12NormalizedExponentRepresentation",
+    "p12FiniteSystem",
+    "p12Faithful",
+    "p12FaithfulInFormat"
+  ],
+  "source_locations": [
+    {
+      "anchor": "equation (1) and faithful-rounding definition",
+      "pdf_page": 2,
+      "printed_page": "384",
+      "role": "radix system and rounding semantics",
+      "section": "1. Introduction and notation"
+    },
+    {
+      "anchor": "multiple representations and exponent convention",
+      "pdf_page": 3,
+      "printed_page": "385",
+      "role": "equivalent normalized representation used by the formal model",
+      "section": "2. Multiple representations"
+    },
+    {
+      "anchor": "equation (8) in the proof of Theorem 2",
+      "pdf_page": 5,
+      "printed_page": "387",
+      "role": "bounded common-lattice difference and exact faithful subtraction",
+      "section": "3. Generalization for arbitrary bases"
+    }
+  ],
+  "source_tags": [
+    "EQN"
+  ],
+  "task_id": "P12-T1",
+  "tier": "T1",
+  "tier_label": "direct use",
+  "tier_rationale": "The L proof uses the one substantial finite-radix result NumStability.FloatingPointFormat.fergusonMagnitudeExponentConditionLe_sub_finiteSystem for the strict-magnitude case. N must reconstruct the radix-shift search, coefficient alignment, renormalization, and subnormal endpoint argument. The equality endpoint and faithful-rounding finish are simpler supporting steps.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P12/T1/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p12_t1_exact_subtraction"
+  }
+}

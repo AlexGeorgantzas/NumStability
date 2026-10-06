@@ -1,0 +1,92 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "direct formalization of Lemma 3.10 and equations (3.8)-(3.9)",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The number of rounding errors is positive.",
+    "The finite probability law has nonnegative masses summing to one.",
+    "The unit-roundoff and bias-roundoff bounds are nonnegative.",
+    "For alpha_k=delta_k-beta_k, |alpha_k| is bounded by the unit roundoff and |beta_k| is bounded by the bias roundoff.",
+    "Against every finite test function determined by preceding alpha errors, delta_k and beta_k have the same conditional mean."
+  ],
+  "author_label": "Lemma 3.10",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P17 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P17 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P17/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p17_t3_centered_product_decomposition {n : Nat} {Omega : Type*} [Fintype Omega] (run : P17Lemma310Run n Omega) : centered mean independence of alpha and, for every suffix and outcome, the power-set product decomposition (3.8) and gamma-difference remainder bound (3.9)",
+    "namespace": "HighamBench",
+    "plain_language": "The centered errors alpha_k=delta_k-beta_k are mean independent, and every suffix product of the original errors splits into the centered suffix product plus the explicit power-set remainder bounded in equation (3.9).",
+    "target_file": "paper_bencmark/highambench/tasks/P17/T3/Target.lean",
+    "theorem_name": "p17_t3_centered_product_decomposition"
+  },
+  "informal_proof": "Use the conditional-mean identity and linearity of finite expectation to center alpha. Apply the power-set expansion of Lemma 3.9 to each suffix. Bound every mixed monomial using |alpha_k|<=u_p and |beta_k|<=u_(p+r), group subsets by cardinality, and use the binomial theorem to obtain the difference of gamma terms.",
+  "informal_statement": "Lemma 3.10: the centered limited-precision stochastic-rounding errors are mean independent and satisfy the product decomposition (3.8) with the remainder bound (3.9).",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P17",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P17_PROBABILISTIC ERROR ANALYSIS OF LIMITED-PRECISIONSTOCHASTIC ROUNDING.pdf",
+    "sha256": "df1ce5dd33285adfcffc6a4c7ab94f9604b46739cb848c6cbb5f997e8fac597d"
+  },
+  "paper_version": "published journal version; SIAM Journal on Scientific Computing 47(5), 2025, pages B1227-B1249",
+  "result_form_tag": "LEM",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.FiniteProbability.expectationReal_add",
+      "NumStability.FiniteProbability.expectationReal_sub",
+      "NumStability.FiniteProbability.expectationReal_mul_const"
+    ],
+    "note": "The nearby declarations provide only elementary finite-expectation algebra. Neither baseline contains the history-conditioned centering together with the paper's explicit mixed-monomial decomposition and gamma-difference bound."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P17FiniteProbability",
+    "p17Expectation",
+    "p17HistoryMeasurable",
+    "P17Lemma310Run",
+    "p17ProductAlpha",
+    "p17SuffixIndexSet",
+    "p17Lemma310BiasRemainder",
+    "p17Gamma"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Lemma 3.9 equations (3.6)-(3.7)",
+      "pdf_page": 10,
+      "printed_page": "B1236-B1237",
+      "role": "power-set expansion used in the product decomposition",
+      "section": "3. Properties of limited-precision stochastic rounding"
+    },
+    {
+      "anchor": "Lemma 3.10 equations (3.8)-(3.9)",
+      "pdf_page": 11,
+      "printed_page": "B1237-B1238",
+      "role": "selected centered-error decomposition and quantitative remainder bound",
+      "section": "3. Properties of limited-precision stochastic rounding"
+    }
+  ],
+  "source_tags": [
+    "LEM"
+  ],
+  "task_id": "P17-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The target requires a history-conditioned finite-expectation argument, a suffix-indexed power-set product expansion, and a sharp mixed-monomial bound collected by subset cardinality. NumStability has no corresponding combined result, and its nearby expectation identities are routine support that does not materially shorten the proof.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P17/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p17_t3_centered_product_decomposition"
+  }
+}

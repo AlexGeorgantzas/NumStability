@@ -1,0 +1,93 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "one-RHS GE-leaf specialization of Algorithm 1 and Section 4.2 block residual",
+    "performed_by": "Codex"
+  },
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "Identical fixed statement and P64 shared files plus frozen NumStability library.",
+    "N": "Identical fixed statement and P64 shared files; no NumStability artifact."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P64/T2/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p64_t2_G_stage_leaf_residual (fp : P64FPModel) (n : \u2115) ... : \u2203 Ds Dn dw, three gamma bounds and the two block-row residual identities",
+    "namespace": "HighamBench",
+    "plain_language": "The G-stage south and north block residuals have an exact decomposition with bounds for two GE leaf solves and the rounded inter-block product.",
+    "target_file": "paper_bencmark/highambench/tasks/P64/T2/Target.lean",
+    "theorem_name": "p64_t2_G_stage_leaf_residual"
+  },
+  "informal_proof": "Section 4.2 combines the two child-solve residuals with the rounded product relation, giving the block residual in equations (21)-(22).",
+  "informal_statement": "At a G-stage node with Gaussian-elimination leaves, the south and north block residuals decompose into two bounded child-solve errors and the bounded rounded product error.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P64",
+  "paper_source": {
+    "local_path": "papers_to_be_approved/P64-von-Matt-Stewart-1996-Block-Hessenberg.pdf",
+    "sha256": "2cd455f736d1c05dc592def93b979b6fe81491b5424c8dcb00358f0cf78ec058"
+  },
+  "paper_version": "September 1994 University of Maryland author preprint of the 1996 Math. Comp. article; preprint pages 1-26",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.lu_solve_backward_error",
+      "NumStability.matVec_error_bound"
+    ],
+    "note": "Both exact private proofs compile without sorry/admit; N imports no NumStability."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P64FPModel",
+    "P64Matrix",
+    "p64Gamma",
+    "P64GammaValid",
+    "p64ForwardSub",
+    "p64BackSub",
+    "p64LUSolve",
+    "p64RoundedDotProduct",
+    "p64RoundedMatVec",
+    "P64LUCertificate"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Algorithm 1: Gs and Gn recursive child solves; leaf systems use Gaussian elimination",
+      "pdf_page": 5,
+      "printed_page": "4",
+      "role": "algorithm and leaf specialization",
+      "section": "2. The Algorithm"
+    },
+    {
+      "anchor": "rounded matrix product and Gaussian-elimination solve bounds, equations (5)-(8)",
+      "pdf_page": 7,
+      "printed_page": "6",
+      "role": "rounded-kernel premises",
+      "section": "3. Basic Operations"
+    },
+    {
+      "anchor": "G-stage equations, product-error bound (20), and block residual (21)-(22)",
+      "pdf_page": 10,
+      "printed_page": "9",
+      "role": "selected composed result and proof",
+      "section": "4.2. Calculation of G"
+    }
+  ],
+  "source_tags": [
+    "EQN",
+    "TXT"
+  ],
+  "task_id": "P64-T2",
+  "tier": "T2",
+  "tier_label": "composition",
+  "tier_rationale": "The exact L proof needs two distinct substantial frozen results: lu_solve_backward_error for both GE leaf solves and matVec_error_bound for the intervening rounded block product. N independently reconstructs forward substitution, backward substitution, their LU-solve composition, and rounded dot-product analysis; the combined block-row identities are source equations (21)-(22). N is over 1600 lines and L is under 200. Neither numerical error theorem is readily available in Mathlib.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P64/T2/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p64_t2_G_stage_leaf_residual"
+  }
+}

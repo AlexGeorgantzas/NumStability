@@ -1,0 +1,85 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "interior-interval denominator-positivity argument in Theorem 1",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "nodes is strictly increasing, matching x_0 < ... < x_n in the paper.",
+    "The parameter satisfies 0 < d <= n; d=0 is excluded because the paper credits that case to Berrut.",
+    "alpha < n and x lies strictly between nodes alpha and alpha+1.",
+    "p57Mu is equation (9) and p57Denominator is equation (10)."
+  ],
+  "author_label": "Theorem 1",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P57 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P57 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P57/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p57_t3_denominator_positive_between_nodes (nodes : Nat -> Real) (hmono : StrictMono nodes) (n d alpha : Nat) (x : Real) (hdpos : 0 < d) (hdn : d <= n) (halpha : alpha < n) (hxlo : nodes alpha < x) (hxhi : x < nodes (alpha + 1)) : 0 < p57Denominator nodes n d x",
+    "namespace": "HighamBench",
+    "plain_language": "Prove that the denominator in Theorem 1 is positive at every point strictly between two consecutive interpolation nodes when d is positive.",
+    "target_file": "paper_bencmark/highambench/tasks/P57/T3/Target.lean",
+    "theorem_name": "p57_t3_denominator_positive_between_nodes"
+  },
+  "informal_proof": "Split the denominator into the paper's left, middle, and right index blocks. The middle block is nonempty and termwise positive. Prove the product recurrence for consecutive mu terms and use it to show that each outer block, read away from the middle, is an alternating sum of nonincreasing magnitudes beginning positively. Pairing terms makes both tails nonnegative, so their sum with the positive middle block is positive.",
+  "informal_statement": "Prove the interior-interval denominator positivity established in the proof of Theorem 1.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P57",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P57 Barycentric Rational Interpolation with No Poles and High Rates of Approximation.pdf",
+    "sha256": "a89b6b3122fb052540450199d6bb1e9f40e652c1d89e443197dcd1db72faf130"
+  },
+  "paper_version": "Numerische Mathematik 107(2), August 2007, pages 315-331",
+  "result_form_tag": "THM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "Floater Hormann denominator positivity Theorem 1",
+        "barycentric rational interpolation no poles alternating denominator",
+        "finite alternating decreasing tail rational interpolation"
+      ],
+      "result": "Neither Mathlib nor the exact 44-object frozen NumStability bundle contains P57's mu-product recurrence, denominator decomposition, or no-real-poles theorem. Mathlib supplies generic finite products, ordered sums, and algebra; NumStability's sign and subtraction modules do not shorten the paper-specific two-tail argument.",
+      "scope": "the complete frozen NumStability surface at commit 45813a95dacf577461bae13f033af0dbc985a225, the exact 44-object condition-L bundle, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "generic one-signed finite-sum and subtraction-fold identities only; no alternating-decreasing tail or rational-interpolation denominator theorem"
+    ],
+    "note": "The exact private N proof is 257 physical lines and the exact L proof is 258. After deleting L's one additional NumStability import, their mathematical bodies are byte-identical. L invokes no NumStability declaration and receives no shortcut."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "p57Mu",
+    "p57Denominator"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Theorem 1, equations (9)-(13), interior-interval part of the proof",
+      "pdf_page": "2-4",
+      "printed_page": "2-4",
+      "role": "selected denominator definition, three-block split, product comparison, and alternating-tail positivity proof",
+      "section": "2 Absence of poles"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P57-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The task requires proving a consecutive-product recurrence, constructing and proving a general finite alternating-sum lemma, translating both outer index blocks into alternating chains in opposite directions, managing truncated natural-number interval arithmetic, proving strict positivity of the middle block, and reassembling the three finite sums. The exact N proof has 257 physical lines and substantial indexed algebra rather than a short Mathlib import. The exact L mathematical proof is byte-identical and uses no NumStability declaration, establishing that the frozen library provides no speedup.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P57/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p57_t3_denominator_positive_between_nodes"
+  }
+}

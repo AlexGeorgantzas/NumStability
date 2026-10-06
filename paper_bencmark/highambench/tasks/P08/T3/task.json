@@ -1,0 +1,149 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source selection, tier label, source-level algorithm linkage, dimension-only constants, local roundoff analysis, and full finite Lemma 4.3 reconstruction",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The system dimension n is positive, A is nonsingular with a two-sided inverse Ainv, and x is the exact solution of A*x=b.",
+    "The iterates, computed residuals, and corrections form the paper's column-pivoted iterative-refinement run. The actual solves and updates start at m=1; x_0=0, r_0=-b, and d_0=-x_1 are auxiliary definitions only.",
+    "The residual subtraction is performed last; residual accumulation is single precision with ubar=u or double precision with ubar=u^2 followed by conversion to working precision, as captured by the displayed residual-error equation and bound.",
+    "The positive working unit roundoff satisfies n*u<=0.01, and all represented floating-point results are assumed well-defined.",
+    "The initial solve and each positive-index correction use the paper's displayed componentwise column-pivoted-solve certificate with nonnegative C_1; no unspecified pivot-state or back-substitution implementation is imposed.",
+    "The rounded update is represented by x_(m+1)=x_m-d_m+h_(m+1) with the source componentwise bound |h_(m+1)|<=u*|x_m-d_m|.",
+    "The chosen vector norm is absolute, monotone, normalized on basis vectors, and extended to its induced matrix norm; kappa(Ainv)=||abs(A)*abs(Ainv)||.",
+    "C_2,C_6,...,C_12 and c_1,c_3,c_4,c_5,c_8 satisfy the exact definitions and nonnegativity properties printed in the Notes on pages 823, 826, and 827, and explicit scalar and entrywise envelopes bound them by functions of n fixed before A and b.",
+    "The residual-accumulation error equation and its componentwise bound, together with the equation-(3.1) correction-error equation and bound, are available; Lemma 4.1, Lemma 4.2, the page-827 recurrence, and the Lemma 4.3 conclusion are not assumed.",
+    "The final smallness condition is c_8*u*kappa(Ainv)<=1/2; c_1<=c_8 supplies the earlier Lemma 4.1 condition."
+  ],
+  "author_label": "Lemma 4.3",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P08 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P08 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P08/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p08_t3_lemma_4_3_exact_residual_bound {n : Nat} (dimensionBounds : P08DimensionOnlyConstantBounds) (run : P08IterativeRefinementRun n) (norm : P08AbsoluteMonotoneNorm n) (constants : P08Lemma43Constants run norm dimensionBounds) (roundoff : P08Lemma43RoundoffAnalysis run norm dimensionBounds constants) (hsmall : constants.c8 * run.u * p08KappaInverse run norm <= 1/2) : forall m i, abs (p08ExactResidualAfterCorrection run m i) <= p08Lemma43Bound constants m i",
+    "namespace": "HighamBench",
+    "plain_language": "For every iteration m, the exact residual q_(m+1) of the linked column-pivoted iterative-refinement run satisfies Lemma 4.3's complete four-term componentwise finite bound under the source c_8*u*kappa(A^{-1}) threshold.",
+    "target_file": "paper_bencmark/highambench/tasks/P08/T3/Target.lean",
+    "theorem_name": "p08_t3_lemma_4_3_exact_residual_bound"
+  },
+  "informal_proof": "Use c_1<=c_8 to obtain the equation-(3.1) smallness condition. Combine the residual-accumulation error and correction-solve error, then expand the printed definitions of C_6 and C_7, to derive Lemma 4.1. Derive Lemma 4.2's forward bound from x_m-d_m-x=Ainv*q_(m+1) and the rounded update. The m=0 Lemma 4.1 instance and x_0=0 give the q_1 coefficient C_10. Substitution at m+1 gives the source recurrence with propagation u*C_8*|A|*|Ainv| and forcing terms containing C_9 and C_7. The C_11 and C_12 resolvent identities make the stationary terms a fixed supersolution, and componentwise matrix-power induction yields the exact exponent-m four-term bound.",
+  "informal_statement": "The full algorithm-linked, precision-sensitive, componentwise exact-residual bound of Lemma 4.3, with q_1 as the base case and no artificial q_0.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P08",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P08_Skeel-IterativeRefinementImplies-1980.pdf",
+    "sha256": "f520066b46331dcbf25e51345c5ff5ffffe8fcad573d7f46e68834f83b3a2c54"
+  },
+  "paper_version": "published journal version; volume 35, issue 151, July 1980, printed pages 817-832",
+  "result_form_tag": "BND",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.matMulVec_matMul",
+      "NumStability.matPow_nonneg"
+    ],
+    "note": "The mounted MatrixAlgebra module supplies generic matrix-action associativity and matrix-power nonnegativity. It does not contain Skeel's column-pivoted solve interface, residual and correction error derivations, exact q residual, precision-dependent ubar, dimension-only source constants, Lemma 4.1/4.2 reconstruction, or four-term Lemma 4.3 induction."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "p08MatVec",
+    "p08MatMul",
+    "p08MatPow",
+    "p08AbsMatrix",
+    "p08AbsVec",
+    "p08ResidualUnitRoundoff",
+    "P08ColumnPivotedSolveCertificate",
+    "P08IterativeRefinementRun",
+    "p08ExactResidualAfterCorrection",
+    "P08AbsoluteMonotoneNorm",
+    "p08KappaInverse",
+    "P08DimensionOnlyConstantBounds",
+    "P08Lemma43Constants",
+    "p08Lemma43Propagation",
+    "p08Lemma43InitialVector",
+    "p08Lemma43RecurrenceForcing",
+    "p08Lemma43StationaryVector",
+    "p08Lemma43Bound",
+    "P08Lemma43RoundoffAnalysis"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Section 2 floating-point and componentwise conventions",
+      "pdf_page": 3,
+      "printed_page": "818",
+      "role": "positive roundoff, n*u<=0.01, well-defined operations, and componentwise interpretation",
+      "section": "2. Numerical Stability"
+    },
+    {
+      "anchor": "absolute monotone norm convention",
+      "pdf_page": 4,
+      "printed_page": "819",
+      "role": "normalized absolute vector norm and induced matrix norm",
+      "section": "2. Numerical Stability"
+    },
+    {
+      "anchor": "definition of kappa(A^{-1})",
+      "pdf_page": 5,
+      "printed_page": "820",
+      "role": "nonstandard conditioning quantity ||abs(A)*abs(A^{-1})||",
+      "section": "2. Numerical Stability"
+    },
+    {
+      "anchor": "equation (3.1) and following Note",
+      "pdf_page": 8,
+      "printed_page": "823",
+      "role": "column-pivoted solve certificate and definitions of c_1 and C_2",
+      "section": "3. Gaussian Elimination With Column Pivoting"
+    },
+    {
+      "anchor": "Section 4 algorithm and residual-precision paragraph",
+      "pdf_page": 9,
+      "printed_page": "824",
+      "role": "iterative-refinement indexing, initialization, subtraction order, and single/double residual accumulation",
+      "section": "4. Error Bounds"
+    },
+    {
+      "anchor": "Lemma 4.1",
+      "pdf_page": 10,
+      "printed_page": "825",
+      "role": "definition of exact q_(m+1), its base estimate, and precision-dependent ubar",
+      "section": "4. Error Bounds"
+    },
+    {
+      "anchor": "Note following Lemma 4.1 and Lemma 4.2",
+      "pdf_page": 11,
+      "printed_page": "826",
+      "role": "definitions of c_3,c_4,c_5,C_6,C_7 and forward-error bound used in the recurrence",
+      "section": "4. Error Bounds"
+    },
+    {
+      "anchor": "Lemma 4.3, following Note, and recurrence in its proof",
+      "pdf_page": 12,
+      "printed_page": "827",
+      "role": "selected four-term finite bound, C_8 through C_12, smallness hypothesis, recurrence, and induction",
+      "section": "4. Error Bounds"
+    }
+  ],
+  "source_tags": [
+    "LEM"
+  ],
+  "task_id": "P08-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The nearby matrix-vector associativity and matrix-power nonnegativity facts are elementary and available from Mathlib-level reasoning, so they do not materially speed L. Both conditions must derive the P08-specific local estimates, exact recurrence, base case, stationary identities, and exponent-m four-term induction.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P08/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p08_t3_lemma_4_3_exact_residual_bound"
+  }
+}

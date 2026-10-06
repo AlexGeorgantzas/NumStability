@@ -1,0 +1,95 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 26-page paper in physical-PDF order, surveyed every stated theorem and source-proved derivation, and compared all candidates with the frozen Mathlib and importable NumStability baselines.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P33 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "M. Arioli",
+    "J. W. Demmel",
+    "I. S. Duff"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P33-T1"
+  ],
+  "paper_id": "P33",
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 10(2), 1989, printed pages 165-190",
+  "publication": {
+    "doi": "10.1137/0610013",
+    "issue": "2",
+    "journal": "SIAM Journal on Matrix Analysis and Applications",
+    "printed_pages": "165-190",
+    "publication_date": "1989-04",
+    "volume": "10",
+    "year": 1989
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Theorem 1, the Oettli--Prager componentwise backward-error formula",
+      "reason": "The result is explicitly quoted from Oettli and Prager (1964), and this paper supplies no proof. The close NumStability formalization is source-only and unavailable to L; asking agents to prove it would add source proof material absent from this paper."
+    },
+    {
+      "candidate": "Theorem 2, one-step iterative refinement implies componentwise stability",
+      "reason": "The theorem is explicitly attributed to Skeel (1980), and the paper refers readers there for the complicated detailed conditions and proof. Although the compiled library has iterative-refinement results, selecting this theorem would violate the requirement that the paper supply the proof text."
+    },
+    {
+      "candidate": "condition formulas and comparisons (4)-(12), and split error bounds (13)-(17)",
+      "reason": "These are short absolute-value, triangle-inequality, and scalar comparisons once the cited perturbation formula is accepted. They need no substantial compiled theorem and are below the T3 difficulty floor."
+    },
+    {
+      "candidate": "no-guard-digit and underflow extensions in Section 3",
+      "reason": "The paper gives qualitative summaries and refers the underflow analysis to Demmel (1984); it does not provide a complete proof suitable for a source-backed task."
+    },
+    {
+      "candidate": "condition estimator reduction (21)-(24)",
+      "reason": "The matrix identity reducing the desired quantity to an infinity-norm estimate is short. Correctness of the Hager--Higham estimator is cited from earlier work, and the matching NumStability condition-estimator modules are uncompiled."
+    },
+    {
+      "candidate": "numerical experiments and Tables 1-A15",
+      "reason": "These are finite empirical executions and observations rather than difficult universally quantified theorems proved in the paper."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Selected the sparse-row computed-residual error bound in Section 2.2. L uses the substantial compiled conventional residual theorem once, while N reconstructs the rounded dot-product and subtraction analysis."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. The only plausible multi-operation theorem is Skeel's externally sourced iterative-refinement result. No result proved in this paper needs at least two distinct substantial compiled NumStability theorems."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. The paper's self-contained condition identities and split bounds are materially below qualifying-T2 difficulty; the harder refinement, underflow, and estimator results are quoted or summarized from earlier sources."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only mathematical conclusions whose statement and supporting derivation are present in this paper.",
+    "Do not turn Oettli--Prager or Skeel theorems quoted from earlier papers into P33 tasks.",
+    "Count the conventional residual theorem as one substantial result even though it has internal dot-product dependencies.",
+    "Do not create a T2 merely because an iterative-refinement implementation performs residuals and triangular solves.",
+    "Do not inflate short condition-number inequalities or estimator identities into T3 tasks.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source, its importable compiled subset, and Mathlib."
+  ],
+  "short_name": "Arioli--Demmel--Duff (1989)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/0610013",
+    "local_path": "paper_bencmark/reference_papers/P33-Solving Sparse Linear Systems with Sparse Backward Error.pdf",
+    "page_map": "Physical PDF pages 1-26 are printed pages 165-190 respectively.",
+    "pdf_pages": 26,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "259fa7ee5dc2f3a486e245bb27218fa9df0f1574dd1276b4be889fa16fe250f4"
+  },
+  "title": "Solving Sparse Linear Systems with Sparse Backward Error"
+}

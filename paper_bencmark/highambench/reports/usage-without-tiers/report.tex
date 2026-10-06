@@ -1,0 +1,199 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,landscape,margin=17mm,headheight=15pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{graphicx,booktabs,longtable,tabularx,array}
+\usepackage{xcolor,fancyhdr,hyperref,enumitem}
+\definecolor{Ink}{HTML}{172334}
+\definecolor{Blue}{HTML}{155E80}
+\definecolor{Pale}{HTML}{EAF1F7}
+\definecolor{Muted}{HTML}{526172}
+\hypersetup{colorlinks=true,urlcolor=Blue,linkcolor=Blue}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.12}
+\setlist[itemize]{topsep=2pt,itemsep=2pt,leftmargin=18pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\color{Muted}HighamBench / NumStability}
+\fancyhead[R]{\small\color{Muted}Observed-use report, all 38 tasks}
+\fancyfoot[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\newcommand{\pathref}[1]{\nolinkurl{#1}}
+\newcommand{\plot}[1]{\includegraphics[width=\linewidth]{figures/#1.png}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{Ink}NumStability Reuse Across 38 HighamBench Tasks}\par
+\vspace{3pt}
+{\large A category-free analysis of accepted Lean proofs and a comparison with the ten-task formalize-and-prove benchmark}\par
+\vspace{5pt}
+{\small 29 September 2026 \quad\textbar\quad 31 paper identifiers \quad\textbar\quad 114 paired repetitions \quad\textbar\quad 228 accepted attempts}
+\end{center}
+
+\colorbox{Pale}{\parbox{0.975\linewidth}{\small
+This is a \emph{new presentation of existing data}, not a new model run. The earlier usage report and its figures remain intact. All 38 eligible tasks are included. Historical suffixes in task IDs are retained for traceability, but no expected-benefit category is used to group results, color figures, or calculate associations.}}
+
+\section*{Abstract}
+We ask whether an AI prover's \emph{observed use} of NumStability is associated with reduced effort on fixed paper-derived Lean proof tasks. Condition N saw Lean and Mathlib, whereas condition L also saw a frozen NumStability library. Every selected task has three accepted N/L proof pairs. In 14 tasks all three accepted L proofs depended on NumStability; their task-mean gains averaged $+54.0\%$ elapsed time and $+41.7\%$ submitted source lines. In 18 tasks none did; corresponding averages were $+5.6\%$ time and $-2.2\%$ lines. L was faster in 29/38 tasks and submitted fewer source lines in 22/38. These are descriptive \emph{post-run associations}, not causal estimates: use is a model decision, source-campaign and task characteristics are strongly confounded, and historical task labels were originally chosen using expected library benefit. This report keeps both favorable and unfavorable outcomes, including six mixed-use tasks, and compares the study with the distinct ten-task formalize-and-prove benchmark.\footnote{Primary task ledger: \pathref{../library-usage-analysis/task_usage.csv}; pair ledger: \pathref{../library-usage-analysis/pair_usage.csv}; independent ten-task report: NumStability repository, \pathref{Documentation/numstability_ten_task_report.pdf}, SHA-256 \texttt{8b2cd10787487cb4...}.}
+
+\section{Question, scope, and source campaigns}
+The narrow question answered here is: \emph{when the final accepted proof actually reaches NumStability declarations, how do N/L time, observed tokens, and submitted code size compare?} This does not measure how much potentially useful library mathematics remained undiscovered. Nor does an audited dependency alone prove that the library caused a gain. The archived task IDs are preserved exactly; their final suffixes are identifiers, not analysis strata.
+
+The earlier selected-tier results drew on two sources. The later \texttt{results-r11} campaign supplied 15 tasks (45 accepted pairs); the combined \texttt{results-r09}/\texttt{results-r10} evidence supplied 23 further tasks (69 accepted pairs). \texttt{r10} was a fresh replacement campaign for infrastructure-affected \texttt{r09} pairs, not an extra repetition. Each of these 38 tasks has three complete, accepted N/L repetitions. The false-target P16-T3 failure was excluded from the original complete-pair summary; it is not silently classified as an ordinary proof failure here. The two historical P12-T1 and P17-T1 results concern earlier target versions, not their later redesigned tasks.\footnote{Source summaries: \pathref{../live-r11/README.md} and \pathref{../combined-r09-r10/README.md}. Run history and target caveats: \pathref{../../MEASUREMENT_PROGRESS.md}.}
+
+The task selection originally used expected library benefit. This report intentionally does not use those expectations as an outcome variable, but their role in construction remains a source of selection bias. Some tasks may later be judged mathematically incompatible or outside the intended scope. For this descriptive report, no additional result-aware removals have been made; future eligibility decisions should state a source-based rule before recomputing a primary estimate.
+
+\section{What the larger benchmark actually measured}
+\subsection*{Conditions and work unit}
+The larger study was a \emph{fixed-target proof benchmark}. Both conditions received the same paper-scoped task context and an identical, already chosen Lean theorem signature. The agent had to preserve its namespace, name, arguments, assumptions, and conclusion, and write a complete \texttt{Candidate.lean} proof. N had Mathlib but no NumStability source, compiled objects, or index. L had the same environment plus read-only NumStability source and compiled modules, with a short access guide encouraging local search and imports. There was no one-time orientation scout. Final proof validation rejected \texttt{sorry}, \texttt{admit}, extra axioms, unsafe trust escapes, forbidden imports, and edits to the target. One fresh agent/workspace state was used per condition attempt, with no cross-task solution sharing.\footnote{Tracked prompt: \pathref{../../measurement_prompt.md}; L supplement: \pathref{../../condition_prompts/L.md}; task/run history: \pathref{../../MEASUREMENT_PROGRESS.md}. The current tracked protocol JSON is measured-v6 and must \emph{not} be mistaken for the earlier r09/r10 or r11 runtime lock.}
+
+The measured clock began at authenticated prompt release and ended at the authenticated final submission. Hidden final validation ran afterward and was logged separately. Intermediate Lean checks by a contestant counted as contestant work. The cap was 7,200 seconds per condition, without a token ceiling; final recorded token usage is incomplete and represents provider-observed lower bounds. Physical source lines count the submitted file, not imported Mathlib or NumStability implementation lines. A passing fixed-target proof is not itself a fresh paper-faithfulness audit; task-construction/source-review evidence is a separate question.\footnote{Timing and LOC definitions: \pathref{../live-r11/README.md}, \pathref{../combined-r09-r10/README.md}, and the accepted attempt records indexed in \pathref{../library-usage-analysis/attempt_usage.csv}.}
+
+\subsection*{Historical execution differences that matter}
+\begin{center}\small
+\begin{tabularx}{0.98\linewidth}{@{}p{0.18\linewidth}p{0.36\linewidth}X@{}}\toprule
+Aspect & r09/r10 source & r11 source \\\midrule
+Campaign role & r09 original measurement; r10 fresh replacement of 30 infrastructure-affected pairs & Later 38-task campaign; this report takes its 15 completed tasks \\
+Model & GPT-5.6 Sol, xhigh & GPT-5.6 Sol, xhigh \\
+Agent parallelism & Measured-v4 allowed root/child work & Measured-v5 locked one root and disabled subagents \\
+Host execution & Four disjoint CPU slots; N/L attempts could run concurrently & Four disjoint CPU slots; concurrent measured attempts also shared provider authentication \\
+Per-attempt limit & 7,200 s, no token cap; r09/r10 used four-core, 16-GiB slots & 7,200 s, no token cap; four-slot CPU lease \\
+Interpretation & Pair replacements selected by infrastructure rule & Later protocol version; not a controlled rerun of r09/r10 \\
+\bottomrule\end{tabularx}
+\end{center}
+The run journal later identified shared-provider queue/cache interaction and a changed model-visible host developer context between campaigns. A subsequent measured-v6 protocol serialized provider-active attempts precisely because older campaigns could not be pooled as a clean common-timing experiment. This report therefore shows all archived outcomes and their relationships but does \emph{not} claim that the combined 38-task mean isolates a single treatment effect.\footnote{\pathref{../../MEASUREMENT_PROGRESS.md}, especially the measured-v4, measured-v5, and measured-v6 launch/correction entries.}
+
+\clearpage
+\section{Post-run usage measures and outcome definitions}
+The primary usage measure is deliberately simple: for each task, count how many of its three accepted L proofs have at least one \texttt{NumStability} declaration in the saved, complete hidden Lean dependency audit. This yields an integer from 0 to 3. It is \emph{observed uptake}, not pre-run coverage. An import alone is not counted as use. The saved audit also permits complementary checks: source-name references, direct distance-one dependencies of the accepted target, filtered/public transitive dependencies, and matches against task-listed candidate declarations. These answer different questions; none alone identifies causal reuse or useful unused material. All 114 N accepted proofs have zero audited NumStability dependencies.\footnote{Definitions and raw hashes: \pathref{../library-usage-analysis/report.tex}, \pathref{../library-usage-analysis/attempt_usage.csv}, \pathref{../library-usage-analysis/declaration_usage.csv}.}
+
+For each repetition, gain is $(N-L)/N\times100\%$, so positive favors L. For the main task table, we first average the three N measurements and the three L measurements, then calculate gain from those task means. Grouped means give each task equal weight. Elapsed time is contestant-active time to an accepted fixed proof; it cannot be split into formalization and proof phases here because the theorem was fixed before the contest. Token differences are shown for transparency, but \emph{all 228 selected token records are incomplete}; neither their sign nor their magnitude is an exact full-spend comparison.
+
+\begin{center}\small
+\begin{tabular}{@{}lrrrrrr@{}}\toprule
+Metric across 38 task means & N mean & L mean & Gain of totals & Tasks L better & Unit & Qualification \\\midrule
+Elapsed time & 753.1 & 517.4 & +31.3\% & 29/38 & seconds & mixed historical protocols \\
+Observed tokens & 2.453M & 2.162M & +11.9\% & 25/38 & tokens & incomplete lower bounds \\
+Submitted physical LOC & 399.7 & 340.5 & +14.8\% & 22/38 & lines & excludes imported code \\
+\bottomrule\end{tabular}
+\end{center}
+The ratio-of-totals above weights long and short tasks by their resource use; the grouped table below instead averages percentage gains equally over tasks. Neither summary should be presented as a randomized effect.
+
+\section{Results grouped only by realized uptake}
+\begin{center}\small
+\begin{tabular}{@{}lrrrrrr@{}}\toprule
+L proofs using library & Tasks & Mean time gain & Mean LOC gain & Mean observed-token gain & L faster & L shorter \\\midrule
+\input{tables/grouped_usage.tex}
+\end{tabular}
+\end{center}
+The all-three-use group is markedly more favorable than the no-use group, but this is a post-treatment grouping. The formalizer's decision to use the library, original task design, difficulty, and campaign version may all move together. Indeed, almost all all-three-use tasks are from r11, while most zero-use tasks are from r09/r10; the plot is not an independent cross-campaign identification strategy. Within tasks that mix using and non-using repetitions, the pattern is more heterogeneous.\footnote{\pathref{../library-usage-analysis/mixed_task_usage.csv} and \pathref{../library-usage-analysis/pair_usage.csv}.}
+
+\begin{center}
+\begin{minipage}[t]{0.49\linewidth}\centering\plot{grouped_gain}\end{minipage}\hfill
+\begin{minipage}[t]{0.49\linewidth}\centering\plot{time_gain}\end{minipage}
+\end{center}
+\begin{center}\footnotesize\color{Muted}Left: equal-weight mean task gains (not uncertainty intervals). Right: every task's time gain, jittered horizontally only to reveal overlapping points.\end{center}
+
+\subsection*{Campaign provenance is entangled with observed use}
+\begin{center}\small
+\begin{tabular}{@{}lrrrrr@{}}\toprule
+Source of selected task means & Tasks & 0/3 use & 1/3 use & 2/3 use & 3/3 use \\\midrule
+\input{tables/campaign_usage.tex}
+\end{tabular}
+\end{center}
+The 14 consistently using tasks comprise 13 from r11 and one from combined r09/r10. Conversely, all 18 tasks with no observed use are from r09/r10. The visual gradient therefore spans different task mixes and execution protocols. It is a useful diagnostic description, not a within-protocol effect estimate.
+
+\clearpage
+\section{The full task ledger}
+Every selected task appears below, including negative outcomes. ``Use'' is the number of three L proofs with any audited NumStability dependency; ``Hit'' is the number intersecting the historical task candidate list. The latter is a secondary, expectation-linked measure, not the basis of grouping. N/L columns are three-run task means. Token gains are shown although their exact totals are incomplete.
+
+\footnotesize\setlength{\tabcolsep}{8pt}\renewcommand{\arraystretch}{1.0}
+\begin{longtable}{@{}lrrrrrrrrr@{}}
+\caption{All 38 accepted tasks; positive gains favor L. IDs remain unchanged for artifact traceability.}\label{tab:tasks}\\
+\toprule
+Task & Use & Hit & N time & L time & Time gain & N LOC & L LOC & LOC gain & Token gain \\\midrule
+\endfirsthead
+\toprule
+Task & Use & Hit & N time & L time & Time gain & N LOC & L LOC & LOC gain & Token gain \\\midrule
+\endhead
+\input{tables/all_tasks.tex}
+\end{longtable}
+\normalsize\setlength{\tabcolsep}{5pt}\renewcommand{\arraystretch}{1.12}
+
+\clearpage
+\section{Size and token outcomes; within-task diagnostics}
+\begin{center}
+\begin{minipage}[t]{0.49\linewidth}\centering\plot{loc_gain}\end{minipage}\hfill
+\begin{minipage}[t]{0.49\linewidth}\centering\plot{token_gain}\end{minipage}
+\end{center}
+\begin{center}\footnotesize\color{Muted}Every task is plotted; colors encode only the observed 0--3 uptake count. The token axis shows provider-observed lower-bound differences.\end{center}
+
+Six tasks have a mixture of using and non-using L repetitions. For P01-T1, the two using repetitions average $+76.8\%$ time gain and $+64.2\%$ LOC gain, while the non-using repetition shows $-12.4\%$ and $-24.8\%$. That is suggestive \emph{within the same target}, but just three repetitions cannot establish a stable effect. Other mixed-use tasks do not show the same strong pattern: P35-T3's using repetitions are slower on average than its non-using repetition. A dependency may be mathematically nearby yet insufficient to shorten the particular proof.\footnote{\pathref{../library-usage-analysis/mixed_task_usage.csv}; accepted proof and audit paths in \pathref{../library-usage-analysis/attempt_usage.csv}.}
+
+P15-T3 is a useful exception to any sweeping rule: all three L proofs have audited library dependencies, but L's mean submitted source is 11.0\% longer, despite a 10.3\% time gain. Conversely, some no-use tasks favor L, which can arise from model/run variability and is not evidence of a NumStability mechanism. Availability, retrieval, usage, and mathematical leverage are distinct concepts. This dataset directly observes only final proof dependency and submitted output, not every abandoned search or an unused library opportunity.
+
+\clearpage
+\section{Comparison with the separate ten-task benchmark}
+The NumStability \pathref{Documentation/numstability_ten_task_report.pdf} report describes a different question and execution. The following is a \emph{side-by-side protocol comparison}, not a pooled meta-analysis.\footnote{Independent report and source: NumStability \texttt{ten\_task\_benchmark} branch, \pathref{Documentation/report.tex} and \pathref{benchmark/results/summary.json}; PDF SHA-256 \texttt{8b2cd10787487cb4...}, summary SHA-256 \texttt{02a5451409519335...}.}
+
+\begin{center}\small
+\begin{tabularx}{0.98\linewidth}{@{}p{0.20\linewidth}XX@{}}\toprule
+Dimension & This 38-task fixed-target analysis & Separate ten-task formalize-and-prove report \\\midrule
+Work assigned & Prove an already fixed Lean theorem without changing its signature & Derive a source-faithful Lean statement from a paper, then prove that frozen proposition \\
+Faithfulness gate & Upstream task/source review; no fresh candidate-specific statement audit during a fixed proof attempt & Independent audit for each generated statement, with repairs before proof \\
+Sample & 38 tasks from 31 paper IDs; three N/L repetitions per task; two historical protocol generations combined & Ten tasks from five source clusters; one N/L pair per task; outcome-aware chosen corpus \\
+Formalizers & GPT-5.6 Sol/xhigh; old r09/r10 and later r11 controls differ & GPT-6 Sol/high; agents prohibited from spawning subagents \\
+Library familiarization & L-only library access guide; no shared pre-task warm conversation & L-only task-neutral scout once, then task conversations fork from the orientation root \\
+Measured phases & One timed proof task; no formalization/proof time split & Separate timed faithful-formalization and complete-proof stages; one-time scout separately charged \\
+Hardware & Titan, four disjoint four-core slots in r09/r10 and r11; historic memory/control records differ & Titan, three disjoint 8-logical-CPU/24-GiB lanes \\
+Code metric & Full submitted physical source lines for accepted file & Nonblank proof-code lines; statement lines separately reported \\
+Token metric & Incomplete provider-observed totals, lower bounds & Net-new input/output tokens, cached input accounted separately \\
+Headline descriptive outcome & 29/38 tasks faster for L; 22/38 shorter; gain of totals $+31.3\%$ time and $+14.8\%$ physical LOC & 8/10 tasks faster for L; 6/10 shorter in proof LOC; $+22.5\%$ active time, $+19.7\%$ proof LOC, $-34.7\%$ net-new tokens \\
+\bottomrule\end{tabularx}
+\end{center}
+The smaller study reports faithful statements and zero-hole proofs on all ten pairs, and its L task-active formalization was 7.3\% slower while the proof stage was 29.9\% faster. Its one-time scout cost 183.3 seconds and 88,468 net-new tokens; charging it once reduced its aggregate active-time advantage from 22.5\% to 19.9\%. None of these figures can be directly subtracted from the fixed-target results: task corpora, models, clocks, proof obligations, source-line denominators, and token accounting differ. The ten-task corpus also has explicit outcome-aware selection provenance.\footnote{NumStability \pathref{benchmark/results/summary.json} and \pathref{Documentation/numstability_ten_task_report.pdf}.}
+
+\clearpage
+\section{Interpretation, limitations, and future eligibility}
+The most defensible claim from this report is conditional and descriptive: \emph{within this selected archive, tasks whose final L proofs consistently used NumStability often show larger time and submitted-code gains than tasks with no observed use.} The claim is compatible with useful reusable mathematics, but it does not prove that final declaration use caused the gain, nor that unused tasks had no useful library material. L could lose time on search, choose an incompatible interface, or fail to find a relevant declaration; the accepted-proof audit cannot distinguish those mechanisms on its own.
+
+\begin{itemize}
+\item \textbf{Campaign confounding.} The no-use/consistent-use contrast is highly aligned with r09/r10 versus r11. These campaigns differ in agent parallelism and provider context. Even a tier-free chart does not eliminate that problem.
+\item \textbf{Post-treatment grouping.} Reuse is observed after the agent has worked; it is not randomized. Easier proof surfaces may promote both library uptake and faster completion.
+\item \textbf{Inexact tokens.} All selected old-campaign token records are incomplete. Their values are provider-observed lower bounds, not exact total spending or directly comparable with the ten-task study's net-new-token measure.
+\item \textbf{Task validity.} The fixed Lean statement, not a newly generated paper formalization, was the target. P12-T1/P17-T1 are superseded target versions, and P16-T3 was a known false-target failure outside this accepted-pair analysis. Future source-faithfulness or mathematical-scope screening may change the eligible corpus; it should be documented before recomputing results.
+\item \textbf{Usage semantics.} An audited transitive declaration is stronger evidence than an import, but may still be only background support. The candidate-list and semantic-result scores in the companion analysis offer context, yet depend partly on the original task design.
+\end{itemize}
+
+If the thesis narrows the intended numerical-stability scope, a subsequent report can predeclare eligibility from paper content and formalization compatibility, list every excluded task and reason, and retain this complete 38-task analysis as a sensitivity view. The better follow-up test of the proposed mechanism would keep one model/protocol/corpus and compare task-relevant library support with consistent search accounting, then inspect full conversations for retrieval costs and missed opportunities. This report is not a substitute for that prospective test.
+
+\section{Sources and reproducibility}
+The starting point is the companion \pathref{../library-usage-analysis/} folder on this branch. It contains \pathref{analyze.py}, \pathref{attempt_usage.csv} (accepted source/audit paths and SHA-256 values), \pathref{pair_usage.csv}, \pathref{task_usage.csv}, \pathref{declaration_usage.csv}, source-input hashes, and the original tiered usage report, which has not been edited. Source pair summaries are \pathref{../live-r11/completed_pairs.csv} and \pathref{../combined-r09-r10/completed_pairs.csv}; their READMEs describe metric definitions and campaign selection. Historical execution decisions are recorded in \pathref{../../MEASUREMENT_PROGRESS.md}. The independent comparison source is the checked NumStability \texttt{ten\_task\_benchmark} branch's \pathref{Documentation/} and \pathref{benchmark/results/summary.json}. The external report is cited by hash above because it is not copied into this branch.
+
+From the repository root, regenerate this report's tables and SVGs with \texttt{python3 paper\_bencmark/highambench/reports/usage-without-tiers/make\_figures.py}. From this report directory, render the four SVGs and compile:
+\begin{quote}\footnotesize\ttfamily
+sips -s format png figures/*.svg --out figures\\
+latexmk -pdf -interaction=nonstopmode -halt-on-error report.tex
+\end{quote}
+These commands regenerate only derived report assets; they do not rerun contestants or alter measured inputs. The current PDF is a snapshot of the cited hashes and dates.
+
+\clearpage
+\section*{Appendix: source-paper index}
+The table maps all 38 archived task IDs to their 31 paper identifiers. Titles and years are read from \pathref{../../metadata/manifest.json}; that current metadata provides bibliographic identity, not a claim that every historical target is still the present construction target. Exact paper locators and hashes reside in the manifest and individual task records.
+
+\footnotesize\renewcommand{\arraystretch}{1.02}
+\begin{longtable}{@{}lp{0.26\linewidth}p{0.62\linewidth}@{}}
+\caption{All analyzed task IDs and their paper sources.}\\
+\toprule
+Paper & Archived task IDs & Source title and year \\\midrule
+\endfirsthead
+\toprule
+Paper & Archived task IDs & Source title and year \\\midrule
+\endhead
+\input{tables/paper_index.tex}
+\end{longtable}
+\normalsize\renewcommand{\arraystretch}{1.12}
+
+\end{document}

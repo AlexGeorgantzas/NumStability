@@ -1,0 +1,166 @@
+{
+  "schema_version": "highambench-exact-target-search-0.2",
+  "evidence_id": "P01-final-exact-and-semantic-target-search",
+  "performed_by": "Codex independent source-and-mathematics review pass",
+  "performed_on": "2026-07-25",
+  "search_scope": {
+    "numstability": {
+      "root": "NumStability",
+      "commit": "45813a95dacf577461bae13f033af0dbc985a225",
+      "lean_source_files": 976
+    },
+    "mathlib": {
+      "root": ".lake/packages/mathlib/Mathlib",
+      "commit": "e8ea1afc32790ce1d4e1a4e45cc412ba9388716b",
+      "lean_source_files": 7672
+    },
+    "method": "Search every Lean source file for the exact target names, the shared-only names, and domain-specific words. Then inspect every plausible NumStability declaration by source and compare its assumptions, algorithm, and conclusion with the fixed target. Text search alone was not treated as a semantic proof."
+  },
+  "fixed_surface_hashes": {
+    "shared_files": [
+      {
+        "path": "paper_bencmark/highambench/shared/HighamBench/Core.lean",
+        "sha256": "8c84e05c04f4245e067d3a971dafa45bcfe92f55bbc24f2305964a8e2b9bd55a"
+      },
+      {
+        "path": "paper_bencmark/highambench/shared/HighamBench/P01Definitions.lean",
+        "sha256": "f84e0fcd73a73392e539081c1ab832e76c71902085eaae4614d305d138ca7a29"
+      }
+    ],
+    "P01-T1": {
+      "path": "paper_bencmark/highambench/tasks/P01/T1/Target.lean",
+      "sha256": "ee6bd516f8c592936e1f9b0b9d54049579ba7aee7714cdb871b230332e0f1d19"
+    },
+    "P01-T2": {
+      "path": "paper_bencmark/highambench/tasks/P01/T2/Target.lean",
+      "sha256": "8707d7e8b3965c9c6d5c1354116c7cf04471bc0c5b0635b4287729455f79e49f"
+    },
+    "P01-T3": {
+      "path": "paper_bencmark/highambench/tasks/P01/T3/Target.lean",
+      "sha256": "e5badc1d71efe1d99f4d211edb7eff96ceb893628641ed140494f380de284cda"
+    }
+  },
+  "recorded_searches": [
+    {
+      "purpose": "exact target-name and shared-name search",
+      "command": "rg -n --glob '*.lean' 'p01_t1_pairwise_nonnegative|p01_t2_pairwise_vs_recursive_bounds|p01_t3_noGuard_recursive_running_error_bound|noGuardRecursiveRunningBudget|HighamBench\\.pairwiseSum|HighamBench\\.recursiveSum' NumStability .lake/packages/mathlib/Mathlib",
+      "match_count": 0,
+      "result": "No exact target name and no benchmark-only shared declaration occurs in either searched codebase."
+    },
+    {
+      "purpose": "Mathlib floating-point-error surface search",
+      "command": "rg -n --glob '*.lean' '(FPModel|NoGuardFPModel|gammaValid|unit roundoff|unitRoundoff|roundoff|fl_pairwiseSum|fl_recursiveSum|runningErrorMu)' .lake/packages/mathlib/Mathlib",
+      "match_count": 0,
+      "result": "No domain-specific floating-point summation surface relevant to these targets occurs in Mathlib."
+    },
+    {
+      "purpose": "nonnegative pairwise declaration search",
+      "command": "rg -n --glob '*.lean' '(pairwiseSum.*nonneg|nonneg.*pairwiseSum|pairwise.*nonnegative|nonnegative.*pairwise|pairwiseSum_forward_error_bound_oneSigned)' NumStability .lake/packages/mathlib/Mathlib",
+      "result": "The only relevant declaration is NumStability.pairwiseSum_forward_error_bound_oneSigned; other matches are unrelated prose or unrelated uses of pairwise."
+    },
+    {
+      "purpose": "combined pairwise/recursive declaration search",
+      "command": "rg -n --glob '*.lean' '^(theorem|lemma).*?(pairwise.*recursive|recursive.*pairwise)' NumStability .lake/packages/mathlib/Mathlib",
+      "match_count": 0,
+      "result": "No declaration states a pairwise bound, a recursive bound, and their gamma-coefficient comparison together."
+    },
+    {
+      "purpose": "no-guard recursive-summation file intersection",
+      "command": "comm -12 <(rg -l --glob '*.lean' 'NoGuardFPModel|noGuard' NumStability | sort) <(rg -l --glob '*.lean' 'fl_recursiveSum|recursiveSum' NumStability | sort)",
+      "match_count": 0,
+      "result": "No NumStability source file contains both its no-guard surface and its recursive-summation surface. Generic recurrence lemmas and nearby no-guard results were therefore inspected separately."
+    },
+    {
+      "purpose": "nearby no-guard and running-error declaration search",
+      "command": "rg -n --glob '*.lean' '(noGuard.*running|running.*noGuard|computed prefix|computed-prefix|previous computed sum|noGuard_add_fold_unroll|noGuard_backward_error|noGuardAddWitness_error_eq|runningError_bound_from_local_errors)' NumStability .lake/packages/mathlib/Mathlib",
+      "result": "The relevant declarations are the one-step no-guard identity, a no-guard fold expansion, a no-guard tree backward theorem, and a model-independent running-error recurrence theorem. None states the fixed T3 result."
+    }
+  ],
+  "task_findings": [
+    {
+      "task_id": "P01-T1",
+      "exact_duplicate_found": false,
+      "semantic_duplicate_found": false,
+      "closest_declarations": [
+        {
+          "name": "NumStability.pairwiseSum_forward_error_bound",
+          "source": "NumStability/Algorithms/Summation/Pairwise/Core.lean:198",
+          "relationship": "It proves the general gamma-at-depth bound with a sum of input absolute values. The fixed target uses the benchmark's shared model and algorithm and specializes the result to pointwise nonnegative inputs."
+        },
+        {
+          "name": "NumStability.pairwiseSum_forward_error_bound_oneSigned",
+          "source": "NumStability/Algorithms/Summation/Pairwise/Core.lean:219",
+          "relationship": "It is a close one-signed corollary whose right side is gamma times the absolute value of the exact sum. The fixed target assumes pointwise nonnegativity and has the ordinary exact sum on the right, so an adapter and sign simplification are still required."
+        }
+      ],
+      "tier_assessment": "T1 (direct use) is honest: condition L has a very close general theorem, while the exact fixed shared-surface specialization is absent."
+    },
+    {
+      "task_id": "P01-T2",
+      "exact_duplicate_found": false,
+      "semantic_duplicate_found": false,
+      "closest_declarations": [
+        {
+          "name": "NumStability.pairwiseSum_forward_error_bound",
+          "source": "NumStability/Algorithms/Summation/Pairwise/Core.lean:198",
+          "relationship": "Supplies the pairwise component after an adapter."
+        },
+        {
+          "name": "NumStability.recursiveSum_forward_error_bound",
+          "source": "NumStability/Algorithms/Summation/Recursive/Core.lean:221",
+          "relationship": "Supplies the recursive component after an adapter."
+        },
+        {
+          "name": "NumStability.gammaValid_mono",
+          "source": "NumStability/Analysis/Rounding.lean:58",
+          "relationship": "Moves gamma validity from the larger natural-number index to the smaller one."
+        },
+        {
+          "name": "NumStability.gamma_mono",
+          "source": "NumStability/Analysis/Rounding.lean:145",
+          "relationship": "Compares gamma values after the index inequality is proved."
+        }
+      ],
+      "tier_assessment": "T2 (combine) is honest: the separate library ingredients exist, but no declaration contains the requested conjunction or proves the needed power-of-two index arithmetic for this shared target."
+    },
+    {
+      "task_id": "P01-T3",
+      "exact_duplicate_found": false,
+      "semantic_duplicate_found": false,
+      "closest_declarations": [
+        {
+          "name": "NumStability.noGuardAddWitness_error_eq",
+          "source": "NumStability/Analysis/Error.lean:133",
+          "relationship": "This is exactly the one-addition error identity, not an accumulated recursive-summation bound."
+        },
+        {
+          "name": "NumStability.runningError_bound_from_local_errors",
+          "source": "NumStability/Algorithms/DotProduct.lean:367",
+          "relationship": "This model-independent theorem accumulates an already-supplied indexed error recurrence into a running budget. It does not define the no-guard recursive computation, extract its alpha/beta witnesses, prove the required recurrence, connect its indexed state to the final shared recursive sum, or identify its generic fold budget with noGuardRecursiveRunningBudget. It is a useful generic scaffold, not a statement-level or semantic duplicate of T3."
+        },
+        {
+          "name": "NumStability.noGuard_add_fold_unroll",
+          "source": "NumStability/Algorithms/Arithmetic/DotProduct/NoGuard/Core.lean:27",
+          "relationship": "It gives a product expansion for a generic no-guard addition fold. It does not give equation (5.3)'s computed-prefix absolute-error budget."
+        },
+        {
+          "name": "NumStability.SumTree.noGuard_backward_error",
+          "source": "NumStability/Algorithms/Arithmetic/DotProduct/NoGuard/Tree.lean:32",
+          "relationship": "It gives a gamma-based backward bound for a nonempty tree and requires gamma validity. T3 instead has no gamma condition and uses the actual computed prefixes in equation (5.3)."
+        },
+        {
+          "name": "NumStability.recursiveSum_running_error_bound",
+          "source": "NumStability/Algorithms/Summation/Recursive/Core.lean:597",
+          "relationship": "It concerns the stronger standard relative-error model and pre-rounding pair sums. It cannot be applied to the weaker two-error no-guard model."
+        }
+      ],
+      "tier_assessment": "T3 (extend) remains defensible: even with the generic recurrence scaffold, a condition-L proof must create substantial new no-guard recursive-state, witness, indexing, and budget bridges, or construct the full induction directly. No accumulated no-guard recursive theorem with the fixed computed-prefix budget exists."
+    }
+  ],
+  "overall_conclusion": {
+    "all_three_exact_targets_absent": true,
+    "all_three_semantic_duplicates_absent": true,
+    "tier_labels_supported_by_library_surface": true,
+    "qualification": "The T3 search found a generic accumulated-recurrence helper that should be disclosed as a possible library ingredient. It does not remove the new no-guard recursive formalization work required by the target."
+  }
+}

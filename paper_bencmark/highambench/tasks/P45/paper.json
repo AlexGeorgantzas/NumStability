@@ -1,0 +1,86 @@
+{
+  "annotation": {
+    "method": "Codex read the complete 24-page article in physical order, including all propositions, lemmas, theorems, applications, experiments, and references; separated results proved here from cited background; audited Mathlib and the exact frozen 44-object NumStability surface; and compiled exact private N/L proofs before retaining P45-T1.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P45 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Valeria Simoncini",
+    "Daniel B. Szyld"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P45-T1"
+  ],
+  "paper_id": "P45",
+  "paper_version": "SIAM Journal on Scientific Computing 25(2), published electronically November 11, 2003",
+  "publication": {
+    "doi": "10.1137/S1064827502406415",
+    "version_date": "2003-11-11",
+    "year": 2003
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Propositions 3.2 and 3.3",
+      "reason": "Their minimum-residual and oblique-projection conclusions are short consequences of the displayed inexact Arnoldi relation and do not meet a tier's substantial-proof threshold."
+    },
+    {
+      "candidate": "Proposition 4.1 and Corollaries 4.2-4.3",
+      "reason": "The residual-gap inequalities follow by one finite-sum expansion and the triangle inequality, so they are too easy for T3 and receive no substantial library shortcut."
+    },
+    {
+      "candidate": "Lemma 5.2 and Theorems 5.3-5.4",
+      "reason": "Lemma 5.2 repeats the same Givens-product argument as Lemma 5.1. The relaxation theorems combine that same coefficient bound with the elementary residual-gap sum, so they do not expose a second distinct substantial NumStability result and cannot serve as no-shortcut T3 tasks."
+    },
+    {
+      "candidate": "application propositions in Sections 8-10 and eigenvalue inequalities in Section 11",
+      "reason": "These specialize the same residual-gap/coefficient framework or give direct norm inequalities; they provide neither two independent substantial library shortcuts nor a no-library proof at the required T3 difficulty."
+    },
+    {
+      "candidate": "Examples 5.5, 5.6, 8.2, 9.3, and 10.2",
+      "reason": "These are numerical experiments rather than universal proof tasks."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Selected the Givens-product core of Lemma 5.1. Exact private proofs show that one substantial NumStability Givens-orthogonality theorem materially shortens L while the complete coefficient bound is absent from both libraries.",
+      "task_id": "P45-T1",
+      "theorem_name": "p45_t1_gmres_coefficient_bound"
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. The paper's complete proved results expose only one qualifying paper-specific substantial shortcut in the frozen bundle, Givens-rotation orthogonality. Generic norm preservation is supporting infrastructure, not a second paper-specific numerical-analysis result."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. Results independent of the selected Givens argument reduce to short projection, residual-gap, or norm estimates below the T2-level difficulty floor; the harder relaxation results inherit the same NumStability Givens shortcut and therefore fail T3's no-speedup condition."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only results and proof steps stated in this paper.",
+    "Retain the coefficient conclusion of Lemma 5.1 and expose, rather than assume, the paper's Givens-product norm argument.",
+    "Treat generic orthogonal-norm preservation as supporting algebra and the explicit Givens-rotation orthogonality proof as the single substantial shortcut.",
+    "Do not count applications of the same coefficient argument as distinct substantial results.",
+    "Assign a tier only after exact private N and L proofs compile."
+  ],
+  "short_name": "Simoncini--Szyld (2003)",
+  "source": {
+    "lawful_source_locator": "local user-supplied published article",
+    "local_path": "paper_bencmark/reference_papers/P45 Theory of Inexact Krylov Subspace Methods and Applications to Scientific Computing.pdf",
+    "page_map": "Physical PDF pages 1-24 correspond to printed journal pages 454-477.",
+    "pdf_pages": 24,
+    "rights_note": "The local article was supplied for benchmark construction. Release only its hash, metadata, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "d5f0a68dffca7eb6b8bfaff2cb8ab36383347d64f16b9b838de994e13f5bcb1a"
+  },
+  "title": "Theory of Inexact Krylov Subspace Methods and Applications to Scientific Computing"
+}

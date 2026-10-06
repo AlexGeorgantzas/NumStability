@@ -1,0 +1,10 @@
+{"monotonic_ns":27435494953093,"raw_line":"\u001b[2m2026-09-16T20:59:26.438031Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:","record_type":"app_server_stderr","sequence":1,"unix_ns":1789592366438053264}
+{"monotonic_ns":27435495003202,"raw_line":"    change p09RadixTwoCoefficientApply (0 : ZMod 2) x =","record_type":"app_server_stderr","sequence":2,"unix_ns":1789592366438103642}
+{"monotonic_ns":27435495022488,"raw_line":"        ZMod.stdAddChar (0 : ZMod 2) * x","record_type":"app_server_stderr","sequence":3,"unix_ns":1789592366438122924}
+{"monotonic_ns":27435495038890,"raw_line":"    rw [p09StdAddChar_eq_cos_sin]","record_type":"app_server_stderr","sequence":4,"unix_ns":1789592366438139328}
+{"monotonic_ns":27435495057368,"raw_line":"    norm_num [p09RadixTwoCoefficientApply, p09RootAngle]","record_type":"app_server_stderr","sequence":5,"unix_ns":1789592366438157812}
+{"monotonic_ns":27447799305664,"raw_line":"\u001b[2m2026-09-16T20:59:38.742383Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:","record_type":"app_server_stderr","sequence":6,"unix_ns":1789592378742405866}
+{"monotonic_ns":27447799347468,"raw_line":"    change p09RadixTwoCoefficientApply (0 : ZMod 2) x =","record_type":"app_server_stderr","sequence":7,"unix_ns":1789592378742447904}
+{"monotonic_ns":27447799367802,"raw_line":"        ZMod.stdAddChar (0 : ZMod 2) * x","record_type":"app_server_stderr","sequence":8,"unix_ns":1789592378742468233}
+{"monotonic_ns":27447799384705,"raw_line":"    rw [p09StdAddChar_eq_cos_sin]","record_type":"app_server_stderr","sequence":9,"unix_ns":1789592378742485131}
+{"monotonic_ns":27447799400206,"raw_line":"    norm_num [p09RadixTwoCoefficientApply, p09RootAngle]","record_type":"app_server_stderr","sequence":10,"unix_ns":1789592378742500657}

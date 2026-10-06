@@ -1,0 +1,14 @@
+{
+  "file_count": 233,
+  "kind": "highambench-task-corpus-lock",
+  "manifest_sha256": "6e0977d71d5c6ae39e55a75a5ba9b0eb905ae730e8092e1a349a7db61a94dd73",
+  "policy": "The task corpus is fixed independently of the runtime environment. Campaign creation must fail if any scoped path, byte count, file digest, or scope membership differs.",
+  "schema_version": 1,
+  "scope_roots": [
+    "tasks",
+    "shared",
+    "metadata/controlled",
+    "metadata/run_order.json"
+  ],
+  "status": "locked"
+}

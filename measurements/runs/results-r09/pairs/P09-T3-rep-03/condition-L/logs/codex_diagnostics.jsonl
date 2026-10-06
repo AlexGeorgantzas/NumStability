@@ -1,0 +1,11 @@
+{"monotonic_ns":22934875355054,"raw_line":"\u001b[2m2026-09-16T19:44:25.818336Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:","record_type":"app_server_stderr","sequence":1,"unix_ns":1789587865818453581}
+{"monotonic_ns":22934875617951,"raw_line":"    (h : ∀ i, ‖x i‖ ≤ ‖y i‖) :","record_type":"app_server_stderr","sequence":2,"unix_ns":1789587865818717838}
+{"monotonic_ns":22934875743902,"raw_line":"    p09ComplexNorm2 x ≤ p09ComplexNorm2 y := by","record_type":"app_server_stderr","sequence":3,"unix_ns":1789587865818843905}
+{"monotonic_ns":22934875860367,"raw_line":"  unfold p09ComplexNorm2, p09ComplexNorm2Sq","record_type":"app_server_stderr","sequence":4,"unix_ns":1789587865818960258}
+{"monotonic_ns":22934875954879,"raw_line":"  gcongr with i","record_type":"app_server_stderr","sequence":5,"unix_ns":1789587865819054953}
+{"monotonic_ns":22934876066222,"raw_line":"  exact (sq_le_sq₀ (norm_nonneg _) (norm_nonneg _)).2 (h i)","record_type":"app_server_stderr","sequence":6,"unix_ns":1789587865819166265}
+{"monotonic_ns":23311112551309,"raw_line":"\u001b[2m2026-09-16T19:50:42.055623Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:","record_type":"app_server_stderr","sequence":7,"unix_ns":1789588242055651486}
+{"monotonic_ns":23311112600269,"raw_line":"theorem p09_t3_multidimensional_rms_error_bound","record_type":"app_server_stderr","sequence":8,"unix_ns":1789588242055700685}
+{"monotonic_ns":23311112620811,"raw_line":"    {m : ℕ} [NeZero m]","record_type":"app_server_stderr","sequence":9,"unix_ns":1789588242055721263}
+{"monotonic_ns":23311112640833,"raw_line":"    (plan : P09MultidimensionalFftPlan m) (γ : ℝ)","record_type":"app_server_stderr","sequence":10,"unix_ns":1789588242055741287}
+{"monotonic_ns":23311112660233,"raw_line":"    (plan : P09MultidimensionalFftPlan m) (γ : ℝ)","record_type":"app_server_stderr","sequence":11,"unix_ns":1789588242055760676}

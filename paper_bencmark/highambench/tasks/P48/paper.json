@@ -1,0 +1,88 @@
+{
+  "annotation": {
+    "method": "Codex read the complete 21-page manuscript in physical order, including the projection framework, Propositions 2.1 and 3.1-3.4 with their proofs, K-PIK implementation, CF-ADI review, all numerical experiments, appendix code, and all 42 references; separated internally proved results from cited theory and experiments; audited Mathlib and the exact frozen 44-object NumStability surface; and compiled exact private N/L proofs before retaining P48-T3.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P48 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Valeria Simoncini"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P48-T3"
+  ],
+  "paper_id": "P48",
+  "paper_version": "author manuscript, version of February 3, 2007",
+  "publication": {
+    "version_date": "2007-02-03",
+    "year": 2007
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Proposition 2.1",
+      "reason": "The integral formula for the projected Lyapunov solution is called readily established and referred to source [9]. It is cited background rather than a new P48 proof task."
+    },
+    {
+      "candidate": "Proposition 3.1",
+      "reason": "Identifying the displayed Laurent span with K_(2m)(A,A^(-m)B) and proving A K_m is contained in K_(m+1) are direct reindexing arguments, below the substantial tier threshold."
+    },
+    {
+      "candidate": "Proposition 3.2",
+      "reason": "The projected-matrix recurrence is paper-specific but follows by direct substitution into equations (3.3)-(3.4). The frozen library supplies no substantial shortcut, and the resulting coordinate algebra is not as difficult as the retained rank-breakdown theorem."
+    },
+    {
+      "candidate": "Proposition 3.3 and equation (3.5)",
+      "reason": "Their residual-range, residual-norm, and iterate-difference identities are block multiplication plus generic orthogonal norm preservation. No paper-specific substantial NumStability theorem applies, and the proofs remain below the T3 difficulty floor."
+    },
+    {
+      "candidate": "CF-ADI properties and equation (4.1)",
+      "reason": "Symmetry, positive semidefiniteness, factorized iteration properties, and the residual formula are reviewed from references [25], [28], and [30], not proved as new results here."
+    },
+    {
+      "candidate": "Section 5 comparisons and convergence observations",
+      "reason": "These are numerical experiments and implementation observations rather than universal proof tasks."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No internally proved P48 result needs one substantial non-Mathlib declaration from the exact compiled NumStability bundle. Generic matrix and orthogonality helpers do not materially replace a paper-specific proof."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source-proved P48 result receives two distinct substantial shortcuts from the exact compiled NumStability surface. Lyapunov/Sylvester developments outside the 44-object bundle are unavailable to L and cannot be counted."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Selected the invariant-subspace conclusion of Proposition 3.4. Exact N/L proofs establish a substantial quotient-dependence, coefficient-case, finite-dimensional rank, and span-invariance argument with no NumStability shortcut.",
+      "task_id": "P48-T3",
+      "theorem_name": "p48_t3_rank_breakdown_invariant"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only results and proof content stated in this paper.",
+    "Represent the rank-less-than-two premise directly as dependence of the two new directions modulo the old Laurent--Krylov space.",
+    "Retain only Proposition 3.4's invariant-subspace conclusion; do not add an invented convergence or error bound.",
+    "Do not treat uncompiled Lyapunov/Sylvester source modules as available to condition L.",
+    "Assign a tier only after exact private N and L proofs compile."
+  ],
+  "short_name": "Simoncini (2007)",
+  "source": {
+    "lawful_source_locator": "local user-supplied author manuscript",
+    "local_path": "paper_bencmark/reference_papers/P48 A New Iterative Method for Solving Large-Scale Lyapunov Matrix Equations.pdf",
+    "page_map": "The 21 physical PDF pages use printed page numbers 1-21.",
+    "pdf_pages": 21,
+    "rights_note": "The local author manuscript was supplied for benchmark construction. Release only its hash, metadata, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "1f266fdcde751242579be08e3427310edf50eacfcc5f6f3040567f6551597eff"
+  },
+  "title": "A New Iterative Method for Solving Large-Scale Lyapunov Matrix Equations"
+}

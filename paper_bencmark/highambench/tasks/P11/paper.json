@@ -1,0 +1,107 @@
+{
+  "annotation": {
+    "method": "Codex freshly reread the complete local paper for the missing-tier audit, including both CGS algorithms and the full appendix proof, and compared all missing-tier candidates with the full frozen Mathlib and NumStability baselines; the existing T3 was retained.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P11 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Alicja Smoktunowicz",
+    "Jesse L. Barlow",
+    "Julien Langou"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P11-T3"
+  ],
+  "paper_id": "P11",
+  "paper_version": "published journal version; volume 105, issue 2, 2006, printed pages 299-313",
+  "publication": {
+    "doi": "10.1007/s00211-006-0042-1",
+    "issue": 2,
+    "journal": "Numerische Mathematik",
+    "printed_pages": "299-313",
+    "publication_date": "2006-11-03",
+    "volume": 105,
+    "year": 2006
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Algorithm 1 (CGS-S), Algorithm 2 (CGS-P), and the floating-point model",
+      "reason": "These are definitions and assumptions. The paper's contribution is the corrected analysis of CGS-P, not the pseudocode or IEEE model in isolation."
+    },
+    {
+      "candidate": "Lemma 1 quoted from Giraud et al.",
+      "reason": "The paper explicitly states that this lemma is incorrect for Algorithm 1, so it cannot serve as a valid target."
+    },
+    {
+      "candidate": "Theorem 1 clauses (4)-(6) and (8) as standalone T3 targets",
+      "reason": "These clauses support the selected numbered orthogonality result. T3 uses uniform forms of (4)-(6) while deriving equation (7), rather than replacing the selected conclusion with one supporting estimate."
+    },
+    {
+      "candidate": "Remark 1 and equations (9)-(10)",
+      "reason": "The condition-number conversion relies on Weyl monotonicity, pseudoinverses, and O(epsilon squared) bookkeeping and is secondary to the corrected Gram-Schmidt result."
+    },
+    {
+      "candidate": "Examples 1-2 and Tables 1-2",
+      "reason": "The MATLAB counterexamples and measured errors are empirical evidence, not finite proof targets."
+    },
+    {
+      "candidate": "Remark 2 on CGS-P breakdown",
+      "reason": "This is a qualitative possibility outside Theorem 1's assumptions rather than a quantified finite result."
+    },
+    {
+      "candidate": "the CGS2 and CGS-K reorthogonalization discussion",
+      "reason": "The section presents algorithmic implications, parameter choices, and heuristics; it does not prove a new self-contained finite theorem."
+    },
+    {
+      "candidate": "Lemma 2 and equations (11)-(15)",
+      "reason": "The local diagonal and projection bounds retain first-order O notation and mainly set up the appendix induction; the selected tasks capture the exact reusable core and main consequence."
+    },
+    {
+      "candidate": "the induction estimates (17)-(24)",
+      "reason": "These are long intermediate first-order bounds with paper-specific constants. The residual action in (16) is the clean direct tier, while the final defect identity and bound provide stronger higher-tier targets."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. No source theorem has exactly one substantial NumStability dependency: the nearby operator-action and conditioning steps are elementary, while the paper-specific CGS-P execution analysis has no corresponding library theorem."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. No CGS-P result matches two substantial frozen theorems. The reusable rectangular associativity, transpose, and norm facts are basic; the difficult loss-of-orthogonality and first-order execution analysis remains paper-specific."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Use numbered equation (7) for every positive prefix of one fixed-input family of linked rectangular CGS-P executions, preserving condition (3), spectral norms, c4(m,k), kappa2(R_k)^2, and a uniform interpretation of the source's O(epsilonM^2) remainder.",
+      "task_id": "P11-T3",
+      "theorem_name": "p11_t3_orthogonality_defect_bound"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use correct claims proved in this paper and retain their algorithm, dimensions, hypotheses, norms, constants, and quantifier scope.",
+    "Reject the explicitly incorrect cited lemma, experiments, heuristics, and definitions as standalone proof targets.",
+    "Represent each unspecified O(epsilon squared) term by coefficients and a radius fixed uniformly before selecting a positive machine unit.",
+    "Keep the fixed Lean setting condition-neutral and paper-scoped.",
+    "Assign tiers only after checking the mounted frozen object baseline, not broader source-only Gram-Schmidt modules."
+  ],
+  "short_name": "Smoktunowicz, Barlow, and Langou (2006)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1007/s00211-006-0042-1",
+    "local_path": "paper_bencmark/reference_papers/P11_A note on the error analysis of classical Gram\u2013Schmidt.pdf",
+    "page_map": "PDF pages 1-15 are printed pages 299-313 respectively.",
+    "pdf_pages": 15,
+    "rights_note": "The local journal copy was supplied for benchmark construction. Permission to redistribute the full PDF is not asserted.",
+    "sha256": "72b7521848be07971a6721ea0356bb898c63e21b8ad3aa109fee8f41517284a5"
+  },
+  "title": "A note on the error analysis of classical Gram\u2013Schmidt"
+}

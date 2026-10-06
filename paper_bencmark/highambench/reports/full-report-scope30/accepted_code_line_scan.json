@@ -1,0 +1,1626 @@
+{
+  "rule": "The design29_report.py _code_lines rule: physical lines with Lean tokens, excluding blank and comment-only lines; complete submitted file including helpers and imports.",
+  "source_attempt_csv_sha256": "bd536d94b2c5e98eebc68d8e3e81a96b879498278317f21eee5bc2dc9712a43a",
+  "attempts": [
+    {
+      "task_id": "P01-T1",
+      "pair_id": "P01-T1-rep-01",
+      "condition": "L",
+      "proof_sha256": "9cf62636fe8846c32142e013d9bbd71cde16e27d7ede82a0c61099a345b94b95",
+      "code_lines": 139,
+      "physical_lines": 146,
+      "proof_path": "measurements/runs/results-r11/pairs/P01-T1-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P01-T1",
+      "pair_id": "P01-T1-rep-01",
+      "condition": "N",
+      "proof_sha256": "5d0129a2b487dc620118240a2e677a62be48931c27547bf6b25c9170a54145ce",
+      "code_lines": 110,
+      "physical_lines": 117,
+      "proof_path": "measurements/runs/results-r11/pairs/P01-T1-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P01-T1",
+      "pair_id": "P01-T1-rep-02",
+      "condition": "L",
+      "proof_sha256": "5468bed0be38c95503e89e7897af0789c72d8a58131cc5f7a0941635cddb3a44",
+      "code_lines": 60,
+      "physical_lines": 67,
+      "proof_path": "measurements/runs/results-r11/pairs/P01-T1-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P01-T1",
+      "pair_id": "P01-T1-rep-02",
+      "condition": "N",
+      "proof_sha256": "027b32e657e2da73668f4f88dc2488822603ab01b01bd777e341deb0a22af840",
+      "code_lines": 135,
+      "physical_lines": 144,
+      "proof_path": "measurements/runs/results-r11/pairs/P01-T1-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P01-T1",
+      "pair_id": "P01-T1-rep-03",
+      "condition": "L",
+      "proof_sha256": "ee65d0f81601ea81d975c9e340fe98a47cafc1b919e2e33984cf5d0b2a3ed9f7",
+      "code_lines": 33,
+      "physical_lines": 38,
+      "proof_path": "measurements/runs/results-r11/pairs/P01-T1-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P01-T1",
+      "pair_id": "P01-T1-rep-03",
+      "condition": "N",
+      "proof_sha256": "4ee7d4715daa320aafb91bdad365407e553c72ea8c226e38dbaf54e4d40e4aab",
+      "code_lines": 145,
+      "physical_lines": 152,
+      "proof_path": "measurements/runs/results-r11/pairs/P01-T1-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P01-T2",
+      "pair_id": "P01-T2-rep-01",
+      "condition": "L",
+      "proof_sha256": "be9c2aeea9c37ae306d0502a7f0a230c1a3f9eba02b10156800258618a3cdcd3",
+      "code_lines": 116,
+      "physical_lines": 127,
+      "proof_path": "measurements/runs/results-r11/pairs/P01-T2-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P01-T2",
+      "pair_id": "P01-T2-rep-01",
+      "condition": "N",
+      "proof_sha256": "1bc3f6800f28752ff75e9eaf2befb4689aee2d3da68b94bd7a9edcaa6958c5de",
+      "code_lines": 286,
+      "physical_lines": 299,
+      "proof_path": "measurements/runs/results-r11/pairs/P01-T2-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P01-T2",
+      "pair_id": "P01-T2-rep-02",
+      "condition": "L",
+      "proof_sha256": "41cbcb0913563a51e7da608c3289758ea5045d550b5da0c095d4652ce9ff7666",
+      "code_lines": 116,
+      "physical_lines": 126,
+      "proof_path": "measurements/runs/results-r11/pairs/P01-T2-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P01-T2",
+      "pair_id": "P01-T2-rep-02",
+      "condition": "N",
+      "proof_sha256": "a57bd8683e57a266a2741e101876debfdd49dd889ceb81349dc33e9193f2ae6e",
+      "code_lines": 303,
+      "physical_lines": 316,
+      "proof_path": "measurements/runs/results-r11/pairs/P01-T2-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P01-T2",
+      "pair_id": "P01-T2-rep-03",
+      "condition": "L",
+      "proof_sha256": "28d0fdb020d9e20e3dd29b3939dadb8bca63be51af222e6dab0ea34be4dded15",
+      "code_lines": 110,
+      "physical_lines": 120,
+      "proof_path": "measurements/runs/results-r11/pairs/P01-T2-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P01-T2",
+      "pair_id": "P01-T2-rep-03",
+      "condition": "N",
+      "proof_sha256": "913b0500b6bdaa042963b82f61d52e4192be2e4ebbbc96f4bd3694dc8cb74d32",
+      "code_lines": 305,
+      "physical_lines": 318,
+      "proof_path": "measurements/runs/results-r11/pairs/P01-T2-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P03-T3",
+      "pair_id": "P03-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "eed86ba3cfefbc8360e28a12058de94eadd44a3f6d8bfbda0a5ec5de9ff54ce3",
+      "code_lines": 272,
+      "physical_lines": 288,
+      "proof_path": "measurements/runs/results-r09/pairs/P03-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P03-T3",
+      "pair_id": "P03-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "28deefd44d7ad05d8617d3a3cd7a040e0b9c12f3fe38fe34114a979061a857df",
+      "code_lines": 289,
+      "physical_lines": 308,
+      "proof_path": "measurements/runs/results-r09/pairs/P03-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P03-T3",
+      "pair_id": "P03-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "1d62efbccedbd2cbd3c05a129f215334ba93f59e13ce20839fce294414c8835d",
+      "code_lines": 344,
+      "physical_lines": 359,
+      "proof_path": "measurements/runs/results-r09/pairs/P03-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P03-T3",
+      "pair_id": "P03-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "a1616cc143aed1220c094c912dfa8bc7988205176ffdd7a2a0746d71927aae52",
+      "code_lines": 298,
+      "physical_lines": 308,
+      "proof_path": "measurements/runs/results-r09/pairs/P03-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P03-T3",
+      "pair_id": "P03-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "793a043e4f142df91382522c28d2fd68c264da372c1bd6dd28ebe5b838692022",
+      "code_lines": 297,
+      "physical_lines": 310,
+      "proof_path": "measurements/runs/results-r09/pairs/P03-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P03-T3",
+      "pair_id": "P03-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "8903a73c3a16c7d201f6341b7b1ff23439f524609c2d6e9494a82c9719b52371",
+      "code_lines": 323,
+      "physical_lines": 336,
+      "proof_path": "measurements/runs/results-r09/pairs/P03-T3-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P04-T1",
+      "pair_id": "P04-T1-rep-01",
+      "condition": "L",
+      "proof_sha256": "2737df55cb3ba040022e72be88e5f6fe7dfe8c5ba5dc58ce4a45a2df39dfb525",
+      "code_lines": 306,
+      "physical_lines": 317,
+      "proof_path": "measurements/runs/results-r11/pairs/P04-T1-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P04-T1",
+      "pair_id": "P04-T1-rep-01",
+      "condition": "N",
+      "proof_sha256": "1bfbca03acecc4a1786a947d1920a3e80ea6c6216b9b8295806a382abcb69baa",
+      "code_lines": 392,
+      "physical_lines": 408,
+      "proof_path": "measurements/runs/results-r11/pairs/P04-T1-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P04-T1",
+      "pair_id": "P04-T1-rep-02",
+      "condition": "L",
+      "proof_sha256": "c1125c779886a58a3aba6b77e707685a28e396f254e43c53bfca47c6c27ecb96",
+      "code_lines": 339,
+      "physical_lines": 351,
+      "proof_path": "measurements/runs/results-r11/pairs/P04-T1-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P04-T1",
+      "pair_id": "P04-T1-rep-02",
+      "condition": "N",
+      "proof_sha256": "d0e34181eb3bfb9ef6b52ae3ba30ceb2a83762d30a0d42ac5409d5952fa8cc36",
+      "code_lines": 460,
+      "physical_lines": 476,
+      "proof_path": "measurements/runs/results-r11/pairs/P04-T1-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P04-T1",
+      "pair_id": "P04-T1-rep-03",
+      "condition": "L",
+      "proof_sha256": "3c319442a3a2daba9d069d028019a54bddb39e879b5138091b5998d33ec6933d",
+      "code_lines": 421,
+      "physical_lines": 445,
+      "proof_path": "measurements/runs/results-r11/pairs/P04-T1-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P04-T1",
+      "pair_id": "P04-T1-rep-03",
+      "condition": "N",
+      "proof_sha256": "d2a3878491d227b142bf4ef68ffe5df610dd17cf30ede8ef4f5cb0a59c9c2c06",
+      "code_lines": 391,
+      "physical_lines": 407,
+      "proof_path": "measurements/runs/results-r11/pairs/P04-T1-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P05-T3",
+      "pair_id": "P05-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "ae282952944ba516941e746835983b0fa364d3377207d5da081933efa8972108",
+      "code_lines": 459,
+      "physical_lines": 477,
+      "proof_path": "measurements/runs/results-r09/pairs/P05-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P05-T3",
+      "pair_id": "P05-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "dc415280c3cb9faf158b9df88f8adfd0093132b1d43f246f660aebe44f5d9be9",
+      "code_lines": 516,
+      "physical_lines": 539,
+      "proof_path": "measurements/runs/results-r09/pairs/P05-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P05-T3",
+      "pair_id": "P05-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "0567d7136f85f9b9f58f2bea5e6731b9d69434362caa66af4f1fa1f959e18e53",
+      "code_lines": 657,
+      "physical_lines": 673,
+      "proof_path": "measurements/runs/results-r09/pairs/P05-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P05-T3",
+      "pair_id": "P05-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "69c14c1dd2f30c991d5184971b5139af9fa6bd81cc730906bfdbd91ebbd13a45",
+      "code_lines": 745,
+      "physical_lines": 763,
+      "proof_path": "measurements/runs/results-r09/pairs/P05-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P05-T3",
+      "pair_id": "P05-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "b72a874c74fbc5d2f4c142daeca9a5559addaef99b809b16cfe173ef742a702e",
+      "code_lines": 542,
+      "physical_lines": 556,
+      "proof_path": "measurements/runs/results-r09/pairs/P05-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P05-T3",
+      "pair_id": "P05-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "b263482235899f43ecc73009094f2af1bdc05020f6c3b064a602e2e8faa02d47",
+      "code_lines": 574,
+      "physical_lines": 596,
+      "proof_path": "measurements/runs/results-r09/pairs/P05-T3-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P06-T3",
+      "pair_id": "P06-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "8cc0d68fc59101e86e1fb3e163946b8cc73acd5452170336cad346eb98caa9a5",
+      "code_lines": 320,
+      "physical_lines": 337,
+      "proof_path": "measurements/runs/results-r09/pairs/P06-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P06-T3",
+      "pair_id": "P06-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "7cb79da4db08865abca3bf2f91e25fd1906f75ea1957e46ebeb58ba4b6b9ded9",
+      "code_lines": 317,
+      "physical_lines": 333,
+      "proof_path": "measurements/runs/results-r09/pairs/P06-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P06-T3",
+      "pair_id": "P06-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "b9c10dc988b80af6b8910109d72273501f8ae890b9962cf37d8ce4ca22992749",
+      "code_lines": 343,
+      "physical_lines": 358,
+      "proof_path": "measurements/runs/results-r09/pairs/P06-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P06-T3",
+      "pair_id": "P06-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "216394ef0c1c868bb308cd19415cc966a5f192069a760a934c41fbbcde81b47a",
+      "code_lines": 336,
+      "physical_lines": 351,
+      "proof_path": "measurements/runs/results-r09/pairs/P06-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P06-T3",
+      "pair_id": "P06-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "411201af06e0168e6285df3c54f810ec75e331edc424b6bff63e6e18eafda9a9",
+      "code_lines": 326,
+      "physical_lines": 343,
+      "proof_path": "measurements/runs/results-r09/pairs/P06-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P06-T3",
+      "pair_id": "P06-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "1c6152999399e5aaf7bea114fd766b6323aadef7c935398a06b250679dd77e25",
+      "code_lines": 350,
+      "physical_lines": 365,
+      "proof_path": "measurements/runs/results-r09/pairs/P06-T3-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P08-T3",
+      "pair_id": "P08-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "8a3ffd4e2afe3bc57766ce59e556b0c84a62385842628b4faea1be853efdb727",
+      "code_lines": 692,
+      "physical_lines": 733,
+      "proof_path": "measurements/runs/results-r09/pairs/P08-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P08-T3",
+      "pair_id": "P08-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "ab0789602b1336cce594d406a8c2f2c06f53ba47c75169edfa12130f2a5f95e2",
+      "code_lines": 555,
+      "physical_lines": 589,
+      "proof_path": "measurements/runs/results-r09/pairs/P08-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P08-T3",
+      "pair_id": "P08-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "b2ef07a3278945f52e848094bdc8dbeeb7639d38be8dbaf29226999ce497fef3",
+      "code_lines": 497,
+      "physical_lines": 523,
+      "proof_path": "measurements/runs/results-r09/pairs/P08-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P08-T3",
+      "pair_id": "P08-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "6bfcf3b1c82568e69440a1e5749576b442ced5df035eff8f36166da246168b28",
+      "code_lines": 531,
+      "physical_lines": 551,
+      "proof_path": "measurements/runs/results-r09/pairs/P08-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P08-T3",
+      "pair_id": "P08-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "251825932f33a33c69f12d3e0fc08c6ab88134acd5b4aeeebd73b3531a87136a",
+      "code_lines": 604,
+      "physical_lines": 639,
+      "proof_path": "measurements/runs/results-r09/pairs/P08-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P08-T3",
+      "pair_id": "P08-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "5e4dc7ff64e2f1525ae17edf3365c1f8727ab8d4b7dc8f2a519329614ccd0959",
+      "code_lines": 858,
+      "physical_lines": 890,
+      "proof_path": "measurements/runs/results-r09/pairs/P08-T3-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P09-T3",
+      "pair_id": "P09-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "5b753abede7cfc97742063b9b843620e6ff8415f4d5fb7eaa2f3fbd17c944c9b",
+      "code_lines": 2228,
+      "physical_lines": 2333,
+      "proof_path": "measurements/runs/results-r10/pairs/P09-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P09-T3",
+      "pair_id": "P09-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "c4845e683fe7d19fc2ae7b015ba55e3ba4eee29ea3f16511bc9b36f4611edde3",
+      "code_lines": 2120,
+      "physical_lines": 2197,
+      "proof_path": "measurements/runs/results-r10/pairs/P09-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P09-T3",
+      "pair_id": "P09-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "8a4bd686a2ff0cfc2a4b0cf606395ae6401a3ec998c30ac7dcc2c6ac97bc142f",
+      "code_lines": 2599,
+      "physical_lines": 2720,
+      "proof_path": "measurements/runs/results-r09/pairs/P09-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P09-T3",
+      "pair_id": "P09-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "e8b38f3051c060878f87c6416416e9b1c171a55a250ae013cdead29c0024918f",
+      "code_lines": 2033,
+      "physical_lines": 2118,
+      "proof_path": "measurements/runs/results-r09/pairs/P09-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P09-T3",
+      "pair_id": "P09-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "ca1aea56ca1878832e1a82155c3f36991d3087168f913d1ed992040c01d4680d",
+      "code_lines": 2404,
+      "physical_lines": 2487,
+      "proof_path": "measurements/runs/results-r09/pairs/P09-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P09-T3",
+      "pair_id": "P09-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "5a35cae9b278b65b4ab5f76559b9ac97f1fd83ac247d064917aa9d1193902fec",
+      "code_lines": 2514,
+      "physical_lines": 2600,
+      "proof_path": "measurements/runs/results-r09/pairs/P09-T3-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P11-T3",
+      "pair_id": "P11-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "7704d3b55697401ddc8f20e83083ae25fab87d01b7c3bf0d01c858f92a58d34e",
+      "code_lines": 372,
+      "physical_lines": 396,
+      "proof_path": "measurements/runs/results-r09/pairs/P11-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P11-T3",
+      "pair_id": "P11-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "ef9339e8a22c4fd2b1b77ad77b4d7d0a8cab24a4852858ff72d59e94ded96293",
+      "code_lines": 393,
+      "physical_lines": 405,
+      "proof_path": "measurements/runs/results-r09/pairs/P11-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P11-T3",
+      "pair_id": "P11-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "90fdebc468d46d37200b6fd240dbc5a26b643ec1706907bfea6117a85de0e78f",
+      "code_lines": 285,
+      "physical_lines": 301,
+      "proof_path": "measurements/runs/results-r09/pairs/P11-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P11-T3",
+      "pair_id": "P11-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "032c5d674b3ddc0bd8acba1c261ae7593b5c7df08b5b914ada1b911f68c40548",
+      "code_lines": 324,
+      "physical_lines": 337,
+      "proof_path": "measurements/runs/results-r09/pairs/P11-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P11-T3",
+      "pair_id": "P11-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "6cc6a0567b6b1b41bf0c9f2ddf621bc4eb7ad8b2eb4e3f7ac61ef33db4066352",
+      "code_lines": 330,
+      "physical_lines": 335,
+      "proof_path": "measurements/runs/results-r09/pairs/P11-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P11-T3",
+      "pair_id": "P11-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "215d265403bbd801bc7711a3282d83f27ee35326a4dd18f8bc5c2ee5ac913191",
+      "code_lines": 297,
+      "physical_lines": 317,
+      "proof_path": "measurements/runs/results-r09/pairs/P11-T3-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P12-T1",
+      "pair_id": "P12-T1-rep-01",
+      "condition": "L",
+      "proof_sha256": "3055c6e166b373d8985eeb1a397b37734fcae38ee73616e6b1e36953c14c6aac",
+      "code_lines": 121,
+      "physical_lines": 128,
+      "proof_path": "measurements/runs/results-r11/pairs/P12-T1-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P12-T1",
+      "pair_id": "P12-T1-rep-01",
+      "condition": "N",
+      "proof_sha256": "7ad2051c7a922d499b99d79a84dea9661f714a5d3fc4fb45073b93e8bd1e2034",
+      "code_lines": 221,
+      "physical_lines": 232,
+      "proof_path": "measurements/runs/results-r11/pairs/P12-T1-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P12-T1",
+      "pair_id": "P12-T1-rep-02",
+      "condition": "L",
+      "proof_sha256": "b95216476bbc83224c93caa73eb597b9457736455cebd108585f53354f9801cf",
+      "code_lines": 101,
+      "physical_lines": 108,
+      "proof_path": "measurements/runs/results-r11/pairs/P12-T1-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P12-T1",
+      "pair_id": "P12-T1-rep-02",
+      "condition": "N",
+      "proof_sha256": "fd394613e4d9ad387c5fda9d526a70d468a470efbfea785284d364754d7806c9",
+      "code_lines": 259,
+      "physical_lines": 267,
+      "proof_path": "measurements/runs/results-r11/pairs/P12-T1-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P12-T1",
+      "pair_id": "P12-T1-rep-03",
+      "condition": "L",
+      "proof_sha256": "6943560a8ba8ddc1dcef5e3e8f59e772ddd3b964caaaee504a08de0c503e9262",
+      "code_lines": 142,
+      "physical_lines": 151,
+      "proof_path": "measurements/runs/results-r11/pairs/P12-T1-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P12-T1",
+      "pair_id": "P12-T1-rep-03",
+      "condition": "N",
+      "proof_sha256": "533bb03be29d3968edf12f71e267b440f33a61cfa6bb07165b02f5917dde7a6d",
+      "code_lines": 250,
+      "physical_lines": 262,
+      "proof_path": "measurements/runs/results-r11/pairs/P12-T1-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P13-T3",
+      "pair_id": "P13-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "5d2575c02a7967099308abdae358aa93a664034bebe80b199635070329b89326",
+      "code_lines": 376,
+      "physical_lines": 385,
+      "proof_path": "measurements/runs/results-r09/pairs/P13-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P13-T3",
+      "pair_id": "P13-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "17090859d04891247283b87b460e4bdccab2e1a41da4f07a3bcf1a1071ff0aa5",
+      "code_lines": 318,
+      "physical_lines": 328,
+      "proof_path": "measurements/runs/results-r09/pairs/P13-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P13-T3",
+      "pair_id": "P13-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "7d9176d428c8166052c748c932202ed61bb08a707684494708469db2e6fc28b5",
+      "code_lines": 306,
+      "physical_lines": 318,
+      "proof_path": "measurements/runs/results-r09/pairs/P13-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P13-T3",
+      "pair_id": "P13-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "83eb9357556845ee85d0cc16b29b907ecb59c004f4bb47471969c15565341257",
+      "code_lines": 312,
+      "physical_lines": 321,
+      "proof_path": "measurements/runs/results-r09/pairs/P13-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P13-T3",
+      "pair_id": "P13-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "8486ab58573d545b7274f2a6cc16d56512fb01c3be591a7d4f19eafc27eba32c",
+      "code_lines": 314,
+      "physical_lines": 322,
+      "proof_path": "measurements/runs/results-r09/pairs/P13-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P13-T3",
+      "pair_id": "P13-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "3b6ec6c6e15e634867da6027d944bd26aa8d6642a15d7ed74c5efdafb0a6a4bc",
+      "code_lines": 329,
+      "physical_lines": 344,
+      "proof_path": "measurements/runs/results-r09/pairs/P13-T3-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P14-T1",
+      "pair_id": "P14-T1-rep-01",
+      "condition": "L",
+      "proof_sha256": "85f51a5fc801380262bc9d4bbb263782f347b49b1654d4c37d0143f562a19eb0",
+      "code_lines": 257,
+      "physical_lines": 266,
+      "proof_path": "measurements/runs/results-r11/pairs/P14-T1-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P14-T1",
+      "pair_id": "P14-T1-rep-01",
+      "condition": "N",
+      "proof_sha256": "0f16f77787a9b10721866e2e5ab1e41205e31e38ad97760a4823c1cc2fcfce3f",
+      "code_lines": 157,
+      "physical_lines": 164,
+      "proof_path": "measurements/runs/results-r11/pairs/P14-T1-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P14-T1",
+      "pair_id": "P14-T1-rep-02",
+      "condition": "L",
+      "proof_sha256": "d1fd8489590602c084106b0d5f217dffcc74926f9ffef2ab02e4a78587d553c3",
+      "code_lines": 236,
+      "physical_lines": 243,
+      "proof_path": "measurements/runs/results-r11/pairs/P14-T1-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P14-T1",
+      "pair_id": "P14-T1-rep-02",
+      "condition": "N",
+      "proof_sha256": "1ce40d063c65dd5b2cf94271097d525a824b2d6c1bbc01435f05e63504ebc026",
+      "code_lines": 225,
+      "physical_lines": 233,
+      "proof_path": "measurements/runs/results-r11/pairs/P14-T1-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P14-T1",
+      "pair_id": "P14-T1-rep-03",
+      "condition": "L",
+      "proof_sha256": "edfda9c862f76c163621de95045c33b9908248984217d93dea55f7fe2be4aade",
+      "code_lines": 236,
+      "physical_lines": 243,
+      "proof_path": "measurements/runs/results-r11/pairs/P14-T1-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P14-T1",
+      "pair_id": "P14-T1-rep-03",
+      "condition": "N",
+      "proof_sha256": "f49221aec18fb984e577d8c7667e37881759f3adc497ae3d6d76a16e020d7075",
+      "code_lines": 296,
+      "physical_lines": 304,
+      "proof_path": "measurements/runs/results-r11/pairs/P14-T1-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T1",
+      "pair_id": "P15-T1-rep-01",
+      "condition": "L",
+      "proof_sha256": "1962d23584ea1dc4bb8d2206f4538d2e367ea10f5e2094710a5ba6d115f4dd07",
+      "code_lines": 105,
+      "physical_lines": 114,
+      "proof_path": "measurements/runs/results-r11/pairs/P15-T1-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T1",
+      "pair_id": "P15-T1-rep-01",
+      "condition": "N",
+      "proof_sha256": "b5db5ac681d2a21b1bded4776c84a5739d568460149a9439cd970a20a432ebbf",
+      "code_lines": 218,
+      "physical_lines": 232,
+      "proof_path": "measurements/runs/results-r11/pairs/P15-T1-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T1",
+      "pair_id": "P15-T1-rep-02",
+      "condition": "L",
+      "proof_sha256": "c3839221e21d7bf3963f6adcc284d23e65798386f941e0a92c6c1d4f4f2269f9",
+      "code_lines": 94,
+      "physical_lines": 102,
+      "proof_path": "measurements/runs/results-r11/pairs/P15-T1-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T1",
+      "pair_id": "P15-T1-rep-02",
+      "condition": "N",
+      "proof_sha256": "833c42039e6c7c9924688f8e9a6a12b2df778fa2b6169c6472c69022555f1c82",
+      "code_lines": 224,
+      "physical_lines": 239,
+      "proof_path": "measurements/runs/results-r11/pairs/P15-T1-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T1",
+      "pair_id": "P15-T1-rep-03",
+      "condition": "L",
+      "proof_sha256": "e58978f3b1ca02b31c4cb68a05f2190ba909285f115adb7202af265de7205271",
+      "code_lines": 100,
+      "physical_lines": 108,
+      "proof_path": "measurements/runs/results-r11/pairs/P15-T1-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T1",
+      "pair_id": "P15-T1-rep-03",
+      "condition": "N",
+      "proof_sha256": "1ea79174b21551da504629d3d593607c3f17798d7d296299fbdbadf1984f12a5",
+      "code_lines": 306,
+      "physical_lines": 323,
+      "proof_path": "measurements/runs/results-r11/pairs/P15-T1-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T2",
+      "pair_id": "P15-T2-rep-01",
+      "condition": "L",
+      "proof_sha256": "5335656c0d78d82534ca70e7d26c368638fd20119eed1b5ef147ba8908c53a6c",
+      "code_lines": 278,
+      "physical_lines": 297,
+      "proof_path": "measurements/runs/results-r11/pairs/P15-T2-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T2",
+      "pair_id": "P15-T2-rep-01",
+      "condition": "N",
+      "proof_sha256": "e0afee52325b51440e48c3c4eb2bedf9729bbd77c7f04786f2e1d52dbbcf6798",
+      "code_lines": 726,
+      "physical_lines": 779,
+      "proof_path": "measurements/runs/results-r11/pairs/P15-T2-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T2",
+      "pair_id": "P15-T2-rep-02",
+      "condition": "L",
+      "proof_sha256": "8affdd9f984456c24c3726c2753035edd9e92389c358efcdbbceb12932f303dc",
+      "code_lines": 262,
+      "physical_lines": 277,
+      "proof_path": "measurements/runs/results-r11/pairs/P15-T2-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T2",
+      "pair_id": "P15-T2-rep-02",
+      "condition": "N",
+      "proof_sha256": "84784c279b55a04ae9f396ed678f912c747be649f1f2a132cdcead084fd95c1b",
+      "code_lines": 658,
+      "physical_lines": 684,
+      "proof_path": "measurements/runs/results-r11/pairs/P15-T2-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T2",
+      "pair_id": "P15-T2-rep-03",
+      "condition": "L",
+      "proof_sha256": "8c719e41c2bf30ee76f188bc1188fee9629fe7879229d711c229db71e090accd",
+      "code_lines": 225,
+      "physical_lines": 238,
+      "proof_path": "measurements/runs/results-r11/pairs/P15-T2-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T2",
+      "pair_id": "P15-T2-rep-03",
+      "condition": "N",
+      "proof_sha256": "0d6f37ec3e5483919ddb872a23da62db525657bff206b8109f995bcdad49d6f3",
+      "code_lines": 698,
+      "physical_lines": 719,
+      "proof_path": "measurements/runs/results-r11/pairs/P15-T2-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T3",
+      "pair_id": "P15-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "642450b65545ea8f6638c8eb00eb9aef9f6c0c3bbe93f5d0f564858c3bca295c",
+      "code_lines": 689,
+      "physical_lines": 715,
+      "proof_path": "measurements/runs/results-r09/pairs/P15-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T3",
+      "pair_id": "P15-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "426102cc221eb5f21fb67fde123bc97df55f7c068efa44cb1ba93a2ecd0d837b",
+      "code_lines": 804,
+      "physical_lines": 837,
+      "proof_path": "measurements/runs/results-r09/pairs/P15-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T3",
+      "pair_id": "P15-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "c3471fc0e12e92f987c64743936d1761450d5965926124d40a2dee576d622280",
+      "code_lines": 863,
+      "physical_lines": 893,
+      "proof_path": "measurements/runs/results-r10/pairs/P15-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T3",
+      "pair_id": "P15-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "8e7afe50f7cb84a49f2c5ec97ddf69ce92c31c48ceebd0b1a08fda2bd95455ee",
+      "code_lines": 628,
+      "physical_lines": 655,
+      "proof_path": "measurements/runs/results-r10/pairs/P15-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T3",
+      "pair_id": "P15-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "488e41a6a7e6917b855f4ac99af67f34f83c767f4fbab3f011ae453b313430a6",
+      "code_lines": 806,
+      "physical_lines": 824,
+      "proof_path": "measurements/runs/results-r09/pairs/P15-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P15-T3",
+      "pair_id": "P15-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "81ac11983176b11a0ef05ff141adc269f147fd2c6e846d57df58eea376614ff8",
+      "code_lines": 672,
+      "physical_lines": 699,
+      "proof_path": "measurements/runs/results-r09/pairs/P15-T3-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P19-T3",
+      "pair_id": "P19-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "191e91ec48d8e1f8cedf60897bf4c3859ab77821d5796ddea5ed05b10277ce9a",
+      "code_lines": 391,
+      "physical_lines": 400,
+      "proof_path": "measurements/runs/results-r09/pairs/P19-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P19-T3",
+      "pair_id": "P19-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "e5160f1dafd9a074077341ca6e888eb1b5331afd5121a54d9bd0c3849c30684e",
+      "code_lines": 406,
+      "physical_lines": 422,
+      "proof_path": "measurements/runs/results-r09/pairs/P19-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P19-T3",
+      "pair_id": "P19-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "26b4ad5ed715c22fdbb5a20fc9d84e93ca164563947e7788dd03f4f069bb1a26",
+      "code_lines": 423,
+      "physical_lines": 436,
+      "proof_path": "measurements/runs/results-r09/pairs/P19-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P19-T3",
+      "pair_id": "P19-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "88dbdf5282f717fd681e168f17580b73a116f3544930a3daa7dca63917087b7c",
+      "code_lines": 413,
+      "physical_lines": 427,
+      "proof_path": "measurements/runs/results-r09/pairs/P19-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P19-T3",
+      "pair_id": "P19-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "a8a4ae2e82e8d138af509dad3d91e6b0959e176eee64bcaeb17b3e30935a5acc",
+      "code_lines": 465,
+      "physical_lines": 486,
+      "proof_path": "measurements/runs/results-r09/pairs/P19-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P19-T3",
+      "pair_id": "P19-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "0f444a588a6fa881db87dbce07fa9f92a779fdeee8febef221bf58764acc07ec",
+      "code_lines": 422,
+      "physical_lines": 434,
+      "proof_path": "measurements/runs/results-r09/pairs/P19-T3-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P23-T1",
+      "pair_id": "P23-T1-rep-01",
+      "condition": "L",
+      "proof_sha256": "bee9472d9da97c9321336255481b458d6d61e78ac0b8a1c99cb5f5c9b48c3de8",
+      "code_lines": 246,
+      "physical_lines": 263,
+      "proof_path": "measurements/runs/results-r11/pairs/P23-T1-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P23-T1",
+      "pair_id": "P23-T1-rep-01",
+      "condition": "N",
+      "proof_sha256": "aeb5619aac4426a8e12ead699943f869c7a37a1b2a1d1932d68af15b3a5b95c2",
+      "code_lines": 399,
+      "physical_lines": 419,
+      "proof_path": "measurements/runs/results-r11/pairs/P23-T1-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P23-T1",
+      "pair_id": "P23-T1-rep-02",
+      "condition": "L",
+      "proof_sha256": "b47a5fd4a91de0bf237f51ef8e8fb56eca8a0aed41155df7445a31d541269292",
+      "code_lines": 267,
+      "physical_lines": 280,
+      "proof_path": "measurements/runs/results-r11/pairs/P23-T1-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P23-T1",
+      "pair_id": "P23-T1-rep-02",
+      "condition": "N",
+      "proof_sha256": "4d8dedeaf620921086bbab48026614b9ada498e72fefc91601a138e3070bcc89",
+      "code_lines": 399,
+      "physical_lines": 417,
+      "proof_path": "measurements/runs/results-r11/pairs/P23-T1-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P23-T1",
+      "pair_id": "P23-T1-rep-03",
+      "condition": "L",
+      "proof_sha256": "d2994cf78c3ed7069bf422ea70bbea5cfda9f2eec15c0884f4db282539c17d86",
+      "code_lines": 217,
+      "physical_lines": 234,
+      "proof_path": "measurements/runs/results-r11/pairs/P23-T1-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P23-T1",
+      "pair_id": "P23-T1-rep-03",
+      "condition": "N",
+      "proof_sha256": "4246ad16c4122e5ef0e6d220e88e0bd7ee9710447c8ed5581e88e2d7fd446979",
+      "code_lines": 462,
+      "physical_lines": 482,
+      "proof_path": "measurements/runs/results-r11/pairs/P23-T1-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P24-T3",
+      "pair_id": "P24-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "0cb3cb69d2e09bfa10397770822cad2a2133cf8497a116d030fe1c027de34a37",
+      "code_lines": 115,
+      "physical_lines": 121,
+      "proof_path": "measurements/runs/results-r09/pairs/P24-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P24-T3",
+      "pair_id": "P24-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "0305376d7d3fa9c8718d3345084f86aad86a1f75ca5a5e7f979ae3ab2b2c3307",
+      "code_lines": 100,
+      "physical_lines": 106,
+      "proof_path": "measurements/runs/results-r09/pairs/P24-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P24-T3",
+      "pair_id": "P24-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "35b15098c2552cc31f0c863f72f78355bc0bb1484a84cd0528f783c27b2d17df",
+      "code_lines": 142,
+      "physical_lines": 148,
+      "proof_path": "measurements/runs/results-r09/pairs/P24-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P24-T3",
+      "pair_id": "P24-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "ab8ef51a2ae31e4868aaa960ad4c718ab91bee078ab13a7fbee4abfba3a1922a",
+      "code_lines": 94,
+      "physical_lines": 100,
+      "proof_path": "measurements/runs/results-r09/pairs/P24-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P24-T3",
+      "pair_id": "P24-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "09fb7fd48a50f837f82d9f15f9ca7931f72a5b38a3d4466c9517338c61f3ea73",
+      "code_lines": 129,
+      "physical_lines": 140,
+      "proof_path": "measurements/runs/results-r09/pairs/P24-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P24-T3",
+      "pair_id": "P24-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "b3b9fc31594784d88a0019fe5c2b6c7ee2f88e55881616d2d8572216fa94f3ca",
+      "code_lines": 129,
+      "physical_lines": 135,
+      "proof_path": "measurements/runs/results-r09/pairs/P24-T3-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P25-T3",
+      "pair_id": "P25-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "fdf73f5e35d2abcd8855864592e475f9a30e6a65eb2c9bdf168568e5f824d3ae",
+      "code_lines": 113,
+      "physical_lines": 122,
+      "proof_path": "measurements/runs/results-r09/pairs/P25-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P25-T3",
+      "pair_id": "P25-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "eba636ae258ce9ba60ce90ba8365ea0aa9ba8cc95f7d1a178491fb52e67a4f24",
+      "code_lines": 102,
+      "physical_lines": 111,
+      "proof_path": "measurements/runs/results-r09/pairs/P25-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P25-T3",
+      "pair_id": "P25-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "87a433ff859b0a2934417543f8de871f791b0c0d65d1a48e891372d9b1894eb9",
+      "code_lines": 123,
+      "physical_lines": 132,
+      "proof_path": "measurements/runs/results-r09/pairs/P25-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P25-T3",
+      "pair_id": "P25-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "d623c02cee8fd68a2df0b6e7aefa0e4b823272127f82d967a96bfcb5b76392c6",
+      "code_lines": 109,
+      "physical_lines": 118,
+      "proof_path": "measurements/runs/results-r09/pairs/P25-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P25-T3",
+      "pair_id": "P25-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "9c7e46d1e36e46d5d119463cc38f19830ffd42ef85a3ae8a4eae1bb510289e19",
+      "code_lines": 118,
+      "physical_lines": 127,
+      "proof_path": "measurements/runs/results-r09/pairs/P25-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P25-T3",
+      "pair_id": "P25-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "4752a459da9bdbef5f5f9b6e92430ab07df5ecb0b20fada70d7f033b052654f4",
+      "code_lines": 112,
+      "physical_lines": 120,
+      "proof_path": "measurements/runs/results-r09/pairs/P25-T3-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P26-T1",
+      "pair_id": "P26-T1-rep-01",
+      "condition": "L",
+      "proof_sha256": "12cd25b6a267680ef93103a1dc028ea646f77ed4dd88a5c5a85850be05d3a995",
+      "code_lines": 149,
+      "physical_lines": 161,
+      "proof_path": "measurements/runs/results-r11/pairs/P26-T1-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P26-T1",
+      "pair_id": "P26-T1-rep-01",
+      "condition": "N",
+      "proof_sha256": "64abb06d15708f5a3a2558fc78af91e0f726be95ce8651c045cddbfe9cdd0088",
+      "code_lines": 517,
+      "physical_lines": 532,
+      "proof_path": "measurements/runs/results-r11/pairs/P26-T1-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P26-T1",
+      "pair_id": "P26-T1-rep-02",
+      "condition": "L",
+      "proof_sha256": "5df1c0d88535a3b9e4db538d2873b715fffaa0da9d2bd9aad9c33bb7efadcd59",
+      "code_lines": 157,
+      "physical_lines": 169,
+      "proof_path": "measurements/runs/results-r11/pairs/P26-T1-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P26-T1",
+      "pair_id": "P26-T1-rep-02",
+      "condition": "N",
+      "proof_sha256": "46e34eaa4c8cd4a0442521fb7a03082d14c4a7e40b5d968eaa8c5cb71b6eb150",
+      "code_lines": 532,
+      "physical_lines": 551,
+      "proof_path": "measurements/runs/results-r11/pairs/P26-T1-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P26-T1",
+      "pair_id": "P26-T1-rep-03",
+      "condition": "L",
+      "proof_sha256": "8ec6a14dedfc11433eed14f0d3291988b738e8d6c2de80442f5c71639911ddc4",
+      "code_lines": 181,
+      "physical_lines": 193,
+      "proof_path": "measurements/runs/results-r11/pairs/P26-T1-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P26-T1",
+      "pair_id": "P26-T1-rep-03",
+      "condition": "N",
+      "proof_sha256": "16d5321c1b246b1a0c2e7c3a84ccd2180648c1da2ff0db8eaa34ef9c5d64d0c5",
+      "code_lines": 521,
+      "physical_lines": 536,
+      "proof_path": "measurements/runs/results-r11/pairs/P26-T1-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P27-T3",
+      "pair_id": "P27-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "b7a58f352172b6c617e16e797c1a881afd09cc7f8660c13f76b9d750ea67c113",
+      "code_lines": 134,
+      "physical_lines": 142,
+      "proof_path": "measurements/runs/results-r09/pairs/P27-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P27-T3",
+      "pair_id": "P27-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "78290a4d5ec501e5fb6979ea7d1dc3a32a8861e48f2521b7ecff629f2f84e044",
+      "code_lines": 206,
+      "physical_lines": 222,
+      "proof_path": "measurements/runs/results-r09/pairs/P27-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P27-T3",
+      "pair_id": "P27-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "f3eeeeb69fc7eb1cddcbaf7a2167ceb67cd925c8a1aad7172c534f1a88f651ef",
+      "code_lines": 185,
+      "physical_lines": 197,
+      "proof_path": "measurements/runs/results-r09/pairs/P27-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P27-T3",
+      "pair_id": "P27-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "0cc8964908b66cd000c93ff99f4bf29bbf55c5f0add8061960d2bf2274d04e0b",
+      "code_lines": 176,
+      "physical_lines": 183,
+      "proof_path": "measurements/runs/results-r09/pairs/P27-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P27-T3",
+      "pair_id": "P27-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "b2a94b75d5dcc24940c7495c90d2b4b1ec69e2534c0728051f8d3894bf1a48f4",
+      "code_lines": 228,
+      "physical_lines": 238,
+      "proof_path": "measurements/runs/results-r09/pairs/P27-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P27-T3",
+      "pair_id": "P27-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "33f15ec42d6109229b3c0ac3134ea76fcb1aa5a7c4a7f9d85863e0a53bf28797",
+      "code_lines": 193,
+      "physical_lines": 206,
+      "proof_path": "measurements/runs/results-r09/pairs/P27-T3-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P28-T1",
+      "pair_id": "P28-T1-rep-01",
+      "condition": "L",
+      "proof_sha256": "1f856936b3e39704e333f69a5049f684112efa626ca0f77c624077a21ace6442",
+      "code_lines": 106,
+      "physical_lines": 114,
+      "proof_path": "measurements/runs/results-r11/pairs/P28-T1-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P28-T1",
+      "pair_id": "P28-T1-rep-01",
+      "condition": "N",
+      "proof_sha256": "b5d210efda7abd2786c99b037557fa6d5d9b30c00cd457be48c92818b55b13cc",
+      "code_lines": 265,
+      "physical_lines": 277,
+      "proof_path": "measurements/runs/results-r11/pairs/P28-T1-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P28-T1",
+      "pair_id": "P28-T1-rep-02",
+      "condition": "L",
+      "proof_sha256": "ac217ac143962e832b2ae79ff78d9bf1528c6e92827a10d834b9e661dcf48df3",
+      "code_lines": 103,
+      "physical_lines": 114,
+      "proof_path": "measurements/runs/results-r11/pairs/P28-T1-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P28-T1",
+      "pair_id": "P28-T1-rep-02",
+      "condition": "N",
+      "proof_sha256": "863bbc7d713db993e0c11033bb7ed79ee875e336d7dd5922d715993427ca3642",
+      "code_lines": 253,
+      "physical_lines": 265,
+      "proof_path": "measurements/runs/results-r11/pairs/P28-T1-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P28-T1",
+      "pair_id": "P28-T1-rep-03",
+      "condition": "L",
+      "proof_sha256": "46b1bce5ee3fa2fae0b6fdf33e44b3a83ef364dd1f6dfb312513a78f7c8fdc01",
+      "code_lines": 97,
+      "physical_lines": 107,
+      "proof_path": "measurements/runs/results-r11/pairs/P28-T1-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P28-T1",
+      "pair_id": "P28-T1-rep-03",
+      "condition": "N",
+      "proof_sha256": "37c5439af81a3b2e7a8e11a45a924a0cf5211761a800017296101263571fb6f4",
+      "code_lines": 227,
+      "physical_lines": 237,
+      "proof_path": "measurements/runs/results-r11/pairs/P28-T1-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P28-T3",
+      "pair_id": "P28-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "9a1b0096a85f3e5e17c2f157ce387d05bd383d88858bd140a41e5906dd51edce",
+      "code_lines": 170,
+      "physical_lines": 176,
+      "proof_path": "measurements/runs/results-r09/pairs/P28-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P28-T3",
+      "pair_id": "P28-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "fd9b2f573c14ebba43fddbfde39d02e87ceb5b77f2278c7cead2d861ef7b7605",
+      "code_lines": 177,
+      "physical_lines": 183,
+      "proof_path": "measurements/runs/results-r09/pairs/P28-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P28-T3",
+      "pair_id": "P28-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "282844da257871e2cba04f57f86038ed973d5dcedeac13a022dae8e6d6b62d96",
+      "code_lines": 166,
+      "physical_lines": 172,
+      "proof_path": "measurements/runs/results-r09/pairs/P28-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P28-T3",
+      "pair_id": "P28-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "5a71b7c9afaf4f136179ec5eee85052245232129280ccdb117b5fa56a33b78a1",
+      "code_lines": 191,
+      "physical_lines": 211,
+      "proof_path": "measurements/runs/results-r09/pairs/P28-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P28-T3",
+      "pair_id": "P28-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "e9c619da0019dd263210e5631928fe1e69908439669ffe97b1978894e871c483",
+      "code_lines": 159,
+      "physical_lines": 165,
+      "proof_path": "measurements/runs/results-r09/pairs/P28-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P28-T3",
+      "pair_id": "P28-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "590f623f8598436b74c09f56d5f3bd44311214d2ae834f9924b57b4dec9717a1",
+      "code_lines": 171,
+      "physical_lines": 177,
+      "proof_path": "measurements/runs/results-r09/pairs/P28-T3-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P29-T1",
+      "pair_id": "P29-T1-rep-01",
+      "condition": "L",
+      "proof_sha256": "f0b4d11c3e5e6da70be23e0851f37f1a54d44010936cd303a47c2d410a700652",
+      "code_lines": 64,
+      "physical_lines": 70,
+      "proof_path": "measurements/runs/results-r11/pairs/P29-T1-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P29-T1",
+      "pair_id": "P29-T1-rep-01",
+      "condition": "N",
+      "proof_sha256": "c03fc876b237fa151cb5abea67fb3143392a4ad63a1a75440006cb62efc755d3",
+      "code_lines": 231,
+      "physical_lines": 243,
+      "proof_path": "measurements/runs/results-r11/pairs/P29-T1-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P29-T1",
+      "pair_id": "P29-T1-rep-02",
+      "condition": "L",
+      "proof_sha256": "157fdd885b6b59ea2d4cc4a811899bf00670aa83216daab54732605ad5bc5283",
+      "code_lines": 72,
+      "physical_lines": 80,
+      "proof_path": "measurements/runs/results-r11/pairs/P29-T1-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P29-T1",
+      "pair_id": "P29-T1-rep-02",
+      "condition": "N",
+      "proof_sha256": "1b3e0e7602334cbcd3fe9aaac079bd6aa94ee660ae2440b0ad8b132d042f404d",
+      "code_lines": 219,
+      "physical_lines": 231,
+      "proof_path": "measurements/runs/results-r11/pairs/P29-T1-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P29-T1",
+      "pair_id": "P29-T1-rep-03",
+      "condition": "L",
+      "proof_sha256": "68dc30fe24cb645070b3cc3fae8612aa6d28cc74c0c095f0873a9cbefa879d5f",
+      "code_lines": 63,
+      "physical_lines": 72,
+      "proof_path": "measurements/runs/results-r11/pairs/P29-T1-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P29-T1",
+      "pair_id": "P29-T1-rep-03",
+      "condition": "N",
+      "proof_sha256": "0a7f1865f651216650aecd24c4a560fb4c9f1898ed244960b2ffa2b81fbc794e",
+      "code_lines": 237,
+      "physical_lines": 248,
+      "proof_path": "measurements/runs/results-r11/pairs/P29-T1-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P29-T2",
+      "pair_id": "P29-T2-rep-01",
+      "condition": "L",
+      "proof_sha256": "a8ff8b9e782589097d6610f93937184eda64eb02c633bcd7fa88f4a90d92395a",
+      "code_lines": 338,
+      "physical_lines": 359,
+      "proof_path": "measurements/runs/results-r11/pairs/P29-T2-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P29-T2",
+      "pair_id": "P29-T2-rep-01",
+      "condition": "N",
+      "proof_sha256": "41a36748a45dc67e1104af44b75fe7037ab310b50254a5a6759a61bb7cf9f601",
+      "code_lines": 942,
+      "physical_lines": 975,
+      "proof_path": "measurements/runs/results-r11/pairs/P29-T2-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P29-T2",
+      "pair_id": "P29-T2-rep-02",
+      "condition": "L",
+      "proof_sha256": "cb129a93bc7ccc111e79ad731b461c7fd3ac1f2edeaf084eeb7b01fbc0dc3644",
+      "code_lines": 402,
+      "physical_lines": 427,
+      "proof_path": "measurements/runs/results-r11/pairs/P29-T2-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P29-T2",
+      "pair_id": "P29-T2-rep-02",
+      "condition": "N",
+      "proof_sha256": "77aa78b65d06046b33cccbb59e8e32db106bbbb354fa1b6799fbec0312efb90d",
+      "code_lines": 979,
+      "physical_lines": 1008,
+      "proof_path": "measurements/runs/results-r11/pairs/P29-T2-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P29-T2",
+      "pair_id": "P29-T2-rep-03",
+      "condition": "L",
+      "proof_sha256": "96e42e5934da644dc5922bdf775ab8486ed93411a431d0183a9245ce2df98b1f",
+      "code_lines": 427,
+      "physical_lines": 451,
+      "proof_path": "measurements/runs/results-r11/pairs/P29-T2-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P29-T2",
+      "pair_id": "P29-T2-rep-03",
+      "condition": "N",
+      "proof_sha256": "197d2b1fb188d92a68d55cfdb6789c6cc408e9ca948882160728e808e2d4db66",
+      "code_lines": 962,
+      "physical_lines": 998,
+      "proof_path": "measurements/runs/results-r11/pairs/P29-T2-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P32-T3",
+      "pair_id": "P32-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "0459e393aa7ff4d8797f2cb68cae10c34c77d1ea250448f87ea27f837dbf413a",
+      "code_lines": 147,
+      "physical_lines": 155,
+      "proof_path": "measurements/runs/results-r10/pairs/P32-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P32-T3",
+      "pair_id": "P32-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "924e2400a707c2da6111dc3d2d268e3a8d5ebfe2ee8eb9fd01d5ffa5077345d0",
+      "code_lines": 148,
+      "physical_lines": 157,
+      "proof_path": "measurements/runs/results-r10/pairs/P32-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P32-T3",
+      "pair_id": "P32-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "832906bf3766e5e28f416c8e1cfe48b4cb4bc97a0211c566a42fde43ef62d896",
+      "code_lines": 170,
+      "physical_lines": 180,
+      "proof_path": "measurements/runs/results-r09/pairs/P32-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P32-T3",
+      "pair_id": "P32-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "5bcb85ba1a8e003ac3f4f775bc894cd752822bb6b7f9db6dee336e07e7fc1f30",
+      "code_lines": 200,
+      "physical_lines": 210,
+      "proof_path": "measurements/runs/results-r09/pairs/P32-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P32-T3",
+      "pair_id": "P32-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "820e2466b2efb690be73f0ecaabd5c6ca96cd8269eb43c9cf9f85ec49a98e370",
+      "code_lines": 165,
+      "physical_lines": 173,
+      "proof_path": "measurements/runs/results-r10/pairs/P32-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P32-T3",
+      "pair_id": "P32-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "adae0e28098fc018361aa3397488ee5528cac186f971f66fd56448e0282db64c",
+      "code_lines": 111,
+      "physical_lines": 129,
+      "proof_path": "measurements/runs/results-r10/pairs/P32-T3-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P34-T3",
+      "pair_id": "P34-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "7c0b2a1d5a86b62c38364d395fa7acfcf3490321d86932f7ed9bac42d4730266",
+      "code_lines": 223,
+      "physical_lines": 230,
+      "proof_path": "measurements/runs/results-r10/pairs/P34-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P34-T3",
+      "pair_id": "P34-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "3ffc48874ab5a936e0b5332c702b1d89249267ceed79dd44ebe46e775be7cf0b",
+      "code_lines": 210,
+      "physical_lines": 216,
+      "proof_path": "measurements/runs/results-r10/pairs/P34-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P34-T3",
+      "pair_id": "P34-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "295b06fcf56a6d31f37c6579d3663169e76aac006a14a6e3ab47cc59b7d089d0",
+      "code_lines": 186,
+      "physical_lines": 194,
+      "proof_path": "measurements/runs/results-r10/pairs/P34-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P34-T3",
+      "pair_id": "P34-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "8df7c6f22f226a7fe7f42926976c0d2c5a36bcd0ec9f2e71bc4d70c39d2c7146",
+      "code_lines": 207,
+      "physical_lines": 214,
+      "proof_path": "measurements/runs/results-r10/pairs/P34-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P34-T3",
+      "pair_id": "P34-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "86a8af0722a31994de3257041fea686b1a0afdc93366871ec42f163d8e961825",
+      "code_lines": 178,
+      "physical_lines": 186,
+      "proof_path": "measurements/runs/results-r10/pairs/P34-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P34-T3",
+      "pair_id": "P34-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "ff968e82cfec73e193bf5fb92c50847597b554d1b6cc297298ac5d8e2187eca7",
+      "code_lines": 206,
+      "physical_lines": 213,
+      "proof_path": "measurements/runs/results-r10/pairs/P34-T3-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P36-T3",
+      "pair_id": "P36-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "1f6246ee05c358ecfd3ed46f08b4fb2e6c7f912df9f56bf7c9e102a4b39aff5a",
+      "code_lines": 127,
+      "physical_lines": 140,
+      "proof_path": "measurements/runs/results-r10/pairs/P36-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P36-T3",
+      "pair_id": "P36-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "7fabad1ee79b979e201f0e5650fe0d76307a6ed4be1e4b9055163a186a92b8c6",
+      "code_lines": 91,
+      "physical_lines": 99,
+      "proof_path": "measurements/runs/results-r10/pairs/P36-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P36-T3",
+      "pair_id": "P36-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "e283fa76fe1a56e4df36c7ac9d33f132b7d10ac2e23fc42035fd487c909a0575",
+      "code_lines": 126,
+      "physical_lines": 138,
+      "proof_path": "measurements/runs/results-r10/pairs/P36-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P36-T3",
+      "pair_id": "P36-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "8560aa06dcca700ae18449128d3851e3169c7ffab6c71cf76fa049891f49be4c",
+      "code_lines": 117,
+      "physical_lines": 129,
+      "proof_path": "measurements/runs/results-r10/pairs/P36-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P36-T3",
+      "pair_id": "P36-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "9a709253c81f6735d2009c259e7e314d3188f3a0baba73976019fb2d1c43e39f",
+      "code_lines": 144,
+      "physical_lines": 158,
+      "proof_path": "measurements/runs/results-r10/pairs/P36-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P36-T3",
+      "pair_id": "P36-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "2ecccd3755ef18adeeb67b668a85ef9ff12c709ebe8ddbfd6e69cd5bb001e5b0",
+      "code_lines": 120,
+      "physical_lines": 131,
+      "proof_path": "measurements/runs/results-r10/pairs/P36-T3-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P37-T3",
+      "pair_id": "P37-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "a122afdfafa08ce0e2675eb0804d0f91a1c24a3bd1d7e150644553c926d72823",
+      "code_lines": 220,
+      "physical_lines": 228,
+      "proof_path": "measurements/runs/results-r10/pairs/P37-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P37-T3",
+      "pair_id": "P37-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "b80968783bf0f20def0cf4b7eee138146b5587c3d5d2ac1271859fd81ca53840",
+      "code_lines": 212,
+      "physical_lines": 223,
+      "proof_path": "measurements/runs/results-r10/pairs/P37-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P37-T3",
+      "pair_id": "P37-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "dde253fbc48de4df80f34deaeaa7cfc1564517f5ab5e4c01e0729d5664b5ca84",
+      "code_lines": 223,
+      "physical_lines": 243,
+      "proof_path": "measurements/runs/results-r10/pairs/P37-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P37-T3",
+      "pair_id": "P37-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "ef6d5bff7745c8f7756f6de1b7e57fe1cda6cdef892202b3fe7bbb9bbf9573b8",
+      "code_lines": 227,
+      "physical_lines": 245,
+      "proof_path": "measurements/runs/results-r10/pairs/P37-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P37-T3",
+      "pair_id": "P37-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "966b0158e5681bd86c2afc6a612bbd0d86a5a5c8b2d25816d93d333243c35438",
+      "code_lines": 253,
+      "physical_lines": 266,
+      "proof_path": "measurements/runs/results-r10/pairs/P37-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P37-T3",
+      "pair_id": "P37-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "3ef5ceae3c25df47d28c02860a68483cc7d459b8471055cad422dd5b1a3a15f7",
+      "code_lines": 199,
+      "physical_lines": 212,
+      "proof_path": "measurements/runs/results-r10/pairs/P37-T3-rep-03/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P39-T3",
+      "pair_id": "P39-T3-rep-01",
+      "condition": "L",
+      "proof_sha256": "3388ea3cc8c96bd9e2eae3f6343d7d3d2b2c630814a4523555b0a3d77d1215eb",
+      "code_lines": 153,
+      "physical_lines": 159,
+      "proof_path": "measurements/runs/results-r10/pairs/P39-T3-rep-01/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P39-T3",
+      "pair_id": "P39-T3-rep-01",
+      "condition": "N",
+      "proof_sha256": "ec4a28737d9689372bba02128c5074b776ebe4dd16b07fb9daf2578961f2bfb3",
+      "code_lines": 149,
+      "physical_lines": 162,
+      "proof_path": "measurements/runs/results-r10/pairs/P39-T3-rep-01/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P39-T3",
+      "pair_id": "P39-T3-rep-02",
+      "condition": "L",
+      "proof_sha256": "ce68ccee1e3af55177eb51ba694cb40f57bbc391ff16b5e5117a7e50481f687b",
+      "code_lines": 144,
+      "physical_lines": 155,
+      "proof_path": "measurements/runs/results-r10/pairs/P39-T3-rep-02/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P39-T3",
+      "pair_id": "P39-T3-rep-02",
+      "condition": "N",
+      "proof_sha256": "62c3efbfd2353da8be746f618d006b91097d0e3269c368db79f51094317851c6",
+      "code_lines": 160,
+      "physical_lines": 174,
+      "proof_path": "measurements/runs/results-r10/pairs/P39-T3-rep-02/condition-N/accepted_proof.lean"
+    },
+    {
+      "task_id": "P39-T3",
+      "pair_id": "P39-T3-rep-03",
+      "condition": "L",
+      "proof_sha256": "81d20a0ae422406d11a4990e6f10ba12289eeb0482ae769c71c7ca326eaf9c25",
+      "code_lines": 128,
+      "physical_lines": 134,
+      "proof_path": "measurements/runs/results-r10/pairs/P39-T3-rep-03/condition-L/accepted_proof.lean"
+    },
+    {
+      "task_id": "P39-T3",
+      "pair_id": "P39-T3-rep-03",
+      "condition": "N",
+      "proof_sha256": "5756ba86e4315eaf734d75dfb640b594461425a89a6b3dec9454e1f004fdfe13",
+      "code_lines": 125,
+      "physical_lines": 137,
+      "proof_path": "measurements/runs/results-r10/pairs/P39-T3-rep-03/condition-N/accepted_proof.lean"
+    }
+  ]
+}

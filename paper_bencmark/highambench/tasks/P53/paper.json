@@ -1,0 +1,84 @@
+{
+  "annotation": {
+    "method": "Codex read the complete 38-page report in physical order through Sections 1-9, every theorem and proof, the structured QR algorithm, stability analysis, all numerical experiments, conclusions, and all 34 references; separated internally proved results from cited QR and floating-point background; audited Mathlib and the exact frozen 44-object NumStability surface; and compiled exact private N/L proofs before retaining P53-T3.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P53 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Jared L. Aurentz",
+    "Thomas Mach",
+    "Raf Vandebril",
+    "David S. Watkins"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P53-T3"
+  ],
+  "paper_id": "P53",
+  "paper_version": "KU Leuven Report TW 654, August 2014",
+  "publication": {
+    "version_date": "2014-08",
+    "year": 2014
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Theorems 4.2, 4.4, and 4.6",
+      "reason": "Once the paper's factorization identities are supplied, these are short triangularity, Hessenberg-form, or last-row rearrangement arguments below the substantial tier threshold."
+    },
+    {
+      "candidate": "Section 5 correctness of the structured QR iteration",
+      "reason": "The identification with Francis iterations relies on the cited implicit-Q theorem. Turning that cited theorem into a proof obligation would not be faithful to what P53 proves."
+    },
+    {
+      "candidate": "Theorems 7.1-7.4",
+      "reason": "The stability section invokes cited Givens, matrix-product, and QR backward-stability results and expresses its bounds using 'on the order of', 'modest multiple', and omitted higher-order terms. Choosing exact constants or remainder semantics would add content not specified by P53."
+    },
+    {
+      "candidate": "Section 8 numerical experiments",
+      "reason": "The timing and backward-error comparisons are empirical rather than universal proof tasks."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. P53's exact internally proved structural results do not need one substantial declaration from the frozen NumStability bundle. The potentially matching stability tools occur only in claims whose exact content is imported from citations or left asymptotic."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No exact source-proved P53 result receives two distinct substantial compiled NumStability shortcuts. The multiple-tool stability analysis is not stated with exact constants and depends on cited background."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Selected Theorem 4.5's arbitrary-length core-subdiagonal positivity and product formula, including the Theorem 4.1 rollup argument it uses. Exact private proofs establish substantial indexed and triangular-determinant reasoning with no NumStability shortcut.",
+      "task_id": "P53-T3",
+      "theorem_name": "p53_t3_core_subdiagonal_product"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only statements and proof content present in P53.",
+    "Represent the successive adjoint core applications explicitly instead of assuming Theorem 4.1's desired product conclusion.",
+    "Use exactly the triangular-tail and determinant facts invoked in Theorem 4.5; do not add a stronger companion-matrix theorem.",
+    "Do not turn cited implicit-Q or backward-stability results into P53 proof obligations.",
+    "Do not manufacture exact constants for the paper's asymptotic Section 7 bounds.",
+    "Assign a tier only after exact private N and L proofs compile."
+  ],
+  "short_name": "Aurentz--Mach--Vandebril--Watkins (2014)",
+  "source": {
+    "lawful_source_locator": "local user-supplied KU Leuven technical report",
+    "local_path": "paper_bencmark/reference_papers/P53 Fast and Backward Stable Computation of Roots of Polynomials.pdf",
+    "page_map": "Physical page 1 is the report cover, physical page 2 is the report title and abstract, and physical pages 3-38 carry printed pages 3-38.",
+    "pdf_pages": 38,
+    "rights_note": "The local report was supplied for benchmark construction. Release only its hash, metadata, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "ecde7ea5786795dee4e4d3068982768c72d73496670e2a5fe26e08c363d7b109"
+  },
+  "title": "Fast and Backward Stable Computation of Roots of Polynomials"
+}

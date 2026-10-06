@@ -1,0 +1,11 @@
+import Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral
+import Mathlib.LinearAlgebra.Matrix.AbsoluteValue
+import Mathlib.MeasureTheory.Group.Prod
+import NumStability.Algorithms.TestMatrices.Higham28GinibreDeterminantMoment
+import NumStability.Algorithms.TestMatrices.Higham28GinibreMeasure
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.ProbabilityLaw.GinibreTraceDensity
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.ProbabilityLaw.LebesgueMomentDensities
+
+/-!
+Historical owner retained as an import-only compatibility wrapper; its declarations were relocated under the R09/R10 completion waves per the reviewed route ledger.
+-/

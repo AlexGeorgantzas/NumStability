@@ -1,0 +1,115 @@
+{
+  "annotation": {
+    "method": "Codex freshly reread the complete local paper for the missing-tier audit, surveyed every named lemma, theorem, corollary, algorithm, and displayed error bound, compared candidates with the full frozen Mathlib and NumStability baselines, and compiled private L proofs for the newly extracted T1 and T2 targets.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P15 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Nicholas J. Higham",
+    "Theo Mary"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P15-T1",
+    "P15-T2",
+    "P15-T3"
+  ],
+  "paper_id": "P15",
+  "paper_version": "published journal version; IMA Journal of Numerical Analysis 42(2), 2022, printed pages 951-980",
+  "publication": {
+    "doi": "10.1093/imanum/drab020",
+    "issue": 2,
+    "issue_date": "2022-04",
+    "journal": "IMA Journal of Numerical Analysis",
+    "online_publication_date": "2021-04-20",
+    "printed_pages": "951-980",
+    "publication_date": "2022-04-01",
+    "volume": 42,
+    "year": 2022
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "truncated-SVD definition (2.1), BLR representation (2.2)-(2.4), floating-point model (2.5), and experimental backward-error metric (2.11)",
+      "reason": "These are definitions, assumptions, or measurement formulas rather than proved target conclusions."
+    },
+    {
+      "candidate": "Lemmas 2.1-2.3 on dense products, triangular solves, and LU factorization",
+      "reason": "They are classical results recalled from Higham (2002), so their proofs are delegated rather than established in this paper."
+    },
+    {
+      "candidate": "Lemma 3.2 full-matrix forward error and Lemma 3.4 low-rank matrix-product bound with intermediate recompression",
+      "reason": "Lemma 3.2 repeats the matrix-vector result family already isolated by P15-T1, while Lemma 3.4 adds a recompression model beyond the selected Lemma 3.3 three-product computation."
+    },
+    {
+      "candidate": "Lemma 3.5 triangular system with a low-rank right-hand side",
+      "reason": "It is an intermediate UCF factorization kernel and would require additional block-triangular execution machinery unrelated to the selected low-rank product task."
+    },
+    {
+      "candidate": "Theorem 4.1 blockwise UFC factorization expansion",
+      "reason": "Its blockwise recurrence requires a substantially larger source-level BLR factorization model than the self-contained Lemma 3.3 task."
+    },
+    {
+      "candidate": "Corollary 4.1 and Theorems 4.2-4.3 factorization bounds",
+      "reason": "These are later factorization results whose faithful standalone execution models would be much larger than the selected low-rank product model."
+    },
+    {
+      "candidate": "full Theorem 4.4 BLR triangular-system bound",
+      "reason": "The complete p-block execution would require a much larger ordered trace. P15-T2 is limited to the direct p=2 specialization of the paper's displayed equation (4.22), rather than inventing a separate local kernel theorem."
+    },
+    {
+      "candidate": "Theorem 4.5 BLR linear-system backward-error bound",
+      "reason": "An earlier construction was rejected because completed factorization and solve objects carried predecessor conclusions as certificates. Reconstructing the complete algorithms without those certificates is disproportionate for this corpus, so the project owner approved replacing it with Lemma 3.3."
+    },
+    {
+      "candidate": "Tables, Figures 1-9, SuiteSparse experiments, flop comparisons, and implementation recommendations",
+      "reason": "These are empirical comparisons or engineering recommendations rather than universally quantified proved statements."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Use the explicitly displayed equations (3.3)-(3.4) in the proof of Lemma 3.1, with their Frobenius-norm bounds and the exact composition written immediately afterward. Both stages use the same one substantial matrix-vector backward-error result family.",
+      "task_id": "P15-T1",
+      "theorem_name": "p15_t1_low_rank_matvec_backward_representation"
+    },
+    "T2": {
+      "available": true,
+      "decision": "Use the p=2 specialization of the explicitly displayed equation (4.22) in the proof of Theorem 4.4, retaining its rounded low-rank action, triangular solves, right-hand-side perturbation, and final perturbed block-row equation. It combines distinct substantial backward-error results for forward substitution and matrix-vector multiplication.",
+      "task_id": "P15-T2",
+      "theorem_name": "p15_t2_two_block_equation_4_22"
+    },
+    "T3": {
+      "available": true,
+      "decision": "Use Lemma 3.3 equations (3.10)-(3.11) for both permitted low-rank matrix-product orders; generic Frobenius facts are already available from Mathlib, while the paper-specific composition is not in NumStability.",
+      "task_id": "P15-T3",
+      "theorem_name": "p15_t3_low_rank_matmul_error"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use results proved or exact norm properties explicitly adopted in this paper, not empirical plots or results delegated to earlier sources.",
+    "Preserve the paper's Frobenius-norm setting and distinguish low-rank truncation errors from floating-point errors.",
+    "Retain every explicit finite error term in selected bounds; if a future task uses big-O notation, require a quantified remainder whose certified neighborhood contains the pointwise execution precision.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source and the compiled condition-L bundle recorded in metadata/library_olean.json."
+  ],
+  "short_name": "Higham & Mary (2022)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1093/imanum/drab020",
+    "license": "Copyright the authors 2021; published by Oxford University Press on behalf of the Institute of Mathematics and its Applications; all rights reserved",
+    "local_path": "paper_bencmark/reference_papers/P15_Solving block low-rank linear systems by LU factorization is numerically stable.pdf",
+    "page_map": "PDF pages 1-30 are printed pages 951-980 respectively.",
+    "pdf_pages": 30,
+    "rights_note": "The local article copy states all rights reserved. Release only bibliographic metadata, locators, hashes, and benchmark-author paraphrases unless redistribution permission is confirmed.",
+    "sha256": "a5cb8eb779c1571f1549ea6838c7f2269302c960fb4ea21f8410060811270cd7"
+  },
+  "title": "Solving block low-rank linear systems by LU factorization is numerically stable"
+}

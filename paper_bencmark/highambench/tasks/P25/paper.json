@@ -1,0 +1,92 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 20-page paper in physical-PDF order, surveyed every named proved result and rigorous derivation, compared candidates with the frozen Mathlib and importable NumStability baselines, and privately formalized the selected theorem before packaging it.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P25 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Awad H. Al-Mohy",
+    "Nicholas J. Higham"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P25-T3"
+  ],
+  "paper_id": "P25",
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 31(3), 2009, printed pages 970-989",
+  "publication": {
+    "doi": "10.1137/09074721X",
+    "issue": "3",
+    "journal": "SIAM Journal on Matrix Analysis and Applications",
+    "printed_pages": "970-989",
+    "publication_date": "2009-08-12",
+    "volume": "31",
+    "year": 2009
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Theorem 1.1, the sharpened supported power-series norm bound",
+      "reason": "Its proof is a direct triangle-inequality and termwise maximum comparison using standard Mathlib infinite-series facts. It has no substantial NumStability dependency for T1 or T2 and is materially easier than the selected complete practical bound."
+    },
+    {
+      "candidate": "Lemma 4.1, the two-generator matrix-power norm inequality",
+      "reason": "The proof is short submultiplicative norm and power algebra. It is not sufficiently difficult for T3 and does not need a substantial importable NumStability result."
+    },
+    {
+      "candidate": "The scaling correction following equation (5.8)",
+      "reason": "The paper proves only a short logarithm and ceiling comparison showing the correction cannot exceed the previous scaling parameter. It is too easy for T3 and has no tier-specific library dependency."
+    },
+    {
+      "candidate": "Equations (5.3), (5.4), and (5.9)",
+      "reason": "These floating-point bounds are cited from earlier sources rather than proved in this paper, so the required statement-and-proof source text is absent."
+    },
+    {
+      "candidate": "Algorithms 3.1, 5.1, and 6.1 and the numerical comparisons in Sections 5-7",
+      "reason": "These are algorithm descriptions, heuristic acceptance tests, and experiments rather than additional universally proved conclusions with source proofs."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No source-faithful proved task needs exactly one substantial importable NumStability result that makes L substantially faster than N."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source-backed proved task needs at least two distinct substantial importable NumStability results."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Use both parts of Theorem 4.2 in a faithful Banach-algebra form, retaining the ordinary p,p+1 bound, the even 2p,2p+2 specialization, the cutoff thresholds, and the infinite-series conclusion.",
+      "task_id": "P25-T3",
+      "theorem_name": "p25_t3_theorem4_2"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only conclusions explicitly stated and proved in the paper.",
+    "Express the paper's maximum power-root parameter by an equivalent nonnegative scalar certificate for the indicated generator powers.",
+    "Express the radius-of-convergence premise by the absolute scalar majorant summability actually used in the proof.",
+    "Retain both the ordinary and even cases of Theorem 4.2 rather than selecting the easy Lemma 4.1 alone.",
+    "Do not turn cited bounds, heuristic tests, or numerical experiments into benchmark theorems.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source, its importable compiled subset, and Mathlib."
+  ],
+  "short_name": "Al-Mohy--Higham (2009)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/09074721X",
+    "local_path": "paper_bencmark/reference_papers/P25-A New Scaling and Squaring Algorithm for the Matrix Exponential.pdf",
+    "page_map": "Physical PDF pages 1-20 are printed pages 970-989 respectively.",
+    "pdf_pages": 20,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "e796797d25e804c005c727346653443e429199cf04ca14a07bd85fc63cdbb8f6"
+  },
+  "title": "A New Scaling and Squaring Algorithm for the Matrix Exponential"
+}

@@ -1,0 +1,97 @@
+{
+  "canonical_evidence": "metadata/evidence/construction_validation_P12.json",
+  "canonical_evidence_sha256": "5044f3cbaa5b51ef39741347415d344b1910a4b39d2b20352cf498f602c4de98",
+  "canonical_isolated_pass": false,
+  "direct_fallback_pass": true,
+  "generated_at_utc": "2026-08-06T07:50:22Z",
+  "host_limitation": {
+    "canonical_failure_occurs_before_lean_starts": true,
+    "message": "bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted",
+    "scope": "All six canonical P12 checks on this LXC host",
+    "tool": "/usr/bin/bwrap"
+  },
+  "kind": "highambench-direct-exact-path-construction-fallback",
+  "paper_id": "P12",
+  "pinned_lean": {
+    "commit": "5d86aa4032284a5242470e95fbe25f1ff506763d",
+    "version": "4.29.0-rc3"
+  },
+  "results": [
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "be594150eba8a6b48a5c2a187c55b74793781f9efadc9697328426fe1e4a4c29",
+        "library_declarations": [
+          "NumStability.FloatingPointFormat.nearestRoundingIn",
+          "NumStability.FloatingPointFormat.nearestRoundingIn_minimal"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "5a4cdceae6af5380de61a37ea0b6a5e3e48483987776a05365fb9f906c5ac3e2",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "8789c920e124f1456e39446d0e7dddd922e630a41130ddae87b341c6dfc8f3dd",
+      "target_theorem": "HighamBench.p12_t1_nearest_add_error_le_right",
+      "task_id": "P12-T1"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "2ae1a8c3a7819012eeec1e7ae683a6d724b44d75ed1bc2d39f83fcf56a820ed5",
+        "library_declarations": [
+          "NumStability.FloatingPointFormat.nearestRoundingIn",
+          "NumStability.FloatingPointFormat.nearestRoundingIn_eq_self_of_mem",
+          "NumStability.FloatingPointFormat.nearestRoundingIn_minimal"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "bd58de84837ecd65373a1c0dafc2625ed284f6854c8d07962e0fb888e82c5dc8",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "c0e659193763c9d16fdfdcae671afddf5748751c77ec10d7e2e78e0946a6e13a",
+      "target_theorem": "HighamBench.p12_t2_fast_two_sum_exact",
+      "task_id": "P12-T2"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "e4fde6c46cdbc139382a4f5b2cd47ce32f637c91f192a79f0dbedf279922cb0f",
+        "library_declarations": [
+          "NumStability.FloatingPointFormat.nearestRoundingIn",
+          "NumStability.FloatingPointFormat.nearestRoundingIn_eq_self_of_mem",
+          "NumStability.FloatingPointFormat.nearestRoundingIn_minimal"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "23015706a8e15f535749e81e5f20954c28476599930d1d5b13f58bc6c465b2cf",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "4cf6b27b7ad2ce817d773be1391a2714d83969c1200c661695b84267fa94efd2",
+      "target_theorem": "HighamBench.p12_t3_three_product_exact",
+      "task_id": "P12-T3"
+    }
+  ],
+  "schema_version": 1,
+  "verification_basis": {
+    "condition_l_path": "The exact P12 shared bundle, frozen pruned package objects, and frozen NumStability object tree; no project .lake/build path.",
+    "condition_n_path": "The exact P12 shared bundle and frozen pruned package objects; no NumStability source or object path and no project .lake/build path.",
+    "negative_probe": "Direct pinned-Lean imports of HighamBench.P11Definitions and NumStability fail under the condition-N LEAN_PATH; the other-paper import also fails under the condition-L P12 path.",
+    "p12_definitions_olean_sha256": "7d5fc2d8e3688b415056fbf179a58545ef1c76f1b4835dc3fa076758bb5966a0",
+    "p12_definitions_source_sha256": "d6677c1c7ca6220986f35a297ea87792323e45c21d808d3c9206e0a70502cad3",
+    "private_support_source_sha256": "caa2c692669cd3e696394031f9d61b31042b824003d3fe3e66e6538561dd3f9e",
+    "semantic_check": "Each private L theorem was compared by Meta.isDefEq with a separately compiled renamed copy of the frozen target using tools/dependency_audit.lean.",
+    "shared_core_olean_sha256": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1"
+  }
+}

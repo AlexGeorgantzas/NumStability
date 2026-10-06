@@ -1,0 +1,4 @@
+{"monotonic_ns":41638251261833,"raw_line":"\u001b[2m2026-09-17T00:56:09.194332Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:","record_type":"app_server_stderr","sequence":1,"unix_ns":1789606569194362022}
+{"monotonic_ns":41638251323192,"raw_line":"    intro run derivation","record_type":"app_server_stderr","sequence":2,"unix_ns":1789606569194423596}
+{"monotonic_ns":41638251343668,"raw_line":"    have h := hmain run derivation","record_type":"app_server_stderr","sequence":3,"unix_ns":1789606569194444087}
+{"monotonic_ns":41638251361453,"raw_line":"    unfold p20MultiNarrowCoefficient p20NormwiseEnvelope at h ⊢","record_type":"app_server_stderr","sequence":4,"unix_ns":1789606569194461877}

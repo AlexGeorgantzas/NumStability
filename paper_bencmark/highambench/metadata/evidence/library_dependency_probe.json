@@ -1,0 +1,16 @@
+{
+  "current_evidence": "paper_bencmark/highambench/metadata/evidence/construction_validation_full_current.json",
+  "current_evidence_sha256": "972afca1bb5abc9694ba738505b596a69aae51909e5da2a352faeaf58267c6b9",
+  "current_result": {
+    "condition_l_passed_proofs_using_numstability": 28,
+    "condition_n_library_use": false,
+    "dependency_audit_format": 2,
+    "forbidden_dependencies": 0,
+    "proofs_checked": 76,
+    "proofs_passed": 76
+  },
+  "kind": "highambench-library-dependency-evidence-pointer",
+  "reason": "The current evidence rebuilds and audits every T1, T2, and T3 proof in both N and L against the complete 38-task construction snapshot.",
+  "schema_version": 1,
+  "status": "current complete-corpus construction evidence"
+}

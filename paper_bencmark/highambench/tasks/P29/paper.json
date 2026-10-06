@@ -1,0 +1,92 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 49-page paper in physical-PDF order, surveyed every proved result and rigorous derivation, compared all candidates with the frozen Mathlib and importable NumStability baselines, and privately formalized both selected tasks before packaging them.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P29 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Cleve Ashcraft",
+    "Roger G. Grimes",
+    "John G. Lewis"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P29-T1",
+    "P29-T2"
+  ],
+  "paper_id": "P29",
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 20(2), 1998, printed pages 513-561",
+  "publication": {
+    "doi": "10.1137/S0895479896296921",
+    "issue": "2",
+    "journal": "SIAM Journal on Matrix Analysis and Applications",
+    "printed_pages": "513-561",
+    "publication_date": "1998-12-11",
+    "volume": "20",
+    "year": 1998
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Appendix C, expected number of columns searched for a local maximum off-diagonal entry",
+      "reason": "The paper's proof reduces to a short conditional-probability ratio, a tail-sum identity, and comparison with the factorial series for e. Once its probabilistic symmetry calculation is represented faithfully, it is materially easier than the selected T2. Encoding a full random-matrix search process would add definitions and probability machinery not supplied by the source proof, so it is not used as T3."
+    },
+    {
+      "candidate": "Appendix D, probabilities of immediately accepting the initial pivot column",
+      "reason": "The two density-integral formulas follow by elementary order-statistic conditioning and are below the T3 difficulty floor. The paper then evaluates them numerically rather than proving a harder analytic conclusion."
+    },
+    {
+      "candidate": "Sections 2.2-2.4 and 3.2-3.6 pivot bounds, conditioning estimates, and search termination",
+      "reason": "These are source-backed but primarily short finite-dimensional inequalities, determinant/Gershgorin estimates, or strict-increase termination arguments. They neither need a substantial compiled result for T1/T2 nor reach the selected T2's difficulty for T3."
+    },
+    {
+      "candidate": "the complete Appendix-B factorization induction",
+      "reason": "The paper intentionally gives only a proof sketch and suppresses its recursive constants. Formalizing a full pivoted one-by-one/two-by-two execution would require details not present in the source. The selected T1 retains its fully stated local Schur calculation, and T2 retains the source-complete solution-phase composition."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Use the first-step Schur-complement error calculation in Appendix B.",
+      "task_id": "P29-T1",
+      "theorem_name": "p29_t1_first_schur_error"
+    },
+    "T2": {
+      "available": true,
+      "decision": "Use the LDL-transpose solution-phase backward-stability composition in Appendix B.",
+      "task_id": "P29-T2",
+      "theorem_name": "p29_t2_ldlt_solve_backward_stability"
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. Appendix C, Appendix D, and the local pivot inequalities are below the selected T2's difficulty; Appendix B materially benefits from compiled triangular-solve results."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only statements and proof steps present in the paper.",
+    "Expose the suppressed first-step Schur error componentwise without adding a new numerical claim.",
+    "Treat forward and transposed back substitution as two distinct substantial rounded-algorithm results, while keeping the paper's block-D stability hypothesis identical in N and L.",
+    "Retain the factorization perturbation as a shared premise and compose all exact solution-phase perturbations, including the higher-order terms suppressed by the paper.",
+    "Do not inflate the short probability appendices into a T3 task by adding a full stochastic process absent from their proofs.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source, its importable compiled subset, and Mathlib."
+  ],
+  "short_name": "Ashcraft--Grimes--Lewis (1998)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/S0895479896296921",
+    "local_path": "paper_bencmark/reference_papers/P29-Accurate Symmetric Indefinite Linear Equation Solvers.pdf",
+    "page_map": "Physical PDF pages 1-49 are printed pages 513-561 respectively.",
+    "pdf_pages": 49,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "e6fcb1e01906bbc1df9d3db41d593b6de7ffc7e3f320add7023caadf290b94f5"
+  },
+  "title": "Accurate Symmetric Indefinite Linear Equation Solvers"
+}

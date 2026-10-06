@@ -1,0 +1,105 @@
+{
+  "annotation": {
+    "method": "Codex freshly reread the complete local paper for the missing-tier audit, rechecked its mixed-radix FFT model, one- and multidimensional proofs, and compared them with the full frozen Mathlib and NumStability baselines; the existing T3 was retained after that source-level audit.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P09 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "George U. Ramos"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P09-T3"
+  ],
+  "paper_id": "P09",
+  "paper_version": "published journal version; volume 25, issue 116, October 1971, printed pages 757-768",
+  "publication": {
+    "doi": "10.1090/S0025-5718-1971-0300488-0",
+    "issue": 116,
+    "journal": "Mathematics of Computation",
+    "printed_pages": "757-768",
+    "publication_date": "1971-10",
+    "volume": 25,
+    "year": 1971
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "equations (1.1), (2.1), and the FFT factorization (2.2)",
+      "reason": "These define the transform and quote a standard matrix factorization from earlier FFT literature rather than establish Ramos's new error conclusions."
+    },
+    {
+      "candidate": "floating-point models (3.1) and (3.2)",
+      "reason": "The addition and multiplication models are explicitly attributed to Wilkinson and serve as assumptions for the paper's analysis."
+    },
+    {
+      "candidate": "the complete first-order formula in Theorem 1(a)",
+      "reason": "It is supporting analysis for the selected multidimensional theorem rather than a separate target. Its operational one-dimensional estimate must be reconstructed inside the T3 proof; it is not supplied as a shared theorem."
+    },
+    {
+      "candidate": "the direct-transformation error matrix (3.3) and bounds (3.4)-(3.5)",
+      "reason": "These are long intermediate first-order expansions used to establish local FFT-factor budgets and retain O(epsilon squared) terms; they are not the paper's final finite conclusions."
+    },
+    {
+      "candidate": "the radix-2 and radix-4 special constants in Theorem 1",
+      "reason": "They are algebraic substitutions into K(N,gamma) rather than independent results, and the full statement still carries the same asymptotic floating-point model."
+    },
+    {
+      "candidate": "equations (3.7) and (3.8)",
+      "reason": "These local block and diagonal error estimates are supporting steps in the one-dimensional analysis. They are not supplied as shared theorems, and T3 must combine their reconstruction with multidimensional error propagation."
+    },
+    {
+      "candidate": "Theorem 2(b)",
+      "reason": "The maximum-error conclusion follows from Theorem 2(a) by a standard max/RMS comparison, so it would duplicate the selected result while adding only an elementary step."
+    },
+    {
+      "candidate": "Table 1 and the experimental comparison",
+      "reason": "Measured FORTRAN results and claims about pessimism of the bounds are empirical rather than finite proof targets."
+    },
+    {
+      "candidate": "the input-rounding extension on printed page 768",
+      "reason": "The extra forward-error term and fictional-input observation are short consequences and do not supply a qualifying T1 or T2 library advantage."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. The paper's FFT theorem uses a mixed-radix Wilkinson model with independent operand and trigonometric-data errors and source-specific constants. NumStability's substantial FFT theorem instead assumes a radix-2 standard relative model, so using it would change the task; the remaining norm comparison is Mathlib-easy."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. No result matches two substantial NumStability theorems under the paper's actual mixed-radix and sin/cos error model. The only reusable coordinate and norm steps are elementary, and substituting the library's radix-2 FFT analysis would change the hypotheses and constants."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Use Theorem 2(a)'s product-indexed complex multidimensional FFT bound with operational nested coordinate traces, exactly represented fixed input, fixed per-axis K constants, derived telescoping and intermediate estimates, and uniform right-neighborhood O(epsilon squared) semantics.",
+      "task_id": "P09-T3",
+      "theorem_name": "p09_t3_multidimensional_rms_error_bound"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use mathematically precise claims made and proved in this paper, including asymptotic claims when their uniform quantifier content can be represented.",
+    "Reject definitions, experiments, delegated background, and asymptotic claims whose quantifier content cannot be reconstructed from the source context.",
+    "Represent retained O(epsilon squared) contributions by coefficients and radii fixed before the varying positive epsilon, without inventing cross-family uniformity absent from the source.",
+    "Keep the fixed Lean setting condition-neutral and paper-scoped.",
+    "Assign tiers only after checking the mounted frozen object baseline, not merely the broader source tree."
+  ],
+  "short_name": "Ramos (1971)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1090/S0025-5718-1971-0300488-0",
+    "local_path": "paper_bencmark/reference_papers/P09_Roundoff Error Analysis of the Fast Fourier Transform.pdf",
+    "page_map": "PDF pages 1-12 are printed pages 757-768 respectively.",
+    "pdf_pages": 12,
+    "rights_note": "The local journal copy was supplied for benchmark construction. Permission to redistribute the full PDF is not asserted.",
+    "sha256": "9076fe377cc64878a4a10f8a47ff49245bc5acaf116ffbd8e2ccca57033da758"
+  },
+  "title": "Roundoff Error Analysis of the Fast Fourier Transform"
+}

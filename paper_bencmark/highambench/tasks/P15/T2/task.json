@@ -1,0 +1,92 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "direct p=2 specialization of equation (4.22) in the proof of Theorem 4.4",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "T0 and T1 are real nonsingular lower-triangular b-by-b diagonal blocks.",
+    "The off-diagonal block is represented by the real b-by-r factors X and Y.",
+    "The first and second diagonal solves use rounded forward substitution; the off-diagonal action uses the two rounded matrix-vector products from Lemma 3.1; the block subtraction is rounded once.",
+    "The standard relative floating-point model excludes overflow and underflow and has valid gamma bounds at dimensions b and r."
+  ],
+  "author_label": "Theorem 4.4, equation (4.22)",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P15 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P15 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P15/T2/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p15_t2_two_block_equation_4_22 {b r : Nat} (fp : StandardFPModel) (T0 T1 : P15Matrix b) (X Y : P15RectMatrix b r) (v0 v1 : P15Vector b) (hT0diag : forall i, T0 i i != 0) (hT1diag : forall i, T1 i i != 0) (hT0lower : p15LowerTriangular T0) (hT1lower : p15LowerTriangular T1) (hb : GammaValid fp.u b) (hr : GammaValid fp.u r) : let x0 := roundedForwardSub fp b T0 v0; let wInner := p15RoundedRectMatVec fp (p15RectTranspose Y) x0; let wHat := p15RoundedRectMatVec fp X wInner; let rhsHat := fun i => fp.fl_sub (v1 i) (wHat i); let x1 := roundedForwardSub fp b T1 rhsHat; exists DeltaT0 DeltaYT DeltaX theta DeltaT1 DeltaT10, the source Frobenius perturbation bounds and operational equalities hold, the perturbed off-diagonal block is the row-scaled perturbed low-rank product, and the second block row satisfies the p=2 instance of equation (4.22)",
+    "namespace": "HighamBench",
+    "plain_language": "Prove the p=2 instance of equation (4.22): after the rounded low-rank action, subtraction, and two diagonal solves, the second block row is an exact perturbed block equation with the source's local Frobenius bounds.",
+    "target_file": "paper_bencmark/highambench/tasks/P15/T2/Target.lean",
+    "theorem_name": "p15_t2_two_block_equation_4_22"
+  },
+  "informal_proof": "Use the forward-substitution backward-error theorem for each diagonal block, equations (3.3)-(3.4) for the low-rank off-diagonal action, and the scalar relative-error model for the single p=2 subtraction. Absorb the subtraction factor into the off-diagonal perturbation and rearrange to obtain equation (4.22).",
+  "informal_statement": "The direct p=2 specialization of equation (4.22) in the proof of Theorem 4.4, with the rounded operations and local source perturbations exposed.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P15",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P15_Solving block low-rank linear systems by LU factorization is numerically stable.pdf",
+    "sha256": "a5cb8eb779c1571f1549ea6838c7f2269302c960fb4ea21f8410060811270cd7"
+  },
+  "paper_version": "published journal version; IMA Journal of Numerical Analysis 42(2), 2022, printed pages 951-980",
+  "result_form_tag": "REP",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.forwardSub_backward_error",
+      "NumStability.matVec_backward_error"
+    ],
+    "note": "The source-faithful p=2 construction needs two distinct substantial results: backward stability of forward substitution and backward stability of a rounded matrix-vector product. Neither is available from Mathlib, and rebuilding both operational inductions dominates the neutral proof."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "StandardFPModel",
+    "roundedForwardSub",
+    "P15Matrix",
+    "P15RectMatrix",
+    "P15Vector",
+    "p15RectTranspose",
+    "p15RectMatVec",
+    "p15RectAdd",
+    "p15RoundedRectMatVec",
+    "p15LowerTriangular"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Theorem 4.4 and equation (4.21)",
+      "pdf_page": 23,
+      "printed_page": "973",
+      "role": "selected BLR triangular-solve statement and block algorithm",
+      "section": "4.3 BLR linear systems"
+    },
+    {
+      "anchor": "proof of Theorem 4.4 and equation (4.22)",
+      "pdf_page": 24,
+      "printed_page": "974",
+      "role": "low-rank block actions, rounded block accumulation, diagonal solves, and gathered perturbation proof",
+      "section": "4.3 BLR linear systems"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P15-T2",
+  "tier": "T2",
+  "tier_label": "combine",
+  "tier_rationale": "The p=2 instance of source equation (4.22) requires the distinct substantial NumStability results forwardSub_backward_error and matVec_backward_error. Each replaces a difficult operational finite-precision induction unavailable in Mathlib; Frobenius conversion, one scalar subtraction, and the final rearrangement are simpler support. Together they give L a materially larger advantage than P15-T1.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P15/T2/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p15_t2_two_block_equation_4_22"
+  }
+}

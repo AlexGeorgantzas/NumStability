@@ -1,0 +1,101 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 42-page paper in physical-PDF order, surveyed every stated result and source-proved construction, and compared all candidates with the frozen Mathlib and importable NumStability baselines.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P35 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "James Demmel",
+    "Kre\u0161imir Veseli\u0107"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P35-T3"
+  ],
+  "paper_id": "P35",
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 13(4), 1992, printed pages 1204-1245",
+  "publication": {
+    "doi": "10.1137/0613074",
+    "issue": "4",
+    "journal": "SIAM Journal on Matrix Analysis and Applications",
+    "printed_pages": "1204-1245",
+    "publication_date": "1992-10",
+    "volume": "13",
+    "year": 1992
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Lemmas 2.1-2.2 and Propositions 2.7-2.9",
+      "reason": "The paper explicitly attributes their proofs to earlier work, so they do not provide self-contained source proof material for new tasks."
+    },
+    {
+      "candidate": "Theorem 2.3, Proposition 2.4, Theorem 2.5, and Corollary 2.6",
+      "reason": "The compiled library has no scaled relative eigenvalue or eigenvector perturbation theorem corresponding to these results. Their generic spectral ingredients are Mathlib-level adapters, so they do not qualify as T1 or T2; Proposition 6.2 provides a broader self-contained T3 task."
+    },
+    {
+      "candidate": "The singular-value analogues in Section 2.3",
+      "reason": "The paper states that their proofs are omitted or analogous, so the source text is insufficient for a standalone proof task under the source-faithfulness rule."
+    },
+    {
+      "candidate": "Theorem 3.1, the detailed one-step floating-point two-sided Jacobi analysis",
+      "reason": "This is a viable hard no-shortcut candidate, but Proposition 6.2 gives a cleaner fully source-proved T3 whose lack of a NumStability counterpart is unambiguous. The compiled Givens results use a different arithmetic model and do not establish Theorem 3.1's scaled symmetric commuting diagram."
+    },
+    {
+      "candidate": "Section 4 one-sided Jacobi results and Lemma 4.5",
+      "reason": "The paper refers the detailed proofs to a technical report or earlier source, and the displayed conclusions do not supply the missing derivations."
+    },
+    {
+      "candidate": "Algorithms and theorems in Section 5",
+      "reason": "Their detailed extension proofs are referred to earlier reports, and the available compiled QR modules do not prove the paper-specific Jacobi accuracy claims."
+    },
+    {
+      "candidate": "Propositions 6.1 and 6.3",
+      "reason": "Both have proofs, but Proposition 6.1 alone is narrower and Proposition 6.3 builds on Proposition 6.2. Retaining all five parts of Proposition 6.2 gives the direct self-contained Hadamard-measure result at the required difficulty."
+    },
+    {
+      "candidate": "Section 7 experiments and Section 8 open questions",
+      "reason": "The former are empirical observations and the latter are explicitly unresolved rather than proved universal claims."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. The compatible importable set has no one substantial result that materially shortens a source-proved P35 theorem. Conventional Givens application uses a different addition model from equation (3.1), and the spectral adapters do not provide the paper's scaled perturbation conclusions."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source proof requires at least two distinct substantial compatible results from the compiled library. Combining conventional Givens and generic spectral facts would remain insufficient for the two-sided scaled Jacobi analysis and would manufacture a dependency not present in the source proof."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Selected all five parts of Proposition 6.2. The task retains the equality characterization, diagonal scaling, eigenvalue-product bound, exact Jacobi update, and finite-run condition-growth result, while neither Mathlib nor NumStability supplies a corresponding theorem."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only conclusions whose statements and supporting derivations are present in this paper.",
+    "Do not turn results whose detailed proofs are referred to earlier papers or reports into tasks.",
+    "Do not count compiled conventional Givens results as corresponding to the paper's different no-guard-digit arithmetic model.",
+    "Retain all five parts of Proposition 6.2 rather than extracting only its Mathlib-supported AM-GM substep.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source, its importable compiled subset, and Mathlib."
+  ],
+  "short_name": "Demmel--Veseli\u0107 (1992)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/0613074",
+    "local_path": "paper_bencmark/reference_papers/P35-Jacobi's Method is More Accurate than QR.pdf",
+    "page_map": "Physical PDF pages 1-42 are printed pages 1204-1245 respectively.",
+    "pdf_pages": 42,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "ef6629aca920a9391bc38f6a526853033631408b26f2fc686f4d640d0d4ee9e3"
+  },
+  "title": "Jacobi's Method is More Accurate than QR"
+}

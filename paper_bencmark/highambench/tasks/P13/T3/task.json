@@ -1,0 +1,117 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "direct formalization of Theorem 4.1 and its O(u^2) remainder",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "There are n+1 real input nodes and data values, the nodes are distinct, and the evaluation point differs from every node.",
+    "For every parameter value, the supplied second-barycentric execution satisfies the paper's local relative-error factors, exact uncollected and collected counter identities, nonnegative unit roundoff, and all required gamma-validity inequalities.",
+    "The unit-roundoff family tends to zero.",
+    "The exact barycentric numerator and denominator are nonzero."
+  ],
+  "author_label": "Theorem 4.1",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P13 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P13 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P13/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p13_t3_barycentric_forward_bound {n : Nat} {iota : Type*} {l : Filter iota} [l.NeBot] (problem : P13SecondBarycentricProblem n) (u : iota -> Real) (run : forall t, P13SecondBarycentricExecution problem (u t)) (hu : Tendsto u l (nhds 0)) (hnumerator : p13SecondBarycentricNumerator problem != 0) (hdenominator : p13SecondBarycentricDenominator problem != 0) : exists remainder, remainder =O[l] (fun t => (u t)^2) /\\ eventually relativeError <= u * firstOrderCoefficient + abs remainder",
+    "namespace": "HighamBench",
+    "plain_language": "For executions of the directly weighted second barycentric formula as unit roundoff tends to zero, the relative forward error is bounded by Higham's (3n+4)u and (3n+2)u condition-number terms plus an O(u squared) remainder.",
+    "target_file": "paper_bencmark/highambench/tasks/P13/T3/Target.lean",
+    "theorem_name": "p13_t3_barycentric_forward_bound"
+  },
+  "informal_proof": "Use the exact collected 3n+4 and 3n+2 counter identities to bound numerator and denominator perturbations by their gamma factors and condition numbers. Apply the quotient perturbation argument from the proof of Theorem 4.1, isolate the printed first-order coefficient, and collect the remaining terms into an O(u squared) remainder.",
+  "informal_statement": "Theorem 4.1 for the directly weighted second barycentric formula: the exact counter execution yields the two printed first-order condition-number terms and a retained O(u^2) remainder.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P13",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P13_The numerical stability of barycentric Lagrange interpolation.pdf",
+    "sha256": "9ebf8adb699f96c82ccbb153dd6ca592c64475a8bc3e0703a50cb659b012c520"
+  },
+  "paper_version": "published journal version; IMA Journal of Numerical Analysis 24(4), October 2004, printed pages 547-556",
+  "result_form_tag": "BND",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.summationComponentwisePerturbation_abs_error_le",
+      "NumStability.summationComponentwisePerturbation_rel_error_le_condition",
+      "NumStability.one_le_summationConditionNumber"
+    ],
+    "note": "The frozen library bounds one componentwise-perturbed finite sum and supplies the generic summation condition number. It has no theorem for reciprocal-product barycentric weights, the linked uncollected and collected counter execution, quotient denominator safety, or the filter-level O(u^2) expansion."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P13SecondBarycentricProblem",
+    "P13RelativeErrorCounter",
+    "P13SecondBarycentricExecution",
+    "p13DirectBarycentricWeight",
+    "p13DirectBarycentricCoefficient",
+    "p13SecondBarycentricNumerator",
+    "p13SecondBarycentricDenominator",
+    "p13SecondBarycentricExact",
+    "p13SecondBarycentricComputed",
+    "p13SecondBarycentricRelativeError",
+    "p13SecondBarycentricDataCondition",
+    "p13SecondBarycentricOneCondition",
+    "p13SecondBarycentricFirstOrderCoefficient"
+  ],
+  "source_locations": [
+    {
+      "anchor": "fixed nodes, interpolation data, Definition 2.1, and Lemma 2.2",
+      "pdf_page": 2,
+      "printed_page": "548",
+      "role": "n+1 indexing, nonzero exact value, and condition numbers",
+      "section": "2. Condition number"
+    },
+    {
+      "anchor": "equation (3.2), floating-point model, equation (3.3), and Lemma 3.1",
+      "pdf_page": 3,
+      "printed_page": "549",
+      "role": "direct weights, local relative-error counters, and weight errors",
+      "section": "3. Modified Lagrange formula"
+    },
+    {
+      "anchor": "proof of Theorem 3.2",
+      "pdf_page": 4,
+      "printed_page": "550",
+      "role": "operation and summation-error counts inherited by Theorem 4.1",
+      "section": "3. Modified Lagrange formula"
+    },
+    {
+      "anchor": "exact perturbed numerator/denominator expression preceding Theorem 4.1",
+      "pdf_page": 5,
+      "printed_page": "551",
+      "role": "exact uncollected and collected counter execution",
+      "section": "4. Barycentric formula"
+    },
+    {
+      "anchor": "Theorem 4.1 and equations (4.2)-(4.3)",
+      "pdf_page": 6,
+      "printed_page": "552",
+      "role": "two condition-number terms and O(u^2) remainder",
+      "section": "4. Barycentric formula"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P13-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The mounted library supplies only short generic finite-sum perturbation inequalities. The difficult reciprocal-product counter linkage, quotient denominator control, and exact asymptotic remainder are paper-specific, so condition L has no substantial corresponding result.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P13/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p13_t3_barycentric_forward_bound"
+  }
+}

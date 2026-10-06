@@ -1,0 +1,85 @@
+{
+  "annotation": {
+    "method": "Codex read the complete 25-page manuscript in physical order, including the SPAI construction and QR update, Theorems 3.1-3.3 and Corollary 3.1, all numerical experiments, conclusion, and all 19 references; separated proved claims from standard decompositions and empirical evidence; audited Mathlib and the exact frozen 44-object NumStability surface; and compiled exact N/L feasibility proofs.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P47 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Marcus J. Grote",
+    "Thomas Huckle"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [],
+  "paper_id": "P47",
+  "paper_version": "author manuscript dated December 5, 1995",
+  "publication": {
+    "version_date": "1995-12-05",
+    "year": 1995
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "least-squares separation (3)-(7) and one-dimensional update (10)-(13)",
+      "reason": "These are short expansions of the Frobenius norm and scalar least-squares minimization. The profitable-index argument is a brief full-row-rank contradiction, below every tier's difficulty threshold."
+    },
+    {
+      "candidate": "QR update equations (14)-(17)",
+      "reason": "Once the two displayed QR factorizations are supplied, the update is block multiplication. Requiring construction of those standard QR factorizations would add background work that the paper assumes rather than prove a new P47 result."
+    },
+    {
+      "candidate": "Theorem 3.1 and Corollary 3.1",
+      "reason": "The norm and nonsingularity estimates are short finite-sum, submultiplicativity, and Gershgorin consequences. An exact private test of the principal Frobenius conclusion is 38 lines in N and 35 in L; the library contributes only elementary column-to-Frobenius support, not a substantial shortcut."
+    },
+    {
+      "candidate": "Theorem 3.2",
+      "reason": "The paper invokes a standard Schur decomposition and then gives a short Frobenius/diagonal estimate. Supplying the decomposition makes the remaining proof too small for T3; forcing agents to establish general complex Schur triangularization would test assumed background rather than the paper's theorem, and generic norm infrastructure is available in Mathlib and NumStability."
+    },
+    {
+      "candidate": "Theorem 3.3",
+      "reason": "After the standard singular-value characterization is supplied, the proof is the short operator-norm perturbation chain (31)-(32). Its generic matrix norm and self-adjoint spectral ingredients are already represented in Mathlib or the frozen MatrixAlgebra/MatrixSpectral modules, so it has no clean T3 no-shortcut formulation and no qualifying pair of paper-specific T2 results."
+    },
+    {
+      "candidate": "Sections 4-5 experiments",
+      "reason": "The tables, plots, sparsity comparisons, and convergence histories are empirical rather than universal proof tasks."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. Exact private evidence shows that the closest match, Theorem 3.1's Frobenius bound, is nearly the same short proof in N and L. No internally proved P47 result needs one substantial non-Mathlib NumStability declaration."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source-proved P47 theorem receives two distinct substantial non-Mathlib shortcuts from the exact compiled library. Generic matrix-norm and spectral adapters do not qualify."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. The paper's own arguments after standard QR, Schur, Gershgorin, and singular-value background are supplied are one-page norm calculations below the T2 difficulty floor. Requiring proofs of those assumed general background theorems would make an artificial task not faithful to P47's contribution."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only results and proof content stated in this paper.",
+    "Do not turn standard QR, Schur, Gershgorin, or singular-value background invoked by the paper into the selected contribution.",
+    "Do not treat generic column-sum or matrix-norm adapters as substantial NumStability results.",
+    "Use exact private N/L proofs to reject apparent library advantages that collapse to elementary algebra.",
+    "Assign a tier only after exact private N and L proofs compile."
+  ],
+  "short_name": "Grote--Huckle (1995)",
+  "source": {
+    "lawful_source_locator": "local user-supplied author manuscript",
+    "local_path": "paper_bencmark/reference_papers/P47 Parallel Preconditioning with Sparse Approximate Inverses.pdf",
+    "page_map": "The 25 physical PDF pages use printed page numbers 1-25.",
+    "pdf_pages": 25,
+    "rights_note": "The local author manuscript was supplied for benchmark construction. Release only its hash, metadata, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "e0c3f3c3911a7ed0fdce51d1cd7116297a070e4c69f7428223fbf581f0bb177e"
+  },
+  "title": "Parallel Preconditioning with Sparse Approximate Inverses"
+}

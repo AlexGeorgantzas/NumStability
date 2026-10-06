@@ -1,0 +1,36 @@
+import NumStability.Algorithms.Sylvester.Higham16
+import NumStability.Algorithms.Sylvester.Higham16AutoCondition
+import NumStability.Algorithms.Sylvester.Higham16Eq9Assembly
+import NumStability.Algorithms.Sylvester.Higham16Eq9EndToEnd
+import NumStability.Algorithms.Sylvester.Higham16HessenbergRounded
+import NumStability.Algorithms.Sylvester.Higham16HessenbergSchur
+import NumStability.Algorithms.Sylvester.Higham16Lyapunov
+import NumStability.Algorithms.Sylvester.Higham16LyapunovSigmaMin
+import NumStability.Algorithms.Sylvester.Higham16Minimizers
+import NumStability.Algorithms.Sylvester.Higham16NormEstimator
+import NumStability.Algorithms.Sylvester.Higham16PerturbationSigmaMin
+import NumStability.Algorithms.Sylvester.Higham16PivotedSmallBlocks
+import NumStability.Algorithms.Sylvester.Higham16Problem16_2
+import NumStability.Algorithms.Sylvester.Higham16Psi
+import NumStability.Algorithms.Sylvester.Higham16PsiSigmaMin
+import NumStability.Algorithms.Sylvester.Higham16QuasiQuasiRounded
+import NumStability.Algorithms.Sylvester.Higham16QuasiQuasiSylvester
+import NumStability.Algorithms.Sylvester.Higham16QuasiRoundedSolve
+import NumStability.Algorithms.Sylvester.Higham16QuasiRoundedSylvester
+import NumStability.Algorithms.Sylvester.Higham16RoundedExecutor
+import NumStability.Algorithms.Sylvester.Higham16RoundedTriangular
+import NumStability.Algorithms.Sylvester.Higham16Spectrum
+import NumStability.Algorithms.Sylvester.Higham16SpectrumMinimizers
+import NumStability.Algorithms.Sylvester.Higham16VecNorm
+import NumStability.Algorithms.Sylvester.Higham16VecPermutationNotes
+import NumStability.Algorithms.Sylvester.SylvesterBackward
+import NumStability.Algorithms.Sylvester.SylvesterPerturbation
+import NumStability.Algorithms.Sylvester.SylvesterSpec
+
+/-!
+# Sylvester-equation family
+
+Complete discovery aggregate for the historical Sylvester implementation and
+Higham Chapter 16 correspondence modules. This is a mixed family surface;
+implementation modules should prefer the narrowest leaf import they need.
+-/

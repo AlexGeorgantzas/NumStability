@@ -1,0 +1,61 @@
+{
+  "annotation": {
+    "method": "Read Algorithm 3.1 and the Section 2\u20133 error derivation; compiled exact variable-q N and L proofs before packaging.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner requested additional paper-grounded T1/T2 tasks."
+  },
+  "authors": [
+    "Stef Graillat",
+    "Fabienne J\u00e9z\u00e9quel",
+    "Theo Mary",
+    "Rom\u00e9o Molina"
+  ],
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P68-T2"
+  ],
+  "paper_id": "P68",
+  "paper_version": "May 12, 2023 author-hosted 24-page preprint of 2024 journal article",
+  "publication": {
+    "doi": "10.1137/22M1522619",
+    "issue": "1",
+    "journal": "SIAM Journal on Scientific Computing",
+    "printed_pages": "C30\u2013C56",
+    "volume": "46",
+    "year": 2024
+  },
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "No separate T1 selected during this T2 expansion."
+    },
+    "T2": {
+      "available": true,
+      "decision": "Select the one-row variable-bucket gamma-bound form of Algorithm 3.1 and equations (3.5)\u2013(3.6).",
+      "task_id": "P68-T2",
+      "theorem_name": "p68_t2_adaptive_row_many_error"
+    },
+    "T3": {
+      "available": false,
+      "decision": "No T3 selected during this T1/T2 expansion."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Specialize Algorithm 3.1 and equations (3.5)\u2013(3.6) to one row while retaining arbitrary positive bucket count q.",
+    "Use inputs already represented in their bucket working precisions, removing source conversion factors; apply classical gamma constants discussed in Section 2.",
+    "Retain the variable-length rounded bucket inner products and final rounded sum, and keep private N/L proofs out of public task material."
+  ],
+  "short_name": "Graillat\u2013J\u00e9z\u00e9quel\u2013Mary\u2013Molina (2024)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/22M1522619",
+    "local_path": "papers_to_be_approved/P68-Graillat-Jezequel-Mary-Molina-2024-Adaptive-SpMV.pdf",
+    "page_map": "Physical PDF pages 1\u201324 are the author preprint pages 1\u201324, version May 12, 2023; the later journal article is in volume 46 (2024), pages C30\u2013C56.",
+    "pdf_pages": 24,
+    "rights_note": "Author-hosted preprint retained privately; verify redistribution rights before public release.",
+    "sha256": "35b5c6a3fa535bf75b27ceb9d897d257635fa199cb551e24be64811b16c0b1cf"
+  },
+  "title": "Adaptive Precision Sparse Matrix\u2013Vector Product and Its Application to Krylov Solvers"
+}

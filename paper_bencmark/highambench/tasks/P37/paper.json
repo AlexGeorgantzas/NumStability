@@ -1,0 +1,92 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 21-page paper in physical-PDF order, surveyed every stated result and source-proved construction, and compared all candidates with the frozen Mathlib and importable NumStability baselines.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P37 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Jing-Rebecca Li",
+    "Jacob White"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P37-T3"
+  ],
+  "paper_id": "P37",
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 24(1), 2002, printed pages 260-280",
+  "publication": {
+    "doi": "10.1137/S0895479801384937",
+    "issue": "1",
+    "journal": "SIAM Journal on Matrix Analysis and Applications",
+    "printed_pages": "260-280",
+    "publication_date": "2002-07-09",
+    "volume": "24",
+    "year": 2002
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "ADI error estimate (3.6) and parameter formulas (3.7)-(3.9)",
+      "reason": "The paper attributes these results to earlier references rather than proving them here."
+    },
+    {
+      "candidate": "Theorem 4.1 and the CF-ADI derivation",
+      "reason": "The theorem is source-backed and unavailable in the compiled library, but a clean fixed-order formalization reduces mostly to outer-product and Gram-factor bookkeeping. Retaining full arbitrary parameter reordering would add substantial matrix inverse algebra, yet Theorem 6.1 provides a stronger, cleaner T3 whose complete spanning argument is developed in the paper."
+    },
+    {
+      "candidate": "Theorem 5.4",
+      "reason": "The distinct-parameter case is a partial-fraction calculation close to Mathlib's general polynomial infrastructure, while the paper only says that the repeated-parameter expansion can be calculated and does not supply its proof."
+    },
+    {
+      "candidate": "Propositions 5.3 and 7.1",
+      "reason": "Both are explicitly presented as well-known results with external references rather than newly proved results of this paper."
+    },
+    {
+      "candidate": "Propositions 7.3-7.6",
+      "reason": "The paper explicitly omits their proofs."
+    },
+    {
+      "candidate": "Sections 8-9 numerical comparisons and conclusions",
+      "reason": "These are experiments and qualitative conclusions rather than source-proved universal statements suitable for a task."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. The compiled NumStability set has no Lyapunov, ADI/CF-ADI, Krylov, rational-Krylov, partial-fraction resolvent, or shifted spanning theorem. Generic matrix and spectral helpers do not give one substantial paper-relevant shortcut."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No proof in P37 needs at least two distinct substantial results from the compiled NumStability set. More directly relevant Lyapunov, Sylvester, and alternating-directions modules exist only as uncompiled frozen source and cannot be counted for condition L."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Selected Theorem 6.1, equations (6.3)-(6.4). Its proof combines dimension-n Krylov stabilization, shifted-generator equivalence, inverse-shift containment, all earlier and later indices, arbitrary consecutive windows, and independence from the original base vector, with no corresponding compiled NumStability theorem."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only conclusions whose statements and supporting derivations are present in this paper.",
+    "Do not turn cited well-known results or propositions with omitted proofs into tasks.",
+    "Do not count uncompiled Lyapunov, Sylvester, or alternating-directions source modules as available to condition L.",
+    "Keep the two-sided sequence, arbitrary starting index, and equality with the ordinary Krylov span in the selected theorem.",
+    "Assign tiers only after comparison with the complete frozen NumStability source, its importable compiled subset, and Mathlib."
+  ],
+  "short_name": "Li--White (2002)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/S0895479801384937",
+    "local_path": "paper_bencmark/reference_papers/P37-Low Rank Solution of Lyapunov Equations.pdf",
+    "page_map": "Physical PDF pages 1-21 are printed pages 260-280 respectively.",
+    "pdf_pages": 21,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "6518faf6a70b66ff4eba228faa9a4eff9f1f4b9060fa9b7a85d6b60988971019"
+  },
+  "title": "Low Rank Solution of Lyapunov Equations"
+}

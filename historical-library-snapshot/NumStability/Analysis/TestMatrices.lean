@@ -1,0 +1,44 @@
+import NumStability.Analysis.TestMatrices.Cauchy.Basic
+import NumStability.Analysis.TestMatrices.Cauchy.Cauchy
+import NumStability.Analysis.TestMatrices.Cauchy.Contracts
+import NumStability.Analysis.TestMatrices.Companion.Basic
+import NumStability.Analysis.TestMatrices.Companion.Companion
+import NumStability.Analysis.TestMatrices.Companion.CompanionSpectral
+import NumStability.Analysis.TestMatrices.Companion.Contracts
+import NumStability.Analysis.TestMatrices.Gaussian.GaussianDirection
+import NumStability.Analysis.TestMatrices.Gaussian.GaussianOrthogonal
+import NumStability.Analysis.TestMatrices.Hilbert.Asymptotics
+import NumStability.Analysis.TestMatrices.Hilbert.Basic
+import NumStability.Analysis.TestMatrices.Hilbert.Exact
+import NumStability.Analysis.TestMatrices.Hilbert.HilbertAsymptotic
+import NumStability.Analysis.TestMatrices.Hilbert.ShiftedHilbert
+import NumStability.Analysis.TestMatrices.Orthogonal.Basic
+import NumStability.Analysis.TestMatrices.Orthogonal.HaarFiberMeasure
+import NumStability.Analysis.TestMatrices.Orthogonal.OrthogonalCoordinates
+import NumStability.Analysis.TestMatrices.Orthogonal.OrthogonalFibers
+import NumStability.Analysis.TestMatrices.Orthogonal.OrthogonalHaar
+import NumStability.Analysis.TestMatrices.Orthogonal.OrthogonalSphere
+import NumStability.Analysis.TestMatrices.Pascal.Basic
+import NumStability.Analysis.TestMatrices.Pascal.Contracts
+import NumStability.Analysis.TestMatrices.Pascal.Exact
+import NumStability.Analysis.TestMatrices.Pascal.PascalDualFlag
+import NumStability.Analysis.TestMatrices.Pascal.PascalOscillation
+import NumStability.Analysis.TestMatrices.Pascal.PascalOscillationCore
+import NumStability.Analysis.TestMatrices.Pascal.PascalSpectral
+import NumStability.Analysis.TestMatrices.Pascal.PascalTotalPositivity
+import NumStability.Analysis.TestMatrices.RandomSVD.Basic
+import NumStability.Analysis.TestMatrices.RandomSVD.GroupLawRecursion
+import NumStability.Analysis.TestMatrices.RandomSVD.Stewart
+import NumStability.Analysis.TestMatrices.RandomSVD.StewartHaar
+import NumStability.Analysis.TestMatrices.RandomSVD.StewartMeasurability
+import NumStability.Analysis.TestMatrices.RandomSVD.StewartRecursion
+import NumStability.Analysis.TestMatrices.RealGinibre.GinibreRoots
+import NumStability.Analysis.TestMatrices.RealGinibre.ProjectiveWeightIntegral
+import NumStability.Analysis.TestMatrices.Toeplitz.Basic
+import NumStability.Analysis.TestMatrices.Toeplitz.Contracts
+
+/-!
+# Named test matrices
+
+Declaration-free aggregate for the Named test matrices subtree.
+-/

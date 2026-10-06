@@ -1,0 +1,86 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source-faithful exact-gamma form of the off-diagonal estimate in Method B\u2019s proof of (6.1)",
+    "performed_by": "Codex"
+  },
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P61 shared files are present; the frozen NumStability library is also present.",
+    "N": "The identical fixed statement and P61 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P61/T2/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p61_t2_methodB_offdiagonal_residual (fp : P61FPModel) (n r p : \u2115) (L22 : P61Matrix n n) (L21 : P61Matrix n r) (X11 : P61Matrix r p) ... : \u2200 i j, |L22*X21 + L21*X11| \u2264 gamma_n*|L22||X21| + gamma_r*|L21||X11|",
+    "namespace": "HighamBench",
+    "plain_language": "For each entry of the Method B off-diagonal inverse block, the computed product and lower-triangular solve jointly yield the paper\u2019s componentwise right-residual estimate.",
+    "target_file": "paper_bencmark/highambench/tasks/P61/T2/Target.lean",
+    "theorem_name": "p61_t2_methodB_offdiagonal_residual"
+  },
+  "informal_proof": "The paper combines the rounded block-product relation with the triangular solve backward-error relation, rearranges the off-diagonal block equation, and adds their componentwise bounds.",
+  "informal_statement": "The rounded Method B product followed by a lower-triangular solve leaves an off-diagonal right residual bounded by the sum of the two componentwise rounding-error terms.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P61",
+  "paper_source": {
+    "local_path": "papers_to_be_approved/P61-Higham-1995-Parallel-Triangular-Solvers.pdf",
+    "sha256": "8aba49dbfb5b6ff304641add4c7cd200bac1ffc6bfc239a24eb69947f8896ed4"
+  },
+  "paper_version": "published journal version; SIAM Journal on Scientific Computing 16(2), 1995, printed pages 400-413",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.matMul_error_bound",
+      "NumStability.forwardSub_backward_error"
+    ],
+    "note": "Both exact private proofs compile with no sorry/admit; N imports no NumStability module."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P61FPModel",
+    "P61Matrix",
+    "p61Gamma",
+    "P61GammaValid",
+    "p61MatMul",
+    "p61RoundedDotProduct",
+    "p61RoundedMatMul",
+    "p61ForwardSubSteps",
+    "p61ForwardSub",
+    "p61MethodBOffDiagonal"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Method B formula X21 = -L22\\(L21 X11) and right-residual equation (6.1)",
+      "pdf_page": 11,
+      "printed_page": "409",
+      "role": "selected local inverse-block method and larger bound",
+      "section": "6. Matrix inversion by divide and conquer"
+    },
+    {
+      "anchor": "displayed off-diagonal residual equation and following componentwise bound",
+      "pdf_page": 12,
+      "printed_page": "410",
+      "role": "selected result and complete proof step",
+      "section": "6. Matrix inversion by divide and conquer"
+    }
+  ],
+  "source_tags": [
+    "EQN",
+    "TXT"
+  ],
+  "task_id": "P61-T2",
+  "tier": "T2",
+  "tier_label": "composition",
+  "tier_rationale": "The L proof invokes two distinct substantial frozen theorems, matMul_error_bound and forwardSub_backward_error. Its 127-line construction bridges the paper-scoped operations and combines their bounds. N independently reconstructs both rounded-algorithm analyses in 1074 lines before making the same combination. Mathlib has no ready floating-point theorem for either algorithm, and this Method B composition is not a frozen library theorem.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P61/T2/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p61_t2_methodB_offdiagonal_residual"
+  }
+}

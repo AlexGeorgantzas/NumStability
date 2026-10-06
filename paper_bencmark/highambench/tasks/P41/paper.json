@@ -1,0 +1,91 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 25-page PDF in physical order, including the MIMS cover, Sections 1-7, Theorem 2.1, Lemmas 4.1-4.2, both algorithms, both code fragments, all ten experiments, the discussion, and references, then compared every source-proved candidate with Mathlib and the frozen importable NumStability baseline.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P41 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Awad H. Al-Mohy",
+    "Nicholas J. Higham"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P41-T3"
+  ],
+  "paper_id": "P41",
+  "paper_version": "published journal version; SIAM Journal on Scientific Computing 33(2), 2011, printed pages 488-511",
+  "publication": {
+    "doi": "10.1137/100788860",
+    "issue": "2",
+    "journal": "SIAM Journal on Scientific Computing",
+    "printed_pages": "488-511",
+    "publication_date": "2011-03-01",
+    "volume": "33",
+    "year": 2011
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "The truncation and backward-error parameter analysis in Section 3",
+      "reason": "The key truncation bound and parameter selection are explicitly imported from the authors' earlier scaling-and-squaring analysis rather than proved in this paper."
+    },
+    {
+      "candidate": "Lemma 4.1 as a T1 or T2 task",
+      "reason": "Its hard rounded Taylor-action estimate is delegated to standard matrix-product error analysis in reference [10], while its exponential backward-error input comes from the earlier Section 3 analysis. The compiled library contains lower-level matrix-product and summation bounds but no full Taylor-action result. Isolating one or two of those lower-level cited ingredients would assume away the source lemma's main content and create an artificial task."
+    },
+    {
+      "candidate": "Lemma 4.2, first-order perturbation bound and factor-two attainability",
+      "reason": "The result is source-proved and has no compiled NumStability match, but it assumes the Frechet derivative representation and vectorization identities from reference [12]. Theorem 2.1 supplies a cleaner, fully developed, and at least equally substantial self-contained T3 target."
+    },
+    {
+      "candidate": "Condition estimates (4.3)-(4.7)",
+      "reason": "The matrix-exponential condition-number bounds and normal-matrix equality cases used there are explicitly cited from reference [12] and Van Loan."
+    },
+    {
+      "candidate": "Algorithms 3.2 and 5.2, Code Fragments 3.1 and 5.1, and Section 6",
+      "reason": "These portions specify algorithms, implementation choices, cost observations, and empirical experiments rather than additional source-proved universal results suitable for a task."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No complete source-proved result needs exactly one substantial compiled NumStability theorem. Lemma 4.1 has no compiled Taylor-action theorem, and reducing it to the available one-product bound would select an externally cited lower-level fragment rather than the paper's result."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No complete source-proved result receives two distinct substantial compiled-library shortcuts. Matrix multiplication and recursive summation are only lower-level ingredients of the externally delegated rounding argument in Lemma 4.1; packaging that decomposition would be artificial and would not prove the complete source lemma."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Selected the full arbitrary-ell and arbitrary-p column identity of Theorem 2.1, equation (2.7). Its complete block-power, shift-column, convergent-series, and reindexing proof is supplied in the paper, is substantial, and has no corresponding NumStability shortcut.",
+      "task_id": "P41-T3",
+      "theorem_name": "p41_t3_augmented_phi_column"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only conclusions whose statements and supporting proofs appear in this paper.",
+    "Do not turn cited truncation, matrix-product rounding, Frechet representation, or condition-number theorems into P41 tasks.",
+    "Do not weaken Theorem 2.1 to only the exponential case ell=0 or to a fixed number of columns.",
+    "Do not isolate lower-level NumStability matrix-product or summation results from Lemma 4.1 while assuming away the complete Taylor-action analysis.",
+    "Do not count generic block-matrix, finite-sum, or analytic-series infrastructure as a substantial NumStability advantage.",
+    "Assign a tier only after exact private N and L proofs compile."
+  ],
+  "short_name": "Al-Mohy--Higham (2011)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/100788860",
+    "local_path": "paper_bencmark/reference_papers/P41 Computing the Action of the Matrix Exponential, with an Application to Exponential Integrators.pdf",
+    "page_map": "Physical PDF page 1 is a MIMS cover; physical pages 2-25 are printed pages 488-511 respectively.",
+    "pdf_pages": 25,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "a8bc1d282cbda4aad92d231c84a656482def0f4d1747a92e140c6b32ef4e3c1b"
+  },
+  "title": "Computing the Action of the Matrix Exponential, with an Application to Exponential Integrators"
+}

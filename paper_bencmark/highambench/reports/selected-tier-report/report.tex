@@ -1,0 +1,184 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,landscape,margin=0.45in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+\pagestyle{plain}
+
+\definecolor{NBlue}{HTML}{2563EB}
+\definecolor{LOrange}{HTML}{D97706}
+\definecolor{Ink}{HTML}{0F172A}
+\definecolor{Muted}{HTML}{475569}
+\definecolor{Rule}{HTML}{CBD5E1}
+\definecolor{NoteBg}{HTML}{EEF2FF}
+
+\hypersetup{colorlinks=true,linkcolor=NBlue,urlcolor=NBlue}
+
+\newcommand{\conditionlegend}{%
+  \textcolor{NBlue}{\rule{1.1em}{0.7em}}\;N: no NumStability
+  \qquad
+  \textcolor{LOrange}{\rule{1.1em}{0.7em}}\;L: NumStability available}
+
+\newcommand{\taskplot}[2]{%
+  \begin{minipage}[t]{0.475\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{#1}\\[-2pt]
+    {\scriptsize\color{Muted}#2}
+  \end{minipage}}
+
+\newcommand{\singleplot}[2]{%
+  \begin{minipage}[t]{0.62\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{#1}\\[-2pt]
+    {\scriptsize\color{Muted}#2}
+  \end{minipage}}
+
+\newcommand{\meanplot}[2]{%
+  \begin{minipage}[t]{0.25\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{#1}\\[-2pt]
+    {\scriptsize\color{Muted}#2}
+  \end{minipage}}
+
+\newcommand{\meanrow}[1]{%
+  \begin{center}
+    \meanplot{assets/#1-time-mean.png}{Elapsed time}
+    \hfill
+    \meanplot{assets/#1-tokens-mean.png}{Observed tokens (lower bound)}
+    \hfill
+    \meanplot{assets/#1-physical-loc-mean.png}{Final source lines}
+  \end{center}}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries\color{Ink} HighamBench N/L Results}\par
+  \vspace{2pt}
+  {\large T1--T2 from r11; T3 from combined r09--r10}\par
+  \vspace{4pt}
+  \conditionlegend
+\end{center}
+
+\colorbox{NoteBg}{\parbox{0.975\textwidth}{\small
+Each task value is the arithmetic mean of three repetitions. Each tier mean gives every completed task equal weight. Time ends at the authenticated final submission; hidden validation is excluded. Physical LOC counts only the submitted source; imported Mathlib and NumStability implementation lines are not counted.}}
+
+{\small\bfseries Tiers.} {\small T1 needs one substantial NumStability result; T2 needs at least two; T3 is at least as difficult as T2 but has no corresponding NumStability result expected to help L.}
+
+{\small\bfseries Isolation.} {\small Task attempts are isolated from one another: each uses fresh agent and workspace state and sees only its own task context, never another task's prompt, conversation, search trace, or solution.}
+
+\vspace{5pt}
+\begin{minipage}[t]{0.39\textwidth}
+{\bfseries Coverage and success}
+
+\small
+\begin{tabularx}{\linewidth}{@{}lXrrr@{}}
+\toprule
+Tier & Source & Tasks in mean & N success & L success \\
+\midrule
+T1 & r11 & 12/12 & 36/36 & 36/36 \\
+T2 & r11 & 3/3 & 9/9 & 9/9 \\
+T3 & combined r09--r10 & 23/23 & 69/69 & 69/69 \\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.59\textwidth}
+{\bfseries Equal-weight tier means}
+
+\small
+\begin{tabular}{@{}lrr@{\hspace{18pt}}rr@{\hspace{18pt}}rr@{}}
+\toprule
+& \multicolumn{2}{c}{Time (s)} & \multicolumn{2}{c}{Tokens\textsuperscript{\dag}} & \multicolumn{2}{c}{Physical LOC} \\
+Tier & N & L & N & L & N & L \\
+\midrule
+T1 & 764.9 & 368.8 & 1.259M & 0.959M & 302.2 & 182.1 \\
+T2 & 1531.1 & 465.2 & 3.672M & 1.149M & 677.3 & 269.1 \\
+T3 & 645.5 & 601.7 & 2.917M & 2.922M & 414.3 & 432.4 \\
+\bottomrule
+\end{tabular}
+
+\footnotesize\textsuperscript{\dag}All 228 selected attempt token records are incomplete. Token values are provider-observed lower bounds, not exact total spending.
+\end{minipage}
+
+\vspace{6pt}
+{\bfseries Result summary.}
+For T1 and T2, L has lower mean elapsed time, observed-token lower bound, and submitted physical LOC. For T3, the tier means are close across conditions and show no consistent NumStability advantage. The task plots below retain their original per-task scales, so bar heights should be compared only within a panel.
+
+{\small\bfseries Faster time, more tokens.} {\small Some T1 L runs finish sooner yet use more observed tokens because NumStability search and read outputs enlarge the context processed again on later model calls, including cached input, while theorem reuse shortens proof development and Lean checking.}
+
+\vfill
+{\scriptsize\color{Muted}
+Sources: \nolinkurl{../live-r11/} for T1--T2 and \nolinkurl{../combined-r09-r10/} for T3. Generated 25 September 2026.}
+
+\newpage
+\section*{Tier mean diagrams}
+\small Each panel reports the separate absolute N and L tier means. Completed tasks receive equal weight.
+
+{\bfseries Tier 1 --- 12 completed task means}\\[-3pt]
+\meanrow{t1}
+
+\vspace{4pt}
+{\bfseries Tier 2 --- 3 completed task means}\\[-3pt]
+\meanrow{t2}
+
+\vspace{4pt}
+{\bfseries Tier 3 --- 23 completed task means}\\[-3pt]
+\meanrow{t3}
+
+\newpage
+\section*{Tier 1 --- r11}
+\small Twelve tasks, each with three accepted N/L pairs. Absolute three-run task means are shown below.
+
+\begin{center}
+\taskplot{assets/t1_time_tasks.png}{Elapsed time}
+\hfill
+\taskplot{assets/t1_tokens_tasks.png}{Observed tokens; all values are lower bounds}
+
+\vspace{3pt}
+\singleplot{assets/t1_physical_loc_tasks.png}{Final submitted source lines}
+\end{center}
+
+\newpage
+\section*{Tier 2 --- r11}
+\small Three tasks, each with three accepted N/L pairs. Absolute three-run task means are shown below.
+
+\begin{center}
+\taskplot{assets/t2_time_tasks.png}{Elapsed time}
+\hfill
+\taskplot{assets/t2_tokens_tasks.png}{Observed tokens; all values are lower bounds}
+
+\vspace{5pt}
+\singleplot{assets/t2_physical_loc_tasks.png}{Final submitted source lines}
+\end{center}
+
+\newpage
+\section*{Tier 3 --- combined r09--r10: time and tokens}
+\small Twenty-three tasks, each with three accepted N/L pairs. Absolute three-run task means are shown below.
+
+\begin{center}
+\taskplot{assets/t3_time_tasks.png}{Elapsed time}
+\hfill
+\taskplot{assets/t3_tokens_tasks.png}{Observed tokens; all values are lower bounds}
+\end{center}
+
+\newpage
+\section*{Tier 3 --- combined r09--r10: physical LOC}
+\small LOC counts only submitted candidate source; imported module internals are excluded.
+
+\begin{center}
+\singleplot{assets/t3_physical_loc_tasks.png}{Final submitted source lines}
+\end{center}
+
+\end{document}

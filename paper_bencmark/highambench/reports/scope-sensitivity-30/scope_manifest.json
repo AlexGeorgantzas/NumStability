@@ -1,0 +1,9 @@
+{
+  "analysis_kind": "post-run scope sensitivity, not an independent benchmark run",
+  "base_report_commit": "6e8af63",
+  "base_pdf_sha256": "5c41a4c2d0bc4676a0173a716e822d256c5c4bf6c5d4684e5fa00771e7844521",
+  "excluded_paper_ids": ["P02", "P17", "P20", "P33", "P35", "P40"],
+  "expected_excluded_task_ids": ["P02-T1", "P02-T3", "P17-T1", "P17-T3", "P20-T3", "P33-T1", "P35-T3", "P40-T3"],
+  "retained_exception": "P15-T3",
+  "reason": "User-requested sensitivity analysis after inspecting observed tier fit; mathematical scope of each excluded paper has not been independently adjudicated."
+}

@@ -1,0 +1,39 @@
+task_id,tier,status,complete_pairs_of_3,accepted_pairs_of_3,N_mean_time_seconds,N_mean_observed_tokens,N_token_usage_complete_all_3,N_mean_physical_loc,N_mean_proof_region_loc,L_mean_time_seconds,L_mean_observed_tokens,L_token_usage_complete_all_3,L_mean_physical_loc,L_mean_proof_region_loc
+P01-T1,T1,three accepted pairs,3,3,481.4951703333333,941216.3333333334,True,135.33333333333334,77.66666666666667,140.47187866666667,375633.3333333333,True,65.33333333333333,6.333333333333333
+P01-T2,T2,awaiting repetitions,0,0,,,,,,,,,,
+P02-T1,T1,three accepted pairs,3,3,886.1856526666667,1805641.0,True,471.0,87.0,831.3322876666666,3947052.3333333335,True,460.6666666666667,96.66666666666667
+P02-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P03-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P04-T1,T1,three accepted pairs,3,3,853.7749556666668,2456333.6666666665,True,371.3333333333333,110.0,708.370386,2287853.6666666665,True,393.0,116.33333333333333
+P05-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P06-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P08-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P09-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P11-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P12-T1,T1,three accepted pairs,3,3,627.842278,1099423.6666666667,True,245.33333333333334,77.66666666666667,347.56197266666663,1394190.6666666667,True,153.66666666666666,73.33333333333333
+P13-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P14-T1,T1,three accepted pairs,3,3,532.4314813333333,763196.6666666666,True,206.0,41.333333333333336,470.45583899999997,1259490.3333333333,True,229.0,120.66666666666667
+P15-T1,T1,three accepted pairs,3,3,698.7450323333334,1292146.0,True,303.3333333333333,9.666666666666666,191.17161466666667,756444.6666666666,True,107.33333333333333,53.666666666666664
+P15-T2,T2,awaiting repetitions,0,0,,,,,,,,,,
+P15-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P17-T1,T1,three accepted pairs,3,3,379.3303006666667,366260.3333333333,True,144.0,33.666666666666664,198.46298133333335,434235.0,True,104.33333333333333,77.33333333333333
+P17-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P19-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P20-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P23-T1,T1,three accepted pairs,3,3,855.0290413333333,1263214.3333333333,True,417.3333333333333,135.33333333333334,435.703463,784403.0,True,246.33333333333334,80.66666666666667
+P24-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P25-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P26-T1,T1,awaiting repetitions,1,1,,,,,,,,,,
+P27-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P28-T1,T1,awaiting repetitions,0,0,,,,,,,,,,
+P28-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P29-T1,T1,awaiting repetitions,0,0,,,,,,,,,,
+P29-T2,T2,awaiting repetitions,0,0,,,,,,,,,,
+P32-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P33-T1,T1,awaiting repetitions,0,0,,,,,,,,,,
+P34-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P35-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P36-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P37-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P39-T3,T3,awaiting repetitions,0,0,,,,,,,,,,
+P40-T3,T3,awaiting repetitions,0,0,,,,,,,,,,

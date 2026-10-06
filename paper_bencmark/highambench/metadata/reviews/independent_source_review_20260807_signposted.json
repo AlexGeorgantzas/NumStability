@@ -1,0 +1,492 @@
+{
+  "schema_version": "highambench-independent-review-0.2",
+  "kind": "highambench-independent-source-fidelity-and-exact-target-review",
+  "review_id": "independent-source-review-20260807-signposted",
+  "review_date": "2026-08-07",
+  "record_status": "current_with_blocking_defects",
+  "benchmark_manifest_sha256": "5a1eeb84c4214a3dd95386a912047bc6e2914621e65439e1d694aa5892ad408b",
+  "identifiers": {
+    "benchmark_id": "highambench-0.2-p01-p02-p03-p04-p05-p06-p07-p08-p09-p10-p11-p12-p13-p14-p15-p16-p17-p18-p19-p20",
+    "benchmark_manifest_sha256": "5a1eeb84c4214a3dd95386a912047bc6e2914621e65439e1d694aa5892ad408b",
+    "specification_sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "library_source_manifest_sha256": "8b52061f0fafc283acd2363267ebbee2f9c6eb97360c596723b95b27515c7828",
+    "library_olean_manifest_sha256": "bbea1e90bc11605bd3c14b28dc39bf49b7bcb64ab5cf2306841f65b803a6ae2a"
+  },
+  "reviewer": {
+    "id": "codex-fresh-context-source-reviewer-v2-signposted",
+    "identity": "Codex independent source, fidelity, and exact-target novelty reviewer",
+    "focus": "all 60 HighamBench task surfaces against their cited papers and the frozen Mathlib/NumStability declarations",
+    "fresh_context": true,
+    "independence_statement": "This review was performed in a fresh review context from the current specification, manifest, task packages, shared definitions, cited paper PDFs, and frozen library sources. I did not read, list, hash, summarize, or rely on any pre-existing review file under paper_bencmark/highambench/metadata/reviews/ and did not rely on prior review conclusions."
+  },
+  "scope": {
+    "complete_manifest_scope": true,
+    "paper_count": 20,
+    "task_count": 60,
+    "paper_ids": ["P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11", "P12", "P13", "P14", "P15", "P16", "P17", "P18", "P19", "P20"],
+    "artifacts_examined": [
+      "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+      "paper_bencmark/highambench/metadata/manifest.json",
+      "paper_bencmark/highambench/shared/HighamBench/Core.lean",
+      "paper_bencmark/highambench/shared/HighamBench/P01Definitions.lean through P20Definitions.lean",
+      "all 60 current Target.lean, context.md, and task.json task surfaces",
+      "all 20 cited local paper PDFs at the task source locators",
+      "the 24 frozen mounted NumStability modules and relevant Mathlib source declarations"
+    ],
+    "frozen_numstability_source_check": "All 24 modules represented by frozen .olean files matched their entries in library_source.json byte-for-byte by SHA-256."
+  },
+  "criteria": {
+    "source_fidelity": "The formal claim must be a valid direct formalization, explicitly signposted finite strengthening, or genuine consequence/specialization of the cited source, with no important source assumption silently removed; the supplied excerpt must explain the intended route.",
+    "exact_target_novelty": "Reject when the target's mathematical interface is already discharged by a frozen Mathlib or NumStability declaration after unfolding paper-scoped aliases, definitional normalization, and only condition-neutral elementary arithmetic. Nearby reusable lemmas are not collisions when a genuinely paper-specific composition remains.",
+    "release_policy": "Any retained exact-target collision blocks public release. A private measurement may ignore only those novelty rejections when source_faithful is true, as implemented by refresh_snapshot.py."
+  },
+  "overall_decision": "fail_exact_target_novelty",
+  "review_outcome": "fail_exact_target_novelty",
+  "public_release": false,
+  "private_measurement_override_compatibility": {
+    "eligible_under_exact_target_novelty_override": true,
+    "source_fidelity_required": true,
+    "public_release_authorized": false,
+    "ignored_rejection_task_ids": ["P06-T1", "P07-T1", "P08-T1", "P09-T1", "P10-T1", "P11-T1", "P12-T1", "P13-T1", "P14-T1", "P15-T1", "P17-T1", "P18-T1", "P19-T1"],
+    "rationale": "Every rejection below is source-faithful and is explicitly marked fail_exact_target_collision with at least one exact-target absence flag false. No source-fidelity rejection is being overridden."
+  },
+  "task_reviews": [
+    {
+      "task_id": "P01-T1", "paper_id": "P01", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The nonnegative specialization matches the unnumbered pairwise display after (2.2), the main pairwise bound, and the nonnegative-data simplification following (2.6); the finite power-of-two depth and gamma-validity hypotheses make the source regime explicit.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Frozen summation modules contain general pairwise forward bounds, but not this paper-scoped nonnegative gamma-times-ordinary-sum statement with the target adapters.", "decision": "pass"
+    },
+    {
+      "task_id": "P01-T2", "paper_id": "P01", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The conjunction faithfully combines the paper's pairwise bound, recursive bound, and the coefficient comparison stated with (3.6); no probabilistic or sign assumption is dropped.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "The frozen library has individual summation estimates but no single theorem with both algorithm bounds and the pairwise-versus-recursive gamma comparison.", "decision": "pass"
+    },
+    {
+      "task_id": "P01-T3", "paper_id": "P01", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The target is the finite indexing of the no-guard model and accumulated local-error/running-prefix budget printed on PDF page 11; the explicit trace assumptions preserve the model.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen declaration has this target's computed-prefix budget and explicit no-guard recursive trace interface.", "decision": "pass"
+    },
+    {
+      "task_id": "P02-T1", "paper_id": "P02", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The exact-total invariant is equation (3.2)/Theorem 3.4 as used by Algorithm 4.3 and (4.7)(i); nonempty Fin indexing is an explicit domain realization.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Neither frozen library contains the VecSum transformation record and exact-total invariant at this interface.", "decision": "pass"
+    },
+    {
+      "task_id": "P02-T2", "paper_id": "P02", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The target synthesizes Lemma 4.2, Proposition 4.5, and equations (4.10)-(4.12) into the printed Sum2 absolute-error envelope, retaining the u and squared-gamma terms.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen declaration states the Sum2 trace-to-bound composition with this exact two-term radius.", "decision": "pass"
+    },
+    {
+      "task_id": "P02-T3", "paper_id": "P02", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The target follows Proposition 4.10, Algorithm 5.10, equation (5.10), and Proposition 5.11, and explicitly selects the paper's no-multiplication-underflow branch including the K=3 boundary.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "The mounted dot-product modules do not contain the optimized DotK error-free-transform trace and Proposition 5.11 envelope as one target.", "decision": "pass"
+    },
+    {
+      "task_id": "P03-T1", "paper_id": "P03", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The equality is the finite-vector algebraic form of the three error contributions in equation (4.1); all residual, solve, and update terms are retained.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Generic vector algebra is nearby, but no frozen theorem states this named refinement-step residual decomposition under the target hypotheses.", "decision": "pass"
+    },
+    {
+      "task_id": "P03-T2", "paper_id": "P03", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The exact alpha_i contraction and beta_i floor are the coefficient assembly immediately before and in Theorem 4.1; the target exposes rather than suppresses the three one-step budgets.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No mounted theorem has the paper's alpha/beta residual-contraction coefficient assembly.", "decision": "pass"
+    },
+    {
+      "task_id": "P03-T3", "paper_id": "P03", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The componentwise recurrence follows equations (5.2)-(5.7) and Theorem 5.1; nonnegative inverse/resolvent assumptions are stated explicitly rather than inferred.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "The target's M-matrix resolvent and paper-specific componentwise recurrence are absent from both frozen libraries.", "decision": "pass"
+    },
+    {
+      "task_id": "P04-T1", "paper_id": "P04", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The theorem is the same-precision specialization of the factorization before (3.4) and its gamma collapse, with validity denominators made explicit.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Frozen gamma lemmas are reusable, but no exact theorem states this two-accumulation same-precision coefficient collapse with the target interface.", "decision": "pass"
+    },
+    {
+      "task_id": "P04-T2", "paper_id": "P04", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The scalar coefficient exactly assembles both low-precision conversions and the block-FMA product error in Theorem 3.2/(3.6), retaining cross terms.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen declaration has the target's block-FMA mixed-precision coefficient identity and componentwise adapter.", "decision": "pass"
+    },
+    {
+      "task_id": "P04-T3", "paper_id": "P04", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The target formalizes Theorem 4.4/(4.7), composing the LU perturbation and both triangular-solve perturbations with the printed 2*gamma_n+gamma_n^2 contribution.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Matrix norm lemmas do not duplicate the full block-FMA LU-solve perturbation assembly.", "decision": "pass"
+    },
+    {
+      "task_id": "P05-T1", "paper_id": "P05", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The sign-aligned coefficient construction is precisely Lemma 4.1, with source indices and the (k+1)u coefficient bound represented explicitly.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen theorem distributes a bounded LU residual among the target's exact sign-aligned source family.", "decision": "pass"
+    },
+    {
+      "task_id": "P05-T2", "paper_id": "P05", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The square Doolittle residual assembly reproduces Theorem 4.2 and (4.2)-(4.3), including both rowwise and uniform (n-1)u bounds; zero-based indices are transparently adapted.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "The exact LU residual-source assembly and paired sharp/uniform bounds are not a frozen target theorem.", "decision": "pass"
+    },
+    {
+      "task_id": "P05-T3", "paper_id": "P05", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The target follows Theorem 4.4 and (4.4)-(4.5), explicitly applying the paper's symmetry step to obtain the full rowwise and (n+1)u bounds.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen theorem gives this complete Cholesky residual symmetry package at the target interface.", "decision": "pass"
+    },
+    {
+      "task_id": "P06-T1", "paper_id": "P06", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The target is exactly the columnwise-Euclidean-to-Frobenius implication preceding (4.20), with the common nonnegative relative factor retained.",
+      "proof_excerpt_sufficient": true, "novelty": false, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": false,
+      "novelty_decision": "fail_exact_target_collision", "collision_with": ["NumStability.frobNormRect_le_of_col_vecNorm2_le"],
+      "novelty_evidence": "The frozen MatrixAlgebra declaration has the same m-by-n matrices, nonnegative eta, per-column Euclidean premise, and Frobenius conclusion; p06 names unfold directly to it.", "decision": "fail_exact_target_collision"
+    },
+    {
+      "task_id": "P06-T2", "paper_id": "P06", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The threshold-form iff is the finite rectangular realization of the symmetric-dilation equivalence in (3.3)-(3.4); symmetry and quadratic-form order are present explicitly.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Frozen spectral/dilation components are nearby, but no declaration supplies this complete threshold iff over the paper-scoped rectangular construction.", "decision": "pass"
+    },
+    {
+      "task_id": "P06-T3", "paper_id": "P06", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The target is the exact finite expansion behind (4.8)-(4.9): unperturbed product, every single insertion, and an explicit t^2 remainder, with no asymptotic term hidden.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen theorem states the indexed transformation-product expansion and explicit higher-order remainder used here.", "decision": "pass"
+    },
+    {
+      "task_id": "P07-T1", "paper_id": "P07", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The additive perturbation theorem is Lemma 3.2's full-rank conclusion in denominator-free lower-margin form; strict perturbation and lower-bound assumptions are retained.",
+      "proof_excerpt_sufficient": true, "novelty": false, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": false,
+      "novelty_decision": "fail_exact_target_collision", "collision_with": ["NumStability.rectMatMulVec_injective_of_lower_bound_and_rectOpNorm2Le_lt"],
+      "novelty_evidence": "The frozen theorem has the same rectangular matrices, lower action margin, operator-bound certificate, strict eta<mu assumption, and injectivity conclusion after p07 alias unfolding.", "decision": "fail_exact_target_collision"
+    },
+    {
+      "task_id": "P07-T2", "paper_id": "P07", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The four-term DeltaA definition and sum-of-budgets norm bound are the display in the proof of Theorem 3.5; all three product perturbations and the base residual remain visible.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Generic triangle/product inequalities do not duplicate the target's four-term preconditioned backward-error composition.", "decision": "pass"
+    },
+    {
+      "task_id": "P07-T3", "paper_id": "P07", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The reciprocal singular-value intervals and equal condition ratio are precisely Lemma 2.1 and its proof, represented as finite certificate hypotheses.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen exact target packages both reciprocal interval certificates and the resulting identical condition ratio.", "decision": "pass"
+    },
+    {
+      "task_id": "P08-T1", "paper_id": "P08", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The target is the forward-error half of Lemma 4.2, expanding |A^{-1}||q| as a finite absolute action and retaining the componentwise rounding term u|x_i|.",
+      "proof_excerpt_sufficient": true, "novelty": false, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": false,
+      "novelty_decision": "fail_exact_target_collision", "collision_with": ["NumStability.abs_matMulVec_le"],
+      "novelty_evidence": "After substituting hUpdate and hRound, the only matrix estimate in the target is exactly frozen abs_matMulVec_le; the remaining steps are absolute-value triangle inequalities and scalar normalization, leaving no distinct paper-specific formal interface.", "decision": "fail_exact_target_collision"
+    },
+    {
+      "task_id": "P08-T2", "paper_id": "P08", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The target formalizes the residual-image half of Lemma 4.2 with both A and A^{-1} actions and the printed rounding decomposition retained.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Frozen absolute-action estimates are components only; no theorem states this full Lemma 4.2 residual-image composition.", "decision": "pass"
+    },
+    {
+      "task_id": "P08-T3", "paper_id": "P08", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The matrix-geometric envelope is the exact finite unrolling of Lemma 4.3's nonnegative affine recurrence; the nonnegativity and recurrence assumptions are explicit.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No mounted declaration has the paper-scoped componentwise affine residual recurrence and finite matrix-geometric propagation target.", "decision": "pass"
+    },
+    {
+      "task_id": "P09-T1", "paper_id": "P09", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The maximum-versus-RMS inequality is the unnumbered norm bridge in the proof of Theorem 1(b), with n>0 preserving RMS division.",
+      "proof_excerpt_sufficient": true, "novelty": false, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": false,
+      "novelty_decision": "fail_exact_target_collision", "collision_with": ["NumStability.infNormVec_le_vecNorm2"],
+      "novelty_evidence": "Unfolding p09Max and p09Rms reduces the target to the frozen infinity-to-Euclidean norm theorem plus cancellation of sqrt(n) under hn; no paper-specific estimate remains.", "decision": "fail_exact_target_collision"
+    },
+    {
+      "task_id": "P09-T2", "paper_id": "P09", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The fictional input perturbation e=T delta and both following norm bounds are represented in a real scaled-orthogonal equivalent; the scaling and orthogonality assumptions are explicit.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen theorem packages existence/equality of the transformed perturbation with both paper scaling bounds.", "decision": "pass"
+    },
+    {
+      "task_id": "P09-T3", "paper_id": "P09", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The finite telescope follows Theorem 2(a), its displayed decomposition, and (4.2), preserving each first-order stage budget and explicit remainder instead of dropping higher-order terms.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Generic finite sums do not duplicate the multidimensional FFT stage-error/remainder interface.", "decision": "pass"
+    },
+    {
+      "task_id": "P10-T1", "paper_id": "P10", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "This is the Frobenius specialization of the inherited right-input product-error term ||A|| err(B,n) in equation (8).",
+      "proof_excerpt_sufficient": true, "novelty": false, "exact_target_absent_from_mathlib": false, "exact_target_absent_from_numstability": false,
+      "novelty_decision": "fail_exact_target_collision", "collision_with": ["Matrix.frobenius_norm_mul", "NumStability.frobNorm_matMul_le"],
+      "novelty_evidence": "Both frozen Mathlib and frozen MatrixAlgebra state Frobenius submultiplicativity; p10 matrix, product, and norm definitions are direct finite adapters.", "decision": "fail_exact_target_collision"
+    },
+    {
+      "task_id": "P10-T2", "paper_id": "P10", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The exact product-error expansion completes equation (8)'s three first-order terms by retaining the inherited-error cross term; this strengthening is explicitly signposted and algebraically follows from the same model.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Frobenius product bounds are ingredients, but no exact target has the local error, two inherited terms, and explicit cross term together.", "decision": "pass"
+    },
+    {
+      "task_id": "P10-T3", "paper_id": "P10", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The finite geometric bound exactly unrolls the affine Sylvester recurrence immediately before (20); it is a signposted finite strengthening of the paper's asymptotic solution.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen theorem states this paper-specific Sylvester depth recurrence and amplified forcing envelope.", "decision": "pass"
+    },
+    {
+      "task_id": "P11-T1", "paper_id": "P11", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "Equation (16) represents the first-column residual as G a and bounds it by a small matrix norm times ||a||; choosing the stronger, explicitly stated Frobenius certificate is a valid finite specialization.",
+      "proof_excerpt_sufficient": true, "novelty": false, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": false,
+      "novelty_decision": "fail_exact_target_collision", "collision_with": ["NumStability.vecNorm2_rectMatMulVec_le_frobNormRect_mul"],
+      "novelty_evidence": "The frozen theorem exactly supplies the action bound under the p11 norm aliases; hG and multiplication monotonicity finish only the scalar substitution.", "decision": "fail_exact_target_collision"
+    },
+    {
+      "task_id": "P11-T2", "paper_id": "P11", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The target is the exact two-line identity beginning I-Q_k^T Q_k on PDF page 14, retaining the normal-equation residual and all three perturbation-product terms.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Finite matrix algebra is reusable, but the inverse-transpose conjugation identity with these four named residual terms is absent.", "decision": "pass"
+    },
+    {
+      "task_id": "P11-T3", "paper_id": "P11", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The finite budget reproduces Theorem 1(7) from the exact page-14 identity, preserving normal-equation, two first-order factorization, and quadratic error terms.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen declaration states the full classical Gram-Schmidt loss-of-orthogonality envelope at this target interface.", "decision": "pass"
+    },
+    {
+      "task_id": "P12-T1", "paper_id": "P12", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "Equation (10) is exactly nearest-representative minimality applied to representable x, giving |s-(x+y)|<=|y| without an extra rounding-mode assumption.",
+      "proof_excerpt_sufficient": true, "novelty": false, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": false,
+      "novelty_decision": "fail_exact_target_collision", "collision_with": ["NumStability.FloatingPointFormat.nearestRoundingIn_minimal"],
+      "novelty_evidence": "p12Nearest is the condition-neutral nearestRoundingIn relation; the frozen minimality theorem with z=x yields the target after the elementary identity |(x+y)-x|=|y|.", "decision": "fail_exact_target_collision"
+    },
+    {
+      "task_id": "P12-T2", "paper_id": "P12", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The trace hypotheses expose Theorem 2's nearest addition and exact representable subtraction conditions, and the conclusions retain both exact two-term transformation and local sum-error bound.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Nearest-rounding minimality alone does not duplicate the complete FastTwoSum execution certificate and exactness conclusion.", "decision": "pass"
+    },
+    {
+      "task_id": "P12-T3", "paper_id": "P12", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The target composes Lemma 4/(18), the FastTwoSum middle-term merge, and exact final addition to obtain the three-term exact product expansion, with each certificate hypothesis visible.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen theorem combines FourSumThreeProduct and FastTwoSum into this exact three-value product identity.", "decision": "pass"
+    },
+    {
+      "task_id": "P13-T1", "paper_id": "P13", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The finite-sum target is Lemma 2.2/(2.2): the interpolation condition number is at least one on the explicitly required nonzero-value domain.",
+      "proof_excerpt_sufficient": true, "novelty": false, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": false,
+      "novelty_decision": "fail_exact_target_collision", "collision_with": ["NumStability.one_le_summationConditionNumber"],
+      "novelty_evidence": "Unfolding p13InterpolationValue and p13Condition gives the frozen summation-condition theorem exactly, with hvalue as its nonzero-sum hypothesis.", "decision": "fail_exact_target_collision"
+    },
+    {
+      "task_id": "P13-T2", "paper_id": "P13", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The target is Lemma 2.2's componentwise data-perturbation inequality at a fixed interpolation point, retaining the relative perturbation and nonzero-denominator conditions.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "The condition-number lower bound is nearby, but the complete perturbed interpolation-value inequality is not a frozen theorem.", "decision": "pass"
+    },
+    {
+      "task_id": "P13-T3", "paper_id": "P13", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The exact quotient perturbation follows the numerator/denominator model before Theorem 4.1 and (4.2)-(4.3), retaining a finite denominator-safety correction rather than suppressing higher-order effects.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen target combines separate barycentric numerator/denominator certificates with both paper condition terms and the safety denominator.", "decision": "pass"
+    },
+    {
+      "task_id": "P14-T1", "paper_id": "P14", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The theorem is the exact-gamma strengthening of the positive exponential recursive-sum passage preceding (3.2)-(3.3); nonnegativity, nonzero sum, and gamma validity are explicit.",
+      "proof_excerpt_sufficient": true, "novelty": false, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": false,
+      "novelty_decision": "fail_exact_target_collision", "collision_with": ["NumStability.recursiveSum_relError_le_gamma_of_oneSigned", "NumStability.recursiveSum_forward_error_bound_oneSigned"],
+      "novelty_evidence": "The frozen recursive-summation module already states the same one-signed exact-gamma relative bound; nonnegative p14 weights are the direct OneSigned specialization.", "decision": "fail_exact_target_collision"
+    },
+    {
+      "task_id": "P14-T2", "paper_id": "P14", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The exact finite bound composes the exponential, recursive-sum, and division errors in the derivation after (3.5) and Theorem 3.3/(3.6), keeping finite cross terms.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "The recursive-sum result is only one ingredient; no frozen declaration has the complete softmax component relative-error certificate.", "decision": "pass"
+    },
+    {
+      "task_id": "P14-T3", "paper_id": "P14", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The common-shift invariance is equation (1.4), and nonnegativity plus ordinary/absolute sum one formalize the page-17 normalization discussion; denominator positivity assumptions are explicit.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen theorem packages all softmax shift, nonnegativity, and dual normalization invariants under the p14 definitions.", "decision": "pass"
+    },
+    {
+      "task_id": "P15-T1", "paper_id": "P15", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The statement is exactly the first Frobenius-norm property listed in Section 2.1, ||AB||_F <= ||A||_F ||B||_F.",
+      "proof_excerpt_sufficient": true, "novelty": false, "exact_target_absent_from_mathlib": false, "exact_target_absent_from_numstability": false,
+      "novelty_decision": "fail_exact_target_collision", "collision_with": ["Matrix.frobenius_norm_mul", "NumStability.frobNorm_matMul_le"],
+      "novelty_evidence": "Both frozen libraries state Frobenius submultiplicativity; the p15 matrix/product/norm names are direct finite aliases.", "decision": "fail_exact_target_collision"
+    },
+    {
+      "task_id": "P15-T2", "paper_id": "P15", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The perturbation radius is Lemma 3.1/(3.2), obtained by replacing the low-rank approximation with A+E and retaining the exact epsilon, gamma, and product contribution.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Norm/action estimates are ingredients, but no frozen theorem has the low-rank truncation plus rounded matrix-vector backward-perturbation composition.", "decision": "pass"
+    },
+    {
+      "task_id": "P15-T3", "paper_id": "P15", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The target follows Theorem 4.5/(4.23)-(4.25), its exact factor/solve perturbation products, and Table 1's xi_p choices, retaining all finite cross terms in place of O-notation.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Frobenius submultiplicativity does not duplicate the full BLR factorization-and-two-solves backward-error package.", "decision": "pass"
+    },
+    {
+      "task_id": "P16-T1", "paper_id": "P16", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The residual inequality follows directly from Section 2's perturbed-solve definition and normalized-residual identity, with both matrix and right-hand-side perturbations retained.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "General action/triangle inequalities are nearby, but no exact theorem states this two-source perturbed-solve residual interface.", "decision": "pass"
+    },
+    {
+      "task_id": "P16-T2", "paper_id": "P16", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The equality composes the correction residual (4.14), next-residual recurrence (4.15), and exact iterative-refinement identity (4.18), with computation and update errors explicit.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen declaration has this exact GMRES correction-to-next-residual composition.", "decision": "pass"
+    },
+    {
+      "task_id": "P16-T3", "paper_id": "P16", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The finite consecutive-restart claim is a signposted exact strengthening of Theorem 6.3/(6.17)-(6.18): above-floor contraction is iterated for the stated finite run only.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen target packages simultaneous mixed-precision backward/forward contraction over an above-floor restart interval.", "decision": "pass"
+    },
+    {
+      "task_id": "P17-T1", "paper_id": "P17", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The deterministic finite-product envelope is the one-atom specialization of Theorem 3.6 and Remark 3.7; |delta_i|<=B and B<=1 provide exactly the factor bounds needed.",
+      "proof_excerpt_sufficient": true, "novelty": false, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": false,
+      "novelty_decision": "fail_exact_target_collision", "collision_with": ["NumStability.prod_one_add_delta_bounds"],
+      "novelty_evidence": "The frozen theorem has identical n, nonnegative B<=1, coordinatewise absolute bound, and two-sided product conclusion after p17 alias unfolding.", "decision": "fail_exact_target_collision"
+    },
+    {
+      "task_id": "P17-T2", "paper_id": "P17", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The coefficientwise suffix-product expectation bounds imply Theorem 4.1/(4.6) by the exact representation (4.4), condition number (4.2), and the page-14 triangle-inequality proof.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Product bounds and condition lemmas are components, but the weighted suffix-product summation-bias target is absent.", "decision": "pass"
+    },
+    {
+      "task_id": "P17-T3", "paper_id": "P17", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The target is the exact event-level assembly of Theorem 4.3/(4.11), centered Chebyshev radius (4.12), and deterministic bias radius (4.10), preserving the probability threshold.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Frozen probability and triangle facts do not state the target's condition-scaled centered-plus-bias event inclusion.", "decision": "pass"
+    },
+    {
+      "task_id": "P18-T1", "paper_id": "P18", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The target is the exact finite Euclidean norm consequence of equation (3.3)'s displayed E=E_sch+E_per decomposition; it makes no stability or asymptotic claim beyond that split.",
+      "proof_excerpt_sufficient": true, "novelty": false, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": false,
+      "novelty_decision": "fail_exact_target_collision", "collision_with": ["NumStability.vecNorm2_add_le"],
+      "novelty_evidence": "The frozen MatrixAlgebra theorem states the same finite Euclidean triangle inequality, and p18Add/p18VecNorm2 unfold directly to its interface.", "decision": "fail_exact_target_collision"
+    },
+    {
+      "task_id": "P18-T2", "paper_id": "P18", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The exact envelope realizes the corrected midpoint method (4.1) and the pages 11-12 Error=O(dt^2)+O(epsilon dt^2) statement as two explicitly bounded vectors; this finite realization is signposted.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Vector triangle inequality is only an ingredient; no exact target contains both corrected-midpoint scaling representatives and their combined envelope.", "decision": "pass"
+    },
+    {
+      "task_id": "P18-T3", "paper_id": "P18", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The smooth third-order and nonsmooth second-order precision regimes match Method 4s3pC on pages 18-19; the normalized small-step comparison is an explicitly signposted exact consequence.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen declaration packages the two 4s3pC regime envelopes and their smooth-versus-nonsmooth comparison.", "decision": "pass"
+    },
+    {
+      "task_id": "P19-T1", "paper_id": "P19", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The theorem is exactly equation (C.8)'s upper inequality for the stored basis product plus correction, represented as finite real vectors.",
+      "proof_excerpt_sufficient": true, "novelty": false, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": false,
+      "novelty_decision": "fail_exact_target_collision", "collision_with": ["NumStability.vecNorm2_add_le"],
+      "novelty_evidence": "The frozen Euclidean vector triangle theorem has the identical conclusion after p19Add and p19VecNorm2 unfold.", "decision": "fail_exact_target_collision"
+    },
+    {
+      "task_id": "P19-T2", "paper_id": "P19", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The four-source weighted vector target is an exact finite realization of xi=alpha epsilon_c+beta epsilon_b+beta u_g+lambda epsilon_x in equation (3.8), with nonnegative weights and source budgets explicit.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Generic norm lemmas do not duplicate the paper's four named error sources and exact xi weighting interface.", "decision": "pass"
+    },
+    {
+      "task_id": "P19-T3", "paper_id": "P19", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "Equations (3.17), (3.20), and Remark 4 show the flexible envelope removes exactly the nonnegative preconditioner-reapplication term; equality and strictness criteria are valid signposted consequences.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen theorem defines and compares these right/flexible GMRES attainable-error envelopes with exact gap criteria.", "decision": "pass"
+    },
+    {
+      "task_id": "P20-T1", "paper_id": "P20", "tier": "T1", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The upper and attained-strict-lower coefficient conclusions are precisely the finite-vector consequence of scaling interval (3.4a), with nonempty vector, positive norm, and nonnegative lambda explicit.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Frozen infinity-norm coordinate and attainment lemmas are ingredients, but no theorem includes theta/lambda interval hypotheses and the joint open-closed scaled range.", "decision": "pass"
+    },
+    {
+      "task_id": "P20-T2", "paper_id": "P20", "tier": "T2", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "The comparison is the paragraph after (3.26): under theta>=1 and Gmin<=gmin, the accumulation-underflow term is bounded by the input-underflow term; all sign assumptions are explicit.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "Ordered-field facts are generic, but no frozen exact target defines and compares these two single-word narrow-range contributions.", "decision": "pass"
+    },
+    {
+      "task_id": "P20-T3", "paper_id": "P20", "tier": "T3", "source_faithful": true, "source_fidelity_decision": "pass",
+      "source_evidence": "Equations (4.32)-(4.33) show the narrow-range multiword envelope equals the range-free envelope plus two underflow terms; equality/strictness are valid explicitly signposted consequences under nonnegativity.",
+      "proof_excerpt_sufficient": true, "novelty": true, "exact_target_absent_from_mathlib": true, "exact_target_absent_from_numstability": true,
+      "novelty_decision": "pass_exact_target_novelty", "collision_with": [],
+      "novelty_evidence": "No frozen theorem packages the p-word narrow-range/range-free envelopes, exact underflow gap, and equality/strictness characterization.", "decision": "pass"
+    }
+  ],
+  "summary": {
+    "tasks_reviewed": 60,
+    "source_faithful": 60,
+    "source_unfaithful": 0,
+    "proof_excerpts_sufficient": 60,
+    "exact_target_novel": 47,
+    "exact_target_collisions": 13,
+    "passes": 47,
+    "rejections": 13,
+    "collision_task_ids": ["P06-T1", "P07-T1", "P08-T1", "P09-T1", "P10-T1", "P11-T1", "P12-T1", "P13-T1", "P14-T1", "P15-T1", "P17-T1", "P18-T1", "P19-T1"],
+    "mathlib_collision_task_ids": ["P10-T1", "P15-T1"],
+    "numstability_collision_task_ids": ["P06-T1", "P07-T1", "P08-T1", "P09-T1", "P10-T1", "P11-T1", "P12-T1", "P13-T1", "P14-T1", "P15-T1", "P17-T1", "P18-T1", "P19-T1"],
+    "overall_decision": "fail_exact_target_novelty",
+    "public_release": false,
+    "private_measurement_eligible_under_exact_target_novelty_override": true,
+    "blocking_reason": "The specification's section 9 exact-target novelty condition fails for 13 source-faithful tasks. These retained collisions prohibit public release unless the task surfaces are changed and independently re-reviewed."
+  }
+}

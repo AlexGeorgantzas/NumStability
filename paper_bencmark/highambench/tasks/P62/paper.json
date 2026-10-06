@@ -1,0 +1,63 @@
+{
+  "annotation": {
+    "method": "Read the complete 19-page source, selected the stated Method D right-residual variant, and compiled exact private N and L proofs before packaging.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner requested more paper-grounded T2 and T1 tasks."
+  },
+  "authors": [
+    "Jeremy J. Du Croz",
+    "Nicholas J. Higham"
+  ],
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P62-T1",
+    "P62-T2"
+  ],
+  "paper_id": "P62",
+  "paper_version": "published journal version; IMA Journal of Numerical Analysis 12(1), 1992, printed pages 1-19",
+  "publication": {
+    "doi": "10.1093/imanum/12.1.1",
+    "issue": "1",
+    "journal": "IMA Journal of Numerical Analysis",
+    "printed_pages": "1-19",
+    "volume": "12",
+    "year": 1992
+  },
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Retain the paper\u2019s Method 1 right-residual equation (2.1), distinct from the previously selected Method D T2 composition.",
+      "task_id": "P62-T1",
+      "theorem_name": "p62_t1_method1_inverse_right_residual"
+    },
+    "T2": {
+      "available": true,
+      "decision": "Use the Section 3.4 Method D right-residual variant with Method 1 triangular inverses.",
+      "task_id": "P62-T2",
+      "theorem_name": "p62_t2_methodD_right_residual"
+    },
+    "T3": {
+      "available": false,
+      "decision": "No T3 task selected in this T1/T2 expansion."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Specialize the explicitly stated right-residual analogue after (3.9) to the paper\u2019s Method 1 triangular inverses.",
+    "Expose the finite residual defects for both triangular inverses and the final rounded matrix product without changing the numerical result.",
+    "Keep all public definitions paper-scoped and omit the compiled private proofs from agent materials.",
+    "Retain the paper\u2019s Method 1 right-residual equation (2.1), distinct from the previously selected Method D T2 composition."
+  ],
+  "short_name": "Du Croz--Higham (1992)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1093/imanum/12.1.1",
+    "local_path": "papers_to_be_approved/P62-Du-Croz-Higham-1992-Matrix-Inversion.pdf",
+    "page_map": "Physical PDF pages 1-19 carry printed journal pages 1-19.",
+    "pdf_pages": 19,
+    "rights_note": "Private benchmark source copy downloaded from the author-hosted PDF; verify redistribution rights before public release.",
+    "sha256": "92d2d89b0221eacf43f18b6eb1fa9a66a67c8f9fa06a95d31fa939d8e1dca9b9"
+  },
+  "title": "Stability of Methods for Matrix Inversion"
+}

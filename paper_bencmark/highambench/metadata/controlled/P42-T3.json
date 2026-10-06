@@ -1,0 +1,27 @@
+{
+  "files": [
+    {
+      "bytes": 3017,
+      "path": "agent_prompt.md",
+      "sha256": "0f116039fb2ac519a722258f2b9b2d539f0e0c087d03ac476a91f0af61cd5e11"
+    },
+    {
+      "bytes": 3457,
+      "path": "shared/HighamBench/P42Definitions.lean",
+      "sha256": "9ae3107799fa6780ded844a3ee8eed9670ae1fb323a9dd0847059c58797a6dae"
+    },
+    {
+      "bytes": 341,
+      "path": "tasks/P42/T3/Target.lean",
+      "sha256": "521931a4ff9195d9a91ba1d58019113ad7e54954a9bbdf8a0a7dbf11a8f65865"
+    },
+    {
+      "bytes": 2784,
+      "path": "tasks/P42/T3/context.md",
+      "sha256": "44faf63e2d6d82e5bbba5a8a777446deaadeba9da45c5e5316967237cb2f3b69"
+    }
+  ],
+  "kind": "highambench-controlled-files",
+  "label": "P42-T3-controlled",
+  "schema_version": 1
+}

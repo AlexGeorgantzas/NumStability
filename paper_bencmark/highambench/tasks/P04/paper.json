@@ -1,0 +1,101 @@
+{
+  "annotation": {
+    "method": "Codex freshly reread the complete local paper for the missing-tier audit, surveyed every formal claim, excluded experiments and delegated textbook results, compared the candidates with the actual frozen NumStability source and Mathlib, and retained the earlier private neutral-proof finding that removed an overpackaged T3 candidate.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P04 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Pierre Blanchard",
+    "Nicholas J. Higham",
+    "Florent Lopez",
+    "Theo Mary",
+    "Srikara Pranesh"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P04-T1"
+  ],
+  "paper_id": "P04",
+  "paper_version": "published journal version; volume 42, issue 3, 2020, printed pages C124-C141",
+  "publication": {
+    "doi": "10.1137/19M1289546",
+    "issue": 3,
+    "journal": "SIAM Journal on Scientific Computing",
+    "printed_pages": "C124-C141",
+    "publication_date": "2020-05-27",
+    "volume": 42,
+    "year": 2020
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Theorem 3.1",
+      "reason": "It is a useful intermediate bound, but Theorem 3.2 strictly extends it by treating inputs not already in the low precision."
+    },
+    {
+      "candidate": "Corollary 4.1",
+      "reason": "It is explicitly a direct application of Theorem 3.1 and is less central than the selected input-conversion and LU-solve assemblies."
+    },
+    {
+      "candidate": "Lemma 4.2",
+      "reason": "Its two conclusions are delegated to Higham's textbook Theorems 9.3 and 8.5 rather than proved in this paper."
+    },
+    {
+      "candidate": "Theorem 4.3",
+      "reason": "An end-to-end formalization overlaps the frozen NumStability block-LU factorization infrastructure and would give L a material shortcut, so it cannot serve as T3."
+    },
+    {
+      "candidate": "Theorem 4.4",
+      "reason": "When Theorem 4.3's factorization bound and the two triangular-solve bounds are supplied as assumptions, the remaining nearby-system proof is only routine perturbation assembly. Deriving those bounds instead would overlap frozen NumStability block-LU and triangular-solve results, so the paper does not support a qualifying T3 replacement."
+    },
+    {
+      "candidate": "probabilistic analogue and asymptotic comparisons",
+      "reason": "The probabilistic statement is imported from another paper and the remaining comparisons use first-order or approximate language rather than exact finite claims."
+    },
+    {
+      "candidate": "performance tables and numerical experiments",
+      "reason": "They are empirical measurements rather than proof targets."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Derive Algorithm 3.1's full indexed factorization and equation (3.4) from recurrence (3.1), local model (3.2), and effective roundoff (3.3), retaining the distinct effective/internal gamma factors, q+b-1 right-to-left refinement, and zero-alpha same-precision specialization.",
+      "task_id": "P04-T1",
+      "theorem_name": "p04_t1_chained_rounding_factor"
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped after a fresh complete-paper reread and frozen-source comparison. Theorem 3.2 reuses the same one substantial product-accumulation theorem as T1; its input-conversion perturbation assembly is short and supplies no second substantial NumStability result. Theorems 4.3 and 4.4 can use several library results only by moving into the block-LU and triangular-solve arguments, but the latter solve results are delegated to textbook theorems rather than proved in this paper, so they do not give a source-faithful T2."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped after private re-audit: Theorem 4.4 is easy if its factorization and solve bounds are assumptions, while deriving those bounds end to end overlaps substantial frozen NumStability block-LU and triangular-solve results and would make L faster than N. No other proved result in the paper is both T2-level difficult and free of a useful NumStability counterpart."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use a finite claim made and proved in this paper.",
+    "Reject experiments, speed estimates, vague asymptotics, and claims whose proof is mainly delegated elsewhere.",
+    "Prefer exact displayed bounds and identities.",
+    "Keep the fixed Lean setting condition-neutral and paper-scoped.",
+    "Assign tiers only after verified frozen-library searches."
+  ],
+  "short_name": "Blanchard et al. (2020)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/19M1289546",
+    "local_path": "paper_bencmark/reference_papers/P04_MIXED PRECISION BLOCK FUSED MULTIPLY-ADD- ERRORANALYSIS AND APPLICATION TO GPU TENSOR CORES.pdf",
+    "page_map": "PDF page 1 is printed page C124; add 123 to a PDF page number for the numeric part of the printed page.",
+    "pdf_pages": 18,
+    "rights_note": "The local PDF was supplied for benchmark construction and states publication under the Creative Commons Attribution 4.0 license.",
+    "sha256": "7ad9ebb7eef9864c58e9a3760ee308be48060647286f8e16cdc740ed4be5b862"
+  },
+  "title": "Mixed Precision Block Fused Multiply-Add: Error Analysis and Application to GPU Tensor Cores"
+}

@@ -1,0 +1,92 @@
+{
+  "annotation": {
+    "method": "Codex read the complete 21-page local paper in order, surveyed every named theorem and its proof, and compared all candidates with the frozen Mathlib and NumStability baselines.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P21 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Nicholas J. Higham",
+    "Theo Mary"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [],
+  "paper_id": "P21",
+  "paper_version": "published journal version; SIAM Journal on Scientific Computing 41(5), 2019, printed pages A2815-A2835",
+  "publication": {
+    "doi": "10.1137/18M1226312",
+    "issue": 5,
+    "journal": "SIAM Journal on Scientific Computing",
+    "printed_pages": "A2815-A2835",
+    "publication_date": "2019-09-12",
+    "volume": 41,
+    "year": 2019
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Model 2.1 and the deterministic product bound in Lemma 2.2",
+      "reason": "Model 2.1 is an assumption, while Lemma 2.2 is recalled from an earlier source rather than proved in this paper."
+    },
+    {
+      "candidate": "Lemma 2.3 and Theorem 2.4, the probabilistic product bound",
+      "reason": "Mathlib already provides Hoeffding's lemma and Hoeffding's inequality for sums of independent bounded real random variables. The remaining logarithm, Taylor, and exponential steps do not supply a NumStability-specific advantage and are below the required T3 difficulty."
+    },
+    {
+      "candidate": "Theorems 3.1-3.4 on inner products and matrix products",
+      "reason": "NumStability has deterministic dot-product, matrix-vector, and matrix-matrix expansions, but not the paper's independent zero-mean product bound or its relaxed coefficient. Replacing that missing probabilistic result by an assumed local certificate would make the targets short union-bound wrappers rather than source-faithful theorem formalizations."
+    },
+    {
+      "candidate": "Theorems 3.5-3.7 on triangular solves, LU factorization, and linear-system solution",
+      "reason": "The frozen library has substantial deterministic triangular-solve and LU results, including a generic perturbation assembly, but none yields the paper's probabilistic local certificates or probability bounds. Supplying the conclusions of Theorems 3.5 and 3.6 as target assumptions would artificially reduce Theorem 3.7 to its final algebraic assembly and would not meet the task criteria."
+    },
+    {
+      "candidate": "Theorem 3.8 on Cholesky factorization",
+      "reason": "The frozen Cholesky development uses the classical deterministic gamma coefficient. It cannot establish the smaller probabilistic coefficient without rebuilding the paper's missing local probabilistic analysis, so no qualifying L-over-N speedup is available."
+    },
+    {
+      "candidate": "Section 3.5 probability assessment and Sections 4.1-4.6 numerical results",
+      "reason": "The probability discussion is elementary manipulation of the displayed bounds, while the reported error behavior and model failures are numerical experiments or explanatory observations rather than theorem-level finite claims proved in the paper."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No paper-proved target can use exactly one substantial NumStability result to obtain a material speedup: the central probabilistic product theorem is available through Mathlib's Hoeffding theory, while the algorithmic results need probabilistic certificates absent from NumStability."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. The later LU and linear-system theorems mention several algorithmic kernels, but at least two substantial frozen results cannot be used with the paper's relaxed probabilistic coefficient. Turning predecessor conclusions into assumptions would manufacture an easier proof kernel rather than formalize the stated result."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. Theorem 2.4 has no matching NumStability theorem but is not at least as difficult as a qualifying T2 and its main concentration input is already in Mathlib. The harder downstream theorems overlap with substantial NumStability algorithmic developments, so they do not satisfy the no-library-speedup requirement."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only mathematical conclusions stated and proved in this paper.",
+    "Do not turn numerical experiments or explanatory observations into universal theorem targets.",
+    "Do not replace the probabilistic gamma-tilde coefficient by the deterministic gamma coefficient available in NumStability.",
+    "Do not expose predecessor theorem conclusions as new assumptions merely to create a library-assisted proof kernel.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source and Mathlib."
+  ],
+  "short_name": "Higham & Mary (2019)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/18M1226312",
+    "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "local_path": "paper_bencmark/reference_papers/P21- New Approach to Probabilistic Rounding Error Analysis.pdf",
+    "page_map": "Physical PDF pages 1-21 are printed pages A2815-A2835 respectively.",
+    "pdf_pages": 21,
+    "rights_note": "The article is published under CC BY 4.0. Preserve attribution when reusing source excerpts.",
+    "sha256": "2a49a146176911bb1eba042c70f100a3945f6437975fa7cc7d3bc6183b6bb9e2"
+  },
+  "title": "A New Approach to Probabilistic Rounding Error Analysis"
+}

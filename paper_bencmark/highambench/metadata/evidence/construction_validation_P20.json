@@ -1,0 +1,831 @@
+{
+  "generated_at_utc": "2026-08-06T14:19:11.089507+00:00",
+  "isolation": {
+    "condition_l_numstability_mounts_configured": true,
+    "condition_n_numstability_mounts_configured": false,
+    "condition_n_preflight_after_complete_controlled_staging": true,
+    "controlled_task_staged_under": "task/",
+    "fresh_workspace_per_result": true,
+    "private_gold_staged_as": "Submission.lean",
+    "private_helper_oleans_reused": false,
+    "validator_hidden_rebuild": true
+  },
+  "kind": "highambench-private-construction-check",
+  "pass": true,
+  "results": [
+    {
+      "condition": "N",
+      "condition_n_library_arguments_omitted": true,
+      "gold_source_sha256": "55a62ae67be711d0f2e24366f8a7fa7cdaff348774fae0bcca3868d012d35e93",
+      "helpers": [
+        {
+          "build": {
+            "exit_code": 0,
+            "olean_created": true,
+            "seconds": 9.095646,
+            "system_error": null,
+            "timed_out": false
+          },
+          "module": "P20Support",
+          "path": "P20Support.lean",
+          "source_sha256": "7b0fa324826c697c5d5e36d97069245abb6134209834d8c39c57eba8e485392b"
+        }
+      ],
+      "manifest_sha256": "c6326748d48d9b362d6b2c22e6761eac92ab9afafacb9ce49cb520fb18211bdf",
+      "n_preflight": {
+        "complete": true,
+        "controlled_files_verified_after_staging": {
+          "changed": [],
+          "expected": 5,
+          "missing": [],
+          "ok": true,
+          "verified": 5
+        },
+        "controlled_manifest_sha256": "c6326748d48d9b362d6b2c22e6761eac92ab9afafacb9ce49cb520fb18211bdf",
+        "filesystem_leaks": [],
+        "filesystem_scan": {
+          "content_limit_bytes": 4194304,
+          "directory_count": 6,
+          "markers": [
+            "NumStability",
+            "numStability",
+            "lean-fp-analysis"
+          ],
+          "regular_file_count": 5,
+          "root": ".",
+          "symlink_count": 0
+        },
+        "import_probe": {
+          "attempted": true,
+          "command": [
+            "/opt/anaconda3/bin/python",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/highambench/tools/lean_isolated.py",
+            "probe",
+            "--condition",
+            "N",
+            "--workspace",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/hidden/highambench-construction-P20-T1-N-uo5g7weg",
+            "--source",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/hidden/highambench-construction-P20-T1-N-uo5g7weg/HighamBenchNoLibraryProbe_yb614o7k.lean",
+            "--toolchain-root",
+            "/u501/m2fetrat/.elan/toolchains/leanprover--lean4---v4.29.0-rc3",
+            "--packages-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/packages_runtime",
+            "--shared-olean-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/shared_olean/P20",
+            "--shared-root-relative",
+            "task/shared",
+            "--bwrap",
+            "/usr/bin/bwrap"
+          ],
+          "conclusion": "compiler reported that the forbidden module is absent",
+          "exit_code": 1,
+          "importable": false,
+          "output": "/workspace/HighamBenchNoLibraryProbe_yb614o7k.lean:1:0: error: unknown module prefix 'NumStability'\n\nNo directory 'NumStability' or file 'NumStability.olean' in the search path entries:\n/shared-olean\n/workspace/task/shared\n/packages/mathlib/.lake/build/lib/lean\n/packages/LeanSearchClient/.lake/build/lib/lean\n/packages/Qq/.lake/build/lib/lean\n/packages/aesop/.lake/build/lib/lean\n/packages/batteries/.lake/build/lib/lean\n/packages/importGraph/.lake/build/lib/lean\n/packages/plausible/.lake/build/lib/lean\n/packages/proofwidgets/.lake/build/lib/lean\n/lean/lib/lean\n/workspace\n/lean/lib/lean\n",
+          "output_truncated": false,
+          "reliable": true,
+          "system_error": null,
+          "timed_out": false
+        },
+        "ok": true
+      },
+      "paper_id": "P20",
+      "pass": true,
+      "reasons": [],
+      "target_theorem": "HighamBench.p20_t1_scaled_row_range",
+      "task_id": "P20-T1",
+      "tier": "T1",
+      "validation": {
+        "compile_exit_code": 0,
+        "compile_timed_out": false,
+        "controlled_after_audit_ok": true,
+        "controlled_after_compile_ok": true,
+        "controlled_after_expected_compile_ok": true,
+        "controlled_before_ok": true,
+        "controlled_hidden_ok": true,
+        "dependency_audit": {
+          "complete": true,
+          "exit_code": 0,
+          "forbidden_dependency_count": 0,
+          "format_version": 2,
+          "library_declarations": [],
+          "library_use": false,
+          "local_modules": [
+            "HighamBenchChecked_6a7dc21d4af04fcd925c89d4c3021951",
+            "P20Support",
+            "Submission"
+          ],
+          "missing_helper_modules": [],
+          "semantic_type_check": {
+            "candidate": "HighamBench.p20_t1_scaled_row_range",
+            "equal": true,
+            "expected": "HighamBench.highamBenchExpected_6a7dc21d4af04fcd925c89d4c3021951"
+          }
+        },
+        "failure_code": null,
+        "note": "accepted by hidden Lean validation",
+        "pass": true,
+        "semantic_statement_equal": true,
+        "statement_unchanged": true,
+        "static_finding_count": 0
+      }
+    },
+    {
+      "condition": "L",
+      "condition_n_library_arguments_omitted": false,
+      "gold_source_sha256": "b63da3adeb88bb62ea0728a30ca69cffd5966c794888c9b0cc0f74375fed7064",
+      "helpers": [],
+      "manifest_sha256": "c6326748d48d9b362d6b2c22e6761eac92ab9afafacb9ce49cb520fb18211bdf",
+      "n_preflight": null,
+      "paper_id": "P20",
+      "pass": true,
+      "reasons": [],
+      "target_theorem": "HighamBench.p20_t1_scaled_row_range",
+      "task_id": "P20-T1",
+      "tier": "T1",
+      "validation": {
+        "compile_exit_code": 0,
+        "compile_timed_out": false,
+        "controlled_after_audit_ok": true,
+        "controlled_after_compile_ok": true,
+        "controlled_after_expected_compile_ok": true,
+        "controlled_before_ok": true,
+        "controlled_hidden_ok": true,
+        "dependency_audit": {
+          "complete": true,
+          "exit_code": 0,
+          "forbidden_dependency_count": 0,
+          "format_version": 2,
+          "library_declarations": [
+            {
+              "distance": 1,
+              "module": "NumStability.Analysis.MatrixAlgebra",
+              "name": "NumStability.abs_le_infNormVec"
+            },
+            {
+              "distance": 1,
+              "module": "NumStability.Analysis.MatrixAlgebra",
+              "name": "NumStability.infNormVec_exists_abs_eq"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Analysis.MatrixAlgebra",
+              "name": "NumStability.infNormVec"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Analysis.MatrixAlgebra",
+              "name": "NumStability.infNormVec_le_of_abs_le"
+            }
+          ],
+          "library_use": true,
+          "local_modules": [
+            "HighamBenchChecked_0df3d2a7e73f41bc9155c317c3ef6ab9",
+            "Submission"
+          ],
+          "missing_helper_modules": [],
+          "semantic_type_check": {
+            "candidate": "HighamBench.p20_t1_scaled_row_range",
+            "equal": true,
+            "expected": "HighamBench.highamBenchExpected_0df3d2a7e73f41bc9155c317c3ef6ab9"
+          }
+        },
+        "failure_code": null,
+        "note": "accepted by hidden Lean validation",
+        "pass": true,
+        "semantic_statement_equal": true,
+        "statement_unchanged": true,
+        "static_finding_count": 0
+      }
+    },
+    {
+      "condition": "N",
+      "condition_n_library_arguments_omitted": true,
+      "gold_source_sha256": "597240d931ede87b191ff6595ece93612044493b8cc29206f0f087e660643bcd",
+      "helpers": [
+        {
+          "build": {
+            "exit_code": 0,
+            "olean_created": true,
+            "seconds": 7.703518,
+            "system_error": null,
+            "timed_out": false
+          },
+          "module": "P20Support",
+          "path": "P20Support.lean",
+          "source_sha256": "7b0fa324826c697c5d5e36d97069245abb6134209834d8c39c57eba8e485392b"
+        }
+      ],
+      "manifest_sha256": "cb1bd02d88582eaf45cba4e982c5b60fb89d4df0ccf9f65c7bbdc66975abc5b3",
+      "n_preflight": {
+        "complete": true,
+        "controlled_files_verified_after_staging": {
+          "changed": [],
+          "expected": 5,
+          "missing": [],
+          "ok": true,
+          "verified": 5
+        },
+        "controlled_manifest_sha256": "cb1bd02d88582eaf45cba4e982c5b60fb89d4df0ccf9f65c7bbdc66975abc5b3",
+        "filesystem_leaks": [],
+        "filesystem_scan": {
+          "content_limit_bytes": 4194304,
+          "directory_count": 6,
+          "markers": [
+            "NumStability",
+            "numStability",
+            "lean-fp-analysis"
+          ],
+          "regular_file_count": 5,
+          "root": ".",
+          "symlink_count": 0
+        },
+        "import_probe": {
+          "attempted": true,
+          "command": [
+            "/opt/anaconda3/bin/python",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/highambench/tools/lean_isolated.py",
+            "probe",
+            "--condition",
+            "N",
+            "--workspace",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/hidden/highambench-construction-P20-T2-N-oaj2lq_l",
+            "--source",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/hidden/highambench-construction-P20-T2-N-oaj2lq_l/HighamBenchNoLibraryProbe_lrb4mce9.lean",
+            "--toolchain-root",
+            "/u501/m2fetrat/.elan/toolchains/leanprover--lean4---v4.29.0-rc3",
+            "--packages-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/packages_runtime",
+            "--shared-olean-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/shared_olean/P20",
+            "--shared-root-relative",
+            "task/shared",
+            "--bwrap",
+            "/usr/bin/bwrap"
+          ],
+          "conclusion": "compiler reported that the forbidden module is absent",
+          "exit_code": 1,
+          "importable": false,
+          "output": "/workspace/HighamBenchNoLibraryProbe_lrb4mce9.lean:1:0: error: unknown module prefix 'NumStability'\n\nNo directory 'NumStability' or file 'NumStability.olean' in the search path entries:\n/shared-olean\n/workspace/task/shared\n/packages/mathlib/.lake/build/lib/lean\n/packages/LeanSearchClient/.lake/build/lib/lean\n/packages/Qq/.lake/build/lib/lean\n/packages/aesop/.lake/build/lib/lean\n/packages/batteries/.lake/build/lib/lean\n/packages/importGraph/.lake/build/lib/lean\n/packages/plausible/.lake/build/lib/lean\n/packages/proofwidgets/.lake/build/lib/lean\n/lean/lib/lean\n/workspace\n/lean/lib/lean\n",
+          "output_truncated": false,
+          "reliable": true,
+          "system_error": null,
+          "timed_out": false
+        },
+        "ok": true
+      },
+      "paper_id": "P20",
+      "pass": true,
+      "reasons": [],
+      "target_theorem": "HighamBench.p20_t2_accumulation_underflow_le_input",
+      "task_id": "P20-T2",
+      "tier": "T2",
+      "validation": {
+        "compile_exit_code": 0,
+        "compile_timed_out": false,
+        "controlled_after_audit_ok": true,
+        "controlled_after_compile_ok": true,
+        "controlled_after_expected_compile_ok": true,
+        "controlled_before_ok": true,
+        "controlled_hidden_ok": true,
+        "dependency_audit": {
+          "complete": true,
+          "exit_code": 0,
+          "forbidden_dependency_count": 0,
+          "format_version": 2,
+          "library_declarations": [],
+          "library_use": false,
+          "local_modules": [
+            "HighamBenchChecked_1684c9ab756246ab9b3b111f963aa8b9",
+            "P20Support",
+            "Submission"
+          ],
+          "missing_helper_modules": [],
+          "semantic_type_check": {
+            "candidate": "HighamBench.p20_t2_accumulation_underflow_le_input",
+            "equal": true,
+            "expected": "HighamBench.highamBenchExpected_1684c9ab756246ab9b3b111f963aa8b9"
+          }
+        },
+        "failure_code": null,
+        "note": "accepted by hidden Lean validation",
+        "pass": true,
+        "semantic_statement_equal": true,
+        "statement_unchanged": true,
+        "static_finding_count": 0
+      }
+    },
+    {
+      "condition": "L",
+      "condition_n_library_arguments_omitted": false,
+      "gold_source_sha256": "3e1bd29470007e8ccfc6170242a69d3bdeb953b684639ba061353fcb5d4a8a4f",
+      "helpers": [],
+      "manifest_sha256": "cb1bd02d88582eaf45cba4e982c5b60fb89d4df0ccf9f65c7bbdc66975abc5b3",
+      "n_preflight": null,
+      "paper_id": "P20",
+      "pass": true,
+      "reasons": [],
+      "target_theorem": "HighamBench.p20_t2_accumulation_underflow_le_input",
+      "task_id": "P20-T2",
+      "tier": "T2",
+      "validation": {
+        "compile_exit_code": 0,
+        "compile_timed_out": false,
+        "controlled_after_audit_ok": true,
+        "controlled_after_compile_ok": true,
+        "controlled_after_expected_compile_ok": true,
+        "controlled_before_ok": true,
+        "controlled_hidden_ok": true,
+        "dependency_audit": {
+          "complete": true,
+          "exit_code": 0,
+          "forbidden_dependency_count": 0,
+          "format_version": 2,
+          "library_declarations": [
+            {
+              "distance": 1,
+              "module": "NumStability.Analysis.MatrixAlgebra",
+              "name": "NumStability.infNormRect_nonneg"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Analysis.MatrixAlgebra",
+              "name": "NumStability.infNormRect"
+            }
+          ],
+          "library_use": true,
+          "local_modules": [
+            "HighamBenchChecked_a6d9e963fd08456aba8aa3c0c8ed8c47",
+            "Submission"
+          ],
+          "missing_helper_modules": [],
+          "semantic_type_check": {
+            "candidate": "HighamBench.p20_t2_accumulation_underflow_le_input",
+            "equal": true,
+            "expected": "HighamBench.highamBenchExpected_a6d9e963fd08456aba8aa3c0c8ed8c47"
+          }
+        },
+        "failure_code": null,
+        "note": "accepted by hidden Lean validation",
+        "pass": true,
+        "semantic_statement_equal": true,
+        "statement_unchanged": true,
+        "static_finding_count": 0
+      }
+    },
+    {
+      "condition": "N",
+      "condition_n_library_arguments_omitted": true,
+      "gold_source_sha256": "c26540432c82e0f232c7739c86262a3243432d31d8adc99d13478ea956517f73",
+      "helpers": [
+        {
+          "build": {
+            "exit_code": 0,
+            "olean_created": true,
+            "seconds": 9.399013,
+            "system_error": null,
+            "timed_out": false
+          },
+          "module": "P20Support",
+          "path": "P20Support.lean",
+          "source_sha256": "7b0fa324826c697c5d5e36d97069245abb6134209834d8c39c57eba8e485392b"
+        }
+      ],
+      "manifest_sha256": "c394585aeb12d8614f029d152fb20cf5f6bfcbd14fcdf353b3aaabb11c9ba2df",
+      "n_preflight": {
+        "complete": true,
+        "controlled_files_verified_after_staging": {
+          "changed": [],
+          "expected": 5,
+          "missing": [],
+          "ok": true,
+          "verified": 5
+        },
+        "controlled_manifest_sha256": "c394585aeb12d8614f029d152fb20cf5f6bfcbd14fcdf353b3aaabb11c9ba2df",
+        "filesystem_leaks": [],
+        "filesystem_scan": {
+          "content_limit_bytes": 4194304,
+          "directory_count": 6,
+          "markers": [
+            "NumStability",
+            "numStability",
+            "lean-fp-analysis"
+          ],
+          "regular_file_count": 5,
+          "root": ".",
+          "symlink_count": 0
+        },
+        "import_probe": {
+          "attempted": true,
+          "command": [
+            "/opt/anaconda3/bin/python",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/highambench/tools/lean_isolated.py",
+            "probe",
+            "--condition",
+            "N",
+            "--workspace",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/hidden/highambench-construction-P20-T3-N-4_8xpw35",
+            "--source",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/hidden/highambench-construction-P20-T3-N-4_8xpw35/HighamBenchNoLibraryProbe_z7bhsos1.lean",
+            "--toolchain-root",
+            "/u501/m2fetrat/.elan/toolchains/leanprover--lean4---v4.29.0-rc3",
+            "--packages-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/packages_runtime",
+            "--shared-olean-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/shared_olean/P20",
+            "--shared-root-relative",
+            "task/shared",
+            "--bwrap",
+            "/usr/bin/bwrap"
+          ],
+          "conclusion": "compiler reported that the forbidden module is absent",
+          "exit_code": 1,
+          "importable": false,
+          "output": "/workspace/HighamBenchNoLibraryProbe_z7bhsos1.lean:1:0: error: unknown module prefix 'NumStability'\n\nNo directory 'NumStability' or file 'NumStability.olean' in the search path entries:\n/shared-olean\n/workspace/task/shared\n/packages/mathlib/.lake/build/lib/lean\n/packages/LeanSearchClient/.lake/build/lib/lean\n/packages/Qq/.lake/build/lib/lean\n/packages/aesop/.lake/build/lib/lean\n/packages/batteries/.lake/build/lib/lean\n/packages/importGraph/.lake/build/lib/lean\n/packages/plausible/.lake/build/lib/lean\n/packages/proofwidgets/.lake/build/lib/lean\n/lean/lib/lean\n/workspace\n/lean/lib/lean\n",
+          "output_truncated": false,
+          "reliable": true,
+          "system_error": null,
+          "timed_out": false
+        },
+        "ok": true
+      },
+      "paper_id": "P20",
+      "pass": true,
+      "reasons": [],
+      "target_theorem": "HighamBench.p20_t3_multiword_narrow_range_gap",
+      "task_id": "P20-T3",
+      "tier": "T3",
+      "validation": {
+        "compile_exit_code": 0,
+        "compile_timed_out": false,
+        "controlled_after_audit_ok": true,
+        "controlled_after_compile_ok": true,
+        "controlled_after_expected_compile_ok": true,
+        "controlled_before_ok": true,
+        "controlled_hidden_ok": true,
+        "dependency_audit": {
+          "complete": true,
+          "exit_code": 0,
+          "forbidden_dependency_count": 0,
+          "format_version": 2,
+          "library_declarations": [],
+          "library_use": false,
+          "local_modules": [
+            "HighamBenchChecked_f9a87c64aa2d4b50b1df103107f19930",
+            "P20Support",
+            "Submission"
+          ],
+          "missing_helper_modules": [],
+          "semantic_type_check": {
+            "candidate": "HighamBench.p20_t3_multiword_narrow_range_gap",
+            "equal": true,
+            "expected": "HighamBench.highamBenchExpected_f9a87c64aa2d4b50b1df103107f19930"
+          }
+        },
+        "failure_code": null,
+        "note": "accepted by hidden Lean validation",
+        "pass": true,
+        "semantic_statement_equal": true,
+        "statement_unchanged": true,
+        "static_finding_count": 0
+      }
+    },
+    {
+      "condition": "L",
+      "condition_n_library_arguments_omitted": false,
+      "gold_source_sha256": "e85fcca5b1bc848fcd76a9cc301e887757f79825db38b78c064d5a8c451adb7a",
+      "helpers": [],
+      "manifest_sha256": "c394585aeb12d8614f029d152fb20cf5f6bfcbd14fcdf353b3aaabb11c9ba2df",
+      "n_preflight": null,
+      "paper_id": "P20",
+      "pass": true,
+      "reasons": [],
+      "target_theorem": "HighamBench.p20_t3_multiword_narrow_range_gap",
+      "task_id": "P20-T3",
+      "tier": "T3",
+      "validation": {
+        "compile_exit_code": 0,
+        "compile_timed_out": false,
+        "controlled_after_audit_ok": true,
+        "controlled_after_compile_ok": true,
+        "controlled_after_expected_compile_ok": true,
+        "controlled_before_ok": true,
+        "controlled_hidden_ok": true,
+        "dependency_audit": {
+          "complete": true,
+          "exit_code": 0,
+          "forbidden_dependency_count": 0,
+          "format_version": 2,
+          "library_declarations": [
+            {
+              "distance": 1,
+              "module": "NumStability.Analysis.MatrixAlgebra",
+              "name": "NumStability.infNormRect_nonneg"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Analysis.MatrixAlgebra",
+              "name": "NumStability.infNormRect"
+            }
+          ],
+          "library_use": true,
+          "local_modules": [
+            "HighamBenchChecked_e45483fc6e6442d196ba8a4867f14da5",
+            "Submission"
+          ],
+          "missing_helper_modules": [],
+          "semantic_type_check": {
+            "candidate": "HighamBench.p20_t3_multiword_narrow_range_gap",
+            "equal": true,
+            "expected": "HighamBench.highamBenchExpected_e45483fc6e6442d196ba8a4867f14da5"
+          }
+        },
+        "failure_code": null,
+        "note": "accepted by hidden Lean validation",
+        "pass": true,
+        "semantic_statement_equal": true,
+        "statement_unchanged": true,
+        "static_finding_count": 0
+      }
+    }
+  ],
+  "schema_version": 1,
+  "scope": {
+    "central_manifest": "metadata/manifest.json",
+    "central_manifest_sha256": "5da02302cd0ef005b883c3510673cba396dd2f61de55cd8ca84e80d946a6f2ca",
+    "complete_manifest_scope": false,
+    "manifest_available_task_ids": [
+      "P01-T1",
+      "P01-T2",
+      "P01-T3",
+      "P02-T1",
+      "P02-T2",
+      "P02-T3",
+      "P03-T1",
+      "P03-T2",
+      "P03-T3",
+      "P04-T1",
+      "P04-T2",
+      "P04-T3",
+      "P05-T1",
+      "P05-T2",
+      "P05-T3",
+      "P06-T1",
+      "P06-T2",
+      "P06-T3",
+      "P07-T1",
+      "P07-T2",
+      "P07-T3",
+      "P08-T1",
+      "P08-T2",
+      "P08-T3",
+      "P09-T1",
+      "P09-T2",
+      "P09-T3",
+      "P10-T1",
+      "P10-T2",
+      "P10-T3",
+      "P11-T1",
+      "P11-T2",
+      "P11-T3",
+      "P12-T1",
+      "P12-T2",
+      "P12-T3",
+      "P13-T1",
+      "P13-T2",
+      "P13-T3",
+      "P14-T1",
+      "P14-T2",
+      "P14-T3",
+      "P15-T1",
+      "P15-T2",
+      "P15-T3",
+      "P16-T1",
+      "P16-T2",
+      "P16-T3",
+      "P17-T1",
+      "P17-T2",
+      "P17-T3",
+      "P18-T1",
+      "P18-T2",
+      "P18-T3",
+      "P19-T1",
+      "P19-T2",
+      "P19-T3",
+      "P20-T1",
+      "P20-T2",
+      "P20-T3"
+    ],
+    "manifest_paper_ids": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10",
+      "P11",
+      "P12",
+      "P13",
+      "P14",
+      "P15",
+      "P16",
+      "P17",
+      "P18",
+      "P19",
+      "P20"
+    ],
+    "selected_paper_ids": [
+      "P20"
+    ],
+    "selected_task_ids": [
+      "P20-T1",
+      "P20-T2",
+      "P20-T3"
+    ]
+  },
+  "summary": {
+    "checked": 6,
+    "condition_l_passed": 3,
+    "condition_n_passed": 3,
+    "expected": 6,
+    "passed": 6
+  },
+  "verification_basis": {
+    "executables": {
+      "bubblewrap": {
+        "path": "/usr/bin/bwrap",
+        "sha256": "d78807229d616606e339c5988392b9e0ab4a6a6998fa51e4590837f426a12fca"
+      },
+      "python": {
+        "path": "/opt/anaconda3/bin/python3.11",
+        "sha256": "198e5597f0c79a8b5f573f4d0c1a60e17abbd93f93f2899e9172a9d7be6a6d04",
+        "version": "3.11.4"
+      }
+    },
+    "numstability_compiled": {
+      "exact_tree": true,
+      "file_count": 120,
+      "label": "numstability-45813a95-compiled",
+      "mount_root": "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/numstability_olean",
+      "only_numstability_namespace": true,
+      "path": "metadata/library_olean.json",
+      "sha256": "bbea1e90bc11605bd3c14b28dc39bf49b7bcb64ab5cf2306841f65b803a6ae2a",
+      "total_bytes": 62620948,
+      "verified": 120
+    },
+    "numstability_source": {
+      "exact_tree": true,
+      "file_count": 977,
+      "label": "numstability-45813a95-source",
+      "path": "metadata/library_source.json",
+      "sha256": "8b52061f0fafc283acd2363267ebbee2f9c6eb97360c596723b95b27515c7828",
+      "total_bytes": 69597467,
+      "verified": 977
+    },
+    "packages_runtime": {
+      "base_olean_file_count": 8039,
+      "compiled_support_file_count": 24099,
+      "condition_n_absence_scan": {
+        "bytes_scanned": 5480830882,
+        "complete": true,
+        "files_scanned": 39811,
+        "markers": [
+          "NumStability",
+          "numStability",
+          "lean-fp-analysis"
+        ],
+        "matches": [],
+        "ok": true
+      },
+      "exact_tree": true,
+      "file_count": 39811,
+      "label": "packages-runtime-e8ea1afc",
+      "mathlib_source_file_count": 7673,
+      "mount_root": "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/packages_runtime",
+      "only_mathlib_source_and_lean_compiled_artifacts": true,
+      "path": "metadata/packages_runtime.json",
+      "sha256": "a2ee0563bc731aa3dba22ed7af0e9bd1322c8c06b51cd9d01bd573282d9c8c31",
+      "total_bytes": 5480830882,
+      "verified": 39811
+    },
+    "shared_olean": {
+      "bundles": {
+        "P01": {
+          "HighamBench/Core.olean": "f5a07f5bd1021c7565b5863278abe123a8796eeb482978ebade11579893d740b",
+          "HighamBench/P01Definitions.olean": "3d7c8e8630d10c51aeb13ba8b7e132013d3002f38dd9aa51bc69beb2ac81b887"
+        },
+        "P02": {
+          "HighamBench/Core.olean": "f5a07f5bd1021c7565b5863278abe123a8796eeb482978ebade11579893d740b",
+          "HighamBench/P02Definitions.olean": "14c6ea7fa9187a1f9b52cd0562239fb723aa2ad2a7ee269ee764800ed84524b8"
+        },
+        "P03": {
+          "HighamBench/Core.olean": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1",
+          "HighamBench/P03Definitions.olean": "bb86b0cdccc9c5f21f8b49f1b8c5c539040201c9746c7f0f86e5a5afc5340aea"
+        },
+        "P04": {
+          "HighamBench/Core.olean": "f5a07f5bd1021c7565b5863278abe123a8796eeb482978ebade11579893d740b",
+          "HighamBench/P04Definitions.olean": "1af88bdb44b34f638fc30def61b95ef2aeb126b292d4b4226ea9440296343bcc"
+        },
+        "P05": {
+          "HighamBench/Core.olean": "f5a07f5bd1021c7565b5863278abe123a8796eeb482978ebade11579893d740b",
+          "HighamBench/P05Definitions.olean": "3513f86b56ce8e445df12470f371fd34f34fb0c02e48473273def1f3bdd7e64d"
+        },
+        "P06": {
+          "HighamBench/Core.olean": "f5a07f5bd1021c7565b5863278abe123a8796eeb482978ebade11579893d740b",
+          "HighamBench/P06Definitions.olean": "e2a8d931e905db04793a2a4ffd92e2b31a79a088d9ba9b0349fa118e139581ab"
+        },
+        "P07": {
+          "HighamBench/Core.olean": "f5a07f5bd1021c7565b5863278abe123a8796eeb482978ebade11579893d740b",
+          "HighamBench/P07Definitions.olean": "3811b36eccddae23ce9553466d85b4193271d926dc4e00bf5a0a7c1df944fd11"
+        },
+        "P08": {
+          "HighamBench/Core.olean": "f5a07f5bd1021c7565b5863278abe123a8796eeb482978ebade11579893d740b",
+          "HighamBench/P08Definitions.olean": "c385c1967070fbe1c0220e809069631ee3dbb7769a4908a5b515795d255c6421"
+        },
+        "P09": {
+          "HighamBench/Core.olean": "f5a07f5bd1021c7565b5863278abe123a8796eeb482978ebade11579893d740b",
+          "HighamBench/P09Definitions.olean": "ece9140516dfb9433218391eaf9d5d6a576bd6402d31c4b07a94af603e2a47bc"
+        },
+        "P10": {
+          "HighamBench/Core.olean": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1",
+          "HighamBench/P10Definitions.olean": "22d5ed0145eb1674bacf1db7bac5b07c005b5729021221ea244f3cef2718d11d"
+        },
+        "P11": {
+          "HighamBench/Core.olean": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1",
+          "HighamBench/P11Definitions.olean": "afc97a2af3aaf86f0550f6e59c5e4369fd9f1725cb09f958f11bfbd393f36b6d"
+        },
+        "P12": {
+          "HighamBench/Core.olean": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1",
+          "HighamBench/P12Definitions.olean": "7d5fc2d8e3688b415056fbf179a58545ef1c76f1b4835dc3fa076758bb5966a0"
+        },
+        "P13": {
+          "HighamBench/Core.olean": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1",
+          "HighamBench/P13Definitions.olean": "3b83e8d078b287f4ffbc43de2e6213dae39e384e31997f86b6ed442d0680756e"
+        },
+        "P14": {
+          "HighamBench/Core.olean": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1",
+          "HighamBench/P14Definitions.olean": "b8fd085be252b34d0adf7e993d82d7c2939cc79a66be72bc86b77746b85c67f5"
+        },
+        "P15": {
+          "HighamBench/Core.olean": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1",
+          "HighamBench/P15Definitions.olean": "c864037d50faafacbc73d8484abedc5e11ac79fe56a5d967b7773f1d10e6243a"
+        },
+        "P16": {
+          "HighamBench/Core.olean": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1",
+          "HighamBench/P16Definitions.olean": "935dec65ecca53ed91e27c94cc77614b5877e33920d4054ae7205a891774a2c5"
+        },
+        "P17": {
+          "HighamBench/Core.olean": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1",
+          "HighamBench/P17Definitions.olean": "6a48be1a4f075ba24d0bb41544a82ab1548823b3532baada85ed9f81062ac6f8"
+        },
+        "P18": {
+          "HighamBench/Core.olean": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1",
+          "HighamBench/P18Definitions.olean": "3d87e945e5834658c97c1e91c4c0205b638fc748550a122ee69611b01fe3bc24"
+        },
+        "P19": {
+          "HighamBench/Core.olean": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1",
+          "HighamBench/P19Definitions.olean": "27f1dd635cd505b7e593867e49f2bbeff29a10ca1fad1cb00ba1dd2e33260a9f"
+        },
+        "P20": {
+          "HighamBench/Core.olean": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1",
+          "HighamBench/P20Definitions.olean": "fb5b88e2ef4b899d4ab972eccf4e607a79786dada948916f7958d1b71632d82e"
+        }
+      },
+      "condition_n_absence_scan": {
+        "bytes_scanned": 2424936,
+        "complete": true,
+        "files_scanned": 40,
+        "markers": [
+          "NumStability",
+          "numStability",
+          "lean-fp-analysis"
+        ],
+        "matches": [
+          {
+            "marker": "NumStability",
+            "path": "P17/HighamBench/P17Definitions.olean"
+          },
+          {
+            "marker": "numStability",
+            "path": "P17/HighamBench/P17Definitions.olean"
+          }
+        ],
+        "ok": false
+      },
+      "exact_file_count": 40
+    },
+    "tools": {
+      "tools/check_construction.py": "83e7860cba3b192982bd8336f889b1f371981dfcad8228d9afdf45664deda6e9",
+      "tools/common.py": "5b5aacb4957cb3f946027637fd38c6b65e01907c00d8f5a6567bf470e6241617",
+      "tools/dependency_audit.lean": "0f19d8c9e1a2e6c17f22f0ab38425d0351e4d6cf65c0b03165e06ecb9d718be7",
+      "tools/hashes.py": "0c24b4086e38a44491a61c045b1751ffb08dedc1e32370f4ab96c19f9f2d6b61",
+      "tools/lean_isolated.py": "aae24febc4bf42802919c027bf6edb1c409903376ae0c37d9d0294d855d895ca",
+      "tools/preflight.py": "0c192828297710a67fa131403f9359a94f78767ff081af55010cf72b86d1793d",
+      "tools/validator.py": "2842f43cab220363ba3b6bb66004e3023d15c3eba5a8a6ddbb048aa2507808cb"
+    }
+  }
+}

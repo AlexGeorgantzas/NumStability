@@ -1,0 +1,88 @@
+{
+  "annotation": {
+    "method": "Codex extracted and read all 23 pages in physical order, covering Sections 1-6, Theorems 2.1-2.2, Corollaries 2.3-2.4, Lemma 3.1, Algorithms 1-5, every supplied proof and exact operation identity, the numerical example, conclusions, and all 41 references; separated internally proved claims from imported rank-factorization, SVD, compactness, and earlier tensor-rank facts; audited Mathlib and the exact frozen 44-object NumStability surface; and compiled exact private N/L proofs of the strongest no-shortcut candidate before skipping all tiers.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P60 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "I. V. Oseledets"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [],
+  "paper_id": "P60",
+  "paper_version": "SIAM Journal on Scientific Computing 33(5), pages 2295-2317, published electronically 22 September 2011",
+  "publication": {
+    "doi": "10.1137/090752286",
+    "publication_date": "2011-09-22",
+    "year": 2011
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Theorem 2.1, existence of a tensor-train decomposition from unfolding ranks",
+      "reason": "The proof starts by invoking an exact rank/skeleton factorization and then repeats that construction on auxiliary unfoldings. The paper does not prove the rank-factorization result. Supplying the successive factorizations as hypotheses makes the remaining substitutions short; requiring their construction and the full dependent-dimension induction would add substantial source-external linear-algebra infrastructure rather than isolate the paper's proof. NumStability contains no tensor-train or rank-factorization shortcut."
+    },
+    {
+      "candidate": "Theorem 2.2, TT-SVD accumulated Frobenius error",
+      "reason": "The proof is presented but the theorem is attributed to [29] and relies on best truncated-SVD properties at every stage. Frozen projection-orthogonality and rectangular Frobenius-isometry results are nearby, but they address only the generic one-step matrix core. The equivalent two-result core was already privately reconstructed in the P58 audit, where L shortened 238 N lines to 198 L lines; all tensor unfolding, reshape, rank, and induction work remains unchanged. That evidence does not establish the much larger T2 advantage required here, and no exact frozen TT-SVD theorem exists."
+    },
+    {
+      "candidate": "Corollaries 2.3-2.4",
+      "reason": "Corollary 2.3 is an immediate consequence of Theorem 2.2 and an earlier canonical-format observation. Corollary 2.4 additionally uses finite-dimensional subsequence compactness and closedness of bounded-rank unfolding sets; treating those standard assertions as assumptions leaves a short deduction, while rebuilding a full tensor-rank topology development would exceed the proof supplied in the paper."
+    },
+    {
+      "candidate": "Lemma 3.1, orthonormality of a contracted train of row-orthonormal cores",
+      "reason": "This is the strongest exact no-shortcut candidate. Exact arbitrary-depth private proofs compile in both conditions in 70 N lines and 71 L lines. Their mathematical bodies are identical, and L uses no NumStability declaration, but the proof is a compact reindexing followed by one induction and repeated matrix-sum factoring. It is well below the required T2-level difficulty and therefore cannot be retained as T3."
+    },
+    {
+      "candidate": "Scholes-like tensor rank bound in Section 3.1",
+      "reason": "The source proves the bound by displaying at most k+2 column generators and the analogous row generators. Once those displayed generators are encoded, the remaining span/cardinality argument is standard finite-dimensional linear algebra and below the T3 floor; the broader rank-3 approximation statements used around it are cited from [3]."
+    },
+    {
+      "candidate": "Section 4 tensor operations",
+      "reason": "The addition, contraction, Hadamard-product, dot-product, and matrix-vector formulas are direct distributive or Kronecker-product identities. They have complete source explanations but are too short for the tiers, and their complexity estimates are algorithmic operation counts rather than exact theorem statements."
+    },
+    {
+      "candidate": "Section 5 eigenvalue computation",
+      "reason": "This is a numerical experiment. The paper explicitly says that verifying the computed value is the smallest eigenvalue remains difficult and under investigation, so no missing correctness theorem may be invented."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No exact internally proved P60 result receives one substantial non-Mathlib shortcut from the frozen NumStability bundle."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. NumStability's projection-orthogonality and Frobenius-isometry results touch only the generic one-step matrix core of Theorem 2.2; prior exact N/L reconstruction of that core shows only a modest reduction, while all tensor-specific work remains. No candidate has the required large two-result advantage."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. The exact arbitrary-depth Lemma 3.1 candidate is only 70/71 private lines and below the T2 difficulty floor. Harder-looking claims either rely on rank/SVD/topological background not proved in P60, reduce to short span algebra once the paper's displayed decomposition is exposed, or are algorithms and experiments rather than exact proved theorems."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only exact claims supported by P60's own statement and proof text.",
+    "Do not turn imported rank-factorization, best-SVD, compactness, or earlier tensor-rank results into new P60 proof obligations.",
+    "Do not aggregate several easy Section 4 identities into an artificial hard task.",
+    "Require the T3 candidate itself, not merely its dependent-index notation, to meet the T2 difficulty floor."
+  ],
+  "short_name": "Oseledets (2011)",
+  "source": {
+    "lawful_source_locator": "local user-supplied journal PDF",
+    "local_path": "paper_bencmark/reference_papers/P60 Tensor-Train Decomposition.pdf",
+    "page_map": "Physical pages 1-23 carry printed journal pages 2295-2317.",
+    "pdf_pages": 23,
+    "rights_note": "Retain the local source path and cryptographic hash for benchmark provenance; do not redistribute the source PDF.",
+    "sha256": "7bd3e595053e951b72e2863d5b34904a28dbbaea1b33c001635a5bb896284c07"
+  },
+  "title": "Tensor-Train Decomposition"
+}

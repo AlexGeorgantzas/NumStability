@@ -1,0 +1,60 @@
+{
+  "annotation": {
+    "method": "Read Algorithm 3.1, Theorem 3.1, and pairwise specialization (3.7); compiled exact N and L proofs before packaging.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner requested additional paper-grounded T1/T2 tasks."
+  },
+  "authors": [
+    "Pierre Blanchard",
+    "Nicholas J. Higham",
+    "Theo Mary"
+  ],
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P65-T2"
+  ],
+  "paper_id": "P65",
+  "paper_version": "February 2020 author PDF, pages 1\u201318",
+  "publication": {
+    "doi": "10.1137/19M1257780",
+    "issue": "3",
+    "journal": "SIAM Journal on Scientific Computing",
+    "printed_pages": "A1541\u2013A1557",
+    "volume": "42",
+    "year": 2020
+  },
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "The selected result requires both summation stages and is classified T2."
+    },
+    "T2": {
+      "available": true,
+      "decision": "Select the recursive FastSum plus pairwise AccurateSum instance of Theorem 3.1.",
+      "task_id": "P65-T2",
+      "theorem_name": "p65_t2_fabsum_backward_error"
+    },
+    "T3": {
+      "available": false,
+      "decision": "No T3 task selected in this T1/T2 expansion."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Specialize Theorem 3.1 to recursive block sums and pairwise summation of a power-of-two number of blocks, both explicitly discussed in Section 3.1.",
+    "Keep the exact product term in the paper\u2019s composed backward-error bound.",
+    "Keep private N/L proofs out of public task material."
+  ],
+  "short_name": "Blanchard\u2013Higham\u2013Mary (2020)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/19M1257780",
+    "local_path": "papers_to_be_approved/P65-Blanchard-Higham-Mary-2020-FABsum.pdf",
+    "page_map": "Physical author PDF pages 1\u201318 correspond to printed article pages 1\u201318; journal pages are A1541\u2013A1557.",
+    "pdf_pages": 18,
+    "rights_note": "Author manuscript and SIAM article released under CC BY 4.0; retain attribution.",
+    "sha256": "2a56ecd287f1a08f961e301d72e1f70e31f929a2857b57f14e42063b7a52320a"
+  },
+  "title": "A Class of Fast and Accurate Summation Algorithms"
+}

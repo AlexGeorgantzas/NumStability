@@ -1,0 +1,69 @@
+{
+  "record_status": "superseded_construction_snapshot",
+  "schema_version": "0.2.0",
+  "kind": "highambench-condition-n-preflight-evidence",
+  "paper_id": "P02",
+  "generated_at_utc": "2026-07-28T23:09:28Z",
+  "method": {
+    "staging": "Each controlled manifest was verified and staged independently with tools/hashes.py; no private proof material was present.",
+    "scan": "tools/preflight.py recursively scanned the complete four-file staged task for path, content, and symlink leaks.",
+    "probe": "The preflight invoked tools/lean_isolated.py probe in condition N inside Bubblewrap and attempted `import NumStability`.",
+    "markers": [
+      "NumStability",
+      "numStability",
+      "lean-fp-analysis"
+    ]
+  },
+  "results": [
+    {
+      "task_id": "P02-T1",
+      "controlled_manifest_sha256": "acccf329956e3098b656c668384979b31faed114a7c7d637652892686f3f3aae",
+      "controlled_files_expected": 4,
+      "controlled_files_verified": 4,
+      "filesystem_leaks": [],
+      "regular_files_scanned": 4,
+      "symlinks_scanned": 0,
+      "probe_reliable": true,
+      "forbidden_module_importable": false,
+      "probe_exit_code": 1,
+      "probe_conclusion": "Lean reported unknown module prefix NumStability and listed no NumStability source or olean path.",
+      "pass": true
+    },
+    {
+      "task_id": "P02-T2",
+      "controlled_manifest_sha256": "85cbff622df076a53ab9200bde109cbe9da96ff33f837cb2280679e2676bae7b",
+      "controlled_files_expected": 4,
+      "controlled_files_verified": 4,
+      "filesystem_leaks": [],
+      "regular_files_scanned": 4,
+      "symlinks_scanned": 0,
+      "probe_reliable": true,
+      "forbidden_module_importable": false,
+      "probe_exit_code": 1,
+      "probe_conclusion": "Lean reported unknown module prefix NumStability and listed no NumStability source or olean path.",
+      "pass": true
+    },
+    {
+      "task_id": "P02-T3",
+      "controlled_manifest_sha256": "e2c085f171b4ceecd7a604bd09c9dbc4ae89a71c68c84a1a9db0e3bfb08be4b6",
+      "controlled_files_expected": 4,
+      "controlled_files_verified": 4,
+      "filesystem_leaks": [],
+      "regular_files_scanned": 4,
+      "symlinks_scanned": 0,
+      "probe_reliable": true,
+      "forbidden_module_importable": false,
+      "probe_exit_code": 1,
+      "probe_conclusion": "Lean reported unknown module prefix NumStability and listed no NumStability source or olean path.",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "tasks_checked": 3,
+    "complete_staged_task_scans_passed": 3,
+    "reliable_failed_import_probes": 3,
+    "filesystem_leaks": 0,
+    "pass": true
+  },
+  "limitation": "This proves condition-N task isolation for the fixed public P02 packages. It does not replace private-gold proof validation."
+}

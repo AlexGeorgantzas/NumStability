@@ -1,0 +1,128 @@
+{
+  "canonical_evidence": "metadata/evidence/construction_validation_P11.json",
+  "canonical_evidence_sha256": "dd832450ba5b2a654cf2f21bb70ec12bb731001de715c5307a5c167d75471261",
+  "canonical_isolated_pass": false,
+  "direct_fallback_pass": true,
+  "generated_at_utc": "2026-08-06T07:15:37Z",
+  "host_limitation": {
+    "canonical_failure_occurs_before_lean_starts": true,
+    "message": "bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted",
+    "scope": "All six canonical P11 checks on this LXC host",
+    "tool": "/usr/bin/bwrap"
+  },
+  "kind": "highambench-direct-exact-path-construction-fallback",
+  "paper_id": "P11",
+  "pinned_lean": {
+    "commit": "5d86aa4032284a5242470e95fbe25f1ff506763d",
+    "version": "4.29.0-rc3"
+  },
+  "results": [
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "41e7b305295ae907e0fc0a33d539c60399097f057fe2db789a23ebd8a735621e",
+        "library_declarations": [
+          "NumStability.frobNorm",
+          "NumStability.frobNormRect",
+          "NumStability.frobNormRect_eq_frobNormFn",
+          "NumStability.frobNormSq",
+          "NumStability.frobNorm_eq_sqrt_frobNormSq",
+          "NumStability.rectMatMulVec",
+          "NumStability.vecNorm2",
+          "NumStability.vecNorm2_nonneg",
+          "NumStability.vecNorm2_rectMatMulVec_le_frobNormRect_mul",
+          "NumStability.RMatFn",
+          "NumStability.frobNormSqRect",
+          "NumStability.frobNormSqRect_nonneg",
+          "NumStability.vecNorm2Sq",
+          "NumStability.vecNorm2Sq_rectMatMulVec_le_frobNormSqRect_mul"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "65d559bb8847ecaadcc325434a3969b14bbbe690182ac2cc79a99ff94621984d",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "ce563f7e0fd0548b6c559904eba5a7710896861762c06917f37de966cecf59f8",
+      "target_theorem": "HighamBench.p11_t1_first_column_residual_action",
+      "task_id": "P11-T1"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "7d00d810927b73ede5e6249db879ecd0fb8595ced3e15b942ea7ede6b16fcf0c",
+        "library_declarations": [
+          "NumStability.idMatrix",
+          "NumStability.matMul",
+          "NumStability.matMul_assoc",
+          "NumStability.matMul_id_right",
+          "NumStability.matTranspose",
+          "NumStability.matTranspose_id",
+          "NumStability.matTranspose_matMul",
+          "NumStability.matTranspose_id._simp_1_1"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "0f28d00ab681bd2eff943a334d794ef54f208b15ea3c62ec28cfa333fbb8882d",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "0841de2615bd65b411edf5fd3aef97f97877d931fe8963f505b2f668abea4c2e",
+      "target_theorem": "HighamBench.p11_t2_orthogonality_defect_identity",
+      "task_id": "P11-T2"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "9e40d3af185ba6d07f74aade66bc322cc8f82fbbcc416b7410b3041bbfda28f3",
+        "library_declarations": [
+          "NumStability.frobNorm",
+          "NumStability.frobNormSq",
+          "NumStability.frobNorm_eq_sqrt_frobNormSq",
+          "NumStability.frobNorm_matMul_le",
+          "NumStability.frobNorm_nonneg",
+          "NumStability.frobNorm_sub_le",
+          "NumStability.frobNorm_transpose",
+          "NumStability.idMatrix",
+          "NumStability.matMul",
+          "NumStability.matMul_assoc",
+          "NumStability.matMul_id_right",
+          "NumStability.matTranspose",
+          "NumStability.matTranspose_id",
+          "NumStability.matTranspose_matMul",
+          "NumStability.RMatFn",
+          "NumStability.frobNormSq_transpose",
+          "NumStability.matTranspose_id._simp_1_1"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "994751721dd9db030c2b21fdc55718b4bf9cd904d6f2609d34fe234e10d8d592",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "4dff54d443d74f80beb55e2a83baae6aa601d4d6d0be9b0e16c5c4914d692205",
+      "target_theorem": "HighamBench.p11_t3_orthogonality_defect_bound",
+      "task_id": "P11-T3"
+    }
+  ],
+  "schema_version": 1,
+  "verification_basis": {
+    "condition_l_path": "The exact P11 shared bundle, frozen pruned package objects, and frozen NumStability object tree; no project .lake/build path.",
+    "condition_n_path": "The exact P11 shared bundle and frozen pruned package objects; no NumStability source or object path and no project .lake/build path.",
+    "negative_probe": "Direct pinned-Lean imports of HighamBench.P10Definitions and NumStability fail under the condition-N LEAN_PATH; the other-paper import also fails under the condition-L P11 path.",
+    "p11_definitions_olean_sha256": "afc97a2af3aaf86f0550f6e59c5e4369fd9f1725cb09f958f11bfbd393f36b6d",
+    "p11_definitions_source_sha256": "d30af6550e76d4083f8958fd38563533a67d33dbfaf20349679d355a37a5e8f1",
+    "private_support_source_sha256": "16e59a9507f9c16305b985a3939b406d56a8111ff0955a0f1cbef8bfbad3cae6",
+    "semantic_check": "Each private L theorem was compared by Meta.isDefEq with a separately compiled renamed copy of the frozen target using tools/dependency_audit.lean.",
+    "shared_core_olean_sha256": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1"
+  }
+}

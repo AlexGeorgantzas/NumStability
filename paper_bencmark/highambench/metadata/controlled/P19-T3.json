@@ -1,0 +1,27 @@
+{
+  "files": [
+    {
+      "bytes": 3017,
+      "path": "agent_prompt.md",
+      "sha256": "0f116039fb2ac519a722258f2b9b2d539f0e0c087d03ac476a91f0af61cd5e11"
+    },
+    {
+      "bytes": 31781,
+      "path": "shared/HighamBench/P19Definitions.lean",
+      "sha256": "fb949d215d348d70eaf1496cfe7a288b74b50a5c12765a2a1edc83430de160ef"
+    },
+    {
+      "bytes": 2840,
+      "path": "tasks/P19/T3/Target.lean",
+      "sha256": "73554dc5c74403d7c8784545a29eb5631941bd5779e9d9fd3ca6a9cce9ae552c"
+    },
+    {
+      "bytes": 21481,
+      "path": "tasks/P19/T3/context.md",
+      "sha256": "d1f678a1c20b7ad32a9ba6864b31369dc8cf885e918a3fa056a21d7d0e429546"
+    }
+  ],
+  "kind": "highambench-controlled-files",
+  "label": "P19-T3-controlled",
+  "schema_version": 1
+}

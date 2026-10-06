@@ -1,0 +1,94 @@
+{
+  "annotation": {
+    "method": "Codex read the complete 25-page source in physical order through Sections 1-6, all theorem and lemma statements and proofs, experiments, conclusions, and all 25 references; separated internally proved results from cited linearization and perturbation background; audited Mathlib and the exact frozen 44-object NumStability surface; and compiled exact private N/L proofs before retaining P50-T3.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P50 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Nicholas J. Higham",
+    "Ren-Cang Li",
+    "Fran\u00e7oise Tisseur"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P50-T3"
+  ],
+  "paper_id": "P50",
+  "paper_version": "SIAM Journal on Matrix Analysis and Applications 29(4), published electronically December 7, 2007",
+  "publication": {
+    "version_date": "2007-12-07",
+    "year": 2007
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Section 2 backward-error formulas (2.1)-(2.10)",
+      "reason": "The normwise and coefficientwise polynomial backward-error formulas are introduced from Tisseur [22]. They are cited background rather than new P50 proofs."
+    },
+    {
+      "candidate": "one-sided factorization recovery and bounds (2.11)-(2.18)",
+      "reason": "Once the displayed factorization is assumed, eigenvector recovery and the backward-error ratio follow by short multiplication and norm inequalities. No substantial compiled NumStability result is needed."
+    },
+    {
+      "candidate": "Theorems 3.1-3.3",
+      "reason": "Theorem 3.1 is cited to Mackey et al.; Theorem 3.2 ultimately invokes strong-linearization and geometric-multiplicity results from earlier work; and Theorem 3.3 omits its analogous proof. They do not yield a faithful self-contained task with the required tier profile."
+    },
+    {
+      "candidate": "Lemma 3.5 and Theorems 3.6, 3.8-3.10, and Corollary 3.11",
+      "reason": "The block norm estimate is elementary, while the later bounds combine it with Lemma 3.4, preceding formulas, and cited inequalities. They receive no distinct substantial compiled shortcuts and do not supply a cleaner T1 or T2 task."
+    },
+    {
+      "candidate": "Lemma 3.7",
+      "reason": "The explicit eigenvector formula includes direct multiplication, but equality of eigenspace dimensions is cited and the final finite-eigenvector representation proof is omitted. Reconstructing those missing results would add material not proved in P50."
+    },
+    {
+      "candidate": "Theorem 4.1 and Section 5 scaling bounds",
+      "reason": "Theorem 4.1 says its proof is readily adapted from the earlier argument, and Section 5 substitutes scaled coefficient norms into existing bounds. The remaining exact work is below the T3 threshold and has no qualifying T1/T2 library advantage."
+    },
+    {
+      "candidate": "Section 6 numerical experiments",
+      "reason": "The reported backward errors and scaling comparisons are empirical rather than universal proof tasks."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No internally proved P50 result needs one substantial non-Mathlib declaration from the exact compiled NumStability bundle."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source-proved P50 result receives two distinct substantial non-Mathlib shortcuts from the exact compiled library."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Selected the real scalar arbitrary-degree instance of Lemma 3.4's explicit first-companion factorization. Exact private proofs establish a long finite-sum and sparse-matrix argument with no NumStability shortcut.",
+      "task_id": "P50-T3",
+      "theorem_name": "p50_t3_first_companion_factorization"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only results and proof content stated in P50.",
+    "A real scalar n=1 instance may specialize the paper's complex block-matrix Lemma 3.4 without strengthening its conclusion.",
+    "Use the paper's explicit multiplier after algebraically combining its displayed powers; do not invent a different factorization.",
+    "Do not turn cited strong-linearization, multiplicity, or perturbation results into P50 proof obligations.",
+    "Assign a tier only after exact private N and L proofs compile."
+  ],
+  "short_name": "Higham--Li--Tisseur (2007)",
+  "source": {
+    "lawful_source_locator": "local user-supplied MIMS eprint of the published article",
+    "local_path": "paper_bencmark/reference_papers/P50 Backward Error of Polynomial Eigenproblems Solved by Linearization.pdf",
+    "page_map": "Physical PDF page 1 is the MIMS cover; physical pages 2-25 are printed journal pages 1218-1241.",
+    "pdf_pages": 25,
+    "rights_note": "The local eprint was supplied for benchmark construction. Release only its hash, metadata, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "afa1c62701b0056ebf467a04df36aea2e8fd76ec47fa09a079f5c474235f356c"
+  },
+  "title": "Backward Error of Polynomial Eigenproblems Solved by Linearization"
+}

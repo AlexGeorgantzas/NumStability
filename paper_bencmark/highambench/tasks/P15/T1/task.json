@@ -1,0 +1,82 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source-exact formalization of equations (3.3)-(3.4) and their immediately following composition in the proof of Lemma 3.1",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "X and Y are real b-by-r factors and v is a real b-vector.",
+    "The two matrix-vector products are evaluated by the displayed rounded dot-product implementation in the stated order.",
+    "The standard relative floating-point model excludes overflow and underflow and has valid gamma bounds at dimensions b and r."
+  ],
+  "author_label": "Lemma 3.1, equations (3.3)-(3.4)",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P15 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P15 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P15/T1/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p15_t1_low_rank_matvec_backward_representation {b r : Nat} (fp : StandardFPModel) (X Y : P15RectMatrix b r) (v : P15Vector b) (hb : GammaValid fp.u b) (hr : GammaValid fp.u r) : let wHat := p15RoundedRectMatVec fp (p15RectTranspose Y) v; let zHat := p15RoundedRectMatVec fp X wHat; exists DeltaYT : P15RectMatrix r b, exists DeltaX : P15RectMatrix b r, p15RectFrobNorm DeltaYT <= gamma fp.u b * p15RectFrobNorm (p15RectTranspose Y) and p15RectFrobNorm DeltaX <= gamma fp.u r * p15RectFrobNorm X and wHat = p15RectMatVec (p15RectAdd (p15RectTranspose Y) DeltaYT) v and zHat = p15RectMatVec (p15RectAdd X DeltaX) wHat and zHat = p15RectMatVec (p15RectMatMul (p15RectAdd X DeltaX) (p15RectAdd (p15RectTranspose Y) DeltaYT)) v",
+    "namespace": "HighamBench",
+    "plain_language": "The two rounded matrix-vector products in equations (3.3)-(3.4) admit the displayed Frobenius-norm backward perturbations, and their composition is the exact perturbed low-rank action written immediately afterward.",
+    "target_file": "paper_bencmark/highambench/tasks/P15/T1/Target.lean",
+    "theorem_name": "p15_t1_low_rank_matvec_backward_representation"
+  },
+  "informal_proof": "Apply the standard matrix-vector backward-error result to Y^T v and then to X times the computed intermediate vector. Substitute the first exact representation into the second and reassociate the finite sums.",
+  "informal_statement": "Equations (3.3)-(3.4) from the proof of Lemma 3.1, with their Frobenius-norm bounds and the exact low-rank composition written immediately afterward.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P15",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P15_Solving block low-rank linear systems by LU factorization is numerically stable.pdf",
+    "sha256": "a5cb8eb779c1571f1549ea6838c7f2269302c960fb4ea21f8410060811270cd7"
+  },
+  "paper_version": "published journal version; IMA Journal of Numerical Analysis 42(2), 2022, printed pages 951-980",
+  "result_form_tag": "REP",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.matVec_backward_error"
+    ],
+    "note": "The L construction invokes the same substantial matrix-vector backward-error theorem for both source-displayed stages. Frobenius monotonicity and reassociation are supporting steps, so this remains one substantial result family rather than two."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "StandardFPModel",
+    "roundedDotProduct",
+    "P15RectMatrix",
+    "P15Vector",
+    "p15RectTranspose",
+    "p15RectMatVec",
+    "p15RectMatMul",
+    "p15RectAdd",
+    "p15RoundedRectMatVec"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Lemma 3.1 and equations (3.1)-(3.4)",
+      "pdf_page": 6,
+      "printed_page": "956",
+      "role": "selected two-stage low-rank matrix-vector execution and backward perturbation proof",
+      "section": "3.1 LR matrix times vector or full matrix"
+    }
+  ],
+  "source_tags": [
+    "LEM"
+  ],
+  "task_id": "P15-T1",
+  "tier": "T1",
+  "tier_label": "direct use",
+  "tier_rationale": "Both source-displayed rounded stages are discharged by one substantial NumStability result family, matVec_backward_error. Reconstructing its finite dot-product induction and perturbation witnesses is significant work not supplied by Mathlib; the Frobenius conversion and finite-sum reassociation are simpler support.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P15/T1/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p15_t1_low_rank_matvec_backward_representation"
+  }
+}

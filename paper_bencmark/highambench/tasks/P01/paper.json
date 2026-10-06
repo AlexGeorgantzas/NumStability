@@ -1,0 +1,61 @@
+{
+  "annotation": {
+    "method": "Codex reread the complete local paper from introduction through conclusions, inventoried its proved summation claims, compared every missing-tier candidate with the complete frozen NumStability source and Mathlib, and retained the existing tasks only after this fresh gap audit.",
+    "performed_by": "Codex",
+    "reason": "The benchmark specification calls for human review. The project owner asked Codex to perform that review for this entry."
+  },
+  "authors": [
+    "Nicholas J. Higham"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P01-T1",
+    "P01-T2"
+  ],
+  "paper_id": "P01",
+  "paper_version": "journal version; volume 14, issue 4, July 1993, printed pages 783-799",
+  "publication": {
+    "doi": "10.1137/0914050",
+    "issue": 4,
+    "journal": "SIAM Journal on Scientific Computing",
+    "printed_pages": "783-799",
+    "volume": 14,
+    "year": 1993
+  },
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Use the pairwise summation error bound in equation (3.6), specialized to nonnegative inputs using the paper's observation on printed page 785.",
+      "task_id": "P01-T1",
+      "theorem_name": "p01_t1_pairwise_nonnegative"
+    },
+    "T2": {
+      "available": true,
+      "decision": "Combine the recursive running-error analysis (2.7)--(2.8), the recursive worst-case bound (2.6), and the independent pairwise bound (3.6).",
+      "task_id": "P01-T2",
+      "theorem_name": "p01_t2_recursive_running_and_pairwise_bounds"
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. The only paper-proved candidates of T2-level difficulty are the arbitrary-tree, insertion-order, pairwise, plus/minus, and compensated-summation analyses, all of which have substantial corresponding infrastructure in frozen NumStability and would advantage L. The statistical results are attributed to Robertazzi and Schwartz, the accumulator and distillation guarantees are attributed to earlier papers, the experiments are not proof targets, and the remaining asymptotic or no-guard-digit comparisons are below T2 difficulty."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "short_name": "Higham (1993)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/0914050",
+    "local_path": "paper_bencmark/reference_papers/P01_THE ACCURACY OF FLOATING POINT SUMMATION.pdf",
+    "page_map": "PDF page 1 is printed page 783; add 782 to a PDF page number to get the printed page number.",
+    "pdf_pages": 17,
+    "rights_note": "The local PDF was supplied for benchmark construction and shows a SIAM redistribution notice. The benchmark should publish its locator, hash, and short paraphrases unless redistribution permission is confirmed.",
+    "sha256": "d5ad99fac5022da54dbe02721ea57116df3cec15badddd7c96c344328718fea7"
+  },
+  "title": "The Accuracy of Floating Point Summation"
+}

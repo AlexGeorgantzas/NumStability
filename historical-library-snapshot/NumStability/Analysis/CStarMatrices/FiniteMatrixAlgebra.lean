@@ -1,0 +1,21 @@
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.BlockDiagonal
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.BlockDiagonalCompression
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ColumnPair
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ColumnPairPinching
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ColumnPairRangeProjection
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ColumnPairRangeReflection
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.FiniteDimensional
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.FiniteMatrixOrder
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.FiniteRealEmbedding
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.FiniteRealOrder
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ProjectionReflection
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.RectangularCompression
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.RectangularMultiplication
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ReflectionAverage
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.StrictPositivity
+
+/-!
+# NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra
+
+Declaration-free aggregate for the canonical modules in this semantic family.
+-/

@@ -1,0 +1,104 @@
+{
+  "annotation": {
+    "method": "Codex freshly reread the complete local paper for the missing-tier audit, inspected the proofs of Lemmas 3.1-3.3 and all source-facing algorithmic error formulas, and compared each possible task with the full frozen Mathlib and NumStability baselines.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P07 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Maike Meier",
+    "Yuji Nakatsukasa",
+    "Alex Townsend",
+    "Marcus Webb"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [],
+  "paper_id": "P07",
+  "paper_version": "published journal version; volume 45, issue 2, 2024, printed pages 905-929",
+  "publication": {
+    "doi": "10.1137/23M1551973",
+    "issue": 2,
+    "journal": "SIAM Journal on Matrix Analysis and Applications",
+    "printed_pages": "905-929",
+    "publication_date": "2024-04-24",
+    "volume": 45,
+    "year": 2024
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "equations (1.1)-(1.3) and Algorithms 1.1-1.4",
+      "reason": "These are problem definitions and algorithm specifications rather than finite proved conclusions."
+    },
+    {
+      "candidate": "the sketch-and-solve residual estimate in section 2.1.1",
+      "reason": "The estimate is explicitly recalled from prior work and is not proved in this paper."
+    },
+    {
+      "candidate": "equations (2.1)-(2.6)",
+      "reason": "The standard matrix multiplication, Householder QR, and triangular-solve error bounds are quoted from Higham's textbook as background."
+    },
+    {
+      "candidate": "Corollary 2.2",
+      "reason": "Its proof is an immediate parameter substitution into an external smoothed-analysis theorem."
+    },
+    {
+      "candidate": "Lemma 3.1",
+      "reason": "Its computed-preconditioner bounds require a larger floating-point execution model and do not provide a qualifying T1 or T2 library advantage."
+    },
+    {
+      "candidate": "Lemma 3.3 and Theorem 3.4",
+      "reason": "These long bounds combine multiple floating-point black boxes, pseudoinverse norms, dimension-dependent constants, and asymptotic interpretation without a qualifying NumStability advantage."
+    },
+    {
+      "candidate": "the full numerical conclusion of Theorem 3.5",
+      "reason": "The final constants 6.04 and 2.01 depend on the preceding Theorem 3.4 estimates and a much larger floating-point least-squares model, so this result is not selected."
+    },
+    {
+      "candidate": "Theorems 4.1 and 4.2",
+      "reason": "Both depend on Corollary 2.2's delegated Gaussian condition-number result; Theorem 4.2 additionally invokes an external Gaussian spectral-norm tail bound."
+    },
+    {
+      "candidate": "section 5 experiments and Algorithm 5.1",
+      "reason": "Experimental observations, plots, and implementation recommendations are not formal benchmark targets."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. Lemma 3.2 is only a short abstract perturbation argument. Making its quoted matrix product, Householder QR, or triangular solve operational would replace the paper's supplied perturbations by a different task rather than isolate one source-faithful substantial dependency."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. Lemma 3.3 mentions matrix multiplication, Householder QR, and triangular solution, but the paper imports their error formulas as black boxes and proves only the subsequent perturbation assembly. Turning two of those quoted contracts into concrete executions would materially change the selected statement and proof."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. Lemma 2.1 and the abstract perturbation lemmas are below T2 difficulty, while every harder algorithmic candidate relies on the same external QR and linear-solve results for which NumStability would advantage L."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use a finite claim made and proved in this paper.",
+    "Reject experiments, vague asymptotics, and claims whose proof is mainly delegated elsewhere.",
+    "Prefer exact displayed bounds and identities.",
+    "Keep the fixed Lean setting condition-neutral and paper-scoped.",
+    "Assign tiers only after verified frozen-library searches."
+  ],
+  "short_name": "Meier et al. (2024)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/23M1551973",
+    "local_path": "paper_bencmark/reference_papers/P07_ARE SKETCH-AND-PRECONDITION LEAST SQUARESSOLVERS NUMERICALLY STABLE?.pdf",
+    "page_map": "PDF page 1 is printed page 905; add 904 to a PDF page number to obtain the printed page.",
+    "pdf_pages": 25,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Permission to redistribute the full PDF is not asserted.",
+    "sha256": "4c4d638b359719f47e2c4664a50e9fa8e4704e8b6b39923d73c41883a97c5790"
+  },
+  "title": "Are Sketch-and-Precondition Least Squares Solvers Numerically Stable?"
+}

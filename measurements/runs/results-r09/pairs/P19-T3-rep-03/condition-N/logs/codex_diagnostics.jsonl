@@ -1,0 +1,15 @@
+{"monotonic_ns":37184342554255,"raw_line":"\u001b[2m2026-09-16T23:41:55.285622Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:","record_type":"app_server_stderr","sequence":1,"unix_ns":1789602115285654399}
+{"monotonic_ns":37184342611063,"raw_line":"            let prev : P19Theorem31Dimension n :=","record_type":"app_server_stderr","sequence":2,"unix_ns":1789602115285711456}
+{"monotonic_ns":37184342632337,"raw_line":"                ⟨k - 1, hprevpos, hprevle⟩","record_type":"app_server_stderr","sequence":3,"unix_ns":1789602115285732764}
+{"monotonic_ns":37184342654603,"raw_line":"            let current : P19Theorem31Dimension n := ⟨k, hkpos, hkle⟩","record_type":"app_server_stderr","sequence":4,"unix_ns":1789602115285755018}
+{"monotonic_ns":37184342675979,"raw_line":"            by_cases hcurrent :","record_type":"app_server_stderr","sequence":5,"unix_ns":1789602115285776421}
+{"monotonic_ns":37184342692575,"raw_line":"                p19IterationWellConditioned (family.iteration current)","record_type":"app_server_stderr","sequence":6,"unix_ns":1789602115285793011}
+{"monotonic_ns":37184342709233,"raw_line":"            · left","record_type":"app_server_stderr","sequence":7,"unix_ns":1789602115285809673}
+{"monotonic_ns":37184342727107,"raw_line":"              exact hcurrent","record_type":"app_server_stderr","sequence":8,"unix_ns":1789602115285827525}
+{"monotonic_ns":37184342743563,"raw_line":"            · right","record_type":"app_server_stderr","sequence":9,"unix_ns":1789602115285844001}
+{"monotonic_ns":37184342759513,"raw_line":"              refine ⟨prev, by simp only [prev]; omega, hprev, ?_⟩","record_type":"app_server_stderr","sequence":10,"unix_ns":1789602115285859957}
+{"monotonic_ns":37184342777383,"raw_line":"              have hkprevlt : k - 1 < n := by omega","record_type":"app_server_stderr","sequence":11,"unix_ns":1789602115285877828}
+{"monotonic_ns":37184342796219,"raw_line":"              apply mgs.loss_implies_near_dependence (k - 1) hprevpos","record_type":"app_server_stderr","sequence":12,"unix_ns":1789602115285896642}
+{"monotonic_ns":37184342812584,"raw_line":"                hkprevlt","record_type":"app_server_stderr","sequence":13,"unix_ns":1789602115285912988}
+{"monotonic_ns":37184342828338,"raw_line":"              simpa only [current, Nat.sub_add_cancel (by omega : 1 ≤ k)]","record_type":"app_server_stderr","sequence":14,"unix_ns":1789602115285928770}
+{"monotonic_ns":37184342845939,"raw_line":"                using hcurrent","record_type":"app_server_stderr","sequence":15,"unix_ns":1789602115285946382}

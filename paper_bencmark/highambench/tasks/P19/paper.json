@@ -1,0 +1,105 @@
+{
+  "annotation": {
+    "method": "Codex freshly reread the complete 47-page local paper for the missing-tier audit, rechecked Algorithms 1-2, equations (3.2)-(3.20), Theorems 3.1-3.4, and Appendices A, C, and D, and compared every T1/T2 candidate with the full frozen Mathlib and NumStability baselines; the existing T3 was retained.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P19 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Alfredo Buttari",
+    "Xin Liu",
+    "Theo Mary",
+    "Bastien Vieubl\u00e9"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P19-T3"
+  ],
+  "paper_id": "P19",
+  "paper_version": "HAL preprint hal-05071696v2, submitted 2026-05-19; IMA Journal of Numerical Analysis, in press, article pages 1-46",
+  "publication": {
+    "doi": null,
+    "hal_id": "hal-05071696v2",
+    "journal": "IMA Journal of Numerical Analysis",
+    "printed_pages": "1-46",
+    "publication_status": "in press",
+    "submission_date": "2026-05-19",
+    "year": 2026
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Algorithms 1 and 2 and rounding models (3.2)-(3.6)",
+      "reason": "These establish the computational model and hypotheses rather than a concise selected conclusion. Their error sources are retained only as hypotheses of the selected T3 result."
+    },
+    {
+      "candidate": "the complete specialized statement of Theorem 3.2",
+      "reason": "The general modular theorem uses only standard norm facts from the mounted library and therefore does not meet T2. P19-T3 selects the specialized right and flexible results in Theorems 3.3-3.4."
+    },
+    {
+      "candidate": "left-preconditioned bound (3.13) and simplified envelope (3.21)",
+      "reason": "The rho_M and rho_b quantities make a compact exact comparison less clean. The right/flexible pair shares common terms and exposes the paper's critical implementation distinction directly."
+    },
+    {
+      "candidate": "condition-number generator identity (4.1)",
+      "reason": "This is a property of the synthetic matrix generator used to structure experiments, not the paper's main rounding-error contribution."
+    },
+    {
+      "candidate": "Tables 2-3 and the six strategy recommendations in Sections 4.2-4.3",
+      "reason": "Several recommendations combine simplified asymptotic bounds with problem-dependent or explicitly qualified empirical behavior. T3 captures the exact theoretical right/flexible comparison that drives one of the strongest recommendations."
+    },
+    {
+      "candidate": "Figures 1-7 and random dense heatmaps",
+      "reason": "These report finite experiments and iteration counts rather than universally quantified mathematical results."
+    },
+    {
+      "candidate": "SuiteSparse results in Tables 4-5",
+      "reason": "These are practical experiments whose outliers are explicitly noted as not always explained by the simplified theory."
+    },
+    {
+      "candidate": "backward-error, implementation-performance, and industrial-software directions in Section 6",
+      "reason": "The paper identifies these as open issues or future work, not completed results."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. The only isolated reusable perturbation-norm step is an elementary triangle inequality. The operational matrix-vector bounds are quoted from earlier work, and bridging the paper's full MGS/GMRES execution to a NumStability kernel would require a new paper-specific theorem rather than one substantial existing match."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. No theorem aligns with two substantial frozen results: its matrix-vector error equations are externally cited contracts, while the MGS, Arnoldi, preconditioning, and attainable-error assembly has no NumStability counterpart. The remaining reusable norm facts are elementary."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Use Theorems 3.3-3.4 and Remark 4 for right and flexible preconditioned GMRES; NumStability has no corresponding GMRES execution or attainable-error theorem.",
+      "task_id": "P19-T3",
+      "theorem_name": "p19_t3_right_flexible_attainable_forward_error"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Represent the source's unspecified low-degree c(n,k) by its value at the selected dimensions, and parameterize the qualitative second-order semantics instead of inventing polynomial coefficients or an asymptotic variable.",
+    "When Section 2 writes an unqualified square condition number, expose the source-authorized Frobenius or induced-2 choice explicitly and apply it consistently to the matrix and its certified inverse.",
+    "Represent the paper's four modular error sources and right/flexible precision distinction explicitly.",
+    "Do not promote empirical heatmaps, iteration counts, qualified recommendations, or future-work claims to theorem targets.",
+    "Keep every public definition free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source and the compiled condition-L bundle recorded in metadata/library_olean.json."
+  ],
+  "short_name": "Buttari--Liu--Mary--Vieubl\u00e9 (2026)",
+  "source": {
+    "lawful_source_locator": "https://hal.science/hal-05071696v2",
+    "local_path": "paper_bencmark/reference_papers/P19_Mixed precision strategies for preconditioned GMRES- a comprehensive analysis.pdf",
+    "page_map": "Physical PDF page 1 is the HAL cover; physical pages 2-47 are printed article pages 1-46.",
+    "pdf_pages": 47,
+    "rights_note": "The HAL cover states that the manuscript is distributed under the Creative Commons Attribution 4.0 International license (CC BY 4.0). Release bibliographic metadata, locators, hashes, and concise benchmark-author paraphrases with attribution.",
+    "sha256": "67af427c72ae891b7863e386db542ef775b1e3eb306f812bb1a78bdbef86aaad"
+  },
+  "title": "Mixed precision strategies for preconditioned GMRES: a comprehensive analysis"
+}

@@ -1,0 +1,92 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 21-page paper in physical-PDF order, surveyed every stated result and source-proved construction, and compared all candidates with the frozen Mathlib and importable NumStability baselines.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P34 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Plamen Koev"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P34-T3"
+  ],
+  "paper_id": "P34",
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 29(3), 2007, printed pages 731-751",
+  "publication": {
+    "doi": "10.1137/04061903X",
+    "issue": "3",
+    "journal": "SIAM Journal on Matrix Analysis and Applications",
+    "printed_pages": "731-751",
+    "publication_date": "2007-06-12",
+    "volume": "29",
+    "year": 2007
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Proposition 1.1 and Theorem 2.1, closure and unique bidiagonal factorization of totally nonnegative matrices",
+      "reason": "Both are explicitly attributed to earlier sources. This paper uses them but does not supply their proofs, so they cannot be standalone source-backed tasks."
+    },
+    {
+      "candidate": "Section 3 inverse, solve, minor, LDU, eigenvalue, and SVD accuracy statements",
+      "reason": "The section is a review of earlier results and repeatedly cites their proofs and algorithms from prior work. The present paper does not provide enough proof text for benchmark tasks based on those headline claims."
+    },
+    {
+      "candidate": "Theorem 4.2 and Algorithm 4.2, the full elementary-elimination bulge chase",
+      "reason": "The source proof depends on the unique bidiagonal-decomposition theorem quoted as Theorem 2.1 and on detailed compact-array zero-pattern conventions. Lemma 4.1 and Algorithm 4.1 contain the complete self-contained transformation core and all proof material needed for the selected task without importing the cited characterization theorem as an opaque premise."
+    },
+    {
+      "candidate": "Algorithms 5.1-5.5 for products, re-signed inverses, converses, QR, QR iteration, and Schur complements",
+      "reason": "Their derivations compose the new elementary-transformation routine with algorithms and structural results from the author's earlier paper. None yields a T1 or T2 because the corresponding TN machinery is absent from the compiled library, and packaging the cited prior algorithms as premises would obscure rather than strengthen the source-backed comparison."
+    },
+    {
+      "candidate": "Algorithm 5.6 for a general submatrix",
+      "reason": "The argument is substantial but relies throughout on Neville-elimination and unique-decomposition facts quoted from earlier work plus Algorithm 4.2. The selected Lemma 4.1 task is the paper's self-contained proved kernel and avoids supplying unavailable cited machinery as shared assumptions."
+    },
+    {
+      "candidate": "Section 6 generalized Vandermonde construction and Section 7 experiments",
+      "reason": "The column-selection and complexity observation is short once Algorithm 5.6 and the previously published ordinary-Vandermonde formulas are assumed. The numerical examples are empirical rather than universal proof tasks."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No result proved in this paper needs exactly one substantial result from the importable NumStability set; the compiled LU, matrix-product, and QR theorems concern conventional representations and error models, not TN bidiagonal transformations."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source-proved result can use at least two distinct substantial compiled NumStability theorems. The paper's dependencies that actually match its TN machinery are cited external results or prior algorithms and are absent from the frozen compiled set."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Selected Lemma 4.1 together with the structural guarantees immediately after Algorithm 4.1. Its recurrence, sparse matrix-product identity, zero cases, and operation bound require substantial formal work, while NumStability has no corresponding result."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only conclusions whose statements and supporting derivations are present in this paper.",
+    "Do not convert Proposition 1.1, Theorem 2.1, or Section 3's reviewed results into tasks because their proofs are in cited sources.",
+    "Do not count generic compiled LU or QR theorems as useful for the distinct TN bidiagonal representation.",
+    "Retain the zero cases and structural guarantees of Algorithm 4.1 rather than selecting only its easy positive-denominator algebra.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source, its importable compiled subset, and Mathlib."
+  ],
+  "short_name": "Koev (2007)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/04061903X",
+    "local_path": "paper_bencmark/reference_papers/P34-Accurate Computations with Totally Nonnegative Matrices.pdf",
+    "page_map": "Physical PDF pages 1-21 are printed pages 731-751 respectively.",
+    "pdf_pages": 21,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "49821f7d188be38c476db9f5a52439c31754cabe664d07b21f77dc81ab1ae05b"
+  },
+  "title": "Accurate Computations with Totally Nonnegative Matrices"
+}

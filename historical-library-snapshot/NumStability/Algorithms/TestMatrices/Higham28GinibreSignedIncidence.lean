@@ -1,0 +1,13 @@
+import NumStability.Algorithms.TestMatrices.Higham28GinibreJointDensity
+import NumStability.Algorithms.TestMatrices.Higham28GinibreOrthogonalFiber
+import NumStability.Algorithms.TestMatrices.Higham28GinibreSignedExpectation
+import NumStability.Algorithms.TestMatrices.Higham28GinibreSignedIncidenceAlgebra
+import NumStability.Algorithms.TestMatrices.Higham28GinibreSignedKernel
+import NumStability.Algorithms.TestMatrices.Higham28GinibreSignedRankTransfer
+import NumStability.Algorithms.TestMatrices.Higham28GinibreTruncatedIncidence
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.SignedIncidence.GinibreSignedIncidence
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.SignedIncidence.OneRootMomentReduction
+
+/-!
+Historical owner retained as an import-only compatibility wrapper; its declarations were relocated under the R09/R10 completion waves per the reviewed route ledger.
+-/

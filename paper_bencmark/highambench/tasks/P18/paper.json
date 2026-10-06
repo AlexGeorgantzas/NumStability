@@ -1,0 +1,94 @@
+{
+  "annotation": {
+    "method": "Codex freshly reread the complete 20-page local paper for the missing-tier audit, surveyed every Runge--Kutta construction and order-condition derivation, and compared every candidate with the full frozen Mathlib and NumStability baselines; the previous private neutral check was re-used only for the already isolated easy finite-sum candidate.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P18 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Zachary J. Grant"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [],
+  "paper_id": "P18",
+  "paper_version": "published journal version; Journal of Scientific Computing 92, article 6, 2022, pages 1-20",
+  "publication": {
+    "article_number": 6,
+    "doi": "10.1007/s10915-022-01801-2",
+    "journal": "Journal of Scientific Computing",
+    "online_publication_date": "2022-05-19",
+    "printed_pages": "1-20",
+    "publication_date": "2022-05-19",
+    "volume": 92,
+    "year": 2022
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "equations (1.1), (2.1)-(2.5), and Figure 1",
+      "reason": "These introduce standard Runge--Kutta notation and motivate the mixed-precision midpoint method; the convergence plot is empirical."
+    },
+    {
+      "candidate": "the full consistency and perturbation condition lists (3.4) and (3.5) beyond order two",
+      "reason": "The higher-order catalogs require a substantial rooted-tree and differentiability interface, while the smaller order-two subset is finite arithmetic and does not meet T2."
+    },
+    {
+      "candidate": "low-precision and naive mixed-precision midpoint error forms in Section 3.2",
+      "reason": "Their O(\u0394t\u00b2)+O(\u03b5) and O(\u0394t\u00b2)+O(\u03b5\u0394t) patterns are earlier, weaker instances whose coefficient equalities are too small for T2."
+    },
+    {
+      "candidate": "corrected SDIRK and Lobatto IIIC constructions (4.5) and (4.8)",
+      "reason": "They repeat the correction-order mechanism with larger coefficient arrays but still do not use two substantial NumStability results."
+    },
+    {
+      "candidate": "Methods 4s3pA and 4s3pB in Sections 4.2.1-4.2.2",
+      "reason": "The decimal coefficient tables and stability classifications would require separate exact coefficient certificates and a Runge--Kutta stability interface absent from the frozen library."
+    },
+    {
+      "candidate": "Figures 2-6 and their numerical convergence discussions",
+      "reason": "These are finite experiments illustrating the derived asymptotic orders, not universally quantified mathematical results."
+    },
+    {
+      "candidate": "stability, efficiency, and varying-epsilon directions in Section 5",
+      "reason": "The paper explicitly identifies rigorous stability analysis, efficiency studies, and varying epsilon as limitations or future work rather than completed results."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. NumStability has no Runge--Kutta or B-series theorem that supplies one substantial step; the source's elementary error split uses only exact subtraction and a triangle inequality."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. NumStability has no two substantial Runge--Kutta/B-series results, while the corrected-midpoint coefficient equalities themselves are finite arithmetic."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. A full B-series/order proof could be difficult enough, but the paper does not provide the complete formal derivation needed for a self-contained target. Once its tableau and stability estimates are assumptions, a private neutral proof reduces both global error regimes to a short finite-sum argument below T2 difficulty."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use accuracy results derived in this paper rather than standard Runge--Kutta definitions, numerical plots, or future-work claims.",
+    "Do not replace underspecified asymptotic big-O statements with exact norm inequalities; select exact source content or formalize all asymptotic semantics explicitly.",
+    "Preserve the paper's distinction between scheme error, smooth perturbation error, and nonsmooth perturbation error.",
+    "Keep every public definition free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source and the compiled condition-L bundle recorded in metadata/library_olean.json."
+  ],
+  "short_name": "Grant (2022)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1007/s10915-022-01801-2",
+    "local_path": "paper_bencmark/reference_papers/P18_Perturbed Runge\u2013Kutta Methods for Mixed Precision Applications.pdf",
+    "page_map": "PDF pages 1-20 are article pages 1-20 respectively.",
+    "pdf_pages": 20,
+    "rights_note": "The article states that it is a U.S. government work not under U.S. copyright protection, while foreign copyright protection may apply (2022). The U.S. Government retains a non-exclusive worldwide license for government purposes. Release bibliographic metadata, locators, hashes, and concise benchmark-author paraphrases; do not assume unrestricted foreign redistribution rights.",
+    "sha256": "b18628ffc348d7aeec2da02efb989b6e012f0b0fae09b27fbff735bb8a5877cd"
+  },
+  "title": "Perturbed Runge\u2013Kutta Methods for Mixed Precision Applications"
+}

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
+<rect x="0" y="0" width="900" height="500" fill="#ffffff"/>
+<text x="450.0" y="29" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold" font-size="18" fill="#172334">Elapsed-time gain versus realized use</text>
+<line x1="95.0" y1="64" x2="95.0" y2="419" stroke="#e1e6eb"/>
+<text x="95.0" y="446" text-anchor="middle" font-family="Arial,sans-serif" font-size="14">0/3</text>
+<line x1="341.7" y1="64" x2="341.7" y2="419" stroke="#e1e6eb"/>
+<text x="341.7" y="446" text-anchor="middle" font-family="Arial,sans-serif" font-size="14">1/3</text>
+<line x1="588.3" y1="64" x2="588.3" y2="419" stroke="#e1e6eb"/>
+<text x="588.3" y="446" text-anchor="middle" font-family="Arial,sans-serif" font-size="14">2/3</text>
+<line x1="835.0" y1="64" x2="835.0" y2="419" stroke="#e1e6eb"/>
+<text x="835.0" y="446" text-anchor="middle" font-family="Arial,sans-serif" font-size="14">3/3</text>
+<line x1="95" y1="389.4" x2="835" y2="389.4" stroke="#e1e6eb"/>
+<text x="83" y="393.4" text-anchor="end" font-family="Arial,sans-serif" font-size="12">-25%</text>
+<line x1="95" y1="315.5" x2="835" y2="315.5" stroke="#899baa"/>
+<text x="83" y="319.5" text-anchor="end" font-family="Arial,sans-serif" font-size="12">+0%</text>
+<line x1="95" y1="241.5" x2="835" y2="241.5" stroke="#e1e6eb"/>
+<text x="83" y="245.5" text-anchor="end" font-family="Arial,sans-serif" font-size="12">+25%</text>
+<line x1="95" y1="167.5" x2="835" y2="167.5" stroke="#e1e6eb"/>
+<text x="83" y="171.5" text-anchor="end" font-family="Arial,sans-serif" font-size="12">+50%</text>
+<line x1="95" y1="93.6" x2="835" y2="93.6" stroke="#e1e6eb"/>
+<text x="83" y="97.6" text-anchor="end" font-family="Arial,sans-serif" font-size="12">+75%</text>
+<circle cx="574.4" cy="160.5" r="5.3" fill="#2480a7" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P01-T1: 2/3 uses, +52.4% gain</title></circle>
+<circle cx="851.3" cy="92.7" r="5.3" fill="#0b5578" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P01-T2: 3/3 uses, +75.3% gain</title></circle>
+<circle cx="837.1" cy="267.7" r="5.3" fill="#0b5578" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P02-T1: 3/3 uses, +16.2% gain</title></circle>
+<circle cx="369.6" cy="374.2" r="5.3" fill="#719dba" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P02-T3: 1/3 uses, -19.9% gain</title></circle>
+<circle cx="77.7" cy="358.3" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P03-T3: 0/3 uses, -14.5% gain</title></circle>
+<circle cx="831.7" cy="282.3" r="5.3" fill="#0b5578" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P04-T1: 3/3 uses, +11.2% gain</title></circle>
+<circle cx="112.0" cy="288.9" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P05-T3: 0/3 uses, +9.0% gain</title></circle>
+<circle cx="101.7" cy="281.2" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P06-T3: 0/3 uses, +11.6% gain</title></circle>
+<circle cx="67.1" cy="217.8" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P08-T3: 0/3 uses, +33.0% gain</title></circle>
+<circle cx="85.2" cy="292.0" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P09-T3: 0/3 uses, +7.9% gain</title></circle>
+<circle cx="110.6" cy="336.4" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P11-T3: 0/3 uses, -7.1% gain</title></circle>
+<circle cx="853.0" cy="159.3" r="5.3" fill="#0b5578" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P12-T1: 3/3 uses, +52.8% gain</title></circle>
+<circle cx="69.0" cy="228.6" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P13-T3: 0/3 uses, +29.4% gain</title></circle>
+<circle cx="861.2" cy="263.2" r="5.3" fill="#0b5578" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P14-T1: 3/3 uses, +17.7% gain</title></circle>
+<circle cx="864.9" cy="93.2" r="5.3" fill="#0b5578" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P15-T1: 3/3 uses, +75.1% gain</title></circle>
+<circle cx="841.2" cy="88.8" r="5.3" fill="#0b5578" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P15-T2: 3/3 uses, +76.6% gain</title></circle>
+<circle cx="861.7" cy="285.0" r="5.3" fill="#0b5578" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P15-T3: 3/3 uses, +10.3% gain</title></circle>
+<circle cx="372.5" cy="253.3" r="5.3" fill="#719dba" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P17-T1: 1/3 uses, +21.0% gain</title></circle>
+<circle cx="81.6" cy="303.0" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P17-T3: 0/3 uses, +4.2% gain</title></circle>
+<circle cx="95.4" cy="275.4" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P19-T3: 0/3 uses, +13.6% gain</title></circle>
+<circle cx="345.4" cy="274.2" r="5.3" fill="#719dba" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P20-T3: 1/3 uses, +14.0% gain</title></circle>
+<circle cx="810.9" cy="130.6" r="5.3" fill="#0b5578" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P23-T1: 3/3 uses, +62.5% gain</title></circle>
+<circle cx="92.7" cy="381.7" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P24-T3: 0/3 uses, -22.4% gain</title></circle>
+<circle cx="90.5" cy="323.2" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P25-T3: 0/3 uses, -2.6% gain</title></circle>
+<circle cx="839.2" cy="102.7" r="5.3" fill="#0b5578" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P26-T1: 3/3 uses, +71.9% gain</title></circle>
+<circle cx="87.1" cy="301.7" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P27-T3: 0/3 uses, +4.6% gain</title></circle>
+<circle cx="847.9" cy="86.7" r="5.3" fill="#0b5578" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P28-T1: 3/3 uses, +77.3% gain</title></circle>
+<circle cx="120.5" cy="338.8" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P28-T3: 0/3 uses, -7.9% gain</title></circle>
+<circle cx="849.6" cy="88.3" r="5.3" fill="#0b5578" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P29-T1: 3/3 uses, +76.8% gain</title></circle>
+<circle cx="840.9" cy="132.7" r="5.3" fill="#0b5578" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P29-T2: 3/3 uses, +61.8% gain</title></circle>
+<circle cx="69.7" cy="338.0" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P32-T3: 0/3 uses, -7.6% gain</title></circle>
+<circle cx="817.7" cy="106.1" r="5.3" fill="#0b5578" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P33-T1: 3/3 uses, +70.8% gain</title></circle>
+<circle cx="85.0" cy="245.1" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P34-T3: 0/3 uses, +23.8% gain</title></circle>
+<circle cx="599.1" cy="339.3" r="5.3" fill="#2480a7" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P35-T3: 2/3 uses, -8.1% gain</title></circle>
+<circle cx="90.0" cy="319.5" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P36-T3: 0/3 uses, -1.4% gain</title></circle>
+<circle cx="92.2" cy="308.2" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P37-T3: 0/3 uses, +2.4% gain</title></circle>
+<circle cx="82.1" cy="240.9" r="5.3" fill="#687a8c" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P39-T3: 0/3 uses, +25.2% gain</title></circle>
+<circle cx="605.9" cy="274.4" r="5.3" fill="#2480a7" fill-opacity="0.81" stroke="white" stroke-width="1"><title>P40-T3: 2/3 uses, +13.9% gain</title></circle>
+<text x="450.0" y="467" text-anchor="middle" font-family="Arial,sans-serif" font-size="14">Accepted L proofs with audited NumStability use (out of three)</text>
+</svg>

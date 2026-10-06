@@ -1,0 +1,493 @@
+{
+  "generated_at_utc": "2026-08-06T00:50:53.200259+00:00",
+  "isolation": {
+    "condition_l_numstability_mounts_configured": true,
+    "condition_n_numstability_mounts_configured": false,
+    "condition_n_preflight_after_complete_controlled_staging": true,
+    "controlled_task_staged_under": "task/",
+    "fresh_workspace_per_result": true,
+    "private_gold_staged_as": "Submission.lean",
+    "private_helper_oleans_reused": false,
+    "validator_hidden_rebuild": true
+  },
+  "kind": "highambench-private-construction-check",
+  "pass": false,
+  "results": [
+    {
+      "condition": "N",
+      "condition_n_library_arguments_omitted": true,
+      "gold_source_sha256": "13513662e2e27fb9533969f892c439af1d52b63fc42af1fd1dd88a97c4140578",
+      "helpers": [],
+      "manifest_sha256": "915f4da3db7e2b2f07dd06414d547e8229844fea8f3596f86f26506962662f9d",
+      "n_preflight": {
+        "complete": false,
+        "controlled_files_verified_after_staging": {
+          "changed": [],
+          "expected": 5,
+          "missing": [],
+          "ok": true,
+          "verified": 5
+        },
+        "controlled_manifest_sha256": "915f4da3db7e2b2f07dd06414d547e8229844fea8f3596f86f26506962662f9d",
+        "filesystem_leaks": [],
+        "filesystem_scan": {
+          "content_limit_bytes": 4194304,
+          "directory_count": 6,
+          "markers": [
+            "NumStability",
+            "numStability",
+            "lean-fp-analysis"
+          ],
+          "regular_file_count": 5,
+          "root": ".",
+          "symlink_count": 0
+        },
+        "import_probe": {
+          "attempted": true,
+          "command": [
+            "/bin/python3",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/highambench/tools/lean_isolated.py",
+            "probe",
+            "--condition",
+            "N",
+            "--workspace",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/hidden/highambench-construction-P03-T1-N-f_g432zw",
+            "--source",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/hidden/highambench-construction-P03-T1-N-f_g432zw/HighamBenchNoLibraryProbe_u_j7j65o.lean",
+            "--toolchain-root",
+            "/u501/m2fetrat/.elan/toolchains/leanprover--lean4---v4.29.0-rc3",
+            "--packages-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/packages_runtime",
+            "--shared-olean-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/shared_olean/P03",
+            "--shared-root-relative",
+            "task/shared",
+            "--bwrap",
+            "/usr/bin/bwrap"
+          ],
+          "conclusion": "compiler failed for a reason that does not prove module absence",
+          "exit_code": 1,
+          "importable": null,
+          "output": "bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted\n",
+          "output_truncated": false,
+          "reliable": false,
+          "system_error": null,
+          "timed_out": false
+        },
+        "ok": false
+      },
+      "paper_id": "P03",
+      "pass": false,
+      "reasons": [
+        "the complete staged condition-N package failed its library-absence preflight"
+      ],
+      "target_theorem": "HighamBench.p03_t1_one_step_residual_identity",
+      "task_id": "P03-T1",
+      "tier": "T1",
+      "validation": null
+    },
+    {
+      "condition": "L",
+      "condition_n_library_arguments_omitted": false,
+      "gold_source_sha256": "4e044e041df0603f127711ddf6cd25c7c9a9a4c3e1a4213d3c8d2259fa07f2d9",
+      "helpers": [],
+      "manifest_sha256": "915f4da3db7e2b2f07dd06414d547e8229844fea8f3596f86f26506962662f9d",
+      "n_preflight": null,
+      "paper_id": "P03",
+      "pass": false,
+      "reasons": [
+        "the existing hidden validator did not accept the proof",
+        "the transitive dependency audit was incomplete or failed",
+        "the private L construction did not use a NumStability declaration"
+      ],
+      "target_theorem": "HighamBench.p03_t1_one_step_residual_identity",
+      "task_id": "P03-T1",
+      "tier": "T1",
+      "validation": {
+        "compile_exit_code": 1,
+        "compile_timed_out": false,
+        "controlled_after_audit_ok": false,
+        "controlled_after_compile_ok": true,
+        "controlled_after_expected_compile_ok": false,
+        "controlled_before_ok": true,
+        "controlled_hidden_ok": true,
+        "dependency_audit": {
+          "complete": false,
+          "exit_code": null,
+          "forbidden_dependency_count": null,
+          "format_version": null,
+          "library_declarations": [],
+          "library_use": null
+        },
+        "failure_code": "PROOF_ERROR",
+        "note": "hidden Lean build rejected the submission",
+        "pass": false,
+        "semantic_statement_equal": false,
+        "statement_unchanged": true,
+        "static_finding_count": 0
+      }
+    },
+    {
+      "condition": "N",
+      "condition_n_library_arguments_omitted": true,
+      "gold_source_sha256": "d84bd01b74ccbea18f27138515c7405cc29a91ce788628f6a05af48b92a66cb5",
+      "helpers": [],
+      "manifest_sha256": "6c0a4c9b807fc5da0097e8b14d478ecb9b26427cf540db08b6aaee2cdd5a1f9b",
+      "n_preflight": {
+        "complete": false,
+        "controlled_files_verified_after_staging": {
+          "changed": [],
+          "expected": 5,
+          "missing": [],
+          "ok": true,
+          "verified": 5
+        },
+        "controlled_manifest_sha256": "6c0a4c9b807fc5da0097e8b14d478ecb9b26427cf540db08b6aaee2cdd5a1f9b",
+        "filesystem_leaks": [],
+        "filesystem_scan": {
+          "content_limit_bytes": 4194304,
+          "directory_count": 6,
+          "markers": [
+            "NumStability",
+            "numStability",
+            "lean-fp-analysis"
+          ],
+          "regular_file_count": 5,
+          "root": ".",
+          "symlink_count": 0
+        },
+        "import_probe": {
+          "attempted": true,
+          "command": [
+            "/bin/python3",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/highambench/tools/lean_isolated.py",
+            "probe",
+            "--condition",
+            "N",
+            "--workspace",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/hidden/highambench-construction-P03-T2-N-ppeiy3x9",
+            "--source",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/hidden/highambench-construction-P03-T2-N-ppeiy3x9/HighamBenchNoLibraryProbe_oyv2d5ia.lean",
+            "--toolchain-root",
+            "/u501/m2fetrat/.elan/toolchains/leanprover--lean4---v4.29.0-rc3",
+            "--packages-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/packages_runtime",
+            "--shared-olean-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/shared_olean/P03",
+            "--shared-root-relative",
+            "task/shared",
+            "--bwrap",
+            "/usr/bin/bwrap"
+          ],
+          "conclusion": "compiler failed for a reason that does not prove module absence",
+          "exit_code": 1,
+          "importable": null,
+          "output": "bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted\n",
+          "output_truncated": false,
+          "reliable": false,
+          "system_error": null,
+          "timed_out": false
+        },
+        "ok": false
+      },
+      "paper_id": "P03",
+      "pass": false,
+      "reasons": [
+        "the complete staged condition-N package failed its library-absence preflight"
+      ],
+      "target_theorem": "HighamBench.p03_t2_normwise_residual_contraction",
+      "task_id": "P03-T2",
+      "tier": "T2",
+      "validation": null
+    },
+    {
+      "condition": "L",
+      "condition_n_library_arguments_omitted": false,
+      "gold_source_sha256": "a9cddd14bdad6c5eddc21251a0d3dba44a77dbf068112de556c735dc3f94bc81",
+      "helpers": [],
+      "manifest_sha256": "6c0a4c9b807fc5da0097e8b14d478ecb9b26427cf540db08b6aaee2cdd5a1f9b",
+      "n_preflight": null,
+      "paper_id": "P03",
+      "pass": false,
+      "reasons": [
+        "the existing hidden validator did not accept the proof",
+        "the transitive dependency audit was incomplete or failed",
+        "the private L construction did not use a NumStability declaration"
+      ],
+      "target_theorem": "HighamBench.p03_t2_normwise_residual_contraction",
+      "task_id": "P03-T2",
+      "tier": "T2",
+      "validation": {
+        "compile_exit_code": 1,
+        "compile_timed_out": false,
+        "controlled_after_audit_ok": false,
+        "controlled_after_compile_ok": true,
+        "controlled_after_expected_compile_ok": false,
+        "controlled_before_ok": true,
+        "controlled_hidden_ok": true,
+        "dependency_audit": {
+          "complete": false,
+          "exit_code": null,
+          "forbidden_dependency_count": null,
+          "format_version": null,
+          "library_declarations": [],
+          "library_use": null
+        },
+        "failure_code": "PROOF_ERROR",
+        "note": "hidden Lean build rejected the submission",
+        "pass": false,
+        "semantic_statement_equal": false,
+        "statement_unchanged": true,
+        "static_finding_count": 0
+      }
+    },
+    {
+      "condition": "N",
+      "condition_n_library_arguments_omitted": true,
+      "gold_source_sha256": "6aebca5e99e9d7305684b956e60ec979c0f7f2f50849a46a2ff13878d7a87e09",
+      "helpers": [],
+      "manifest_sha256": "b6d738ac151ac895faebc7a6c457ca84f2cf88a4475070d71e3aac747cbfed63",
+      "n_preflight": {
+        "complete": false,
+        "controlled_files_verified_after_staging": {
+          "changed": [],
+          "expected": 5,
+          "missing": [],
+          "ok": true,
+          "verified": 5
+        },
+        "controlled_manifest_sha256": "b6d738ac151ac895faebc7a6c457ca84f2cf88a4475070d71e3aac747cbfed63",
+        "filesystem_leaks": [],
+        "filesystem_scan": {
+          "content_limit_bytes": 4194304,
+          "directory_count": 6,
+          "markers": [
+            "NumStability",
+            "numStability",
+            "lean-fp-analysis"
+          ],
+          "regular_file_count": 5,
+          "root": ".",
+          "symlink_count": 0
+        },
+        "import_probe": {
+          "attempted": true,
+          "command": [
+            "/bin/python3",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/highambench/tools/lean_isolated.py",
+            "probe",
+            "--condition",
+            "N",
+            "--workspace",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/hidden/highambench-construction-P03-T3-N-z9nhja4f",
+            "--source",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/hidden/highambench-construction-P03-T3-N-z9nhja4f/HighamBenchNoLibraryProbe_b10iwkfv.lean",
+            "--toolchain-root",
+            "/u501/m2fetrat/.elan/toolchains/leanprover--lean4---v4.29.0-rc3",
+            "--packages-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/packages_runtime",
+            "--shared-olean-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/shared_olean/P03",
+            "--shared-root-relative",
+            "task/shared",
+            "--bwrap",
+            "/usr/bin/bwrap"
+          ],
+          "conclusion": "compiler failed for a reason that does not prove module absence",
+          "exit_code": 1,
+          "importable": null,
+          "output": "bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted\n",
+          "output_truncated": false,
+          "reliable": false,
+          "system_error": null,
+          "timed_out": false
+        },
+        "ok": false
+      },
+      "paper_id": "P03",
+      "pass": false,
+      "reasons": [
+        "the complete staged condition-N package failed its library-absence preflight"
+      ],
+      "target_theorem": "HighamBench.p03_t3_componentwise_residual_recurrence",
+      "task_id": "P03-T3",
+      "tier": "T3",
+      "validation": null
+    },
+    {
+      "condition": "L",
+      "condition_n_library_arguments_omitted": false,
+      "gold_source_sha256": "cd69109c55341facb3ecaf6c956c480a24c83190d9b649ddfa9ab431946a8ffb",
+      "helpers": [],
+      "manifest_sha256": "b6d738ac151ac895faebc7a6c457ca84f2cf88a4475070d71e3aac747cbfed63",
+      "n_preflight": null,
+      "paper_id": "P03",
+      "pass": false,
+      "reasons": [
+        "the existing hidden validator did not accept the proof",
+        "the transitive dependency audit was incomplete or failed",
+        "the private L construction did not use a NumStability declaration"
+      ],
+      "target_theorem": "HighamBench.p03_t3_componentwise_residual_recurrence",
+      "task_id": "P03-T3",
+      "tier": "T3",
+      "validation": {
+        "compile_exit_code": 1,
+        "compile_timed_out": false,
+        "controlled_after_audit_ok": false,
+        "controlled_after_compile_ok": true,
+        "controlled_after_expected_compile_ok": false,
+        "controlled_before_ok": true,
+        "controlled_hidden_ok": true,
+        "dependency_audit": {
+          "complete": false,
+          "exit_code": null,
+          "forbidden_dependency_count": null,
+          "format_version": null,
+          "library_declarations": [],
+          "library_use": null
+        },
+        "failure_code": "PROOF_ERROR",
+        "note": "hidden Lean build rejected the submission",
+        "pass": false,
+        "semantic_statement_equal": false,
+        "statement_unchanged": true,
+        "static_finding_count": 0
+      }
+    }
+  ],
+  "schema_version": 1,
+  "scope": {
+    "central_manifest": "metadata/manifest.json",
+    "central_manifest_sha256": "6dbbaa72d09b3cd5e74f2e37c4ef561adf654379247702b6754a48bba695898b",
+    "complete_manifest_scope": false,
+    "manifest_available_task_ids": [
+      "P01-T1",
+      "P01-T2",
+      "P01-T3",
+      "P02-T1",
+      "P02-T2",
+      "P02-T3",
+      "P03-T1",
+      "P03-T2",
+      "P03-T3"
+    ],
+    "manifest_paper_ids": [
+      "P01",
+      "P02",
+      "P03"
+    ],
+    "selected_paper_ids": [
+      "P03"
+    ],
+    "selected_task_ids": [
+      "P03-T1",
+      "P03-T2",
+      "P03-T3"
+    ]
+  },
+  "summary": {
+    "checked": 6,
+    "condition_l_passed": 0,
+    "condition_n_passed": 0,
+    "expected": 6,
+    "passed": 0
+  },
+  "verification_basis": {
+    "executables": {
+      "bubblewrap": {
+        "path": "/usr/bin/bwrap",
+        "sha256": "52231e1caf55bcbc667b269f49c63599a6f7db4767ae6a039580d0ff853db712"
+      },
+      "python": {
+        "path": "/usr/bin/python3.12",
+        "sha256": "1643dacd9feaedc58f3cc581e4d22577dfe25c09b10282936186ccf0f2e61118",
+        "version": "3.12.3"
+      }
+    },
+    "numstability_compiled": {
+      "exact_tree": true,
+      "file_count": 120,
+      "label": "numstability-45813a95-compiled",
+      "mount_root": "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/numstability_olean",
+      "only_numstability_namespace": true,
+      "path": "metadata/library_olean.json",
+      "sha256": "bbea1e90bc11605bd3c14b28dc39bf49b7bcb64ab5cf2306841f65b803a6ae2a",
+      "total_bytes": 62620948,
+      "verified": 120
+    },
+    "numstability_source": {
+      "exact_tree": true,
+      "file_count": 977,
+      "label": "numstability-45813a95-source",
+      "path": "metadata/library_source.json",
+      "sha256": "8b52061f0fafc283acd2363267ebbee2f9c6eb97360c596723b95b27515c7828",
+      "total_bytes": 69597467,
+      "verified": 977
+    },
+    "packages_runtime": {
+      "base_olean_file_count": 8039,
+      "compiled_support_file_count": 24099,
+      "condition_n_absence_scan": {
+        "bytes_scanned": 5480830882,
+        "complete": true,
+        "files_scanned": 39811,
+        "markers": [
+          "NumStability",
+          "numStability",
+          "lean-fp-analysis"
+        ],
+        "matches": [],
+        "ok": true
+      },
+      "exact_tree": true,
+      "file_count": 39811,
+      "label": "packages-runtime-e8ea1afc",
+      "mathlib_source_file_count": 7673,
+      "mount_root": "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/packages_runtime",
+      "only_mathlib_source_and_lean_compiled_artifacts": true,
+      "path": "metadata/packages_runtime.json",
+      "sha256": "a2ee0563bc731aa3dba22ed7af0e9bd1322c8c06b51cd9d01bd573282d9c8c31",
+      "total_bytes": 5480830882,
+      "verified": 39811
+    },
+    "shared_olean": {
+      "bundles": {
+        "P01": {
+          "HighamBench/Core.olean": "f5a07f5bd1021c7565b5863278abe123a8796eeb482978ebade11579893d740b",
+          "HighamBench/P01Definitions.olean": "3d7c8e8630d10c51aeb13ba8b7e132013d3002f38dd9aa51bc69beb2ac81b887"
+        },
+        "P02": {
+          "HighamBench/Core.olean": "f5a07f5bd1021c7565b5863278abe123a8796eeb482978ebade11579893d740b",
+          "HighamBench/P02Definitions.olean": "14c6ea7fa9187a1f9b52cd0562239fb723aa2ad2a7ee269ee764800ed84524b8"
+        },
+        "P03": {
+          "HighamBench/Core.olean": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1",
+          "HighamBench/P03Definitions.olean": "bb86b0cdccc9c5f21f8b49f1b8c5c539040201c9746c7f0f86e5a5afc5340aea"
+        }
+      },
+      "condition_n_absence_scan": {
+        "bytes_scanned": 490152,
+        "complete": true,
+        "files_scanned": 6,
+        "markers": [
+          "NumStability",
+          "numStability",
+          "lean-fp-analysis"
+        ],
+        "matches": [],
+        "ok": true
+      },
+      "exact_file_count": 6
+    },
+    "tools": {
+      "tools/check_construction.py": "83e7860cba3b192982bd8336f889b1f371981dfcad8228d9afdf45664deda6e9",
+      "tools/common.py": "5b5aacb4957cb3f946027637fd38c6b65e01907c00d8f5a6567bf470e6241617",
+      "tools/dependency_audit.lean": "0f19d8c9e1a2e6c17f22f0ab38425d0351e4d6cf65c0b03165e06ecb9d718be7",
+      "tools/hashes.py": "0c24b4086e38a44491a61c045b1751ffb08dedc1e32370f4ab96c19f9f2d6b61",
+      "tools/lean_isolated.py": "aae24febc4bf42802919c027bf6edb1c409903376ae0c37d9d0294d855d895ca",
+      "tools/preflight.py": "0c192828297710a67fa131403f9359a94f78767ff081af55010cf72b86d1793d",
+      "tools/validator.py": "2842f43cab220363ba3b6bb66004e3023d15c3eba5a8a6ddbb048aa2507808cb"
+    }
+  }
+}

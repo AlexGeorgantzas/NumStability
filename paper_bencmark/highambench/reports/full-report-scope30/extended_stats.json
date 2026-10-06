@@ -1,0 +1,158 @@
+{
+  "source_sha256": {
+    "task_usage.csv": "b0951d1b11d238cace641b2a99d55044e4aeee79bc2d75920165cd0944700b04",
+    "attempt_usage.csv": "bd536d94b2c5e98eebc68d8e3e81a96b879498278317f21eee5bc2dc9712a43a",
+    "retained_tasks.csv": "28a38a3151d873a1c27c2f8cf955d38599a49dadbf0e8d2e92c6fdfbcf3fe8c8"
+  },
+  "token_ledger_sha256": "5de6e1f46e7555f45ce8eb0800c3f4954fc2994d55fb79d58dd5b1cc974f378b",
+  "token_totals": {
+    "N": 9851230,
+    "L": 8691675
+  },
+  "direct_proof_scan_sha256": "bd4f8e47317ea124b1e314f129c7d6814bcdff9c47bf84117590af22184ea809",
+  "direct_proof_manifest_sha256": "6d7d6a6bcd135c24b731baa0e27e83637ca5b5f74578396767be856dbc1098c0",
+  "direct_proof_scanner_sha256": "42c239528f4c51cecbb340c074d074e87377b5c0687d5dcde6d79d38196f11a5",
+  "task_count": 30,
+  "pair_count": 90,
+  "accepted_attempts": 180,
+  "aligned_code_lines": {
+    "N_mean": 398.1,
+    "L_mean": 325.1,
+    "L_better_tasks": 19
+  },
+  "proof_region_loc": {
+    "N_task_mean": 94.02222222222221,
+    "L_task_mean": 102.48888888888888,
+    "gain_of_totals_pct": -9.004963365634602
+  },
+  "uptake_spearman": {
+    "time_gain_pct": 0.7318219755827902,
+    "code_loc_gain_pct": 0.6445052178243117,
+    "token_gain_pct": 0.31393063053341524
+  },
+  "direct_use_spearman": {
+    "time_gain_pct": 0.6892763155419847,
+    "code_loc_gain_pct": 0.6120616301762397,
+    "token_gain_pct": 0.2559888135851609
+  },
+  "direct_use_summary": {
+    "by_tier": {
+      "T1": {
+        "tasks": 9,
+        "mean_direct": 9.037037037037036,
+        "zero_direct_tasks": 0
+      },
+      "T2": {
+        "tasks": 3,
+        "mean_direct": 17.88888888888889,
+        "zero_direct_tasks": 0
+      },
+      "T3": {
+        "tasks": 18,
+        "mean_direct": 0.6296296296296297,
+        "zero_direct_tasks": 17
+      }
+    },
+    "zero_tasks": 17,
+    "consistent_tasks": 12,
+    "secondary_correlations": {
+      "Archived direct-target reach": {
+        "time_gain_pct": 0.6586709443906777,
+        "code_loc_gain_pct": 0.636927378593562,
+        "token_gain_pct": 0.34100275140354736
+      },
+      "Proofs with any dependency (0--3)": {
+        "time_gain_pct": 0.7318219755827902,
+        "code_loc_gain_pct": 0.6445052178243117,
+        "token_gain_pct": 0.31393063053341524
+      },
+      "Distinct qualified source names": {
+        "time_gain_pct": 0.7022949487349305,
+        "code_loc_gain_pct": 0.5927920572888744,
+        "token_gain_pct": 0.27141952643820194
+      },
+      "Qualified source occurrences": {
+        "time_gain_pct": 0.6891240717039391,
+        "code_loc_gain_pct": 0.5826320220794545,
+        "token_gain_pct": 0.2523345101956608
+      },
+      "Transitive dependency count": {
+        "time_gain_pct": 0.7274907223769634,
+        "code_loc_gain_pct": 0.6618247241096716,
+        "token_gain_pct": 0.3389054142783826
+      }
+    }
+  },
+  "top_direct_declarations": [
+    {
+      "name": "NumStability.FPModel.mk",
+      "L_proofs": 29,
+      "tasks": 10
+    },
+    {
+      "name": "NumStability.gamma",
+      "L_proofs": 27,
+      "tasks": 10
+    },
+    {
+      "name": "NumStability.gammaValid",
+      "L_proofs": 27,
+      "tasks": 11
+    },
+    {
+      "name": "NumStability.FPModel",
+      "L_proofs": 21,
+      "tasks": 9
+    },
+    {
+      "name": "NumStability.gamma_nonneg",
+      "L_proofs": 15,
+      "tasks": 5
+    },
+    {
+      "name": "NumStability.FPModel.u",
+      "L_proofs": 12,
+      "tasks": 5
+    },
+    {
+      "name": "NumStability.fl_forwardSub",
+      "L_proofs": 9,
+      "tasks": 3
+    },
+    {
+      "name": "NumStability.fl_forwardSub_steps",
+      "L_proofs": 9,
+      "tasks": 3
+    },
+    {
+      "name": "NumStability.forwardSub_backward_error",
+      "L_proofs": 9,
+      "tasks": 3
+    },
+    {
+      "name": "NumStability.FPModel.fl_add",
+      "L_proofs": 8,
+      "tasks": 3
+    },
+    {
+      "name": "NumStability.frobNormRect",
+      "L_proofs": 8,
+      "tasks": 3
+    },
+    {
+      "name": "NumStability.FPModel.fl_div",
+      "L_proofs": 7,
+      "tasks": 4
+    },
+    {
+      "name": "NumStability.FPModel.fl_mul",
+      "L_proofs": 7,
+      "tasks": 4
+    },
+    {
+      "name": "NumStability.FPModel.fl_sub",
+      "L_proofs": 7,
+      "tasks": 4
+    }
+  ]
+}

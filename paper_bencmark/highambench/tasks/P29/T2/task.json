@@ -1,0 +1,112 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source-faithful explicit-norm formulation of the LDL-transpose solution-phase backward-stability argument in Appendix B",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "L is the nonsingular unit lower triangular factor used by the Appendix-B LDL-transpose solve, and D is its one-by-one/two-by-two block diagonal factor.",
+    "The premise p29LDLT L D = A + E0 and the bound on E0 are the factorization backward error established in the preceding part of Appendix B.",
+    "The block-D solve has the same normwise backward-stability hypothesis imposed by the paper; its perturbation level eta is shared identically by N and L.",
+    "The forward and transposed back solves are the explicit rounded recurrences under the standard relative-error model, excluding overflow and underflow, with n*u<1.",
+    "The entrywise-sum matrix norm and p29TotalBackwardBound expose one valid dimension-dependent coefficient hidden by the paper's d'(n)*epsilon and O(epsilon^2) notation."
+  ],
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P29 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P29 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P29/T2/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p29_t2_ldlt_solve_backward_stability (fp : P29FPModel) (n : Nat) (A L D E0 : P29Matrix n n) (b z : Fin n -> Real) (eta factorEta : Real) ... : exists DeltaL DeltaD DeltaU F, componentwise triangular perturbation bounds and F = p29TotalBackwardError E0 L D DeltaL DeltaD DeltaU and (A+F)*xhat=b and p29EntryNorm F <= p29TotalBackwardBound fp n eta factorEta A L D",
+    "namespace": "HighamBench",
+    "plain_language": "A backward-stable factorization, rounded forward solve, backward-stable block-diagonal solve, and rounded transposed back solve compose into a single normwise perturbation F for which the computed vector exactly solves (A+F)x=b.",
+    "target_file": "paper_bencmark/highambench/tasks/P29/T2/Target.lean",
+    "theorem_name": "p29_t2_ldlt_solve_backward_stability"
+  },
+  "informal_proof": "Obtain the componentwise backward perturbation for the forward solve, use the supplied block-D perturbation, and obtain the independent componentwise backward perturbation for the transposed back solve. Compose the three exact perturbed systems, add the factorization perturbation, expand the exact product, and bound all first- and higher-order terms by submultiplicativity of the explicit finite matrix norm.",
+  "informal_statement": "The linear-solution backward-stability conclusion in Appendix B, retaining the preceding factorization perturbation and all three solution-phase perturbations with an explicit dimension-dependent bound.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P29",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P29-Accurate Symmetric Indefinite Linear Equation Solvers.pdf",
+    "sha256": "e6fcb1e01906bbc1df9d3db41d593b6de7ffc7e3f320add7023caadf290b94f5"
+  },
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 20(2), 1998, printed pages 513-561",
+  "result_form_tag": "UNL",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "Bunch-Kaufman LDLT solve backward stability",
+        "block diagonal solve backward error",
+        "forward substitution backward error",
+        "back substitution backward error"
+      ],
+      "result": "The compiled condition-L set has substantial forward- and back-substitution backward-error theorems but no Bunch--Kaufman, Bunch--Parlett, block-LDLT, or two-by-two block-solve theorem. Closer Chapter-11 block-LDLT declarations exist only in uncompiled frozen source and are unavailable to L. Mathlib has no floating-point triangular-solve theorem.",
+      "scope": "the complete frozen NumStability source, its compiled object list in metadata/library_olean.json, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.forwardSub_backward_error",
+      "NumStability.backSub_backward_error",
+      "NumStability.lu_solve_backward_error_mixed"
+    ],
+    "note": "The generic mixed LU composition theorem consumes already-supplied triangular perturbations and does not produce the target's two rounded LDL-transpose solves or handle its intervening block-D solve. L therefore invokes the two separate substantial triangular-solve theorems. N reconstructs both recurrence analyses. Private proofs compile and are 374 lines in L versus 1444 lines in N."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P29FPModel",
+    "P29Matrix",
+    "p29Gamma",
+    "P29GammaValid",
+    "p29Transpose",
+    "p29MatMul",
+    "p29EntryNorm",
+    "p29ForwardSubSteps",
+    "p29ForwardSub",
+    "p29BackSubSteps",
+    "p29BackSub",
+    "p29LDLT",
+    "p29PerturbedLDLT",
+    "p29CombinedBackwardError",
+    "p29TotalBackwardError",
+    "P29BlockSolveStable",
+    "p29SolveBackwardFactor",
+    "p29TotalBackwardBound"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Appendix-B assumptions and displayed factorization and solution backward-stability conclusions",
+      "pdf_page": 46,
+      "printed_page": "558",
+      "role": "selected solution stability statement and preceding factorization perturbation",
+      "section": "Appendix B. Backward stability of LDL-transpose factorizations with bounded L"
+    },
+    {
+      "anchor": "final displayed perturbed solution equation and concluding norm-bound paragraph",
+      "pdf_page": 47,
+      "printed_page": "559",
+      "role": "selected solution-phase perturbation composition proof",
+      "section": "Appendix B. Backward stability of LDL-transpose factorizations with bounded L"
+    }
+  ],
+  "source_tags": [
+    "UNL"
+  ],
+  "task_id": "P29-T2",
+  "tier": "T2",
+  "tier_label": "composition",
+  "tier_rationale": "The proof directly needs two distinct substantial importable results: NumStability.forwardSub_backward_error and NumStability.backSub_backward_error. Neither is in Mathlib, and reconstructing both rounded triangular-solve analyses accounts for most of the 1444-line N proof. L reuses both and performs the paper-specific block-solve and factorization perturbation composition, producing a much larger speedup than T1.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P29/T2/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p29_t2_ldlt_solve_backward_stability"
+  }
+}

@@ -1,0 +1,5 @@
+{"monotonic_ns":19114930791009,"raw_line":"\u001b[2m2026-09-16T18:40:45.873854Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:","record_type":"app_server_stderr","sequence":1,"unix_ns":1789584045873891183}
+{"monotonic_ns":19114930846263,"raw_line":"      · norm_num","record_type":"app_server_stderr","sequence":2,"unix_ns":1789584045873946679}
+{"monotonic_ns":19114930869036,"raw_line":"      constructor","record_type":"app_server_stderr","sequence":3,"unix_ns":1789584045873969463}
+{"monotonic_ns":19114930885504,"raw_line":"      · norm_num","record_type":"app_server_stderr","sequence":4,"unix_ns":1789584045873985916}
+{"monotonic_ns":19114930901531,"raw_line":"      constructor <;> norm_num","record_type":"app_server_stderr","sequence":5,"unix_ns":1789584045874001969}

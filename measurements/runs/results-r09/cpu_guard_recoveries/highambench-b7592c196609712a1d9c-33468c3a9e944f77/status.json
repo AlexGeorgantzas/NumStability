@@ -1,0 +1,1 @@
+{"active_lease":null,"allowed_cpus":"0-31","applied":null,"generation":2,"idle_sample_seconds":2.0,"kind":"highambench-cpu-guard-status","maximum_busy_percent":0.0,"maximum_slots":8,"phase":"inactive","recovery_required":false,"schema_version":1,"verified":true}

@@ -1,0 +1,93 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "direct one-based scalar-recurrence form of Lemma 3.1 and Appendix A",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The scalar sequences encode the three exact plane rotations used in Sections 2.6, 3.1.1, and Appendix A.",
+    "All indices are one-based, as in the paper, and p42PrefixProduct is the paper's product notation s^(k) or s-bar^(k).",
+    "The nonzero rho, rho-bar, and rho-tilde assumptions are exactly what is required for the displayed rotation quotients.",
+    "The structure records equations (A.1), (A.2), (A.4), (A.5), and (A.6); it does not assume the equality asserted by Lemma 3.1."
+  ],
+  "author_label": "Lemma 3.1",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P42 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P42 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P42/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p42_t3_lsmr_transformed_components (run : P42Lemma31Run) (k : Nat) (hk : 1 <= k) : run.betaTilde k = run.tauTilde k",
+    "namespace": "HighamBench",
+    "plain_language": "For every positive iteration index, the transformed right-hand-side component beta-tilde equals the forward-substitution component tau-tilde, as asserted by Lemma 3.1.",
+    "target_file": "paper_bencmark/highambench/tasks/P42/T3/Target.lean",
+    "theorem_name": "p42_t3_lsmr_transformed_components"
+  },
+  "informal_proof": "Follow Appendix A. Prove the base case from the three rotations. Prove the product identity (A.7) for arbitrary index, derive the mixed-rotation cancellation from the squared rotation relations, and use both identities with recurrences (A.2), (A.5), and (A.6) in the induction step.",
+  "informal_statement": "Prove the full arbitrary-iteration scalar recurrence identity in Lemma 3.1.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P42",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P42 LSMR- An Iterative Algorithm for Sparse Least-Squares Problems.pdf",
+    "sha256": "21c386e36f99e5b003f8ffd1816b98b36943ab4953759989a7ed863b12b4963a"
+  },
+  "paper_version": "technical report SOL 2010-2, version of August 16, 2011, revised March 14, 2011",
+  "result_form_tag": "LEM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "LSMR Lemma 3.1 transformed right hand side beta tilde tau tilde",
+        "LSMR LSQR MINRES Golub Kahan transformed residual recurrence",
+        "Fong Saunders Appendix A beta tilde tau tilde",
+        "coupled Givens rotations LSMR residual estimate"
+      ],
+      "result": "Neither Mathlib nor the exact 44-module importable NumStability set contains LSMR, LSQR, MINRES, the Golub-Kahan transformed-component recurrence, Lemma 3.1, or an equivalent theorem. Generic plane-rotation and QR facts do not prove the coupled product and recurrence identities in Appendix A.",
+      "scope": "the complete frozen NumStability source, the compiled condition-L bundle recorded in metadata/library_olean.json, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "generic Givens-coefficient and QR infrastructure only; no declaration discharges any Appendix A identity"
+    ],
+    "note": "The exact private N proof is 193 physical lines. The exact L proof has the identical 193-line mathematical construction and adds only a 9-line irrelevant zero-nonnegativity marker from RoundingProductBounds."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "p42PrefixProduct",
+    "P42Lemma31Run"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Lemma 3.1 and equations (3.2)-(3.3)",
+      "pdf_page": "5",
+      "printed_page": "5",
+      "role": "selected result statement",
+      "section": "3.1 Computing the norm of the residual"
+    },
+    {
+      "anchor": "Appendix A, equations (A.1)-(A.7)",
+      "pdf_page": "19-20",
+      "printed_page": "19-20",
+      "role": "complete induction proof",
+      "section": "Appendix A. Proof of Lemma 3.1"
+    }
+  ],
+  "source_tags": [
+    "LEM"
+  ],
+  "task_id": "P42-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The proof reconstructs a multi-stage arbitrary-index induction through three coupled rotations, including a separate product induction for (A.7), squared-rotation cancellation, sign and prefix-product bookkeeping, and the final transformed-component recurrence. It is substantial and not available from Mathlib imports. NumStability has no LSMR or matching recurrence theorem, and the exact L mathematical proof is identical to N.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P42/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p42_t3_lsmr_transformed_components"
+  }
+}

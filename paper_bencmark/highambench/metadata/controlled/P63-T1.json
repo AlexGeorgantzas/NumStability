@@ -1,0 +1,27 @@
+{
+  "files": [
+    {
+      "bytes": 3017,
+      "path": "agent_prompt.md",
+      "sha256": "0f116039fb2ac519a722258f2b9b2d539f0e0c087d03ac476a91f0af61cd5e11"
+    },
+    {
+      "bytes": 2170,
+      "path": "shared/HighamBench/P63Definitions.lean",
+      "sha256": "462303eb226768cd9df816735e6e9f5b074e8a748d805bd5e1f001f0fca3c10e"
+    },
+    {
+      "bytes": 683,
+      "path": "tasks/P63/T1/Target.lean",
+      "sha256": "a92dd7d713558581b372effff80271187109f00c892f63cdc21df4ee45073383"
+    },
+    {
+      "bytes": 781,
+      "path": "tasks/P63/T1/context.md",
+      "sha256": "8b0c5c8e240deae5a4fba99cb35c8424a8c4a80d7a754bec515c080e9329b697"
+    }
+  ],
+  "kind": "highambench-controlled-files",
+  "label": "P63-T1-controlled",
+  "schema_version": 1
+}

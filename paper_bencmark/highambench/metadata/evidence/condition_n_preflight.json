@@ -1,0 +1,14 @@
+{
+  "current_evidence": "paper_bencmark/highambench/metadata/evidence/construction_validation_full_current.json",
+  "current_evidence_sha256": "972afca1bb5abc9694ba738505b596a69aae51909e5da2a352faeaf58267c6b9",
+  "current_result": {
+    "complete_staged_task_scans_passed": 38,
+    "condition_n_tasks_checked": 38,
+    "filesystem_leaks": 0,
+    "reliable_failed_import_probes": 38
+  },
+  "kind": "highambench-condition-n-preflight-evidence-pointer",
+  "reason": "The complete construction record contains one fresh N preflight for each of all 38 tasks. Each preflight scans the fully staged controlled task before private proof material is copied, verifies the controlled manifest, and confirms with a real Lean import probe that NumStability is unavailable.",
+  "schema_version": 1,
+  "status": "current complete-corpus construction evidence"
+}

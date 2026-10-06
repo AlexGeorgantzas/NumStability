@@ -1,0 +1,96 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 22-page paper in physical-PDF order, surveyed every named proved result and rigorous derivation, compared candidates with the frozen Mathlib and importable NumStability baselines, and privately formalized the selected theorem before packaging it.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P27 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Ming Gu",
+    "Stanley C. Eisenstat"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P27-T3"
+  ],
+  "paper_id": "P27",
+  "paper_version": "published journal version; SIAM Journal on Scientific Computing 17(4), 1996, printed pages 848-869",
+  "publication": {
+    "doi": "10.1137/0917055",
+    "issue": "4",
+    "journal": "SIAM Journal on Scientific Computing",
+    "printed_pages": "848-869",
+    "publication_date": "1996-07-01",
+    "volume": "17",
+    "year": 1996
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Lemma 3.1, the determinant increase identity for one interchange",
+      "reason": "This is an exact and useful source result, but it is materially narrower than Theorem 3.2 and does not need a substantial importable NumStability theorem. On its own it does not meet the T3 difficulty floor."
+    },
+    {
+      "candidate": "Lemma 5.1, the determinant bound used during interchanges",
+      "reason": "Its proof is a shorter determinant and norm comparison. It has no suitable T1 or T2 library dependency and is less difficult than the selected two-sided singular-value theorem."
+    },
+    {
+      "candidate": "Theorem 5.2, the Wilkinson-style growth bound during Algorithm 5 interchanges",
+      "reason": "The source theorem is substantial, but a manageable formal statement would have to replace the algorithm, changing permutations, and block partitions by a recurrence certificate. That would hide the matrix argument and risk an artificial task."
+    },
+    {
+      "candidate": "Theorem 7.2, the exponential bounds for ordinary QR with column pivoting",
+      "reason": "Its proof depends on Lemma 7.1, which the paper quotes from an earlier source rather than proving. The remaining induction is less source-complete than Theorem 3.2."
+    },
+    {
+      "candidate": "Section 5.2 numerical-stability discussion",
+      "reason": "The paper gives qualitative O_n estimates and a recomputation recommendation, not a complete execution-level floating-point theorem with a proof that could support T1 or T2."
+    },
+    {
+      "candidate": "Algorithms, operation counts, and numerical experiments in Sections 4, 6, and 8",
+      "reason": "These are implementation descriptions, asymptotic cost calculations, and empirical comparisons rather than additional proved numerical conclusions suitable for the tiers."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No source-faithful proved task needs exactly one substantial importable NumStability result that makes L substantially faster than N."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source-backed proved task needs at least two distinct substantial importable NumStability results; multiple QR operations do not by themselves supply theorem dependencies."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Use both indexed singular-value conclusions of Theorem 3.2 together with the source's two block-transformation estimates and exact sqrt(1+f^2 k(n-k)) factor.",
+      "task_id": "P27-T3",
+      "theorem_name": "p27_t3_theorem3_2"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only conclusions explicitly stated and proved in the paper.",
+    "Retain both equations (8) and (9) and the exact k(n-k) factor from Theorem 3.2.",
+    "Represent the cited general singular-value product comparison as a premise, while requiring the task proof to construct both paper-specific block gain bounds.",
+    "Do not turn the qualitative stability discussion or experiments into benchmark theorems.",
+    "Do not reduce Theorem 5.2 to an artificial recurrence detached from Algorithm 5's matrix interchanges.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source, its importable compiled subset, and Mathlib."
+  ],
+  "short_name": "Gu--Eisenstat (1996)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/0917055",
+    "local_path": "paper_bencmark/reference_papers/P27-Efficient Algorithms for Computing a Strong Rank-Revealing QR Factorization.pdf",
+    "page_map": "Physical PDF pages 1-22 are printed pages 848-869 respectively.",
+    "pdf_pages": 22,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "0460d727814216aa6b110f3c9a22742617ffa08d5d50f919e6885da35ec43ce3"
+  },
+  "title": "Efficient Algorithms for Computing a Strong Rank-Revealing QR Factorization"
+}

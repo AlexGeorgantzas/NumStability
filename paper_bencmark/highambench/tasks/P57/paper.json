@@ -1,0 +1,80 @@
+{
+  "annotation": {
+    "method": "Codex extracted and read all eleven pages in physical order, covering Sections 1-5, every theorem and proof, the barycentric-weight derivation, all numerical examples, conclusions, and all 23 references; separated cited interpolation formulas from the paper's own results; audited Mathlib and the exact frozen 44-object NumStability surface; and compiled exact private N/L proofs before retaining P57-T3.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P57 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Michael S. Floater",
+    "Kai Hormann"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P57-T3"
+  ],
+  "paper_id": "P57",
+  "paper_version": "Numerische Mathematik 107(2), August 2007, pages 315-331",
+  "publication": {
+    "version_date": "2007-08",
+    "year": 2007
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Theorem 2",
+      "reason": "Its error proof invokes the cited Newton interpolation error formula and standard divided-difference derivative bounds. The frozen library supplies no qualifying shortcut, while treating those cited results as assumptions leaves less self-contained new work than Theorem 1's denominator argument."
+    },
+    {
+      "candidate": "Theorem 3",
+      "reason": "Its d=0 approximation estimate likewise depends on cited interpolation background and does not receive a NumStability shortcut."
+    },
+    {
+      "candidate": "Section 4 barycentric form and weights",
+      "reason": "The section starts from a cited general barycentric representation and derives useful formulas, but the selected denominator-positivity proof is the stronger self-contained T3 candidate."
+    },
+    {
+      "candidate": "Section 5 numerical examples and stability comments",
+      "reason": "The examples are empirical, and the paper explicitly says numerical stability still has to be verified, so no exact stability task can be extracted faithfully."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No internally proved P57 result needs one substantial non-Mathlib declaration from the frozen library. Nearby sign lemmas are generic and do not materially shorten the product recurrence and two-tail argument."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No exact source-proved result receives two distinct substantial NumStability shortcuts; the library contains no rational-interpolation or alternating-denominator theory."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Selected the d>=1 interior-interval part of Theorem 1's denominator-positivity proof, including the positive middle block and both alternating decreasing tails. Exact N/L proofs establish substantial indexed work with no NumStability shortcut.",
+      "task_id": "P57-T3",
+      "theorem_name": "p57_t3_denominator_positive_between_nodes"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only statements and proof content present in P57.",
+    "Treat the d=0 no-poles result credited to Berrut and the cited interpolation formulas as background rather than P57 proof obligations.",
+    "Represent Theorem 1 by its self-contained d>=1 interior-interval argument without adding a stability claim that the paper leaves open.",
+    "Assign a tier only after exact private N and L proofs compile."
+  ],
+  "short_name": "Floater--Hormann (2007)",
+  "source": {
+    "lawful_source_locator": "local user-supplied journal-version PDF",
+    "local_path": "paper_bencmark/reference_papers/P57 Barycentric Rational Interpolation with No Poles and High Rates of Approximation.pdf",
+    "page_map": "Physical pages 1-11 carry article pages 1-11; the citation panel identifies the journal version as pages 315-331.",
+    "pdf_pages": 11,
+    "rights_note": "Retain the local source path and cryptographic hash for benchmark provenance; do not redistribute the source PDF.",
+    "sha256": "a89b6b3122fb052540450199d6bb1e9f40e652c1d89e443197dcd1db72faf130"
+  },
+  "title": "Barycentric Rational Interpolation with No Poles and High Rates of Approximation"
+}

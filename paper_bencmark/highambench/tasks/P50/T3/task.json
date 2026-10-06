@@ -1,0 +1,92 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "real scalar specialization of the first-companion factorization in Lemma 3.4",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The coefficient blocks are real scalars, the n=1 real specialization of the paper's complex matrix-polynomial result.",
+    "m is positive because the first companion pencil has m block rows and columns.",
+    "Finite indices are zero-based; p50Multiplier is the paper's displayed E with the powers combined so that every entry is a polynomial.",
+    "p50MatMul is ordinary multiplication of the resulting m-by-m scalar matrices."
+  ],
+  "author_label": "Lemma 3.4",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P50 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P50 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P50/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p50_t3_first_companion_factorization (m : Nat) (hm : 0 < m) (A : Fin (m+1) -> Real) (alpha beta : Real) : p50MatMul (p50Multiplier m A alpha beta) (p50FirstCompanion m hm A alpha beta) = fun i j => if i = j then p50Polynomial m A alpha beta else 0",
+    "namespace": "HighamBench",
+    "plain_language": "Verify for arbitrary positive degree that the explicit scalar multiplier from Lemma 3.4 times the first companion pencil is the scalar polynomial times the identity matrix.",
+    "target_file": "paper_bencmark/highambench/tasks/P50/T3/Target.lean",
+    "theorem_name": "p50_t3_first_companion_factorization"
+  },
+  "informal_proof": "Directly multiply each column of the sparse first companion pencil by the explicit multiplier E and verify equation (3.7), as prescribed by the paper's proof.",
+  "informal_statement": "Prove the real scalar specialization of the arbitrary-degree factorization in Lemma 3.4.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P50",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P50 Backward Error of Polynomial Eigenproblems Solved by Linearization.pdf",
+    "sha256": "afa1c62701b0056ebf467a04df36aea2e8fd76ec47fa09a079f5c474235f356c"
+  },
+  "paper_version": "SIAM Journal on Matrix Analysis and Applications 29(4), published electronically December 7, 2007",
+  "result_form_tag": "LEM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "polynomial eigenproblem first companion factorization Lemma 3.4",
+        "companion pencil explicit multiplier linearization",
+        "E(alpha,beta) C1(alpha,beta) tensor polynomial"
+      ],
+      "result": "Neither Mathlib nor the complete frozen NumStability source or exact 44-object bundle contains a polynomial-eigenproblem companion-pencil factorization or a theorem corresponding to Lemma 3.4. Available finite-sum and ring tactics are generic proof machinery, not a matching result.",
+      "scope": "the complete frozen NumStability source at commit 45813a95dacf577461bae13f033af0dbc985a225, the exact 44-object condition-L bundle, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "none; the compiled library has no polynomial eigenproblem, companion pencil, or linearization declaration"
+    ],
+    "note": "The exact private N proof is 569 physical lines and the exact L proof is 570. After deleting L's one additional NumStability import, the files are byte-identical. L invokes no NumStability declaration and receives no shortcut."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P50Matrix",
+    "p50Coeff",
+    "p50FirstCompanion",
+    "p50High",
+    "p50Low",
+    "p50MatMul",
+    "p50Multiplier",
+    "p50Polynomial",
+    "p50Term"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Lemma 3.4, equation (3.7), and its proof",
+      "pdf_page": "9-10",
+      "printed_page": "1225-1226",
+      "role": "selected explicit first-companion multiplier and factorization",
+      "section": "3.2. Companion linearizations"
+    }
+  ],
+  "source_tags": [
+    "LEM"
+  ],
+  "task_id": "P50-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The task requires an arbitrary-degree sparse matrix-product proof, two finite polynomial-sum decompositions, lower- and upper-coefficient recurrences, endpoint cases, and separate diagonal and off-diagonal cancellations. The exact N proof has 569 physical lines, so the result is at least as difficult as the retained T2-level workload and is not discharged by Mathlib imports. The exact L mathematical proof is byte-identical and uses no NumStability declaration, establishing that the frozen library provides no speedup.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P50/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p50_t3_first_companion_factorization"
+  }
+}

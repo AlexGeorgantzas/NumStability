@@ -1,0 +1,59 @@
+{
+  "annotation": {
+    "method": "Checked the source equation and its two-stage proof; compiled exact N and L proofs before packaging.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner requested additional paper-grounded T1/T2 tasks."
+  },
+  "authors": [
+    "Erin Carson",
+    "Nicholas J. Higham"
+  ],
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P63-T1"
+  ],
+  "paper_id": "P63",
+  "paper_version": "published SISC version; 2017, volume 39 issue 6, pages A2834-A2856",
+  "publication": {
+    "doi": "10.1137/17M1122918",
+    "issue": "6",
+    "journal": "SIAM Journal on Scientific Computing",
+    "printed_pages": "A2834-A2856",
+    "volume": "39",
+    "year": 2017
+  },
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Select the explicit two-stage residual estimate (2.3).",
+      "task_id": "P63-T1",
+      "theorem_name": "p63_t1_two_precision_residual"
+    },
+    "T2": {
+      "available": false,
+      "decision": "No T2 result selected from this paper in the current expansion. The correction-solver error in Theorem 2.1 is assumed, so equation (2.3) by itself has one substantial library shortcut."
+    },
+    "T3": {
+      "available": false,
+      "decision": "No T3 task selected during this T1/T2 expansion."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use equation (2.3), including both precision stages and the componentwise bound.",
+    "Keep the paper-local rounded arithmetic independent of the frozen library in the public shared file.",
+    "Keep private construction proofs out of agent materials."
+  ],
+  "short_name": "Carson--Higham (2017)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/17M1122918",
+    "local_path": "papers_to_be_approved/P63-Carson-Higham-2017-New-Iterative-Refinement.pdf",
+    "page_map": "Physical PDF page 1 is a MIMS cover; physical pages 2-24 carry printed journal pages A2834-A2856.",
+    "pdf_pages": 24,
+    "rights_note": "Author-repository copy bears a Creative Commons Attribution notice; retain license information with any redistribution.",
+    "sha256": "47221c23d99c1717c5035a48e844dec3381c4af9a15aa9d3ddf81559e915cb22"
+  },
+  "title": "A New Analysis of Iterative Refinement and Its Application to Accurate Solution of Ill-Conditioned Sparse Linear Systems"
+}

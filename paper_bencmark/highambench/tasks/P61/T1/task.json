@@ -1,0 +1,82 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "Section 3 one-node fan-in product-error propagation from equation (3.2)",
+    "performed_by": "Codex"
+  },
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "Identical fixed statement and P61 shared files plus frozen NumStability library.",
+    "N": "Identical fixed statement and P61 shared files; no NumStability artifact."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P61/T1/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p61_t1_fanin_one_node_propagated_error (fp : P61FPModel) (r m n p : \u2115) ... : propagated absolute error \u2264 \u03b3_n |L|(|A||B|)",
+    "namespace": "HighamBench",
+    "plain_language": "One rounded fan-in matrix-product node, followed by exact left multiplication, has componentwise propagated error bounded by \u03b3_n times |L| applied to the local absolute-product mass.",
+    "target_file": "paper_bencmark/highambench/tasks/P61/T1/Target.lean",
+    "theorem_name": "p61_t1_fanin_one_node_propagated_error"
+  },
+  "informal_proof": "The source bounds a rounded internal product componentwise, then premultiplies its defect by a left factor and uses the absolute-value matrix-product inequality.",
+  "informal_statement": "One rounded fan-in matrix-product node, followed by exact left multiplication, has componentwise propagated error bounded by \u03b3_n times |L| applied to the local absolute-product mass.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P61",
+  "paper_source": {
+    "local_path": "papers_to_be_approved/P61-Higham-1995-Parallel-Triangular-Solvers.pdf",
+    "sha256": "8aba49dbfb5b6ff304641add4c7cd200bac1ffc6bfc239a24eb69947f8896ed4"
+  },
+  "paper_version": "published journal version; SIAM Journal on Scientific Computing 16(2), 1995, printed pages 400-413",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.matMul_error_bound"
+    ],
+    "note": "Both exact private N/L proofs compile; N has no NumStability import; L directly uses one substantial frozen result."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P61FPModel",
+    "P61Matrix",
+    "p61Gamma",
+    "P61GammaValid",
+    "p61MatMul",
+    "p61RoundedDotProduct",
+    "p61RoundedMatMul"
+  ],
+  "source_locations": [
+    {
+      "anchor": "fan-in binary-tree schedule and local rounded-product perturbations in (3.2)",
+      "pdf_page": 6,
+      "printed_page": "404",
+      "role": "algorithm and local error statement",
+      "section": "3. Fan-in algorithm"
+    },
+    {
+      "anchor": "left propagation of one local product error in the residual derivation before (3.3)",
+      "pdf_page": 7,
+      "printed_page": "405",
+      "role": "selected result argument",
+      "section": "3. Fan-in algorithm"
+    }
+  ],
+  "source_tags": [
+    "EQN",
+    "TXT"
+  ],
+  "task_id": "P61-T1",
+  "tier": "T1",
+  "tier_label": "direct use",
+  "tier_rationale": "The L proof directly uses the substantial frozen matMul_error_bound theorem for the variable-width internal product; N reconstructs its floating-point dot-product and matrix-product analysis from the local rounding model. The remaining left propagation is short algebra. N is 350 lines versus L 70, and Mathlib has no ready matrix-product rounding bound.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P61/T1/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p61_t1_fanin_one_node_propagated_error"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 21-page PDF in physical order, including Sections 1-8, all algorithms and recurrence formulas, all numerical figures and observations, Appendix A, and all references, then compared every source-proved candidate with Mathlib and the frozen importable NumStability baseline.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P42 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "David Chin-Lung Fong",
+    "Michael Saunders"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P42-T3"
+  ],
+  "paper_id": "P42",
+  "paper_version": "technical report SOL 2010-2, version of August 16, 2011, revised March 14, 2011",
+  "publication": {
+    "institution": "Systems Optimization Laboratory, Stanford University",
+    "report_number": "SOL 2010-2",
+    "revision_date": "2011-03-14",
+    "version_date": "2011-08-16",
+    "year": 2011
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "LSMR equivalence to MINRES applied to the normal equations",
+      "reason": "The paper presents the equivalence through the known MINRES framework rather than supplying a new self-contained convergence theorem that maps to a qualifying compiled NumStability result."
+    },
+    {
+      "candidate": "Lemma 4.1",
+      "reason": "The normal-equation kernel identity is proved in one line and is too easy for any tier."
+    },
+    {
+      "candidate": "Theorem 4.2 and Corollary 4.3",
+      "reason": "The minimum-norm conclusion is source-proved but materially shorter and less technically demanding than Appendix A. It has no compiled NumStability shortcut and is not strong enough to replace the selected T3 candidate."
+    },
+    {
+      "candidate": "Theorem 6.1",
+      "reason": "The quotient comparison follows immediately from the displayed backward-error definitions and is too easy for any tier."
+    },
+    {
+      "candidate": "Backward-error formulas in Section 6",
+      "reason": "The formulas and optimal backward-error characterization are attributed to earlier work rather than proved as new results in this paper."
+    },
+    {
+      "candidate": "Algorithms, stopping rules, and numerical experiments",
+      "reason": "These specify computations or report empirical behavior rather than additional source-proved universal results suitable for a formal proof task."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No complete source-proved result needs exactly one substantial theorem from the frozen compiled NumStability surface. Generic Givens and QR declarations do not replace the coupled LSMR recurrence argument."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No complete source-proved result receives two distinct substantial compiled-library shortcuts. Treating generic rotation facts as two results would not discharge Appendix A and would create an artificial decomposition."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Selected the full scalar-recurrence form of Lemma 3.1. Appendix A supplies a multi-page arbitrary-index proof through three rotations, product identity (A.7), and the final induction; neither Mathlib nor NumStability provides a corresponding shortcut.",
+      "task_id": "P42-T3",
+      "theorem_name": "p42_t3_lsmr_transformed_components"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only conclusions whose statements and supporting proofs appear in this paper.",
+    "Do not turn standard MINRES, LSQR, or Golub-Kahan results cited from earlier work into P42 tasks.",
+    "Do not promote the one-line kernel lemma or quotient comparison to a benchmark tier.",
+    "Do not count generic Givens or QR infrastructure as a substantial NumStability result for the paper-specific coupled recurrence.",
+    "Retain Lemma 3.1 only in its arbitrary-iteration form and without assuming product identity (A.7) or the mixed-rotation cancellation.",
+    "Assign a tier only after exact private N and L proofs compile."
+  ],
+  "short_name": "Fong--Saunders (2011)",
+  "source": {
+    "lawful_source_locator": "http://www.siam.org/journals/sisc/",
+    "local_path": "paper_bencmark/reference_papers/P42 LSMR- An Iterative Algorithm for Sparse Least-Squares Problems.pdf",
+    "page_map": "The 21 physical PDF pages are numbered 1-21 in the technical report.",
+    "pdf_pages": 21,
+    "rights_note": "The local technical-report PDF was supplied for benchmark construction. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "21c386e36f99e5b003f8ffd1816b98b36943ab4953759989a7ed863b12b4963a"
+  },
+  "title": "LSMR: An Iterative Algorithm for Sparse Least-Squares Problems"
+}

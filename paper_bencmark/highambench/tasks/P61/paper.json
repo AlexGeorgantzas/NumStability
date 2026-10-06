@@ -1,0 +1,62 @@
+{
+  "annotation": {
+    "method": "Read the complete 15-page source, matched the Method B block step to two frozen NumStability operations, and compiled exact private N and L proofs before packaging.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner requested more paper-grounded T2 and T1 tasks."
+  },
+  "authors": [
+    "Nicholas J. Higham"
+  ],
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P61-T1",
+    "P61-T2"
+  ],
+  "paper_id": "P61",
+  "paper_version": "published journal version; SIAM Journal on Scientific Computing 16(2), 1995, printed pages 400-413",
+  "publication": {
+    "doi": "10.1137/0916025",
+    "issue": "2",
+    "journal": "SIAM Journal on Scientific Computing",
+    "printed_pages": "400-413",
+    "volume": "16",
+    "year": 1995
+  },
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Retain the one-node propagated product-error term in Section 3, separating it from the full fan-in residual and the Method B T2 task.",
+      "task_id": "P61-T1",
+      "theorem_name": "p61_t1_fanin_one_node_propagated_error"
+    },
+    "T2": {
+      "available": true,
+      "decision": "Use the Method B off-diagonal right-residual estimate in the proof of (6.1).",
+      "task_id": "P61-T2",
+      "theorem_name": "p61_t2_methodB_offdiagonal_residual"
+    },
+    "T3": {
+      "available": false,
+      "decision": "No T3 task selected in this T1/T2 expansion. The source-faithful Method B result benefits from two compiled results."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only the paper\u2019s displayed Method B off-diagonal residual calculation, specializing the first-order bound to explicit gamma coefficients.",
+    "Treat the already computed diagonal inverse blocks as fixed inputs, exactly as in the local induction step.",
+    "Use paper-scoped rounded multiplication and lower-triangular solve definitions; expose neither proof nor library hints to benchmark agents.",
+    "Retain the one-node propagated product-error term in Section 3, separating it from the full fan-in residual and the Method B T2 task."
+  ],
+  "short_name": "Higham (1995)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/0916025",
+    "local_path": "papers_to_be_approved/P61-Higham-1995-Parallel-Triangular-Solvers.pdf",
+    "page_map": "Physical PDF page 1 is the MIMS cover; physical pages 2-15 carry printed journal pages 400-413.",
+    "pdf_pages": 15,
+    "rights_note": "Private benchmark source copy downloaded from the University of Manchester repository; verify redistribution rights before public release.",
+    "sha256": "8aba49dbfb5b6ff304641add4c7cd200bac1ffc6bfc239a24eb69947f8896ed4"
+  },
+  "title": "Stability of Parallel Triangular System Solvers"
+}

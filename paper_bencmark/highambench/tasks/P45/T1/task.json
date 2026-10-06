@@ -1,0 +1,91 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "Givens-product core of Lemma 5.1",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "steps records the Givens rotations in the tail product used in the proof of Lemma 5.1.",
+    "Every step has distinct active coordinates and coefficients satisfying c^2+s^2=1, exactly the Givens property used by the paper.",
+    "row represents e_k^T R_m^(-1), and hrow records the paper's bound by sigma_m(H_m)^(-1).",
+    "heta records the preceding coefficient identity after the transformed right-hand-side tail is expressed as the previous residual norm times the Givens product applied to a coordinate vector."
+  ],
+  "author_label": "Lemma 5.1",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P45 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P45 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P45/T1/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p45_t1_gmres_coefficient_bound {n : Nat} (steps : List (P45GivensStep n)) (row : P45Vector n) (j : Fin n) (residual sigma eta : Real) (hsigma : 0 < sigma) (hrow : p45VecNorm row <= sigma^(-1)) (heta : eta = residual * p45Inner row (p45MatVec (p45GivensProduct steps) (p45Basis j))) : abs eta <= sigma^(-1) * abs residual",
+    "namespace": "HighamBench",
+    "plain_language": "The Givens-product representation in the proof of Lemma 5.1 implies that the absolute GMRES coefficient is at most the previous computed residual norm divided by the smallest singular value of the Arnoldi Hessenberg matrix.",
+    "target_file": "paper_bencmark/highambench/tasks/P45/T1/Target.lean",
+    "theorem_name": "p45_t1_gmres_coefficient_bound"
+  },
+  "informal_proof": "Use preservation of the Euclidean norm by every valid Givens rotation and hence by their ordered product. The coordinate vector has norm one. Apply Cauchy--Schwarz to the coefficient identity, use the supplied inverse-row bound, and rearrange the nonnegative factors.",
+  "informal_statement": "Prove the Givens-product coefficient estimate used to conclude Lemma 5.1's GMRES bound.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P45",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P45 Theory of Inexact Krylov Subspace Methods and Applications to Scientific Computing.pdf",
+    "sha256": "d5f0a68dffca7eb6b8bfaff2cb8ab36383347d64f16b9b838de994e13f5bcb1a"
+  },
+  "paper_version": "SIAM Journal on Scientific Computing 25(2), published electronically November 11, 2003",
+  "result_form_tag": "LEM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "inexact GMRES Lemma 5.1 coefficient bound eta_k",
+        "Givens product transformed residual tail norm",
+        "sigma_m(H_m) inverse GMRES coefficient"
+      ],
+      "result": "Mathlib has generic inner-product and linear-isometry infrastructure but no inexact Arnoldi/GMRES coefficient theorem or matching Givens implementation. The frozen NumStability bundle has the substantial exact theorem givensRotation_orthogonal; its generic orthogonal-norm theorem is supporting infrastructure, while it has no complete Lemma 5.1 result.",
+      "scope": "the complete frozen NumStability source, the exact 44-object condition-L bundle, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.givensRotation_orthogonal",
+      "NumStability.vecNorm2_orthogonal"
+    ],
+    "note": "The exact private N proof is 181 physical lines and reconstructs Givens norm preservation from the coordinate definition. The exact L proof is 86 lines. Its one paper-specific substantial shortcut is NumStability.givensRotation_orthogonal; vecNorm2_orthogonal is the generic supporting consequence that an orthogonal map preserves the Euclidean norm."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P45GivensStep",
+    "P45Vector",
+    "p45Basis",
+    "p45GivensProduct",
+    "p45Inner",
+    "p45MatVec",
+    "p45VecNorm"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Lemma 5.1, equations (5.1)-(5.4), and proof",
+      "pdf_page": "8",
+      "printed_page": "461",
+      "role": "selected GMRES coefficient bound and Givens-product proof",
+      "section": "5. Relaxation strategies"
+    }
+  ],
+  "source_tags": [
+    "LEM"
+  ],
+  "task_id": "P45-T1",
+  "tier": "T1",
+  "tier_label": "direct use",
+  "tier_rationale": "The L proof uses the single paper-specific substantial non-Mathlib result NumStability.givensRotation_orthogonal to establish the norm control for every rotation; N must reconstruct that result from the coordinate definition and finite sums. Generic orthogonal-norm preservation and Cauchy--Schwarz are supporting facts. Compiled exact proofs are 181 lines in N and 86 in L, establishing a material one-result advantage.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P45/T1/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p45_t1_gmres_coefficient_bound"
+  }
+}

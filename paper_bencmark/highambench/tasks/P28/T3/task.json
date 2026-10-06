@@ -1,0 +1,105 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source-faithful explicit-error formulation of the square-matrix core of Lemma 4.1",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The task formalizes the square case proved first in Lemma 4.1; the paper's later zero-column extension to rectangular matrices is outside this target.",
+    "P, Q, Sigma, fSigma, and the recovery diagonal record the SVD and pseudoinverse identities displayed between equations (4.5) and (4.6).",
+    "The scaled bound on the recovery multiplier is the direct quantitative form of condition (4.2).",
+    "The Hermitian-polar perturbation fields represent the conditioning fact explicitly invoked by the source proof.",
+    "The constants hidden by the paper's d-epsilon notation are exposed by p28CoreCoefficient; the two conclusions remain the residual and Hermitian-factor estimates (4.3)-(4.4)."
+  ],
+  "author_label": "Lemma 4.1",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P28 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P28 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P28/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p28_t3_lemma4_1_core (data : P28Lemma41CoreData n) : norm (X - U*Hhat) <= 2*coreCoefficient*Xscale and norm (Hhat-H) <= (coreCoefficient+eps)*Xscale",
+    "namespace": "HighamBench",
+    "plain_language": "Under the mixed backward-forward, SVD recovery, mapping-gain, unitary, and Hermitian-polar perturbation relations used in the square-case proof of Lemma 4.1, the symmetrized factor has both the claimed small residual and the claimed small error from the Hermitian polar factor.",
+    "target_file": "paper_bencmark/highambench/tasks/P28/T3/Target.lean",
+    "theorem_name": "p28_t3_lemma4_1_core"
+  },
+  "informal_proof": "Equate the two expressions for the computed mapped matrix. Use the SVD and pseudoinverse diagonal identities to recover Xbar-UHbar from the mapped discrepancy and bound it with condition (4.2). Left-multiply by U-star, symmetrize, and combine unitary invariance, self-adjointness, and Hermitian-polar perturbation to obtain both conclusions.",
+  "informal_statement": "The square-matrix proof core of Lemma 4.1, yielding equations (4.3) and (4.4) with the paper's suppressed constants made explicit.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P28",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P28-Backward Stability of Iterations for Computing the Polar Decomposition.pdf",
+    "sha256": "dcbc1d7383fc80a91263639b8b5278b34c308aa7a3aef2d7f6fff77577979faf"
+  },
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 33(2), 2012, printed pages 460-479",
+  "result_form_tag": "LEM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "polar decomposition",
+        "unitary polar factor",
+        "Hermitian polar factor",
+        "polar perturbation",
+        "SVD pseudoinverse mapping"
+      ],
+      "result": "The compiled condition-L set contains no polar decomposition, SVD, unitary-polar, Hermitian-polar, or polar perturbation theorem. A separate uncompiled QR source file mentions a completed right-polar construction, but it is absent from the frozen object set and does not state Lemma 4.1's stability transport. Mathlib has matrix star and norm foundations but no corresponding numerical-stability theorem.",
+      "scope": "the complete frozen NumStability source, the compiled condition-L bundle recorded in metadata/library_olean.json, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.cstarMatrix_unitary_conj_isStrictlyPositive"
+    ],
+    "note": "Private N and L proofs reconstruct the same SVD recovery multiplication, perturbation transport, Hermitian symmetrization, and norm estimates. L uses only a trivial product/exponential fact to make library availability visible and receives no mathematical shortcut."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P28ComplexMatrix",
+    "p28Sym",
+    "p28HermitianEstimate",
+    "p28CoreCoefficient",
+    "P28Lemma41CoreData"
+  ],
+  "source_locations": [
+    {
+      "anchor": "epsilon convention at the start of Section 2",
+      "pdf_page": 3,
+      "printed_page": "462",
+      "role": "meaning of the explicit perturbation coefficients",
+      "section": "2. Backward stability of the polar decomposition"
+    },
+    {
+      "anchor": "Lemma 4.1, equations (4.1)-(4.7), and the square-case proof",
+      "pdf_page": 5,
+      "printed_page": "464",
+      "role": "selected statement and SVD/pseudoinverse error-transport proof",
+      "section": "4. Backward error analysis"
+    },
+    {
+      "anchor": "completion of the square-case proof of equations (4.3)-(4.4)",
+      "pdf_page": 7,
+      "printed_page": "466",
+      "role": "residual and Hermitian-factor conclusions",
+      "section": "4. Backward error analysis"
+    }
+  ],
+  "source_tags": [
+    "LEM"
+  ],
+  "task_id": "P28-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The source proof requires a noncommutative SVD/pseudoinverse recovery calculation, quantitative perturbation transport through a mapping gain, unitary norm invariance, Hermitian symmetrization, and two final factor bounds. This is substantial T2-or-harder polar-analysis work and is not solved by Mathlib imports. NumStability has no corresponding polar result, so L receives no material advantage over N.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P28/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p28_t3_lemma4_1_core"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "canonical_evidence": "metadata/evidence/construction_validation_P13.json",
+  "canonical_evidence_sha256": "1386e6b890028ce0028fbb38f298c0100e1dd065bb9e1abdfa69482924b02c96",
+  "canonical_isolated_pass": false,
+  "direct_fallback_pass": true,
+  "generated_at_utc": "2026-08-06T08:23:33Z",
+  "host_limitation": {
+    "canonical_failure_occurs_before_lean_starts": true,
+    "message": "bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted",
+    "scope": "All six canonical P13 checks, including the T3 helper build, on this LXC host",
+    "tool": "/usr/bin/bwrap"
+  },
+  "kind": "highambench-direct-exact-path-construction-fallback",
+  "paper_id": "P13",
+  "pinned_lean": {
+    "commit": "5d86aa4032284a5242470e95fbe25f1ff506763d",
+    "version": "4.29.0-rc3"
+  },
+  "results": [
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "06ae4c3d7a209a3ed29148ed31cd65cb69c10b98a69fd8a954cae48e3f1a1be1",
+        "library_declarations": [
+          "NumStability.one_le_summationConditionNumber",
+          "NumStability.summationConditionNumber",
+          "NumStability.summationConditionNumber_eq"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "4186b39f6782bf546c5a64cfaabe696582a215ef12cbaf04aac209b7dfbe0245",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "9c331535dfca807cb7a0aae7523f78ebad9de6564b9a9e66d0762cf08fd12892",
+      "target_theorem": "HighamBench.p13_t1_condition_ge_one",
+      "task_id": "P13-T1"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "5854fa9ac849abbaf72d2e5fcabaab1374249a263b0809ed8922104a7921c498",
+        "library_declarations": [
+          "NumStability.SummationComponentwisePerturbation",
+          "NumStability.summationComponentwisePerturbation_rel_error_le_condition",
+          "NumStability.summationConditionNumber",
+          "NumStability.summationComponentwisePerturbation_abs_error_le",
+          "NumStability.summationConditionNumber_eq"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "12b6686d5fbde20831ab334683c4a5a76339b7ac8a7dc43beab40cf598355c03",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "6e8f701d5a9c6f43185460c0cee389d922fa54f47f33a382a91929c56398ee6d",
+      "target_theorem": "HighamBench.p13_t2_data_perturbation_bound",
+      "task_id": "P13-T2"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "dca78c850e14179b2e06443ba1cdb849f133516d1d69afd02eacc931ad8e0cdb",
+        "library_declarations": [
+          "NumStability.SummationComponentwisePerturbation",
+          "NumStability.summationComponentwisePerturbation_rel_error_le_condition",
+          "NumStability.summationConditionNumber",
+          "NumStability.summationComponentwisePerturbation_abs_error_le",
+          "NumStability.summationConditionNumber_eq"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "71347009858dfada124f9bab2b651da2eb6ba100907bed77fcd2efa963d0f71d",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "8db574b332d0dc56d66172e9ae059af46ee2f0cb349590ad0491284501241cf4",
+      "target_theorem": "HighamBench.p13_t3_barycentric_forward_bound",
+      "task_id": "P13-T3"
+    }
+  ],
+  "schema_version": 1,
+  "verification_basis": {
+    "condition_l_path": "The exact P13 shared bundle, frozen pruned package objects, and frozen NumStability object tree; no project .lake/build path.",
+    "condition_n_path": "The exact P13 shared bundle and frozen pruned package objects; no NumStability source or object path and no project .lake/build path.",
+    "negative_probe": "Direct pinned-Lean imports of HighamBench.P12Definitions and NumStability fail under the condition-N LEAN_PATH; the other-paper import also fails under the condition-L P13 path.",
+    "p13_definitions_olean_sha256": "3b83e8d078b287f4ffbc43de2e6213dae39e384e31997f86b6ed442d0680756e",
+    "p13_definitions_source_sha256": "40860706d1e57483371a24c086ae83428c7201c855efae5dbe20ad76d95f4913",
+    "private_support_source_sha256": "89ff95ab647b1abc3fec707fd5cd02740689746f4c8086fca6a47b2d4ee07f63",
+    "semantic_check": "Each private L theorem was compared by Meta.isDefEq with a separately compiled renamed copy of the frozen target using tools/dependency_audit.lean; P13Support was included in the local-module audit set.",
+    "shared_core_olean_sha256": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1"
+  }
+}

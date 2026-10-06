@@ -1,0 +1,106 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source selection and faithful formalization of the centered-error probability bound in equation (4.12)",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The exact sum is nonzero, which makes the sum of the input magnitudes positive.",
+    "The failure parameter satisfies 0 < lambda < 1.",
+    "The output precision p and random-bit count r are positive.",
+    "The m rounded additions form the paper's left-to-right SR_(p,r) execution, with delta and beta linked to each actual pre-rounding value and satisfying the local error, history, conditional-mean, and zero-result requirements.",
+    "The errors alpha_k=delta_k-beta_k are mean independent and bounded by u_p, as proved in Lemma 3.10.",
+    "The centered suffix-product covariances satisfy the uniform gamma_m(u_p^2) consequence of reference [11, Lemma 3.1], which Theorem 4.3 explicitly invokes.",
+    "The corresponding second-moment inequality for M is supplied explicitly as the variance premise used to derive equation (4.12)."
+  ],
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P17 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P17 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P17/T1/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p17_t1_centered_error_probability_bound {m : Nat} {Omega : Type} [Fintype Omega] (run : P17VarianceRecursiveSumRun m Omega) (hsum : p17ExactSum run.a != 0) (hsecond : p17Expectation run.probability (fun omega => (p17CenteredSummationError run.toP17LimitedPrecisionRecursiveSumRun omega)^2) <= (sum_i abs (run.a i))^2 * p17Gamma m ((p17UnitRoundoff run.p)^2)) (lambda : Real) (hlambda_pos : 0 < lambda) (hlambda_lt_one : lambda < 1) : 1-lambda <= p17EventProb run.probability {omega | abs (p17CenteredSummationError run.toP17LimitedPrecisionRecursiveSumRun omega) <= (sum_i abs (run.a i)) * sqrt (p17Gamma m ((p17UnitRoundoff run.p)^2) / lambda)}",
+    "namespace": "HighamBench",
+    "plain_language": "Equation (4.12): from the stated second-moment bound, the centered recursive-summation error M lies within its variance radius with probability at least one minus lambda.",
+    "target_file": "paper_bencmark/highambench/tasks/P17/T1/Target.lean",
+    "theorem_name": "p17_t1_centered_error_probability_bound"
+  },
+  "informal_proof": "Use the supplied second-moment inequality for the centered term M and apply the Bienayme-Chebyshev inequality at radius (sum_i |a_i|) sqrt(gamma_m(u_p^2)/lambda). Algebra reduces the normalized second moment to lambda, yielding equation (4.12).",
+  "informal_statement": "The centered-error probability estimate explicitly numbered (4.12) in the proof of Theorem 4.3.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P17",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P17_PROBABILISTIC ERROR ANALYSIS OF LIMITED-PRECISIONSTOCHASTIC ROUNDING.pdf",
+    "sha256": "df1ce5dd33285adfcffc6a4c7ab94f9604b46739cb848c6cbb5f997e8fac597d"
+  },
+  "paper_version": "published journal version; SIAM Journal on Scientific Computing 47(5), 2025, pages B1227-B1249",
+  "result_form_tag": "BND",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.FiniteProbability.eventProb_abs_sub_le_ge_one_sub_of_second_moment"
+    ],
+    "note": "The mounted finite Chebyshev theorem is the one substantial result. It turns the paper-invoked second-moment premise into equation (4.12); the remaining work is representation and scalar algebra."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "p17UnitRoundoff",
+    "p17Gamma",
+    "p17ExactSum",
+    "p17RecursiveCoefficient",
+    "p17Alpha",
+    "p17CenteredSummationError",
+    "P17VarianceRecursiveSumRun",
+    "p17EventProb"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Lemma 2.1, Bienayme-Chebyshev inequality",
+      "pdf_page": 4,
+      "printed_page": "B1230",
+      "role": "probability inequality used in equation (4.12)",
+      "section": "2.1 Probability"
+    },
+    {
+      "anchor": "recursive sum, gamma function, and computed product representation (4.1)-(4.4)",
+      "pdf_page": 13,
+      "printed_page": "B1239",
+      "role": "centered summation-error inputs and constants",
+      "section": "4.1 Recursive summation"
+    },
+    {
+      "anchor": "exact M+A error decomposition (4.8)",
+      "pdf_page": 14,
+      "printed_page": "B1240",
+      "role": "definition of the centered error term M",
+      "section": "4.1 Recursive summation"
+    },
+    {
+      "anchor": "equation (4.12) in the proof of Theorem 4.3",
+      "pdf_page": 15,
+      "printed_page": "B1241",
+      "role": "variance-based high-probability bound for M",
+      "section": "4.1 Recursive summation"
+    }
+  ],
+  "source_tags": [
+    "EQN"
+  ],
+  "task_id": "P17-T1",
+  "tier": "T1",
+  "tier_label": "direct use",
+  "tier_rationale": "The exact private L proof uses one substantial result, NumStability.FiniteProbability.eventProb_abs_sub_le_ge_one_sub_of_second_moment, while the exact private N proof must rebuild the finite Markov tail estimate, event-complement identity, and Chebyshev conclusion. The private constructions are 92 lines in L and 148 lines in N; no second substantial library result is used.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P17/T1/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p17_t1_centered_error_probability_bound"
+  }
+}

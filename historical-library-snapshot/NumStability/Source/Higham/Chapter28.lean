@@ -1,0 +1,64 @@
+import NumStability.Source.Higham.Chapter28.Equation02
+import NumStability.Source.Higham.Chapter28.Section01
+import NumStability.Source.Higham.Chapter28.Section01.Cauchy.Cauchy
+import NumStability.Source.Higham.Chapter28.Section01.HilbertConditioning.Cauchy
+import NumStability.Source.Higham.Chapter28.Section01.HilbertConditioning.HilbertCondition
+import NumStability.Source.Higham.Chapter28.Section02
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.FiniteExpectation.Ginibre
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.FiniteExpectation.GinibreAbsoluteDetRecurrence
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.FiniteExpectation.GinibreCharacteristicProduct
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.FiniteExpectation.GinibreCorollary31Factor
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.FiniteExpectation.GinibreDeterminantMoment
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.FiniteExpectation.GinibreExpectationGlue
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.FiniteExpectation.GinibreFiniteFormula
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.FiniteExpectation.GinibreGaussianBridge
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.FiniteExpectation.GinibreRecurrence
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.FiniteExpectation.GinibreSignedExpectation
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.FiniteExpectation.Moments
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.Incidence.GinibreIncidence
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.Incidence.GinibrePlaneIncidence
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.Incidence.GinibreSignedIncidenceAlgebra
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.Incidence.GinibreTruncatedIncidence
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.InvariantPlanes.GinibreAtlas
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.InvariantPlanes.GinibreComplexPairs
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.InvariantPlanes.GinibreDimensionTwo
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.InvariantPlanes.GinibreOrthogonalFiber
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.InvariantPlanes.GinibrePlaneChart
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.InvariantPlanes.GinibrePlaneSylvester
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.ProbabilityLaw.GinibreJointDensity
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.ProbabilityLaw.GinibreMeasure
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.ProbabilityLaw.GinibreTraceDensity
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.ProbabilityLaw.Probability
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.RootMeasurability.GinibreMultiplicity
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.RootMeasurability.GinibreRoots
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.SignedIncidence.GinibreParity
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.SignedIncidence.GinibreSignedConclusion
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.SignedIncidence.GinibreSignedGaussian
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.SignedIncidence.GinibreSignedIncidence
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.SignedIncidence.GinibreSignedKernel
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.SignedIncidence.GinibreSignedRank
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.SignedIncidence.GinibreSignedRankTransfer
+import NumStability.Source.Higham.Chapter28.Section02.RealGinibre.SignedIncidence.GinibreSignedScalar
+import NumStability.Source.Higham.Chapter28.Section03
+import NumStability.Source.Higham.Chapter28.Section03.RandomSVD.RandsvdNorm
+import NumStability.Source.Higham.Chapter28.Section03.Theorem01.StewartHaar.GaussianQRHaar
+import NumStability.Source.Higham.Chapter28.Section03.Theorem01.StewartHaar.Stewart
+import NumStability.Source.Higham.Chapter28.Section03.Theorem01.StewartHaar.StewartRawFiber
+import NumStability.Source.Higham.Chapter28.Section04
+import NumStability.Source.Higham.Chapter28.Section04.Pascal.Pascal
+import NumStability.Source.Higham.Chapter28.Section04.Pascal.PascalCondition
+import NumStability.Source.Higham.Chapter28.Section04.Pascal.PascalOscillation
+import NumStability.Source.Higham.Chapter28.Section04.Pascal.PascalSpectral
+import NumStability.Source.Higham.Chapter28.Section04.ReciprocalSpectrumSPD.ReciprocalSPD
+import NumStability.Source.Higham.Chapter28.Section05
+import NumStability.Source.Higham.Chapter28.Section05.TridiagonalToeplitz.ToeplitzCondition
+import NumStability.Source.Higham.Chapter28.Section05.TridiagonalToeplitz.ToeplitzGeneral
+import NumStability.Source.Higham.Chapter28.Section06
+import NumStability.Source.Higham.Chapter28.Section06.Companion.Companion
+import NumStability.Source.Higham.Chapter28.Section06.Companion.CompanionSpectral
+
+/-!
+# Higham Chapter 28
+
+Declaration-free aggregate for the Chapter 28 gallery-of-test-matrices subtree.
+-/

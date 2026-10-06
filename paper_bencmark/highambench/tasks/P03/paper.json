@@ -1,0 +1,97 @@
+{
+  "annotation": {
+    "method": "Codex freshly reread the complete local paper for the missing-tier audit, surveyed all formal claims and derivations, excluded experiments and delegated solver results, and compared every plausible T1/T2 route with the actual frozen NumStability source and Mathlib.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P03 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Erin Carson",
+    "Nicholas J. Higham"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P03-T3"
+  ],
+  "paper_id": "P03",
+  "paper_version": "published journal version; volume 40, issue 2, 2018, printed pages A817-A847",
+  "publication": {
+    "doi": "10.1137/17M1140819",
+    "issue": 2,
+    "journal": "SIAM Journal on Scientific Computing",
+    "printed_pages": "A817-A847",
+    "volume": 40,
+    "year": 2018
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Lemma 3.1",
+      "reason": "Its proof is a standard dual-vector rank-one construction cited to Higham's book and is less paper-specific than equation (4.1)."
+    },
+    {
+      "candidate": "equation (4.1)",
+      "reason": "The selected identity is a short linear expansion and does not require a substantial NumStability result."
+    },
+    {
+      "candidate": "Theorem 5.1",
+      "reason": "The frozen library contains a directly useful componentwise resolvent theorem, so this result is not suitable for the no-library-advantage tier; it does not use two independent substantial library results either."
+    },
+    {
+      "candidate": "Corollaries 3.3 and 4.2",
+      "reason": "Their conclusions use qualitative phrases such as sufficiently less than, approximately, and ultimately; the selected theorems provide exact finite inequalities."
+    },
+    {
+      "candidate": "Lemma 5.2",
+      "reason": "The paper explicitly attributes this lemma to an earlier source rather than proving it here."
+    },
+    {
+      "candidate": "LU and GMRES specializations in sections 7-8",
+      "reason": "Key solver facts are imported from earlier analyses, whereas Theorems 4.1 and 5.1 are proved in this paper under general solver contracts."
+    },
+    {
+      "candidate": "speed claims, tables, and numerical experiments",
+      "reason": "They are empirical or cost claims, not finite proof targets."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped after a fresh complete-paper reread and frozen-source comparison. NumStability's conventional residual-computation bound is a substantial match, but by itself it does not materially shorten any complete paper theorem: Theorems 3.2 and 5.1 still require the paper-specific relative correction-error interface and the main componentwise matrix derivation. The library's one-step refinement theorems use a different backward-error-matrix solver contract and cannot source-faithfully replace that work."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped after a fresh complete-paper reread and frozen-source comparison. No paper-proved result aligns with two substantial NumStability theorems: the residual-computation bound supplies only one match, while the available library refinement and resolvent results use solver hypotheses different from (2.3)-(2.5) or address only a short auxiliary norm step. The LU and GMRES specializations obtain their essential solver facts from earlier analyses rather than proving them in this paper."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Use the full indexed Algorithm 1.1 recurrence in Theorem 4.1. The frozen library has no theorem for the normwise solver contract or the exact alpha_i/beta_i derivation, while the finite proof remains substantial.",
+      "task_id": "P03-T3",
+      "theorem_name": "p03_t3_normwise_residual_contraction"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use a finite claim made and proved in this paper.",
+    "Reject experiments, speed estimates, vague asymptotics, and claims whose proof is mainly delegated elsewhere.",
+    "Prefer exact displayed bounds and identities.",
+    "Keep the fixed Lean setting condition-neutral and paper-scoped.",
+    "Assign tiers only after verified frozen-library searches."
+  ],
+  "short_name": "Carson and Higham (2018)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/17M1140819",
+    "local_path": "paper_bencmark/reference_papers/P03_ACCELERATING THE SOLUTION OF LINEAR SYSTEMS BYITERATIVE REFINEMENT IN THREE PRECISIONS.pdf",
+    "page_map": "PDF page 1 is printed page A817; add 816 to a PDF page number for the numeric part of the printed page.",
+    "pdf_pages": 31,
+    "rights_note": "The local PDF was supplied for benchmark construction and states publication under the Creative Commons Attribution 4.0 license.",
+    "sha256": "952c6827db21fb2a9362b5aa4d38a1b2c75361f2cc7a3badbb7cd4a232d7b7bc"
+  },
+  "title": "Accelerating the Solution of Linear Systems by Iterative Refinement in Three Precisions"
+}

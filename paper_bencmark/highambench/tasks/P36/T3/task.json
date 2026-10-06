@@ -1,0 +1,85 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source-faithful finite-matrix formalization of the componentwise part of Lemma 2.1",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The rows and columns are indexed by Fin n in their natural order.",
+    "The hypothesis on D is the componentwise condition |D| <= delta I; in particular it forces every off-diagonal entry of D to be zero.",
+    "The predicate p36StrictUpper says that N_ij is zero whenever j <= i.",
+    "Complex entrywise absolute values are represented by nonnegative real norms, and the truncated upper limit min(k,n-1) is represented by zeroing terms with r >= n inside the range 0 through k."
+  ],
+  "author_label": "Lemma 2.1",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P36 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P36 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P36/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p36_t3_truncated_binomial_power_bound (n k D N delta) (hD) (hN) : forall i j, |(D+N)^k|_ij <= sum_{r=0}^{min(k,n-1)} choose(k,r) delta^(k-r) (|N|^r)_ij",
+    "namespace": "HighamBench",
+    "plain_language": "Every entry of the absolute value of a power of a bounded diagonal matrix plus a strictly upper-triangular matrix is bounded by the paper's truncated binomial majorant.",
+    "target_file": "paper_bencmark/highambench/tasks/P36/T3/Target.lean",
+    "theorem_name": "p36_t3_truncated_binomial_power_bound"
+  },
+  "informal_proof": "Bound the absolute value of a complex matrix product by the product of the entrywise absolute-value matrices. Induct on k to dominate |(D+N)^k| by (delta I+|N|)^k. A separate band-growth induction shows that |N|^r is zero for r at least n. Since |N| commutes with delta I, expand the dominating power by the binomial theorem and delete the nilpotent tail.",
+  "informal_statement": "Lemma 2.1: prove the componentwise truncated-binomial bound for powers of a diagonal matrix plus a strictly upper-triangular matrix.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P36",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P36-A Schur-Parlett Algorithm for Computing Matrix Functions.pdf",
+    "sha256": "887bb96151ea452cf9dcea8214fe4e86a199ba36e2d34edd7e781dee6ccb91f3"
+  },
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 25(2), 2003, printed pages 464-485",
+  "result_form_tag": "LEM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "strictly upper triangular nilpotent power",
+        "diagonal plus strictly upper triangular power bound",
+        "truncated binomial matrix majorant",
+        "Schur-Parlett Taylor power bound"
+      ],
+      "result": "Neither Mathlib nor the importable frozen NumStability set contains Lemma 2.1, its componentwise diagonal-plus-strict-upper power majorant, or a theorem that supplies the required band nilpotence and truncated expansion. Related Jordan, matrix-power, and Sylvester developments in the frozen repository are not part of the compiled condition-L bundle.",
+      "scope": "the complete frozen NumStability source, the compiled condition-L bundle recorded in metadata/library_olean.json, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [],
+    "note": "The private N and L proofs reconstruct the same entrywise product estimate, nonnegative matrix monotonicity, strict-upper band induction, nilpotent-tail removal, and commuting matrix binomial expansion. L uses only an irrelevant zero-nonnegativity marker and receives no material shortcut. The formal upper limit follows the displayed statement of Lemma 2.1; it does not reproduce the evident n-1 versus n indexing typo in one sentence of the paper's proof."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "p36AbsMatrix",
+    "p36StrictUpper",
+    "p36PowerMajorant"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Lemma 2.1 and its proof",
+      "pdf_page": 5,
+      "printed_page": "468",
+      "role": "selected componentwise power-bound statement and proof",
+      "section": "2. Evaluating functions of the atomic blocks"
+    }
+  ],
+  "source_tags": [
+    "LEM"
+  ],
+  "task_id": "P36-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The proof must establish entrywise absolute-value domination for complex matrix multiplication, monotonicity of nonnegative matrix products, a dimension-indexed band theorem and nilpotence result for strict upper triangular matrices, and a commuting matrix binomial expansion with exact truncation. This is substantial multi-stage formalization work and is not discharged by Mathlib imports. NumStability has no corresponding compiled theorem, so L receives no material advantage over N.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P36/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p36_t3_truncated_binomial_power_bound"
+  }
+}

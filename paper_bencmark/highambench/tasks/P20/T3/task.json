@@ -1,0 +1,156 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "direct formalization of Theorem 4.1 with fixed round-to-nearest Model-1 operations, the source algorithm, pre-theorem Section 4 estimates, and a pointwise second-order interpretation of lesssim",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The matrix dimensions m, n, and q and the word count p are positive.",
+    "The fixed input and accumulation formats satisfy Model 1: the accumulation precision and exponent range contain the input format, and both rounding maps return nearest representable values and satisfy (2.3)-(2.4) on their explicit no-overflow domains.",
+    "The diagonal row and column scaling factors are positive powers of two satisfying the maximal intervals (3.4a)-(3.4b), with factor 1 for a zero row or column, and every scaled element is bounded by theta=min(fmax,sqrt(Fmax/n)).",
+    "The p input words satisfy the complete input-rounded recurrences (4.29)-(4.30); the computed matrix retains exactly i+j<p, rounds every multiplication and addition of each retained inner product and every addition between retained word products in the accumulation format, and records no-overflow evidence for those operations.",
+    "The Section 4 derivation supplies the decompositions and zeta bounds (4.18)-(4.20), the retained/omitted partition needed to derive (4.21)-(4.25), the omitted-product estimate (4.26), the raw accumulation estimate (4.27), its count r and bound r<=np(p+1)/2, and the quadratic term in (4.28), but not the final bound or its collected coefficient.",
+    "NaNs and infinities are outside the finite-real model. Underflow is modeled; overflow is excluded on each represented operation; the target covers the paper's default round-to-nearest mode rather than the separately doubled directed-rounding variant."
+  ],
+  "author_label": "Theorem 4.1",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P20 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P20 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P20/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p20_t3_multiword_forward_error {m n q p : Nat} (semantics : P20FirstOrderSemantics) : (for every fixed P20StaticMultiwordRun and its P20StaticSection4Derivation, p20FirstOrderLe semantics (p20StaticMultiwordForwardError run) (the four-term envelope (4.32))) and (the same forward-error relation with the range-free (4.33) envelope plus the two underflow envelopes) and (the input-rounding and input-underflow coefficients contain the displayed u^(p-1) factors)",
+    "namespace": "HighamBench",
+    "plain_language": "For every fixed round-to-nearest Model-1 execution of the scaled p-word algorithm, the source estimates through (4.27) imply the four-term first-order infinity-norm forward-error bound (4.32). The narrow-range envelope adds exactly the two underflow terms to (4.33), and both input terms exhibit the source's order-u^(p-1) reduction.",
+    "target_file": "paper_bencmark/highambench/tasks/P20/T3/Target.lean",
+    "theorem_name": "p20_t3_multiword_forward_error"
+  },
+  "informal_proof": "Derive the exact decomposition (4.21)-(4.25) from the matrix and retained-product decompositions. Apply submultiplicativity and repeated triangle inequalities, use both zeta bounds, (4.26), the raw (4.27) estimate and r<=np(p+1)/2, and bound max(a,b) by a+b to collect (4.32). Put zeta^2 and the two local omitted terms into one second-order remainder. Rewrite the same forward bound as the (4.33) envelope plus the two underflow envelopes and prove the two order-u^(p-1) factorizations by scalar algebra.",
+  "informal_statement": "Theorem 4.1: the actual fixed round-to-nearest result of (4.29)-(4.31) satisfies (4.32), where lesssim hides the stated second-order terms. Equation (4.33) removes exactly the two underflow contributions, and the post-(4.33) discussion identifies the same order-u^(p-1) reduction in both input terms.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P20",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P20_ERROR ANALYSIS OF MATRIX MULTIPLICATION WITHNARROW RANGE FLOATING-POINT ARITHMETIC.pdf",
+    "sha256": "ad830de20a73ff77b6e457921892b3250ba9ff70f487501979ee3f1c5f3f31e2"
+  },
+  "paper_version": "SIAM Journal on Scientific Computing 47(4), B785-B800, published 2025-07-01",
+  "result_form_tag": "BND",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "narrow range",
+        "multiword",
+        "underflow",
+        "retained word product",
+        "matrix scaling"
+      ],
+      "result": "The frozen library contains the same explicit rectangular infinity norm and its row-bound/nonnegativity facts, but no Model-1 nearest-rounding model, scaled p-word recurrence, product-and-addition-rounded retained computation, Section 4 derivation, or Theorem 4.1 forward-error result.",
+      "scope": "the complete frozen NumStability source and the compiled condition-L bundle recorded in metadata/library_olean.json"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.infNormRect_nonneg",
+      "NumStability.row_sum_le_infNormRect",
+      "NumStability.infNormRect_le_of_row_sum_le"
+    ],
+    "note": "The L construction reuses the frozen rectangular infinity-norm nonnegativity, row bound, and row-sum characterization to establish subadditivity and submultiplicativity. It still derives and collects the algorithm-specific Section 4 terms into (4.32); no frozen theorem states that result."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P20FirstOrderSemantics",
+    "p20FirstOrderLe",
+    "P20StaticBinaryFormat",
+    "p20StaticRepresentable",
+    "P20StaticNearestModel1",
+    "P20StaticMultiwordRun",
+    "P20StaticSection4Derivation",
+    "p20StaticScalingThreshold",
+    "p20MaximalPowerTwoScale",
+    "p20StaticAccumulatedInnerProduct",
+    "p20StaticInnerProductNoOverflow",
+    "p20StaticRetainedWordProduct",
+    "p20UnscaleProduct",
+    "p20StaticAWordApproximation",
+    "p20StaticBWordApproximation",
+    "p20StaticExactRetainedWordProduct",
+    "p20StaticOmittedWordTail",
+    "p20StaticAccumulationError",
+    "p20StaticMultiwordForwardError",
+    "p20StaticZeta",
+    "p20StaticOmittedCoefficient",
+    "p20StaticAccumulationCoefficient",
+    "p20StaticRawAccumulationCoefficient",
+    "p20SingleInputRoundingCoefficient",
+    "p20SingleInputUnderflowCoefficient",
+    "p20MultiInputRoundingCoefficient",
+    "p20MultiAccumRoundingCoefficient",
+    "p20MultiNarrowCoefficient",
+    "p20MultiRangeFreeCoefficient",
+    "p20MultiInputUnderflowCoefficient",
+    "p20MultiAccumUnderflowCoefficient",
+    "p20NormwiseEnvelope"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Model 1 and equations (2.1)-(2.3)",
+      "pdf_page": 2,
+      "printed_page": "B786",
+      "role": "input and accumulation binary formats, roundoff and underflow parameters, format nesting, and input rounding equation",
+      "section": "2.1. The model of matrix multiplication"
+    },
+    {
+      "anchor": "equation (2.4) and the following rounding-mode paragraph",
+      "pdf_page": 3,
+      "printed_page": "B787",
+      "role": "accumulation rounding equation, mutually exclusive relative and underflow errors, and the default round-to-nearest scope",
+      "section": "2.1. The model of matrix multiplication"
+    },
+    {
+      "anchor": "equations (3.2) and (3.4a)-(3.4b)",
+      "pdf_page": 5,
+      "printed_page": "B789",
+      "role": "format-derived theta and the maximal power-of-two scaling intervals used by the derivation",
+      "section": "3.1. Analysis"
+    },
+    {
+      "anchor": "equations (4.18)-(4.28)",
+      "pdf_page": 10,
+      "printed_page": "B794-B795",
+      "role": "decomposition and accumulation errors, omitted products, exact error decomposition, and the four source estimates",
+      "section": "4. Multiword arithmetic"
+    },
+    {
+      "anchor": "Theorem 4.1 and equations (4.29)-(4.32)",
+      "pdf_page": 11,
+      "printed_page": "B795",
+      "role": "selected scaled p-word algorithm and narrow-range infinity-norm forward-error bound",
+      "section": "4.2. Summary and discussion"
+    },
+    {
+      "anchor": "equation (4.33) and the following comparison",
+      "pdf_page": 11,
+      "printed_page": "B795-B796",
+      "role": "range-unrestricted coefficient and identification of the two additional underflow terms",
+      "section": "4.2. Summary and discussion"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P20-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The frozen library supplies only generic rectangular infinity-norm facts used by the L proof. It contains none of Model 1, the scaled p-word recurrences (4.29)-(4.30), the retained accumulation-format computation (4.31), the four linked error sources, or the first-order forward-error result (4.32). Both conditions must construct the theorem-level assembly, so the repaired task remains T3.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P20/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p20_t3_multiword_forward_error"
+  }
+}

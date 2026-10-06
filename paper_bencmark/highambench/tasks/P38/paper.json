@@ -1,0 +1,99 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 16-page PDF in physical order, including the JSTOR cover, all printed pages 148-162, figures, experiments, conclusions, and references, then compared every candidate with Mathlib and the frozen importable NumStability baseline.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P38 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "J. A. Meijerink",
+    "H. A. van der Vorst"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [],
+  "paper_id": "P38",
+  "paper_version": "published journal version; Mathematics of Computation 31(137), 1977, printed pages 148-162",
+  "publication": {
+    "doi": "10.2307/2005786",
+    "issue": "137",
+    "journal": "Mathematics of Computation",
+    "printed_pages": "148-162",
+    "publication_date": "1977-01",
+    "volume": "31",
+    "year": 1977
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Theorem 2.1, preservation of the M-matrix property after one elimination step",
+      "reason": "The theorem is explicitly attributed to Ky Fan and no proof is supplied in this paper."
+    },
+    {
+      "candidate": "Theorem 2.2, monotonicity of the M-matrix property under entry replacement",
+      "reason": "The displayed proof invokes two spectral-radius characterizations from Varga. Once those quoted inputs are supplied, the remaining argument is a short comparison and is below the T3 difficulty floor; proving the imported characterizations would add source-absent work."
+    },
+    {
+      "candidate": "Theorem 2.3, existence and uniqueness of incomplete LU with an arbitrary prescribed zero pattern",
+      "reason": "The complete result is substantial, but its recursive exact-factorization component has a genuine shortcut in the compiled theorem NumStability.LUFactSpec.of_firstSchurComplement_explicit, so it is not T3. It is not a valid T1 either: the compiled theorem does not establish the paper's central M-matrix preservation, arbitrary omission pattern, nonnegative-inverse regular splitting, or uniqueness, and isolating only the generic LU lift would manufacture a fragment not stated by the paper."
+    },
+    {
+      "candidate": "Theorem 2.4, symmetric incomplete Cholesky existence",
+      "reason": "The paper gives only a short reduction to the equivalence of Cholesky and Gaussian elimination. A full standalone formal proof would require substantial material not developed in the source, while the stated reduction itself is too short for T3."
+    },
+    {
+      "candidate": "Theorem 2.5, convergence of the regular-splitting iteration",
+      "reason": "The proof is explicitly an immediate application of a theorem from Varga and does not reproduce that theorem."
+    },
+    {
+      "candidate": "Theorems 3.1-3.2 and the symmetric stability corollary",
+      "reason": "Theorem 3.1 is a short one-step scalar comparison after earlier M-matrix facts. Theorem 3.2 iterates that comparison and states qualitative relative stability through elimination-multiplier sizes. Turning it into a rounded LU backward-error task would add a floating-point statement absent from the paper, while the source statement is not difficult enough for T3 once its earlier inputs are assumed."
+    },
+    {
+      "candidate": "Section 4 conjugate-gradient properties and convergence bound",
+      "reason": "The paper explicitly imports the conjugate-gradient theory from references [1] and [3]; equation (4.6) is an algorithm specialization rather than a newly proved theorem."
+    },
+    {
+      "candidate": "Section 5 incomplete-factor recurrences and Sections 6-7 comparisons",
+      "reason": "The recurrences specify two applications, and the later claims are numerical experiments or qualitative conclusions rather than sufficiently difficult source-proved theorem statements."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. The compiled exact LU lifting result does not by itself materially solve any complete source-stated theorem: Theorem 2.3's main work is the paper-specific M-matrix, omission-pattern, regular-splitting, and uniqueness argument. Reducing the target to the available lift would create an artificial task."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source proof needs at least two distinct substantial results from the compiled NumStability set. The bundle has generic LU and linear-solve material, but no second independent incomplete-factorization, regular-splitting, M-matrix, or preconditioned-CG theorem used by a paper-proved result."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. The hard incomplete-LU theorem has a relevant compiled LU-construction shortcut and is therefore not T3. The remaining internally proved comparisons are too short after their quoted M-matrix inputs, and the other major results are cited, only sketched, algorithmic, or experimental."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only conclusions whose statements and supporting proofs are present in this paper.",
+    "Do not turn Ky Fan, Varga, or imported conjugate-gradient theorems into paper-proved tasks.",
+    "Do not replace the qualitative stability statement by a new floating-point backward-error theorem.",
+    "Do not isolate the generic LU lift from Theorem 2.3 while assuming away its paper-specific content.",
+    "Do not count uncompiled proper-M-matrix and Cholesky source developments as available to condition L.",
+    "Assign tiers only after comparison with the complete frozen NumStability source, its importable compiled subset, and Mathlib."
+  ],
+  "short_name": "Meijerink--van der Vorst (1977)",
+  "source": {
+    "lawful_source_locator": "https://www.jstor.org/stable/2005786",
+    "local_path": "paper_bencmark/reference_papers/P38-An Iterative Solution Method for Linear Systems of Which the Coefficient Matrix is a Symmetric M-Matrix.pdf",
+    "page_map": "Physical PDF page 1 is a JSTOR cover; physical pages 2-16 are printed pages 148-162 respectively.",
+    "pdf_pages": 16,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays JSTOR terms of use. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "76fe737220ab35152717fe143802bb5d0fe154534af52ce5a6485bae36da8f98"
+  },
+  "title": "An Iterative Solution Method for Linear Systems of Which the Coefficient Matrix is a Symmetric M-Matrix"
+}

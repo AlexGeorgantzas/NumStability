@@ -1,0 +1,541 @@
+{
+  "agent": {
+    "binary_sha256": "d13cfcda217421fb20d0aa6aa80819a62483a72e4a7fd52743675ca20d86377c",
+    "id": "codex-cli",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "ultra",
+    "ultra_orchestration": {
+      "accounting_projection_schema_version": 6,
+      "automatic_task_delegation": true,
+      "child_model": "gpt-5.6-sol",
+      "child_model_locked": true,
+      "child_reasoning_effort": "ultra",
+      "child_reasoning_effort_locked": true,
+      "codex_config_locks": {
+        "agents.default_subagent_model": "gpt-5.6-sol",
+        "agents.default_subagent_reasoning_effort": "ultra",
+        "features.hooks": true,
+        "features.multi_agent_v2.expose_spawn_agent_model_overrides": false,
+        "features.multi_agent_v2.hide_spawn_agent_metadata": true,
+        "features.multi_agent_v2.max_concurrent_threads_per_session": 4,
+        "features.multi_agent_v2.usage_hint_enabled": true,
+        "features.multi_agent_v2.usage_hint_text": "For spawn_agent, omit fork_turns (defaults to \"all\") or set it to exactly \"all\" or \"none\"; positive integers and all other values are unavailable."
+      },
+      "enabled": true,
+      "fork_policy": {
+        "allowed_fork_turns": [
+          "omitted",
+          "all",
+          "none"
+        ],
+        "block_reason_template": "fork_turns for call {call_id} must be omitted or set to \"all\" or \"none\".",
+        "command": "/usr/bin/python3.10 /u501/m2fetrat/.codex/highambench-ultra-fork-policy.py",
+        "display_order": 0,
+        "enforcement": "codex_pre_tool_use_command_hook_v1",
+        "execution_mode": "sync",
+        "handler_type": "command",
+        "helper_filename": "highambench-ultra-fork-policy.py",
+        "helper_sha256": "5456bb8106715d1b783e14b81ce2df66e64bac828a1b1c345b4cdb76d2b3cd30",
+        "hook_event_name": "preToolUse",
+        "hook_notification": "hook/completed",
+        "hook_trust_bypass_cli_flag_present": true,
+        "hook_trust_bypass_effective_source": "thread_start_config",
+        "hook_trust_bypass_thread_config": {
+          "bypass_hook_trust": true
+        },
+        "hooks_json_sha256": "ffde6e560f2bb1c594a25a5ff8bbe07924324fa7c5f9f7297eb7ce5fb5503718",
+        "matcher": "^(Agent|spawn_agent|collaborationspawn_agent)$",
+        "positive_integer_fork_turns_allowed": false,
+        "schema_version": 1,
+        "scope": "turn",
+        "source": "user",
+        "source_path": "/u501/m2fetrat/.codex/hooks.json",
+        "usage_hint": "For spawn_agent, omit fork_turns (defaults to \"all\") or set it to exactly \"all\" or \"none\"; positive integers and all other values are unavailable.",
+        "usage_hint_sha256": "003b6103043c6f47ce098addedff5a82906c40786c667d132065e0ed35e97556"
+      },
+      "max_concurrency_scope": "root and subagent inference threads in one Codex session",
+      "max_concurrent_threads_per_session": 4,
+      "multi_agent_version": "v2",
+      "root_model": "gpt-5.6-sol",
+      "root_reasoning_effort": "ultra",
+      "spawn_agent_metadata_hidden": true,
+      "spawn_model_override_exposed": false,
+      "spawn_reasoning_effort_override_exposed": false,
+      "submission_barrier": {
+        "accepted_boundary": {
+          "descendants_quiescent": true,
+          "drain_complete": false,
+          "later_model_response_possible": false,
+          "measurement_exact": true,
+          "root_turn_active": true,
+          "stop_reason": "first_valid_proof",
+          "submission_boundary_exact": true
+        },
+        "candidate_path": "Candidate.lean",
+        "descendants_quiescent_before_submission": true,
+        "direct_submission_path_forbidden": true,
+        "inner_dynamic_arguments": {
+          "candidate_path": "Candidate.lean"
+        },
+        "inner_dynamic_call_left_blocked": true,
+        "inner_dynamic_call_observed": true,
+        "inner_dynamic_item_started": true,
+        "inner_dynamic_tool_name": "submit_proof",
+        "inner_dynamic_tool_response_sent": false,
+        "inner_submit_invocation_exact": true,
+        "inner_submit_only_nested_tool_call": true,
+        "outer_exec_final_raw_item": true,
+        "outer_exec_name": "exec",
+        "outer_exec_output_emitted": false,
+        "outer_exec_program": "// @exec: {\"yield_time_ms\": 2400000}\nawait tools.submit_proof({candidate_path:\"Candidate.lean\"});\n",
+        "outer_exec_program_bytes": 98,
+        "outer_exec_program_sha256": "bb4995a4eaad6d9128cb1b0d177f8ba882be176fbd0db589bb861182d3020edd",
+        "outer_exec_timer_starts_at_or_after_prompt_release": true,
+        "outer_exec_yield_attempt_wall_seconds": 1800,
+        "outer_exec_yield_envelope_basis": "prompt_release_wall_clock_plus_post_submission_validation_reserve",
+        "outer_exec_yield_envelope_ms": 2169000,
+        "outer_exec_yield_exceeds_envelope": true,
+        "outer_exec_yield_margin_ms": 231000,
+        "outer_exec_yield_post_submission_validation_reserve_seconds": 369,
+        "outer_exec_yield_time_ms": 2400000,
+        "outer_raw_item_and_call_ids_pairwise_distinct": true,
+        "outer_raw_item_observed_before_inner_dynamic_call": true,
+        "outer_raw_item_type": "custom_tool_call",
+        "raw_response_completed_before_boundary_publication": true,
+        "root_coordinator_only": true,
+        "runner_materializes_submission_after_acceptance": true,
+        "runner_owned_submission_path": "Submission.lean",
+        "runner_validates_immutable_candidate_snapshot": true,
+        "schema_version": 5,
+        "sole_model_tool_call_in_response": true,
+        "submission_event_order_flags": [
+          "dynamic_call_observed_before_raw_response_completed",
+          "raw_response_completed_before_dynamic_call_observed"
+        ],
+        "submission_event_order_flags_exactly_one_true": true,
+        "submission_event_order_values": [
+          "inner_dynamic_call_before_raw_response_completed",
+          "raw_response_completed_before_inner_dynamic_call"
+        ],
+        "submission_transport": "functions_exec_dynamic_submit_proof_v2",
+        "tool_name": "submit_proof",
+        "workspace_local_module_imports_rejected": true
+      }
+    },
+    "version": "0.146.0-alpha.9.2"
+  },
+  "artifact_root": "paper_bencmark/scratch_pad/highambench_token_control_canary_slurm-1510018",
+  "artifacts": {
+    "agent_log": {
+      "path": "logs/TOKEN-CONTROL-SYNTHETIC-PROVIDER-GATE-V8.agent.log",
+      "sha256": "29c9541864bafe2599e74f279d79ec36faa312baf0126a4c97b33e7d84cf6f43"
+    },
+    "benchmark_source_audit": {
+      "path": "logs/benchmark_source_audit.json",
+      "sha256": "50870621c53b491b637f168f8ed02ed3cf3d516c2076a8f299b8ebe44bceb6aa"
+    },
+    "common_prompt": {
+      "path": "inputs/prompt.md",
+      "sha256": "fb21f74dd26b5151f034143d806164855b9720324a0e62e806c73abb5d107f46"
+    },
+    "context": {
+      "path": "inputs/context.md",
+      "sha256": "6923f122a321084af876c365feeee2114e126ed108b95ca5d19ad34e0e0059cb"
+    },
+    "controlled_manifest": {
+      "path": "inputs/controlled.json",
+      "sha256": "aecb01732239e9f71268928263459e626cc7a94c8c3368786c149c1316c69852"
+    },
+    "freeze_check": {
+      "path": "logs/freeze_check.json",
+      "sha256": "58f74d8827a79eddaa3c0fa9ef6a3bcfec272466fcb225f18e5dd7778eb3c96a"
+    },
+    "invocation": {
+      "path": "logs/invocation.json",
+      "sha256": "3e0090c441ca05968764cdf02b4a980d0c2c9751a6eea57594697da095a0787b"
+    },
+    "provider_gate": {
+      "path": "logs/synthetic_token_control.provider-token-gate.json",
+      "sha256": "c60949c59ffe8200fc958db4a594fcbb1c4cf57576e19ae1da2ca992a1bce94e"
+    },
+    "raw_jsonl": {
+      "path": "attempts/synthetic_token_control.record.jsonl",
+      "sha256": "7cdaebe3592c3acf87b8a93c6973b81ea6dfaff75e180c6b65754dfeb7403f70"
+    },
+    "record": {
+      "path": "attempts/synthetic_token_control.record.json",
+      "sha256": "f79364472aa83fe94a5e0e59dda7add53b85b0e45781215ae2b879d7994e9daa"
+    },
+    "runner_freeze_check": {
+      "path": "logs/runner_freeze_check.json",
+      "sha256": "56299a1ac5c3ffabb22561d45275a7ca240c14a9547fe73374e0d660b0b91352"
+    },
+    "synthetic_prompt_provenance": {
+      "path": "logs/synthetic_prompt_provenance.json",
+      "sha256": "fcc31a86742059062d7eabff6d4a7875afa33896a983c74b23ec818fdcde3f84"
+    },
+    "synthetic_target": {
+      "path": "inputs/SyntheticTarget.lean",
+      "sha256": "bc274d3dc674a754379cf112a4d44d5133716c2eeeddfc2b5bae8eda9adf7fde"
+    },
+    "usage": {
+      "path": "logs/synthetic_token_control.usage.json",
+      "sha256": "9f5e56a76e66cc071d9106d23cf9e5c21a54456b8dd25e703c21b156171d21a7"
+    }
+  },
+  "assignment": {
+    "condition": "N",
+    "matrix_assignment": false,
+    "paper_id": "SYNTHETIC",
+    "repetition_id": "canary",
+    "task_id": "TOKEN-CONTROL-SYNTHETIC-PROVIDER-GATE-V8"
+  },
+  "benchmark_id": "highambench-0.2-p01-p02-p03-p04-p05-p06-p07-p08-p09-p10-p11-p12-p13-p14-p15-p16-p17-p18-p19-p20",
+  "benchmark_task_bytes_used": false,
+  "canary_id": "TOKEN-CONTROL-SYNTHETIC-PROVIDER-GATE-V8",
+  "controls": {
+    "accounting_complete_required": false,
+    "accounting_projection_schema_version": 6,
+    "all_descendant_threads_included": true,
+    "authenticated_prompt_release_required": true,
+    "benchmark_task_bytes_used": false,
+    "cached_input_counted_once": true,
+    "canary_wall_time_seconds": 300,
+    "condition_isolation_mode": "N_without_library_or_condition_supplement",
+    "condition_supplement_used": false,
+    "cumulative_projection_complete_required": false,
+    "descendant_accounting_complete_required": true,
+    "drain_complete_required": false,
+    "ephemeral_thread": false,
+    "exact_event_order_required": "below_cap_direct_final_then_compaction_item_then_crossing_rawResponse_completed_then_no_model_activity",
+    "frozen_benchmark_token_limit": 5000000,
+    "history_persistence": "none",
+    "library_or_library_path_used": false,
+    "live_cumulative": true,
+    "measurement_exact_required": true,
+    "measurement_source": "codex_app_server_rawResponse/completed",
+    "measurement_time_origin": "RELEASED.released_at_monotonic_ns",
+    "natural_completion_required": false,
+    "nested_advisory_rollout_budget_limit": 5000000,
+    "no_tools_required": true,
+    "notification": "rawResponse/completed",
+    "outer_canary_token_limit": 180000,
+    "prompt_artifact_canonical_json_required": true,
+    "prompt_artifact_sealed_mode": "0444",
+    "prompt_ready_go_released_files_required": 3,
+    "prompt_release_protocol_version": "highambench-prompt-release-v1",
+    "prompt_startup_timeout_seconds": 120.0,
+    "provider_answer_content_release_forbidden": true,
+    "provider_gate_close_reason": "token_limit",
+    "provider_gate_setup_requests": [],
+    "provider_token_quiescence_required": true,
+    "release_based_deadline_required": true,
+    "response_ids_deduplicated": true,
+    "root_completion_is_tree_barrier": false,
+    "root_only_required": true,
+    "sanitized_compaction_crossing_required": true,
+    "sealed_provider_gate_mode": "0444",
+    "spawn_binding_source": "raw_function_call.call_id=subAgentActivity.id",
+    "spawn_linkage_complete_required": true,
+    "state_directory_reused": false,
+    "submission_boundary_expected": false,
+    "synthetic_input_required": true,
+    "thread_resume_or_fork_used": false,
+    "tree_quiescence_distinct_from_provider_quiescence": true,
+    "trusted_adapter_freezes_first_threshold": false,
+    "trusted_adapter_latches_first_threshold": true,
+    "trusted_usage_path_outside_workspace": true,
+    "upstream_compaction_requested": true,
+    "usage_scope": "rooted_attempt_thread_tree_completed_responses"
+  },
+  "freeze_check_sha256": "ef0e502379aa106cc068ce867f236621032f527b98407b782f2df7229532911b",
+  "kind": "highambench-live-token-control-canary",
+  "matrix_assignment": false,
+  "outcome": {
+    "accounting_projection": {
+      "accounting_complete": false,
+      "accounting_projection_schema_version": 6,
+      "activity_spawn_call_ids": [],
+      "adapter_teardown_complete": true,
+      "collab_spawn_call_ids": [],
+      "cumulative_projection_complete": false,
+      "descendant_accounting_complete": true,
+      "failed_spawn_call_ids": [],
+      "fork_policy": {
+        "allowed_fork_turns": [
+          "omitted",
+          "all",
+          "none"
+        ],
+        "block_reason_template": "fork_turns for call {call_id} must be omitted or set to \"all\" or \"none\".",
+        "call_evidence": [],
+        "command": "/usr/bin/python3.10 /u501/m2fetrat/.codex/highambench-ultra-fork-policy.py",
+        "complete": true,
+        "display_order": 0,
+        "enforcement": "codex_pre_tool_use_command_hook_v1",
+        "execution_mode": "sync",
+        "handler_type": "command",
+        "helper_filename": "highambench-ultra-fork-policy.py",
+        "helper_sha256": "5456bb8106715d1b783e14b81ce2df66e64bac828a1b1c345b4cdb76d2b3cd30",
+        "hook_event_name": "preToolUse",
+        "hook_notification": "hook/completed",
+        "hook_trust_bypass_cli_flag_present": true,
+        "hook_trust_bypass_effective_source": "thread_start_config",
+        "hook_trust_bypass_thread_config": {
+          "bypass_hook_trust": true
+        },
+        "hooks_json_sha256": "ffde6e560f2bb1c594a25a5ff8bbe07924324fa7c5f9f7297eb7ce5fb5503718",
+        "matcher": "^(Agent|spawn_agent|collaborationspawn_agent)$",
+        "positive_integer_fork_turns_allowed": false,
+        "schema_version": 1,
+        "scope": "turn",
+        "source": "user",
+        "source_path": "/u501/m2fetrat/.codex/hooks.json",
+        "usage_hint": "For spawn_agent, omit fork_turns (defaults to \"all\") or set it to exactly \"all\" or \"none\"; positive integers and all other values are unavailable.",
+        "usage_hint_sha256": "003b6103043c6f47ce098addedff5a82906c40786c667d132065e0ed35e97556"
+      },
+      "fork_policy_complete": true,
+      "hook_allowed_spawn_call_ids": [],
+      "hook_blocked_spawn_call_ids": [],
+      "hook_invalid_spawn_call_ids": [],
+      "hook_observed_spawn_call_ids": [],
+      "inference_child_thread_ids": [],
+      "policy_blocked_spawn_call_ids": [],
+      "projection_payload_sha256": "6d051fd61513b7d2afcdcae5934eefc0dbad1838e6d9b0d005ed0b228e4fedbe",
+      "provider_gate_close_reason": "token_limit",
+      "provider_gate_deliveries_reconciled": true,
+      "provider_gate_protocol": "highambench-provider-token-gate-v6",
+      "provider_gate_record_sha256": "c2cec41c95bbd8e0d2fc291e40ac577b871909d1aaacdb248004fb759d0557b2",
+      "provider_gate_response_ids": [
+        "resp_05be6d9b3f8f629d016a7dac053cbc8197b9f918577d846a31",
+        "resp_05be6d9b3f8f629d016a7dac08dba08197ae9a0039ec769baf"
+      ],
+      "provider_gate_setup_requests_empty": true,
+      "provider_requests_quiescent": true,
+      "provider_usage_reconciliation": {
+        "appserver_response_count": 2,
+        "appserver_response_ids": [
+          "resp_05be6d9b3f8f629d016a7dac053cbc8197b9f918577d846a31",
+          "resp_05be6d9b3f8f629d016a7dac08dba08197ae9a0039ec769baf"
+        ],
+        "appserver_usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 325120,
+          "input_tokens": 325397,
+          "output_tokens": 70,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 325467
+        },
+        "discarded_after_explicit_child_interrupt_evidence": [],
+        "discarded_after_explicit_child_interrupt_response_count": 0,
+        "discarded_after_explicit_child_interrupt_response_ids": [],
+        "discarded_after_explicit_child_interrupt_usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 0
+        },
+        "provider_response_count": 2,
+        "provider_response_ids": [
+          "resp_05be6d9b3f8f629d016a7dac053cbc8197b9f918577d846a31",
+          "resp_05be6d9b3f8f629d016a7dac08dba08197ae9a0039ec769baf"
+        ],
+        "provider_usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 325120,
+          "input_tokens": 325397,
+          "output_tokens": 70,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 325467
+        },
+        "schema_version": 3,
+        "superseded_by_collaboration_message_evidence": [],
+        "superseded_by_collaboration_message_response_count": 0,
+        "superseded_by_collaboration_message_response_ids": [],
+        "superseded_by_collaboration_message_usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 0
+        },
+        "suppressed_collaboration_wait_evidence": [],
+        "suppressed_collaboration_wait_response_count": 0,
+        "suppressed_collaboration_wait_response_ids": [],
+        "suppressed_collaboration_wait_usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "raw_spawn_call_ids": [],
+      "resolved_spawn_call_ids": [],
+      "root_cumulative_projection_status": "cumulative_projection_mismatch",
+      "root_expected_cumulative_baseline": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 0
+      },
+      "root_only": true,
+      "root_thread_id": "019ffae7-f0b4-78e0-a91f-4087580ee5ea",
+      "spawn_binding_source": "raw_function_call.call_id=subAgentActivity.id",
+      "spawn_linkage_complete": true,
+      "unresolved_spawn_call_ids": [],
+      "unsupported_spawn_call_ids": []
+    },
+    "actual_stop_seconds": 6.843135,
+    "appserver_response_count": 2,
+    "benchmark_task_bytes_used": false,
+    "cached_input_tokens": 325120,
+    "discarded_after_explicit_child_interrupt_response_count": 0,
+    "drain_complete": false,
+    "event_order": {
+      "below_cap_raw_response_completed_index": 29,
+      "compaction_item_count": 1,
+      "compaction_turn_completed_index": null,
+      "crossing_raw_response_completed_index": 38,
+      "crossing_response_id": "resp_05be6d9b3f8f629d016a7dac08dba08197ae9a0039ec769baf",
+      "observed_order": "below_cap_direct_final_then_compaction_item_then_crossing_rawResponse_completed_then_no_model_activity",
+      "provider_answer_content_released": false,
+      "sanitized_compaction_completion_required": true,
+      "tool_call_count": 0
+    },
+    "final_endpoint_tokens": 325467,
+    "final_overshoot_tokens": 145467,
+    "first_crossing_overshoot_tokens": 145467,
+    "first_crossing_tokens": 325467,
+    "input_tokens_including_cached": 325397,
+    "measurement_exact": true,
+    "natural_completion": false,
+    "notification_count_in_audit_log": 2,
+    "notification_sequence": 2,
+    "observed_child_thread_count": 0,
+    "output_tokens": 70,
+    "overshoot_tokens": 145467,
+    "prompt_release": {
+      "actual_stop_seconds": 6.843135,
+      "artifact_content_verified": true,
+      "artifact_count": 3,
+      "artifacts": {
+        "go": {
+          "file_sha256": "0bcf012372ea0958cd5fa64c557b123cd8bafec7cd10fc6e336c4bff23b3378c",
+          "path": "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_token_control_canary_slurm-1510018/logs/synthetic_token_control.prompt-go.json",
+          "record_sha256": "3fac25fe87a7073f7af421dbdfb2644f666bc739df36d8247ae687150aaae2d0"
+        },
+        "ready": {
+          "file_sha256": "755b68d9863f01d87f9973ce8a44715695b6176d18752834bfebe86da8677624",
+          "path": "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_token_control_canary_slurm-1510018/logs/synthetic_token_control.prompt-ready.json",
+          "record_sha256": "c53ee18795d6566b81620eaf59183990feafb4f86789016882a62e4be6063d22"
+        },
+        "release": {
+          "file_sha256": "f1206705f70855d57702089660ac8366ea6b8f8fdb91cda7208b6a0d09d8e526",
+          "path": "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_token_control_canary_slurm-1510018/logs/synthetic_token_control.prompt-release.json",
+          "record_sha256": "fc3fab01fbd5f47dcf7a175e027e83fb6841790ba19d25339b8cda00329c00ab"
+        }
+      },
+      "authenticated": true,
+      "canonical_encoding": "compact_sorted_key_utf8_json_newline",
+      "command_binding_verified": true,
+      "deadline_derivation": "released_at_monotonic_ns + wall_time_seconds*1000000000",
+      "deadline_monotonic_ns": 659320212012664,
+      "effective_prompt_bytes": 283444,
+      "effective_prompt_sha256": "ff29ffe49abff9ac7fadcc0db86167bac0c04dc52310cfb665a82051f410baeb",
+      "first_valid_seconds": null,
+      "go_minimum_release_window_seconds": 5.0,
+      "go_sha256": "3fac25fe87a7073f7af421dbdfb2644f666bc739df36d8247ae687150aaae2d0",
+      "handshake_nonce": "4f9ec544490e848c19d2e949ede6eab271458bdb9f983c33cbdb347104c1c6a2",
+      "measurement_time_origin": "RELEASED.released_at_monotonic_ns",
+      "protocol_version": "highambench-prompt-release-v1",
+      "ready_sha256": "c53ee18795d6566b81620eaf59183990feafb4f86789016882a62e4be6063d22",
+      "release_sha256": "fc3fab01fbd5f47dcf7a175e027e83fb6841790ba19d25339b8cda00329c00ab",
+      "released_at_monotonic_ns": 659020212012664,
+      "root_identity_verified": true,
+      "root_thread_id": "019ffae7-f0b4-78e0-a91f-4087580ee5ea",
+      "sanitized_provider_gate_crossing": true,
+      "schema_version": 1,
+      "sealed_mode": "0444",
+      "startup_timeout_seconds": 120.0,
+      "startup_timeout_triggered": false,
+      "status": "released_authenticated",
+      "submission_boundary": null,
+      "timing_exact": true,
+      "token_crossing_within_deadline": true,
+      "top_level_artifact_count_unchanged": 14,
+      "turn_start_request_sha256": "502d2e4ab9ac91085e9abc7132cf30b51b9cc87fbdc82948f84779ec0d4c5d93",
+      "turn_start_wire_verified": true,
+      "useful_work_basis": "authenticated_release",
+      "wall_time_seconds": 300
+    },
+    "provider_answer_content_released": false,
+    "provider_gate_record_sha256": "c2cec41c95bbd8e0d2fc291e40ac577b871909d1aaacdb248004fb759d0557b2",
+    "provider_response_count": 2,
+    "response_count": 2,
+    "root_terminal_status": "completed_before_compaction_crossing",
+    "stop_reason": "token_limit",
+    "superseded_by_collaboration_message_response_count": 0,
+    "suppressed_collaboration_wait_response_count": 0,
+    "thread_count": 1,
+    "token_limit_triggered": true,
+    "total_model_tokens": 325467,
+    "tree_quiescent": false,
+    "upstream_request_kind": "compaction"
+  },
+  "pre_canary_environment_id": "highambench-p01-p02-p03-p04-p05-p06-p07-p08-p09-p10-p11-p12-p13-p14-p15-p16-p17-p18-p19-p20-129aabcfc8ede50a",
+  "pre_canary_freeze_check_sha256": "71f2466dbbb7242a956286cef155f1c9b0f5c33082ea06049d299cd1d4e07136",
+  "prompt": {
+    "benchmark_task_bytes_used": false,
+    "common_prompt_bytes": 401,
+    "common_prompt_sha256": "fb21f74dd26b5151f034143d806164855b9720324a0e62e806c73abb5d107f46",
+    "composition": "common_prompt_then_task_context_then_synthetic_target_via_codex_isolated_build_prompt",
+    "context_bytes": 282842,
+    "context_sha256": "6923f122a321084af876c365feeee2114e126ed108b95ca5d19ad34e0e0059cb",
+    "direct_final_answer": "HIGHAMBENCH_SYNTHETIC_TOKEN_CONTROL_OK",
+    "effective_prompt_bytes": 283444,
+    "effective_prompt_sha256": "ff29ffe49abff9ac7fadcc0db86167bac0c04dc52310cfb665a82051f410baeb",
+    "inert_payload_bytes": 282842,
+    "inert_payload_bytes_at_least_250000": true,
+    "inert_record_count": 3072,
+    "no_tools_instruction": true,
+    "one_direct_final_answer_instruction": true,
+    "protocol": "synthetic-inert-sanitized-provider-gate-compaction-crossing-v8",
+    "synthetic_target_bytes": 148,
+    "synthetic_target_sha256": "bc274d3dc674a754379cf112a4d44d5133716c2eeeddfc2b5bae8eda9adf7fde"
+  },
+  "public_release": false,
+  "runner_freeze_check_sha256": "ef0e502379aa106cc068ce867f236621032f527b98407b782f2df7229532911b",
+  "schema_version": 3,
+  "scored": false,
+  "source_separation": {
+    "audit_sha256": "b87d3a80036b01b794f69603b1be557ee656733fab515c5ba7943601c67cdae7",
+    "benchmark_manifest_sha256": "4adaf082e3fc0c031571624663fb2f8d329ee243b81501336e85339d194add07",
+    "benchmark_source_catalog_sha256": "a4ddcd8cff5f854281533b4ac731961cbc32cc1975fddda5ce5bfbca73eda968",
+    "benchmark_source_count": 223,
+    "benchmark_source_role_counts": {
+      "agent_prompt": 1,
+      "condition_prompt": 1,
+      "controlled_task_source": 20,
+      "shared_source": 21,
+      "task_context": 60,
+      "task_metadata": 60,
+      "task_target": 60
+    },
+    "benchmark_task_bytes_used": false,
+    "condition_supplement_used": false,
+    "embedded_benchmark_source_count": 0,
+    "exact_byte_identity_match_count": 0,
+    "exact_sha256_match_count": 0,
+    "library_or_library_path_used": false,
+    "p01_p02_source_count": 22
+  },
+  "status": "passed",
+  "synthetic_input": true
+}

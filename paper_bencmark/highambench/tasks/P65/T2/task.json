@@ -1,0 +1,88 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "Theorem 3.1 recursive-FastSum and pairwise-AccurateSum specialization",
+    "performed_by": "Codex"
+  },
+  "author_label": "Theorem 3.1",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "Identical fixed statement and P65 shared files plus frozen NumStability library.",
+    "N": "Identical fixed statement and P65 shared files; no NumStability artifact."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P65/T2/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p65_t2_fabsum_backward_error (fp : P65FPModel) (b r : \u2115) ... : \u2203 \u03bc, componentwise gamma product bound and exact perturbed-input sum",
+    "namespace": "HighamBench",
+    "plain_language": "The computed FABsum is a perturbed-input sum with the exact composition of recursive and pairwise gamma bounds.",
+    "target_file": "paper_bencmark/highambench/tasks/P65/T2/Target.lean",
+    "theorem_name": "p65_t2_fabsum_backward_error"
+  },
+  "informal_proof": "Apply the recursive backward-error representation to every block, apply the pairwise backward-error representation to the block sums, then multiply the two per-input factors as in Theorem 3.1.",
+  "informal_statement": "For recursive summation within each block and pairwise summation of the block sums, FABsum is the exact sum of componentwise perturbed inputs with the product-composed gamma bound.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P65",
+  "paper_source": {
+    "local_path": "papers_to_be_approved/P65-Blanchard-Higham-Mary-2020-FABsum.pdf",
+    "sha256": "2a56ecd287f1a08f961e301d72e1f70e31f929a2857b57f14e42063b7a52320a"
+  },
+  "paper_version": "February 2020 author PDF, pages 1\u201318",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.recursiveSum_backward_error",
+      "NumStability.pairwiseSum_backward_error"
+    ],
+    "note": "Both exact private proofs compile without sorry/admit; N imports no NumStability."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P65FPModel",
+    "p65Gamma",
+    "P65GammaValid",
+    "p65RecursiveSum",
+    "p65PairwiseSum",
+    "p65FABsum"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Algorithm 3.1 FABsum, recursive block FastSum and accurate outer summation",
+      "pdf_page": 5,
+      "printed_page": "4",
+      "role": "algorithm",
+      "section": "3. Fast and accurate blocked summation"
+    },
+    {
+      "anchor": "Theorem 3.1 and equations (3.3)\u2013(3.4), multiplicative composition of stage backward errors",
+      "pdf_page": 6,
+      "printed_page": "5",
+      "role": "selected result and proof",
+      "section": "3.1. Rounding error analysis"
+    },
+    {
+      "anchor": "pairwise AccurateSum specialization and first-order equation (3.7)",
+      "pdf_page": 7,
+      "printed_page": "6",
+      "role": "specific algorithm choice",
+      "section": "3.1. Rounding error analysis"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P65-T2",
+  "tier": "T2",
+  "tier_label": "composition",
+  "tier_rationale": "The L proof calls two distinct substantial frozen results, recursiveSum_backward_error and pairwiseSum_backward_error, while N independently proves both by induction from the floating-point addition model. The 2020 paper explicitly combines these two algorithms in Theorem 3.1 and equation (3.7). N is over 380 lines; L is about 130 lines. Mathlib has no ready numerical summation backward-error theorems.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P65/T2/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p65_t2_fabsum_backward_error"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "annotation": {
+    "method": "Codex read the complete 17-page local paper in order, surveyed every named theorem and displayed proof result, and compared all candidates with the frozen Mathlib and importable NumStability baselines.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P22 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Jorge Delgado",
+    "J. M. Pe\u00f1a"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [],
+  "paper_id": "P22",
+  "paper_version": "published journal version; SIAM Journal on Scientific Computing 31(5), 2009, printed pages 3905-3921",
+  "publication": {
+    "doi": "10.1137/080745249",
+    "issue": 5,
+    "journal": "SIAM Journal on Scientific Computing",
+    "printed_pages": "3905-3921",
+    "publication_date": "2009-10-16",
+    "volume": 31,
+    "year": 2009
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Theorem 3.1, converting an absolute error budget into a running relative-error bound",
+      "reason": "Its proof is short real inequality manipulation already supported by Mathlib. It needs no substantial NumStability result and is far below T2 difficulty."
+    },
+    {
+      "candidate": "Theorem 4.1 and the following Horner running-relative bound",
+      "reason": "The forward and running absolute-error analyses are recalled from Higham's book rather than proved in this paper. The matching Horner source exists in the frozen NumStability source tree, but its module is absent from the frozen importable object set, so L cannot use it. The paper's remaining relative-error conversion is elementary."
+    },
+    {
+      "candidate": "Theorem 4.2, the VS forward-error bound",
+      "reason": "The paper proves the result, but the importable library has no VS evaluator or nested-recurrence theorem. Its generic product and gamma lemmas help only one bookkeeping layer; both conditions must still build the shared-ratio recurrence expansion, branch-specific basis conversion, computed power scaling, and final coefficientwise estimate. That is not the substantial T1 speedup required, and there is no second independent substantial result for T2."
+    },
+    {
+      "candidate": "Theorem 4.3 and equation (4.22), the VS running-error recurrence and computed-power estimate",
+      "reason": "The importable library has no VS running-error theorem. Generic product bounds can shorten the power subargument in (4.22), so the full result is not a no-library-help T3; that isolated product subargument is not itself a sufficiently difficult task with a substantial L-over-N advantage."
+    },
+    {
+      "candidate": "Theorems 5.1 and 5.2 for the de Casteljau algorithm",
+      "reason": "Both error analyses are recalled from earlier papers and are not proved here, so this paper does not provide the required source proof text. The frozen importable library also has no de Casteljau module."
+    },
+    {
+      "candidate": "Theorem 6.1 for the Clenshaw algorithm",
+      "reason": "The theorem is explicitly recalled from an earlier paper and no proof is supplied here. The importable library has no corresponding floating-point Clenshaw result."
+    },
+    {
+      "candidate": "Section 7 comparisons among Horner, VS, de Casteljau, and Clenshaw evaluation",
+      "reason": "These are numerical experiments and empirical conclusions, not finite theorem statements proved in the paper."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. The only direct importable overlap is generic product/gamma machinery. It does not remove enough of either original VS proof to make L substantially faster, while the matching Horner module is not importable in the frozen condition."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No paper-proved target has at least two distinct substantial results in the frozen importable library. In particular, there are no importable Horner, VS, de Casteljau, or floating-point Clenshaw error theorems."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. The original VS theorems are the only proved candidates near the required difficulty, but their product-error steps overlap with substantial NumStability gamma machinery and would give L some advantage. The unsupported de Casteljau and Clenshaw results lack proof text in this paper, and Theorem 3.1 is too easy."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only mathematical conclusions stated and proved in this paper.",
+    "Do not turn numerical experiments or explanatory comparisons into theorem tasks.",
+    "Treat a source-only NumStability module as unavailable when its compiled module is absent from the frozen L-condition object set.",
+    "Do not replace the VS recurrence analysis by assumed coefficientwise perturbation certificates merely to manufacture a library-assisted proof kernel.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the frozen importable NumStability set and Mathlib."
+  ],
+  "short_name": "Delgado & Pe\u00f1a (2009)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/080745249",
+    "local_path": "paper_bencmark/reference_papers/P22-RUNNING RELATIVE ERROR FOR THE EVALUATION OF POLYNOMIALS.pdf",
+    "page_map": "Physical PDF pages 1-17 are printed pages 3905-3921 respectively.",
+    "pdf_pages": 17,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "4dff59b553bf6124ae0a07c5e2a8cf01252b0a18270782f65aaef38712f7cf9f"
+  },
+  "title": "Running Relative Error for the Evaluation of Polynomials"
+}

@@ -1,0 +1,154 @@
+{
+  "canonical_evidence": "metadata/evidence/construction_validation_P16.json",
+  "canonical_evidence_sha256": "94ef6f094529dfc475d72b784f80c3f1d3348a411e85e9fd55f39d8eafdada85",
+  "canonical_isolated_pass": false,
+  "direct_fallback_pass": true,
+  "generated_at_utc": "2026-08-06T11:02:37Z",
+  "host_limitation": {
+    "canonical_failure_occurs_before_lean_starts": true,
+    "message": "bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted",
+    "scope": "All six canonical P16 checks on this LXC host",
+    "tool": "/usr/bin/bwrap"
+  },
+  "kind": "highambench-direct-exact-path-construction-fallback",
+  "paper_id": "P16",
+  "pinned_lean": {
+    "commit": "5d86aa4032284a5242470e95fbe25f1ff506763d",
+    "version": "4.29.0-rc3"
+  },
+  "public_target_elaboration": {
+    "condition": "N exact path",
+    "P16-T1": {
+      "compile_exit_code": 0,
+      "olean_created": true
+    },
+    "P16-T2": {
+      "compile_exit_code": 0,
+      "olean_created": true
+    },
+    "P16-T3": {
+      "compile_exit_code": 0,
+      "olean_created": true
+    }
+  },
+  "results": [
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "2ad4e815292cc2701606e85c6978c4abaaf05d061157bb7d18f567e071901f92",
+        "library_declaration_count": 15,
+        "library_declarations": [
+          "NumStability.frobNorm",
+          "NumStability.matMulVec",
+          "NumStability.vecNorm2",
+          "NumStability.vecNorm2Sq",
+          "NumStability.vecNorm2_matMulVec_le_frobNorm_mul",
+          "NumStability.RMatFn",
+          "NumStability.frobNormSq",
+          "NumStability.frobNormSq_nonneg",
+          "NumStability.frobNorm_eq_sqrt_frobNormSq",
+          "NumStability.vecNorm2Sq_matMulVec_le_frobNormSq_mul",
+          "NumStability.vecNorm2_add_le",
+          "NumStability.vecInnerProduct_sq_le",
+          "NumStability.vecNorm2_nonneg",
+          "NumStability.vecNorm2_sq",
+          "NumStability.vecNorm2Sq_nonneg"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "1fe477e8a61b354ad12326e3b17f2ded09d01b9716c8307ffba245b4b0c73aa3",
+        "library_declaration_count": 0,
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true,
+        "semantic_statement_equal": true
+      },
+      "target_source_sha256": "d58289b7ce54ba1c17daaa783978d4464bc9542f0b92fe95938a77337a3cf5a5",
+      "target_theorem": "HighamBench.p16_t1_perturbed_solve_residual_bound",
+      "task_id": "P16-T1"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "4092e12ef46ee5821c3eb4ac5f13dc5a6d9e06d19c8fdf96ae04cdd40867bb49",
+        "library_declaration_count": 16,
+        "library_declarations": [
+          "NumStability.frobNorm",
+          "NumStability.frobNorm_nonneg",
+          "NumStability.matMulVec",
+          "NumStability.vecNorm2",
+          "NumStability.vecNorm2Sq",
+          "NumStability.vecNorm2_matMulVec_le_frobNorm_mul",
+          "NumStability.RMatFn",
+          "NumStability.frobNormSq",
+          "NumStability.frobNormSq_nonneg",
+          "NumStability.frobNorm_eq_sqrt_frobNormSq",
+          "NumStability.vecNorm2Sq_matMulVec_le_frobNormSq_mul",
+          "NumStability.vecNorm2_add_le",
+          "NumStability.vecInnerProduct_sq_le",
+          "NumStability.vecNorm2_nonneg",
+          "NumStability.vecNorm2_sq",
+          "NumStability.vecNorm2Sq_nonneg"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "c2b5b2f8b8ffb523c5d3a12e12d885aa46861a0e0353f6fa0de9e6c868d2a32d",
+        "library_declaration_count": 0,
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true,
+        "semantic_statement_equal": true
+      },
+      "target_source_sha256": "34afa46e62ca706b5e59c8868da30b3304cda19e8b10da2f2b8fd99c5fa67af0",
+      "target_theorem": "HighamBench.p16_t2_restarted_residual_recurrence",
+      "task_id": "P16-T2"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "ba8dfa72bb3238364c0034a4f1fc3379100b59fd1f4afc32ee7dbb6e38e3b1a4",
+        "library_declaration_count": 3,
+        "library_declarations": [
+          "NumStability.frobNorm_nonneg",
+          "NumStability.RMatFn",
+          "NumStability.frobNorm"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "56fe57d3147551ea24b4e4448762e010665b9e2ec670ad08db1f7a9d8ac88fd2",
+        "library_declaration_count": 0,
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true,
+        "semantic_statement_equal": true
+      },
+      "target_source_sha256": "7d68f2f6bd8b7870908b0de59c1df3f9053ae50a510fbc796c8448b7beb84168",
+      "target_theorem": "HighamBench.p16_t3_mixed_precision_geometric_convergence",
+      "task_id": "P16-T3"
+    }
+  ],
+  "schema_version": 1,
+  "verification_basis": {
+    "canonical_manifest_sha256": "f1d817ebca47d85301bcd6be93343a9d9a89883cd1c0095d30bcce0c83c76b30",
+    "condition_l_path": "The exact P16 shared bundle, frozen pruned package objects, and frozen NumStability object tree; no project .lake/build path.",
+    "condition_n_path": "The exact P16 shared bundle and frozen pruned package objects; no NumStability source or object path and no project .lake/build path.",
+    "negative_probe": "Direct pinned-Lean imports of NumStability and HighamBench.P15Definitions fail under the condition-N LEAN_PATH; the other-paper import also fails under the condition-L P16 path.",
+    "p16_definitions_olean_sha256": "935dec65ecca53ed91e27c94cc77614b5877e33920d4054ae7205a891774a2c5",
+    "p16_definitions_source_sha256": "7f2630cf2406121b98d74782c2533349ff41d913e9e16dac3c230974b7f572ec",
+    "private_common_l_source_sha256": "e8354b8b2e93028cb8d3d8ef96cd757e6370348dcffa12939fb4a20341841bbe",
+    "private_common_n_source_sha256": "8a81a9841f75d66afded75b36e08b6f8b2dc8b05086647ef24ca14d60d88122d",
+    "private_support_source_sha256": "670976a5b1b723539f337493e6acbd8078a99050a90f888c76b4201bd64d829e",
+    "private_t2_support_source_sha256": "4576b8df61b014fcac85b831f42d93d023d6f23f05f3ee20605f0ff112caf2ac",
+    "semantic_check": "Each private N/L theorem was compared by Meta.isDefEq with a separately compiled renamed copy of the frozen target using tools/dependency_audit.lean; every task-local helper module was included in the transitive audit set.",
+    "shared_core_olean_sha256": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1"
+  }
+}

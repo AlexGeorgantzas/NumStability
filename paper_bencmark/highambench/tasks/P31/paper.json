@@ -1,0 +1,92 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 17-page paper in physical-PDF order, surveyed every proved or justified mathematical claim, and compared all candidates with the frozen Mathlib and importable NumStability baselines.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P31 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Nicholas J. Higham",
+    "Fran\u00e7oise Tisseur"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [],
+  "paper_id": "P31",
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 21(4), 2000, printed pages 1185-1201",
+  "publication": {
+    "doi": "10.1137/S0895479899356080",
+    "issue": "4",
+    "journal": "SIAM Journal on Matrix Analysis and Applications",
+    "printed_pages": "1185-1201",
+    "publication_date": "2000-03-30",
+    "volume": "21",
+    "year": 2000
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Lemma 2.3, monotonicity of the block 1-norm power-method estimates",
+      "reason": "The proof is a short exact sign-duality, H\u00f6lder, and row-selection argument. Compiled NumStability supplies only generic norm notation for it, with the key power-method theorems remaining uncompiled; Mathlib and elementary finite-sum reasoning suffice. It therefore gives no T1/T2 advantage and is below the T3 difficulty floor."
+    },
+    {
+      "candidate": "the at-most n/t+1 termination statement for Algorithm 2.4",
+      "reason": "The paper gives only the elementary counting reason that t new vertices are visited after each first iteration. A faithful relational statement is a short pigeonhole/counting consequence; encoding every imperative branch would add artificial program-verification difficulty not present in the source argument."
+    },
+    {
+      "candidate": "the exact iteration formulas for the worst-case family A_n(alpha)",
+      "reason": "The formulas are stated with only 'straightforward to show' and no detailed proof. A full proof of every loop branch would require reconstruction not supplied as source proof text, while isolated geometric-series identities are too easy for T3."
+    },
+    {
+      "candidate": "Algorithm 2.4's lower-bound output specification",
+      "reason": "The paper presents the estimator and explains its control flow but does not give a separate full correctness proof beyond the short monotonicity lemma. The frozen source tree has related Hager/Higham power-method correctness theorems, but their modules are absent from the importable L bundle."
+    },
+    {
+      "candidate": "Algorithm 4.1 and the Schur-factorization resolvent representation",
+      "reason": "Equations (4.1)-(4.2) and the per-grid-point cost discussion are standard exact matrix algebra and algorithmic accounting. The pseudospectral accuracy conclusions are empirical, and the closer resolvent modules in NumStability are uncompiled."
+    },
+    {
+      "candidate": "Examples 2.5 and the experiments in Sections 3-4",
+      "reason": "These are particular numerical executions, performance tables, and contour-plot observations rather than difficult universally quantified theorems proved in the paper."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No source-proved exact result needs one substantial compiled NumStability theorem. The compiled floating-point matrix-vector bounds address a different question, and the matching 1-norm power-method developments are unavailable source-only modules."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source proof needs at least two distinct substantial results from the frozen importable library. The paper does not analyze floating-point errors of its matrix products or triangular solves."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. Lemma 2.3 and the termination count are materially below qualifying-T2 difficulty. The worst-case loop formulas lack a detailed source proof, and expanding the algorithms' control flow solely to make a hard target would manufacture difficulty absent from the paper."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use exact mathematical claims proved or justified in the paper, not empirical accuracy or timing observations.",
+    "Do not turn floating-point error theorems into dependencies for an exact-arithmetic paper proof.",
+    "Treat NumStability source-only power-method and pseudospectral modules as unavailable to condition L.",
+    "Do not inflate a short selection or counting argument by formalizing irrelevant imperative control-flow details.",
+    "Do not supply a detailed proof for a worst-case example when the paper merely asserts that its formulas are straightforward.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source, its importable compiled subset, and Mathlib."
+  ],
+  "short_name": "Higham--Tisseur (2000)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/S0895479899356080",
+    "local_path": "paper_bencmark/reference_papers/P31-A Block Algorithm for Matrix 1-Norm Estimation, with an Application to 1-Norm Pseudospectra.pdf",
+    "page_map": "Physical PDF pages 1-17 are printed pages 1185-1201 respectively.",
+    "pdf_pages": 17,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "f548b773ec6bbfb3d0cd3e55655827ddfdf6fb67ef71540f8b3b7e384ca08673"
+  },
+  "title": "A Block Algorithm for Matrix 1-Norm Estimation, with an Application to 1-Norm Pseudospectra"
+}

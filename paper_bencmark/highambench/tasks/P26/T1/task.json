@@ -1,0 +1,105 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source-faithful execution-level formulation of the residual bound in Lemma 3.2",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "R is a real nonsingular upper triangular n-by-n matrix.",
+    "Every row system q_i^T R = x_i^T is computed by the displayed rounded forward-substitution recurrence applied to R transpose under the standard relative-error model.",
+    "The gamma_n guard n*u<1 holds.",
+    "xNorm denotes the nonnegative spectral norm of X.",
+    "P26RowPerturbationsControlled states exactly the norm implication obtained in equations (3.25)-(3.28) after a componentwise triangular-solve perturbation has been constructed.",
+    "The supplied Frobenius bound for the computed Q is equation (3.39), the consequence of Lemma 3.1 used by the source proof."
+  ],
+  "author_label": "Lemma 3.2",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P26 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P26 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P26/T1/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p26_t1_lemma_3_2 (fp : P26FPModel) (m n : Nat) (X : P26Matrix m n) (R : P26Matrix n n) (xNorm : Real) ... : p26FrobNorm (p26Residual (p26RoundedQ fp X R) R X) <= 2 * (n : Real)^2 * fp.u * xNorm",
+    "namespace": "HighamBench",
+    "plain_language": "For the matrix Q computed by rounded triangular row solves, the shifted-CholeskyQR residual has Frobenius norm at most 2 n squared u times the spectral norm of X.",
+    "target_file": "paper_bencmark/highambench/tasks/P26/T1/Target.lean",
+    "theorem_name": "p26_t1_lemma_3_2"
+  },
+  "informal_proof": "Apply the triangular-solve backward-error result to each computed row, use equations (3.25)-(3.28) to bound that row's residual, aggregate the squared row bounds into the Frobenius norm, and use the Frobenius bound from Lemma 3.1 to obtain the constant 2.",
+  "informal_statement": "Lemma 3.2 in the equivalent multiplication form (3.40): the computed shifted-CholeskyQR factors have residual at most 2 n^2 u times the spectral norm of X.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P26",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P26-Shifted Cholesky QR for Computing the QR Factorization of Ill-Conditioned Matrices.pdf",
+    "sha256": "3874e47dcb4bf7a3675b639dd40d49daacef7d7a8d8ad9dbd75d058ea0c5bbbc"
+  },
+  "paper_version": "published journal version; SIAM Journal on Scientific Computing 42(1), 2020, printed pages A477-A503",
+  "result_form_tag": "LEM",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.forwardSub_backward_error"
+    ],
+    "note": "The one substantial importable result is the complete forward-substitution backward-error theorem, applied to the transposed upper-triangular row solves. It constructs the perturbation matrix with the sharp gamma_n componentwise bound and exact perturbed system. The private N construction rebuilds the rounding-product, subtraction-fold, and triangular-solve analysis; the L construction invokes that theorem once. Frobenius aggregation and the paper-specific constants are shared supporting work, and Mathlib has no floating-point triangular-solve theorem."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P26FPModel",
+    "P26Matrix",
+    "p26Gamma",
+    "P26GammaValid",
+    "p26Transpose",
+    "p26MatMul",
+    "p26Residual",
+    "p26VecNormSq",
+    "p26VecNorm",
+    "p26FrobNormSq",
+    "p26FrobNorm",
+    "p26ForwardSubSteps",
+    "p26ForwardSub",
+    "p26RoundedQ",
+    "P26RowPerturbationsControlled"
+  ],
+  "source_locations": [
+    {
+      "anchor": "equations (3.25)-(3.28)",
+      "pdf_page": 7,
+      "printed_page": "A483",
+      "role": "the triangular-solve backward error and its normwise specialization used by the selected proof",
+      "section": "3.1.4. Bounding the triangular-solve perturbation"
+    },
+    {
+      "anchor": "Lemma 3.1 and equation (3.33)",
+      "pdf_page": 8,
+      "printed_page": "A484",
+      "role": "the preceding bound on the computed Q used to derive equation (3.39)",
+      "section": "3.1.6. Bounding the norm of Q"
+    },
+    {
+      "anchor": "Lemma 3.2 and equations (3.38)-(3.41)",
+      "pdf_page": 9,
+      "printed_page": "A485",
+      "role": "the selected residual statement and complete proof",
+      "section": "3.1.7. Bounding the residual in shiftedCholeskyQR"
+    }
+  ],
+  "source_tags": [
+    "LEM"
+  ],
+  "task_id": "P26-T1",
+  "tier": "T1",
+  "tier_label": "direct use",
+  "tier_rationale": "L directly reuses the one substantial theorem NumStability.forwardSub_backward_error. N must reconstruct inverse products of rounding factors, unroll rounded subtraction folds, and prove the full componentwise backward error of forward substitution before following the same Frobenius argument. No second independent substantial NumStability result is used.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P26/T1/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p26_t1_lemma_3_2"
+  }
+}

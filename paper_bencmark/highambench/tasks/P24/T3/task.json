@@ -1,0 +1,101 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "cycle-reindexed formalization of the infinite-tail majorant and linear-rate conclusion in Lemma 21",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The natural-number index n counts complete outside-inside cycles, corresponding to the paper's t=t0+2n.",
+    "The nonnegative width sequence contracts by at least one half per complete cycle, which is the paired form of Lemma 20.",
+    "The even-step relative distance is bounded by the exponential tail displayed in the proof of Lemma 21.",
+    "The odd-step relative distance is no larger than the preceding even-step relative distance, as supplied by the monotonicity part of Theorem 13."
+  ],
+  "author_label": "Lemma 21",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P24 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P24 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P24/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p24_t3_lemma21_linear_convergence (data : P24Lemma21Data) : every defining width tail is summable, the explicit exponential tail majorizes both cycle distances, is nonnegative, contracts by one half each cycle, and tends to zero",
+    "namespace": "HighamBench",
+    "plain_language": "The exponential infinite-tail sequence constructed in Lemma 21 is well-defined, bounds both relative distances in every outside-inside cycle, decreases by at least a factor of one half per cycle, and converges to zero.",
+    "target_file": "paper_bencmark/highambench/tasks/P24/T3/Target.lean",
+    "theorem_name": "p24_t3_lemma21_linear_convergence"
+  },
+  "informal_proof": "Compare every shifted width with the geometric sequence of ratio one half to prove summability. Split the first term from each tail and bound the remaining tail by the first width. Exponentiation turns this tail comparison into a square bound; factor x squared minus one to obtain the one-half contraction. Iterate that contraction and squeeze against a geometric sequence to prove convergence to zero.",
+  "informal_statement": "Lemma 21, reindexed by complete outside-inside cycles: its explicit exponential tail majorizes the two successive relative distances and contracts by a factor of at least one half; hence the majorant tends to zero.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P24",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P24-Improving the Numerical Stability of Fast Matrix Multiplication.pdf",
+    "sha256": "a3a3e86f04bb58c31d41f33937e3f8d46510a2e8bb628986c4a60dae6e5b86ae"
+  },
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 37(4), 2016, printed pages 1382-1418",
+  "result_form_tag": "LEM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "alternating scaling",
+        "outside-inside scaling",
+        "linear convergence",
+        "infinite tail majorant",
+        "Strassen"
+      ],
+      "result": "The frozen importable NumStability set has no alternating-scaling, diagonal-scaling convergence, infinite-tail exponential-majorant, or corresponding linear-rate result. Its generic matrix and rounding-error modules do not address this Appendix-D argument.",
+      "scope": "the complete frozen NumStability source and the compiled condition-L bundle recorded in metadata/library_olean.json"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [],
+    "note": "Mathlib supplies general infinite-series and exponential facts, but not the linked geometric comparison, tail decomposition, nonlinear half-contraction, and convergence theorem required here. A private N construction is 166 lines and rebuilds the complete argument without NumStability."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P24WidthSequence",
+    "P24Lemma21Data",
+    "p24WidthTail",
+    "p24LinearMajorant"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Theorem 13 and the repeated outside-inside scaling convergence statement",
+      "pdf_page": 22,
+      "printed_page": "1403",
+      "role": "the main convergence result completed by Lemma 21",
+      "section": "6.3. Repeated outside-inside scaling"
+    },
+    {
+      "anchor": "Lemma 20 and its width-contraction proof",
+      "pdf_page": 30,
+      "printed_page": "1411-1413",
+      "role": "the half-rate width estimates used by the selected lemma",
+      "section": "Appendix D. Convergence analysis of alternating scaling"
+    },
+    {
+      "anchor": "Lemma 21 and its complete proof",
+      "pdf_page": 32,
+      "printed_page": "1413-1414",
+      "role": "the selected exponential majorant and linear-convergence argument",
+      "section": "Appendix D. Convergence analysis of alternating scaling"
+    }
+  ],
+  "source_tags": [
+    "LEM"
+  ],
+  "task_id": "P24-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The proof requires a geometric domination induction, summability and reindexing of infinite real tails, a nonlinear exponential square argument, and a final convergence proof. This is substantial T2-or-harder work. NumStability has no corresponding alternating-scaling or infinite-tail-majorant result, so L receives no material advantage over N.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P24/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p24_t3_lemma21_linear_convergence"
+  }
+}

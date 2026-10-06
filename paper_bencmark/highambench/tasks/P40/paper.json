@@ -1,0 +1,99 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 15-page paper in physical-PDF order, including Sections 1-5, every lemma, theorem, algorithm, example, figure, table, conclusion, and reference, then compared every candidate with Mathlib and the frozen importable NumStability baseline.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P40 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Nicholas J. Higham"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P40-T3"
+  ],
+  "paper_id": "P40",
+  "paper_version": "published journal version; IMA Journal of Numerical Analysis 22(3), 2002, printed pages 329-343",
+  "publication": {
+    "doi": "10.1093/imanum/22.3.329",
+    "issue": "3",
+    "journal": "IMA Journal of Numerical Analysis",
+    "printed_pages": "329-343",
+    "publication_date": "2002-07-01",
+    "volume": "22",
+    "year": 2002
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Existence and uniqueness of the nearest correlation matrix",
+      "reason": "The paper cites standard approximation theory for this fact rather than proving it."
+    },
+    {
+      "candidate": "Lemma 1.1 distance bounds",
+      "reason": "The paper calls the proof straightforward, and the inequalities are elementary Frobenius and eigenvalue bounds below the T3 difficulty floor."
+    },
+    {
+      "candidate": "Lemmas 2.1-2.2, Corollary 2.3, and Theorem 2.4 normal-cone characterization",
+      "reason": "These results are source-proved and have no compiled library match, but Theorem 3.2 provides a cleaner, stronger, computationally central task with a longer self-contained projection argument."
+    },
+    {
+      "candidate": "Theorem 2.5 nullity conclusion",
+      "reason": "Its hard eigenvalue/nullity step invokes a low-rank eigenvalue perturbation result from Horn and Johnson rather than proving that result here."
+    },
+    {
+      "candidate": "Theorem 3.1 projection onto the unit-diagonal affine set",
+      "reason": "The displayed proof reduces to a normal-cone substitution and a linear system, and it is materially easier than the selected T3 task."
+    },
+    {
+      "candidate": "Algorithm 3.3 convergence",
+      "reason": "The paper explicitly obtains convergence from general theorems of Boyle--Dykstra and Han; it does not prove those results."
+    },
+    {
+      "candidate": "Theorem 3.4 and Corollary 3.5",
+      "reason": "The diagonal-correction identity is source-proved but shorter than Theorem 3.2, while the eigenvalue consequence additionally invokes standard eigenvalue monotonicity."
+    },
+    {
+      "candidate": "Semidefinite-programming discussion and numerical experiments",
+      "reason": "These sections provide formulations, cost observations, examples, and empirical comparisons rather than new sufficiently difficult universal proofs."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No complete source-proved result needs exactly one substantial theorem from the compiled NumStability set. The available spectral and matrix modules provide generic infrastructure but no nearest-correlation or PSD-projection result that materially shortens a proof."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source proof needs at least two distinct substantial results from the compiled NumStability set. In particular, the bundle has no separate PSD-projection, normal-cone, low-rank eigenvalue, or alternating-projection theorem matching the paper."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Selected the full weighted form of Theorem 3.2 and formula (3.3), including positive semidefiniteness, global weighted Frobenius minimality, and diagonal monotonicity. The proof is substantial, fully supplied by the paper, and has no corresponding compiled NumStability shortcut."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only conclusions whose statements and supporting proofs appear in this paper.",
+    "Do not turn cited approximation, low-rank eigenvalue, or alternating-projection theorems into P40 tasks.",
+    "Retain both conclusions of Theorem 3.2 and its full W-norm transformation rather than using only the easier unweighted case.",
+    "Do not count generic PSD and spectral adapters as substantial NumStability results.",
+    "Assign tiers only after comparison with the complete frozen NumStability source, its importable compiled subset, and Mathlib."
+  ],
+  "short_name": "Higham (2002)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1093/imanum/22.3.329",
+    "local_path": "paper_bencmark/reference_papers/P40-Computing the Nearest Correlation Matrix - A Problem from Finance.pdf",
+    "page_map": "Physical PDF pages 1-15 are printed pages 329-343 respectively.",
+    "pdf_pages": 15,
+    "rights_note": "The local PDF was supplied for benchmark construction. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "0ad29c8b862ebc95b69048ff9607a25c40efb7360d5df028ce93e5efc7855617"
+  },
+  "title": "Computing the Nearest Correlation Matrix--A Problem from Finance"
+}

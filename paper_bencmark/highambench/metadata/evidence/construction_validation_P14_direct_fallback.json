@@ -1,0 +1,157 @@
+{
+  "canonical_evidence": "metadata/evidence/construction_validation_P14.json",
+  "canonical_evidence_sha256": "fba63d79e82746938db324367dbf544cf7c36384a9ab6df6e1ae9b3ff8e97ab3",
+  "canonical_isolated_pass": false,
+  "direct_fallback_pass": true,
+  "generated_at_utc": "2026-08-06T09:10:06Z",
+  "host_limitation": {
+    "canonical_failure_occurs_before_lean_starts": true,
+    "message": "bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted",
+    "scope": "All six canonical P14 checks, including condition-L helper builds, on this LXC host",
+    "tool": "/usr/bin/bwrap"
+  },
+  "kind": "highambench-direct-exact-path-construction-fallback",
+  "paper_id": "P14",
+  "pinned_lean": {
+    "commit": "5d86aa4032284a5242470e95fbe25f1ff506763d",
+    "version": "4.29.0-rc3"
+  },
+  "results": [
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "ec0727dd01b925f8957de7a07c5415ac78841edbfc0628a5ce0df4d34e545a7a",
+        "library_declaration_count": 28,
+        "library_declarations": [
+          "NumStability.FPModel",
+          "NumStability.OneSigned",
+          "NumStability.fl_recursiveSum",
+          "NumStability.gamma",
+          "NumStability.gammaValid",
+          "NumStability.recursiveSum_relError_le_gamma_of_oneSigned",
+          "NumStability.relError",
+          "NumStability.FPModel.fl_add",
+          "NumStability.FPModel.mk",
+          "NumStability.FPModel.u",
+          "NumStability.fl_recursiveSum.eq_1",
+          "NumStability.recursiveSum_forward_error_bound_oneSigned",
+          "NumStability.recursiveSum_forward_error_bound",
+          "NumStability.sum_abs_eq_abs_sum_of_oneSigned",
+          "NumStability.recursiveSum_backward_error",
+          "NumStability.recursiveSum_error_decomp",
+          "NumStability.sum_abs_eq_neg_sum_of_nonpos",
+          "NumStability.sum_abs_eq_sum_of_nonneg",
+          "NumStability.fl_sum_error_tight",
+          "NumStability.FPModel.fl_add_zero",
+          "NumStability.fl_sum_error_init",
+          "NumStability.FPModel.model_add",
+          "NumStability.fl_sum_error_init._proof_1_1",
+          "NumStability.gammaValid_mono",
+          "NumStability.gamma_mono",
+          "NumStability.gamma_mul",
+          "NumStability.u_le_gamma",
+          "NumStability.FPModel.u_nonneg"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "45b7896968244513a91fa743f46c19d98742b7ac95d7a2295c1c27c4d3ad9510",
+        "library_declaration_count": 0,
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true,
+        "semantic_statement_equal": true
+      },
+      "target_source_sha256": "0a667aa6e36e01717511c96133b6fd38517644187bc09a7eeb2bb6f9248fb484",
+      "target_theorem": "HighamBench.p14_t1_positive_recursive_sum_relative_error",
+      "task_id": "P14-T1"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "9b330f0aed7ab7fee5a54f402cfa017b1dd3e66efd87fab6eabcac3cc7297f10",
+        "library_declaration_count": 21,
+        "library_declarations": [
+          "NumStability.FPModel",
+          "NumStability.fl_recursiveSum",
+          "NumStability.gamma",
+          "NumStability.gammaValid",
+          "NumStability.gammaValid_mono",
+          "NumStability.gamma_mono",
+          "NumStability.recursiveSum_forward_error_bound",
+          "NumStability.FPModel.fl_add",
+          "NumStability.FPModel.mk",
+          "NumStability.FPModel.u",
+          "NumStability.FPModel.u_nonneg",
+          "NumStability.fl_recursiveSum.eq_1",
+          "NumStability.recursiveSum_backward_error",
+          "NumStability.recursiveSum_error_decomp",
+          "NumStability.fl_sum_error_tight",
+          "NumStability.FPModel.fl_add_zero",
+          "NumStability.fl_sum_error_init",
+          "NumStability.FPModel.model_add",
+          "NumStability.fl_sum_error_init._proof_1_1",
+          "NumStability.gamma_mul",
+          "NumStability.u_le_gamma"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "7981a4fc6a19ea50902dad26f443ec2bffd0371b7014b0cbbed66a22885c889f",
+        "library_declaration_count": 0,
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true,
+        "semantic_statement_equal": true
+      },
+      "target_source_sha256": "da7d602967646f6cc6512c666c64f2d64c3051c712686478d686fe1c8bd13b85",
+      "target_theorem": "HighamBench.p14_t2_basic_softmax_component_error",
+      "task_id": "P14-T2"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "204b241bf2e2b66f2707a848e0bd47620fe7d65150da8087745bd2cb4ad476fd",
+        "library_declaration_count": 4,
+        "library_declarations": [
+          "NumStability.OneSigned",
+          "NumStability.sum_abs_eq_abs_sum_of_oneSigned",
+          "NumStability.sum_abs_eq_neg_sum_of_nonpos",
+          "NumStability.sum_abs_eq_sum_of_nonneg"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "af9462ed4b1898eeee22417a40d249c8c108d40071c1676ddab68ee2492bdc37",
+        "library_declaration_count": 0,
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true,
+        "semantic_statement_equal": true
+      },
+      "target_source_sha256": "d56cba514113097d7cc74ac3e6d4ca04edf9e98792823bf8bc0248a53e9e9595",
+      "target_theorem": "HighamBench.p14_t3_softmax_shift_and_normalization",
+      "task_id": "P14-T3"
+    }
+  ],
+  "schema_version": 1,
+  "verification_basis": {
+    "canonical_manifest_sha256": "68b0d3ddfd106760548545161cb365719452c79a2131bb32b62197c358d29c9f",
+    "condition_l_path": "The exact P14 shared bundle, frozen pruned package objects, and frozen NumStability object tree; no project .lake/build path.",
+    "condition_n_path": "The exact P14 shared bundle and frozen pruned package objects; no NumStability source or object path and no project .lake/build path.",
+    "negative_probe": "Direct pinned-Lean imports of NumStability and HighamBench.P13Definitions fail under the condition-N LEAN_PATH; the other-paper import also fails under the condition-L P14 path.",
+    "p14_definitions_olean_sha256": "b8fd085be252b34d0adf7e993d82d7c2939cc79a66be72bc86b77746b85c67f5",
+    "p14_definitions_source_sha256": "43b0cbc4a33c3556b173455522d5436a89cad4f3e98e66dcd072f22bcdc779f2",
+    "private_common_l_source_sha256": "99525815896dd3cae511b16b83fdb81a9fb2a005df6a6ee3cc18589fb34aa8a8",
+    "private_common_n_source_sha256": "1ed18c0a893240f4cce91a02a2897e1c991b53ad4502ec13e1531b4eab758ef6",
+    "private_support_source_sha256": "19e2f7099f9a8ea99e225887d523cbecc639e8fb19acc07070d061cc7b01890f",
+    "semantic_check": "Each private N/L theorem was compared by Meta.isDefEq with a separately compiled renamed copy of the frozen target using tools/dependency_audit.lean; task-local helper modules were included in the transitive audit set.",
+    "shared_core_olean_sha256": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1"
+  }
+}

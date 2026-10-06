@@ -1,0 +1,958 @@
+{
+  "record_status": "superseded_construction_snapshot",
+  "generated_at_utc": "2026-07-28T23:17:07.397241+00:00",
+  "isolation": {
+    "condition_l_numstability_mounts_configured": true,
+    "condition_n_numstability_mounts_configured": false,
+    "condition_n_preflight_after_complete_controlled_staging": true,
+    "controlled_task_staged_under": "task/",
+    "fresh_workspace_per_result": true,
+    "private_gold_staged_as": "Submission.lean",
+    "private_helper_oleans_reused": false,
+    "validator_hidden_rebuild": true
+  },
+  "kind": "highambench-private-construction-check",
+  "pass": true,
+  "results": [
+    {
+      "condition": "N",
+      "condition_n_library_arguments_omitted": true,
+      "gold_source_sha256": "4b87adb5ccf1444365fbbb2fe65786e73d4e58412003368cd4ed46849815dfd2",
+      "helper": {
+        "build": {
+          "exit_code": 0,
+          "olean_created": true,
+          "seconds": 25.463827,
+          "system_error": null,
+          "timed_out": false
+        },
+        "module": "CommonN",
+        "source_sha256": "86c1b49738a7648687ee75aa6ac9b2ab0372912e88ad0e271a0a45195591ad1f"
+      },
+      "manifest_sha256": "86f7337c5b7ca904ddeeac0c4693496a70c0c9616d277f706505917624d4a37b",
+      "n_preflight": {
+        "complete": true,
+        "controlled_files_verified_after_staging": {
+          "changed": [],
+          "expected": 4,
+          "missing": [],
+          "ok": true,
+          "verified": 4
+        },
+        "controlled_manifest_sha256": "86f7337c5b7ca904ddeeac0c4693496a70c0c9616d277f706505917624d4a37b",
+        "filesystem_leaks": [],
+        "filesystem_scan": {
+          "content_limit_bytes": 4194304,
+          "directory_count": 6,
+          "markers": [
+            "NumStability",
+            "numStability",
+            "lean-fp-analysis"
+          ],
+          "regular_file_count": 4,
+          "root": ".",
+          "symlink_count": 0
+        },
+        "import_probe": {
+          "attempted": true,
+          "command": [
+            "/bin/python3",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/highambench/tools/lean_isolated.py",
+            "probe",
+            "--condition",
+            "N",
+            "--workspace",
+            "<tmp>/highambench-construction-P01-T1-N-owzfkabg",
+            "--source",
+            "<tmp>/highambench-construction-P01-T1-N-owzfkabg/HighamBenchNoLibraryProbe_ni3b7qix.lean",
+            "--toolchain-root",
+            "/u501/m2fetrat/.elan/toolchains/leanprover--lean4---v4.29.0-rc3",
+            "--packages-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/packages_runtime",
+            "--shared-olean-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/shared_olean",
+            "--shared-root-relative",
+            "task/shared",
+            "--bwrap",
+            "/usr/bin/bwrap"
+          ],
+          "conclusion": "compiler reported that the forbidden module is absent",
+          "exit_code": 1,
+          "importable": false,
+          "output": "/workspace/HighamBenchNoLibraryProbe_ni3b7qix.lean:1:0: error: unknown module prefix 'NumStability'\n\nNo directory 'NumStability' or file 'NumStability.olean' in the search path entries:\n/shared-olean\n/workspace/task/shared\n/packages/mathlib/.lake/build/lib/lean\n/packages/LeanSearchClient/.lake/build/lib/lean\n/packages/Qq/.lake/build/lib/lean\n/packages/aesop/.lake/build/lib/lean\n/packages/batteries/.lake/build/lib/lean\n/packages/importGraph/.lake/build/lib/lean\n/packages/plausible/.lake/build/lib/lean\n/packages/proofwidgets/.lake/build/lib/lean\n/lean/lib/lean\n/workspace\n/lean/lib/lean\n",
+          "output_truncated": false,
+          "reliable": true,
+          "system_error": null,
+          "timed_out": false
+        },
+        "ok": true
+      },
+      "paper_id": "P01",
+      "pass": true,
+      "reasons": [],
+      "target_theorem": "HighamBench.p01_t1_pairwise_nonnegative",
+      "task_id": "P01-T1",
+      "tier": "T1",
+      "validation": {
+        "compile_exit_code": 0,
+        "compile_timed_out": false,
+        "controlled_after_audit_ok": true,
+        "controlled_after_compile_ok": true,
+        "controlled_after_expected_compile_ok": true,
+        "controlled_before_ok": true,
+        "controlled_hidden_ok": true,
+        "dependency_audit": {
+          "complete": true,
+          "exit_code": 0,
+          "forbidden_dependency_count": 0,
+          "format_version": 2,
+          "library_declarations": [],
+          "library_use": false,
+          "local_modules": [
+            "CommonN",
+            "HighamBenchChecked_ac5d9967981e4deca080600c5eaef82e",
+            "Submission"
+          ],
+          "missing_helper_modules": [],
+          "semantic_type_check": {
+            "candidate": "HighamBench.p01_t1_pairwise_nonnegative",
+            "equal": true,
+            "expected": "HighamBench.highamBenchExpected_ac5d9967981e4deca080600c5eaef82e"
+          }
+        },
+        "failure_code": null,
+        "note": "accepted by hidden Lean validation",
+        "pass": true,
+        "semantic_statement_equal": true,
+        "statement_unchanged": true,
+        "static_finding_count": 0
+      }
+    },
+    {
+      "condition": "L",
+      "condition_n_library_arguments_omitted": false,
+      "gold_source_sha256": "ee801d27b5d5b362e574bbce7ea8ff3d418dde9b93d24b9f8bd7052ecce1c47f",
+      "helper": {
+        "build": {
+          "exit_code": 0,
+          "olean_created": true,
+          "seconds": 21.903459,
+          "system_error": null,
+          "timed_out": false
+        },
+        "module": "CommonL",
+        "source_sha256": "97b2381c21b7af0358157a6af1f4ac155a58437371c6ce180e27c9953ea43cd3"
+      },
+      "manifest_sha256": "86f7337c5b7ca904ddeeac0c4693496a70c0c9616d277f706505917624d4a37b",
+      "n_preflight": null,
+      "paper_id": "P01",
+      "pass": true,
+      "reasons": [],
+      "target_theorem": "HighamBench.p01_t1_pairwise_nonnegative",
+      "task_id": "P01-T1",
+      "tier": "T1",
+      "validation": {
+        "compile_exit_code": 0,
+        "compile_timed_out": false,
+        "controlled_after_audit_ok": true,
+        "controlled_after_compile_ok": true,
+        "controlled_after_expected_compile_ok": true,
+        "controlled_before_ok": true,
+        "controlled_hidden_ok": true,
+        "dependency_audit": {
+          "complete": true,
+          "exit_code": 0,
+          "forbidden_dependency_count": 0,
+          "format_version": 2,
+          "library_declarations": [
+            {
+              "distance": 1,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.fl_pairwiseSum"
+            },
+            {
+              "distance": 1,
+              "module": "NumStability.Analysis.Rounding",
+              "name": "NumStability.gamma"
+            },
+            {
+              "distance": 1,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.pairwiseSum_forward_error_bound"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.FloatingPoint.Model",
+              "name": "NumStability.FPModel"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.FloatingPoint.Model",
+              "name": "NumStability.FPModel.fl_add"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.FloatingPoint.Model",
+              "name": "NumStability.FPModel.mk"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.FloatingPoint.Model",
+              "name": "NumStability.FPModel.u"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.fl_pairwiseSum._proof_1"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.fl_pairwiseSum.eq_2"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.fl_pairwiseSum.match_1"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Analysis.Rounding",
+              "name": "NumStability.gammaValid"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.pairwiseSum_backward_error"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "_private.NumStability.Algorithms.Summation.Pairwise.Core.0.NumStability.left_lt"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "_private.NumStability.Algorithms.Summation.Pairwise.Core.0.NumStability.right_lt"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.FloatingPoint.Model",
+              "name": "NumStability.FPModel.model_add"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Analysis.Rounding",
+              "name": "NumStability.gammaValid_mono"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Analysis.Rounding",
+              "name": "NumStability.gamma_mul"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.pairwiseSum_backward_error._proof_1_4"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.pairwiseSum_backward_error._proof_1_5"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.pairwiseSum_backward_error._proof_1_6"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.pairwiseSum_backward_error._proof_1_7"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Analysis.Rounding",
+              "name": "NumStability.u_le_gamma"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "_private.NumStability.Algorithms.Summation.Pairwise.Core.0.NumStability.left_lt._proof_1_1"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "_private.NumStability.Algorithms.Summation.Pairwise.Core.0.NumStability.right_lt._proof_1_1"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "_private.NumStability.Algorithms.Summation.Pairwise.Core.0.NumStability.sum_split"
+            },
+            {
+              "distance": 4,
+              "module": "NumStability.FloatingPoint.Model",
+              "name": "NumStability.FPModel.u_nonneg"
+            }
+          ],
+          "library_use": true,
+          "local_modules": [
+            "CommonL",
+            "HighamBenchChecked_22529f44c95b43d4b5852bd291db8143",
+            "Submission"
+          ],
+          "missing_helper_modules": [],
+          "semantic_type_check": {
+            "candidate": "HighamBench.p01_t1_pairwise_nonnegative",
+            "equal": true,
+            "expected": "HighamBench.highamBenchExpected_22529f44c95b43d4b5852bd291db8143"
+          }
+        },
+        "failure_code": null,
+        "note": "accepted by hidden Lean validation",
+        "pass": true,
+        "semantic_statement_equal": true,
+        "statement_unchanged": true,
+        "static_finding_count": 0
+      }
+    },
+    {
+      "condition": "N",
+      "condition_n_library_arguments_omitted": true,
+      "gold_source_sha256": "9d906a3af953412668de601e2a021fde7f61691a4d15132ed23a64938d4226ec",
+      "helper": {
+        "build": {
+          "exit_code": 0,
+          "olean_created": true,
+          "seconds": 22.216024,
+          "system_error": null,
+          "timed_out": false
+        },
+        "module": "CommonN",
+        "source_sha256": "86c1b49738a7648687ee75aa6ac9b2ab0372912e88ad0e271a0a45195591ad1f"
+      },
+      "manifest_sha256": "32a48de1620dc445c0ee30b9912f5b461cb825f01b361b141a8ed63d2c90fe4a",
+      "n_preflight": {
+        "complete": true,
+        "controlled_files_verified_after_staging": {
+          "changed": [],
+          "expected": 4,
+          "missing": [],
+          "ok": true,
+          "verified": 4
+        },
+        "controlled_manifest_sha256": "32a48de1620dc445c0ee30b9912f5b461cb825f01b361b141a8ed63d2c90fe4a",
+        "filesystem_leaks": [],
+        "filesystem_scan": {
+          "content_limit_bytes": 4194304,
+          "directory_count": 6,
+          "markers": [
+            "NumStability",
+            "numStability",
+            "lean-fp-analysis"
+          ],
+          "regular_file_count": 4,
+          "root": ".",
+          "symlink_count": 0
+        },
+        "import_probe": {
+          "attempted": true,
+          "command": [
+            "/bin/python3",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/highambench/tools/lean_isolated.py",
+            "probe",
+            "--condition",
+            "N",
+            "--workspace",
+            "<tmp>/highambench-construction-P01-T2-N-1izt241e",
+            "--source",
+            "<tmp>/highambench-construction-P01-T2-N-1izt241e/HighamBenchNoLibraryProbe_cw_8e11y.lean",
+            "--toolchain-root",
+            "/u501/m2fetrat/.elan/toolchains/leanprover--lean4---v4.29.0-rc3",
+            "--packages-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/packages_runtime",
+            "--shared-olean-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/shared_olean",
+            "--shared-root-relative",
+            "task/shared",
+            "--bwrap",
+            "/usr/bin/bwrap"
+          ],
+          "conclusion": "compiler reported that the forbidden module is absent",
+          "exit_code": 1,
+          "importable": false,
+          "output": "/workspace/HighamBenchNoLibraryProbe_cw_8e11y.lean:1:0: error: unknown module prefix 'NumStability'\n\nNo directory 'NumStability' or file 'NumStability.olean' in the search path entries:\n/shared-olean\n/workspace/task/shared\n/packages/mathlib/.lake/build/lib/lean\n/packages/LeanSearchClient/.lake/build/lib/lean\n/packages/Qq/.lake/build/lib/lean\n/packages/aesop/.lake/build/lib/lean\n/packages/batteries/.lake/build/lib/lean\n/packages/importGraph/.lake/build/lib/lean\n/packages/plausible/.lake/build/lib/lean\n/packages/proofwidgets/.lake/build/lib/lean\n/lean/lib/lean\n/workspace\n/lean/lib/lean\n",
+          "output_truncated": false,
+          "reliable": true,
+          "system_error": null,
+          "timed_out": false
+        },
+        "ok": true
+      },
+      "paper_id": "P01",
+      "pass": true,
+      "reasons": [],
+      "target_theorem": "HighamBench.p01_t2_pairwise_vs_recursive_bounds",
+      "task_id": "P01-T2",
+      "tier": "T2",
+      "validation": {
+        "compile_exit_code": 0,
+        "compile_timed_out": false,
+        "controlled_after_audit_ok": true,
+        "controlled_after_compile_ok": true,
+        "controlled_after_expected_compile_ok": true,
+        "controlled_before_ok": true,
+        "controlled_hidden_ok": true,
+        "dependency_audit": {
+          "complete": true,
+          "exit_code": 0,
+          "forbidden_dependency_count": 0,
+          "format_version": 2,
+          "library_declarations": [],
+          "library_use": false,
+          "local_modules": [
+            "CommonN",
+            "HighamBenchChecked_e90088b8d0d740529a54cb429451105d",
+            "Submission"
+          ],
+          "missing_helper_modules": [],
+          "semantic_type_check": {
+            "candidate": "HighamBench.p01_t2_pairwise_vs_recursive_bounds",
+            "equal": true,
+            "expected": "HighamBench.highamBenchExpected_e90088b8d0d740529a54cb429451105d"
+          }
+        },
+        "failure_code": null,
+        "note": "accepted by hidden Lean validation",
+        "pass": true,
+        "semantic_statement_equal": true,
+        "statement_unchanged": true,
+        "static_finding_count": 0
+      }
+    },
+    {
+      "condition": "L",
+      "condition_n_library_arguments_omitted": false,
+      "gold_source_sha256": "7256ab5585747b14f7dc01991906a6ddd4d80b5ce35f778e1820980ae692371c",
+      "helper": {
+        "build": {
+          "exit_code": 0,
+          "olean_created": true,
+          "seconds": 23.021067,
+          "system_error": null,
+          "timed_out": false
+        },
+        "module": "CommonL",
+        "source_sha256": "97b2381c21b7af0358157a6af1f4ac155a58437371c6ce180e27c9953ea43cd3"
+      },
+      "manifest_sha256": "32a48de1620dc445c0ee30b9912f5b461cb825f01b361b141a8ed63d2c90fe4a",
+      "n_preflight": null,
+      "paper_id": "P01",
+      "pass": true,
+      "reasons": [],
+      "target_theorem": "HighamBench.p01_t2_pairwise_vs_recursive_bounds",
+      "task_id": "P01-T2",
+      "tier": "T2",
+      "validation": {
+        "compile_exit_code": 0,
+        "compile_timed_out": false,
+        "controlled_after_audit_ok": true,
+        "controlled_after_compile_ok": true,
+        "controlled_after_expected_compile_ok": true,
+        "controlled_before_ok": true,
+        "controlled_hidden_ok": true,
+        "dependency_audit": {
+          "complete": true,
+          "exit_code": 0,
+          "forbidden_dependency_count": 0,
+          "format_version": 2,
+          "library_declarations": [
+            {
+              "distance": 1,
+              "module": "NumStability.FloatingPoint.Model",
+              "name": "NumStability.FPModel"
+            },
+            {
+              "distance": 1,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.fl_pairwiseSum"
+            },
+            {
+              "distance": 1,
+              "module": "NumStability.Algorithms.Summation.Recursive.Core",
+              "name": "NumStability.fl_recursiveSum"
+            },
+            {
+              "distance": 1,
+              "module": "NumStability.Analysis.Rounding",
+              "name": "NumStability.gamma"
+            },
+            {
+              "distance": 1,
+              "module": "NumStability.Analysis.Rounding",
+              "name": "NumStability.gammaValid"
+            },
+            {
+              "distance": 1,
+              "module": "NumStability.Analysis.Rounding",
+              "name": "NumStability.gammaValid_mono"
+            },
+            {
+              "distance": 1,
+              "module": "NumStability.Analysis.Rounding",
+              "name": "NumStability.gamma_mono"
+            },
+            {
+              "distance": 1,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.pairwiseSum_forward_error_bound"
+            },
+            {
+              "distance": 1,
+              "module": "NumStability.Algorithms.Summation.Recursive.Core",
+              "name": "NumStability.recursiveSum_forward_error_bound"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.FloatingPoint.Model",
+              "name": "NumStability.FPModel.fl_add"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.FloatingPoint.Model",
+              "name": "NumStability.FPModel.mk"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.FloatingPoint.Model",
+              "name": "NumStability.FPModel.u"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.FloatingPoint.Model",
+              "name": "NumStability.FPModel.u_nonneg"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.fl_pairwiseSum._proof_1"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.fl_pairwiseSum.eq_2"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.fl_pairwiseSum.match_1"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Algorithms.Summation.Recursive.Core",
+              "name": "NumStability.fl_recursiveSum.eq_1"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.pairwiseSum_backward_error"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Algorithms.Summation.Recursive.Core",
+              "name": "NumStability.recursiveSum_backward_error"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Algorithms.Summation.Recursive.Core",
+              "name": "NumStability.recursiveSum_error_decomp"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "_private.NumStability.Algorithms.Summation.Pairwise.Core.0.NumStability.left_lt"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "_private.NumStability.Algorithms.Summation.Pairwise.Core.0.NumStability.right_lt"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.FloatingPoint.Model",
+              "name": "NumStability.FPModel.model_add"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Analysis.Summation.ErrorBounds",
+              "name": "NumStability.fl_sum_error_tight"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Analysis.Rounding",
+              "name": "NumStability.gamma_mul"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.pairwiseSum_backward_error._proof_1_4"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.pairwiseSum_backward_error._proof_1_5"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.pairwiseSum_backward_error._proof_1_6"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "NumStability.pairwiseSum_backward_error._proof_1_7"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Analysis.Rounding",
+              "name": "NumStability.u_le_gamma"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "_private.NumStability.Algorithms.Summation.Pairwise.Core.0.NumStability.left_lt._proof_1_1"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "_private.NumStability.Algorithms.Summation.Pairwise.Core.0.NumStability.right_lt._proof_1_1"
+            },
+            {
+              "distance": 3,
+              "module": "NumStability.Algorithms.Summation.Pairwise.Core",
+              "name": "_private.NumStability.Algorithms.Summation.Pairwise.Core.0.NumStability.sum_split"
+            },
+            {
+              "distance": 4,
+              "module": "NumStability.FloatingPoint.Model",
+              "name": "NumStability.FPModel.fl_add_zero"
+            },
+            {
+              "distance": 4,
+              "module": "NumStability.Analysis.Summation.ErrorBounds",
+              "name": "NumStability.fl_sum_error_init"
+            },
+            {
+              "distance": 5,
+              "module": "NumStability.Analysis.Summation.ErrorBounds",
+              "name": "NumStability.fl_sum_error_init._proof_1_1"
+            }
+          ],
+          "library_use": true,
+          "local_modules": [
+            "CommonL",
+            "HighamBenchChecked_0123e95916fd46f8bcc4028010a016d1",
+            "Submission"
+          ],
+          "missing_helper_modules": [],
+          "semantic_type_check": {
+            "candidate": "HighamBench.p01_t2_pairwise_vs_recursive_bounds",
+            "equal": true,
+            "expected": "HighamBench.highamBenchExpected_0123e95916fd46f8bcc4028010a016d1"
+          }
+        },
+        "failure_code": null,
+        "note": "accepted by hidden Lean validation",
+        "pass": true,
+        "semantic_statement_equal": true,
+        "statement_unchanged": true,
+        "static_finding_count": 0
+      }
+    },
+    {
+      "condition": "N",
+      "condition_n_library_arguments_omitted": true,
+      "gold_source_sha256": "fda952daaa28fba5b0d0971918fd66dbc8d80f950dbb46e86a703eff2595ebde",
+      "helper": null,
+      "manifest_sha256": "92a778f1e154aaa41fe4ca0f2622552c233fe98f4779c63e5cf53f39cf0fcf22",
+      "n_preflight": {
+        "complete": true,
+        "controlled_files_verified_after_staging": {
+          "changed": [],
+          "expected": 4,
+          "missing": [],
+          "ok": true,
+          "verified": 4
+        },
+        "controlled_manifest_sha256": "92a778f1e154aaa41fe4ca0f2622552c233fe98f4779c63e5cf53f39cf0fcf22",
+        "filesystem_leaks": [],
+        "filesystem_scan": {
+          "content_limit_bytes": 4194304,
+          "directory_count": 6,
+          "markers": [
+            "NumStability",
+            "numStability",
+            "lean-fp-analysis"
+          ],
+          "regular_file_count": 4,
+          "root": ".",
+          "symlink_count": 0
+        },
+        "import_probe": {
+          "attempted": true,
+          "command": [
+            "/bin/python3",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/highambench/tools/lean_isolated.py",
+            "probe",
+            "--condition",
+            "N",
+            "--workspace",
+            "<tmp>/highambench-construction-P01-T3-N-pdc3n47c",
+            "--source",
+            "<tmp>/highambench-construction-P01-T3-N-pdc3n47c/HighamBenchNoLibraryProbe_d6w7wdit.lean",
+            "--toolchain-root",
+            "/u501/m2fetrat/.elan/toolchains/leanprover--lean4---v4.29.0-rc3",
+            "--packages-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/packages_runtime",
+            "--shared-olean-root",
+            "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/shared_olean",
+            "--shared-root-relative",
+            "task/shared",
+            "--bwrap",
+            "/usr/bin/bwrap"
+          ],
+          "conclusion": "compiler reported that the forbidden module is absent",
+          "exit_code": 1,
+          "importable": false,
+          "output": "/workspace/HighamBenchNoLibraryProbe_d6w7wdit.lean:1:0: error: unknown module prefix 'NumStability'\n\nNo directory 'NumStability' or file 'NumStability.olean' in the search path entries:\n/shared-olean\n/workspace/task/shared\n/packages/mathlib/.lake/build/lib/lean\n/packages/LeanSearchClient/.lake/build/lib/lean\n/packages/Qq/.lake/build/lib/lean\n/packages/aesop/.lake/build/lib/lean\n/packages/batteries/.lake/build/lib/lean\n/packages/importGraph/.lake/build/lib/lean\n/packages/plausible/.lake/build/lib/lean\n/packages/proofwidgets/.lake/build/lib/lean\n/lean/lib/lean\n/workspace\n/lean/lib/lean\n",
+          "output_truncated": false,
+          "reliable": true,
+          "system_error": null,
+          "timed_out": false
+        },
+        "ok": true
+      },
+      "paper_id": "P01",
+      "pass": true,
+      "reasons": [],
+      "target_theorem": "HighamBench.p01_t3_noGuard_recursive_running_error_bound",
+      "task_id": "P01-T3",
+      "tier": "T3",
+      "validation": {
+        "compile_exit_code": 0,
+        "compile_timed_out": false,
+        "controlled_after_audit_ok": true,
+        "controlled_after_compile_ok": true,
+        "controlled_after_expected_compile_ok": true,
+        "controlled_before_ok": true,
+        "controlled_hidden_ok": true,
+        "dependency_audit": {
+          "complete": true,
+          "exit_code": 0,
+          "forbidden_dependency_count": 0,
+          "format_version": 2,
+          "library_declarations": [],
+          "library_use": false,
+          "local_modules": [
+            "HighamBenchChecked_c8ff55144f3b4b3583247abe036ec3a8",
+            "Submission"
+          ],
+          "missing_helper_modules": [],
+          "semantic_type_check": {
+            "candidate": "HighamBench.p01_t3_noGuard_recursive_running_error_bound",
+            "equal": true,
+            "expected": "HighamBench.highamBenchExpected_c8ff55144f3b4b3583247abe036ec3a8"
+          }
+        },
+        "failure_code": null,
+        "note": "accepted by hidden Lean validation",
+        "pass": true,
+        "semantic_statement_equal": true,
+        "statement_unchanged": true,
+        "static_finding_count": 0
+      }
+    },
+    {
+      "condition": "L",
+      "condition_n_library_arguments_omitted": false,
+      "gold_source_sha256": "6b789713e7f955ab26d0df432dda63e8ddbd08341fee5df29e5b31ba4c94f13c",
+      "helper": null,
+      "manifest_sha256": "92a778f1e154aaa41fe4ca0f2622552c233fe98f4779c63e5cf53f39cf0fcf22",
+      "n_preflight": null,
+      "paper_id": "P01",
+      "pass": true,
+      "reasons": [],
+      "target_theorem": "HighamBench.p01_t3_noGuard_recursive_running_error_bound",
+      "task_id": "P01-T3",
+      "tier": "T3",
+      "validation": {
+        "compile_exit_code": 0,
+        "compile_timed_out": false,
+        "controlled_after_audit_ok": true,
+        "controlled_after_compile_ok": true,
+        "controlled_after_expected_compile_ok": true,
+        "controlled_before_ok": true,
+        "controlled_hidden_ok": true,
+        "dependency_audit": {
+          "complete": true,
+          "exit_code": 0,
+          "forbidden_dependency_count": 0,
+          "format_version": 2,
+          "library_declarations": [
+            {
+              "distance": 1,
+              "module": "NumStability.Analysis.Error",
+              "name": "NumStability.noGuardAddWitness"
+            },
+            {
+              "distance": 1,
+              "module": "NumStability.Analysis.Error",
+              "name": "NumStability.noGuardAddWitness_error_eq"
+            },
+            {
+              "distance": 2,
+              "module": "NumStability.Analysis.Error",
+              "name": "NumStability.noGuardAddWitness_value"
+            }
+          ],
+          "library_use": true,
+          "local_modules": [
+            "HighamBenchChecked_387db59b5bf44414be4c3589a1641dc3",
+            "Submission"
+          ],
+          "missing_helper_modules": [],
+          "semantic_type_check": {
+            "candidate": "HighamBench.p01_t3_noGuard_recursive_running_error_bound",
+            "equal": true,
+            "expected": "HighamBench.highamBenchExpected_387db59b5bf44414be4c3589a1641dc3"
+          }
+        },
+        "failure_code": null,
+        "note": "accepted by hidden Lean validation",
+        "pass": true,
+        "semantic_statement_equal": true,
+        "statement_unchanged": true,
+        "static_finding_count": 0
+      }
+    }
+  ],
+  "schema_version": 1,
+  "scope": {
+    "central_manifest": "metadata/manifest.json",
+    "central_manifest_sha256": "f2d52eeba05a90ff3d23df05f9340aeadd585009b47347aa24fa7ca3dd4f4fea",
+    "complete_manifest_scope": false,
+    "manifest_available_task_ids": [
+      "P01-T1",
+      "P01-T2",
+      "P01-T3",
+      "P02-T1",
+      "P02-T2",
+      "P02-T3"
+    ],
+    "manifest_paper_ids": [
+      "P01",
+      "P02"
+    ],
+    "selected_paper_ids": [
+      "P01"
+    ],
+    "selected_task_ids": [
+      "P01-T1",
+      "P01-T2",
+      "P01-T3"
+    ]
+  },
+  "summary": {
+    "checked": 6,
+    "condition_l_passed": 3,
+    "condition_n_passed": 3,
+    "expected": 6,
+    "passed": 6
+  },
+  "verification_basis": {
+    "executables": {
+      "bubblewrap": {
+        "path": "/usr/bin/bwrap",
+        "sha256": "d78807229d616606e339c5988392b9e0ab4a6a6998fa51e4590837f426a12fca"
+      },
+      "python": {
+        "path": "/usr/bin/python3.10",
+        "sha256": "d6bca2b84e73c7775a0dd5e6a76899cfe4ee62863d7c8f88513811d1fda23f49",
+        "version": "3.10.12"
+      }
+    },
+    "numstability_compiled": {
+      "exact_tree": true,
+      "file_count": 120,
+      "label": "numstability-45813a95-compiled",
+      "mount_root": "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/numstability_olean",
+      "only_numstability_namespace": true,
+      "path": "metadata/library_olean.json",
+      "sha256": "bbea1e90bc11605bd3c14b28dc39bf49b7bcb64ab5cf2306841f65b803a6ae2a",
+      "total_bytes": 62620948,
+      "verified": 120
+    },
+    "numstability_source": {
+      "exact_tree": true,
+      "file_count": 977,
+      "label": "numstability-45813a95-source",
+      "path": "metadata/library_source.json",
+      "sha256": "8b52061f0fafc283acd2363267ebbee2f9c6eb97360c596723b95b27515c7828",
+      "total_bytes": 69597467,
+      "verified": 977
+    },
+    "packages_runtime": {
+      "base_olean_file_count": 8039,
+      "compiled_support_file_count": 24099,
+      "condition_n_absence_scan": {
+        "bytes_scanned": 5480830882,
+        "complete": true,
+        "files_scanned": 39811,
+        "markers": [
+          "NumStability",
+          "numStability",
+          "lean-fp-analysis"
+        ],
+        "matches": [],
+        "ok": true
+      },
+      "exact_tree": true,
+      "file_count": 39811,
+      "label": "packages-runtime-e8ea1afc",
+      "mathlib_source_file_count": 7673,
+      "mount_root": "/u501/m2fetrat/MyCodes/lean-fp-analysis-main/paper_bencmark/scratch_pad/highambench_environment/packages_runtime",
+      "only_mathlib_source_and_lean_compiled_artifacts": true,
+      "path": "metadata/packages_runtime.json",
+      "sha256": "a2ee0563bc731aa3dba22ed7af0e9bd1322c8c06b51cd9d01bd573282d9c8c31",
+      "total_bytes": 5480830882,
+      "verified": 39811
+    },
+    "shared_olean": {
+      "condition_n_absence_scan": {
+        "bytes_scanned": 255048,
+        "complete": true,
+        "files_scanned": 1,
+        "markers": [
+          "NumStability",
+          "numStability",
+          "lean-fp-analysis"
+        ],
+        "matches": [],
+        "ok": true
+      },
+      "exact_file_count": 1,
+      "relative_file": "HighamBench/Definitions.olean",
+      "sha256": "5e71d7b12e7d4648013600fa0f257c1eb8bfdfd7c32ea2710595df4f2672e851"
+    },
+    "tools": {
+      "tools/check_construction.py": "a0e57d5174cdd83ef3f6bb0ea3fe746948bf3b34a8a779527fbbe3e102493cc5",
+      "tools/common.py": "5b5aacb4957cb3f946027637fd38c6b65e01907c00d8f5a6567bf470e6241617",
+      "tools/dependency_audit.lean": "0f19d8c9e1a2e6c17f22f0ab38425d0351e4d6cf65c0b03165e06ecb9d718be7",
+      "tools/hashes.py": "0c24b4086e38a44491a61c045b1751ffb08dedc1e32370f4ab96c19f9f2d6b61",
+      "tools/lean_isolated.py": "aae24febc4bf42802919c027bf6edb1c409903376ae0c37d9d0294d855d895ca",
+      "tools/preflight.py": "0c192828297710a67fa131403f9359a94f78767ff081af55010cf72b86d1793d",
+      "tools/validator.py": "2842f43cab220363ba3b6bb66004e3023d15c3eba5a8a6ddbb048aa2507808cb"
+    }
+  }
+}

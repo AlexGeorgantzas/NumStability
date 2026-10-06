@@ -1,0 +1,122 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "direct formalization of equation (7) with an operational CGS-P family and a uniform second-order remainder",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The dimensions m and n are positive, n <= m, and one fixed real m-by-n input A has full column rank.",
+    "For every positive machine unit, an operation-linked successful normalized-range execution of Algorithm 2 (CGS-P) computes Q and upper-triangular R from the same A, including the pythagorean diagonal formula.",
+    "The arithmetic interface supplies normalized-range relative-error laws for norm, division, addition, subtraction, multiplication, square root, and dot-product operations; exceptional IEEE values and breakdown are outside the represented executions.",
+    "Every computed leading R_k has a certified two-sided inverse. The strict condition c4(m,k)*epsilonM*kappa2(R_k)^2 < 1 holds for all prefixes on one fixed positive right-neighborhood of zero.",
+    "The computed R_k norms and inverse norms are uniformly bounded on one fixed positive right-neighborhood of zero, as required to propagate a uniform second-order remainder through inverse multiplication.",
+    "Equations (4)-(5) and the reversed norm comparison from (6), which precede the selected equation (7), hold uniformly with nonnegative prefix coefficients and one radius fixed before epsilonM is selected."
+  ],
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P11 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P11 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P11/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p11_t3_orthogonality_defect_bound {m n : Nat} (family : P11CGSPTheorem1Family m n) (analysis : P11Theorem1ResidualAsymptotics family) : forall epsilonM : P11PositiveEpsilon, epsilonM.1 <= p11Theorem1OrthogonalityRadius family analysis -> forall k : Fin n, p11OpNorm2 (p11RectOrthogonalityDefect (p11ColumnPrefix (family.run epsilonM).Q k)) <= p11C4 m (k.val+1) * p11Kappa2 (p11LeadingBlock (family.run epsilonM).R k) ((family.run epsilonM).leadingInverse k)^2 * epsilonM.1 + p11Theorem1OrthogonalityRemainderCoeff family analysis k * epsilonM.1^2",
+    "namespace": "HighamBench",
+    "plain_language": "On one common small-precision neighborhood, every positive prefix of a fixed-input operational CGS-P execution family satisfies equation (7)'s spectral loss-of-orthogonality bound with the exact first-order coefficient and one second-order coefficient fixed independently of the selected machine unit.",
+    "target_file": "paper_bencmark/highambench/tasks/P11/T3/Target.lean",
+    "theorem_name": "p11_t3_orthogonality_defect_bound"
+  },
+  "informal_proof": "For each precision and prefix, define DeltaA_k as the actual factorization residual and E_k as the actual normal-equation residual. Derive the exact page-312 inverse-conjugated defect identity, then apply spectral transpose invariance, triangle inequalities, and submultiplicativity. Substitute the uniform forms of (4)-(5), use epsilonM<=1 and the reversed form of (6) to replace ||A_k||_2^2 by ||R_k||_2^2 to first order, and use the family-wide R_k and inverse bounds to obtain a second-order coefficient independent of epsilonM. The first-order term simplifies to c4(m,k)*kappa2(R_k)^2*epsilonM.",
+  "informal_statement": "Numbered equation (7) for every prefix of a fixed-input operational CGS-P family, retaining the rectangular dimensions, condition (3), spectral norm, corrected source constants, computed R_k condition number, and a uniform interpretation of O(epsilonM squared).",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P11",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P11_A note on the error analysis of classical Gram\u2013Schmidt.pdf",
+    "sha256": "72b7521848be07971a6721ea0356bb898c63e21b8ad3aa109fee8f41517284a5"
+  },
+  "paper_version": "published journal version; volume 105, issue 2, 2006, printed pages 299-313",
+  "result_form_tag": "BND",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.rectOpNorm2_nonneg",
+      "NumStability.rectOpNorm2_finiteTranspose",
+      "NumStability.opNorm2_sub_le",
+      "NumStability.opNorm2_matMul_le",
+      "NumStability.rectMatMul_assoc"
+    ],
+    "note": "The complete frozen source and compiled condition-L bundle were searched. MatrixAlgebra supplies square spectral-norm submultiplicativity used directly by the L proof, but there is no CGS-P arithmetic model, operation-linked execution family, uniform residual asymptotics, page-312 defect identity, or equation-(7) remainder propagation."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P11Matrix",
+    "P11RectMatrix",
+    "p11ColumnPrefix",
+    "p11LeadingBlock",
+    "p11OpNorm2",
+    "p11RectOpNorm2",
+    "p11C1",
+    "p11C2",
+    "p11C3",
+    "p11C4",
+    "p11Kappa2",
+    "p11RectOrthogonalityDefect",
+    "P11CGSPNormalizedArithmetic",
+    "P11CGSPColumnTrace",
+    "P11CGSPTheorem1Run",
+    "P11PositiveEpsilon",
+    "P11CGSPTheorem1Family",
+    "p11Theorem1FactorizationResidual",
+    "P11Theorem1ResidualAsymptotics",
+    "p11Theorem1OrthogonalityRadius",
+    "p11Theorem1OrthogonalityRemainderCoeff"
+  ],
+  "source_locations": [
+    {
+      "anchor": "standing rectangular full-rank setup and Algorithm 2 (CGS-P)",
+      "pdf_page": 2,
+      "printed_page": "300",
+      "role": "inherited dimensions, rank assumption, and distinction from standard CGS",
+      "section": "Algorithm setup"
+    },
+    {
+      "anchor": "Algorithm 2 and floating-point model",
+      "pdf_page": 3,
+      "printed_page": "301",
+      "role": "pythagorean diagonal, normalized-range arithmetic, and first-order convention",
+      "section": "Algorithm 2"
+    },
+    {
+      "anchor": "Theorem 1, numbered equation (7)",
+      "pdf_page": 4,
+      "printed_page": "302",
+      "role": "selected stated loss-of-orthogonality bound",
+      "section": "Theorem 1"
+    },
+    {
+      "anchor": "exact identity and following norm estimates deriving equation (7)",
+      "pdf_page": 14,
+      "printed_page": "312",
+      "role": "proof decomposition and propagation of equations (4)-(6)",
+      "section": "Appendix: Proof of Theorem 1"
+    }
+  ],
+  "source_tags": [
+    "EQN"
+  ],
+  "task_id": "P11-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "Square spectral-norm submultiplicativity is a standard Mathlib-level fact and does not materially speed L. Both conditions must derive the rectangular inverse-conjugated identity, control four residual terms, propagate uniform second-order coefficients, use the reversed equation-(6) comparison, and assemble the all-prefix c4*kappa2(R_k)^2 result. No mounted declaration models CGS-P or states equation (7).",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P11/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p11_t3_orthogonality_defect_bound"
+  }
+}

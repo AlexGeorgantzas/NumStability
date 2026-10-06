@@ -1,0 +1,91 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source-faithful sharp componentwise-box formulation of the first-order condition formula in equations (3.3)-(3.4)",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "K represents A inverse times X times B, and H represents A inverse.",
+    "The vectors g and f are the paper's nonnegative componentwise perturbation tolerances.",
+    "xNorm is the positive infinity norm of the unperturbed solution x.",
+    "The attainable-value set is the first-order perturbation set obtained from equation (3.2); the paper's higher-order term is outside this sharp linear core."
+  ],
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P32 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P32 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P32/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p32_t3_sharp_structured_condition_formula (K H g f xNorm) (hg) (hf) (hx) : p32LinearizedCondition K H g f xNorm = p32ConditionFormula K H g f xNorm",
+    "namespace": "HighamBench",
+    "plain_language": "The supremum of the relative infinity norms of all first-order structured responses in the componentwise perturbation box equals the explicit absolute-value formula in equation (3.4).",
+    "target_file": "paper_bencmark/highambench/tasks/P32/T3/Target.lean",
+    "theorem_name": "p32_t3_sharp_structured_condition_formula"
+  },
+  "informal_proof": "Bound each response coordinate by the corresponding coordinate of the absolute-value radius in (3.3). For sharpness, select parameter and right-hand-side perturbation signs separately for each output coordinate, as stated in the paper, and use the resulting attainable values to obtain the reverse supremum inequality.",
+  "informal_statement": "Equations (3.3)-(3.4): the first-order structured componentwise condition number is the infinity norm of the absolute coefficient radius divided by the infinity norm of x.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P32",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P32-Backward Error and Condition of Structured Linear Systems.pdf",
+    "sha256": "a20f838b5b94a509d2c605da4c669b9cd01f4e6bb84a8c7fa2bc5846b3b230c2"
+  },
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 13(1), 1992, printed pages 162-175",
+  "result_form_tag": "EQ",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "structured componentwise backward error",
+        "structured condition number",
+        "A inverse X B",
+        "componentwise perturbation condition",
+        "attainable sign perturbation"
+      ],
+      "result": "The importable frozen NumStability set has generic matrix algebra, norms, and finite-sum tools, but no structured componentwise backward-error theorem, no structured condition-number theorem, and no result proving equations (3.3)-(3.4). Closer perturbation, underdetermined-system, and condition-number files are source-only and absent from the compiled condition-L bundle.",
+      "scope": "the complete frozen NumStability source, the compiled condition-L bundle recorded in metadata/library_olean.json, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [],
+    "note": "Mathlib supplies finite sums, Pi infinity norms, and conditionally complete supremum lemmas, but no ready theorem for the componentwise response bound or its attainable-sign sharpness. Private N and L proofs reconstruct the same argument; L has no substantial corresponding result."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P32Vector",
+    "P32CoefficientMap",
+    "P32Admissible",
+    "p32LinearResponse",
+    "p32LinearizedValues",
+    "p32LinearizedCondition",
+    "p32ConditionRadius",
+    "p32ConditionFormula"
+  ],
+  "source_locations": [
+    {
+      "anchor": "definition (3.1), perturbation expansion (3.2), sharp bound (3.3), and formula (3.4)",
+      "pdf_page": 6,
+      "printed_page": "167-168",
+      "role": "selected first-order structured condition statement and complete upper-bound and attainable-sign derivation",
+      "section": "3. Structured condition number"
+    }
+  ],
+  "source_tags": [
+    "EQN"
+  ],
+  "task_id": "P32-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The proof must establish boundedness and nonemptiness of the attainable perturbation values, derive the full finite-dimensional componentwise upper bound, construct sign-aligned perturbations for sharpness, and prove both supremum inequalities. This is substantial work rather than a Mathlib import. NumStability has no corresponding compiled structured-condition result, so L receives no material advantage over N.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P32/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p32_t3_sharp_structured_condition_formula"
+  }
+}

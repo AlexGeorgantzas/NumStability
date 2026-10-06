@@ -1,0 +1,86 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source-faithful matrix-certificate form of Theorem 3.2 and formula (3.3)",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The symmetric inverse matrices S and Sinv represent W^(1/2) and W^(-1/2) from the paper's weighted Frobenius norm.",
+    "The two inverse identities explicitly encode the relation between W^(1/2) and W^(-1/2).",
+    "The orthogonal matrix Q and real function lambda give the source spectral decomposition of S*A*S.",
+    "The squared weighted Frobenius objective has exactly the same minimizers as the weighted Frobenius norm in equation (1.2)."
+  ],
+  "author_label": "Theorem 3.2, formula (3.3), including diagonal monotonicity",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P40 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P40 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P40/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p40_t3_weighted_psd_projection (n A S Sinv Q lambda hSsymm hSinvSymm hSInv hInvS hQtQ hQQt hSpectral) : let X := weightedPsdProjection; X.PosSemidef and X globally minimizes weighted Frobenius square over every PSD Z and diag(A) <= diag(X)",
+    "namespace": "HighamBench",
+    "plain_language": "The eigenvalue-clipping formula (3.3) produces a positive semidefinite matrix that globally minimizes the weighted Frobenius distance to A, and every diagonal entry of the projection is at least the corresponding diagonal entry of A.",
+    "target_file": "paper_bencmark/highambench/tasks/P40/T3/Target.lean",
+    "theorem_name": "p40_t3_weighted_psd_projection"
+  },
+  "informal_proof": "Use the spectral positive part of W^(1/2) A W^(1/2). Its congruence by W^(-1/2) is positive semidefinite. In spectral coordinates, clipping each eigenvalue at zero minimizes the squared Frobenius distance to every positive semidefinite competitor, including all nonnegative off-diagonal square terms. Transforming back gives weighted minimality. The congruence of the difference between the positive part and the original matrix is positive semidefinite, so its diagonal entries are nonnegative.",
+  "informal_statement": "Prove Theorem 3.2's weighted positive-semidefinite projection formula and its diagonal inequality.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P40",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P40-Computing the Nearest Correlation Matrix - A Problem from Finance.pdf",
+    "sha256": "0ad29c8b862ebc95b69048ff9607a25c40efb7360d5df028ce93e5efc7855617"
+  },
+  "paper_version": "published journal version; IMA Journal of Numerical Analysis 22(3), 2002, printed pages 329-343",
+  "result_form_tag": "THM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "nearest positive semidefinite matrix weighted Frobenius projection",
+        "spectral positive part projection PSD cone",
+        "Higham Theorem 3.2 formula 3.3",
+        "diagonal positive part monotonicity"
+      ],
+      "result": "Neither Mathlib nor the 44-module importable NumStability set contains Theorem 3.2, a weighted Frobenius projection theorem for the PSD cone, or the combined spectral-clipping and diagonal-monotonicity result. Both provide generic matrix, spectral, Frobenius, and PSD-congruence ingredients only.",
+      "scope": "the complete frozen NumStability source, the compiled condition-L bundle recorded in metadata/library_olean.json, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [],
+    "note": "The private N and L proofs reconstruct the same orthogonal-invariance, eigenvalue-clipping, full matrix-distance, congruence, and diagonal arguments. L has only an irrelevant zero-nonnegativity library marker and receives no mathematical shortcut."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "p40FrobeniusSq",
+    "p40SpectralPositivePart",
+    "p40WeightedFrobeniusSq",
+    "p40WeightedPsdProjection"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Theorem 3.2 and formula (3.3)",
+      "pdf_page": "7-8",
+      "printed_page": "335-336",
+      "role": "selected weighted projection statement and complete proof",
+      "section": "3.1 Projections"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P40-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The proof must establish orthogonal invariance of the Frobenius square, transport arbitrary PSD competitors into spectral coordinates, prove scalar clipping optimality and aggregate it against every off-diagonal matrix entry, transport the global weighted minimization back through two congruences, and derive diagonal monotonicity from a separate PSD difference. This is substantial multi-stage formalization, is not discharged by Mathlib imports, and has no corresponding compiled NumStability result, so L receives no material advantage over N.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P40/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p40_t3_weighted_psd_projection"
+  }
+}

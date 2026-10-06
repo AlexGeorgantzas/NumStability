@@ -1,0 +1,24 @@
+{
+  "description": "Substantial task-relevant results named by frozen tier reasons, with explicit alternative results documented in the earlier dependency review. Generic models, gamma facts, norm algebra, and algorithm definitions are not counted here. Empty T3 entries mean no corresponding substantial result was predesignated, not that the library cannot help.",
+  "source": [
+    "paper_bencmark/highambench/metadata/manifest.json:targets[*].tier_reason",
+    "paper_bencmark/highambench/reports/combined-r09-r10/library_dependency_audit.md"
+  ],
+  "tasks": {
+    "P01-T1": ["NumStability.pairwiseSum_forward_error_bound"],
+    "P01-T2": ["NumStability.recursiveSum_running_error_bound", "NumStability.recursiveSum_forward_error_bound", "NumStability.pairwiseSum_forward_error_bound"],
+    "P02-T1": ["NumStability.recursiveSum_forward_error_bound"],
+    "P04-T1": ["NumStability.prod_error_bound", "NumStability.prod_one_add_delta_abs_sub_one_le_gamma_radius"],
+    "P12-T1": ["NumStability.FloatingPointFormat.fergusonMagnitudeExponentConditionLe_sub_finiteSystem"],
+    "P14-T1": ["NumStability.recursiveSum_forward_error_bound", "NumStability.recursiveSum_running_error_bound"],
+    "P15-T1": ["NumStability.matVec_backward_error"],
+    "P15-T2": ["NumStability.forwardSub_backward_error", "NumStability.matVec_backward_error"],
+    "P17-T1": ["NumStability.FiniteProbability.eventProb_abs_sub_le_ge_one_sub_of_second_moment"],
+    "P23-T1": ["NumStability.matMul_error_bound"],
+    "P26-T1": ["NumStability.forwardSub_backward_error"],
+    "P28-T1": ["NumStability.matMul_error_bound", "NumStability.dotProduct_error_bound"],
+    "P29-T1": ["NumStability.matMul_error_bound", "NumStability.dotProduct_error_bound"],
+    "P29-T2": ["NumStability.forwardSub_backward_error", "NumStability.backSub_backward_error"],
+    "P33-T1": ["NumStability.conventional_residual_error", "NumStability.dotProduct_backward_error"]
+  }
+}

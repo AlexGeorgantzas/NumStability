@@ -1,0 +1,12 @@
+name = "numStability"
+version = "0.1.0"
+defaultTargets = ["NumStability"]
+weakLeanArgs = ["-j", "1"]
+
+[[lean_lib]]
+name = "NumStability"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "e8ea1afc32790ce1d4e1a4e45cc412ba9388716b"

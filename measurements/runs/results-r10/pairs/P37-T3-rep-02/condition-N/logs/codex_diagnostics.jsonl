@@ -1,0 +1,6 @@
+{"monotonic_ns":31924031156776,"raw_line":"\u001b[2m2026-09-20T20:10:17.974387Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: Failed to find expected lines in <tmp>/AltProof.lean:","record_type":"app_server_stderr","sequence":1,"unix_ns":1789935017974417878}
+{"monotonic_ns":31924031215257,"raw_line":"      apply Submodule.subset_span","record_type":"app_server_stderr","sequence":2,"unix_ns":1789935017974476625}
+{"monotonic_ns":31924031234387,"raw_line":"      refine ⟨⟨(i : ℕ) + 1, by omega⟩, ?_⟩","record_type":"app_server_stderr","sequence":3,"unix_ns":1789935017974495777}
+{"monotonic_ns":31924031255712,"raw_line":"      congr 1","record_type":"app_server_stderr","sequence":4,"unix_ns":1789935017974517119}
+{"monotonic_ns":31924031271651,"raw_line":"      push_cast","record_type":"app_server_stderr","sequence":5,"unix_ns":1789935017974533047}
+{"monotonic_ns":31990501693960,"raw_line":"\u001b[2m2026-09-20T20:11:24.444913Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mexec_command failed: UnknownProcessId { process_id: 16827 }","record_type":"app_server_stderr","sequence":6,"unix_ns":1789935084444954619}

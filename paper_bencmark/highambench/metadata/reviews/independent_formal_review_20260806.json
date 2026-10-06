@@ -1,0 +1,1072 @@
+{
+  "schema_version": "highambench-formal-source-review-0.1",
+  "kind": "independent-formal-novelty-and-source-review",
+  "record_status": "superseded_measurement_snapshot",
+  "superseded_reason": "The task surface is retained, but this review cites the pre-signposted manifest and is preserved only as historical evidence.",
+  "reviewer": {
+    "id": "codex-formal-reviewer-2",
+    "identity": "OpenAI Codex, independent formal/source reviewer",
+    "fresh_context": true,
+    "fresh_context_marker": "fresh-independent-review-20260806",
+    "independence_statement": "This record was produced from direct inspection of the current specification, paper/task metadata, target and shared Lean interfaces, frozen mathlib/NumStability declarations, and construction adapters. Existing highambench metadata/reviews JSON records were not read or relied upon."
+  },
+  "reviewed_at_utc": "2026-08-06T16:01:51Z",
+  "benchmark_id": "highambench-0.2-p01-p02-p03-p04-p05-p06-p07-p08-p09-p10-p11-p12-p13-p14-p15-p16-p17-p18-p19-p20",
+  "specification": {
+    "id": "HighamBench Simple Two-Condition Specification",
+    "version": "0.2",
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915"
+  },
+  "environment_id": "highambench-p01-p02-p03-p04-p05-p06-p07-p08-p09-p10-p11-p12-p13-p14-p15-p16-p17-p18-p19-p20-48bd083d960e13d1",
+  "environment_bundle_sha256": "48bd083d960e13d13933c395167c1910d5e358faa4af25789bbcbda8f3e7b6a7",
+  "snapshot": {
+    "manifest_sha256": "c703589c69f48fa525e7ffd692ea30b8af0c869e5d6c315b401c408bd2b28190",
+    "config_sha256": "72913421e572d80cc8fb8b65fe72bcd7797b6c6ae6c30415408e56bbce6c0ad1",
+    "environment_sha256": "f194cb4e531d48110582f245adf161c6c9ed6c795dbbdcb9f95550e3b9533ccd",
+    "source_identity_check": "All 20 paper.json and all 60 task.json source paths exist and their recorded SHA-256 values match the current PDFs.",
+    "review_basis": "Source fidelity compares each selected formal statement/assumptions to its cited paper result or cited proof step. Exact-target novelty compares theorem types after unfolding only paper-scoped aliases; a theorem is rejected even when reuse requires simpa/rw solely to bridge notation."
+  },
+  "overall_decision": "fail",
+  "summary": {
+    "task_count": 60,
+    "source_faithful": 60,
+    "exact_target_absent_from_mathlib": 58,
+    "exact_target_absent_from_numstability": 52,
+    "passed": 52,
+    "failed": 8,
+    "failing_task_ids": [
+      "P06-T1",
+      "P07-T1",
+      "P10-T1",
+      "P13-T1",
+      "P15-T1",
+      "P17-T1",
+      "P18-T1",
+      "P19-T1"
+    ],
+    "conclusion": "The current source interfaces are faithful, but eight T1 tasks violate the specification's exact-target-absence rule; P10-T1 and P15-T1 collide with both mathlib and NumStability."
+  },
+  "task_reviews": [
+    {
+      "task_id": "P01-T1",
+      "declaration": "HighamBench.p01_t1_pairwise_nonnegative",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 6 recorded assumptions with unnumbered display immediately after equation (2.2) (PDF page 2, 2. Orderings of Recursive Summation); (3.6) (PDF page 6, 3. Other Methods); paragraph after equation (2.6) (PDF page 3, 2. Orderings of Recursive Summation); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "d5ad99fac5022da54dbe02721ea57116df3cec15badddd7c96c344328718fea7",
+        "target_sha256": "ee6bd516f8c592936e1f9b0b9d54049579ba7aee7714cdb871b230332e0f1d19"
+      }
+    },
+    {
+      "task_id": "P01-T2",
+      "declaration": "HighamBench.p01_t2_pairwise_vs_recursive_bounds",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 5 recorded assumptions with unnumbered display immediately after equation (2.2) (PDF page 2, 2. Orderings of Recursive Summation); (2.6) (PDF page 3, 2. Orderings of Recursive Summation); equation (3.6) and the following paragraph (PDF page 6, 3. Other Methods); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "d5ad99fac5022da54dbe02721ea57116df3cec15badddd7c96c344328718fea7",
+        "target_sha256": "8707d7e8b3965c9c6d5c1354116c7cf04471bc0c5b0635b4287729455f79e49f"
+      }
+    },
+    {
+      "task_id": "P01-T3",
+      "declaration": "HighamBench.p01_t3_noGuard_recursive_running_error_bound",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 5 recorded assumptions with (5.1) (PDF page 11, 5. No Guard Digit Model); (5.2) (PDF page 11, 5. No Guard Digit Model); (5.3) (PDF page 11, 5. No Guard Digit Model); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "d5ad99fac5022da54dbe02721ea57116df3cec15badddd7c96c344328718fea7",
+        "target_sha256": "e5badc1d71efe1d99f4d211edb7eff96ceb893628641ed140494f380de284cda"
+      }
+    },
+    {
+      "task_id": "P02-T1",
+      "declaration": "HighamBench.p02_t1_vecSum_preserves_sum",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 4 recorded assumptions with Theorem 3.4, equation (3.2) (PDF page 8, 3. Error-free transformations); equation (4.7)(i) and Algorithm 4.3 (PDF page 11, 4. Summation); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "e7b8523c793ad7345dfc76f681c44d1afbbc3a810fb948912451432ae616512d",
+        "target_sha256": "6ae5ba2b7579c90c03fadb3ef191a155a78eb84f008d7736fedfeec489ef9e0e"
+      }
+    },
+    {
+      "task_id": "P02-T2",
+      "declaration": "HighamBench.p02_t2_sum2_error_bound",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 5 recorded assumptions with Lemma 4.2, equations (4.4)-(4.6) (PDF page 10-11, 4. Summation); Proposition 4.5, equation (4.8) (PDF page 11, 4. Summation); equations (4.10)-(4.12) (PDF page 12-13, 4. Summation); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "e7b8523c793ad7345dfc76f681c44d1afbbc3a810fb948912451432ae616512d",
+        "target_sha256": "6869f7e5200080eb138266e3d9671b6c6f323b987996c748a25f497564fe4903"
+      }
+    },
+    {
+      "task_id": "P02-T3",
+      "declaration": "HighamBench.p02_t3_dotK_error_bound",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 6 recorded assumptions with Proposition 4.10 (PDF page 16, 4. Summation); Algorithm 5.10 and the derivation preceding equation (5.10) (PDF page 23, 5. Dot product); equation (5.10) and Proposition 5.11 (PDF page 24, 5. Dot product); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "e7b8523c793ad7345dfc76f681c44d1afbbc3a810fb948912451432ae616512d",
+        "target_sha256": "4da16107e718b289c13ed7398a2af4b9f4b5fca48c09eaa6ec7aa5a9563e3452"
+      }
+    },
+    {
+      "task_id": "P03-T1",
+      "declaration": "HighamBench.p03_t1_one_step_residual_identity",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with equation (4.1) (PDF page 8, 4. Normwise backward error analysis); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "952c6827db21fb2a9362b5aa4d38a1b2c75361f2cc7a3badbb7cd4a232d7b7bc",
+        "target_sha256": "6de2787b760937b2e0b20ef82c6dbb221a7be6f8683b9a963070abee2439e717"
+      }
+    },
+    {
+      "task_id": "P03-T2",
+      "declaration": "HighamBench.p03_t2_normwise_residual_contraction",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with equation (4.1) and the displayed derivation immediately before Theorem 4.1 (PDF page 8-9, 4. Normwise backward error analysis); Theorem 4.1 (PDF page 9, 4. Normwise backward error analysis); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "952c6827db21fb2a9362b5aa4d38a1b2c75361f2cc7a3badbb7cd4a232d7b7bc",
+        "target_sha256": "66d46e86e70b37c6e4436debab03f0701acef350c440deeace177e718b6433a9"
+      }
+    },
+    {
+      "task_id": "P03-T3",
+      "declaration": "HighamBench.p03_t3_componentwise_residual_recurrence",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with equations (5.2)-(5.6) and Theorem 5.1 (PDF page 10, 5. Componentwise backward error analysis); continuation of Theorem 5.1 and equation (5.7) (PDF page 11, 5. Componentwise backward error analysis); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "952c6827db21fb2a9362b5aa4d38a1b2c75361f2cc7a3badbb7cd4a232d7b7bc",
+        "target_sha256": "93c283a03101e253e657795229736e82264cbf585f42aabc9a69d40bbcc58d96"
+      }
+    },
+    {
+      "task_id": "P04-T1",
+      "declaration": "HighamBench.p04_t1_chained_rounding_factor",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with displayed factorization immediately before equation (3.4), equation (3.4), and its same-precision specialization (PDF page 6, 3.2. Rounding error analysis); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "7ad9ebb7eef9864c58e9a3760ee308be48060647286f8e16cdc740ed4be5b862",
+        "target_sha256": "05344d296907334bf9b974a52dfef6181f0c237ab808462d2f0ebc2ad1dd9887"
+      }
+    },
+    {
+      "task_id": "P04-T2",
+      "declaration": "HighamBench.p04_t2_mixed_input_product_bound",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with Theorem 3.2 and equation (3.6) (PDF page 7, 3.2. Rounding error analysis); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "7ad9ebb7eef9864c58e9a3760ee308be48060647286f8e16cdc740ed4be5b862",
+        "target_sha256": "98e82d8b57ec9dc9d93b67c12f18a3c1eb2940b4a9550a0f8e1d342c98341da7"
+      }
+    },
+    {
+      "task_id": "P04-T3",
+      "declaration": "HighamBench.p04_t3_block_lu_solve_backward_error",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with Theorem 4.4 and equation (4.7) (PDF page 13, 4.1. Rounding error analysis); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "7ad9ebb7eef9864c58e9a3760ee308be48060647286f8e16cdc740ed4be5b862",
+        "target_sha256": "8d92998de2588ca675b513db902c36f7ca1d8689c81ad8d8b886c9b5371b4b7e"
+      }
+    },
+    {
+      "task_id": "P05-T1",
+      "declaration": "HighamBench.p05_t1_uniform_backward_coefficients",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with Lemma 4.1 and its sign-aligned coefficient construction (PDF page 10, 4.1. An improved version of Higham's Lemma 8.4); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "dd8b525c0eabc509a68b325ee5008cf6f1d4ef262bef8ba54e1947fe3cdb3db6",
+        "target_sha256": "23f5b3761aa4c7b0641e34d71b832225d8e91893117d04a7bf97cca512307408"
+      }
+    },
+    {
+      "task_id": "P05-T2",
+      "declaration": "HighamBench.p05_t2_square_lu_backward_error",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with Theorem 4.2 and equation (4.2) (PDF page 10, 4.2. An improved backward error bound for LU factorization); equations (4.3a)-(4.3b) and the final coefficient comparison (PDF page 11, 4.2. An improved backward error bound for LU factorization); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "dd8b525c0eabc509a68b325ee5008cf6f1d4ef262bef8ba54e1947fe3cdb3db6",
+        "target_sha256": "2ad0285ce2bb990d3d8fe2709531887d27677205d670f26be9b509532d9e9fe2"
+      }
+    },
+    {
+      "task_id": "P05-T3",
+      "declaration": "HighamBench.p05_t3_cholesky_backward_error",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with Theorem 4.4 statement (PDF page 11, 4.3. An improved backward error bound for Cholesky factorization); equation (4.4), equations (4.5a)-(4.5b), and the closing symmetry sentence (PDF page 12, 4.3. An improved backward error bound for Cholesky factorization); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "dd8b525c0eabc509a68b325ee5008cf6f1d4ef262bef8ba54e1947fe3cdb3db6",
+        "target_sha256": "c7f9b7ce7d229dbc4ad8209d2a2f863c20aab142c8417b57ca3c4c7392b1a760"
+      }
+    },
+    {
+      "task_id": "P06-T1",
+      "declaration": "HighamBench.p06_t1_columnwise_to_frobenius",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": false,
+      "decision": "fail",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with equation (4.20) and its preceding implication sentence (PDF page 10, 4. Application of a sequence of Householder matrices); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Fail: after unfolding only paper-scoped aliases, the target is definitionally/type-equivalent to NumStability.frobNormRect_le_of_col_vecNorm2_le; the current L construction proof closes by direct exact reuse (possibly simpa/rw for notation)."
+      },
+      "snapshot": {
+        "paper_sha256": "c02a20e9ffa8039a5ad3db9261fba19929de84bf0bff7654547541dffe496a79",
+        "target_sha256": "2527b886559c2b572f9d6f1939cec64202ffcbc6b4e32b59015e41e5fedeed34"
+      }
+    },
+    {
+      "task_id": "P06-T2",
+      "declaration": "HighamBench.p06_t2_self_adjoint_dilation_norm_bridge",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with equations (3.3)-(3.4) (PDF page 5, 3. Matrix concentration inequalities); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "c02a20e9ffa8039a5ad3db9261fba19929de84bf0bff7654547541dffe496a79",
+        "target_sha256": "f92d55c304f3ea2d46dafcd9ff71f3d0e1160bd4660f48b15b2526ee5a99af6e"
+      }
+    },
+    {
+      "task_id": "P06-T3",
+      "declaration": "HighamBench.p06_t3_householder_product_first_order_expansion",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with equations (4.8)-(4.9) in the proof of Lemma 4.2 (PDF page 7, 4. Application of a sequence of Householder matrices); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "c02a20e9ffa8039a5ad3db9261fba19929de84bf0bff7654547541dffe496a79",
+        "target_sha256": "7ab9b1c444e5abf221bf343eb310b90ddc12d47745085cc62f3448bc11603ca2"
+      }
+    },
+    {
+      "task_id": "P07-T1",
+      "declaration": "HighamBench.p07_t1_perturbed_preconditioned_map_injective",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": false,
+      "decision": "fail",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with Lemma 3.2, first conclusion that the computed matrix is full rank (PDF page 13, 3.1. Bounding kappa_2(Y-hat) in terms of numerical errors); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Fail: after unfolding only paper-scoped aliases, the target is definitionally/type-equivalent to NumStability.rectMatMulVec_injective_of_lower_bound_and_rectOpNorm2Le_lt; the current L construction proof closes by direct exact reuse (possibly simpa/rw for notation)."
+      },
+      "snapshot": {
+        "paper_sha256": "4c4d638b359719f47e2c4664a50e9fa8e4704e8b6b39923d73c41883a97c5790",
+        "target_sha256": "a2c42582fa017f4bc27749ec721ce360de2774ec999b15e3c18f9c54dd10b3a4"
+      }
+    },
+    {
+      "task_id": "P07-T2",
+      "declaration": "HighamBench.p07_t2_backward_error_product_budget",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with displayed definition of DeltaA and the immediately following norm bound in the proof of Theorem 3.5 (PDF page 16, 3.4. The backward error of SAA Blendenpik); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "4c4d638b359719f47e2c4664a50e9fa8e4704e8b6b39923d73c41883a97c5790",
+        "target_sha256": "66cf9586215f93594421bb978c14317dd27fdc49556a45c3d13be036d45045ee"
+      }
+    },
+    {
+      "task_id": "P07-T3",
+      "declaration": "HighamBench.p07_t3_sketch_precondition_condition_certificate",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with Lemma 2.1 and its proof (PDF page 9, 2.1. SAP LS solvers); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "4c4d638b359719f47e2c4664a50e9fa8e4704e8b6b39923d73c41883a97c5790",
+        "target_sha256": "9b7abd46008c2ebc9620c036bd3c8c5c79bc34a01f09ea42b8179b88f517614a"
+      }
+    },
+    {
+      "task_id": "P08-T1",
+      "declaration": "HighamBench.p08_t1_lemma_4_2_forward_error_bound",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 2 recorded assumptions with Lemma 4.2, second displayed inequality and its proof (PDF page 11, 4. Error Bounds); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "f520066b46331dcbf25e51345c5ff5ffffe8fcad573d7f46e68834f83b3a2c54",
+        "target_sha256": "afb1f605f02d7de39c0db8ec195b90575040d44055a0fba4db9bef4563038bbb"
+      }
+    },
+    {
+      "task_id": "P08-T2",
+      "declaration": "HighamBench.p08_t2_lemma_4_2_residual_bound",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with Lemma 4.2, first displayed inequality and its proof (PDF page 11, 4. Error Bounds); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "f520066b46331dcbf25e51345c5ff5ffffe8fcad573d7f46e68834f83b3a2c54",
+        "target_sha256": "2326a842839c910d167baf6efe557e185c684e97189ca2d0f7b92c00bbeee761"
+      }
+    },
+    {
+      "task_id": "P08-T3",
+      "declaration": "HighamBench.p08_t3_componentwise_affine_recurrence",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with Lemma 4.3 and the recurrence displayed in its proof (PDF page 12, 4. Error Bounds); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "f520066b46331dcbf25e51345c5ff5ffffe8fcad573d7f46e68834f83b3a2c54",
+        "target_sha256": "1af1bf1c6a340c6b5b01e2b2b060fdb129105cc115e7865a9ba0d9634fab3d20"
+      }
+    },
+    {
+      "task_id": "P09-T1",
+      "declaration": "HighamBench.p09_t1_max_error_le_sqrt_card_mul_rms",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 1 recorded assumptions with unnumbered max-versus-RMS inequality in the proof of Theorem 1(b) (PDF page 7, 3. Roundoff Errors in the Fast Fourier Transform); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "9076fe377cc64878a4a10f8a47ff49245bc5acaf116ffbd8e2ccca57033da758",
+        "target_sha256": "b03593f5fdfd9c0eedb5ab88bfc5c86b371d2b941ea63942e6e1511fff220bea"
+      }
+    },
+    {
+      "task_id": "P09-T2",
+      "declaration": "HighamBench.p09_t2_scaled_orthogonal_backward_error",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 2 recorded assumptions with prose assertion e = T delta and the two following unnumbered bounds (PDF page 12, 6. Conclusion); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "9076fe377cc64878a4a10f8a47ff49245bc5acaf116ffbd8e2ccca57033da758",
+        "target_sha256": "aa4cb42146660670f9e5c335e3bc2f335aaffb801ddf9a14e0b47bbcbf997540"
+      }
+    },
+    {
+      "task_id": "P09-T3",
+      "declaration": "HighamBench.p09_t3_multidimensional_rms_error_budget",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 2 recorded assumptions with Theorem 2(a), its telescoping decomposition, and equation (4.2) (PDF page 8, 4. Roundoff Errors in Multidimensional Transformations); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "9076fe377cc64878a4a10f8a47ff49245bc5acaf116ffbd8e2ccca57033da758",
+        "target_sha256": "455ee98894b739fbf2d0308f1aff3047d03d0c92bfe544980247882db102cbb8"
+      }
+    },
+    {
+      "task_id": "P10-T1",
+      "declaration": "HighamBench.p10_t1_inherited_right_product_error",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": false,
+      "exact_target_absent_from_numstability": false,
+      "decision": "fail",
+      "evidence": {
+        "source": "Compared the current target interface and its 0 recorded assumptions with equation (8), term norm(A) times err(B,n) (PDF page 8, 3.1 Recursive triangular matrix inversion); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Fail: after unfolding the paper-scoped matrix product/Frobenius aliases, the target is the frozen mathlib theorem Matrix.frobenius_norm_mul.",
+        "numstability": "Fail: after unfolding only paper-scoped aliases, the target is definitionally/type-equivalent to NumStability.frobNorm_matMul_le; the current L construction proof closes by direct exact reuse (possibly simpa/rw for notation)."
+      },
+      "snapshot": {
+        "paper_sha256": "0ee818d060542baefdd85cbb7c7f2fd948efcb927101da84c37e418713f87269",
+        "target_sha256": "eb19fb0413ba12647774872f38496b584d03d5fa21d063d3b38a508c9f8dcdf0"
+      }
+    },
+    {
+      "task_id": "P10-T2",
+      "declaration": "HighamBench.p10_t2_product_error_with_cross_term",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 0 recorded assumptions with equation (8), the three-term first-order product-error rule (PDF page 8, 3.1 Recursive triangular matrix inversion); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "0ee818d060542baefdd85cbb7c7f2fd948efcb927101da84c37e418713f87269",
+        "target_sha256": "90fdf84b3b59fe01d3c2e850d61d4c50cf9d5c47195270fb1d7cea2379e37518"
+      }
+    },
+    {
+      "task_id": "P10-T3",
+      "declaration": "HighamBench.p10_t3_recursive_sylvester_error_unroll",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 2 recorded assumptions with affine recurrence immediately before equation (20), followed by its asymptotic solution (PDF page 28, 6.3 Solving the (generalized) Sylvester equation); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "0ee818d060542baefdd85cbb7c7f2fd948efcb927101da84c37e418713f87269",
+        "target_sha256": "678e0d48115267a7b9ba48c8d8b0a31ca85c421c08147fa0377eb1d70612ae61"
+      }
+    },
+    {
+      "task_id": "P11-T1",
+      "declaration": "HighamBench.p11_t1_first_column_residual_action",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 1 recorded assumptions with equation (16) (PDF page 10, Appendix: Proof of Theorem 1); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "72b7521848be07971a6721ea0356bb898c63e21b8ad3aa109fee8f41517284a5",
+        "target_sha256": "ce563f7e0fd0548b6c559904eba5a7710896861762c06917f37de966cecf59f8"
+      }
+    },
+    {
+      "task_id": "P11-T2",
+      "declaration": "HighamBench.p11_t2_orthogonality_defect_identity",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 2 recorded assumptions with unnumbered two-line displayed identity beginning I-Q_k^T Q_k (PDF page 14, Appendix: Proof of Theorem 1); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "72b7521848be07971a6721ea0356bb898c63e21b8ad3aa109fee8f41517284a5",
+        "target_sha256": "0841de2615bd65b411edf5fd3aef97f97877d931fe8963f505b2f668abea4c2e"
+      }
+    },
+    {
+      "task_id": "P11-T3",
+      "declaration": "HighamBench.p11_t3_orthogonality_defect_bound",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 2 recorded assumptions with Theorem 1, inequality (7) (PDF page 4, Theorem 1); unnumbered exact identity and following norm estimate deriving (7) (PDF page 14, Appendix: Proof of Theorem 1); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "72b7521848be07971a6721ea0356bb898c63e21b8ad3aa109fee8f41517284a5",
+        "target_sha256": "4dff54d443d74f80beb55e2a83baae6aa601d4d6d0be9b0e16c5c4914d692205"
+      }
+    },
+    {
+      "task_id": "P12-T1",
+      "declaration": "HighamBench.p12_t1_nearest_add_error_le_right",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 2 recorded assumptions with equation (10) (PDF page 6, 3. Generalization for arbitrary bases); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "0569d969cebaabe42de69fef10fa91002af12d62149af7485d0712414b53c2a1",
+        "target_sha256": "8789c920e124f1456e39446d0e7dddd922e630a41130ddae87b341c6dfc8f3dd"
+      }
+    },
+    {
+      "task_id": "P12-T2",
+      "declaration": "HighamBench.p12_t2_fast_two_sum_exact",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with Theorem 2, equations (3), (7), and (8) (PDF page 5, 3. Generalization for arbitrary bases); completion of Theorem 2 and equation (10) (PDF page 6, 3. Generalization for arbitrary bases); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "0569d969cebaabe42de69fef10fa91002af12d62149af7485d0712414b53c2a1",
+        "target_sha256": "c0e659193763c9d16fdfdcae671afddf5748751c77ec10d7e2e78e0946a6e13a"
+      }
+    },
+    {
+      "task_id": "P12-T3",
+      "declaration": "HighamBench.p12_t3_three_product_exact",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with Lemma 4 and equation (18) (PDF page 14, 4.2 Error-free transformation - ThreeProduct); FastTwoSum merge and exact final-add conclusion in the proof of Lemma 4 (PDF page 15, 4.2 Error-free transformation - ThreeProduct); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "0569d969cebaabe42de69fef10fa91002af12d62149af7485d0712414b53c2a1",
+        "target_sha256": "4cf6b27b7ad2ce817d773be1391a2714d83969c1200c661695b84267fa94efd2"
+      }
+    },
+    {
+      "task_id": "P13-T1",
+      "declaration": "HighamBench.p13_t1_condition_ge_one",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": false,
+      "decision": "fail",
+      "evidence": {
+        "source": "Compared the current target interface and its 1 recorded assumptions with Lemma 2.2 and equation (2.2) (PDF page 2, 2. Condition number); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Fail: after unfolding only paper-scoped aliases, the target is definitionally/type-equivalent to NumStability.one_le_summationConditionNumber; the current L construction proof closes by direct exact reuse (possibly simpa/rw for notation)."
+      },
+      "snapshot": {
+        "paper_sha256": "9ebf8adb699f96c82ccbb153dd6ca592c64475a8bc3e0703a50cb659b012c520",
+        "target_sha256": "9c331535dfca807cb7a0aae7523f78ebad9de6564b9a9e66d0762cf08fd12892"
+      }
+    },
+    {
+      "task_id": "P13-T2",
+      "declaration": "HighamBench.p13_t2_data_perturbation_bound",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 2 recorded assumptions with Lemma 2.2, perturbation inequality (PDF page 2, 2. Condition number); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "9ebf8adb699f96c82ccbb153dd6ca592c64475a8bc3e0703a50cb659b012c520",
+        "target_sha256": "6e8f701d5a9c6f43185460c0cee389d922fa54f47f33a382a91929c56398ee6d"
+      }
+    },
+    {
+      "task_id": "P13-T3",
+      "declaration": "HighamBench.p13_t3_barycentric_forward_bound",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with exact perturbed numerator/denominator expression preceding Theorem 4.1 (PDF page 5, 4. Barycentric formula); Theorem 4.1 and equations (4.2)-(4.3) (PDF page 6, 4. Barycentric formula); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "9ebf8adb699f96c82ccbb153dd6ca592c64475a8bc3e0703a50cb659b012c520",
+        "target_sha256": "8db574b332d0dc56d66172e9ae059af46ee2f0cb349590ad0491284501241cf4"
+      }
+    },
+    {
+      "task_id": "P14-T1",
+      "declaration": "HighamBench.p14_t1_positive_recursive_sum_relative_error",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with positive exponential sum and unnumbered recursive-summation bounds preceding equations (3.2)-(3.3) (PDF page 7, 3. Basic algorithms and error analysis); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "7247047bc49218e001195edc8a2d66131eea7596d252503f34b0ace6328981cd",
+        "target_sha256": "0a667aa6e36e01717511c96133b6fd38517644187bc09a7eeb2bb6f9248fb484"
+      }
+    },
+    {
+      "task_id": "P14-T2",
+      "declaration": "HighamBench.p14_t2_basic_softmax_component_error",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 4 recorded assumptions with componentwise basic-softmax error derivation following equation (3.5) (PDF page 8, 3. Basic algorithms and error analysis); Theorem 3.3, equation (3.6) (PDF page 9, 3. Basic algorithms and error analysis); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "7247047bc49218e001195edc8a2d66131eea7596d252503f34b0ace6328981cd",
+        "target_sha256": "da7d602967646f6cc6512c666c64f2d64c3051c712686478d686fe1c8bd13b85"
+      }
+    },
+    {
+      "task_id": "P14-T3",
+      "declaration": "HighamBench.p14_t3_softmax_shift_and_normalization",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 2 recorded assumptions with equation (1.4) (PDF page 3, 1. Introduction); discussion of the sum of each softmax vector, which should equal 1 (PDF page 17, 5. Numerical experiments); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "7247047bc49218e001195edc8a2d66131eea7596d252503f34b0ace6328981cd",
+        "target_sha256": "d56cba514113097d7cc74ac3e6d4ca04edf9e98792823bf8bc0248a53e9e9595"
+      }
+    },
+    {
+      "task_id": "P15-T1",
+      "declaration": "HighamBench.p15_t1_frobenius_submultiplicative",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": false,
+      "exact_target_absent_from_numstability": false,
+      "decision": "fail",
+      "evidence": {
+        "source": "Compared the current target interface and its 0 recorded assumptions with prose listing the Frobenius norm's first useful property, ||AB|| <= ||A|| ||B|| (PDF page 3, 2.1 Block low-rank matrices); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Fail: after unfolding the paper-scoped matrix product/Frobenius aliases, the target is the frozen mathlib theorem Matrix.frobenius_norm_mul.",
+        "numstability": "Fail: after unfolding only paper-scoped aliases, the target is definitionally/type-equivalent to NumStability.frobNorm_matMul_le; the current L construction proof closes by direct exact reuse (possibly simpa/rw for notation)."
+      },
+      "snapshot": {
+        "paper_sha256": "a5cb8eb779c1571f1549ea6838c7f2269302c960fb4ea21f8410060811270cd7",
+        "target_sha256": "317350b3e17134b5663fd4b741ed6029642a3d73e3073e13c08bbe97dd1664b9"
+      }
+    },
+    {
+      "task_id": "P15-T2",
+      "declaration": "HighamBench.p15_t2_low_rank_matvec_backward_error",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 3 recorded assumptions with Lemma 3.1, especially equation (3.2) and the final replacement Atilde = A + E (PDF page 6, 3.1 LR matrix times vector or full matrix); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "a5cb8eb779c1571f1549ea6838c7f2269302c960fb4ea21f8410060811270cd7",
+        "target_sha256": "6e8c3e8528e7e3c053ffa3234471c492a454ea2bbce319bec82e414fb3feb565"
+      }
+    },
+    {
+      "task_id": "P15-T3",
+      "declaration": "HighamBench.p15_t3_blr_lu_solve_backward_error",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 5 recorded assumptions with Theorem 4.5, equations (4.23)-(4.25) (PDF page 24, 4.3 BLR linear systems); proof of Theorem 4.5, exact products of factor and solve perturbations (PDF page 25, 4.3 BLR linear systems); Table 1 values of xi_p for local/global thresholds and recompression choices (PDF page 19, 4.1.3 Impact of intermediate recompressions); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "a5cb8eb779c1571f1549ea6838c7f2269302c960fb4ea21f8410060811270cd7",
+        "target_sha256": "d06423c64abe1cb4ef65e8c0bf304ef9e8e1515d8a4cd618208540e606245415"
+      }
+    },
+    {
+      "task_id": "P16-T1",
+      "declaration": "HighamBench.p16_t1_perturbed_solve_residual_bound",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 1 recorded assumptions with normwise backward-error perturbation definition and normalized-residual identity (PDF page 4, 2. Notations); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "8010a50989428b09ea9f204875cd6cfde6c08c924beb40887a6921287605737a",
+        "target_sha256": "d58289b7ce54ba1c17daaa783978d4464bc9542f0b92fe95938a77337a3cf5a5"
+      }
+    },
+    {
+      "task_id": "P16-T2",
+      "declaration": "HighamBench.p16_t2_restarted_residual_recurrence",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 5 recorded assumptions with Lemma 4.2, correction residual (4.14) and next-residual recurrence (4.15) (PDF page 19, 4.1 The modular algorithm, error model, and error analysis); exact iterative-refinement identity (4.18) (PDF page 20, 4.1 The modular algorithm, error model, and error analysis); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "8010a50989428b09ea9f204875cd6cfde6c08c924beb40887a6921287605737a",
+        "target_sha256": "34afa46e62ca706b5e59c8868da30b3304cda19e8b10da2f2b8fd99c5fa67af0"
+      }
+    },
+    {
+      "task_id": "P16-T3",
+      "declaration": "HighamBench.p16_t3_mixed_precision_geometric_convergence",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 5 recorded assumptions with Theorem 6.3, contraction condition (6.17) and attainable error floors (6.18) (PDF page 40, 6.3 Mixed precision restarted GMRES); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "8010a50989428b09ea9f204875cd6cfde6c08c924beb40887a6921287605737a",
+        "target_sha256": "7d68f2f6bd8b7870908b0de59c1df3f9053ae50a510fbc796c8448b7beb84168"
+      }
+    },
+    {
+      "task_id": "P17-T1",
+      "declaration": "HighamBench.p17_t1_product_bias_envelope",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": false,
+      "decision": "fail",
+      "evidence": {
+        "source": "Compared the current target interface and its 2 recorded assumptions with Theorem 3.6 product expectation envelope (PDF page 9, 3. Properties of limited-precision stochastic rounding); completion of the induction proof and Remark 3.7 specialization (PDF page 10, 3. Properties of limited-precision stochastic rounding); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Fail: after unfolding only paper-scoped aliases, the target is definitionally/type-equivalent to NumStability.prod_one_add_delta_bounds; the current L construction proof closes by direct exact reuse (possibly simpa/rw for notation)."
+      },
+      "snapshot": {
+        "paper_sha256": "df1ce5dd33285adfcffc6a4c7ab94f9604b46739cb848c6cbb5f997e8fac597d",
+        "target_sha256": "003a394c8a361bdbad3c41d5ee8971d4be789afd1f7d64aa1044c7055cb1e28e"
+      }
+    },
+    {
+      "task_id": "P17-T2",
+      "declaration": "HighamBench.p17_t2_recursive_sum_bias_condition_bound",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 2 recorded assumptions with recursive-sum product representation (4.4), condition number (4.2), and Theorem 4.1 equation (4.6) (PDF page 13, 4.1 Recursive summation); proof of Theorem 4.1 using Theorem 3.6 and triangle inequality (PDF page 14, 4.1 Recursive summation); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "df1ce5dd33285adfcffc6a4c7ab94f9604b46739cb848c6cbb5f997e8fac597d",
+        "target_sha256": "361691c5f22f9529aca157de13f54a97ea32535889829e0f13877470d39da880"
+      }
+    },
+    {
+      "task_id": "P17-T3",
+      "declaration": "HighamBench.p17_t3_variance_plus_bias_probability_bound",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 4 recorded assumptions with Theorem 4.3 equation (4.11), centered bound (4.12), and deterministic remainder bound (4.10) (PDF page 15, 4.1 Recursive summation); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "df1ce5dd33285adfcffc6a4c7ab94f9604b46739cb848c6cbb5f997e8fac597d",
+        "target_sha256": "7a2ec9477871b1e7c116f704e15f44dc6da12bb5eb768dd51fc69c8b427a5dd1"
+      }
+    },
+    {
+      "task_id": "P18-T1",
+      "declaration": "HighamBench.p18_t1_scheme_perturbation_error_split",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": false,
+      "decision": "fail",
+      "evidence": {
+        "source": "Compared the current target interface and its 0 recorded assumptions with equation (3.3) and the displayed E = E_sch + E_per decomposition below it (PDF page 5, 3. A General Framework for the Analysis of Mixed Precision Runge–Kutta Methods); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Fail: after unfolding only paper-scoped aliases, the target is definitionally/type-equivalent to NumStability.vecNorm2_add_le; the current L construction proof closes by direct exact reuse (possibly simpa/rw for notation)."
+      },
+      "snapshot": {
+        "paper_sha256": "b18628ffc348d7aeec2da02efb989b6e012f0b0fae09b27fbff735bb8a5877cd",
+        "target_sha256": "3858ce5ab8240d8eb5d773798c857db776fbed475a5cfbddb7f4e68b059cb6d9"
+      }
+    },
+    {
+      "task_id": "P18-T2",
+      "declaration": "HighamBench.p18_t2_corrected_midpoint_order_bound",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 0 recorded assumptions with corrected implicit midpoint method (4.1) and its displayed global error form (PDF page 11, 4.1.1 Implicit Midpoint Rule with Correction); numerical interpretation of the p = 2 corrected method (PDF page 12, 4.1.1 Implicit Midpoint Rule with Correction); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "b18628ffc348d7aeec2da02efb989b6e012f0b0fae09b27fbff735bb8a5877cd",
+        "target_sha256": "85c598e55eecc695203ffa1b9b6aabe2b1b261c4a93f13a5c142128a917160b1"
+      }
+    },
+    {
+      "task_id": "P18-T3",
+      "declaration": "HighamBench.p18_t3_smooth_nonsmooth_method_error_bounds",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 2 recorded assumptions with Method 4s3pC coefficients and the two displayed smooth and nonsmooth error forms (PDF page 18, 4.3 A Method that Satisfies the Simplified Order Conditions); Figure 6 interpretation of well-behaved and chopped perturbations (PDF page 19, 4.3 A Method that Satisfies the Simplified Order Conditions); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "b18628ffc348d7aeec2da02efb989b6e012f0b0fae09b27fbff735bb8a5877cd",
+        "target_sha256": "19c676db2955c73a38faa19bd0b61c955f08938f1434ac37844445c26a3ebbaf"
+      }
+    },
+    {
+      "task_id": "P19-T1",
+      "declaration": "HighamBench.p19_t1_perturbed_basis_product_upper",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": false,
+      "decision": "fail",
+      "evidence": {
+        "source": "Compared the current target interface and its 0 recorded assumptions with equation (C.8), upper perturbation-norm inequality (PDF page 42, C. Proof of Theorem 3.3); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Fail: after unfolding only paper-scoped aliases, the target is definitionally/type-equivalent to NumStability.vecNorm2_add_le; the current L construction proof closes by direct exact reuse (possibly simpa/rw for notation)."
+      },
+      "snapshot": {
+        "paper_sha256": "67af427c72ae891b7863e386db542ef775b1e3eb306f812bb1a78bdbef86aaad",
+        "target_sha256": "2eca9e6678e91b0213d8c9604aaaef94fc97ccccd35e7d4bc3d0a97804a8ce66"
+      }
+    },
+    {
+      "task_id": "P19-T2",
+      "declaration": "HighamBench.p19_t2_modular_four_source_error_bound",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 2 recorded assumptions with equation (3.8), definition xi = alpha epsilon_c + beta epsilon_b + beta u_g + lambda epsilon_x (PDF page 9, 3.1. Improved modular framework); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "67af427c72ae891b7863e386db542ef775b1e3eb306f812bb1a78bdbef86aaad",
+        "target_sha256": "3e5946431b5d9cfd06265bf2930b39daff5aab91e8c6ab5ba56c2e2f48b70129"
+      }
+    },
+    {
+      "task_id": "P19-T3",
+      "declaration": "HighamBench.p19_t3_right_flexible_envelope_comparison",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 2 recorded assumptions with equation (3.17), right-preconditioned attainable forward-error envelope (PDF page 11, 3.3. Error bound for right-preconditioned GMRES); equation (3.20) and Remark 4 (PDF page 12, 3.4. Error bound for flexible-preconditioned GMRES); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "67af427c72ae891b7863e386db542ef775b1e3eb306f812bb1a78bdbef86aaad",
+        "target_sha256": "f929a2fb2ece11947c9ebced0e01ea12cbca832152d92b035133e5aea4c35ae3"
+      }
+    },
+    {
+      "task_id": "P20-T1",
+      "declaration": "HighamBench.p20_t1_scaled_row_range",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 2 recorded assumptions with equation (3.4a), row scaling interval (PDF page 5, 3.1. Analysis); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "ad830de20a73ff77b6e457921892b3250ba9ff70f487501979ee3f1c5f3f31e2",
+        "target_sha256": "1d58f9917ffc13cc95c701370253f1f644dc4559d1f93e37ea9081bfa2bba0a7"
+      }
+    },
+    {
+      "task_id": "P20-T2",
+      "declaration": "HighamBench.p20_t2_accumulation_underflow_le_input",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 2 recorded assumptions with equation (3.26) and following theta^{-2} Gmin <= theta^{-1} gmin comparison (PDF page 7, 3.2. Summary and discussion); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "ad830de20a73ff77b6e457921892b3250ba9ff70f487501979ee3f1c5f3f31e2",
+        "target_sha256": "2a604cf4f4cd6b18f577e1a745ab2cd8d552d71ed6079b5b7b99bd36b6a37acc"
+      }
+    },
+    {
+      "task_id": "P20-T3",
+      "declaration": "HighamBench.p20_t3_multiword_narrow_range_gap",
+      "source_faithful": true,
+      "exact_target_absent_from_mathlib": true,
+      "exact_target_absent_from_numstability": true,
+      "decision": "pass",
+      "evidence": {
+        "source": "Compared the current target interface and its 2 recorded assumptions with equation (4.32), multiword narrow-range bound (PDF page 11, 4.2. Summary and discussion); equation (4.33) and preceding comparison sentence (PDF page 11, 4.2. Summary and discussion); it is a faithful finite formalization of the selected source result or explicitly selected proof step.",
+        "mathlib": "Pass: the declaration/type search of frozen mathlib found no exact target after unfolding only paper-scoped aliases.",
+        "numstability": "Pass: the declaration/type search of frozen NumStability found no exact target after unfolding only paper-scoped aliases."
+      },
+      "snapshot": {
+        "paper_sha256": "ad830de20a73ff77b6e457921892b3250ba9ff70f487501979ee3f1c5f3f31e2",
+        "target_sha256": "05bc9bca28d9ea01d058bdcce95013cf05f56f374563f3214ddfd12c71f042ad"
+      }
+    }
+  ]
+}

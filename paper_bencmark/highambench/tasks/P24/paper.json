@@ -1,0 +1,102 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 37-page paper in physical-PDF order, including all appendices, surveyed every named proved result, compared candidates with the frozen Mathlib and importable NumStability baselines, and privately formalized the selected convergence argument before packaging it.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P24 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Grey Ballard",
+    "Austin R. Benson",
+    "Alex Druinsky",
+    "Benjamin Lipshitz",
+    "Oded Schwartz"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P24-T3"
+  ],
+  "paper_id": "P24",
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 37(4), 2016, printed pages 1382-1418",
+  "publication": {
+    "doi": "10.1137/15M1032168",
+    "issue": "4",
+    "journal": "SIAM Journal on Matrix Analysis and Applications",
+    "printed_pages": "1382-1418",
+    "publication_date": "2016-10-04",
+    "volume": "37",
+    "year": 2016
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Theorem 3, the stationary fast-matrix-multiplication error bound",
+      "reason": "The importable library has only generic dot-product and conventional matrix-product bounds. It has no recursive bilinear-algorithm theorem, so the source result does not obtain the exactly-one-result T1 speedup; treating several wrappers around the same dot-product analysis as independent would also not satisfy T2."
+    },
+    {
+      "candidate": "Theorem 5, the uniform nonstationary fast-matrix-multiplication error bound",
+      "reason": "This extension depends on the same unavailable recursive fast-multiplication machinery as Theorem 3 rather than at least two independent substantial importable results."
+    },
+    {
+      "candidate": "Propositions 9, 11, and 12, the outside, inside, and repeated scaling error bounds",
+      "reason": "Once the paper's abstract O(epsilon) fast-product premise is supplied, these proofs are mainly paper-specific scaling identities and max-norm inequalities. The available conventional matrix-product theorem neither states the premise for a fast algorithm nor creates the required tier speedup."
+    },
+    {
+      "candidate": "Lemma 18, monotonicity of the repeated-scaling envelope",
+      "reason": "It is source-faithful and has no corresponding library result, but its two one-step max-norm arguments are materially easier than the selected infinite-tail linear-convergence proof and do not safely meet the T3 difficulty floor."
+    },
+    {
+      "candidate": "Theorem 14, the stopping criterion",
+      "reason": "Its proof is a shorter consequence of Lemma 21's estimates plus logarithm and exponential algebra. Lemma 21 is the stronger, more fundamental, and more difficult source-supported T3 target."
+    },
+    {
+      "candidate": "Lemma 22, asymptotic sharpness of the one-half rate",
+      "reason": "The paper explicitly omits the calculation of the alternating scaling iterates. Selecting it would either rely on missing source proof material or reduce to a much easier closed-form scalar limit after assuming those iterates."
+    },
+    {
+      "candidate": "algorithm searches and numerical experiments in Sections 5-7",
+      "reason": "These are search procedures, measured comparisons, and empirical observations rather than additional universally proved conclusions."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No source-faithful theorem needs exactly one substantial importable NumStability result that makes L substantially faster than N."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source candidate needs at least two independent substantial importable NumStability results; conventional matrix multiplication is only a short wrapper around the same dot-product analysis, and the directly relevant fast-recursion modules are not in the frozen compiled set."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Use the cycle-reindexed analytic core of Lemma 21: construct and validate the exponential infinite-tail majorant that completes Theorem 13's linear-convergence proof.",
+      "task_id": "P24-T3",
+      "theorem_name": "p24_t3_lemma21_linear_convergence"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only conclusions explicitly stated and proved in the paper.",
+    "Reindex the paper's paired times t=t0+2n by complete outside-inside cycles without changing the mathematical content.",
+    "Do not count several wrappers around one dot-product analysis as independent substantial library results.",
+    "Do not formalize Lemma 22 because its scaling-iterate calculation is omitted in the source.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source, its importable compiled subset, and Mathlib."
+  ],
+  "short_name": "Ballard--Benson--Druinsky--Lipshitz--Schwartz (2016)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/15M1032168",
+    "local_path": "paper_bencmark/reference_papers/P24-Improving the Numerical Stability of Fast Matrix Multiplication.pdf",
+    "page_map": "Physical PDF pages 1-37 are printed pages 1382-1418 respectively.",
+    "pdf_pages": 37,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "a3a3e86f04bb58c31d41f33937e3f8d46510a2e8bb628986c4a60dae6e5b86ae"
+  },
+  "title": "Improving the Numerical Stability of Fast Matrix Multiplication"
+}

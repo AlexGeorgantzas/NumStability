@@ -1,0 +1,80 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "Method 1 equation (2.1) componentwise right-residual specialization",
+    "performed_by": "Codex"
+  },
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "Identical fixed statement and P62 shared files plus frozen NumStability library.",
+    "N": "Identical fixed statement and P62 shared files; no NumStability artifact."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P62/T1/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p62_t1_method1_inverse_right_residual (fp : P62FPModel) (n : \u2115) ... : |I\u2212L\u00b7X| \u2264 \u03b3_n |L|\u00b7|X| entrywise",
+    "namespace": "HighamBench",
+    "plain_language": "Method 1\u2019s columnwise computed lower-triangular inverse has componentwise right residual |I\u2212LX| bounded entrywise by \u03b3_n |L||X|.",
+    "target_file": "paper_bencmark/highambench/tasks/P62/T1/Target.lean",
+    "theorem_name": "p62_t1_method1_inverse_right_residual"
+  },
+  "informal_proof": "Apply the paper\u2019s perturbed forward-substitution relation separately to each inverse column and rewrite the right residual as the action of that column\u2019s coefficient perturbation.",
+  "informal_statement": "Method 1\u2019s columnwise computed lower-triangular inverse has componentwise right residual |I\u2212LX| bounded entrywise by \u03b3_n |L||X|.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P62",
+  "paper_source": {
+    "local_path": "papers_to_be_approved/P62-Du-Croz-Higham-1992-Matrix-Inversion.pdf",
+    "sha256": "92d2d89b0221eacf43f18b6eb1fa9a66a67c8f9fa06a95d31fa939d8e1dca9b9"
+  },
+  "paper_version": "published journal version; IMA Journal of Numerical Analysis 12(1), 1992, printed pages 1-19",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.forwardSub_backward_error"
+    ],
+    "note": "Both exact private N/L proofs compile; N has no NumStability import; L directly uses one substantial frozen result."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P62FPModel",
+    "P62Matrix",
+    "p62Gamma",
+    "P62GammaValid",
+    "p62ForwardSub",
+    "p62LowerInverse"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Method 1 columnwise forward-substitution algorithm",
+      "pdf_page": 3,
+      "printed_page": "3",
+      "role": "algorithm",
+      "section": "2.1 Unblocked Methods"
+    },
+    {
+      "anchor": "Method 1 componentwise right-residual equation (2.1)",
+      "pdf_page": 4,
+      "printed_page": "4",
+      "role": "selected result and derivation",
+      "section": "2.1 Unblocked Methods"
+    }
+  ],
+  "source_tags": [
+    "EQN"
+  ],
+  "task_id": "P62-T1",
+  "tier": "T1",
+  "tier_label": "direct use",
+  "tier_rationale": "The L proof directly calls the substantial frozen forwardSub_backward_error theorem for one arbitrary-size triangular solve and applies it to each inverse column. N reconstructs the full forward-substitution perturbation argument; the residual rewrite is elementary. N is 757 lines versus L 100; Mathlib supplies no triangular-solve rounding analysis.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P62/T1/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p62_t1_method1_inverse_right_residual"
+  }
+}

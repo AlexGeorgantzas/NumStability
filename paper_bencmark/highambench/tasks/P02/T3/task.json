@@ -1,0 +1,93 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "formalization_detail": "The explicit K=3/Proposition 4.5 boundary split closes a case implicit in the paper's Proposition 5.11 derivation without changing the result.",
+    "kind": "source selection, tier label, concise multi-result proof route including the K=3 boundary split, no-underflow branch selection, and nonempty Fin indexing",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The two real input vectors have paper length N=n+1.",
+    "K>=3.",
+    "8*N*u<=1.",
+    "Rounded additions and TwoSum obey the shared P02 addition contract.",
+    "TwoProduct is error-free and its low component is bounded by u times the exact product; this selects the paper's no-multiplication-underflow case.",
+    "The target is the absolute-error result, so no nonzero-dot-product assumption is needed."
+  ],
+  "author_label": "Proposition 5.11",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P02/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p02_t3_dotK_error_bound\n    (fp : ErrorFreeDotModel) (n K : \u2115) (x y : Fin (n + 1) \u2192 \u211d)\n    (hK : 3 \u2264 K)\n    (hsmall : (8 : \u211d) * ((n + 1 : \u2115) : \u211d) * fp.u \u2264 1) :\n    |dotK fp K x y - exactDot x y| \u2264\n      (fp.u + 2 * (gamma fp.u (4 * (n + 1) - 2)) ^ 2) * |exactDot x y| +\n        (gamma fp.u (4 * (n + 1) - 2)) ^ K * dotMagnitude x y",
+    "namespace": "HighamBench",
+    "plain_language": "Without multiplication underflow, optimized DotK has the absolute K-fold error bound in Proposition 5.11.",
+    "target_file": "paper_bencmark/highambench/tasks/P02/T3/Target.lean",
+    "theorem_name": "p02_t3_dotK_error_bound"
+  },
+  "informal_proof": "Show that the length-2N transform sums exactly to the dot product and has absolute mass at most |x^T y|+gamma_(2N)|x|^T|y|. For K>=4 apply Proposition 4.10 with parameter K-1; for K=3 use Proposition 4.5 because SumK(_,2)=Sum2. Then discharge the gamma comparisons leading to equation (5.10).",
+  "informal_statement": "In the no-multiplication-underflow case, DotK error is bounded by (u+2 gamma_(4N-2)^2)|x^T y| + gamma_(4N-2)^K |x|^T|y|.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P02",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P02_ACCURATE SUM AND DOT PRODUCT.pdf",
+    "sha256": "e7b8523c793ad7345dfc76f681c44d1afbbc3a810fb948912451432ae616512d"
+  },
+  "paper_version": "journal version; volume 26, issue 6, 2005, printed pages 1955-1988",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [],
+    "note": "The frozen library has no result for VecSum iteration, SumK, the TwoProduct/TwoSum transformed vector, DotK, or Proposition 5.11. Its ordinary and one-level dot-product results do not establish a step of this proof."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "ErrorFreeDotModel",
+    "dotK",
+    "exactDot",
+    "dotMagnitude",
+    "gamma"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Proposition 4.10",
+      "pdf_page": 16,
+      "printed_page": 1970,
+      "role": "K-fold summation estimate used for the transformed dot product",
+      "section": "4. Summation"
+    },
+    {
+      "anchor": "Algorithm 5.10 and the derivation preceding equation (5.10)",
+      "pdf_page": 23,
+      "printed_page": 1977,
+      "role": "optimized K-fold dot-product algorithm and transformed-vector derivation",
+      "section": "5. Dot product"
+    },
+    {
+      "anchor": "equation (5.10) and Proposition 5.11",
+      "pdf_page": 24,
+      "printed_page": 1978,
+      "role": "selected no-underflow absolute-error bound",
+      "section": "5. Dot product"
+    }
+  ],
+  "source_tags": [
+    "PROP"
+  ],
+  "task_id": "P02-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "NumStability has no corresponding VecSum iteration, SumK, transformed-product, or DotK result. Both conditions must build the iterated error-free invariants, the transformed-vector mass estimate, the K-fold summation analysis, and the gamma comparisons from the paper source.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P02/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p02_t3_dotK_error_bound"
+  }
+}

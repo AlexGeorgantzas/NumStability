@@ -1,0 +1,5 @@
+{"monotonic_ns":32640368723468,"raw_line":"\u001b[2m2026-09-16T22:26:11.311799Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:","record_type":"app_server_stderr","sequence":1,"unix_ns":1789597571311823596}
+{"monotonic_ns":32640368780436,"raw_line":"    have hZn : Z = (n : ℕ) := by","record_type":"app_server_stderr","sequence":2,"unix_ns":1789597571311880864}
+{"monotonic_ns":32640368803333,"raw_line":"      have hh : ((n : ℕ) : ℝ) = (Z : ℝ) := by","record_type":"app_server_stderr","sequence":3,"unix_ns":1789597571311903756}
+{"monotonic_ns":32640368823880,"raw_line":"        rw [hnreal, abs_of_nonneg (by exact_mod_cast hnonneg)]","record_type":"app_server_stderr","sequence":4,"unix_ns":1789597571311924320}
+{"monotonic_ns":32640368840890,"raw_line":"      exact_mod_cast hh","record_type":"app_server_stderr","sequence":5,"unix_ns":1789597571311941337}

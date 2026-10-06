@@ -1,0 +1,114 @@
+{
+  "annotation": {
+    "method": "Codex freshly reread the complete local paper during the tier audit, surveyed every formal claim, excluded delegated and experimental results, searched the frozen Mathlib and NumStability baselines, and retained only the source-faithful T3 target.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P06 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Michael P. Connolly",
+    "Nicholas J. Higham"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P06-T3"
+  ],
+  "paper_id": "P06",
+  "paper_version": "published journal version; volume 44, issue 3, 2023, printed pages 1146-1163",
+  "publication": {
+    "doi": "10.1137/22M1514817",
+    "issue": 3,
+    "journal": "SIAM Journal on Matrix Analysis and Applications",
+    "printed_pages": "1146-1163",
+    "publication_date": "2023-07-28",
+    "volume": 44,
+    "year": 2023
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Theorem 1.1, Lemma 1.2, and Lemma 1.4",
+      "reason": "These preliminary worst-case and probabilistic product results are explicitly recalled from earlier sources rather than proved in this paper."
+    },
+    {
+      "candidate": "Definition 1.3 and Model 1.5",
+      "reason": "They are definitions and modeling assumptions, not finite equality, bound, comparison, or construction conclusions."
+    },
+    {
+      "candidate": "Lemmas 2.1 and 2.2",
+      "reason": "They depend on earlier probabilistic inner-product results and are less representative than the paper's transformation-sequence analysis."
+    },
+    {
+      "candidate": "Theorem 3.1",
+      "reason": "It is Tropp's matrix concentration theorem quoted from another source rather than proved in this paper."
+    },
+    {
+      "candidate": "full Theorem 3.2",
+      "reason": "The rectangular concentration theorem relies on the delegated Theorem 3.1 and conditional-expectation machinery absent from the frozen bundle."
+    },
+    {
+      "candidate": "equation (3.4)'s symmetric-dilation norm identity",
+      "reason": "The paper calls this identity well known and cites Tropp rather than proving it. The former threshold-form target was therefore not a source-faithful task from this paper and was removed."
+    },
+    {
+      "candidate": "full proofs of Lemmas 4.1-4.3",
+      "reason": "Their concentration arguments and detailed local-error constructions require a probabilistic proof stack absent from the frozen bundle. P06-T3 retains the exact product-expansion core without promoting the full concentration theorem."
+    },
+    {
+      "candidate": "Theorem 4.5",
+      "reason": "Its loss-of-orthogonality proof mainly invokes delegated polar-factor and nearest-orthogonal results."
+    },
+    {
+      "candidate": "section 5 extensions",
+      "reason": "The aggregated, mixed-precision, two-sided, Gram-Schmidt, and Givens discussions are chiefly prose expectations or adaptations rather than fully proved finite target results."
+    },
+    {
+      "candidate": "Theorem 6.1",
+      "reason": "The weighted Procrustes conclusion is proved almost entirely by invoking an external orthogonal Procrustes theorem, so it is excluded by the source-selection policy."
+    },
+    {
+      "candidate": "section 7 numerical experiments",
+      "reason": "Experimental observations and plots are not formal benchmark targets."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. Lemmas 2.1-2.2 require a probabilistic inner-product result that is not in frozen NumStability; Lemmas 4.1-4.3 and Theorem 4.4 require matrix concentration and conditional-expectation machinery that is also absent. Frozen NumStability has substantial deterministic Householder construction, application, and QR results, but those results do not discharge the paper-specific mean-independent probabilistic bounds. Theorem 4.5 and Theorem 6.1 instead depend mainly on delegated polar-factor or Procrustes theorems. Therefore no source-faithful target has exactly one substantial NumStability dependency that would materially speed L over N."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped after the strict source audit. The former equation (3.4) target used two substantial library directions, but the paper explicitly treats the identity as well known and delegates it to Tropp. No other result both belongs to this paper and needs at least two substantial NumStability results."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Use both forms of equations (4.8)-(4.9), retaining the Model 1.5 computed Householder product, the probability-one local bound, a matrix-valued O(u^2) remainder, and the exact Q^T/F_j factor ordering.",
+      "task_id": "P06-T3",
+      "theorem_name": "p06_t3_householder_product_first_order_expansion"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use a finite claim made and proved in this paper.",
+    "Reject experiments and claims whose proof is mainly delegated elsewhere; when a selected displayed result contains asymptotic notation, represent that notation explicitly rather than deleting it.",
+    "Prefer exact displayed bounds and identities.",
+    "Keep the fixed Lean setting condition-neutral and paper-scoped.",
+    "Assign tiers only after verified frozen-library searches."
+  ],
+  "short_name": "Connolly and Higham (2023)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/22M1514817",
+    "local_path": "paper_bencmark/reference_papers/P06_PROBABILISTIC ROUNDING ERROR ANALYSIS OFHOUSEHOLDER QR FACTORIZATION.pdf",
+    "page_map": "PDF page 1 is printed page 1146; add 1145 to a PDF page number to obtain the printed page.",
+    "pdf_pages": 18,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Permission to redistribute the full PDF is not asserted.",
+    "sha256": "c02a20e9ffa8039a5ad3db9261fba19929de84bf0bff7654547541dffe496a79"
+  },
+  "title": "Probabilistic Rounding Error Analysis of Householder QR Factorization"
+}

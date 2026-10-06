@@ -1,0 +1,99 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source selection, conventional Cholesky execution certificate, square-root trace, symmetry completion, and zero-based index adapter",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The dimension n is positive.",
+    "A is symmetric and belongs to one finite symmetric radix format whose values have bounded radix expansions at the recorded precision and exponent range; rounding is to nearest with unit roundoff u, and membership of the computed upper-triangular factor RHat is a conclusion, not an input premise.",
+    "Conventional column-wise Cholesky runs to completion: every off-diagonal entry is linked to its rounded subtraction and pivot-division execution, and every diagonal entry is linked to its rounded subtraction and square-root execution.",
+    "Every scalar execution records rounded products, an arbitrary permuted binary summation tree, the protected input's path through actual rounded merges, and range checks excluding underflow and overflow; square-root radicands are nonnegative.",
+    "The arithmetic interface exposes the paper's standalone square-root rounding estimate (3.7), while the protected trace assumes only the earlier equation (2.4) sibling estimates. Lemmas 4.1 and 4.3 and all Cholesky bounds must be derived."
+  ],
+  "author_label": "Theorem 4.4",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P05 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P05 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P05/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p05_t3_cholesky_backward_error {n : Nat} (run : P05CholeskyRun n) : RHat is representable, the local (4.5a)-(4.5b) bounds, and exists DeltaA, transpose(RHat)*RHat=A+DeltaA with rowwise (i+2)u and uniform (n+1)u componentwise bounds",
+    "namespace": "HighamBench",
+    "plain_language": "Every completed range-safe conventional Cholesky execution produces a floating-point factor and has the two distinct local residual estimates and the exact rowwise and uniform componentwise backward-error bounds of Theorem 4.4.",
+    "target_file": "paper_bencmark/highambench/tasks/P05/T3/Target.lean",
+    "theorem_name": "p05_t3_cholesky_backward_error"
+  },
+  "informal_proof": "First derive representability of every RHat entry from its rounded quotient or square-root output, using representability of zero below the diagonal. Prove Lemma 4.1 from each off-diagonal protected trace. For each diagonal trace, combine the square-root estimate (3.7) with the protected-tree form of Theorem 3.1 to prove Lemma 4.3. This yields (4.5a) and (4.5b). Upper-triangular support identifies the local sums with entries of transpose(RHat)*RHat. Use symmetry of A, the Gram product, and its absolute majorant to cover the lower triangle; then compare each zero-based row coefficient i+2 with n+1.",
+  "informal_statement": "Theorem 4.4 in full: the computed floating-point Cholesky factor, its two local estimates, the exact backward relation, and the rowwise and uniform bounds in equation (4.4).",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P05",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P05_IMPROVED BACKWARD ERROR BOUNDS FOR LU ANDCHOLESKY FACTORIZATIONS.pdf",
+    "sha256": "dd8b525c0eabc509a68b325ee5008cf6f1d4ef262bef8ba54e1947fe3cdb3db6"
+  },
+  "paper_version": "published journal version; volume 35, issue 2, 2014, printed pages 684-698",
+  "result_form_tag": "BND",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.rectMatMul_transpose_self_symmetric",
+      "NumStability.rectMatMul",
+      "NumStability.finiteTranspose"
+    ],
+    "note": "The frozen library directly supplies symmetry of a generic transpose-self Gram product, which the L proof instantiates for RHat and |RHat|. It has no theorem for P05's scalar Cholesky executions, local coefficients, or full backward-error conclusion."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P05FiniteRoundToNearestFormat",
+    "P05ProtectedSumTrace",
+    "P05Lemma41Run",
+    "P05Lemma43Run",
+    "P05CholeskyOffDiagonalEntry",
+    "P05CholeskyDiagonalEntry",
+    "P05CholeskyRun",
+    "p05MatMul",
+    "p05Transpose",
+    "p05AbsMatMul",
+    "p05PrefixIndex",
+    "p05CholeskyPrefixDot",
+    "p05CholeskyPrefixAbsDot",
+    "p05CholeskyThroughDot",
+    "p05CholeskyThroughAbsDot"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Theorem 4.4 statement",
+      "pdf_page": 11,
+      "printed_page": "694",
+      "role": "symmetric floating input, successful Cholesky execution, range assumptions, and computed factor",
+      "section": "4.3. An improved backward error bound for Cholesky factorization"
+    },
+    {
+      "anchor": "equation (4.4), conventional update formulas, equations (4.5a)-(4.5b), and the closing symmetry sentence",
+      "pdf_page": 12,
+      "printed_page": "695",
+      "role": "exact backward relation, all componentwise constants, local execution estimates, and symmetry completion",
+      "section": "4.3. An improved backward error bound for Cholesky factorization"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P05-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The nearby transpose-self Gram symmetry is an elementary matrix fact available from Mathlib-level reasoning and does not materially speed L. Both conditions must develop the rounded division and square-root traces, two local residual families, triangular truncation, perturbation assembly, and row-dependent coefficient bounds.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P05/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p05_t3_cholesky_backward_error"
+  }
+}

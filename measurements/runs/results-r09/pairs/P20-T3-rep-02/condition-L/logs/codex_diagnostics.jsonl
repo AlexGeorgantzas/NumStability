@@ -1,0 +1,5 @@
+{"monotonic_ns":34362589748427,"raw_line":"\u001b[2m2026-09-16T22:54:53.532817Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:","record_type":"app_server_stderr","sequence":1,"unix_ns":1789599293532848423}
+{"monotonic_ns":34362589815745,"raw_line":"      unfold p20MultiInputRoundingCoefficient","record_type":"app_server_stderr","sequence":2,"unix_ns":1789599293532916173}
+{"monotonic_ns":34362589836640,"raw_line":"        p20SingleInputRoundingCoefficient","record_type":"app_server_stderr","sequence":3,"unix_ns":1789599293532937076}
+{"monotonic_ns":34362589854143,"raw_line":"      have hp : p = (p - 1) + 1 := by","record_type":"app_server_stderr","sequence":4,"unix_ns":1789599293532954585}
+{"monotonic_ns":34362589870912,"raw_line":"        omega","record_type":"app_server_stderr","sequence":5,"unix_ns":1789599293532971356}

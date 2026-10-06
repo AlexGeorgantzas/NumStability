@@ -1,0 +1,115 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "approved source reselection and exact finite formalization of Lemma 3.3 equations (3.10)-(3.11)",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "A and B are real b-by-b matrices; XA, YA, XB, and YB are real b-by-r factors defining Atilde = XA*YA^T and Btilde = YB*XB^T.",
+    "XA and XB have orthonormal columns.",
+    "Atilde = A + EA and Btilde = B + EB, with ||EA||_F <= epsilon*betaA and ||EB||_F <= epsilon*betaB. This is the paper's approximation hypothesis with an immaterial reversal of the error sign inside a norm.",
+    "Unit roundoff u is nonnegative and gamma_c is valid for c = b + 2*r*sqrt(r). The real-valued standard model excludes overflow, underflow, NaNs, and infinities.",
+    "The computed product uses exactly one of the two parenthesizations allowed by Lemma 3.3: (XA*(YA^T*YB))*XB^T or XA*((YA^T*YB)*XB^T).",
+    "Each of the three ordered matrix products has only its local equation-(2.7) forward error, bounded by gamma of that product's inner dimension times the two input Frobenius norms."
+  ],
+  "author_label": "Lemma 3.3",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P15 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P15 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P15/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p15_t3_low_rank_matmul_error {b r : Nat} (run : P15LowRankMatMulExecution b r) : let Atilde := p15LowRankMatrix run.XA run.YA; let Btilde := p15LowRankMatrix run.YB run.XB; let gammaC := p15GammaReal (p15LowRankMatMulCost b r) run.unitRoundoff; p15FrobNorm (run.trace.result - p15MatMul Atilde Btilde) <= gammaC * p15FrobNorm Atilde * p15FrobNorm Btilde and p15FrobNorm (run.trace.result - p15MatMul run.A run.B) <= gammaC * p15FrobNorm run.A * p15FrobNorm run.B + run.epsilon * (1 + gammaC) * (run.betaA * p15FrobNorm run.B + p15FrobNorm run.A * run.betaB + run.epsilon * run.betaA * run.betaB)",
+    "namespace": "HighamBench",
+    "plain_language": "For either permitted three-product evaluation of two low-rank matrices, prove the rounding-error bound (3.10) relative to their low-rank representations and the truncation-plus-rounding bound (3.11) relative to the original matrices.",
+    "target_file": "paper_bencmark/highambench/tasks/P15/T3/Target.lean",
+    "theorem_name": "p15_t3_low_rank_matmul_error"
+  },
+  "informal_proof": "For either parenthesization, expand the three local equation-(2.7) errors. Orthonormality makes left multiplication by XA and right multiplication by XB^T Frobenius-norm preserving and gives ||XA||_F = ||XB||_F = sqrt(r). Apply triangle and submultiplicative inequalities, first combining gamma_b with gamma_r*sqrt(r) into gamma_(b+r^(3/2)), then combining the final gamma_r*sqrt(r) term into gamma_c for c = b+2*r^(3/2). This proves (3.10). Substitute Atilde=A+EA and Btilde=B+EB, expand EA*B + A*EB + EA*EB, and combine that truncation bound with (3.10) to obtain (3.11).",
+  "informal_statement": "Lemma 3.3 equations (3.10)-(3.11), including both permitted parenthesizations, the exact c = b+2*r^(3/2) gamma index, and all first- and second-order low-rank approximation terms.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P15",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P15_Solving block low-rank linear systems by LU factorization is numerically stable.pdf",
+    "sha256": "a5cb8eb779c1571f1549ea6838c7f2269302c960fb4ea21f8410060811270cd7"
+  },
+  "paper_version": "published journal version; IMA Journal of Numerical Analysis 42(2), 2022, printed pages 951-980",
+  "result_form_tag": "BND",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.frobNormRect_nonneg",
+      "NumStability.frobNormRect_add_le",
+      "NumStability.frobNormRect_rectMatMul_le"
+    ],
+    "note": "The frozen library supplies the basic rectangular Frobenius nonnegativity, triangle, and product inequalities used by condition L. It has no declaration for the two low-rank multiplication traces, orthonormal Frobenius invariance, either real-index gamma composition, or either conclusion of Lemma 3.3."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P15Matrix",
+    "P15RectMatrix",
+    "p15RectMatMul",
+    "p15MatMul",
+    "p15RectFrobNorm",
+    "p15FrobNorm",
+    "p15RectTranspose",
+    "p15LowRankMatrix",
+    "p15OrthonormalColumns",
+    "p15GammaReal",
+    "p15LowRankMatMulCost",
+    "P15RoundedMatMulStage",
+    "P15RoundedMatMulStage.result",
+    "P15LowRankMatMulTrace",
+    "P15LowRankMatMulTrace.result",
+    "P15LowRankMatMulExecution"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Frobenius norm convention, submultiplicativity, and invariance under multiplication by matrices with orthonormal columns",
+      "pdf_page": 3,
+      "printed_page": "953",
+      "role": "norm semantics and orthonormal-factor identities used in the proof",
+      "section": "2.1 Block low-rank matrices"
+    },
+    {
+      "anchor": "equations (2.5)-(2.7) and the real-index definition of gamma_k",
+      "pdf_page": 4,
+      "printed_page": "954",
+      "role": "standard arithmetic model and local matrix-product forward-error bounds",
+      "section": "2.2 Floating-point arithmetic"
+    },
+    {
+      "anchor": "Lemma 3.3 and equations (3.10)-(3.11)",
+      "pdf_page": 9,
+      "printed_page": "959",
+      "role": "selected low-rank matrix-product bounds, both allowed evaluation orders, and c = b+2*r^(3/2)",
+      "section": "3.2 LR matrix times LR matrix"
+    },
+    {
+      "anchor": "proof of Lemma 3.3",
+      "pdf_page": 10,
+      "printed_page": "960",
+      "role": "three-stage rounding-error composition and replacement of Atilde and Btilde by A+EA and B+EB",
+      "section": "3.2 LR matrix times LR matrix"
+    }
+  ],
+  "source_tags": [
+    "LEM"
+  ],
+  "task_id": "P15-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The nearby Frobenius nonnegativity, triangle, and product inequalities are standard facts already available from Mathlib and do not materially speed L. Both conditions must handle two dependent three-product traces, orthonormal invariance, two gamma-composition arguments, both parenthesizations, and the complete approximation-error expansion. No frozen declaration states Lemma 3.3 or a corresponding aggregate result.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P15/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p15_t3_low_rank_matmul_error"
+  }
+}

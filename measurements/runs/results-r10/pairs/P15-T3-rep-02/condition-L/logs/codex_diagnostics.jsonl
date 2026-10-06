@@ -1,0 +1,1 @@
+{"monotonic_ns":23839230439509,"raw_line":"\u001b[2m2026-09-20T17:55:33.173367Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mexec_command failed: UnknownProcessId { process_id: 36736 }","record_type":"app_server_stderr","sequence":1,"unix_ns":1789926933173700599}

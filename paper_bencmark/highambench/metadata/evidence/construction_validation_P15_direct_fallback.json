@@ -1,0 +1,138 @@
+{
+  "canonical_evidence": "metadata/evidence/construction_validation_P15.json",
+  "canonical_evidence_sha256": "e47ec14c0e6aa5622316d113998e42ae3a215e49af466638ad4b952ab9715e28",
+  "canonical_isolated_pass": false,
+  "direct_fallback_pass": true,
+  "generated_at_utc": "2026-08-06T10:14:55Z",
+  "host_limitation": {
+    "canonical_failure_occurs_before_lean_starts": true,
+    "message": "bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted",
+    "scope": "All six canonical P15 checks on this LXC host",
+    "tool": "/usr/bin/bwrap"
+  },
+  "kind": "highambench-direct-exact-path-construction-fallback",
+  "paper_id": "P15",
+  "pinned_lean": {
+    "commit": "5d86aa4032284a5242470e95fbe25f1ff506763d",
+    "version": "4.29.0-rc3"
+  },
+  "public_target_elaboration": {
+    "condition": "N exact path",
+    "P15-T1": {"compile_exit_code": 0, "olean_created": true},
+    "P15-T2": {"compile_exit_code": 0, "olean_created": true},
+    "P15-T3": {"compile_exit_code": 0, "olean_created": true}
+  },
+  "results": [
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "23ea08ccb167d984664d0f0e8d21c91ed95edd75dcfb229ae4a185711ecdf440",
+        "library_declaration_count": 4,
+        "library_declarations": [
+          "NumStability.frobNorm_matMul_le",
+          "NumStability.frobNorm",
+          "NumStability.matMul",
+          "NumStability.RMatFn"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "fffc9be93344c23668bf6db5521abe149616edd927f2b218f3b74caed3bb1544",
+        "library_declaration_count": 0,
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true,
+        "semantic_statement_equal": true
+      },
+      "target_source_sha256": "317350b3e17134b5663fd4b741ed6029642a3d73e3073e13c08bbe97dd1664b9",
+      "target_theorem": "HighamBench.p15_t1_frobenius_submultiplicative",
+      "task_id": "P15-T1"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "228385458d5a634a65d6cb2b38658a9b70265f60e0631be2bb83c42978177147",
+        "library_declaration_count": 3,
+        "library_declarations": [
+          "NumStability.frobNorm_add_le",
+          "NumStability.frobNorm",
+          "NumStability.RMatFn"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "96c6e38d3ef99c381f630ad90b4b67b4fb8b22da43e9007b942403cff122553c",
+        "library_declaration_count": 0,
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true,
+        "semantic_statement_equal": true
+      },
+      "target_source_sha256": "6e8c3e8528e7e3c053ffa3234471c492a454ea2bbce319bec82e414fb3feb565",
+      "target_theorem": "HighamBench.p15_t2_low_rank_matvec_backward_error",
+      "task_id": "P15-T2"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "b2eb599f5ac39dfa76e9696ec0fc5e827ed7cb71c080fb6bb21cbd4a601dcc0a",
+        "library_declaration_count": 19,
+        "library_declarations": [
+          "NumStability.frobNorm",
+          "NumStability.frobNorm_add_le",
+          "NumStability.frobNorm_matMul_le",
+          "NumStability.frobNorm_nonneg",
+          "NumStability.matMulVec",
+          "NumStability.vecNorm2",
+          "NumStability.vecNorm2Sq",
+          "NumStability.vecNorm2_add_le",
+          "NumStability.vecNorm2_matMulVec_le_frobNorm_mul",
+          "NumStability.RMatFn",
+          "NumStability.frobNormSq",
+          "NumStability.frobNormSq_nonneg",
+          "NumStability.frobNorm_eq_sqrt_frobNormSq",
+          "NumStability.matMul",
+          "NumStability.vecInnerProduct_sq_le",
+          "NumStability.vecNorm2Sq_matMulVec_le_frobNormSq_mul",
+          "NumStability.vecNorm2_nonneg",
+          "NumStability.vecNorm2_sq",
+          "NumStability.vecNorm2Sq_nonneg"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "13279085880363629ed230a0e4b3d73b19de2ab12d1ad8f8e52e5c238f356db2",
+        "library_declaration_count": 0,
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true,
+        "semantic_statement_equal": true
+      },
+      "target_source_sha256": "d06423c64abe1cb4ef65e8c0bf304ef9e8e1515d8a4cd618208540e606245415",
+      "target_theorem": "HighamBench.p15_t3_blr_lu_solve_backward_error",
+      "task_id": "P15-T3"
+    }
+  ],
+  "schema_version": 1,
+  "verification_basis": {
+    "canonical_manifest_sha256": "4daa84502f702387f0450c6dba1cdebba6a12a410c661ada76f5f92ca201bdaa",
+    "condition_l_path": "The exact P15 shared bundle, frozen pruned package objects, and frozen NumStability object tree; no project .lake/build path.",
+    "condition_n_path": "The exact P15 shared bundle and frozen pruned package objects; no NumStability source or object path and no project .lake/build path.",
+    "negative_probe": "Direct pinned-Lean imports of NumStability and HighamBench.P14Definitions fail under the condition-N LEAN_PATH; the other-paper import also fails under the condition-L P15 path.",
+    "p15_definitions_olean_sha256": "c864037d50faafacbc73d8484abedc5e11ac79fe56a5d967b7773f1d10e6243a",
+    "p15_definitions_source_sha256": "831dce905ad8a08bb52f5b55ebad349c09ac26a06168d6ca22eb022d2cf91792",
+    "private_common_l_source_sha256": "0a9348e25eec98521bf9e4766749f48dd4680e3723b9bdcfe97193b64fe37192",
+    "private_common_n_source_sha256": "f3f118467ae482a6f33ad854fbe446443a3d2acd5654fdd3e5b8794a5fd24231",
+    "private_support_source_sha256": "78aa72e2f8114f06f47ff762373514ea601377bfe5e25f4a58001821e448002f",
+    "private_t3_bounds_source_sha256": "f622eca3a7e69a26667f48df54c78af4130ff51daeef5fb3f6365a1767a4f551",
+    "private_t3_support_source_sha256": "08a662d31e5bbcbd428b1416cc4836a2a69c2afbc0794fc7e81f414e5a03bde5",
+    "semantic_check": "Each private N/L theorem was compared by Meta.isDefEq with a separately compiled renamed copy of the frozen target using tools/dependency_audit.lean; every task-local helper module was included in the transitive audit set.",
+    "shared_core_olean_sha256": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1"
+  }
+}

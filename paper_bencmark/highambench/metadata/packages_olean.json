@@ -1,0 +1,103 @@
+{
+  "kind": "highambench-compiled-environment-summary",
+  "packages": [
+    {
+      "algorithm": "sha256(entry-type NUL relative-path NUL byte-count NUL content-or-link-text-sha256 newline)",
+      "file_count": 44,
+      "git_commit": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+      "package": "LeanSearchClient",
+      "regular_file_count": 44,
+      "relative_root": "LeanSearchClient/.lake/build/lib/lean",
+      "symlink_count": 0,
+      "total_bytes": 3847335,
+      "tree_sha256": "f5cb32e3d2787b1b8d5f9f045acc7690579dc12ed2eb9a22b00a002e58d2286a"
+    },
+    {
+      "algorithm": "sha256(entry-type NUL relative-path NUL byte-count NUL content-or-link-text-sha256 newline)",
+      "file_count": 154,
+      "git_commit": "5bb0ac23f6e6c4c3ba1b084f2d65cb1bd2a9cf7a",
+      "package": "Qq",
+      "regular_file_count": 154,
+      "relative_root": "Qq/.lake/build/lib/lean",
+      "symlink_count": 0,
+      "total_bytes": 17531053,
+      "tree_sha256": "d1bdd98cac48790934f7900e4429efedbf375d64c1c0d4e07468372337a09932"
+    },
+    {
+      "algorithm": "sha256(entry-type NUL relative-path NUL byte-count NUL content-or-link-text-sha256 newline)",
+      "file_count": 1485,
+      "git_commit": "6f8999a4e31701d2c905262d3788a8c0d21b3f1f",
+      "package": "aesop",
+      "regular_file_count": 1485,
+      "relative_root": "aesop/.lake/build/lib/lean",
+      "symlink_count": 0,
+      "total_bytes": 103767027,
+      "tree_sha256": "27e6847804ecbf92ef798aeab299390cdab4bfcbceae0f7bd7ac3d2df8984772"
+    },
+    {
+      "algorithm": "sha256(entry-type NUL relative-path NUL byte-count NUL content-or-link-text-sha256 newline)",
+      "file_count": 1914,
+      "git_commit": "ed250d06b33e67aa5dc5f2cc349a5a35e8b6b390",
+      "package": "batteries",
+      "regular_file_count": 1914,
+      "relative_root": "batteries/.lake/build/lib/lean",
+      "symlink_count": 0,
+      "total_bytes": 107982229,
+      "tree_sha256": "a05b57caef76cb9d6d0103f76b8fa60105bab686874c49f6291ca362bd7abd2b"
+    },
+    {
+      "algorithm": "sha256(entry-type NUL relative-path NUL byte-count NUL content-or-link-text-sha256 newline)",
+      "file_count": 110,
+      "git_commit": "ea1e51a85f6bd53b6a84239b00593eebd03d522b",
+      "package": "importGraph",
+      "regular_file_count": 110,
+      "relative_root": "importGraph/.lake/build/lib/lean",
+      "symlink_count": 0,
+      "total_bytes": 3946783,
+      "tree_sha256": "db330c80a218d934b9ddc07dcc2505a0c4a7d0770eaa0c8663f23766ebeff99c"
+    },
+    {
+      "algorithm": "sha256(entry-type NUL relative-path NUL byte-count NUL content-or-link-text-sha256 newline)",
+      "file_count": 84433,
+      "git_commit": "e8ea1afc32790ce1d4e1a4e45cc412ba9388716b",
+      "package": "mathlib",
+      "regular_file_count": 84433,
+      "relative_root": "mathlib/.lake/build/lib/lean",
+      "symlink_count": 0,
+      "total_bytes": 5397449697,
+      "tree_sha256": "8950939ebb41daba400af71ad32562b22ea7453a57ea1d96a64495105c531c00"
+    },
+    {
+      "algorithm": "sha256(entry-type NUL relative-path NUL byte-count NUL content-or-link-text-sha256 newline)",
+      "file_count": 121,
+      "git_commit": "2b93f2523263a6df8a8fbbe3dd28b7f028087480",
+      "package": "plausible",
+      "regular_file_count": 121,
+      "relative_root": "plausible/.lake/build/lib/lean",
+      "symlink_count": 0,
+      "total_bytes": 8423721,
+      "tree_sha256": "02ef1fb60588c399669ca87fee39d53f0c9e0f6105bcc88c7b3e808f3e5699c6"
+    },
+    {
+      "algorithm": "sha256(entry-type NUL relative-path NUL byte-count NUL content-or-link-text-sha256 newline)",
+      "file_count": 132,
+      "git_commit": "212dc300449e436298804f09b264f624667106f8",
+      "package": "proofwidgets",
+      "regular_file_count": 132,
+      "relative_root": "proofwidgets/.lake/build/lib/lean",
+      "symlink_count": 0,
+      "total_bytes": 13623422,
+      "tree_sha256": "91de271a86d1972afa5787ada21ef34c0fce9b0da8f39c905a86bba81be67751"
+    }
+  ],
+  "schema_version": 1,
+  "toolchain": {
+    "algorithm": "sha256(entry-type NUL relative-path NUL byte-count NUL content-or-link-text-sha256 newline)",
+    "file_count": 13346,
+    "regular_file_count": 13334,
+    "relative_root": ".",
+    "symlink_count": 12,
+    "total_bytes": 2791170912,
+    "tree_sha256": "d98fff13cb55cd9952ffbd53ffc47d036cf7457794574597e014cc20f61b19ad"
+  }
+}

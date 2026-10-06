@@ -1,0 +1,92 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source selection, tier label, and concise paraphrase",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "There are exactly 2^r real inputs.",
+    "Every input is nonnegative.",
+    "Each rounded addition follows the shared standard addition rule.",
+    "The shared standard model also records exact addition from zero for a source-consistent common interface and for library adapters; the T1 pairwise computation does not use that field.",
+    "r*u < 1, written GammaValid u r.",
+    "Overflow, underflow, and other exceptional machine behavior are outside the mathematical model."
+  ],
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P01/T1/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p01_t1_pairwise_nonnegative\n    (fp : StandardAddModel) (r : \u2115) (v : Fin (2 ^ r) \u2192 \u211d)\n    (hvalid : GammaValid fp.u r)\n    (hv : \u2200 i, 0 \u2264 v i) :\n    |pairwiseSum fp.fl_add r v - \u2211 i : Fin (2 ^ r), v i| \u2264\n      gamma fp.u r * \u2211 i : Fin (2 ^ r), v i",
+    "namespace": "HighamBench",
+    "plain_language": "For nonnegative inputs, the pairwise summation error is no larger than gamma(u,r) times the ordinary exact sum.",
+    "target_file": "paper_bencmark/highambench/tasks/P01/T1/Target.lean",
+    "theorem_name": "p01_t1_pairwise_nonnegative"
+  },
+  "informal_proof": "Equation (3.6) gives gamma(u,r) times the sum of input absolute values because every input passes through r rounded additions. For nonnegative inputs each absolute value equals the input, so that sum is the ordinary exact sum.",
+  "informal_statement": "For 2^r nonnegative inputs, the absolute error of balanced pairwise summation is at most gamma(u,r) times their exact sum.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P01",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P01_THE ACCURACY OF FLOATING POINT SUMMATION.pdf",
+    "sha256": "d5ad99fac5022da54dbe02721ea57116df3cec15badddd7c96c344328718fea7"
+  },
+  "paper_version": "journal version; volume 14, issue 4, July 1993, printed pages 783-799",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declaration": "NumStability.pairwiseSum_forward_error_bound",
+    "note": "The library result is more general; the exact nonnegative shared-surface target is absent."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "StandardAddModel",
+    "GammaValid",
+    "gamma",
+    "pairwiseSum"
+  ],
+  "source_locations": [
+    {
+      "anchor": "unnumbered display immediately after equation (2.2)",
+      "pdf_page": 2,
+      "printed_page": 784,
+      "role": "finite-product estimate used by the exact gamma bound",
+      "section": "2. Orderings of Recursive Summation"
+    },
+    {
+      "equation": "(3.6)",
+      "pdf_page": 6,
+      "printed_page": 788,
+      "role": "main pairwise error bound",
+      "section": "3. Other Methods"
+    },
+    {
+      "anchor": "paragraph after equation (2.6)",
+      "pdf_page": 3,
+      "printed_page": 785,
+      "role": "nonnegative-input simplification",
+      "section": "2. Orderings of Recursive Summation"
+    }
+  ],
+  "source_tags": [
+    "EQN",
+    "TXT"
+  ],
+  "task_id": "P01-T1",
+  "tier": "T1",
+  "tier_label": "direct use",
+  "tier_rationale": "The proof uses exactly one substantial result unavailable in Mathlib: NumStability.pairwiseSum_forward_error_bound, whose recursive error analysis would take significant effort to rebuild. The remaining nonnegative-input simplification is elementary.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P01/T1/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p01_t1_pairwise_nonnegative"
+  }
+}

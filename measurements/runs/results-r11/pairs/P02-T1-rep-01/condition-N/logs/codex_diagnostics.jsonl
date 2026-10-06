@@ -1,0 +1,5 @@
+{"monotonic_ns":125371089169047,"raw_line":"\u001b[2m2026-09-21T22:07:45.032313Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:","record_type":"app_server_stderr","sequence":1,"unix_ns":1790028465032428870}
+{"monotonic_ns":125371089426370,"raw_line":"#check Finset.abs_sum_le_sum_abs","record_type":"app_server_stderr","sequence":2,"unix_ns":1790028465032687302}
+{"monotonic_ns":125371089525925,"raw_line":"#check abs_sum_le_sum_abs","record_type":"app_server_stderr","sequence":3,"unix_ns":1790028465032786945}
+{"monotonic_ns":125371089611637,"raw_line":"","record_type":"app_server_stderr","sequence":4,"unix_ns":1790028465032872593}
+{"monotonic_ns":125371089694066,"raw_line":"private lemma gamma_nonneg_of_valid (u : ℝ) (k : ℕ) (hu : 0 ≤ u)","record_type":"app_server_stderr","sequence":5,"unix_ns":1790028465032954967}

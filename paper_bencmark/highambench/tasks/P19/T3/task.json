@@ -1,0 +1,135 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "direct formalization of Theorems 3.3-3.4, equations (3.17) and (3.20), and Remark 4 with separately quantified algorithm families and qualitative first-order meaning",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "Each separately quantified algorithm family has a positive dimension n, a nonsingular system A*xExact=b with b nonzero, increasing full-rank Algorithm 2 search spaces, and raw executions at every positive k<=n.",
+    "One fixed nonsingular nonidentity right preconditioner MR has certified actual inverses for MR and A*MR^-1, and the modular left preconditioner is the identity.",
+    "At the MGS-selected dimension, the computed basis applications satisfy (3.14), products with A satisfy (C.1), the inaccessible search basis satisfies (C.2), and rhoAR is the exact ratio (3.15) with positive denominator.",
+    "As stated in Appendix C and reused by Appendix D, an applicability hypothesis supplies the source MGS/Givens and solution-product error models and all five terms of (3.16) at every well-conditioned dimension satisfying the MGS terminal-or-near-dependence alternative, including the um*etaR*kappa(MR) term for flexible GMRES.",
+    "The uniform Appendix-C/D interfaces supply raw decompositions and sensitivity gains in actual perturbation magnitudes; they contain no selected dimension, c(n,k)-weighted component estimate, or final theorem bound.",
+    "Unqualified square kappa is interpreted uniformly as either the Frobenius or induced-2 condition number, both readings explicitly authorized by Section 2.",
+    "The unspecified c(n,k) is represented only by its nonnegative value at each fixed dimension, and qualitative smallness and omitted second-order terms are parameterized without a precision filter or invented threshold.",
+    "All modeled quantities are real, so exceptional floating-point values and range failures are outside the model."
+  ],
+  "author_label": "Theorem 3.3 and Theorem 3.4",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P19 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P19 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P19/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p19_t3_right_flexible_attainable_forward_error {n : Nat} (semantics : P19FirstOrderSemantics) (choice : P19StaticSquareKappaChoice) : (forall right mgs appendixC applicability, exists k : P19Theorem31Dimension n, p19IterationWellConditioned (right.family.iteration k) and p19FirstOrderLe semantics (right relative forward error) (right.dimensionFactor * right three-source envelope)) and (forall flexible mgs appendixD applicability, exists k : P19Theorem31Dimension n, p19IterationWellConditioned (flexible.family.iteration k) and p19FirstOrderLe semantics (flexible relative forward error) (flexible.dimensionFactor * flexible two-source envelope)) and forall family preconditioner ug um ua etaR rhoAR, right envelope = flexible envelope + um*etaR*kappa(MR), where each applicability function supplies the complete source conditions at every well-conditioned terminal-or-near-dependence candidate",
+    "namespace": "HighamBench",
+    "plain_language": "For every right execution family and, separately, every fixed-preconditioner flexible execution family whose complete source conditions hold at each MGS-admissible candidate, the MGS analysis selects an iteration no larger than n and proves the corresponding three-term or two-term qualitative first-order forward-error bound there; the right envelope differs by exactly the fresh preconditioner-reapplication term.",
+    "target_file": "paper_bencmark/highambench/tasks/P19/T3/Target.lean",
+    "theorem_name": "p19_t3_right_flexible_attainable_forward_error"
+  },
+  "informal_proof": "For each variant independently, use a finite first-loss search on the MGS conditioning property: choose n if it remains well conditioned, otherwise choose the predecessor of the first failing dimension and invoke the cited near-dependence law. Obtain the complete source conditions at that candidate from the applicability hypothesis, apply the uniform Appendix-C or Appendix-D raw sensitivity expansion, derive the c(n,k)ug, c(n,k)um*etaR, and c(n,k)ua magnitude bounds from the actual perturbation models, combine the contributions with the Euclidean triangle inequality, and retain the source-classified second-order remainder. Expanding the two envelopes then isolates the right-only um*etaR*kappa(MR) term.",
+  "informal_statement": "The complete conditional attainable-forward-error bounds (3.17) and (3.20), together with Remark 4's exact identification of the right-only preconditioner-reapplication term.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P19",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P19_Mixed precision strategies for preconditioned GMRES- a comprehensive analysis.pdf",
+    "sha256": "67af427c72ae891b7863e386db542ef775b1e3eb306f812bb1a78bdbef86aaad"
+  },
+  "paper_version": "HAL preprint hal-05071696v2, submitted 2026-05-19; IMA Journal of Numerical Analysis, in press, article pages 1-46",
+  "result_form_tag": "BND",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "GMRES",
+        "Krylov",
+        "right-precondition",
+        "flexible-precondition"
+      ],
+      "result": "No relevant declaration was found; the sole preconditioner text hit was an unrelated SRHT comment in MatrixAlgebra.lean.",
+      "scope": "the complete frozen NumStability source and the compiled condition-L bundle recorded in metadata/library_olean.json"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.vecNorm2_add_le",
+      "NumStability.vecNorm2_nonneg"
+    ],
+    "note": "The frozen MatrixAlgebra module provides Euclidean norm nonnegativity and the triangle inequality, but no right- or flexible-preconditioned GMRES execution model, condition (3.16), perturbation-linked analysis, or complete attainable-forward-error theorem."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P19FirstOrderSemantics",
+    "P19StaticSquareKappaChoice",
+    "P19Theorem31Dimension",
+    "P19Theorem31Family",
+    "P19MGSSelectionLaw",
+    "p19IterationWellConditioned",
+    "P19StaticFixedRightPreconditioner",
+    "P19StaticRightFamily",
+    "P19StaticFlexibleFamily",
+    "P19StaticRightConditions",
+    "P19StaticFlexibleConditions",
+    "P19StaticRightAppendixCTheory",
+    "P19StaticFlexibleAppendixDTheory",
+    "p19FirstOrderLe",
+    "p19ForwardError",
+    "p19StaticRightAttainableEnvelope",
+    "p19StaticFlexibleAttainableEnvelope",
+    "p19StaticRightPreconditionerKappa"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Algorithm 1, right- and flexible-preconditioned MGS-GMRES",
+      "pdf_page": 4,
+      "printed_page": "3",
+      "role": "mixed-precision execution paths, including persistent storage of the flexible preconditioned basis",
+      "section": "1. Introduction"
+    },
+    {
+      "anchor": "equations (3.14)-(3.17) and Theorem 3.3",
+      "pdf_page": 11,
+      "printed_page": "10",
+      "role": "right-preconditioner application model, rhoAR, complete applicability condition, existential iteration, and three-source attainable forward-error bound",
+      "section": "3.3. Error bound for right-preconditioned GMRES"
+    },
+    {
+      "anchor": "Theorem 3.4, equation (3.20), and Remark 4",
+      "pdf_page": 12,
+      "printed_page": "11",
+      "role": "flexible existential forward-error bound and identification of the omitted preconditioner-reapplication term",
+      "section": "3.4. Error bound for flexible-preconditioned GMRES"
+    },
+    {
+      "anchor": "Appendix C, proof of Theorem 3.3",
+      "pdf_page": 41,
+      "printed_page": "40",
+      "role": "right-preconditioned perturbation propagation, first-order contributions, and higher-order truncation",
+      "section": "C. Proof of Theorem 3.3"
+    },
+    {
+      "anchor": "Appendix D, proof of Theorem 3.4",
+      "pdf_page": 44,
+      "printed_page": "43",
+      "role": "flexible solution-formation path and removal of the reapplication contribution",
+      "section": "D. Proof of Theorem 3.4"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P19-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The target independently derives two finite first-loss MGS witnesses and combines paper-specific right/flexible execution models, all five condition-(3.16) terms, generic inverse-linked condition numbers, raw Appendix-C/D sensitivity gains, source-magnitude algebra, and multi-term Euclidean norm estimates. The nearby NumStability vector-norm facts are basic facts reproducible from Mathlib and do not materially shorten the proof. The frozen library supplies no GMRES execution model, first-loss argument, Appendix specialization, or complete form of Theorems 3.3-3.4.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P19/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p19_t3_right_flexible_attainable_forward_error"
+  }
+}

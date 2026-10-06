@@ -1,0 +1,90 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "arbitrary-degree polynomial form of the inverse secular construction in equations (3.2)-(3.3)",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "d is strictly increasing.",
+    "The lower and upper inequalities are the paper's interlacing chain d_1 < lambda_1 < d_2 < ... < d_n < lambda_n, written for zero-based finite indices.",
+    "p54SecularWeight is the squared modified coordinate in equation (3.2).",
+    "p54Characteristic and p54DeletedCharacteristic are the full and one-factor-deleted products in the displayed determinant identity preceding equation (3.2)."
+  ],
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P54 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P54 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P54/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p54_t3_inverse_secular_construction (n : Nat) (hn : 0 < n) (d lambda : P54Vector n) (hd : StrictMono d) (hlower : forall i, d i < lambda i) (hupper : forall i j, i < j -> lambda i < d j) : (forall i, 0 < p54SecularWeight d lambda i) and p54Characteristic lambda = p54Characteristic d + sum i, Polynomial.C (p54SecularWeight d lambda i) * p54DeletedCharacteristic d i",
+    "namespace": "HighamBench",
+    "plain_language": "Show that interlacing makes every squared modified coordinate positive and that the coordinates from (3.2) reproduce the proposed characteristic polynomial.",
+    "target_file": "paper_bencmark/highambench/tasks/P54/T3/Target.lean",
+    "theorem_name": "p54_t3_inverse_secular_construction"
+  },
+  "informal_proof": "Interlacing gives the numerator and denominator in (3.2) the same sign. The two characteristic products have equal leading terms, so their difference has degree below n. At each node d_i, that difference equals the numerator in (3.2). Interpolating from the n distinct nodes and substituting the weights reconstructs the displayed characteristic-product identity.",
+  "informal_statement": "Prove the positivity and inverse characteristic-product identity asserted around equations (3.2)-(3.3).",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P54",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P54 A Stable and Efficient Algorithm for the Rank-One Modification of the Symmetric Eigenproblem.pdf",
+    "sha256": "f3f964d15bb19dc85c96257c63f82086dbe0c6336a3867df8e1431aa293957d7"
+  },
+  "paper_version": "Yale Research Report YALEU/DCS/RR-916, September 30, 1992",
+  "result_form_tag": "EQN+TXT",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "inverse secular equation rank-one symmetric modification equation 3.2",
+        "interlacing modified coordinate characteristic product",
+        "diagonal plus rank one prescribed eigenvalues"
+      ],
+      "result": "Neither the exact 44-object NumStability bundle nor Mathlib contains P54's inverse secular construction as a ready theorem. Mathlib provides general polynomial interpolation and matrix determinant infrastructure, but the proof must still derive the paper's signed finite-product weights, establish their positivity from interlacing, translate the one-factor-deleted products, and reconstruct the arbitrary-degree identity.",
+      "scope": "the complete frozen NumStability surface at commit 45813a95dacf577461bae13f033af0dbc985a225, the exact 44-object condition-L bundle, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "generic Hermitian spectral and matrix-algebra infrastructure only; no compiled declaration states the inverse secular construction or its interlacing weight formula"
+    ],
+    "note": "The exact private N proof is 165 physical lines and the exact L proof is 166. After deleting L's one additional NumStability import, their mathematical bodies are byte-identical. L invokes no NumStability declaration and receives no shortcut."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P54Vector",
+    "p54SecularWeight",
+    "p54Secular",
+    "p54ModifiedCoordinate",
+    "p54Characteristic",
+    "p54DeletedCharacteristic"
+  ],
+  "source_locations": [
+    {
+      "anchor": "displayed determinant identity, equations (3.2)-(3.3), and the following backward-construction statement",
+      "pdf_page": "5-6",
+      "printed_page": "4-5",
+      "role": "selected inverse secular construction, positivity, and characteristic-product identity",
+      "section": "3.1. Computing the Eigenvectors"
+    }
+  ],
+  "source_tags": [
+    "EQN",
+    "TXT"
+  ],
+  "task_id": "P54-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The task requires arbitrary-degree finite-product sign analysis from interlacing, cancellation of equal leading terms, polynomial degree control, interpolation at n distinct nodes, and normalization of the deleted characteristic factors. The exact N proof has 165 physical lines and is comparable to the lower end of validated T2/T3 workloads rather than a short Mathlib import exercise. The exact L mathematical proof is byte-identical and uses no NumStability declaration, establishing that the frozen library provides no speedup.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P54/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p54_t3_inverse_secular_construction"
+  }
+}

@@ -1,0 +1,4 @@
+{"monotonic_ns":36202167498751,"raw_line":"\u001b[2m2026-09-16T23:25:33.110571Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:","record_type":"app_server_stderr","sequence":1,"unix_ns":1789601133110598895}
+{"monotonic_ns":36202167549825,"raw_line":"          have hthreshold : S * Real.sqrt (G / lambda) = 0 := by","record_type":"app_server_stderr","sequence":2,"unix_ns":1789601133110650257}
+{"monotonic_ns":36202167569579,"raw_line":"            rw [hGzero]","record_type":"app_server_stderr","sequence":3,"unix_ns":1789601133110670022}
+{"monotonic_ns":36202167586003,"raw_line":"            norm_num","record_type":"app_server_stderr","sequence":4,"unix_ns":1789601133110686447}

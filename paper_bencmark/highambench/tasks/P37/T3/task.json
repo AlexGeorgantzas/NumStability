@@ -1,0 +1,87 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source-faithful linear-map formalization of Theorem 6.1, equations (6.3)-(6.4)",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The paper's one-column matrix-vector setting is represented by the real vector space Fin n -> Real and a real linear endomorphism A.",
+    "The positive dimension, invertibility of A, and nonzero base vector B are the hypotheses stated in Theorem 6.1.",
+    "The hypothesis hinv is the paper's requirement that every shifted inverse used in the two-sided sequence be well defined.",
+    "The recurrence hstep together with v 0 = B represents equation (6.2) for both positive and negative indices.",
+    "The selected conclusion is equations (6.3)-(6.4); equation (6.5), which introduces two additional shift sequences and another base vector, is not included."
+  ],
+  "author_label": "Theorem 6.1, equations (6.3)-(6.4)",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P37 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P37 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P37/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p37_t3_consecutive_shifted_vectors_span (n hn A hA B hB p v hv0 hstep hinv s) : L(v) = span{v_s,...,v_(s+n-1)} and that span equals K_n(A,v_s) and K_n(A,B)",
+    "namespace": "HighamBench",
+    "plain_language": "Every n consecutive vectors of the paper's invertible shifted two-sided recurrence span the whole sequence and the same order-n ordinary Krylov subspace as the original base vector.",
+    "target_file": "paper_bencmark/highambench/tasks/P37/T3/Target.lean",
+    "theorem_name": "p37_t3_consecutive_shifted_vectors_span"
+  },
+  "informal_proof": "Identify the first n consecutive shifted vectors with a triangular change of generators from the first n ordinary Krylov vectors. Cayley-Hamilton makes that Krylov span invariant under A. Each shifted map preserves it, and finite-dimensional injectivity makes its restriction surjective, so inverse shifts preserve it as well. Thus every later and earlier vector belongs to the same span. Repeat at index zero and use v_0=B to obtain the final base-vector equality.",
+  "informal_statement": "Theorem 6.1 (selected part): prove equations (6.3)-(6.4), equating the full two-sided shifted-vector span, every n-vector consecutive window, and the order-n Krylov spans based on v_s and B.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P37",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P37-Low Rank Solution of Lyapunov Equations.pdf",
+    "sha256": "6518faf6a70b66ff4eba228faa9a4eff9f1f4b9060fa9b7a85d6b60988971019"
+  },
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 24(1), 2002, printed pages 260-280",
+  "result_form_tag": "THM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "two-sided shifted Krylov spanning sequence",
+        "any n consecutive shifted vectors span Krylov",
+        "rational Krylov base vector shift independence",
+        "Theorem 6.1 Li White Lyapunov"
+      ],
+      "result": "Neither Mathlib nor the importable frozen NumStability set contains Theorem 6.1 or a theorem equating every integer window of a varying shifted/inverse-shifted vector sequence with its order-n Krylov span. Mathlib provides Cayley-Hamilton and general finite-dimensional submodule tools, but not the combined shifted-window theorem. The frozen repository has extensive Lyapunov and alternating-directions source developments outside the compiled condition-L bundle, and none is available to L.",
+      "scope": "the complete frozen NumStability source, the 44-module compiled condition-L bundle recorded in metadata/library_olean.json, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [],
+    "note": "The private N and L proofs reconstruct the same Cayley-Hamilton stabilization, shifted/ordinary triangular change of generators, invariant-subspace argument, inverse-shift containment, and two-sided span equality. L uses only an irrelevant zero-nonnegativity marker and receives no mathematical shortcut."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "p37Shift",
+    "p37ConsecutiveSpan",
+    "p37KrylovSpan",
+    "p37TwoSidedSpan"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Theorem 6.1, Lemmas 6.2-6.3, and the proof of Theorem 6.1",
+      "pdf_page": "12-14",
+      "printed_page": "271-273",
+      "role": "selected shifted-vector spanning statement and its supporting proof",
+      "section": "6. Spanning sets of L(A,B)"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P37-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The proof must connect a varying shifted recurrence to ordinary Krylov generators, establish dimension-n stabilization, construct an invariant Krylov subspace, prove that every bijective shift also preserves that subspace under inversion, control both directions of an integer-indexed sequence, and identify spans for arbitrary starting indices and the original base vector. This is substantial multi-stage formalization and is not discharged by Mathlib imports. NumStability has no corresponding compiled result, so L receives no material advantage over N.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P37/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p37_t3_consecutive_shifted_vectors_span"
+  }
+}

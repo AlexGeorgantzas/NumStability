@@ -1,0 +1,89 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 22-page paper in physical-PDF order, surveyed every stated result and source-proved construction, and compared all candidates with the frozen Mathlib and importable NumStability baselines.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P36 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Philip I. Davies",
+    "Nicholas J. Higham"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P36-T3"
+  ],
+  "paper_id": "P36",
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 25(2), 2003, printed pages 464-485",
+  "publication": {
+    "doi": "10.1137/S0895479802410815",
+    "issue": "2",
+    "journal": "SIAM Journal on Matrix Analysis and Applications",
+    "printed_pages": "464-485",
+    "publication_date": "2003-09-09",
+    "volume": "25",
+    "year": 2003
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Theorem 2.2 and Corollary 2.3",
+      "reason": "Their analytic matrix-function and Jordan-form interfaces are not supplied by the compiled library. They cannot form T1 or T2, and formalizing the missing functional-calculus infrastructure would go beyond the proof material developed in this paper; Lemma 2.1 provides a direct self-contained T3."
+    },
+    {
+      "candidate": "Theorems 2.4 and 2.5",
+      "reason": "The paper explicitly quotes these results from earlier sources rather than proving them here."
+    },
+    {
+      "candidate": "Algorithms 2.6, 4.1, 4.2, and 5.1",
+      "reason": "These are algorithm descriptions and stopping or reordering procedures, not standalone proved conclusions with the substantial formal proof required by a tier task."
+    },
+    {
+      "candidate": "Sections 3 and 6 error and preprocessing observations",
+      "reason": "The displayed consequences are short recurrence, invariance, or conditioning arguments after their premises are assumed and do not meet the required difficulty."
+    },
+    {
+      "candidate": "Section 7 numerical experiments and Section 8 conclusions",
+      "reason": "These are empirical comparisons and qualitative conclusions rather than universally proved theorem statements."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No result proved in P36 can use exactly one substantial theorem from the importable frozen NumStability set. The compiled modules offer generic matrix infrastructure but no Schur-Parlett, Taylor matrix-function, Jordan, or strict-upper power theorem."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source proof can use at least two distinct substantial results from the importable frozen NumStability set. Combining generic matrix modules would not supply two paper-relevant shortcuts and would manufacture a dependency absent from the source."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Selected the componentwise part of Lemma 2.1. It requires a full entrywise matrix-product majorization, strict-upper band and nilpotence argument, and exactly truncated binomial expansion, while neither Mathlib nor NumStability provides the corresponding result."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only conclusions whose statements and supporting derivations are present in this paper.",
+    "Do not turn theorems quoted from earlier sources into tasks.",
+    "Do not count uncompiled Jordan, matrix-power, or Sylvester source modules as available to condition L.",
+    "Keep the full arbitrary-dimension truncation in Lemma 2.1 instead of extracting only a basic scalar inequality.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source, its importable compiled subset, and Mathlib."
+  ],
+  "short_name": "Davies--Higham (2003)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/S0895479802410815",
+    "local_path": "paper_bencmark/reference_papers/P36-A Schur-Parlett Algorithm for Computing Matrix Functions.pdf",
+    "page_map": "Physical PDF pages 1-22 are printed pages 464-485 respectively.",
+    "pdf_pages": 22,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "887bb96151ea452cf9dcea8214fe4e86a199ba36e2d34edd7e781dee6ccb91f3"
+  },
+  "title": "A Schur-Parlett Algorithm for Computing Matrix Functions"
+}

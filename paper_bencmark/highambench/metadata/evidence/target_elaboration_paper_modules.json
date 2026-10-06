@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.3.0",
+  "kind": "highambench-fixed-target-elaboration-evidence",
+  "record_status": "current_construction_check",
+  "generated_at_utc": "2026-08-05T00:22:42Z",
+  "scope": "Elaboration of all six fixed theorem interfaces after separating the common core from the P01-only and P02-only definitions. This is not a private-proof reachability claim for P02.",
+  "inputs": {
+    "shared_sources": {
+      "HighamBench/Core.lean": "8c84e05c04f4245e067d3a971dafa45bcfe92f55bbc24f2305964a8e2b9bd55a",
+      "HighamBench/P01Definitions.lean": "f84e0fcd73a73392e539081c1ab832e76c71902085eaae4614d305d138ca7a29",
+      "HighamBench/P02Definitions.lean": "803efe47eb37140c04ed8dad9fcdfe8470d0527aaedf9c60ff9333441ad5136b"
+    },
+    "shared_olean_bundles": {
+      "P01": {
+        "HighamBench/Core.olean": "f5a07f5bd1021c7565b5863278abe123a8796eeb482978ebade11579893d740b",
+        "HighamBench/P01Definitions.olean": "3d7c8e8630d10c51aeb13ba8b7e132013d3002f38dd9aa51bc69beb2ac81b887"
+      },
+      "P02": {
+        "HighamBench/Core.olean": "f5a07f5bd1021c7565b5863278abe123a8796eeb482978ebade11579893d740b",
+        "HighamBench/P02Definitions.olean": "14c6ea7fa9187a1f9b52cd0562239fb723aa2ad2a7ee269ee764800ed84524b8"
+      }
+    },
+    "targets": {
+      "P01-T1": "ee6bd516f8c592936e1f9b0b9d54049579ba7aee7714cdb871b230332e0f1d19",
+      "P01-T2": "8707d7e8b3965c9c6d5c1354116c7cf04471bc0c5b0635b4287729455f79e49f",
+      "P01-T3": "e5badc1d71efe1d99f4d211edb7eff96ceb893628641ed140494f380de284cda",
+      "P02-T1": "6ae5ba2b7579c90c03fadb3ef191a155a78eb84f008d7736fedfeec489ef9e0e",
+      "P02-T2": "6869f7e5200080eb138266e3d9671b6c6f323b987996c748a25f497564fe4903",
+      "P02-T3": "4da16107e718b289c13ed7398a2af4b9f4b5fca48c09eaa6ec7aa5a9563e3452"
+    },
+    "controlled_manifests": {
+      "P01-T1": "5207e9824b77f6dcb2e6e0652930e0c09e6a62053c875747b2083bfbb3e680a4",
+      "P01-T2": "750310aee2679b92481109cf0a6448ceefe06247d9abdb7ff83b4bec244cd8fb",
+      "P01-T3": "e41d66b6bca66977f805cd3b8238adfe7ad908f6227bc5b2c677a6b748fb1cb9",
+      "P02-T1": "f82c4f7b544729d18de0a85f35c1d3be3693d5204542931ccd76a39d67e6e11d",
+      "P02-T2": "2af5be0d9b3c4fe4dda6880fb35aae5ad894578f8e4ebe82d39f288f118e9e8b",
+      "P02-T3": "74e22b188dd46d72f38b66df8ac75003ae6bce97acede11ba0ece6ec1dbb36e2"
+    }
+  },
+  "isolation": {
+    "adapter": "tools/lean_isolated.py compile",
+    "controlled_files_per_task": 5,
+    "condition_n_library_mounts": false,
+    "condition_l_library_mounts": true,
+    "same_target_and_paper_scoped_shared_files_in_both_conditions": true,
+    "paper_scope_check": "Each P01 manifest and compiled mount contains the core and P01 definitions but not P02 definitions. Each P02 manifest and compiled mount contains the core and P02 definitions but not P01 definitions.",
+    "opposite_paper_import_probes": [
+      {
+        "mounted_bundle": "P01",
+        "attempted_import": "HighamBench.P02Definitions",
+        "exit_code": 1,
+        "importable": false
+      },
+      {
+        "mounted_bundle": "P02",
+        "attempted_import": "HighamBench.P01Definitions",
+        "exit_code": 1,
+        "importable": false
+      }
+    ]
+  },
+  "results": [
+    {"task_id": "P01-T1", "condition": "N", "exit_code": 0},
+    {"task_id": "P01-T1", "condition": "L", "exit_code": 0},
+    {"task_id": "P01-T2", "condition": "N", "exit_code": 0},
+    {"task_id": "P01-T2", "condition": "L", "exit_code": 0},
+    {"task_id": "P01-T3", "condition": "N", "exit_code": 0},
+    {"task_id": "P01-T3", "condition": "L", "exit_code": 0},
+    {"task_id": "P02-T1", "condition": "N", "exit_code": 0},
+    {"task_id": "P02-T1", "condition": "L", "exit_code": 0},
+    {"task_id": "P02-T2", "condition": "N", "exit_code": 0},
+    {"task_id": "P02-T2", "condition": "L", "exit_code": 0},
+    {"task_id": "P02-T3", "condition": "N", "exit_code": 0},
+    {"task_id": "P02-T3", "condition": "L", "exit_code": 0}
+  ],
+  "pass": true,
+  "interpretation": "All fixed statements still elaborate in both benchmark conditions. The only source change in each target is its paper-specific import. The public sorry warning remains expected because the evaluated agent replaces that proof region."
+}

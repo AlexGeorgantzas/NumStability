@@ -1,0 +1,103 @@
+{
+  "annotation": {
+    "method": "Codex freshly reread the complete 16-page local paper, rechecked Model 1 and the full derivations of Theorems 3.1 and 4.1, compared candidates with the frozen Mathlib and NumStability baselines, rejected the coefficient-mismatched T1 formulation, and retained only the source-faithful T3 target.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P20 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Theo Mary",
+    "Mantas Mikaitis"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P20-T3"
+  ],
+  "paper_id": "P20",
+  "paper_version": "SIAM Journal on Scientific Computing 47(4), B785-B800, published 2025-07-01",
+  "publication": {
+    "doi": "10.1137/24M1685109",
+    "issue": "4",
+    "journal": "SIAM Journal on Scientific Computing",
+    "printed_pages": "B785-B800",
+    "publication_date": "2025-07-01",
+    "publication_status": "published",
+    "volume": "47",
+    "year": 2025
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Model 1 and rounding equations (2.1)-(2.4)",
+      "reason": "These define the hardware and arithmetic hypotheses rather than a selected conclusion; the frozen library already contains a broader additive-underflow witness hierarchy."
+    },
+    {
+      "candidate": "complete narrow-range Theorem 3.1 including underflow",
+      "reason": "The displayed relation uses an asymptotic less-similar sign after dropping terms and would require additional executable scaling and underflow semantics. The former no-underflow T1 was also removed because it changed the paper's nU coefficient to gamma_n(U)."
+    },
+    {
+      "candidate": "equation (3.13), the scaled input-conversion error bound",
+      "reason": "Rejected for T1: the nearby NumStability theorem packages matrix-product expansion and triangle-inequality composition that the N condition can reconstruct quickly from Mathlib, so it does not make the L condition substantially faster."
+    },
+    {
+      "candidate": "equation (3.16), the bound for one accumulation-underflow error",
+      "reason": "This is an exact valid source result, but the concrete frozen-library check found that its proof reduces to the two inverse-scale inequalities and scalar arithmetic. It therefore does not materially combine multiple NumStability results and would be T1 rather than the required T2 slot."
+    },
+    {
+      "candidate": "the post-(3.26) comparison of accumulation- and input-underflow terms",
+      "reason": "Under literal Model 1, format nesting does not imply Gmin <= gmin when the two formats use different subnormal modes. Adding that comparison as a hypothesis makes the formal target weaker than the written claim, so the audited task was rejected."
+    },
+    {
+      "candidate": "standalone multiword recursion (4.8)-(4.20)",
+      "reason": "This induction is supporting machinery rather than the selected conclusion. Its decomposition consequences and the pre-theorem estimates through (4.27) are represented by the fixed Section 4 derivation used by T3, whose target is Theorem 4.1."
+    },
+    {
+      "candidate": "Figures 5.1-5.2 and the large-n divergence discussion",
+      "reason": "These are finite experiments and empirical observations, not universally quantified mathematical conclusions."
+    },
+    {
+      "candidate": "generalization to other linear algebra computations in Section 6",
+      "reason": "The paper presents this as an expectation contingent on finding suitable scaling, not a proved result."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped after strict source audit: equations (3.21) and (3.23) use the paper's coefficient ((2u+u^2)(1+nU)+nU). The discarded target replaced nU with gamma_n(U) and therefore stated a different exact theorem. The exact paper coefficient is not supplied by the available NumStability matrix-product theorem."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped: no source candidate needs two independent substantial mounted NumStability results."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Use Theorem 4.1's fixed round-to-nearest scaled p-word computation and its normwise forward-error bound; NumStability has no corresponding multiword narrow-range theorem.",
+      "task_id": "P20-T3",
+      "theorem_name": "p20_t3_multiword_forward_error"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Represent an undefined first-order lesssim by an explicit second-order remainder instead of silently replacing it with an exact displayed inequality.",
+    "Represent input and accumulation underflow contributions separately.",
+    "Do not promote experimental curves, qualified expectations, or future generalizations to theorem targets.",
+    "Keep every public definition free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source and the compiled condition-L bundle recorded in metadata/library_olean.json."
+  ],
+  "short_name": "Mary--Mikaitis (2025)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/24M1685109",
+    "local_path": "paper_bencmark/reference_papers/P20_ERROR ANALYSIS OF MATRIX MULTIPLICATION WITHNARROW RANGE FLOATING-POINT ARITHMETIC.pdf",
+    "page_map": "Physical PDF pages 1-16 are journal pages B785-B800.",
+    "pdf_pages": 16,
+    "rights_note": "The local PDF states SIAM copyright and that redistribution is subject to the SIAM license. Release only bibliographic metadata, the DOI locator, hashes, and concise benchmark-author paraphrases/formal restatements; do not redistribute the source PDF.",
+    "sha256": "ad830de20a73ff77b6e457921892b3250ba9ff70f487501979ee3f1c5f3f31e2"
+  },
+  "title": "Error Analysis of Matrix Multiplication with Narrow Range Floating-Point Arithmetic"
+}

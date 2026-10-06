@@ -1,0 +1,96 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 14-page paper in physical-PDF order, surveyed every stated theorem and source-proved derivation, and compared all candidates with the frozen Mathlib and importable NumStability baselines.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P30 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Sheung Hun Cheng",
+    "Nicholas J. Higham"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [],
+  "paper_id": "P30",
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 19(4), 1998, printed pages 1097-1110",
+  "publication": {
+    "doi": "10.1137/S0895479896302898",
+    "issue": "4",
+    "journal": "SIAM Journal on Matrix Analysis and Applications",
+    "printed_pages": "1097-1110",
+    "publication_date": "1998-07-17",
+    "volume": "19",
+    "year": 1998
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Theorem 3.1, the nearest symmetric matrix with minimum eigenvalue at least delta",
+      "reason": "The paper states the spectral-clipping formulas but supplies no proof, referring instead to earlier work. It therefore lacks the source proof text required for a benchmark task. Neither the frozen importable library nor Mathlib contains the complete nearest-matrix theorem."
+    },
+    {
+      "candidate": "Theorem 3.2, Ostrowski's congruence theorem",
+      "reason": "The result is explicitly quoted from Horn and Johnson and no proof is given in this paper. The compiled library and Mathlib do not provide this eigenvalue-congruence theorem in a readily usable form."
+    },
+    {
+      "candidate": "equations (3.3)-(3.6), the perturbation and condition-number bounds for Algorithm MC",
+      "reason": "These are source-backed derivations, but their substantial spectral content is Theorems 3.1 and 3.2. Once those quoted results are supplied as common premises, the remaining proof is a short chain of scalar inequalities. Proving Ostrowski's theorem inside the target would add a proof absent from the paper."
+    },
+    {
+      "candidate": "equations (3.7)-(3.8), dimension-only bounds for the bounded-Bunch--Kaufman triangular factor",
+      "reason": "Equation (3.7) is an elementary trace and finite-sum estimate, with its spectral ingredients already available through Mathlib. The final inverse-factor estimate in (3.8) is cited from Higham's book rather than proved here."
+    },
+    {
+      "candidate": "Section 5, the Frobenius perturbation-ratio bound for negative-definite matrices",
+      "reason": "After the previously derived equation (3.7), this is a short triangle-inequality argument and is below the T3 difficulty floor. Treating permutation invariance or standard norm identities as the main task would not create a source-faithful difficult result."
+    },
+    {
+      "candidate": "backward stability of BBK and the modified Cholesky factorization",
+      "reason": "The paper relies on previously published factorization-stability results and gives no complete rounding-error proof. The relevant Chapter-11 NumStability developments are source-only and absent from the frozen compiled L condition."
+    },
+    {
+      "candidate": "the numerical comparisons in Section 5",
+      "reason": "The tables, plots, and performance observations are experiments rather than universally quantified mathematical results proved in the paper."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No source-proved target needs exactly one substantial importable NumStability result. The compiled spectral declarations are chiefly adapters to Mathlib, while the needed nearest-matrix, Ostrowski, and modified-Cholesky results are unavailable."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source-proved target directly needs at least two distinct substantial results from the frozen importable library. The paper's main bounds instead depend on two externally sourced spectral theorems not available to L."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. Theorems 3.1 and 3.2 lack source proofs, and the paper's own derivations become short consequences when those theorems are assumed. Equations (3.7) and the negative-definite ratio bound are also below the difficulty of a qualifying T2."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only mathematical conclusions whose statement and proof are present in this paper.",
+    "Do not turn a theorem quoted from an earlier source into a paper-proved task.",
+    "Do not hide Ostrowski's congruence theorem behind a premise and then classify its short scalar consequences as a difficult task.",
+    "Treat compiled spectral adapters as non-substantial when the same underlying theorem is readily available from Mathlib.",
+    "Do not turn numerical experiments into theorem targets.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source, its importable compiled subset, and Mathlib."
+  ],
+  "short_name": "Cheng--Higham (1998)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/S0895479896302898",
+    "local_path": "paper_bencmark/reference_papers/P30-A Modified Cholesky Algorithm Based on a Symmetric Indefinite Factorization.pdf",
+    "page_map": "Physical PDF pages 1-14 are printed pages 1097-1110 respectively.",
+    "pdf_pages": 14,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "c1ba6c4a1cd47881a3acf50bb97b327e410ec6eee516635991df7d03d9afe364"
+  },
+  "title": "A Modified Cholesky Algorithm Based on a Symmetric Indefinite Factorization"
+}

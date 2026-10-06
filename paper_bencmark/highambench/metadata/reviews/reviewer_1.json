@@ -1,0 +1,198 @@
+{
+  "record_status": "superseded_construction_snapshot",
+  "schema_version": "highambench-review-0.2",
+  "review_id": "P01-final-source-and-mathematics-review-1",
+  "reviewer": {
+    "id": "codex-independent-source-and-mathematics-pass",
+    "kind": "Codex review pass, not a human reviewer",
+    "focus": "paper meaning, mathematical assumptions, source anchors, exact and semantic library overlap, and tier honesty",
+    "independence_note": "This review re-read the source and searched the two codebases directly. It did not accept reviewer_2.json or the task authors' overlap claims as evidence."
+  },
+  "review_date": "2026-07-26",
+  "overall_status": "final pass for task quality; observational-pilot limitations remain",
+  "review_basis": {
+    "benchmark_specification": {
+      "path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+      "sha256": "25a8a72d62e2ad9d131004b871f5ccc58438d488dbd64afcd0a8839e9e4d78a8",
+      "pages_read": [1, 2, 3, 4]
+    },
+    "paper": {
+      "path": "paper_bencmark/reference_papers/THE ACCURACY OF FLOATING POINT SUMMATION.pdf",
+      "sha256": "d5ad99fac5022da54dbe02721ea57116df3cec15badddd7c96c344328718fea7",
+      "pdf_pages_re_read": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+      "formula_pages_visually_checked": [2, 3, 6, 11],
+      "printed_pages_re_read": [
+        784,
+        785,
+        788,
+        793
+      ]
+    },
+    "code_search": {
+      "evidence_file": "paper_bencmark/highambench/metadata/evidence/exact_target_search.json",
+      "evidence_sha256": "89fab1e3f2f02e9f6b1d85761d6fae626b83393d465aed61ea8ef5fe27dd6543",
+      "numstability_commit": "45813a95dacf577461bae13f033af0dbc985a225",
+      "mathlib_commit": "e8ea1afc32790ce1d4e1a4e45cc412ba9388716b"
+    },
+    "environment": {
+      "environment_id": "highambench-p01-f4b35735854f72ce",
+      "environment_bundle_sha256": "f4b35735854f72ce28fb52300aa7cee67b37d6bca05987a012ebc80e845280a5",
+      "validator_sha256": "2842f43cab220363ba3b6bb66004e3023d15c3eba5a8a6ddbb048aa2507808cb",
+      "release_manifest_sha256": "d4889169929f629a745207dbe85dc9df179caf3ae11ee5b0a43a1111119b69e2",
+      "packages_runtime_manifest_sha256": "a2ee0563bc731aa3dba22ed7af0e9bd1322c8c06b51cd9d01bd573282d9c8c31"
+    },
+    "construction_check": {
+      "path": "paper_bencmark/highambench/metadata/evidence/construction_validation.json",
+      "sha256": "f746727d22efe7704bd869b1880af7aca93c147ff13d1c76fc88d3c2ddb3165b",
+      "proofs_passed": 6,
+      "proofs_checked": 6
+    }
+  },
+  "fixed_artifact_hashes": {
+    "shared_definitions": {
+      "path": "paper_bencmark/highambench/shared/HighamBench/Definitions.lean",
+      "sha256": "5350985da64d27b8f7f77a275ffdda773b37c15e9f0c504a164edd3b5ede19d7"
+    },
+    "P01-T1": {
+      "target_sha256": "11a966a96916675045f6965f323e5233f87eb80e2c92aada13a567c9ef677c33",
+      "context_sha256": "343b81790e07535416fd7083b076aeb137674520c61f0834fd859c272ea0f044",
+      "task_json_sha256": "10dc78280c6d968cfa10f55279438a669f0d54cdb871955a88b8109e0d99a818",
+      "controlled_manifest_sha256": "9b58cbd0a899f08735d1a719ec739ce4bc8ae84d43e2c77a71215806eccd8b42"
+    },
+    "P01-T2": {
+      "target_sha256": "9e21ce9099bf6d68cf794b72e3dddc9c0b2f7f538a32a4a8697f547657552505",
+      "context_sha256": "feee2f423b1a31f74646e9217229cd28bff9227dc45a6bbb98f0d407c8fd1ab4",
+      "task_json_sha256": "919ddf24d6886a9add6e2fd5b6723986f41622878fed4eb129cfc5252637a03f",
+      "controlled_manifest_sha256": "227010c71fde4d31ae05ae7069bac53a242d216d2e13d8e7b859fd7b435e7460"
+    },
+    "P01-T3": {
+      "target_sha256": "5f2b7112d090c066ade9b11c1f24f363ad6e6e04c6dce5bc804a981441c8a95d",
+      "context_sha256": "81666fb071643e9cbb83f5f23a282606702103869307206989d1df7d7302dfef",
+      "task_json_sha256": "720578e261f49cbd41f1e236919f003d165d7c8601003e26877fe7d9de7566e5",
+      "controlled_manifest_sha256": "e2172fef443077a32b4cbc79ad49a51c97b1651d4f98530a25b811c67ae95a2c"
+    }
+  },
+  "skeleton_and_submission_policy": {
+    "controlled_target_skeletons": "Each controlled Target.lean intentionally ends with a sorry placeholder so every agent receives the same theorem statement and an editable proof position. Those controlled skeletons compile with Lean's expected declaration-uses-sorry warning. Separately, six fresh private complete proofs, one for each task and condition, passed the final hidden validator without sorry.",
+    "accepted_submission_rule": "The placeholder is not allowed in an answer. Gold proofs and evaluated submissions must contain no sorry, admit, new axiom, unsafe checking bypass, forbidden import, or hidden gold dependency; the validator enforces these rules before accepting a proof.",
+    "shared_statement_rule": "All symbols in the three target statements come from Mathlib or the single shared Definitions.lean file. No target imports or names NumStability."
+  },
+  "task_reviews": [
+    {
+      "task_id": "P01-T1",
+      "tier": "T1",
+      "tier_label": "direct use",
+      "checks": {
+        "source_anchors": {
+          "status": "pass",
+          "note": "PDF page 2 / printed page 784 contains the finite-product gamma estimate immediately after (2.2). PDF page 6 / printed page 788 states (3.6) for n = 2^r. PDF page 3 / printed page 785 explains that nonnegative inputs make the absolute-value sum equal the ordinary sum. The Section 2 heading is correctly recorded as Orderings of Recursive Summation."
+        },
+        "lean_statement_matches_paper_and_keeps_assumptions": {
+          "status": "pass",
+          "note": "The target keeps the power-of-two length, pointwise nonnegativity, standard relative-error addition rule, nonnegative unit roundoff, and r*u < 1 gamma guard. It states exactly the nonnegative specialization of (3.6). StandardAddModel also carries an exact-addition-from-zero field for the common interface and library adapters, but pairwiseSum never uses that extra field; the task metadata says this directly."
+        },
+        "informal_proof_context_is_enough": {
+          "status": "pass",
+          "note": "The context gives the standard addition model, the exact gamma formula and guard, the depth-r argument, the triangle inequality, and the nonnegative simplification. No unrelated paper material is needed."
+        },
+        "statement_builds_in_both_conditions": {
+          "status": "pass",
+          "note": "The fixed T1 statement compiled in both isolated conditions, and fresh complete N and L construction proofs both passed the final hidden validator. The construction record checks the unchanged source header and Lean-level type equality."
+        },
+        "exact_and_semantic_target_absent_from_mathlib_and_numstability": {
+          "status": "pass",
+          "note": "No declaration states the full fixed target. NumStability.pairwiseSum_forward_error_bound is the expected stronger theorem, and pairwiseSum_forward_error_bound_oneSigned is a close corollary. The fixed result is deliberately an immediate specialization, but it still requires a shared-model/algorithm adapter and the nonnegative simplification."
+        },
+        "tier_assigned_before_evaluation_and_honest": {
+          "status": "pass",
+          "note": "T1 was fixed before measured runs and is genuinely direct use because condition L has a close general pairwise theorem."
+        },
+        "source_environment_task_and_validator_frozen_and_hashed": {
+          "status": "pass",
+          "note": "The paper, shared file, target, context, task metadata, controlled manifest, final environment bundle, validator, pruned package view, and release hashes are recorded above. The controlled manifest verifies all four execution-controlled files, and the final construction record passes both conditions."
+        }
+      },
+      "review_outcome": "pass"
+    },
+    {
+      "task_id": "P01-T2",
+      "tier": "T2",
+      "tier_label": "combine",
+      "checks": {
+        "source_anchors": {
+          "status": "pass",
+          "note": "PDF page 2 / printed page 784 gives the exact gamma estimate, PDF page 3 / printed page 785 gives recursive bound (2.6), and PDF page 6 / printed page 788 gives pairwise bound (3.6) and compares its logarithmic coefficient with the recursive coefficient. The section names and page numbers are correct."
+        },
+        "lean_statement_matches_paper_and_keeps_assumptions": {
+          "status": "pass",
+          "note": "The target keeps n = 2^r, unrestricted input signs, the standard addition model, and validity at 2^r - 1. The shared recursiveSum definition copies the first input exactly; it does not call rounded addition from zero. The separate zero-addition model field supports the common interface and library adapter. The larger guard also validates r because r <= 2^r - 1 and u is nonnegative. The third conjunct compares only gamma coefficients; it does not claim that the two actual errors are ordered for every input."
+        },
+        "informal_proof_context_is_enough": {
+          "status": "pass",
+          "note": "The context supplies both paper bounds and explicitly identifies the remaining combination steps: the natural-number inequality, transfer of gamma validity, and gamma monotonicity. It also states the important actual-error warning."
+        },
+        "statement_builds_in_both_conditions": {
+          "status": "pass",
+          "note": "The fixed T2 statement compiled in both isolated conditions, and fresh complete N and L construction proofs both passed the final hidden validator. The construction record checks the unchanged source header and Lean-level type equality."
+        },
+        "exact_and_semantic_target_absent_from_mathlib_and_numstability": {
+          "status": "pass",
+          "note": "No declaration states the full three-part target. Condition L has the separate pairwise bound, recursive bound, gamma-validity monotonicity, and gamma monotonicity results, exactly as expected for a combine task."
+        },
+        "tier_assigned_before_evaluation_and_honest": {
+          "status": "pass",
+          "note": "T2 was fixed before measured runs. It is genuinely combine because several existing results must be joined with task-specific power-of-two arithmetic and guard transfer."
+        },
+        "source_environment_task_and_validator_frozen_and_hashed": {
+          "status": "pass",
+          "note": "The paper, shared file, target, context, task metadata, controlled manifest, final environment bundle, validator, pruned package view, and release hashes are recorded above. The controlled manifest verifies all four execution-controlled files, and the final construction record passes both conditions."
+        }
+      },
+      "review_outcome": "pass"
+    },
+    {
+      "task_id": "P01-T3",
+      "tier": "T3",
+      "tier_label": "extend",
+      "checks": {
+        "source_anchors": {
+          "status": "pass",
+          "note": "PDF page 11 / printed page 793 states the separate alpha/beta no-guard model in (5.1), the accumulated recursive error identity in (5.2), and the computed-previous-sum bound in (5.3). All three anchors and the Section 5 title are correct."
+        },
+        "lean_statement_matches_paper_and_keeps_assumptions": {
+          "status": "pass",
+          "note": "NoGuardAddModel preserves the two separate local errors and their absolute bounds. recursiveSum keeps the first input exact, and noGuardRecursiveRunningBudget is exactly the sum from k = 2 through n of the previous computed-sum size plus the new-input size. The conclusion is (5.3), no gamma guard is added, and positivity of unit roundoff is the ordinary no-guard model assumption. The harmless n = 0 case extends the source statement by a definitional zero base case."
+        },
+        "informal_proof_context_is_enough": {
+          "status": "pass",
+          "note": "The context explains the one-step error identity, accumulation from the second input, the triangle inequality, both base cases, and the exact recursive budget update. It is enough to reconstruct either a direct induction or a proof using a generic accumulation helper."
+        },
+        "statement_builds_in_both_conditions": {
+          "status": "pass",
+          "note": "The fixed T3 statement compiled in both isolated conditions, and fresh complete N and L construction proofs both passed the final hidden validator. The construction record checks the unchanged source header and Lean-level type equality."
+        },
+        "exact_and_semantic_target_absent_from_mathlib_and_numstability": {
+          "status": "pass",
+          "note": "No declaration states the full fixed target. The search explicitly considered the standard-model recursive running theorem, the one-step no-guard identity, the generic runningError_bound_from_local_errors scaffold, the no-guard fold expansion, and the no-guard tree backward theorem. None supplies the fixed no-guard recursive state and computed-prefix budget without substantial new bridges."
+        },
+        "tier_assigned_before_evaluation_and_honest": {
+          "status": "pass",
+          "note": "T3 was fixed before measured runs. The final package openly discloses the generic accumulation scaffold. Even with it, condition L must create new no-guard state, witness, indexing, final-state, and exact-budget bridges, or prove the longer induction directly, so extend remains an honest label."
+        },
+        "source_environment_task_and_validator_frozen_and_hashed": {
+          "status": "pass",
+          "note": "The paper, shared file, target, context, task metadata, controlled manifest, final environment bundle, validator, pruned package view, and release hashes are recorded above. The controlled manifest verifies all four execution-controlled files, and the final construction record passes both conditions."
+        }
+      },
+      "review_outcome": "pass"
+    }
+  ],
+  "observational_limitations": {
+    "one_paper_only": "This release contains only P01, as requested. It cannot represent numerical analysis as a whole. Resampling whole papers with one paper repeats that same paper, so a 95% bootstrap range is degenerate and not informative.",
+    "no_backend_seeds": "rep-01, rep-02, and rep-03 are repetition IDs, not demonstrated fixed model seeds. The specification's paired fixed-seed rule is therefore not met, so measurements must be reported as an observational pilot and not as a reference HighamBench score.",
+    "no_oci_image": "There is no frozen OCI container image. Fresh bubblewrap namespaces and a hashed environment bundle are used instead. The read-only host system folders are not one completely fingerprinted filesystem, so this is a stated reference-protocol deviation.",
+    "provider_connection": "Model-accessible web and shell networking are disabled, but the Codex control process must keep its provider connection. This boundary must remain visible in the report.",
+    "measurement_status": "This review approves the task construction only. It does not claim that the planned 18-run measurement matrix has been executed or that any result is a protocol-compliant benchmark score."
+  },
+  "reviewer_summary": "All three fixed statements are faithful to the cited paper results, retain the assumptions needed by the formal models, compile in both conditions, and are not already stated as full declarations in Mathlib or the frozen NumStability baseline. T1 is deliberately a direct specialization of a stronger library result; T2 combines separate results; T3 needs a new no-guard accumulation. Approval is limited to task quality; the one-paper corpus, lack of backend seeds, and lack of a frozen OCI image require all measurements to remain clearly labeled as an observational pilot."
+}

@@ -1,0 +1,82 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "equation (2.3) with explicit paper-local two-precision execution model",
+    "performed_by": "Codex"
+  },
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "Identical fixed statement and P63 shared files plus frozen NumStability library.",
+    "N": "Identical fixed statement and P63 shared files; no NumStability artifact."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P63/T1/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p63_t1_two_precision_residual (fpHi fpLo : P63FPModel) (n : \u2115) ... : \u2200 i, componentwise two-precision residual error bound",
+    "namespace": "HighamBench",
+    "plain_language": "Each component of the stored residual differs from the exact residual by at most the working-precision rounding of that exact component plus the amplified high-precision residual error.",
+    "target_file": "paper_bencmark/highambench/tasks/P63/T1/Target.lean",
+    "theorem_name": "p63_t1_two_precision_residual"
+  },
+  "informal_proof": "The paper bounds the high-precision residual calculation, bounds its rounding to working precision, and combines the two stage errors.",
+  "informal_statement": "The computed two-precision iterative-refinement residual obeys the componentwise error bound in equation (2.3).",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P63",
+  "paper_source": {
+    "local_path": "papers_to_be_approved/P63-Carson-Higham-2017-New-Iterative-Refinement.pdf",
+    "sha256": "47221c23d99c1717c5035a48e844dec3381c4af9a15aa9d3ddf81559e915cb22"
+  },
+  "paper_version": "published SISC version; 2017, volume 39 issue 6, pages A2834-A2856",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.conventional_residual_error"
+    ],
+    "note": "Both exact private proofs compile without sorry/admit; N imports no NumStability."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P63FPModel",
+    "P63Matrix",
+    "p63Gamma",
+    "P63GammaValid",
+    "p63RoundedDotProduct",
+    "p63RoundedMatVec",
+    "p63HighResidual",
+    "p63StoredResidual"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Algorithm 1.1, residual computed in high precision and stored in working precision",
+      "pdf_page": 3,
+      "printed_page": "A2835",
+      "role": "algorithm and two-precision premise",
+      "section": "1. Introduction"
+    },
+    {
+      "anchor": "two-stage residual derivation and equation (2.3)",
+      "pdf_page": 5,
+      "printed_page": "A2837",
+      "role": "selected result and source proof",
+      "section": "2. Error analysis of iterative refinement"
+    }
+  ],
+  "source_tags": [
+    "EQN"
+  ],
+  "task_id": "P63-T1",
+  "tier": "T1",
+  "tier_label": "direct use",
+  "tier_rationale": "The exact L proof invokes one substantial frozen theorem, NumStability.conventional_residual_error, for the high-precision residual stage. The N proof reconstructs the rounded dot-product and residual analyses independently. The final storage-rounding step is simple algebra, and Mathlib has no ready floating-point residual theorem. N is over 700 lines; L is under 100.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P63/T1/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p63_t1_two_precision_residual"
+  }
+}

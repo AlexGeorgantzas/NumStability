@@ -1,0 +1,96 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 27-page paper in physical-PDF order, surveyed every named result and displayed proof, compared candidates with the frozen Mathlib and importable NumStability baselines, and privately formalized the selected lemma in both conditions before packaging it.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P26 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Takeshi Fukaya",
+    "Ramaseshan Kannan",
+    "Yuji Nakatsukasa",
+    "Yusaku Yamamoto",
+    "Yuka Yanagisawa"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P26-T1"
+  ],
+  "paper_id": "P26",
+  "paper_version": "published journal version; SIAM Journal on Scientific Computing 42(1), 2020, printed pages A477-A503",
+  "publication": {
+    "doi": "10.1137/18M1218212",
+    "issue": 1,
+    "journal": "SIAM Journal on Scientific Computing",
+    "printed_pages": "A477-A503",
+    "publication_date": "2020-02-20",
+    "volume": 42,
+    "year": 2020
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Lemma 3.1, the orthogonality-defect and spectral-norm bounds for the first shifted step",
+      "reason": "The proof consumes previously established aggregate bounds and is dominated by paper-specific matrix and spectral algebra. The available solver theorem is only an indirect precursor, while no single substantial importable result cleanly supplies the proof's main work."
+    },
+    {
+      "candidate": "Theorem 3.3, the condition-number reduction bound",
+      "reason": "Although the surrounding algorithm computes both a Gram matrix and triangular row solves, the theorem's stated proof uses their already-established aggregate estimates and then carries out a paper-specific SVD and singular-value argument. Requiring both importable algorithms directly would need a synthetic combined execution certificate, and a complete execution-level version would additionally need the cited, unavailable Cholesky backward-error theorem. It therefore does not meet T2 faithfully."
+    },
+    {
+      "candidate": "Theorem 4.1, the final shiftedCholeskyQR3 orthogonality and residual bounds",
+      "reason": "Its proof relies on CholeskyQR2 estimates imported from reference [23] and sends a key bound, equation (4.17), to supplementary material. The supplied paper therefore does not contain a self-contained proof suitable for a new source-faithful task."
+    },
+    {
+      "candidate": "Theorem 5.1, the oblique-inner-product result",
+      "reason": "The paper explicitly states that proof details are in a preprint or supplementary material because of space limitations; that proof source is not part of the supplied paper."
+    },
+    {
+      "candidate": "Algorithms, parameter recommendations, and numerical experiments in Sections 4-7",
+      "reason": "These are procedure descriptions, implementation choices, or empirical comparisons rather than additional proved mathematical conclusions meeting a tier."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Selected Lemma 3.2 in the equivalent multiplication form (3.40). Its proof needs exactly one substantial importable result: the complete triangular-solve backward-error theorem for the actual rounded row solves.",
+      "task_id": "P26-T1",
+      "theorem_name": "p26_t1_lemma_3_2"
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source-faithful proved target makes at least two distinct substantial importable NumStability results direct necessities. The appearance of Gram multiplication and triangular solution in the overall algorithm is not enough."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. The hard proved results depend materially on available triangular-solve and, at the algorithm level, matrix-product analysis. Results without that help are either easier, depend on unavailable cited results, or have their proof omitted from the supplied paper."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only mathematical conclusions explicitly stated and proved in the supplied paper.",
+    "Represent every row solve by the actual rounded forward-substitution recurrence for the transposed upper-triangular factor.",
+    "Share equations (3.25)-(3.28) and Lemma 3.1's Frobenius consequence identically between N and L, but do not assume the solver perturbation exists.",
+    "Use the equivalent multiplication form (3.40), avoiding division by a potentially zero norm while preserving the source bound.",
+    "Do not assign T2 merely because two numerical operations appear in the algorithm.",
+    "Do not convert cited, supplementary, omitted, or experimental claims into benchmark tasks.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source, its importable compiled subset, and Mathlib."
+  ],
+  "short_name": "Fukaya et al. (2020)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/18M1218212",
+    "local_path": "paper_bencmark/reference_papers/P26-Shifted Cholesky QR for Computing the QR Factorization of Ill-Conditioned Matrices.pdf",
+    "page_map": "Physical PDF pages 1-27 are printed pages A477-A503 respectively.",
+    "pdf_pages": 27,
+    "rights_note": "The paper is published under the Creative Commons Attribution 4.0 license.",
+    "sha256": "3874e47dcb4bf7a3675b639dd40d49daacef7d7a8d8ad9dbd75d058ea0c5bbbc"
+  },
+  "title": "Shifted Cholesky QR for Computing the QR Factorization of Ill-Conditioned Matrices"
+}

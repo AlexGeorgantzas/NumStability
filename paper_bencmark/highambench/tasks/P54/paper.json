@@ -1,0 +1,86 @@
+{
+  "annotation": {
+    "method": "Codex rendered and read all 14 pages of the image-only scan in physical order, covering Sections 1-7, equations (1.1) and (2.1)-(4.3), both cited lemmas, the complete Algorithm II construction and stability analysis, all three numerical tables, extensions, and all 26 references; separated original proof content from cited results and informal floating-point constants; audited Mathlib and the exact frozen 44-object NumStability surface; and compiled exact private N/L proofs before retaining P54-T3.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P54 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Ming Gu",
+    "Stanley C. Eisenstat"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P54-T3"
+  ],
+  "paper_id": "P54",
+  "paper_version": "Yale Research Report YALEU/DCS/RR-916, September 30, 1992",
+  "publication": {
+    "version_date": "1992-09-30",
+    "year": 1992
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Lemma 1",
+      "reason": "The interlacing, secular equation, and eigenvector formula are explicitly attributed to Bunch, Nielsen, and Sorensen [7], so rebuilding them would turn cited background into a P54 proof obligation."
+    },
+    {
+      "candidate": "root-finder roundoff claim and stopping criterion (3.4)",
+      "reason": "The paper summarizes the accumulated operation error as eta times n, where eta is only a small unspecified multiple of machine precision. An exact T1 or T2 task would require choosing operation counts or constants not stated by the source; isolating generic recursive summation would test a background theorem rather than P54's complete claim."
+    },
+    {
+      "candidate": "Section 4 bounds (4.1)-(4.3)",
+      "reason": "Once the stopping-error inequality is supplied, the eigenvalue and modified-vector bounds are exact algebraic estimates, but the frozen library supplies no substantial paper-specific shortcut. Generic finite-product and exponential inequalities do not create the required material T1 advantage, and no exact result receives two distinct substantial shortcuts."
+    },
+    {
+      "candidate": "Lemma 2 and Section 5 orthogonality comparison",
+      "reason": "Lemma 2 is explicitly attributed to Dongarra and Sorensen [9]; the following comparison applies that cited result and does not provide a new self-contained theorem with a qualifying tier profile."
+    },
+    {
+      "candidate": "Section 6 numerical results and Section 7 extensions",
+      "reason": "The tables are empirical, while the extensions are literature pointers and qualitative claims rather than universal proofs."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No exact internally proved P54 result needs one substantial non-Mathlib declaration from the frozen NumStability bundle. The only apparent rounding match is stated with an unspecified constant, while exact Section 4 descendants get no material library shortcut."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No exact source-proved P54 result receives two distinct substantial compiled NumStability shortcuts without inventing constants for the informal floating-point discussion."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Selected the inverse secular construction in equations (3.2)-(3.3): positivity of the interlacing weights and the arbitrary-degree characteristic-product identity. Exact N/L proofs establish substantial sign, product, degree, and interpolation reasoning with no NumStability shortcut.",
+      "task_id": "P54-T3",
+      "theorem_name": "p54_t3_inverse_secular_construction"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only statements and proof content present in P54.",
+    "Treat Lemmas 1 and 2 as cited background, not P54 proof obligations.",
+    "Express the inverse secular construction as the polynomial identity obtained by expanding the paper's displayed determinant equation.",
+    "Retain the positivity conclusion that the paper derives from interlacing.",
+    "Do not manufacture exact floating-point constants where the paper uses eta as an unspecified small multiple of machine precision.",
+    "Assign a tier only after exact private N and L proofs compile."
+  ],
+  "short_name": "Gu--Eisenstat (1992)",
+  "source": {
+    "lawful_source_locator": "local user-supplied scan of Yale Research Report YALEU/DCS/RR-916",
+    "local_path": "paper_bencmark/reference_papers/P54 A Stable and Efficient Algorithm for the Rank-One Modification of the Symmetric Eigenproblem.pdf",
+    "page_map": "Physical page 1 contains the abstract and report title page; physical pages 2-14 carry printed pages 1-13.",
+    "pdf_pages": 14,
+    "rights_note": "The scan states that it is approved for public release and distribution is unlimited; retain the local source path and hash for benchmark provenance.",
+    "sha256": "f3f964d15bb19dc85c96257c63f82086dbe0c6336a3867df8e1431aa293957d7"
+  },
+  "title": "A Stable and Efficient Algorithm for the Rank-One Modification of the Symmetric Eigenproblem"
+}

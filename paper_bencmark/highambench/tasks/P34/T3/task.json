@@ -1,0 +1,92 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source-faithful finite-matrix formalization of Lemma 4.1 and the structural guarantees stated after Algorithm 4.1",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The natural number n counts stored subdiagonal positions, so each represented unit lower-bidiagonal matrix has size n+1.",
+    "The input subdiagonal entries are nonnegative and satisfy the paper's zero-propagation condition b_(i+1)=0 whenever c_i=0.",
+    "The positive index q is the first later zero of b, or q=n when no such zero occurs; hbefore and hstop expose this stopping condition.",
+    "The arithmetic-operation count is the exact-real count for the subtraction-free recurrence and does not model overflow or underflow."
+  ],
+  "author_label": "Lemma 4.1",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P34 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P34 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P34/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p34_t3_dqd2_refactorization (n q b c) (hn) (hqpos) (hqn) (hb) (hc) (hbefore) (hzero) (hstop) : transformed subdiagonals are nonnegative, have b'_0=0, preserve the exact bidiagonal matrix product and zero pattern, and use at most 4*n operations",
+    "namespace": "HighamBench",
+    "plain_language": "The subtraction-free dqd2 recurrence turns two nonnegative unit lower-bidiagonal factors into two factors with the same product and a zero first entry, preserves the required zero structure, and respects the paper's linear operation bound.",
+    "target_file": "paper_bencmark/highambench/tasks/P34/T3/Target.lean",
+    "theorem_name": "p34_t3_dqd2_refactorization"
+  },
+  "informal_proof": "Use the auxiliary d recurrence from equation (4.3). Before the first zero of b, the paper's zero-propagation condition makes every denominator positive. The two recurrence identities preserve the first and second subdiagonals of the bidiagonal matrix product. Expand each unit bidiagonal matrix as the identity plus its lower shift to obtain exact product equality. The same positivity argument proves the stated zero-pattern properties, and q<=n gives the operation bound.",
+  "informal_statement": "Lemma 4.1 and Algorithm 4.1: compute nonnegative unit lower-bidiagonal factors B' and C' with B'C'=BC and b'_1=0 by a subtraction-free recurrence using at most 4n operations, with the stated zero-pattern guarantees.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P34",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P34-Accurate Computations with Totally Nonnegative Matrices.pdf",
+    "sha256": "49821f7d188be38c476db9f5a52439c31754cabe664d07b21f77dc81ab1ae05b"
+  },
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 29(3), 2007, printed pages 731-751",
+  "result_form_tag": "LEM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "totally nonnegative bidiagonal decomposition",
+        "Neville elimination",
+        "dqd2 bidiagonal refactorization",
+        "elementary elimination transformation",
+        "TNAddToNext"
+      ],
+      "result": "Neither Mathlib nor the importable frozen NumStability set contains Koev's bidiagonal decomposition, dqd recurrence, elementary-elimination transformation, or product-preserving zero-pattern theorem. The compiled library's conventional LU and Givens-QR results concern different representations and floating-point error statements.",
+      "scope": "the complete frozen NumStability source, the compiled condition-L bundle recorded in metadata/library_olean.json, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.nonneg_factors_absLU_eq",
+      "NumStability.nonneg_factors_absLU_eq_absProduct",
+      "NumStability.LUFactSpec.of_firstSchurComplement"
+    ],
+    "note": "The nearby declarations do not define bidiagonal decomposition or prove the dqd transformation. The private N and L proofs reconstruct the same recurrence positivity, denominator, sparse matrix-product, zero-pattern, and count arguments; they compile in 196 and 205 lines respectively, and L has no substantial shortcut."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "p34LowerShift",
+    "p34UnitLowerBidiagonal",
+    "p34DqdD",
+    "p34DqdB",
+    "p34DqdC"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Lemma 4.1, equations (4.1)-(4.3), Algorithm 4.1, and the following zero-pattern paragraph",
+      "pdf_page": 7,
+      "printed_page": "737-739",
+      "role": "selected subtraction-free refactorization statement, complete proof, recurrence, operation count, and structural guarantees",
+      "section": "4.1. Adding a multiple of a row to the next one"
+    }
+  ],
+  "source_tags": [
+    "LEM"
+  ],
+  "task_id": "P34-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The proof must analyze a dimension-indexed nonlinear recurrence with possible zeros, establish denominator positivity from the paper's structural hypothesis, prove exact equality of two sparse finite-matrix products, and recover all zero-pattern and operation-count guarantees. This is substantial multi-part formalization work, not a Mathlib import. NumStability has no corresponding compiled bidiagonal or dqd theorem, so L receives no material advantage over N.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P34/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p34_t3_dqd2_refactorization"
+  }
+}

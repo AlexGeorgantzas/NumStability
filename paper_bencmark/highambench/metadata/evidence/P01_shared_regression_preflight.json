@@ -1,0 +1,45 @@
+{
+  "record_status": "superseded_construction_snapshot",
+  "schema_version": "0.2.0",
+  "kind": "highambench-condition-n-shared-regression-preflight",
+  "paper_id": "P01",
+  "generated_at_utc": "2026-07-28T23:09:28Z",
+  "reason": "P02 extends the shared Definitions.lean file, so the existing P01 controlled packages were regenerated and condition-N isolation was checked again.",
+  "results": [
+    {
+      "task_id": "P01-T1",
+      "controlled_manifest_sha256": "86f7337c5b7ca904ddeeac0c4693496a70c0c9616d277f706505917624d4a37b",
+      "controlled_files_verified": 4,
+      "filesystem_leaks": [],
+      "forbidden_module_importable": false,
+      "probe_reliable": true,
+      "pass": true
+    },
+    {
+      "task_id": "P01-T2",
+      "controlled_manifest_sha256": "32a48de1620dc445c0ee30b9912f5b461cb825f01b361b141a8ed63d2c90fe4a",
+      "controlled_files_verified": 4,
+      "filesystem_leaks": [],
+      "forbidden_module_importable": false,
+      "probe_reliable": true,
+      "pass": true
+    },
+    {
+      "task_id": "P01-T3",
+      "controlled_manifest_sha256": "92a778f1e154aaa41fe4ca0f2622552c233fe98f4779c63e5cf53f39cf0fcf22",
+      "controlled_files_verified": 4,
+      "filesystem_leaks": [],
+      "forbidden_module_importable": false,
+      "probe_reliable": true,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "tasks_checked": 3,
+    "complete_staged_task_scans_passed": 3,
+    "reliable_failed_import_probes": 3,
+    "filesystem_leaks": 0,
+    "pass": true
+  },
+  "limitation": "This is a public-package isolation regression check, not a replacement for rebuilding the P01 private construction proofs against the changed shared hash."
+}

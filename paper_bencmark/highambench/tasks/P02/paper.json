@@ -1,0 +1,94 @@
+{
+  "annotation": {
+    "method": "Codex freshly reread the complete local paper for the missing-tier audit, surveyed every theorem, lemma, proposition, corollary, and algorithm block, and compared the proof dependencies with the actual frozen NumStability source and Mathlib. The existing tasks were not used as the candidate pool.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The benchmark specification calls for source review and labeling. The project owner explicitly asked Codex to perform every such intervention for this entry."
+  },
+  "authors": [
+    "Takeshi Ogita",
+    "Siegfried M. Rump",
+    "Shin'ichi Oishi"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P02-T1",
+    "P02-T3"
+  ],
+  "paper_id": "P02",
+  "paper_version": "journal version; volume 26, issue 6, 2005, printed pages 1955-1988",
+  "publication": {
+    "doi": "10.1137/030601818",
+    "issue": 6,
+    "journal": "SIAM Journal on Scientific Computing",
+    "printed_pages": "1955-1988",
+    "volume": 26,
+    "year": 2005
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Theorem 3.4",
+      "reason": "The TwoSum and TwoProduct exactness proofs are chiefly delegated to Knuth and Dekker; their contracts are instead part of the minimal shared setting."
+    },
+    {
+      "candidate": "equation (4.7)(i), the VecSum exact-sum invariant",
+      "reason": "The proof is a short induction over the supplied local TwoSum exactness contract and does not require a substantial NumStability result."
+    },
+    {
+      "candidate": "Proposition 4.10",
+      "reason": "It is a valid SumK extension candidate, but Proposition 5.11 also captures the paper's dot-product contribution and lies further beyond the current library."
+    },
+    {
+      "candidate": "relative-error and condition-number corollaries",
+      "reason": "They mostly divide the selected absolute bounds by a nonzero exact result and would add a nonzero assumption without adding the central algorithmic argument."
+    },
+    {
+      "candidate": "underflow branch and computed-error estimators",
+      "reason": "They require a substantially larger neutral machine setting for eta, inexact product transforms, rounded division, and algorithm failure guards."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Retain Proposition 4.5 after an exact private N/L proof audit. N reconstructs the recursive-summation forward-error analysis in a 566-line proof, while the 403-line L proof uses recursiveSum_forward_error_bound as its only substantial library result. The remaining VecSum and TwoSum-cascade work is paper-specific and shared by both conditions; historical mean wall time is also lower in L.",
+      "task_id": "P02-T1",
+      "theorem_name": "p02_t1_sum2_error_bound"
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped after a fresh complete-paper reread and frozen-source comparison. Proposition 4.10 and Proposition 5.11 require the paper-specific iterated VecSum/SumK analysis, for which NumStability has no corresponding theorem, so the library cannot supply two substantial proof components. Proposition 5.5 (Dot2) likewise gets at most one substantial reusable component: its other major ingredient is the paper-specific compensated residual and absolute-mass analysis. Theorem 3.4's local TwoSum/TwoProduct contracts are primarily delegated to earlier sources and are part of the shared arithmetic setting, so they cannot be counted as independent substantial results for T2."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Use the no-multiplication-underflow absolute bound in Proposition 5.11. It needs new iterated VecSum, transformed-product, absolute-mass, and gamma-comparison infrastructure absent from NumStability.",
+      "task_id": "P02-T3",
+      "theorem_name": "p02_t3_dotK_error_bound"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use a claim made or derived in this paper.",
+    "Avoid a result whose proof is primarily delegated to an earlier source.",
+    "Do not use experimental or flop-count claims as proof targets.",
+    "Prefer exact finite bounds to informal asymptotic terms.",
+    "Keep the condition-neutral formal setting to the local arithmetic contracts and algorithms actually used.",
+    "Do not select an exact target already present in mathlib or NumStability."
+  ],
+  "short_name": "Ogita, Rump, Oishi (2005)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/030601818",
+    "local_path": "paper_bencmark/reference_papers/P02_ACCURATE SUM AND DOT PRODUCT.pdf",
+    "page_map": "PDF page 1 is printed page 1955; add 1954 to a PDF page number to get the printed page number.",
+    "pdf_pages": 34,
+    "rights_note": "The local PDF was supplied for benchmark construction and shows a SIAM redistribution notice. The benchmark should publish its locator, hash, and short paraphrases unless redistribution permission is confirmed.",
+    "sha256": "e7b8523c793ad7345dfc76f681c44d1afbbc3a810fb948912451432ae616512d"
+  },
+  "title": "Accurate Sum and Dot Product"
+}

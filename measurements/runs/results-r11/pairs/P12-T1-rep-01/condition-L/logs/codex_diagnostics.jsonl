@@ -1,0 +1,3 @@
+{"monotonic_ns":127815525118989,"raw_line":"\u001b[2m2026-09-21T22:48:29.468348Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:","record_type":"app_server_stderr","sequence":1,"unix_ns":1790030909468380142}
+{"monotonic_ns":127815525176005,"raw_line":"      have hminLower : nfmt.emin ≤ min ex ey :=","record_type":"app_server_stderr","sequence":2,"unix_ns":1790030909468437392}
+{"monotonic_ns":127815525203067,"raw_line":"        le_min hx'.2.1 hy'.2.1","record_type":"app_server_stderr","sequence":3,"unix_ns":1790030909468464462}

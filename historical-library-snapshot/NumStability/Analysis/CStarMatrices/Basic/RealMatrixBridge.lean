@@ -1,0 +1,26 @@
+import Mathlib.Analysis.CStarAlgebra.CStarMatrix
+import Mathlib.Analysis.CStarAlgebra.ContinuousFunctionalCalculus.Order
+import Mathlib.Analysis.Matrix.Order
+import Mathlib.Data.Matrix.Block
+import NumStability.Analysis.MatrixAlgebra
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.BlockDiagonal
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.BlockDiagonalCompression
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ColumnPair
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ColumnPairPinching
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ColumnPairRangeProjection
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ColumnPairRangeReflection
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.FiniteDimensional
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.FiniteMatrixOrder
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.FiniteRealEmbedding
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.FiniteRealOrder
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ProjectionReflection
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.RectangularCompression
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.RectangularMultiplication
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ReflectionAverage
+import NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.StrictPositivity
+
+/-!
+# Analysis.CStarMatrices.Basic.RealMatrixBridge (compatibility wrapper)
+
+Import-only historical R07 path. Its declaration block moved to `NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.BlockDiagonal`, `NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.BlockDiagonalCompression`, `NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ColumnPair`, `NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ColumnPairPinching`, `NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ColumnPairRangeProjection`, `NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ColumnPairRangeReflection`, `NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.FiniteDimensional`, `NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.FiniteMatrixOrder`, `NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.FiniteRealEmbedding`, `NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.FiniteRealOrder`, `NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ProjectionReflection`, `NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.RectangularCompression`, `NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.RectangularMultiplication`, `NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.ReflectionAverage`, `NumStability.Analysis.CStarMatrices.FiniteMatrixAlgebra.StrictPositivity`, imported above. The exact C0005 direct import sequence remains available so existing imports preserve their supported public surface. This module declares nothing.
+-/

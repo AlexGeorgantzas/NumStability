@@ -1,0 +1,85 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "entrywise unit-lower inverse-action and height-product form of Theorem 3.6",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "For each reduction-tree level h, ell h is the b-by-b unit-lower GEPP factor used in the proof of Theorem 3.6.",
+    "Every strict-lower entry of ell h has absolute value at most one, as stated in the proof.",
+    "probeIn h represents the paper's bounded vector Abar_h * Ubar_(h+1)^(-1), and probeOut h is its exact inverse action, recorded by ell h * probeOut h = probeIn h.",
+    "z (h+1) is obtained by applying the next inverse factor to z h, recorded by the full entrywise level equation.",
+    "Both the one-level probe inputs and the initial repeated-product vector are bounded componentwise by one."
+  ],
+  "author_label": "Theorem 3.6",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P43 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P43 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P43/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p43_t3_calu_multiplier_growth (b H : Nat) (ell : Nat -> Nat -> Nat -> Real) (probeIn probeOut z : Nat -> Nat -> Real) (hp : P43CALUMultiplierProcess b H ell probeIn probeOut z) : (forall h<H, forall i<b, abs (probeOut h i) <= 2^i) and (forall i<b, abs (z H i) <= 2^(b*H))",
+    "namespace": "HighamBench",
+    "plain_language": "Each bounded inverse action in the proof of Theorem 3.6 satisfies its rowwise power-of-two estimate, and after H reduction-tree levels every CALU multiplier is bounded by 2^(bH).",
+    "target_file": "paper_bencmark/highambench/tasks/P43/T3/Target.lean",
+    "theorem_name": "p43_t3_calu_multiplier_growth"
+  },
+  "informal_proof": "Split each unit-lower matrix equation at its diagonal. Entries above the diagonal vanish and the diagonal entry is one, so forward substitution gives the current component as the right-hand side minus a sum over earlier components. Strong induction and the geometric sum 1+sum_{k<i}2^k=2^i give the bounded inverse-action estimate. Apply the same bound at each of the H levels and combine powers to obtain 2^(bH).",
+  "informal_statement": "Prove the one-level unit-lower inverse-action estimate explicitly stated in the proof of Theorem 3.6 and the theorem's final CALU multiplier bound 2^(bH).",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P43",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P43 CALU- A Communication Optimal LU Factorization Algorithm.pdf",
+    "sha256": "1736c3457db9d40ca85456f5edccc8593d619d4edc3989fbc18a633d6671cd43"
+  },
+  "paper_version": "author manuscript dated March 30, 2011",
+  "result_form_tag": "THM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "CALU Theorem 3.6 2^(bH) L factor bound",
+        "unit lower triangular inverse entry bound 2^(j-1)",
+        "successive lower triangular inverse multiplier growth"
+      ],
+      "result": "Neither Mathlib nor the exact 44-object NumStability bundle contains CALU, tournament-pivoting height bounds, or the unit-lower inverse-action/height-product theorem used here. The frozen triangular-solve modules concern rounded substitution error and do not discharge the exact matrix-equation induction or the repeated 2^(bH) multiplier bound.",
+      "scope": "the complete frozen NumStability source, the exact 44-object condition-L bundle, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "rounded forward-substitution and LU infrastructure only; no exact theorem supplies either inverse-action or height-product conclusion"
+    ],
+    "note": "The exact private N proof is 136 physical lines. The exact L proof has the identical 136-line mathematical construction and adds only the standard 9-line irrelevant zero-nonnegativity marker from RoundingProductBounds."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P43CALUMultiplierProcess"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Theorem 3.6 and its proof",
+      "pdf_page": "12",
+      "printed_page": "12",
+      "role": "selected inverse-factor and 2^(bH) multiplier bounds",
+      "section": "3. Numerical Stability of CALU"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P43-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The proof must recover forward substitution from full finite matrix-product equations, prove the rowwise inverse-action bound by strong induction and a sharp geometric sum, and then perform a second induction across all H reduction-tree levels. This is substantial, comparable to the lower end of the established T2/T3 construction range, and not a Mathlib import exercise. The frozen NumStability surface provides no corresponding result; L's mathematical proof is byte-identical to N.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P43/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p43_t3_calu_multiplier_growth"
+  }
+}

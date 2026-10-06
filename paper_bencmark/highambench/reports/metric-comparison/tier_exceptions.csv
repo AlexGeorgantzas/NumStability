@@ -1,0 +1,8 @@
+task_id,tier,severity,any_use_runs,substantial_use_runs,mean_qualified_distinct,mean_transitive,reason,other_tier_same_paper
+P15-T3,T3,Clear,3,0,12.33,30.67,All three runs use many qualified names and audited dependencies.,P15-T1 (T1; measured); P15-T2 (T2; measured)
+P17-T1,T1,Clear,1,0,1.33,4.00,Two runs have no audited use; no run uses a prelisted substantial result.,P17-T3 (T3; measured)
+P02-T3,T3,Episodic,1,0,3.33,7.33,One of three runs uses 10 qualified names and 22 audited dependencies.,P02-T1 (T1; measured)
+P40-T3,T3,Episodic,2,0,4.67,10.00,Two runs use library names; one has five direct audited dependencies.,None
+P33-T1,T1,Partial,3,1,9.00,26.00,"Audited use in all runs, but prelisted substantial use in only one.",None
+P20-T3,T3,Trace,1,0,1.33,1.33,One run has four qualified names and four audited dependencies.,None
+P35-T3,T3,Trace,2,0,0.67,1.33,Two runs show only a single qualified name and small dependency closures.,None

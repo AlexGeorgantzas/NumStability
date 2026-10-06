@@ -1,0 +1,1028 @@
+{
+  "agent": {
+    "binary_sha256": "d13cfcda217421fb20d0aa6aa80819a62483a72e4a7fd52743675ca20d86377c",
+    "disabled_capabilities": [
+      "web and browser tools",
+      "apps and plugins",
+      "memory",
+      "image generation"
+    ],
+    "fresh_mode": [
+      "Codex app-server thread/start with ephemeral=false inside a unique temporary state directory",
+      "history.persistence=none",
+      "a new temporary CODEX_HOME for every attempt",
+      "the temporary state directory is deleted on normal adapter exit and is never reused or mounted by another attempt",
+      "user configuration and project rules ignored"
+    ],
+    "id": "codex-cli",
+    "model": "gpt-5.6-sol",
+    "prompt_protocol": {
+      "N_receives_condition_supplement": false,
+      "common_prompt": {
+        "bytes": 3017,
+        "path": "agent_prompt.md",
+        "sha256": "0f116039fb2ac519a722258f2b9b2d539f0e0c087d03ac476a91f0af61cd5e11"
+      },
+      "composition_order": [
+        "common_prompt",
+        "condition_L_supplement_if_condition_L",
+        "task_context",
+        "fixed_target"
+      ],
+      "condition_supplements": {
+        "L": {
+          "bytes": 455,
+          "path": "condition_prompts/L.md",
+          "sha256": "b4b217467237151e17ca50c851fff68fe7c60ab7e269339dddf5830ca4687463"
+        }
+      },
+      "relevant_theorem_or_module_hints_supplied": false,
+      "version": "signposted-library-v1"
+    },
+    "prompt_sha256": "0f116039fb2ac519a722258f2b9b2d539f0e0c087d03ac476a91f0af61cd5e11",
+    "reasoning_effort": "ultra",
+    "ultra_orchestration": {
+      "accounting_projection_schema_version": 6,
+      "automatic_task_delegation": true,
+      "child_model": "gpt-5.6-sol",
+      "child_model_locked": true,
+      "child_reasoning_effort": "ultra",
+      "child_reasoning_effort_locked": true,
+      "codex_config_locks": {
+        "agents.default_subagent_model": "gpt-5.6-sol",
+        "agents.default_subagent_reasoning_effort": "ultra",
+        "features.hooks": true,
+        "features.multi_agent_v2.expose_spawn_agent_model_overrides": false,
+        "features.multi_agent_v2.hide_spawn_agent_metadata": true,
+        "features.multi_agent_v2.max_concurrent_threads_per_session": 4,
+        "features.multi_agent_v2.usage_hint_enabled": true,
+        "features.multi_agent_v2.usage_hint_text": "For spawn_agent, omit fork_turns (defaults to \"all\") or set it to exactly \"all\" or \"none\"; positive integers and all other values are unavailable."
+      },
+      "enabled": true,
+      "fork_policy": {
+        "allowed_fork_turns": [
+          "omitted",
+          "all",
+          "none"
+        ],
+        "block_reason_template": "fork_turns for call {call_id} must be omitted or set to \"all\" or \"none\".",
+        "command": "/usr/bin/python3.10 /u501/m2fetrat/.codex/highambench-ultra-fork-policy.py",
+        "display_order": 0,
+        "enforcement": "codex_pre_tool_use_command_hook_v1",
+        "execution_mode": "sync",
+        "handler_type": "command",
+        "helper_filename": "highambench-ultra-fork-policy.py",
+        "helper_sha256": "5456bb8106715d1b783e14b81ce2df66e64bac828a1b1c345b4cdb76d2b3cd30",
+        "hook_event_name": "preToolUse",
+        "hook_notification": "hook/completed",
+        "hook_trust_bypass_cli_flag_present": true,
+        "hook_trust_bypass_effective_source": "thread_start_config",
+        "hook_trust_bypass_thread_config": {
+          "bypass_hook_trust": true
+        },
+        "hooks_json_sha256": "ffde6e560f2bb1c594a25a5ff8bbe07924324fa7c5f9f7297eb7ce5fb5503718",
+        "matcher": "^(Agent|spawn_agent|collaborationspawn_agent)$",
+        "positive_integer_fork_turns_allowed": false,
+        "schema_version": 1,
+        "scope": "turn",
+        "source": "user",
+        "source_path": "/u501/m2fetrat/.codex/hooks.json",
+        "usage_hint": "For spawn_agent, omit fork_turns (defaults to \"all\") or set it to exactly \"all\" or \"none\"; positive integers and all other values are unavailable.",
+        "usage_hint_sha256": "003b6103043c6f47ce098addedff5a82906c40786c667d132065e0ed35e97556"
+      },
+      "max_concurrency_scope": "root and subagent inference threads in one Codex session",
+      "max_concurrent_threads_per_session": 4,
+      "multi_agent_version": "v2",
+      "root_model": "gpt-5.6-sol",
+      "root_reasoning_effort": "ultra",
+      "spawn_agent_metadata_hidden": true,
+      "spawn_model_override_exposed": false,
+      "spawn_reasoning_effort_override_exposed": false,
+      "submission_barrier": {
+        "accepted_boundary": {
+          "descendants_quiescent": true,
+          "drain_complete": false,
+          "later_model_response_possible": false,
+          "measurement_exact": true,
+          "root_turn_active": true,
+          "stop_reason": "first_valid_proof",
+          "submission_boundary_exact": true
+        },
+        "candidate_path": "Candidate.lean",
+        "descendants_quiescent_before_submission": true,
+        "direct_submission_path_forbidden": true,
+        "inner_dynamic_arguments": {
+          "candidate_path": "Candidate.lean"
+        },
+        "inner_dynamic_call_left_blocked": true,
+        "inner_dynamic_call_observed": true,
+        "inner_dynamic_item_started": true,
+        "inner_dynamic_tool_name": "submit_proof",
+        "inner_dynamic_tool_response_sent": false,
+        "inner_submit_invocation_exact": true,
+        "inner_submit_only_nested_tool_call": true,
+        "outer_exec_final_raw_item": true,
+        "outer_exec_name": "exec",
+        "outer_exec_output_emitted": false,
+        "outer_exec_program": "// @exec: {\"yield_time_ms\": 2400000}\ntext(await tools.submit_proof({candidate_path:\"Candidate.lean\"}));\n",
+        "outer_exec_program_bytes": 104,
+        "outer_exec_program_sha256": "d8f1e2e53f379a5e1a0cd273127af52f71c150c9fa7c7a50dc177d40e6c12d14",
+        "outer_exec_timer_starts_at_or_after_prompt_release": true,
+        "outer_exec_yield_attempt_wall_seconds": 1800,
+        "outer_exec_yield_envelope_basis": "prompt_release_wall_clock_plus_post_submission_validation_reserve",
+        "outer_exec_yield_envelope_ms": 2169000,
+        "outer_exec_yield_exceeds_envelope": true,
+        "outer_exec_yield_margin_ms": 231000,
+        "outer_exec_yield_post_submission_validation_reserve_seconds": 369,
+        "outer_exec_yield_time_ms": 2400000,
+        "outer_raw_item_and_call_ids_pairwise_distinct": true,
+        "outer_raw_item_observed_before_inner_dynamic_call": true,
+        "outer_raw_item_type": "custom_tool_call",
+        "raw_response_completed_before_boundary_publication": true,
+        "root_coordinator_only": true,
+        "runner_materializes_submission_after_acceptance": true,
+        "runner_owned_submission_path": "Submission.lean",
+        "runner_validates_immutable_candidate_snapshot": true,
+        "schema_version": 5,
+        "sole_model_tool_call_in_response": true,
+        "submission_event_order_flags": [
+          "dynamic_call_observed_before_raw_response_completed",
+          "raw_response_completed_before_dynamic_call_observed"
+        ],
+        "submission_event_order_flags_exactly_one_true": true,
+        "submission_event_order_values": [
+          "inner_dynamic_call_before_raw_response_completed",
+          "raw_response_completed_before_inner_dynamic_call"
+        ],
+        "submission_transport": "functions_exec_dynamic_submit_proof_v3",
+        "tool_name": "submit_proof",
+        "workspace_local_module_imports_rejected": true
+      }
+    },
+    "version": "0.146.0-alpha.9.2"
+  },
+  "benchmark_id": "highambench-0.2-p01-p02-p03-p04-p05-p06-p07-p08-p09-p10-p11-p12-p13-p14-p15-p16-p17-p18-p19-p20-p21-p22-p23-p24-p25-p26-p27-p28-p29-p30-p31-p32-p33-p34-p35-p36-p37-p38-p39-p40-p41-p42-p43-p44-p45-p46-p47-p48-p49-p50-p51-p52-p53-p54-p55-p56-p57-p58-p59-p60-p61-p62-p63-p64-p65-p66-p67-p68",
+  "environment_bundle_definition": "SHA-256 of UTF-8 canonical JSON with sorted keys and compact separators over an object containing the complete config and environment records, after removing environment_id and environment_bundle_sha256 from their top-level/frozen locations.",
+  "environment_bundle_sha256": "2f773bb6fd4426e6456330e5d1c93cf3ef612c0374325c9fe127e5916241fd9e",
+  "environment_id": "highambench-p01-p02-p03-p04-p05-p06-p07-p08-p09-p10-p11-p12-p13-p14-p15-p16-p17-p18-p19-p20-p21-p22-p23-p24-p25-p26-p27-p28-p29-p30-p31-p32-p33-p34-p35-p36-p37-p38-p39-p40-p41-p42-p43-p44-p45-p46-p47-p48-p49-p50-p51-p52-p53-p54-p55-p56-p57-p58-p59-p60-p61-p62-p63-p64-p65-p66-p67-p68-2f773bb6fd4426e6",
+  "host_class": {
+    "allocated_physical_cores": 2,
+    "allocated_sockets": 1,
+    "allocated_threads_per_core": [
+      2,
+      2
+    ],
+    "allocation_memory_limit_bytes": 34359738368,
+    "cpu_family": 6,
+    "cpu_model": 173,
+    "cpu_stepping": 1,
+    "cpu_vendor": "GenuineIntel",
+    "kernel": "Linux 6.17.0-35-generic x86_64",
+    "online_logical_cpus": 4,
+    "processor": "Intel(R) Xeon(R) 6960P",
+    "slurm_allocated_memory_bytes": 34359738368,
+    "slurm_cpus_per_task": 4,
+    "slurm_num_cpus": 4,
+    "slurm_num_nodes": 1,
+    "slurm_num_tasks": 1,
+    "virtualization": "LXC",
+    "visible_memory_bytes": 995999997952
+  },
+  "isolation": {
+    "bubblewrap_binary_sha256": "d78807229d616606e339c5988392b9e0ab4a6a6998fa51e4590837f426a12fca",
+    "bubblewrap_version": "bubblewrap 0.6.1",
+    "condition_l": "Only the frozen NumStability source tree and exact pruned compiled Lean tree are added as read-only mounts.",
+    "condition_n": "NumStability source, compiled files, names, documentation, indexes, and caches are absent. Each complete staged task is scanned and a real import probe must fail before the agent starts.",
+    "container_image_digest": null,
+    "dependency_audit_sha256": "4fb038e1781444d68cb9674060c21b7547b3f6fc24398fbbd1ecc4f01068abf1",
+    "ephemeral_thread_start_per_run": false,
+    "filesystem_adapter_sha256": "1dc1ec923278452ef38e1de5b0fe189ec73decbfe46951d50ece9ef0d788a6ee",
+    "fresh_codex_state_directory_per_run": true,
+    "gold_proof_policy": "The private construction proofs and source PDFs are never mounted in an evaluated attempt.",
+    "history_persistence": "none",
+    "kind": "bubblewrap namespace; not an OCI container",
+    "lean_adapter_sha256": "e3dcbd1192047dfe02af7a9d15d809336fa37f5360895ccfc4e6aec9dfca90c5",
+    "memories_feature_disabled": true,
+    "network_boundary": "Model-generated shell commands inherit a kernel rule that rejects socket operations and records every denied request. The Codex control process keeps only the provider connection needed for the model. Model web, app, plugin, and search capabilities are disabled.",
+    "normal_exit_state_cleanup": true,
+    "offline_shell_binary_sha256": "a43df72964e86027ed3c2e66ab4aceda7d02896b6cc2db6befa107d79bb4171c",
+    "offline_shell_source_sha256": "2a15af726576647926f639745fb0eb5dbda9ecb0cb9680ded1e1138e1e49fd32",
+    "package_runtime": "Both conditions receive the same exact pruned package view: Mathlib source and the .olean, .olean.server, .olean.private, and .ir files Lean needs. Git data, traces, hashes, indexes, and other package files are absent.",
+    "prior_outputs_or_submissions_mounted": false,
+    "provider_prompt_prefix_cache": {
+      "automatic_prefix_caching_may_occur": true,
+      "cached_input_charged_at_full_token_weight": true,
+      "cached_object": "exact-prefix prefill key/value computation, not generated output",
+      "cross_run_answer_or_proof_replay": false,
+      "kind": "automatic exact-input-prefix prefill computation reuse",
+      "pinned_codex_disable_control_available": false,
+      "semantic_history_transfer": false
+    },
+    "provider_token_gate_sha256": "8012c1c72c10bb388a2be69760cf2dd4dc51dce5c6abceadda0c9e086d650bcd",
+    "runner_sha256": "30b47dc6c0d7f6ff7696b4927d0dd40440228fbf01b8fef54804b00a1b5e2c81",
+    "state_directory_reused_across_runs": false,
+    "thread_resume_or_fork_used": false,
+    "validator_sha256": "edee30e8957a1c3731c80283f78ce8d030980493fe0aec768d36b87fd9380e43"
+  },
+  "kind": "highambench-environment-record",
+  "known_reference_protocol_deviations": [
+    "Condition L receives the frozen signposted-library-v1 supplement while condition N does not. This user-directed treatment intentionally departs from the reference PDF's identical-prompt rule and is kept separate from the earlier raw-access P01 measurements.",
+    "The Codex backend has no demonstrated fixed random-seed input, so rep-01, rep-02, and rep-03 are repetition IDs only.",
+    "There is no frozen OCI container image; fresh bubblewrap namespaces are used instead.",
+    "The read-only host folders /usr, /bin, /lib, /lib64, and /etc are not one completely fingerprinted operating-system image.",
+    "Accepted proofs stop at an authenticated exact first-valid-proof submission boundary, with the root submit call blocked, descendants quiescent, and no later model response. A wall-clock interruption of an active tree can remain measurement-inexact; the matrix aborts and preserves that incident without scoring or retrying it.",
+    "The current user-authorized 5,000,000-token cap replaces the earlier 2,000,000-token project freeze and is applied identically to N and L.",
+    "The external highambench-provider-token-gate-v6 buffering/reservation layer and its sole-inflight, call-atomic token endpoint are a HighamBench execution-protocol amendment applied identically to N and L for exact accounting. Gate v6 accepts an absent upstream Content-Type only after strict complete byte-level SSE authentication and records the header bases, parser receipt, body hash/size, response identity, event counts, downstream synthesized-content-type flag, response-output manifest, and app-server delivery reconciliation. Provider totals are authoritative; the raw app-server ledger remains a structural subset. Suppressed collaboration waits, collaboration-message supersessions, and completed child responses discarded after an explicit parent interrupt each require narrowly authenticated evidence. This compatibility rule does not alter the N/L symmetry of the amendment. The frozen Codex binary is unchanged and does not itself enforce this gate; results must not be labeled strict reference-PDF HighamBench 0.2 results.",
+    "The model control process needs its provider connection even though model-accessible shell and web networking are disabled."
+  ],
+  "lean": {
+    "binary_sha256": "3e0d0d3d801675359f2d4cf9815bfdb417b20b92fdd9d48b3b14c95bbae28bbf",
+    "commit": "5d86aa4032284a5242470e95fbe25f1ff506763d",
+    "compiled_environment_summary": "paper_bencmark/highambench/metadata/packages_olean.json",
+    "compiled_environment_summary_sha256": "ae361f8e83f4e65745249c1b7ce415fe91024b32cbe935be34402598ac1f7844",
+    "mathlib_commit": "e8ea1afc32790ce1d4e1a4e45cc412ba9388716b",
+    "numstability_commit": "45813a95dacf577461bae13f033af0dbc985a225",
+    "numstability_compiled_manifest": "paper_bencmark/highambench/metadata/library_olean.json",
+    "numstability_compiled_manifest_sha256": "bbea1e90bc11605bd3c14b28dc39bf49b7bcb64ab5cf2306841f65b803a6ae2a",
+    "numstability_source_manifest": "paper_bencmark/highambench/metadata/library_source.json",
+    "numstability_source_manifest_sha256": "8b52061f0fafc283acd2363267ebbee2f9c6eb97360c596723b95b27515c7828",
+    "shared_olean_bundles": {
+      "P01": {
+        "HighamBench/P01Definitions.olean": "63c8c6d8ea46d8a62b5e7e3fcebd62acb1402e8afd9e246feb53dcd3ad7b3037"
+      },
+      "P02": {
+        "HighamBench/P02Definitions.olean": "019b50b401ad3c74ae682cc6921d77c4b8a9bf365cd08e872d9253dd56991328"
+      },
+      "P03": {
+        "HighamBench/P03Definitions.olean": "9b9eb750c8904631d0a9bc737755f997d0361cfad6877c15af8b4ac44555fd10"
+      },
+      "P04": {
+        "HighamBench/P04Definitions.olean": "ec4fe0b48edf800d5f682ef011fbe68580b7d55b6bf780574f4c780c7071c210"
+      },
+      "P05": {
+        "HighamBench/P05Definitions.olean": "42515cb7d325312344d70ea3340461f23a9872c45caf6eb92d2e04d46d89894d"
+      },
+      "P06": {
+        "HighamBench/P06Definitions.olean": "df97b5655cd139cfd8c4079bd528de2fc7ba0d8a2e809bcdfe90293ea8099ba3"
+      },
+      "P07": {
+        "HighamBench/P07Definitions.olean": "6da45320d3df13bc24258927c9f5c6eb916c6dc417729521b15f7ccce89d9041"
+      },
+      "P08": {
+        "HighamBench/P08Definitions.olean": "69f1c242d2e12c265b2b7540a6ffa2d989c802e0ef90be129fd46fac6bb4883a"
+      },
+      "P09": {
+        "HighamBench/P09Definitions.olean": "fd8231717d92f521e413344ee875d7da487802b89e82baf497464291f9b3d66f"
+      },
+      "P10": {
+        "HighamBench/P10Definitions.olean": "a9b9229772b380189b1ef599822a1d2ad5950723c43de15d3eac0aab8bdbc37c"
+      },
+      "P11": {
+        "HighamBench/P11Definitions.olean": "d0f938250338929072e81ed7956c0d8e81f631de33703b835f86b9872d09f0d7"
+      },
+      "P12": {
+        "HighamBench/P12Definitions.olean": "1bf7a0713c581618c3d3fbceacaab93c777ec59886deb067d63b167f021bad69"
+      },
+      "P13": {
+        "HighamBench/P13Definitions.olean": "f79c2482c3f0dcdadb3b2ebc8bed720717b0d7c37acb61c6a11ed12916cd690f"
+      },
+      "P14": {
+        "HighamBench/P14Definitions.olean": "349de2709cb2e760dcc0084fbabe57b43b54847370c067b947bfa00a82305325"
+      },
+      "P15": {
+        "HighamBench/P15Definitions.olean": "1fc2c7b6add9682f08d18589712edebb808b9b80c8ee5994d3810af0daa768d5"
+      },
+      "P16": {
+        "HighamBench/P16Definitions.olean": "ae8f7c94b466e4f40055f9f0ea5560422b62502571bbde5441b1ba40fdccbc47"
+      },
+      "P17": {
+        "HighamBench/P17Definitions.olean": "d89f33361268325e7fbba2b9031a0c38df301f7ea5befea78637f93482cce360"
+      },
+      "P18": {
+        "HighamBench/P18Definitions.olean": "a7c28ce9bac4565b1d095c03698307b3575380874d40c5cf41768c50c9020adb"
+      },
+      "P19": {
+        "HighamBench/P19Definitions.olean": "87111eb0fb726673b61adb8c5f85c382ce3d7a5d21f454bca49603b95f36a83c"
+      },
+      "P20": {
+        "HighamBench/P20Definitions.olean": "88a93cfa98f3cfac51903b503eadd0169a529aa4464d172c0c992ad8a22cf62d"
+      },
+      "P21": {
+        "HighamBench/P21Definitions.olean": "ef38a5bcdd9c314dbfe680335d06170dbb4f25cc61eedd386cfc070aaece77a4"
+      },
+      "P22": {
+        "HighamBench/P22Definitions.olean": "c12feeea32b3a44ff4a7e0601e2de8b11f81373eb6b85c1fb8c7919660a5847f"
+      },
+      "P23": {
+        "HighamBench/P23Definitions.olean": "12c9fff3e49a3e1a99844d29d83acbe9d45d3cac1b27a7ff6b9797611940642b"
+      },
+      "P24": {
+        "HighamBench/P24Definitions.olean": "be8eb3045f26583846f97b58f6eb9cea506ed1da2befca85e64595a462402009"
+      },
+      "P25": {
+        "HighamBench/P25Definitions.olean": "7ad47d97a58e21c6f6c53e85f25b703757cd018c7121b412800ff09b4069a1f3"
+      },
+      "P26": {
+        "HighamBench/P26Definitions.olean": "9afa3d21d934997d4ab508e9c1fe88f4a06fd6bd5dd1d4c31c2d343b304004a4"
+      },
+      "P27": {
+        "HighamBench/P27Definitions.olean": "1f9f75357dd7de1001dfe0f8774e540b42c346c6334dbefc3867cf1d640e746d"
+      },
+      "P28": {
+        "HighamBench/P28Definitions.olean": "a6021eae45a8836821984385ba5b5f5536c1a92a8c68054c8525f32da0b8b922"
+      },
+      "P29": {
+        "HighamBench/P29Definitions.olean": "805a093b269aac2ec96368235907f52aac6b59114869c50a60adb4a3ec88fbfb"
+      },
+      "P30": {
+        "HighamBench/P30Definitions.olean": "88509393db8abfcb54b760b013b9b8686b2832942eb9eef50385620de5c398f5"
+      },
+      "P31": {
+        "HighamBench/P31Definitions.olean": "dfc61f8fe7761918a6c4237f150bc5d71a9bc6de064b7778b368d051ab6411cf"
+      },
+      "P32": {
+        "HighamBench/P32Definitions.olean": "4aea1c8127467a6c099a009bcc10d601cc4819a5e7de7221b0032ab9cc7c7d7c"
+      },
+      "P33": {
+        "HighamBench/P33Definitions.olean": "e75bd1c6e13df2bb8411a23044d7601ad140d83e5af5730cf3a7f2d3a87e4373"
+      },
+      "P34": {
+        "HighamBench/P34Definitions.olean": "0cbcf9d81a39001c0eb03257e52ef2910b78e18c157508789d4327796a7b7d13"
+      },
+      "P35": {
+        "HighamBench/P35Definitions.olean": "5c1b07a177a9e462f180d1502e2792de2fe00f8a42091109e8be340c29dd7c5a"
+      },
+      "P36": {
+        "HighamBench/P36Definitions.olean": "4f67e4ce24f66928d38f6878e36034d68d6d06d7d4fe8254c8c2817d0baf7aa2"
+      },
+      "P37": {
+        "HighamBench/P37Definitions.olean": "433ad86b71fd896d10bb387a7d2e78718d4623f9a96ad69aed56fd4a12f285a1"
+      },
+      "P38": {
+        "HighamBench/P38Definitions.olean": "24598a92253a0f59f6847171976f305867dbc05d15d69c6a65ae99a0d320c297"
+      },
+      "P39": {
+        "HighamBench/P39Definitions.olean": "6b2ff868ab104a3a9080ed2343ff00fcdd9fe5fadfaba182d4ee068668d1e029"
+      },
+      "P40": {
+        "HighamBench/P40Definitions.olean": "79d15a9655508754f895c0bc715801ff743420af6d9860a20d230346dbb6e787"
+      },
+      "P41": {
+        "HighamBench/P41Definitions.olean": "6d3839e9ca775fb6ba3a60a853595430635c31d30a5a9994d951d16fef402b99"
+      },
+      "P42": {
+        "HighamBench/P42Definitions.olean": "e5250fe6e38e89d51981f8b369d129647f7cf893285b128a0ab41ed7ddfe0395"
+      },
+      "P43": {
+        "HighamBench/P43Definitions.olean": "e73e33b5df7b8bd17da3b6eb12965acc9f2b8db3a9ee40d080f8e6e7c39bdaf0"
+      },
+      "P44": {
+        "HighamBench/P44Definitions.olean": "5ff3bb17bd843f939341e87919abd272ccd5f08f65327a10939774b77a5b0e17"
+      },
+      "P45": {
+        "HighamBench/P45Definitions.olean": "bd4f84922ad912b0181cb2d376acd36da56d9ca809476b6cb0599f985aec291e"
+      },
+      "P46": {
+        "HighamBench/P46Definitions.olean": "c4d20da66e73c7f2e2e0851836c96ad8f30cbe2ad8e0cbc81c7a60d4ca6d87a0"
+      },
+      "P47": {
+        "HighamBench/P47Definitions.olean": "314a4d87509d5894707fdae0298f2cb54b1560abff269196baca046b717dd342"
+      },
+      "P48": {
+        "HighamBench/P48Definitions.olean": "b124e7a631076f99a2ed0501578600b1ee873adb8a015faa36a7356ce19c136a"
+      },
+      "P49": {
+        "HighamBench/P49Definitions.olean": "311534e19617bc15e357f5a14786d65afe042a8e49494caa553e88e0f0508904"
+      },
+      "P50": {
+        "HighamBench/P50Definitions.olean": "c3bdfe294a8995a5adc7cd2754ee7df60a0cf759cd0515dc99efc819e64b38c5"
+      },
+      "P51": {
+        "HighamBench/P51Definitions.olean": "19ba60c9e2d9540a486342d58b524a2532e707ee235d631cd72da5117287a77a"
+      },
+      "P52": {
+        "HighamBench/P52Definitions.olean": "ad9a3d05a96220cff3e2729a3065a26e62b727259d74b0f12c83b39225f8ea5b"
+      },
+      "P53": {
+        "HighamBench/P53Definitions.olean": "2b8ae9be0d0e765ac52e7a0fa2947d76b7353f1d0a50ca522e9a179c0fea4cac"
+      },
+      "P54": {
+        "HighamBench/P54Definitions.olean": "7728b41974dc8f8fdb6ef2044e3dcf648171939a4d83e0b46b637b517db405ab"
+      },
+      "P55": {
+        "HighamBench/P55Definitions.olean": "3871da54cbda4f91d884814904b920b217187c0094deff4f1027f2acfe1e4161"
+      },
+      "P56": {
+        "HighamBench/P56Definitions.olean": "143118c5044a230f14bbe67ef7f84b06388a30eefc4334be7b57045d8a4818bf"
+      },
+      "P57": {
+        "HighamBench/P57Definitions.olean": "52e00bead74923da0e6330777b086128b1104ec2e9bde109d24d3ebeade7f82c"
+      },
+      "P58": {
+        "HighamBench/P58Definitions.olean": "3f7a91678732ce31fbcba02c65b0c6c65246ad6b088b29ac9f5c517e23f45890"
+      },
+      "P59": {
+        "HighamBench/P59Definitions.olean": "47adb2dbe919b042bbb48b724997735e0f5dca1b21745df702368601d1e741ed"
+      },
+      "P60": {
+        "HighamBench/P60Definitions.olean": "0e93ca3b761701381614411efd58a213fb4419afb796b282dfae2576b62c8872"
+      },
+      "P61": {
+        "HighamBench/P61Definitions.olean": "c189efd13311506995b9fc5efea9d6714a447654dfb096d862c36fff351ff03c"
+      },
+      "P62": {
+        "HighamBench/P62Definitions.olean": "15da0c7bff9c700bea7bb1d63e27c59f90ad53d304c43597aa57dd5495f447b0"
+      },
+      "P63": {
+        "HighamBench/P63Definitions.olean": "2c0401869af803c8a59f8505e0c62cbf8e5787efceff6246d143b167cf550fc5"
+      },
+      "P64": {
+        "HighamBench/P64Definitions.olean": "d31ca585f51981e9e92652adb79b953123c1a7f8343e7ed6e4b2eff521ec56f7"
+      },
+      "P65": {
+        "HighamBench/P65Definitions.olean": "ecfd633ccfe75395399bef453aa731b69dbf7fa59df9b14ccf47091b8d59b189"
+      },
+      "P66": {
+        "HighamBench/P66Definitions.olean": "36eff28eb8fb64d27ba262a94eed06c0ef8ea03c03790f1c4b3b7da146993e53"
+      },
+      "P67": {
+        "HighamBench/P67Definitions.olean": "7daf069f659319dd16f7dc28afd4a90561ade3dc2e76ae24f846fe20a9e0bff3"
+      },
+      "P68": {
+        "HighamBench/P68Definitions.olean": "2521900be0b362229f8d99900f6d2c3ef94ea3b16b48a6a53351fe4b583003f4"
+      }
+    },
+    "shared_sources": {
+      "HighamBench/P01Definitions.lean": "c0c8e252a74336249bf9a499c9df6d114a6442600c1973c39b7066a6874ce2c4",
+      "HighamBench/P02Definitions.lean": "bb8b3081228a4ea0d2840860de203611d74199aa2cbf33ea44b33850e6ce5262",
+      "HighamBench/P03Definitions.lean": "4506f3bcea569ee4123f05a077c3aa7c261e6e0c7fc945b896d6fa9aafa46d5b",
+      "HighamBench/P04Definitions.lean": "9fd7742b21f3df980dad6591e971f49cf4f1dee8537b8ddfcd7f54f4dbd50071",
+      "HighamBench/P05Definitions.lean": "4055f72708fc589d3cc31cecf5c87611040cdb43677072f2c92453071a5c3f8c",
+      "HighamBench/P06Definitions.lean": "1edc00b027cb82be403a0452f45d668674ab8d3f178398255761f7b1778aab39",
+      "HighamBench/P07Definitions.lean": "905840bf0540246bb275a8b2ecdc92ffdff022185c390adbfe61412565ac2f45",
+      "HighamBench/P08Definitions.lean": "41805b8da8e902eaf561ee91d4786e5b8f7dbce992f39339b1cdade5b0f50f05",
+      "HighamBench/P09Definitions.lean": "5016a73c551d322808830b022b00d8bc07f3c6c089a9559d712859253eca6765",
+      "HighamBench/P10Definitions.lean": "3f99f7b9e2fba9b565e75388e6c238d29d93b1f30259aebb04676f28689dadcd",
+      "HighamBench/P11Definitions.lean": "4dba62c0953fb63e6a956e0d8ef74caa13fa5c17ca90a55685bfbb880c52ce5b",
+      "HighamBench/P12Definitions.lean": "e09f1aca4117f7f3c547b907df2b6434c53cc977295bd58b2bb5fce67f302e00",
+      "HighamBench/P13Definitions.lean": "5861ade37268f9b5cd7a705a2884bc2399f1d918295f045b07f91684252da009",
+      "HighamBench/P14Definitions.lean": "6d46a4ce1ee503a1a38e74ca1b00992a20b43c623f66b8952ed4093e7d87323b",
+      "HighamBench/P15Definitions.lean": "1ff6e39060c5eb02fc7e2abea8e4b84a992d331283ada8b80e2e24abe87968a8",
+      "HighamBench/P16Definitions.lean": "71416fb334bb88fe0b760c95136bbed8840879769b358c2ad2c8641c7ec9b06c",
+      "HighamBench/P17Definitions.lean": "7889b5a6f2a6b7dc691c53eed7c8575e312f7e70874f5bf37bc101fa69fe9404",
+      "HighamBench/P18Definitions.lean": "b566f191af761f32ef1141239523583bcacd46329371906b8de460ba2de621fb",
+      "HighamBench/P19Definitions.lean": "fb949d215d348d70eaf1496cfe7a288b74b50a5c12765a2a1edc83430de160ef",
+      "HighamBench/P20Definitions.lean": "b309680f1ff99adc7479a5aedda7196cac89b2fcc519a8892875e05adcc73095",
+      "HighamBench/P21Definitions.lean": "13e272a7386f805844674fb5a1b5fc0535f77a67b6dbdc14b9103879db8c6110",
+      "HighamBench/P22Definitions.lean": "698bb84c61b4668a87cb2c867b02bad01587680184b021d023d7bbd208255cdd",
+      "HighamBench/P23Definitions.lean": "83c89d3857e46e300618be68e2b4fc66a397dce7fafed778e8d3b20b099e43b8",
+      "HighamBench/P24Definitions.lean": "138a49011c06526678f4d0d246bcc123f477443a69b79b763df8a2ff63e5ed91",
+      "HighamBench/P25Definitions.lean": "c6a4843147d8d96379857c96e155e4277bc534a8835191de27e1f9612135fe0c",
+      "HighamBench/P26Definitions.lean": "dcb2a449a23e05d65a8b29f32708351e5a6ea0519068e30f150d144df829346f",
+      "HighamBench/P27Definitions.lean": "08cbb378724bbfbd27c0df6d01fa8eab3ce6c48dea4b7c63d23e6bb4a227781f",
+      "HighamBench/P28Definitions.lean": "6d430316f619bd188539fcfa60303b446fa6ce99477051c89274483fe89ca4e5",
+      "HighamBench/P29Definitions.lean": "18cb8142270d625db16a74b5126b8ef380f9db32b71d014533ebb1d530c0cbe2",
+      "HighamBench/P30Definitions.lean": "469feabd32b20b56e0fdf31e0a2db6aa450d1aa64aa364301b7bc9a981092bad",
+      "HighamBench/P31Definitions.lean": "55ebbeec822745966bba731936341ea26aa0af04212234e3cfc74d19961f8e69",
+      "HighamBench/P32Definitions.lean": "e8bca93bdaa6101d6725f42f46bb9773eca470763b286148f1ca17454dcfc117",
+      "HighamBench/P33Definitions.lean": "84d7c3d8e0892c9ac46b76e12f50482307562b9f513f2a743c5fc2080b9153ce",
+      "HighamBench/P34Definitions.lean": "2551c962302a0ca293efd18e2587ca74e6ea48e9571285acd7213669e1b78c3c",
+      "HighamBench/P35Definitions.lean": "2738769e9948509ef0fa8f9c5470b7d87d06b09067115a219b57fc29b7b183da",
+      "HighamBench/P36Definitions.lean": "7b0cced943ce2ca344652a06db872075827b7bace83c5eb4298539f4bb5d9911",
+      "HighamBench/P37Definitions.lean": "20c311a842088df591edb65b4f18bde138ff4439aa7777032bf24a6455463e70",
+      "HighamBench/P38Definitions.lean": "457e46f9a93eb7f26100d5fbde663f633fd0b4b37f76c0f954390309e78dd611",
+      "HighamBench/P39Definitions.lean": "b71b33484716049994636ee1b47f5a2595bc79456f6c75cc53445adc7e75812a",
+      "HighamBench/P40Definitions.lean": "49a7e9d67e6e2ac8b647ade4c34153ce002e92b9792f898f61dade76bb70b5fe",
+      "HighamBench/P41Definitions.lean": "6fa998b3144d2e59aa679d26150c153b70f4c8a396a64538a9d0f9d0a401ad10",
+      "HighamBench/P42Definitions.lean": "9ae3107799fa6780ded844a3ee8eed9670ae1fb323a9dd0847059c58797a6dae",
+      "HighamBench/P43Definitions.lean": "384a6e67996de2e5eff56a80df8eeb249ab576480d17d086cc54fca9b325bf12",
+      "HighamBench/P44Definitions.lean": "e15a087ef86452dfa4bd619e21f8bec36e12137e8dc68ddfe26084a12e9c67b3",
+      "HighamBench/P45Definitions.lean": "ad904461f4472bc2e621e9136b82135d3b321798ccf74daed244b56f20b5fa5f",
+      "HighamBench/P46Definitions.lean": "3fe60f6a783b371e97f93d9116e7a657bd366392e014b2251d06a3de118a5e18",
+      "HighamBench/P47Definitions.lean": "87d56d60981ac32cb72228061e5ca17c4d5ef8246dbc8ea60449ac15f6e4602c",
+      "HighamBench/P48Definitions.lean": "92935a42febee31ea3db002e1f7a83fdb6e800a2d72791a0514ab4b2127a37fb",
+      "HighamBench/P49Definitions.lean": "636cccf52bcf049b2023f8f7472035fe2f2a0e11c81ec1b7f1ed4fcc1bf040e5",
+      "HighamBench/P50Definitions.lean": "103790adf260654c780f6538c29ad02b37749daafcb8aab87dfc20320de44f71",
+      "HighamBench/P51Definitions.lean": "5797da845e4632903a3741c23c40edd60a3f0bd7f25a8e4ebee9413cfb89ee9c",
+      "HighamBench/P52Definitions.lean": "fc5605e93a3a4159eb9db854c7705e03c7835cc41706f16c389a7e9edb2170e6",
+      "HighamBench/P53Definitions.lean": "fd4dbb51a8fa6dd3336252703b9a65a23d4297b037848cab8a9433437ecdbd47",
+      "HighamBench/P54Definitions.lean": "ac413d413b73ba79a198a017e9a62fa404ff97065a44523a196bac366c04261d",
+      "HighamBench/P55Definitions.lean": "0dcfe6ef1babb141ea181f39633cce235586cacf807f2e8eb15b10ee61b51e51",
+      "HighamBench/P56Definitions.lean": "24f5c55399071ba97f1869ca8194beb42865572a2274d12e5a4c9498c874e035",
+      "HighamBench/P57Definitions.lean": "8aab7c902ef0954e1fbd729d4aaf687b0cbff8a9fc81154988d148dd395d56c2",
+      "HighamBench/P58Definitions.lean": "f7dae3bac1d78b47a33ad1370099c0e61b9934e8e976c81bcc3450b48e438aa4",
+      "HighamBench/P59Definitions.lean": "be47df8b1701687de24e84be2b6905da13a4e21c418f39f3cb74b04216365870",
+      "HighamBench/P60Definitions.lean": "a3bd77ac424cc6f961848114b72970bc3d5ce9c73ab6eee1551d6a19cae8a95c",
+      "HighamBench/P61Definitions.lean": "4ecd51624868994e44c1bfe7f3f5568def9ba6daa6c39e59fb0367f271cac318",
+      "HighamBench/P62Definitions.lean": "7f7d2b931c0f9923a9b3257f034a2722c19e1a9fff5e9e3cd0f8578db000fe26",
+      "HighamBench/P63Definitions.lean": "462303eb226768cd9df816735e6e9f5b074e8a748d805bd5e1f001f0fca3c10e",
+      "HighamBench/P64Definitions.lean": "7d95fcbc00c5cae27a847021df5b8639ca27dfaf941cca803937929317cfaaaa",
+      "HighamBench/P65Definitions.lean": "c39ba4cc8ed4b6ff1fda239c93346b42ccc5cb8f3e36e196adbed643c559f899",
+      "HighamBench/P66Definitions.lean": "9def50e109f54b512c2a8e3b9fcc5dd1b161a5d4a05bea18c966a6dd943c373f",
+      "HighamBench/P67Definitions.lean": "74410d5d4e57bb1ee6aed2ca9366e7af2534552910d1718039333641291c099f",
+      "HighamBench/P68Definitions.lean": "2a2d3c72cabcd8eae118b05ada5758ee5c4b8f4863640752c4a31b2d51d43e4a"
+    },
+    "version": "4.29.0-rc3"
+  },
+  "measured_v3_cpu_partition": {
+    "authority": "metadata/measurement_protocol.json resources object and the campaign's runtime guard evidence",
+    "cpu_affinity_assignment": "root-cpuset-partition-and-systemd-system-unit-CPUAffinity",
+    "cpu_partition_idle_admission": "sustained-all-slots-or-fail-before-provider-use",
+    "cpu_partition_launch_manager": "system-systemd-as-configured-unprivileged-uid",
+    "cpu_partition_release": "empty-only",
+    "cpu_partition_scope": "campaign-wide-union-of-disjoint-pair-slots",
+    "cpu_partition_userspace_exclusivity": true,
+    "cpuset_controller_required": true,
+    "cpuset_partition_mode": "root",
+    "cpuset_partition_required": true,
+    "dedicated_idle_host_required": false,
+    "exclusivity_limitations": "kernel threads, interrupts, firmware activity, and shared cache, memory, interconnect, power, and thermal resources remain outside the userspace cpuset guarantee",
+    "foreign_process_cgroup_migration_allowed": false,
+    "foreign_process_signals_allowed": false,
+    "guard_path": "/usr/local/libexec/highambench/highambench-cpu-guard",
+    "guard_path_role": "digest-authorized sudo relay frontend only",
+    "host_guard_path": "/usr/local/libexec/highambench/highambench-cpu-guard-host",
+    "host_guard_path_sudo_authorized": false,
+    "host_pid_namespace_attestation_required": true,
+    "include_all_online_threads_of_selected_cores": true,
+    "parallel_cpu_slots_disjoint": true,
+    "partition_hierarchy": "top-level campaign-union partition root with one disjoint child partition root per pair slot",
+    "physical_cores_per_slot": 4,
+    "root_owned_cpu_guard_required": true,
+    "same_uid_process_trust_scope": "possible signaling or artifact/process manipulation only; no scheduling overlap with the leased partition"
+  },
+  "measurement_authority": "campaign_lock.json generated from metadata/measurement_protocol.json",
+  "provider_token_gate": {
+    "implementation": {
+      "name": "provider_token_gate.py",
+      "path": "tools/provider_token_gate.py",
+      "source_sha256": "8012c1c72c10bb388a2be69760cf2dd4dc51dce5c6abceadda0c9e086d650bcd",
+      "version": "6"
+    },
+    "kind": "highambench-provider-token-gate-freeze",
+    "model_catalog": {
+      "catalog_sha256": "0dea49fbbe38900bef0a46c85e79a7ccef9b79d0f4ae5b3c7e898e34ca3dab9b",
+      "entry_sha256": "1b7c2944189a61833cc1d0122ce1cfcb5b70f6cd78797abe2296fb5791338858",
+      "reasoning_effort": "ultra",
+      "response_bound": 272000,
+      "slug": "gpt-5.6-sol",
+      "source": "authenticated_codex_debug_models_bundled"
+    },
+    "protocol": "highambench-provider-token-gate-v6",
+    "provenance_producer": {
+      "dns_queries_performed": false,
+      "environment_policy": "inherit_then_remove_required_absent",
+      "flag": "--print-transport-provenance",
+      "interpreter": "/usr/bin/python3.11",
+      "network_connections_performed": false,
+      "required_absent": [
+        "ALL_PROXY",
+        "CURL_CA_BUNDLE",
+        "HTTPS_PROXY",
+        "HTTP_PROXY",
+        "LD_AUDIT",
+        "LD_LIBRARY_PATH",
+        "LD_PRELOAD",
+        "NO_PROXY",
+        "OPENSSL_CONF",
+        "OPENSSL_MODULES",
+        "PYTHONHOME",
+        "PYTHONHTTPSVERIFY",
+        "PYTHONINSPECT",
+        "PYTHONPATH",
+        "PYTHONSTARTUP",
+        "PYTHONWARNINGS",
+        "REQUESTS_CA_BUNDLE",
+        "SSLKEYLOGFILE",
+        "SSL_CERT_DIR",
+        "SSL_CERT_FILE",
+        "all_proxy",
+        "http_proxy",
+        "https_proxy",
+        "no_proxy"
+      ],
+      "source_argument": "tools/provider_token_gate.py"
+    },
+    "schema_version": 2,
+    "static_configuration": {
+      "allowed_setup_route_prefixes": [],
+      "capability_persisted": false,
+      "counted_request_kinds": [
+        "turn",
+        "compaction"
+      ],
+      "counted_route": "POST /responses",
+      "crossing_release_policy": "ordinary_empty_output_or_compaction_single_item_before_minimal_completion",
+      "final_artifact_mode": "0444",
+      "loopback_only": true,
+      "rejected_inference_routes": [
+        "POST /responses/compact"
+      ],
+      "request_compression": false,
+      "request_retries": 0,
+      "response_bound_enforcement": "runtime_fail_closed_before_buffered_response_release",
+      "response_compression": "identity",
+      "stream_retries": 0,
+      "strict_admission_inequality": "completed_tokens + (open_request_count + 1) * response_bound < token_limit",
+      "upstream_base_path": "/backend-api/codex",
+      "upstream_origin": "https://chatgpt.com",
+      "upstream_response_contract": {
+        "content_encoding_policy": "absent_or_single_identity",
+        "content_type_policy": "absent_or_single_text_event_stream_optional_utf8_charset",
+        "downstream_content_encoding": "identity",
+        "downstream_content_type": "text/event-stream",
+        "outbound_accept": "text/event-stream",
+        "parser": "highambench-strict-responses-sse-v2",
+        "protocol": "highambench-responses-sse-envelope-v1",
+        "schema_version": 1,
+        "success_status": 200
+      },
+      "websockets_supported": false
+    },
+    "transport_provenance": {
+      "connection_factory_mode": "explicit_tls",
+      "environment": {
+        "observed_absent": [
+          "ALL_PROXY",
+          "CURL_CA_BUNDLE",
+          "HTTPS_PROXY",
+          "HTTP_PROXY",
+          "LD_AUDIT",
+          "LD_LIBRARY_PATH",
+          "LD_PRELOAD",
+          "NO_PROXY",
+          "OPENSSL_CONF",
+          "OPENSSL_MODULES",
+          "PYTHONHOME",
+          "PYTHONHTTPSVERIFY",
+          "PYTHONINSPECT",
+          "PYTHONPATH",
+          "PYTHONSTARTUP",
+          "PYTHONWARNINGS",
+          "REQUESTS_CA_BUNDLE",
+          "SSLKEYLOGFILE",
+          "SSL_CERT_DIR",
+          "SSL_CERT_FILE",
+          "all_proxy",
+          "http_proxy",
+          "https_proxy",
+          "no_proxy"
+        ],
+        "proxy_mode": "direct_http_client_no_environment_proxy",
+        "required_absent": [
+          "ALL_PROXY",
+          "CURL_CA_BUNDLE",
+          "HTTPS_PROXY",
+          "HTTP_PROXY",
+          "LD_AUDIT",
+          "LD_LIBRARY_PATH",
+          "LD_PRELOAD",
+          "NO_PROXY",
+          "OPENSSL_CONF",
+          "OPENSSL_MODULES",
+          "PYTHONHOME",
+          "PYTHONHTTPSVERIFY",
+          "PYTHONINSPECT",
+          "PYTHONPATH",
+          "PYTHONSTARTUP",
+          "PYTHONWARNINGS",
+          "REQUESTS_CA_BUNDLE",
+          "SSLKEYLOGFILE",
+          "SSL_CERT_DIR",
+          "SSL_CERT_FILE",
+          "all_proxy",
+          "http_proxy",
+          "https_proxy",
+          "no_proxy"
+        ]
+      },
+      "kind": "python-stdlib-http-client-explicit-tls-v1",
+      "openssl": {
+        "config": {
+          "bytes": 12292,
+          "logical_path": "/usr/lib/ssl/openssl.cnf",
+          "mode": "0644",
+          "resolved_path": "/etc/ssl/openssl.cnf",
+          "sha256": "15c6ec001241f54bed98c135f0dab42f4a5e489f22544613b0671198f8ad8318",
+          "symlink_target": "/etc/ssl/openssl.cnf"
+        },
+        "libcrypto": {
+          "bytes": 4513040,
+          "logical_path": "/usr/lib/x86_64-linux-gnu/libcrypto.so.3",
+          "mode": "0644",
+          "resolved_path": "/usr/lib/x86_64-linux-gnu/libcrypto.so.3",
+          "sha256": "fba7b1a4a36ef2cc6277c92f6753cf5385c9ef60a22a2be1b869dc9e62d2ef0c",
+          "symlink_target": null
+        },
+        "libssl": {
+          "bytes": 671960,
+          "logical_path": "/usr/lib/x86_64-linux-gnu/libssl.so.3",
+          "mode": "0644",
+          "resolved_path": "/usr/lib/x86_64-linux-gnu/libssl.so.3",
+          "sha256": "fad70e7c15974ecc6182a5bdfc6fea6d95710f2daf0cc845840bcc0743fd05f8",
+          "symlink_target": null
+        },
+        "version": "OpenSSL 3.0.8 7 Feb 2023",
+        "version_number": 805306496
+      },
+      "python": {
+        "binary": {
+          "bytes": 6827680,
+          "logical_path": "/usr/bin/python3.11",
+          "mode": "0755",
+          "resolved_path": "/usr/bin/python3.11",
+          "sha256": "be3c31e93ceba16c561f69a9a86075b37d861721d06b4159d2d36a665231cc05",
+          "symlink_target": null
+        },
+        "executable": "/usr/bin/python3.11",
+        "hashlib_extension": {
+          "bytes": 63696,
+          "logical_path": "/usr/lib/python3.11/lib-dynload/_hashlib.cpython-311-x86_64-linux-gnu.so",
+          "mode": "0644",
+          "resolved_path": "/usr/lib/python3.11/lib-dynload/_hashlib.cpython-311-x86_64-linux-gnu.so",
+          "sha256": "3a5e67059a930bb4f28558a1239210ef907dcf12c063b67246d5b7455ab52266",
+          "symlink_target": null
+        },
+        "hashlib_module": {
+          "bytes": 11765,
+          "logical_path": "/usr/lib/python3.11/hashlib.py",
+          "mode": "0644",
+          "resolved_path": "/usr/lib/python3.11/hashlib.py",
+          "sha256": "e2bffb462e4d43e6637b9450e259e8ba2a56626ba3037d68aa1cee68b3f61d4a",
+          "symlink_target": null
+        },
+        "http_client_module": {
+          "bytes": 56926,
+          "logical_path": "/usr/lib/python3.11/http/client.py",
+          "mode": "0644",
+          "resolved_path": "/usr/lib/python3.11/http/client.py",
+          "sha256": "21a2a05faefe4ea287fdd134991487c9dff943e51b8dd7c534afc2c287f80a33",
+          "symlink_target": null
+        },
+        "http_server_module": {
+          "bytes": 48479,
+          "logical_path": "/usr/lib/python3.11/http/server.py",
+          "mode": "0644",
+          "resolved_path": "/usr/lib/python3.11/http/server.py",
+          "sha256": "d471860df3a8e1264c410d0a7fc092024b2f8ada109f378da50119b81513114e",
+          "symlink_target": null
+        },
+        "implementation": "cpython",
+        "json_decoder_module": {
+          "bytes": 12473,
+          "logical_path": "/usr/lib/python3.11/json/decoder.py",
+          "mode": "0644",
+          "resolved_path": "/usr/lib/python3.11/json/decoder.py",
+          "sha256": "9f02654649816145bc76f8c210a5fe3ba1de142d4d97a1c93105732e747c285b",
+          "symlink_target": null
+        },
+        "json_encoder_module": {
+          "bytes": 16080,
+          "logical_path": "/usr/lib/python3.11/json/encoder.py",
+          "mode": "0644",
+          "resolved_path": "/usr/lib/python3.11/json/encoder.py",
+          "sha256": "7c358788fbb2a6a07f66f1f8446c52396f35fc201108f666d5be002d86f31af2",
+          "symlink_target": null
+        },
+        "json_extension": {
+          "bytes": 49128,
+          "logical_path": "/usr/lib/python3.11/lib-dynload/_json.cpython-311-x86_64-linux-gnu.so",
+          "mode": "0644",
+          "resolved_path": "/usr/lib/python3.11/lib-dynload/_json.cpython-311-x86_64-linux-gnu.so",
+          "sha256": "7566520af3ddfa8a8936e5c570e27321fdc176c6f8130e64c1843a49070a8430",
+          "symlink_target": null
+        },
+        "json_module": {
+          "bytes": 14020,
+          "logical_path": "/usr/lib/python3.11/json/__init__.py",
+          "mode": "0644",
+          "resolved_path": "/usr/lib/python3.11/json/__init__.py",
+          "sha256": "d5d41e2c29049515d295d81a6d40b4890fbec8d8482cfb401630f8ef2f77e4d5",
+          "symlink_target": null
+        },
+        "socket_implementation": "built-in",
+        "socket_module": {
+          "bytes": 37320,
+          "logical_path": "/usr/lib/python3.11/socket.py",
+          "mode": "0644",
+          "resolved_path": "/usr/lib/python3.11/socket.py",
+          "sha256": "07f2010f98b7b90c237879c12f738e7305f786d7af4bc06606c4d77fd7fa9e1b",
+          "symlink_target": null
+        },
+        "ssl_extension": {
+          "bytes": 216944,
+          "logical_path": "/usr/lib/python3.11/lib-dynload/_ssl.cpython-311-x86_64-linux-gnu.so",
+          "mode": "0644",
+          "resolved_path": "/usr/lib/python3.11/lib-dynload/_ssl.cpython-311-x86_64-linux-gnu.so",
+          "sha256": "1ac2685e8bc1a9f88578d10b8ee6a7a247ab66e36ebbe291d041cfe2d2d79584",
+          "symlink_target": null
+        },
+        "ssl_module": {
+          "bytes": 53810,
+          "logical_path": "/usr/lib/python3.11/ssl.py",
+          "mode": "0644",
+          "resolved_path": "/usr/lib/python3.11/ssl.py",
+          "sha256": "4858d92c021c5e458de930f8b62d9689c4b3ccb12850dc6964ea2145af680b79",
+          "symlink_target": null
+        },
+        "version": "3.11.4"
+      },
+      "resolver": {
+        "gai_conf": {
+          "bytes": 2584,
+          "logical_path": "/etc/gai.conf",
+          "mode": "0644",
+          "resolved_path": "/etc/gai.conf",
+          "sha256": "76a5771adee7b9f36c7ae66eae78d72f325557500269107f2d98a7e3560a1808",
+          "symlink_target": null
+        },
+        "hostname": "chatgpt.com",
+        "hosts_file": {
+          "bytes": 253,
+          "logical_path": "/etc/hosts",
+          "mode": "0644",
+          "resolved_path": "/etc/hosts",
+          "sha256": "a642882f6158769c3b5f574c30f2772ff44aa31473a7553d5eddebe6eced72aa",
+          "symlink_target": null
+        },
+        "libc": {
+          "bytes": 2072888,
+          "logical_path": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+          "mode": "0644",
+          "resolved_path": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+          "sha256": "c3a14ee6eb14cdb81f6bbd0ab94ca138597db93d5c8e7bafb5609d2f94ee0068",
+          "symlink_target": null
+        },
+        "libnss_dns": {
+          "bytes": 14400,
+          "logical_path": "/usr/lib/x86_64-linux-gnu/libnss_dns.so.2",
+          "mode": "0644",
+          "resolved_path": "/usr/lib/x86_64-linux-gnu/libnss_dns.so.2",
+          "sha256": "144bbe05462c96309bee63f8259ca82de4939ef06b886a00f76badfbf9679500",
+          "symlink_target": null
+        },
+        "libnss_files": {
+          "bytes": 14400,
+          "logical_path": "/usr/lib/x86_64-linux-gnu/libnss_files.so.2",
+          "mode": "0644",
+          "resolved_path": "/usr/lib/x86_64-linux-gnu/libnss_files.so.2",
+          "sha256": "11fe54a01f5273a8a3d4e9bded851bca88dbaf9e89ccf04cbf1d6acec8e4cc98",
+          "symlink_target": null
+        },
+        "nsswitch_conf": {
+          "bytes": 594,
+          "logical_path": "/etc/nsswitch.conf",
+          "mode": "0644",
+          "resolved_path": "/etc/nsswitch.conf",
+          "sha256": "f053e77f9d706a20cb52deecdf9602b1635ea64a3be77a4cb32205bfebb17d3e",
+          "symlink_target": null
+        },
+        "policy": "host_getaddrinfo_dynamic_addresses_authenticated_by_tls_hostname",
+        "resolv_conf": {
+          "bytes": 923,
+          "logical_path": "/etc/resolv.conf",
+          "mode": "0644",
+          "resolved_path": "/run/systemd/resolve/stub-resolv.conf",
+          "sha256": "5fe122d5b1e1b0de5bc630d813ad06897d0bc9930ee10828162c3fb7788ea9ab",
+          "symlink_target": "../run/systemd/resolve/stub-resolv.conf"
+        },
+        "resolved_addresses_frozen": false,
+        "variability_classification": "availability_only_under_authenticated_tls_hostname"
+      },
+      "schema_version": 1,
+      "tls": {
+        "alpn_protocols": [
+          "http/1.1"
+        ],
+        "certificate_authority_count": 137,
+        "certificate_source": {
+          "bytes": 208567,
+          "logical_path": "/etc/ssl/certs/ca-certificates.crt",
+          "mode": "0644",
+          "resolved_path": "/etc/ssl/certs/ca-certificates.crt",
+          "sha256": "82f3a63130e0b47915659d619f177c8157c2bbb29dbf0f58ad2721ff84fb1190",
+          "symlink_target": null
+        },
+        "certificate_source_mode": "explicit_hashed_pem_cadata_only",
+        "check_hostname": true,
+        "cipher_names_sha256": "9650b8db6a20658d8e6a0454c85ce42bccd376728954c04fe5dc56938da9fe48",
+        "context_options": 2186412112,
+        "default_capath_used": false,
+        "keylog_enabled": false,
+        "maximum_version": "MAXIMUM_SUPPORTED",
+        "maximum_version_value": -1,
+        "minimum_version": "TLSv1_2",
+        "minimum_version_value": 771,
+        "protocol": "PROTOCOL_TLS_CLIENT",
+        "protocol_value": 16,
+        "security_level": 2,
+        "server_hostname": "chatgpt.com",
+        "server_port": 443,
+        "verify_flags": 32768,
+        "verify_mode": "CERT_REQUIRED",
+        "verify_mode_value": 2
+      }
+    }
+  },
+  "record_status": "legacy frozen-environment evidence; not used to create measured-v3 campaigns",
+  "release_manifest": "paper_bencmark/highambench/metadata/release_files.json",
+  "release_manifest_sha256": "05fb939290e0164440578b89f20736fff05dc4ae21fe0dd277d487ff4b854ae3",
+  "runtime": {
+    "packages_runtime_manifest": "paper_bencmark/highambench/metadata/packages_runtime.json",
+    "packages_runtime_manifest_sha256": "a2ee0563bc731aa3dba22ed7af0e9bd1322c8c06b51cd9d01bd573282d9c8c31",
+    "post_submission_validation_reserve_seconds": 369,
+    "prompt_startup_timeout_seconds": 120,
+    "python": {
+      "binary_sha256": "d6bca2b84e73c7775a0dd5e6a76899cfe4ee62863d7c8f88513811d1fda23f49",
+      "version": "3.10.12"
+    }
+  },
+  "schema_version": "0.1.0",
+  "token_control": {
+    "advisory_rollout_budget": {
+      "enabled": true,
+      "feature": "rollout_budget",
+      "feature_row": "rollout_budget under development false",
+      "limit_tokens": 5000000,
+      "prefill_token_weight": 1,
+      "role": "advisory_only",
+      "sampling_token_weight": 1,
+      "strict_config": true
+    },
+    "all_descendant_threads_included": true,
+    "cached_input_counted_once": true,
+    "checked_before_submission_validation": true,
+    "comparison": ">=",
+    "concurrent_inflight_overshoot_possible": false,
+    "control": "loopback_provider_response_admission_gate",
+    "crossing_response_actions_released": false,
+    "crossing_response_release": "ordinary_empty_output_or_compaction_single_item_before_minimal_completion",
+    "input_includes_cached": true,
+    "limit_tokens": 5000000,
+    "live_cumulative": true,
+    "live_update_sequence": true,
+    "measurement_exact_required": true,
+    "measurement_source": "codex_app_server_rawResponse/completed",
+    "notification": "rawResponse/completed",
+    "one_response_overshoot_possible": true,
+    "outcome_exactness": {
+      "accepted_proof": {
+        "descendants_quiescent": true,
+        "drain_complete": false,
+        "later_model_response_possible": false,
+        "measurement_exact": true,
+        "provider_gate_close_reason": "accepted_submission",
+        "provider_requests_quiescent": true,
+        "required_evidence": "exact_authenticated_submission_boundary",
+        "root_turn_active": true,
+        "submission_boundary_exact": true
+      },
+      "scored_failure": {
+        "drain_complete": true,
+        "measurement_exact": true,
+        "provider_gate_close_reason": "natural_end",
+        "provider_requests_quiescent": true,
+        "required_evidence": "exact_natural_drain",
+        "tree_quiescent": true
+      },
+      "token_limit": {
+        "crossing_response_actions_released": false,
+        "drain_complete": false,
+        "measurement_exact": true,
+        "provider_gate_close_reason": "token_limit",
+        "provider_requests_quiescent": true,
+        "required_evidence": "sealed_sanitized_sole_inflight_crossing",
+        "tree_quiescent": false
+      },
+      "unscorable_useful_work": {
+        "matrix_action": "abort_and_preserve_incident",
+        "retry_allowed": false,
+        "scored": false,
+        "trigger": "no_exact_authenticated_provider_gate_endpoint_for_outcome"
+      }
+    },
+    "outer_runner_polling": true,
+    "over_limit_pass_allowed": false,
+    "provider_gate_protocol": "highambench-provider-token-gate-v6",
+    "provider_requests_quiescent_at_scored_endpoint": true,
+    "provider_response_bound_tokens": 272000,
+    "response_ids_deduplicated": true,
+    "root_completion_is_tree_barrier": false,
+    "strict_admission_inequality": "completed_tokens + (open_request_count + 1) * response_bound < token_limit",
+    "tree_quiescence_distinct_from_provider_quiescence": true,
+    "trusted_adapter_freezes_first_threshold": true,
+    "trusted_adapter_latches_first_threshold": true,
+    "trusted_usage_path_outside_workspace": true,
+    "usage_scope": "rooted_attempt_thread_tree_completed_responses"
+  },
+  "token_control_canary": {
+    "path": "paper_bencmark/highambench/metadata/evidence/token_control_live_canary.json",
+    "sha256": "b2fb3ae15ed94d4d79f2978b6d8de45f901e24ae6dbeafb9adde6048c381dc2a",
+    "status": "replacement_required"
+  },
+  "ultra_orchestration_canary": {
+    "path": "paper_bencmark/highambench/metadata/evidence/ultra_orchestration_live_canary.json",
+    "sha256": "381e3c35753610a54626cfbcad4798777a8179653a522969bd4822935a1fd909",
+    "status": "replacement_required"
+  }
+}

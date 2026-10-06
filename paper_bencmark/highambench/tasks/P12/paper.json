@@ -1,0 +1,120 @@
+{
+  "annotation": {
+    "method": "Codex reread the complete local paper, surveyed all four theorems, four lemmas, two corollaries, and their proofs, and compared them with the frozen Mathlib and compiled NumStability baselines. After the measured full-Theorem-2 task failed to use NumStability or favor L, P12-T1 was redesigned around the paper's explicit equation-(8) exact-subtraction implication and checked with private N/L proofs.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P12 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Marko Lange",
+    "Shin'ichi Oishi"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P12-T1"
+  ],
+  "paper_id": "P12",
+  "paper_version": "published journal version; volume 145, issue 2, 2020, printed pages 383-403; corrected open-access publication 2021",
+  "publication": {
+    "doi": "10.1007/s00211-020-01114-2",
+    "issue": 2,
+    "issue_date": "2020-06",
+    "journal": "Numerische Mathematik",
+    "printed_pages": "383-403",
+    "publication_date": "2020-04-24",
+    "volume": 145,
+    "year": 2020
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "floating-point system definition (1), ULP definition (4), and the FastTwoSum pseudocode",
+      "reason": "These are definitions and an algorithm listing rather than proved source results."
+    },
+    {
+      "candidate": "Theorem 1, Dekker's base-2/base-3 result",
+      "reason": "The paper recalls this earlier theorem without supplying its proof; Theorem 2 is the paper's proved arbitrary-base generalization."
+    },
+    {
+      "candidate": "Theorem 2's complete condition-(7) FastTwoSum result",
+      "reason": "The original P12-T1 formalized this result, but all three measured L proofs used no NumStability declaration and L was slower than N. The substantial exact-subtraction theorem was obscured by the full three-case FastTwoSum argument and the representation adapter, so the task did not satisfy T1."
+    },
+    {
+      "candidate": "Lemma 1, equivalence between exponent ordering and an integer ULP multiple",
+      "reason": "This representation equivalence does not have a single substantial compiled NumStability result that would materially accelerate L."
+    },
+    {
+      "candidate": "decimal counterexample (6)",
+      "reason": "The concrete beta=10 example motivates the generalization but is not a general theorem."
+    },
+    {
+      "candidate": "Remark 1 and condition (11) for faithful addition",
+      "reason": "This is a secondary variation whose proof repeats the Theorem 2 case split; the selected certificate form remains rounding-policy neutral."
+    },
+    {
+      "candidate": "Theorem 3 and the c_beta-FastTwoSum error bound (12)",
+      "reason": "The modified four-operation algorithm requires a detailed radix scaling construction, but the frozen library does not provide two independent substantial results for it."
+    },
+    {
+      "candidate": "Lemmas 2-3, Corollary 1, Remarks 2-3, and Algorithm 1",
+      "reason": "These long integer-count bounds serve the OnlineExactSum application and are less central than the exact FastTwoSum and ThreeProduct identities."
+    },
+    {
+      "candidate": "TwoProduct equation (17) and FourSumThreeProduct",
+      "reason": "TwoProduct exactness is delegated background rather than a separately selected result, and the complete ThreeProduct composition does not isolate exactly one substantial compiled-library result."
+    },
+    {
+      "candidate": "Algorithm 2, Corollary 2, and equation (20)",
+      "reason": "These establish a specialized double-word nearestness result through a four-case format argument; they are setup for Theorem 4 rather than the cleanest exact-transform target."
+    },
+    {
+      "candidate": "Theorem 4 and equations (22)-(23)",
+      "reason": "The theorem is a substantial relative-error analysis involving radix powers, ordered ULPs, cardinality partitions, and a fractional optimization argument. Lemma 4 gives a more self-contained exact equality for the extend tier."
+    },
+    {
+      "candidate": "implementation alternatives and conclusion prose",
+      "reason": "Bit-resetting suggestions, platform considerations, and comparisons with TwoSum are explanatory or engineering commentary rather than fixed formal results."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Use the exact-subtraction implication numbered (8) in the proof of Theorem 2, retaining the common radix lattice, non-strict magnitude bound, absence-of-overflow endpoint, representability conclusion, and faithful-subtraction exactness.",
+      "task_id": "P12-T1",
+      "theorem_name": "p12_t1_exact_subtraction"
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. The multi-operation transformations reuse the same exact-subtraction/rounding machinery as the selected T1 and do not expose a second independent substantial NumStability result. The remaining ingredients are finite scalar algebra."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. ThreeProduct is sufficiently difficult, but it depends materially on the same substantial exact-subtraction machinery used by T1, so L would have a real advantage and the task cannot be T3. No other source result is both T2-hard and library-neutral."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use results proved or explicitly justified in this paper rather than definitions, pseudocode, or delegated earlier theorems.",
+    "Model equation (1), its equivalent normalized/subnormal decomposition, faithful subtraction, and equation (8) explicitly.",
+    "Preserve equation (8)'s non-strict magnitude bound, absence-of-overflow qualification, representability content, and exact-subtraction conclusion.",
+    "Keep the fixed Lean setting condition-neutral and paper-scoped.",
+    "Assign tiers only from the modules in metadata/library_olean.json; do not count the broader source-only compensated FastTwoSum module."
+  ],
+  "short_name": "Lange and Oishi (2020)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1007/s00211-020-01114-2",
+    "license": "Creative Commons Attribution 4.0 International",
+    "local_path": "paper_bencmark/reference_papers/P12_A note on Dekker\u2019s FastTwoSum algorithm.pdf",
+    "page_map": "PDF pages 1-21 are printed pages 383-403 respectively.",
+    "pdf_pages": 21,
+    "rights_note": "The corrected local publication states that the article is licensed under CC BY 4.0.",
+    "sha256": "0569d969cebaabe42de69fef10fa91002af12d62149af7485d0712414b53c2a1"
+  },
+  "title": "A note on Dekker's FastTwoSum algorithm"
+}

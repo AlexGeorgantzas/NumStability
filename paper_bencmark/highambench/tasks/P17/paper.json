@@ -1,0 +1,116 @@
+{
+  "annotation": {
+    "method": "Codex reread the complete 23-page local paper, surveyed every labeled and numbered result, compared the candidates with the frozen Mathlib and NumStability baselines, and required compiling exact private N and L proofs before retaining any tier. The former full-Theorem-4.3 T1 was replaced by its explicit equation-(4.12) centered-error bound after the private and measured evidence showed that unrelated shared work obscured the one library shortcut.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P17 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "El-Mehdi El Arar",
+    "Massimiliano Fasi",
+    "Silviu-Ioan Filip",
+    "Mantas Mikaitis"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P17-T1",
+    "P17-T3"
+  ],
+  "paper_id": "P17",
+  "paper_version": "published journal version; SIAM Journal on Scientific Computing 47(5), 2025, pages B1227-B1249",
+  "publication": {
+    "doi": "10.1137/24M1681458",
+    "issue": 5,
+    "journal": "SIAM Journal on Scientific Computing",
+    "online_publication_date": "2025-10-13",
+    "printed_pages": "B1227-B1249",
+    "publication_date": "2025-10-13",
+    "volume": 47,
+    "year": 2025
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Definitions 2.2, 2.5, 2.7, and 2.9 and the floating-point model in Section 2",
+      "reason": "These are definitions or recalled preliminaries rather than results proved in this paper."
+    },
+    {
+      "candidate": "Lemma 2.1, Propositions 2.3-2.4, and Lemma 2.6",
+      "reason": "These probability facts are recalled from the literature. P17-T1 formalizes their paper-specific use in Theorem 4.3."
+    },
+    {
+      "candidate": "Lemma 3.2 and equation (3.3)",
+      "reason": "The conditional-bias identity is central supporting material used by the selected Lemma 3.10 task rather than a standalone benchmark result."
+    },
+    {
+      "candidate": "Lemma 3.9's power-set expansion",
+      "reason": "This technical algebraic lemma is included as supporting material in P17-T3's formalization of Lemma 3.10 rather than selected alone."
+    },
+    {
+      "candidate": "Theorem 3.6 and Remark 3.7",
+      "reason": "The published product-envelope statement omits sign assumptions required by its proof. The former project-corrected target was not a theorem stated by the paper and was removed rather than retained as an artificial task."
+    },
+    {
+      "candidate": "Theorems 4.2, 4.4, 4.5, and 4.6",
+      "reason": "Theorem 4.2 uses an externally delegated martingale construction, while the inner-product results repeat the same bias and probability pattern with one multiplication error. Theorems 4.1 and 4.3 provide the clean summation progression."
+    },
+    {
+      "candidate": "Theorem 4.3's complete variance-plus-bias relative-error bound (4.11)",
+      "reason": "This was the former P17-T1, but the exact N/L proofs and three measured pairs show that the substantial Chebyshev shortcut is obscured by the common recursive-sum expansion and deterministic remainder proof. It does not give L a sufficiently clear T1 advantage."
+    },
+    {
+      "candidate": "Remark 5.1 random-bit rule and the experiments in Section 6",
+      "reason": "The random-bit choice is explicitly presented as a rule of thumb derived from asymptotic comparison, and the experiments are empirical rather than universally quantified formal results."
+    },
+    {
+      "candidate": "future extension to backward error analysis in Section 7",
+      "reason": "The paper states this as future work, not a completed result."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Use the centered-error probability bound explicitly numbered (4.12) in the proof of Theorem 4.3. Exact private N/L proofs isolate one substantial finite-Chebyshev result: N reconstructs the finite tail argument, while L applies the library result.",
+      "task_id": "P17-T1",
+      "theorem_name": "p17_t1_centered_error_probability_bound"
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. The strongest probability-bound candidate receives one substantial finite Chebyshev result; its bias, variance, and product-history work is paper-specific rather than a second NumStability theorem. Other candidates have no two independent substantial library matches."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Use Lemma 3.10's centered mean-independence result, power-set product decomposition (3.8), and sharp gamma-difference bound (3.9). The combined history-conditioned and combinatorial proof has no corresponding mounted result.",
+      "task_id": "P17-T3",
+      "theorem_name": "p17_t3_centered_product_decomposition"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use results proved in this paper rather than recalled probability facts, empirical plots, or future-work claims.",
+    "Expose finite products, finite summation conditioning, and finite probability with paper-scoped definitions.",
+    "Use exact finite inequalities rather than asymptotic big-O comparisons.",
+    "Keep every public definition free of NumStability imports.",
+    "Assign or retain a tier only after exact private N and L proofs compile and establish its required difficulty and library advantage. Compare only with the complete frozen NumStability source and compiled condition-L bundle recorded in metadata/library_olean.json."
+  ],
+  "short_name": "El Arar et al. (2025)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/24M1681458",
+    "local_path": "paper_bencmark/reference_papers/P17_PROBABILISTIC ERROR ANALYSIS OF LIMITED-PRECISIONSTOCHASTIC ROUNDING.pdf",
+    "page_map": "PDF pages 1-23 are journal pages B1227-B1249 respectively.",
+    "pdf_pages": 23,
+    "rights_note": "The local article copy states SIAM copyright and prohibits unauthorized reproduction. Release only bibliographic metadata, locators, hashes, and concise benchmark-author paraphrases unless redistribution permission is confirmed.",
+    "sha256": "df1ce5dd33285adfcffc6a4c7ab94f9604b46739cb848c6cbb5f997e8fac597d"
+  },
+  "source_validity": {
+    "benchmark_treatment": "The contradicted Theorem 3.6 statement is excluded. P17-T3 instead uses Lemma 3.10 exactly as stated and proved in the paper.",
+    "status": "published-statement-contradicted"
+  },
+  "title": "Probabilistic Error Analysis of Limited-Precision Stochastic Rounding"
+}

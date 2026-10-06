@@ -1,0 +1,84 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source-faithful componentwise realization of the first-step Schur-complement error bound in Appendix B",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "A22, L11, and A12 are the blocks in the first one-by-one or two-by-two elimination step in Appendix B.",
+    "The block product is computed entry by entry with sequential rounded dot products and the subtraction is rounded once under the standard relative-error model, excluding overflow and underflow.",
+    "The inner-product guard r*u<1 holds; in the source application r is one or two.",
+    "The explicit componentwise majorant is the unsuppressed local form of the paper's c_r*epsilon norm bound."
+  ],
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P29 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P29 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P29/T1/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p29_t1_first_schur_error (fp : P29FPModel) (m r : Nat) (A22 : P29Matrix m m) (L11 : P29Matrix m r) (A12 : P29Matrix r m) (hvalid : P29GammaValid fp.u r) : forall i j, abs (p29RoundedSchur fp A22 L11 A12 i j - p29ExactSchur A22 L11 A12 i j) <= p29SchurErrorMajorant fp A22 L11 A12 i j",
+    "namespace": "HighamBench",
+    "plain_language": "The componentwise error in the first rounded Schur-complement update is bounded by the final subtraction error plus the standard rounded matrix-product majorant.",
+    "target_file": "paper_bencmark/highambench/tasks/P29/T1/Target.lean",
+    "theorem_name": "p29_t1_first_schur_error"
+  },
+  "informal_proof": "Use the rounded matrix-product bound for the computed block product, extract the single relative error in the final subtraction, rewrite the total error as the sum of these two contributions, and apply the triangle inequality.",
+  "informal_statement": "The first-step Schur-complement rounding-error estimate displayed in Appendix B, with the suppressed local constant made explicit componentwise.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P29",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P29-Accurate Symmetric Indefinite Linear Equation Solvers.pdf",
+    "sha256": "e6fcb1e01906bbc1df9d3db41d593b6de7ffc7e3f320add7023caadf290b94f5"
+  },
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 20(2), 1998, printed pages 513-561",
+  "result_form_tag": "UNL",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.matMul_error_bound"
+    ],
+    "note": "L uses the one substantial compiled matrix-product error theorem. N reconstructs the sequential rounded-dot-product analysis. The remaining subtraction and triangle-inequality steps are simple and paper-specific. Private proofs compile and are 76 lines in L versus 344 lines in N."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P29FPModel",
+    "P29Matrix",
+    "p29Gamma",
+    "P29GammaValid",
+    "p29MatMul",
+    "p29RoundedDotProduct",
+    "p29RoundedMatMul",
+    "p29RoundedSchur",
+    "p29ExactSchur",
+    "p29SchurErrorMajorant"
+  ],
+  "source_locations": [
+    {
+      "anchor": "opening assumptions and the first-step computed Schur complement in Appendix B",
+      "pdf_page": 46,
+      "printed_page": "558",
+      "role": "selected first-step computation and local error statement",
+      "section": "Appendix B. Backward stability of LDL-transpose factorizations with bounded L"
+    }
+  ],
+  "source_tags": [
+    "UNL"
+  ],
+  "task_id": "P29-T1",
+  "tier": "T1",
+  "tier_label": "direct use",
+  "tier_rationale": "The proof needs exactly one distinct substantial importable result, NumStability.matMul_error_bound. Reconstructing its rounded dot-product analysis dominates N, while L reuses it and performs only the final rounded-subtraction calculation. No second substantial library result is needed.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P29/T1/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p29_t1_first_schur_error"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source selection, tier label, Model 1.5 Householder execution family, and both exact forms of equations (4.8)-(4.9)",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The matrix dimension m and the number r of Householder applications are positive.",
+    "The exact transformations are P_j=I-v_j v_j^T with v_j^T v_j=2; their involutory identity P_j^2=I is carried as the derived algebraic certificate used to factor Q^T.",
+    "The computed vector is the sequential perturbed product (P_r+DeltaP_r)...(P_1+DeltaP_1)b, and its value at model.unitRoundoff is linked to a Model 1.5 scalar-operation trace.",
+    "With probability one, every local DeltaP_j satisfies the subordinate matrix 2-norm bound (4.2).",
+    "On that same event, the unit-roundoff-indexed local family satisfies DeltaP_j(u)=O(u), which is the asymptotic content needed to type the matrix O(u^2) term in (4.8).",
+    "The standard relative-error model is used; the source states no separate overflow, underflow, NaN, or infinity clauses for Lemma 4.2."
+  ],
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P06 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P06 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P06/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p06_t3_householder_product_first_order_expansion {Omega : Type*} [MeasurableSpace Omega] {m r : Nat} (model : P06Model15 Omega) (run : P06HouseholderApplicationFamily Omega m r model) (c5 : Nat) (lambda : Real) ... (hlocal : P06Lemma42VectorAssumption run c5 lambda) : exists unfactoredRemainder factoredRemainder, matrix-O(u^2) certificates and both equations (4.8)-(4.9)",
+    "namespace": "HighamBench",
+    "plain_language": "A computed sequence of normalized Householder applications equals its exact result plus all single local-perturbation insertions and a matrix O(u^2) remainder; equivalently the error factors through Q^T and the exact F_j matrices of equation (4.9).",
+    "target_file": "paper_bencmark/highambench/tasks/P06/T3/Target.lean",
+    "theorem_name": "p06_t3_householder_product_first_order_expansion"
+  },
+  "informal_proof": "Induct on the number of applications to split the perturbed product into zero-, one-, and multiple-DeltaP terms. Closure of entrywise big-O under finite matrix sums and products gives O(u^2) for the multiple-perturbation matrix on the probability-one local event. Use P_j^2=I to show the one-insertion matrix equals Q^T times the sum of F_j, then absorb the higher-order matrix through the same orthogonal factor.",
+  "informal_statement": "Both displayed first-order expansions in equation (4.8), including the exact endpoint ordering in equation (4.9), for the Model 1.5 computed Householder application.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P06",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P06_PROBABILISTIC ROUNDING ERROR ANALYSIS OFHOUSEHOLDER QR FACTORIZATION.pdf",
+    "sha256": "c02a20e9ffa8039a5ad3db9261fba19929de84bf0bff7654547541dffe496a79"
+  },
+  "paper_version": "published journal version; volume 44, issue 3, 2023, printed pages 1146-1163",
+  "result_form_tag": "EQ",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.rectMatMulVec_mat_add",
+      "NumStability.rectMatMulVec_add",
+      "NumStability.rectMatMulVec_smul",
+      "NumStability.matMul_assoc",
+      "NumStability.matMul_add_left",
+      "NumStability.matMul_add_right"
+    ],
+    "note": "The frozen MatrixAlgebra module supplies matrix-vector linearity and basic exact matrix algebra. It has no theorem that constructs the paper's Model 1.5 Householder execution, proves the finite single-insertion expansion with a matrix O(u^2) remainder, or derives the endpoint-sensitive Q^T/F_j factorization."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "p06MatVec",
+    "p06RectOpNorm2Le",
+    "p06HouseholderMatrix",
+    "p06GammaTilde",
+    "P06Model15",
+    "p06MatrixFamilyIsBigOAtZero",
+    "p06MatrixSecondOrderAtZero",
+    "p06HouseholderProduct",
+    "p06PerturbedHouseholderProduct",
+    "p06FirstOrderHouseholderProduct",
+    "p06HigherOrderHouseholderProduct",
+    "p06HouseholderSequenceMatrix",
+    "P06HouseholderApplicationFamily",
+    "P06Lemma42VectorAssumption",
+    "p06ApplicationExactState",
+    "p06TransformedHouseholderInsertion",
+    "p06TransformedHouseholderInsertionSum",
+    "p06ApplicationQ",
+    "p06ApplicationFirstOrderMatrix",
+    "p06ApplicationF",
+    "p06ApplicationFSum"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Model 1.5",
+      "pdf_page": 3,
+      "printed_page": "1148",
+      "role": "standard relative-error equations, computation-order mean independence, and zero-mean errors",
+      "section": "1. Introduction"
+    },
+    {
+      "anchor": "Lemma 4.1 and equations (4.1)-(4.2)",
+      "pdf_page": 6,
+      "printed_page": "1151",
+      "role": "normalized exact Householder matrices, computed perturbed-product representation, and local subordinate-2-norm bound",
+      "section": "4. Application of a sequence of Householder matrices"
+    },
+    {
+      "anchor": "equations (4.8)-(4.9) in the proof of Lemma 4.2",
+      "pdf_page": 7,
+      "printed_page": "1152",
+      "role": "first-order expansion of the perturbed transformation product and the single-perturbation insertion matrices",
+      "section": "4. Application of a sequence of Householder matrices"
+    },
+    {
+      "anchor": "higher-order discussion following Theorem 4.4",
+      "pdf_page": 9,
+      "printed_page": "1154",
+      "role": "confirms that the omitted O(u^2) matrix consists of terms containing at least two local perturbations",
+      "section": "4. Application of a sequence of Householder matrices"
+    }
+  ],
+  "source_tags": [
+    "EQN"
+  ],
+  "task_id": "P06-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The nearby matrix-action additivity fact is elementary and available from Mathlib-level reasoning, so it does not materially speed L. The library does not model this Model 1.5 Householder execution, prove closure of the recursively generated multiple-perturbation matrix at O(u^2), or supply the Q^T/F_j factorization; both conditions require the full product induction and cancellation argument.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P06/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p06_t3_householder_product_first_order_expansion"
+  }
+}

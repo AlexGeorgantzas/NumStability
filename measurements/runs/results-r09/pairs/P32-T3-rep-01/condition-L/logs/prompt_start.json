@@ -1,0 +1,13 @@
+{
+  "kind": "highambench_prompt_started",
+  "model": "gpt-5.6-sol",
+  "monotonic_ns": 37434732142717,
+  "prompt_sha256": "37286f878876d4c4c6379811d8a11ae9e6dd7dabe19f0258bec33b4939345d39",
+  "reasoning_effort": "xhigh",
+  "schema_version": 1,
+  "temporary_auth_removed": true,
+  "thread_id": "01a0ac9d-00e2-76e3-98ec-dabc47c695df",
+  "turn_start_flushed": true,
+  "turn_start_wire_sha256": "468baa0b88146092b47cf1742b698d65a4d6d8b98412e822da72003028725f32",
+  "unix_ns": 1789602365675243080
+}

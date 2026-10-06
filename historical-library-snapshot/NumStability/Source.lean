@@ -1,0 +1,42 @@
+import NumStability.Source.Higham
+import NumStability.Source.Higham.Chapter01.Problem10.TwoPassSampleVariance.RemainderBound.Theorem
+import NumStability.Source.Higham.Chapter01.Section09.SampleVariance.IeeeSingleOnePassCounterexample.Results
+import NumStability.Source.Higham.Chapter01.Section13.IncreasingPrecision.BinaryStorageExamples
+import NumStability.Source.Higham.Chapter01.Section14.CancellationOfRoundingErrors.Algorithm02RoundedCore
+import NumStability.Source.Higham.Chapter02.Problem03.AdjacentPrecisionValues.Results.Theorems
+import NumStability.Source.Higham.Chapter02.Problem12.ReciprocalProduct.Results.Theorems
+import NumStability.Source.Higham.Chapter02.Problem13.ReciprocalProductThreshold.Results.Theorems
+import NumStability.Source.Higham.Chapter02.Problem14.UnitRoundoffProbe.IeeeExamples.Results
+import NumStability.Source.Higham.Chapter02.Problem21.HypotenuseNormalization.StandardModelCounterexample.Results
+import NumStability.Source.Higham.Chapter02.Problem28.IterativeDivisionTermination.UnderflowAwareConvergence.Results
+import NumStability.Source.Higham.Chapter02.Section06.Discriminant.FusedMultiplyAdd.Counterexample.Results
+import NumStability.Source.Higham.Chapter02.Section06.Discriminant.StandardModel.Counterexample.Results
+import NumStability.Source.Higham.Chapter02.Section10.ArctangentRange.Counterexample.Results
+import NumStability.Source.Higham.Chapter02.Section10.Tablemaker.FiniteSeparation.Results.Theorems
+import NumStability.Source.Higham.Chapter02.Section11.AccuracyTests.CodySineResults.Theorems
+import NumStability.Source.Higham.Chapter03.Problem11.KahanAbsoluteValue.IeeeDoubleTrace.Results
+import NumStability.Source.Higham.Chapter04.Problem02.WilkinsonAttainability.IeeeDoubleTrace.Results
+import NumStability.Source.Higham.Chapter05.Algorithm01.ComplexHorner.ErrorBounds.Theorems
+import NumStability.Source.Higham.Chapter05.Section02.BidiagonalDerivativeAnalysis.Results.Theorems
+import NumStability.Source.Higham.Chapter05.Section02.DerivativeError.Results.Theorems
+import NumStability.Source.Higham.Chapter05.Section04.PatersonStockmeyer.Results.Theorems
+import NumStability.Source.Higham.Chapter05.Section05.FastPolynomialEvaluation.Results.Theorems
+import NumStability.Source.Higham.Chapter07.Equation17.KahanConditioningExample
+import NumStability.Source.Higham.Chapter07.Equation26.RumpCycle.Results.Theorems
+import NumStability.Source.Higham.Chapter07.LinearSystemsConditioning.Theorem03.RectangularResults
+import NumStability.Source.Higham.Chapter07.LinearSystemsConditioning.Theorem05.RowInfinityScaleCounterexample.Theorems
+import NumStability.Source.Higham.Chapter08.Equation02.TriangularSubstitution.RelativeInfinityNormBounds.Theorems
+import NumStability.Source.Higham.Chapter08.Equation15.GlobalEnvelopeCounterexample.LocalCancellationResults.Theorems
+import NumStability.Source.Higham.Chapter08.Problem02.ComparisonMatrixWitness.ArbitraryRatios.Theorems
+import NumStability.Source.Higham.Chapter08.Problem07.DiagonalScaling.Results.Theorems
+import NumStability.Source.Higham.Chapter08.Problem08.SingleEntrySingularity.Results.Theorems
+import NumStability.Source.Higham.Chapter08.Problem09.KahanSingularValues.Results.Theorems
+import NumStability.Source.Higham.Chapter08.Section03.TriangularSystems.ComparisonConditioningResults.Theorems
+import NumStability.Source.Higham.Chapter08.Section03.TriangularSystems.InverseNormResults.Theorems
+
+/-!
+# NumStability source correspondence
+
+Canonical entry point for modules tied to numbered books and papers. Reusable
+analysis and algorithms must not depend on this surface.
+-/

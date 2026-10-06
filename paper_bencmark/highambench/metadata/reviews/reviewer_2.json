@@ -1,0 +1,270 @@
+{
+  "record_status": "superseded_construction_snapshot",
+  "schema_version": "highambench-review-0.2",
+  "review_id": "P01-final-formal-interface-and-protocol-review-2",
+  "reviewer": {
+    "id": "codex-independent-formal-interface-and-protocol-pass",
+    "kind": "Codex review pass, not a human reviewer",
+    "focus": "fixed Lean interfaces, condition separation, frozen files, hidden validation, dependency auditing, run completeness, and report safeguards",
+    "independence_note": "This review independently read the specification, source formulas, Lean targets, validators, isolation adapters, runner, result checker, and frozen evidence. It did not use reviewer_1.json as evidence that any check passed."
+  },
+  "review_date": "2026-07-26",
+  "overall_status": "final pass for construction and observational-pilot run readiness",
+  "review_basis": {
+    "benchmark_specification": {
+      "path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+      "sha256": "25a8a72d62e2ad9d131004b871f5ccc58438d488dbd64afcd0a8839e9e4d78a8",
+      "pages_read": [1, 2, 3, 4]
+    },
+    "paper": {
+      "path": "paper_bencmark/reference_papers/THE ACCURACY OF FLOATING POINT SUMMATION.pdf",
+      "sha256": "d5ad99fac5022da54dbe02721ea57116df3cec15badddd7c96c344328718fea7",
+      "formula_pages_visually_checked": [2, 3, 6, 11],
+      "source_claims_checked": [
+        "finite-product gamma estimate after equation (2.2)",
+        "recursive summation bound (2.6)",
+        "pairwise summation bound and comparison (3.6)",
+        "no-guard model and running bound (5.1)-(5.3)"
+      ]
+    },
+    "environment": {
+      "environment_id": "highambench-p01-f4b35735854f72ce",
+      "environment_bundle_sha256": "f4b35735854f72ce28fb52300aa7cee67b37d6bca05987a012ebc80e845280a5",
+      "config_sha256": "5e5030d43ccbf5411b8d07afaf0b98c5af5811ac8ab7a5288602239e4bba29e5",
+      "release_manifest_sha256": "d4889169929f629a745207dbe85dc9df179caf3ae11ee5b0a43a1111119b69e2",
+      "packages_runtime_manifest_sha256": "a2ee0563bc731aa3dba22ed7af0e9bd1322c8c06b51cd9d01bd573282d9c8c31",
+      "numstability_source_manifest_sha256": "8b52061f0fafc283acd2363267ebbee2f9c6eb97360c596723b95b27515c7828",
+      "numstability_compiled_manifest_sha256": "bbea1e90bc11605bd3c14b28dc39bf49b7bcb64ab5cf2306841f65b803a6ae2a",
+      "compiled_environment_summary_sha256": "ae361f8e83f4e65745249c1b7ce415fe91024b32cbe935be34402598ac1f7844"
+    },
+    "independent_verification": {
+      "tool_tests": "91 of 91 passed, with no skips",
+      "python_tool_compilation": "13 of 13 modules compiled",
+      "lean_dependency_audit_compilation": "passed with Lean 4.29.0-rc3",
+      "manifest_checks": {
+        "release_files": "47 of 47",
+        "P01-T1_controlled_files": "4 of 4",
+        "P01-T2_controlled_files": "4 of 4",
+        "P01-T3_controlled_files": "4 of 4",
+        "numstability_source_files": "977 of 977",
+        "numstability_compiled_files": "120 of 120",
+        "package_runtime_files": "39811 of 39811"
+      },
+      "full_startup_gate": {
+        "status": "pass",
+        "toolchain_files": 13346,
+        "compiled_package_trees": 8,
+        "compiled_package_files": 88393,
+        "environment_identity_recomputed": true
+      },
+      "offline_launcher": {
+        "source_sha256": "2a15af726576647926f639745fb0eb5dbda9ecb0cb9680ded1e1138e1e49fd32",
+        "binary_sha256": "a43df72964e86027ed3c2e66ab4aceda7d02896b6cc2db6befa107d79bb4171c",
+        "documented_build_command_reproduced_binary_exactly": true,
+        "build_standard": "C11"
+      },
+      "private_construction_rebuild": "All six complete private proofs were independently rebuilt in fresh N and L workspaces with the same formal checker files. The later launcher correction changed only the C build instruction and its adapter test, not the targets, gold proofs, Lean isolation adapter, validator, or dependency audit."
+    },
+    "construction_check": {
+      "path": "paper_bencmark/highambench/metadata/evidence/construction_validation.json",
+      "sha256": "f746727d22efe7704bd869b1880af7aca93c147ff13d1c76fc88d3c2ddb3165b",
+      "proofs_passed": 6,
+      "proofs_checked": 6,
+      "condition_n_passed": 3,
+      "condition_l_passed": 3
+    },
+    "overlap_search": {
+      "path": "paper_bencmark/highambench/metadata/evidence/exact_target_search.json",
+      "sha256": "89fab1e3f2f02e9f6b1d85761d6fae626b83393d465aed61ea8ef5fe27dd6543",
+      "all_three_full_targets_absent": true
+    }
+  },
+  "fixed_artifact_hashes": {
+    "agent_prompt": "118749427c471f95f41206473934caab32b194f75317aa2cc950a836ff33a7ee",
+    "shared_definitions": "5350985da64d27b8f7f77a275ffdda773b37c15e9f0c504a164edd3b5ede19d7",
+    "shared_definitions_olean": "3dde6a260f4b786ca115ebc1179e99cb830066f8910bb51366b546c23a15c11e",
+    "P01-T1": {
+      "target_sha256": "11a966a96916675045f6965f323e5233f87eb80e2c92aada13a567c9ef677c33",
+      "context_sha256": "343b81790e07535416fd7083b076aeb137674520c61f0834fd859c272ea0f044",
+      "task_json_sha256": "10dc78280c6d968cfa10f55279438a669f0d54cdb871955a88b8109e0d99a818",
+      "controlled_manifest_sha256": "9b58cbd0a899f08735d1a719ec739ce4bc8ae84d43e2c77a71215806eccd8b42"
+    },
+    "P01-T2": {
+      "target_sha256": "9e21ce9099bf6d68cf794b72e3dddc9c0b2f7f538a32a4a8697f547657552505",
+      "context_sha256": "feee2f423b1a31f74646e9217229cd28bff9227dc45a6bbb98f0d407c8fd1ab4",
+      "task_json_sha256": "919ddf24d6886a9add6e2fd5b6723986f41622878fed4eb129cfc5252637a03f",
+      "controlled_manifest_sha256": "227010c71fde4d31ae05ae7069bac53a242d216d2e13d8e7b859fd7b435e7460"
+    },
+    "P01-T3": {
+      "target_sha256": "5f2b7112d090c066ade9b11c1f24f363ad6e6e04c6dce5bc804a981441c8a95d",
+      "context_sha256": "81666fb071643e9cbb83f5f23a282606702103869307206989d1df7d7302dfef",
+      "task_json_sha256": "720578e261f49cbd41f1e236919f003d165d7c8601003e26877fe7d9de7566e5",
+      "controlled_manifest_sha256": "e2172fef443077a32b4cbc79ad49a51c97b1651d4f98530a25b811c67ae95a2c"
+    },
+    "protocol_tools": {
+      "codex_isolated.py": "d42b09a39a30cd7c03b313a929bc2c472f1327a69ceaeee334de6897cd6e1094",
+      "lean_isolated.py": "aae24febc4bf42802919c027bf6edb1c409903376ae0c37d9d0294d855d895ca",
+      "preflight.py": "0c192828297710a67fa131403f9359a94f78767ff081af55010cf72b86d1793d",
+      "validator.py": "2842f43cab220363ba3b6bb66004e3023d15c3eba5a8a6ddbb048aa2507808cb",
+      "dependency_audit.lean": "0f19d8c9e1a2e6c17f22f0ab38425d0351e4d6cf65c0b03165e06ecb9d718be7",
+      "runner.py": "dd32ade7b548d070793389589fff9d62b3dd55f943bbaf7ede0ab06736bb64c7",
+      "run_matrix.py": "38502d8adbe820bf0a95d838618bec5027f1d5fcd980dc0d324cfa6b1e716fec",
+      "result_set.py": "7f2188561fdd752559780fa134f63994d191d2c77de01bb3cf772bad82d52202",
+      "render_report.py": "3d445ff1709d578a02fb2097caaab6d64867a9fde1f214cfdf13e1ddeff67061"
+    }
+  },
+  "protocol_checks": {
+    "same_fixed_task_in_both_conditions": {
+      "status": "pass",
+      "note": "Each pair receives the same four-file controlled manifest: prompt, shared definitions, target, and context. The validator checks these fingerprints before compilation, in its hidden copy, and again after candidate, expected-type, and dependency-audit compilation."
+    },
+    "condition_n_library_absence": {
+      "status": "pass",
+      "note": "N is staged without NumStability mount arguments. Before the prompt and private proof are exposed, the complete staged task is scanned for source, compiled files, names, documentation, indexes, caches, symbolic links, and content markers. A real import test must report that NumStability is unavailable. The shared compiled file and the 39,811-file package runtime were also scanned with no NumStability marker."
+    },
+    "condition_l_frozen_library_view": {
+      "status": "pass",
+      "note": "L receives only the exact 977-file frozen source tree and exact 120-file pruned compiled tree as read-only mounts. Extra, missing, changed, or symbolic-link files are rejected before a run."
+    },
+    "shared_package_runtime": {
+      "status": "pass",
+      "note": "Both conditions receive the identical 39,811-file package view: 7,673 Mathlib source files, 8,039 base olean compiled files, and 24,099 matching compiled support files. Git data, search indexes, traces outside the manifest, and build caches are not mounted."
+    },
+    "statement_and_proof_validation": {
+      "status": "pass",
+      "note": "The validator first compares the visible theorem signature with the fixed header, then uses Lean's own type checker to compare the submitted theorem type with a freshly compiled canonical expected type. It rejects changed controlled files, source-less compiled helpers, protected-module collisions, forbidden imports, sorry, admit, new task axioms, unsafe checking bypasses, and malformed audit output."
+    },
+    "transitive_dependency_audit": {
+      "status": "pass",
+      "note": "The Lean audit follows the target proof and all reachable task-local helpers. It checks types and proof bodies, rejects sorryAx and task-local assumed facts, authenticates module ownership, and records real NumStability declarations for L. The six construction proofs showed zero forbidden dependencies, zero missing helpers, no library declaration in N, and genuine library use in every L proof."
+    },
+    "fresh_run_isolation": {
+      "status": "pass",
+      "note": "Every assignment uses a fresh writable workspace, a fresh temporary Codex state directory, an ephemeral conversation, and a fresh bubblewrap process and filesystem namespace. Paired runs do not share submitted files, build output, logs, searches, caches, or conversations."
+    },
+    "model_tool_network_boundary": {
+      "status": "pass",
+      "note": "The Codex control process retains the provider connection, but model-generated shell commands and all descendants inherit a no-socket seccomp rule. A separate outer process watches the violation marker through kernel events, so truncating or deleting the marker cannot erase a recorded request. Any recorded request prevents a pass. The corrected documented C11 build command reproduces the frozen launcher byte for byte."
+    },
+    "agent_and_limit_freeze": {
+      "status": "pass",
+      "note": "The startup gate verifies Codex, Lean, Lake, Python, bubblewrap, host class, release files, toolchain, compiled packages, pruned package runtime, shared compiled file, and NumStability source and compiled trees. Model, reasoning level, prompt, 900-second limit, and 120,000-token limit come from authenticated metadata rather than free command-line choices."
+    },
+    "run_order_and_result_completeness": {
+      "status": "pass",
+      "note": "The fixed SHA-256 parity rule correctly produces nine paired orders and 18 unique run IDs. The result checker requires every assignment exactly once and in order, matches every record to the frozen environment and pair, retains allowed startup incidents, requires final token and network evidence, and rejects an incomplete or stale matrix."
+    },
+    "analysis_and_report_safeguards": {
+      "status": "pass",
+      "note": "The analysis keeps all runs and reports success, scored time, token use, failure codes, paired differences, and actual L library use. The report builder rechecks the release, environment, construction evidence, reviews, result completeness, and nearby startup fingerprint. It labels the one-paper resampling range as uninformative and refuses to present this setup as an official reference score."
+    }
+  },
+  "task_reviews": [
+    {
+      "task_id": "P01-T1",
+      "tier": "T1",
+      "tier_label": "direct use",
+      "checks": {
+        "condition_neutral_formal_interface": {
+          "status": "pass",
+          "note": "The statement names only Mathlib and HighamBench shared objects. It contains no NumStability import or declaration. StandardAddModel records the standard addition rule and exact addition from zero; pairwiseSum does not use the latter field, and the task metadata discloses that it is retained for the common library adapter."
+        },
+        "statement_builds_and_is_semantically_fixed": {
+          "status": "pass",
+          "note": "Fresh complete N and L proofs both compiled. The hidden audit found the submitted type definitionally equal to the canonical fixed T1 type and found the statement unchanged."
+        },
+        "condition_n_is_clean": {
+          "status": "pass",
+          "note": "The complete four-file T1 staging passed the absence scan and reliable forbidden-import test. Its accepted N dependency record contains no NumStability declaration."
+        },
+        "condition_l_records_real_library_use": {
+          "status": "pass",
+          "note": "The accepted L proof depends transitively on NumStability.pairwiseSum_forward_error_bound and its pairwise, gamma, and floating-point-model dependencies. Merely importing the library would not satisfy this check."
+        },
+        "validator_and_hashes_are_ready": {
+          "status": "pass",
+          "note": "The target, context, task record, shared definition, prompt, and controlled manifest hashes above match the final release. All before-and-after controlled-file checks and forbidden-dependency checks passed."
+        },
+        "tier_matches_library_overlap": {
+          "status": "pass",
+          "note": "The full shared-surface target is absent, while one close stronger pairwise theorem is present. Reusing that theorem plus an adapter and nonnegative simplification is exactly a direct-use task."
+        }
+      },
+      "review_outcome": "pass for observational-pilot construction and run readiness"
+    },
+    {
+      "task_id": "P01-T2",
+      "tier": "T2",
+      "tier_label": "combine",
+      "checks": {
+        "condition_neutral_formal_interface": {
+          "status": "pass",
+          "note": "The fixed conjunction uses only the shared standard model, pairwise and recursive algorithms, gamma, and GammaValid. It names no NumStability object and compares certified gamma coefficients rather than claiming an ordering of actual errors."
+        },
+        "statement_builds_and_is_semantically_fixed": {
+          "status": "pass",
+          "note": "Fresh complete N and L proofs both compiled. The hidden audit found the submitted type definitionally equal to the canonical fixed T2 type and found the statement unchanged."
+        },
+        "condition_n_is_clean": {
+          "status": "pass",
+          "note": "The complete four-file T2 staging passed the absence scan and reliable forbidden-import test. Its accepted N dependency record contains no NumStability declaration."
+        },
+        "condition_l_records_real_library_use": {
+          "status": "pass",
+          "note": "The accepted L proof depends transitively on the separate NumStability pairwise bound, recursive bound, gamma-validity monotonicity, and gamma monotonicity results, together with their library definitions."
+        },
+        "validator_and_hashes_are_ready": {
+          "status": "pass",
+          "note": "The target, context, task record, shared definition, prompt, and controlled manifest hashes above match the final release. All before-and-after controlled-file checks and forbidden-dependency checks passed."
+        },
+        "tier_matches_library_overlap": {
+          "status": "pass",
+          "note": "No single declaration states the three-part result. Several library facts must be joined with the task-specific inequality r <= 2^r - 1 and guard transfer, so combine is the correct tier."
+        }
+      },
+      "review_outcome": "pass for observational-pilot construction and run readiness"
+    },
+    {
+      "task_id": "P01-T3",
+      "tier": "T3",
+      "tier_label": "extend",
+      "checks": {
+        "condition_neutral_formal_interface": {
+          "status": "pass",
+          "note": "The fixed statement uses the shared no-guard model, recursive sum, and exact computed-prefix running budget. It names no NumStability object, preserves separate alpha and beta local errors, and introduces no gamma guard absent from equation (5.3)."
+        },
+        "statement_builds_and_is_semantically_fixed": {
+          "status": "pass",
+          "note": "Fresh complete N and L proofs both compiled. The hidden audit found the submitted type definitionally equal to the canonical fixed T3 type and found the statement unchanged."
+        },
+        "condition_n_is_clean": {
+          "status": "pass",
+          "note": "The complete four-file T3 staging passed the absence scan and reliable forbidden-import test. Its accepted N dependency record contains no NumStability declaration."
+        },
+        "condition_l_records_real_library_use": {
+          "status": "pass",
+          "note": "The accepted L proof genuinely uses NumStability.noGuardAddWitness, NumStability.noGuardAddWitness_value, and NumStability.noGuardAddWitness_error_eq, while the new accumulated running-budget argument remains in task-local proved code."
+        },
+        "validator_and_hashes_are_ready": {
+          "status": "pass",
+          "note": "The target, context, task record, shared definition, prompt, and controlled manifest hashes above match the final release. The audit traversed the new local induction helpers and found no missing module or assumed fact."
+        },
+        "tier_matches_library_overlap": {
+          "status": "pass",
+          "note": "The frozen library has one-step no-guard identities and a generic accumulation scaffold, but no theorem connecting the no-guard recursive state, witnesses, indices, final state, and exact computed-prefix budget. A substantial new bridge or full induction is still required, so extend is the correct tier."
+        }
+      },
+      "review_outcome": "pass for observational-pilot construction and run readiness"
+    }
+  ],
+  "release_blockers": [],
+  "observational_limitations": {
+    "one_paper_only": "Only P01 is present, as requested. It cannot represent numerical-analysis papers in general, and resampling one paper gives a 95 percent range with no useful spread.",
+    "no_backend_seeds": "rep-01, rep-02, and rep-03 are repetition IDs, not demonstrated model seeds. The paired fixed-seed part of the reference protocol is therefore not met.",
+    "no_oci_image": "There is no frozen OCI operating-system image. Bubblewrap creates fresh namespaces, but the read-only host system folders are not one completely fingerprinted filesystem.",
+    "provider_connection": "Model shell and web access are disabled, but the Codex control process keeps the provider connection required to obtain model responses.",
+    "token_timing": "Exact provider token totals arrive when the full model turn ends and may include a small amount of text produced after the proof first became valid. First-valid wall time is recorded separately.",
+    "measurement_status": "This review approves the frozen task construction and run machinery. It does not claim that the planned 18 external Codex runs have been executed. Measurements and the final PDF remain separate required work, and any completed measurements must be labeled observational rather than an official reference HighamBench score."
+  },
+  "reviewer_summary": "The three condition-neutral targets are fixed and solvable in both N and L. N excludes NumStability and proves that exclusion before work starts; L exposes only the exact frozen library and records genuine transitive library use. The hidden validator checks semantic statement identity, controlled-file integrity, complete proof dependencies, and forbidden shortcuts. The final release, manifests, launcher rebuild, tool tests, Lean audit, and full startup gate all passed independent verification. There is no remaining construction or run-readiness blocker, but the absent backend seeds, absent OCI image, provider control connection, one-paper scope, and not-yet-executed 18-run matrix require an observational-pilot label and prevent any current claim of an official score."
+}

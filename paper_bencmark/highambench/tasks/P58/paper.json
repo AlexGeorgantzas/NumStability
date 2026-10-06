@@ -1,0 +1,89 @@
+{
+  "annotation": {
+    "method": "Codex extracted and read all 45 pages in physical order, covering Sections 1-9, Algorithms 1.1-8.1 and A.1-A.3, every theorem, lemma, proposition, corollary and proof, all numerical experiments, Supplemental Sections S1-S5 and their complete proofs, and all 84 references; separated cited matrix/probability results from the paper's own deductions; audited Mathlib and the exact frozen 44-object NumStability surface; and compiled private N/L tests for the strongest T1 and T2 candidates before skipping all tiers.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P58 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "M. Gu"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [],
+  "paper_id": "P58",
+  "paper_version": "arXiv:1408.2208v1 [math.NA], 10 August 2014",
+  "publication": {
+    "arxiv_id": "1408.2208v1",
+    "version_date": "2014-08-10",
+    "year": 2014
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Lemma 2.2, Frobenius projection optimality",
+      "reason": "The frozen projection-residual theorem creates a genuine one-result shortcut: exact private proofs compile in 156 N lines and 50 L lines. However, P58 supplies only the lemma statement and says that versions appear in references [7,23,35]; it gives no proof text. Retaining it would violate the requirement that both conditions receive the source statement and proof from this paper."
+    },
+    {
+      "candidate": "Theorem 3.5, restricted Frobenius approximation",
+      "reason": "This theorem is source-proved and a private L proof uses the frozen projection-residual orthogonality and rectangular Frobenius-isometry results. Exact N and L proofs compile, but they require 238 and 198 physical lines respectively. The 40-line reduction is not the large two-result advantage required for T2 and is smaller than the rejected Lemma 2.2 T1 reduction."
+    },
+    {
+      "candidate": "Theorem 3.4, Reverse Eckart--Young",
+      "reason": "The proof depends on the cited Weyl monotonicity and Hoffman--Wielandt theorems. The frozen library has no singular-value sequence or matching perturbation result; exposing the cited conclusions as assumptions leaves only short sum algebra, below T3 difficulty."
+    },
+    {
+      "candidate": "Theorems 4.3-4.4",
+      "reason": "Their deterministic bounds build on the omitted-proof Lemma 4.1, cited interlacing/Eckart--Young facts, and paper-specific singular-value machinery absent from the frozen library. Encoding those facts as assumptions makes the remaining estimates too short; rebuilding them would import proof obligations not supplied by P58."
+    },
+    {
+      "candidate": "Theorems 5.6-5.8 and Corollary 5.9",
+      "reason": "They combine cited continuous-Gaussian concentration and pseudoinverse-tail results with Propositions 5.4-5.5. NumStability's probability theory is finite, not continuous Gaussian. Treating cited inputs as assumptions leaves routine expectation or union-bound assembly, while formalizing the cited inputs would not be source-faithful."
+    },
+    {
+      "candidate": "Propositions 5.4-5.5 and Supplemental Section S4",
+      "reason": "Their long proofs are tied to continuous Gaussian expectations, density bounds, and several calculus facts whose proofs are explicitly omitted in S5. No faithful exact task can retain the full proof while excluding those missing cited or omitted foundations, and no NumStability result supplies a T1/T2 shortcut."
+    },
+    {
+      "candidate": "Sections 6-8 and Supplemental Sections S2-S3",
+      "reason": "The rank-revealing comparison relies on a cited strong RRQR theorem; the condition-estimation corollary is inherited from the probabilistic result; and the remaining claims are algorithms, heuristics, asymptotic discussions, or numerical experiments rather than better exact proof tasks."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. Lemma 2.2 has a strong verified one-result NumStability shortcut, but P58 omits its proof and points to earlier literature. No internally proved result has a comparable one-result advantage with complete source proof text."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. The strongest source-proved candidate, Theorem 3.5, uses two distinct frozen results in L, but exact private proofs are 238 N lines versus 198 L lines. This is not the substantially larger advantage required for T2."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. The large internally developed probabilistic bounds depend on cited continuous-Gaussian theorems and omitted calculus proofs. Once those are treated as background, the remaining exact deductions are below the T2 difficulty floor; rebuilding them would be unfaithful to P58."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only statements whose supporting proof is present in P58.",
+    "Do not turn cited Eckart--Young, interlacing, Weyl, Hoffman--Wielandt, Gaussian concentration, or pseudoinverse-tail results into P58 proof obligations.",
+    "Do not fill in the calculus proofs that Supplemental Section S5 explicitly omits.",
+    "Require private N/L evidence to show the full tier advantage before retaining a task.",
+    "Do not promote algorithms, asymptotic discussion, heuristics, or experiments to exact theorem tasks."
+  ],
+  "short_name": "Gu (2014)",
+  "source": {
+    "lawful_source_locator": "local user-supplied arXiv PDF",
+    "local_path": "paper_bencmark/reference_papers/P58 Subspace Iteration Randomization and Singular Value Problems.pdf",
+    "page_map": "Physical pages 1-31 carry main-text pages 1-31; physical pages 32-45 carry Supplemental Material pages i-xiv.",
+    "pdf_pages": 45,
+    "rights_note": "Retain the local source path and cryptographic hash for benchmark provenance; do not redistribute the source PDF.",
+    "sha256": "1de5e6980414c3faa5cc192c7ac861f3c1a9a2007b59ee4ea80ae211e8ef3521"
+  },
+  "title": "Subspace Iteration Randomization and Singular Value Problems"
+}

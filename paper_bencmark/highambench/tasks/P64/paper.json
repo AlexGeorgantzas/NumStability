@@ -1,0 +1,59 @@
+{
+  "annotation": {
+    "method": "Read Algorithm 1, the Section 3 numerical kernels, and Section 4.2 G-stage result; compiled exact N and L proofs before packaging.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner requested additional paper-grounded T1/T2 tasks."
+  },
+  "authors": [
+    "Urs von Matt",
+    "G. W. Stewart"
+  ],
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P64-T2"
+  ],
+  "paper_id": "P64",
+  "paper_version": "September 1994 University of Maryland author preprint of the 1996 Math. Comp. article; preprint pages 1-26",
+  "publication": {
+    "doi": "10.1090/S0025-5718-96-00667-9",
+    "issue": "213",
+    "journal": "Mathematics of Computation",
+    "printed_pages": "115-135",
+    "volume": "65",
+    "year": 1996
+  },
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "The Section 3 Gaussian-elimination leaf bound (5)\u2013(6) is cited from Wilkinson rather than proved in this paper; no T1 selected."
+    },
+    "T2": {
+      "available": true,
+      "decision": "Select the one-right-hand-side GE-leaf specialization of the G-stage residual calculation in Section 4.2.",
+      "task_id": "P64-T2",
+      "theorem_name": "p64_t2_G_stage_leaf_residual"
+    },
+    "T3": {
+      "available": false,
+      "decision": "No T3 task selected during this T1/T2 expansion."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Specialize Algorithm 1 to a node whose child solves are GE leaves and to one right-hand side.",
+    "Retain the three Section 4.2 rounding-error sources and the resulting block-row residual identities.",
+    "Keep private N/L proofs out of the public task material."
+  ],
+  "short_name": "von Matt--Stewart (1996)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1090/S0025-5718-96-00667-9",
+    "local_path": "papers_to_be_approved/P64-von-Matt-Stewart-1996-Block-Hessenberg.pdf",
+    "page_map": "Physical PDF page 1 is a University of Maryland report cover; physical pages 2-27 carry preprint pages 1-26. Journal pages are 115-135.",
+    "pdf_pages": 27,
+    "rights_note": "University of Maryland repository author preprint retained privately; verify redistribution rights before public release.",
+    "sha256": "2cd455f736d1c05dc592def93b979b6fe81491b5424c8dcb00358f0cf78ec058"
+  },
+  "title": "Rounding Errors in Solving Block Hessenberg Systems"
+}

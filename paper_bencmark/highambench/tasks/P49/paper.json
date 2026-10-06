@@ -1,0 +1,89 @@
+{
+  "annotation": {
+    "method": "Codex read the complete paper in physical order through Sections 1-6, Theorems 2.1-2.7, Theorems 3.1-3.5, Theorems 4.1-4.2, every proof and numerical experiment, Appendix A, and all references; separated the paper's proofs from cited background and first-order omissions; audited Mathlib and the exact frozen 44-object NumStability surface; and compiled exact private N/L proofs for the retained task.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P49 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Desmond J. Higham",
+    "Nicholas J. Higham"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P49-T1"
+  ],
+  "paper_id": "P49",
+  "paper_version": "SIAM Journal on Matrix Analysis and Applications 20(2), published electronically November 23, 1998",
+  "publication": {
+    "version_date": "1998-11-23",
+    "year": 1998
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Theorem 2.1 and Lemma 2.2",
+      "reason": "The paper itself calls the normwise formula a straightforward modification of earlier linear-system analysis. Once dual-norm attainment is supplied, the displayed rank-one witnesses and eigenvalue-only corollary are short and receive no substantial compiled shortcut."
+    },
+    {
+      "candidate": "Theorem 2.4",
+      "reason": "Its central minimum-spectral-norm matrix result is explicitly imported from Kahan, Parlett, and Jiang. Forcing agents to prove that cited theorem would test external background rather than P49's contribution; supplying it makes the remaining scaling proof short."
+    },
+    {
+      "candidate": "Theorems 2.5-2.7 and 3.1-3.5",
+      "reason": "The eigenvalue and componentwise formulas use short dual-vector or sign choices once their preceding first-order expansion is supplied. The Perron result imports monotonicity from a cited source, and the eigenvector formulas depend on Appendix A. None receives two distinct substantial compiled shortcuts."
+    },
+    {
+      "candidate": "Theorems 4.1-4.2",
+      "reason": "After the first-order eigenvalue or eigenvector expression is supplied, each structured condition formula is the displayed Holder inequality plus its equality case. This is below the T3 difficulty floor and has no pair of substantial library shortcuts."
+    },
+    {
+      "candidate": "Theorem A.1",
+      "reason": "The theorem is explicitly first-order: equations (A.3) onward omit higher-order terms, and local uniqueness is imported from a cited perturbation theorem. Turning it into an exact Lean statement would require invented remainder semantics or external hypotheses; assuming the reduced inverse and linearized equations instead removes the substantial part and does not meet T3."
+    },
+    {
+      "candidate": "Section 5 numerical experiments",
+      "reason": "The tabulated condition estimates and application comparisons are empirical rather than universal proof tasks."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Retain P49-T1 as the real symmetric, positive-lambda, nonaligned perturbation witness in Theorem 2.3. Exact private proofs show one substantial Householder-orthogonality shortcut and a material N/L reduction.",
+      "task_id": "P49-T1",
+      "theorem_name": "p49_t1_real_symmetric_backward_witness"
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No complete internally proved P49 result receives two distinct substantial non-Mathlib shortcuts from the exact compiled library. Generic reflector application and Euclidean-norm adapters do not qualify as separate substantial results."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. The exact internally proved formulas outside Theorem 2.3 become short once the standard or cited inputs used by the paper are supplied. Appendix A cannot be made exact without adding semantics or external perturbation hypotheses absent from its first-order statement."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only theorem statements and proof content present in P49.",
+    "A real symmetric positive-eigenvalue branch may specialize the paper's Hermitian theorem, but may not add a stronger numerical claim.",
+    "Do not turn cited minimum-norm, Perron-Frobenius, or perturbation-uniqueness results into P49 tasks.",
+    "Do not invent exact remainder semantics for claims stated only to first order.",
+    "Assign a tier only after exact private N and L proofs compile."
+  ],
+  "short_name": "Higham--Higham (1998)",
+  "source": {
+    "lawful_source_locator": "local user-supplied MIMS eprint of the published article",
+    "local_path": "paper_bencmark/reference_papers/P49 Structured Backward Error and Condition of Generalized Eigenvalue Problems.pdf",
+    "page_map": "Physical PDF page 1 is the MIMS cover; physical pages 2-21 are printed journal pages 493-512.",
+    "pdf_pages": 21,
+    "rights_note": "The local eprint was supplied for benchmark construction. Release only its hash, metadata, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "9778b1ace7ba0df903e69f8266bdbabb2b4fe7e20a187c65ef3225efb43f3e75"
+  },
+  "title": "Structured Backward Error and Condition of Generalized Eigenvalue Problems"
+}

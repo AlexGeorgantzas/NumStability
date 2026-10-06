@@ -1,0 +1,93 @@
+{
+  "canonical_evidence": "metadata/evidence/construction_validation_P07.json",
+  "canonical_evidence_sha256": "4ad73a7087e4897de6f3449792d5e4ae0d0bbac63ccf3c487bb2cfafebe78d93",
+  "canonical_isolated_pass": false,
+  "direct_fallback_pass": true,
+  "generated_at_utc": "2026-08-06T03:39:45Z",
+  "host_limitation": {
+    "canonical_failure_occurs_before_lean_starts": true,
+    "message": "bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted",
+    "scope": "All six canonical P07 checks on this LXC host",
+    "tool": "/usr/bin/bwrap"
+  },
+  "kind": "highambench-direct-exact-path-construction-fallback",
+  "paper_id": "P07",
+  "pinned_lean": {
+    "commit": "5d86aa4032284a5242470e95fbe25f1ff506763d",
+    "version": "4.29.0-rc3"
+  },
+  "results": [
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "8119c6cbcb34100a1fc943a57e19a25e2f46c4249dd02801a97f3769d3f4e780",
+        "library_declarations": [
+          "NumStability.rectMatMulVec_injective_of_lower_bound_and_rectOpNorm2Le_lt"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "e487bcc8d41ba3e9e51aaae068aa67926325f77356faf744e00b5cc5cdd4c025",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "a2c42582fa017f4bc27749ec721ce360de2774ec999b15e3c18f9c54dd10b3a4",
+      "target_theorem": "HighamBench.p07_t1_perturbed_preconditioned_map_injective",
+      "task_id": "P07-T1"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "e7fd747751a91b22f25f786d65793c467509484130f56191c01c0cdf00409ed4",
+        "library_declarations": [
+          "NumStability.rectOpNorm2Le_rectMatMul",
+          "NumStability.rectMatMulVec_mat_add",
+          "NumStability.vecNorm2_add_le"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "1d2a78ba144011994bc1578b324840593ef5fc37aa6e52315f78d38d367ac771",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "66cf9586215f93594421bb978c14317dd27fdc49556a45c3d13be036d45045ee",
+      "target_theorem": "HighamBench.p07_t2_backward_error_product_budget",
+      "task_id": "P07-T2"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "a1b8e226480eb90708fe1567bcca7e7bf20e8ff997d6d282726f3110026c5879",
+        "library_declarations": [
+          "NumStability.rectMatMulVec_rectMatMul"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "f955fdb32e0de7986ca50d80d5a3889a2d17bdbb61584c50027e92555ada73cf",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "9b7abd46008c2ebc9620c036bd3c8c5c79bc34a01f09ea42b8179b88f517614a",
+      "target_theorem": "HighamBench.p07_t3_sketch_precondition_condition_certificate",
+      "task_id": "P07-T3"
+    }
+  ],
+  "schema_version": 1,
+  "verification_basis": {
+    "condition_l_path": "The exact P07 shared bundle, frozen pruned package objects, and frozen NumStability object tree; no project .lake/build path.",
+    "condition_n_path": "The exact P07 shared bundle and frozen pruned package objects; no NumStability source or object path and no project .lake/build path.",
+    "negative_probe": "Direct pinned-Lean imports of HighamBench.P06Definitions and NumStability fail under the condition-N LEAN_PATH.",
+    "p07_definitions_olean_sha256": "3811b36eccddae23ce9553466d85b4193271d926dc4e00bf5a0a7c1df944fd11",
+    "p07_definitions_source_sha256": "456801a246d914d7d5bd4fdb8c43f735ab409ae3d697f68cc9220f80637de59c",
+    "semantic_check": "Each private L theorem was compared by Meta.isDefEq with a separately compiled renamed copy of the frozen target using tools/dependency_audit.lean.",
+    "shared_core_olean_sha256": "f5a07f5bd1021c7565b5863278abe123a8796eeb482978ebade11579893d740b"
+  }
+}

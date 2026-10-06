@@ -1,0 +1,80 @@
+{
+  "annotation": {
+    "method": "Codex read all 19 physical pages in order, including Sections 1-6, every theorem, corollary, proof and numerical example, and all 38 references; separated Bai's exact results from recalled or cited Lanczos facts and floating-point statements with omitted higher-order terms; audited Mathlib and the exact frozen 44-object NumStability surface; and compiled exact private N/L proofs before retaining P55-T3.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P55 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Zhaojun Bai"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P55-T3"
+  ],
+  "paper_id": "P55",
+  "paper_version": "Mathematics of Computation 62(205), January 1994, pages 209-226",
+  "publication": {
+    "version_date": "1994-01",
+    "year": 1994
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "exact-arithmetic Lanczos relations in Section 2",
+      "reason": "These relations introduce the standard algorithm and recall established Lanczos properties; they are not a new self-contained P55 result with a qualifying tier profile."
+    },
+    {
+      "candidate": "Theorem 3.1 and Corollary 3.1",
+      "reason": "Their finite-precision bounds are derived from cited standard saxpy, inner-product, and matrix-vector error models and include unspecified O(epsilon^2) terms. An exact Lean target would require inventing omitted constants or remainder semantics."
+    },
+    {
+      "candidate": "Corollary 4.1",
+      "reason": "The corollary inherits the omitted higher-order terms and norm bounds from Theorem 3.1, so it cannot become an exact source-faithful task without adding data absent from the paper."
+    },
+    {
+      "candidate": "Section 5 numerical behavior",
+      "reason": "The examples and tables are empirical observations rather than universal proof statements."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No exact internally proved P55 theorem receives one substantial non-Mathlib shortcut from the frozen NumStability bundle. The apparent floating-point candidates contain unspecified higher-order terms and depend on cited operation-level bounds."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No exact source-proved P55 result receives two distinct substantial compiled NumStability shortcuts; making the Section 3 or Corollary 4.1 bounds exact would require invented constants."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Selected Theorem 4.1, equations (4.6)-(4.7), with its exact lower/upper split from equations (4.10)-(4.12). Exact N/L proofs establish substantial matrix-support, decomposition, and eigenvector-cancellation work with no NumStability shortcut.",
+      "task_id": "P55-T3",
+      "theorem_name": "p55_t3_loss_of_biorthogonality"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only statements and proof content present in P55.",
+    "Do not turn recalled or cited standard Lanczos facts into P55 proof obligations.",
+    "Do not manufacture exact constants or remainder semantics for O(epsilon^2) terms.",
+    "Express Theorem 4.1 through the exact projected identity and strict-triangular facts used in its proof.",
+    "Assign a tier only after exact private N and L proofs compile."
+  ],
+  "short_name": "Bai (1994)",
+  "source": {
+    "lawful_source_locator": "local user-supplied journal PDF",
+    "local_path": "paper_bencmark/reference_papers/P55 Error Analysis of the Lanczos Algorithm for the Nonsymmetric Eigenvalue Problem.pdf",
+    "page_map": "Physical page 1 is the JSTOR cover; physical pages 2-19 carry printed pages 209-226.",
+    "pdf_pages": 19,
+    "rights_note": "Retain the local source path and cryptographic hash for benchmark provenance; do not redistribute the source PDF.",
+    "sha256": "01eff93ae32eefc941c48659d3f9255df1e418c705431211dc4f4001385087f7"
+  },
+  "title": "Error Analysis of the Lanczos Algorithm for the Nonsymmetric Eigenvalue Problem"
+}

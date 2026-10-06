@@ -1,0 +1,76 @@
+{
+  "annotation": {
+    "method": "Codex read all 25 physical pages in order from local page renderings because the PDF's embedded Type 3 font has no usable Unicode map. The audit covered the abstract, Sections 1-4, Lemma 1, Theorem 1, every displayed estimate and algorithm, all three numerical figures, and all 23 references; it then checked Mathlib and the exact frozen 44-object NumStability surface and compiled exact N/L feasibility proofs.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P46 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Anne Greenbaum"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [],
+  "paper_id": "P46",
+  "paper_version": "manuscript dated April 14, 1995",
+  "publication": {
+    "version_date": "1995-04-14",
+    "year": 1995
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Lemma 1 and equations (16)-(23)",
+      "reason": "The lemma uses unquantified O(epsilon^2) terms. Replacing them by newly chosen exact constants would add mathematical content not stated in the source. Once local-error bounds are assumed, its accumulation argument is elementary and receives no substantial frozen-library shortcut."
+    },
+    {
+      "candidate": "Theorem 1 and equation (24)",
+      "reason": "The theorem combines the elementary telescoping residual-gap identity with Lemma 1's first-order estimates. The exact residual-gap core compiles in 36 lines in N and 35 in L; the L proof uses only generic matrix-vector add/scale lemmas. The theorem is therefore neither a T1/T2 library-advantage task nor difficult enough for T3, and its printed big-O remainder cannot be sharpened without inventing a statement."
+    },
+    {
+      "candidate": "steady-state estimate (25) and algorithm estimates (27)-(36)",
+      "reason": "These are short deductions from Theorem 1 plus convergence or monotonicity facts that the paper explicitly attributes to earlier references. They are not independent substantial internally proved tasks."
+    },
+    {
+      "candidate": "CG, BCG, CGS, CGNE, and CGNR experiments",
+      "reason": "The plots and observed attainable accuracies are numerical examples, not universal proof tasks."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. The frozen substantial matrix-vector error theorem corresponds to equation (12), which P46 explicitly assumes rather than proves. For the paper's own residual-gap algebra, L has only elementary add/scale helpers and no substantial advantage."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No internally proved P46 result receives two distinct substantial non-Mathlib shortcuts from the exact compiled NumStability surface."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. The source-faithful exact residual-gap recurrence and norm summation are well below the T2 difficulty floor, while formalizing the printed big-O bounds as a harder exact theorem would require adding constants and hypotheses not supplied by the paper. The later convergence facts are cited background or experimental observations."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only claims and proof content stated in this paper.",
+    "Do not turn the assumed matrix-vector error estimate (12) into a result proved by P46.",
+    "Do not replace unquantified big-O remainders by invented exact constants.",
+    "Treat the exact telescoping residual-gap recurrence as a feasibility probe, not as a tier task, because private N/L proofs show it is short and has no substantial library advantage.",
+    "Assign a tier only after exact private N and L proofs compile."
+  ],
+  "short_name": "Greenbaum (1995)",
+  "source": {
+    "lawful_source_locator": "local user-supplied manuscript",
+    "local_path": "paper_bencmark/reference_papers/P46 Estimating the Attainable Accuracy of Recursively Computed Residual Methods.pdf",
+    "page_map": "The 25 physical PDF pages use printed page numbers 1-25.",
+    "pdf_pages": 25,
+    "rights_note": "The local manuscript was supplied for benchmark construction. Release only its hash, metadata, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "b4aa3666bade93777a679b4592faa02a35aa344ea412bb9fe44486d986fd1055"
+  },
+  "title": "Estimating the Attainable Accuracy of Recursively Computed Residual Methods"
+}

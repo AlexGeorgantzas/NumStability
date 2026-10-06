@@ -1,0 +1,97 @@
+{
+  "annotation": {
+    "method": "Codex read the complete 17-page PDF in physical order, including all conversion and scaling algorithms, the GMRES-IR application, exact-arithmetic analysis, numerical tables, the alternative rank-one scaling, conclusions, and references; separated claims proved in this paper from cited and experimental claims; audited Mathlib and the exact frozen 44-object NumStability surface; and compiled private N/L feasibility proofs for the strongest remaining algebraic candidates.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P44 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Nicholas J. Higham",
+    "Srikara Pranesh",
+    "Mawussi Zounon"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [],
+  "paper_id": "P44",
+  "paper_version": "MIMS EPrint 2018.37, manuscript version dated June 5, 2019",
+  "publication": {
+    "institution": "Manchester Institute for Mathematical Sciences",
+    "report_number": "MIMS EPrint 2018.37",
+    "version_date": "2019-06-05",
+    "year": 2019
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Algorithms 2.1-2.3 and their overflow/underflow discussion",
+      "reason": "The algorithms are source-faithful, but their universal proved guarantee is only the elementary real bound that the largest scaled entry is at most the chosen overflow threshold. The stronger claims about reduced underflow, preserved conditioning, or solver reliability are examples, design criteria, or later experiments rather than proved universal statements."
+    },
+    {
+      "candidate": "Algorithm 2.4 row and column equilibration",
+      "reason": "Its stated row/column maximum property follows directly from the two explicit scaling passes and is too short for T3. NumStability has no corresponding compiled theorem that would turn it into T1 or T2."
+    },
+    {
+      "candidate": "Algorithm 2.5 symmetry-preserving equilibration and its convergence properties",
+      "reason": "The symmetry, permutation-invariance, and linear-convergence properties are attributed to Knight, Ruiz, and Ucar; this paper supplies the algorithm but not their proofs."
+    },
+    {
+      "candidate": "Section 3 exact equivalence of the scaled and unscaled LU preconditioners",
+      "reason": "The paper's transformed-factor argument is source-proved but below the tier difficulty floor. A compiled private N proof reduces the two exact preconditioners to the same matrix inverse in four proof steps; the L proof is mathematically identical and no NumStability theorem shortens it."
+    },
+    {
+      "candidate": "Equation (3.1), the condition-number lower bound when a pivot underflows",
+      "reason": "After the displayed one-line inverse-entry norm inequality, the conclusion is an elementary scalar rearrangement. It is too short for T3 and receives no substantial compiled NumStability shortcut."
+    },
+    {
+      "candidate": "Algorithm 3.1 convergence and limiting error guarantees",
+      "reason": "Table 3.1 and the convergence condition for GMRES-based iterative refinement are explicitly taken from references [3] and [4], not proved in this paper. The experiments in Section 4 cannot replace those missing proofs."
+    },
+    {
+      "candidate": "Section 5 rank-one scaling and equation (5.3)",
+      "reason": "Equations (5.1)-(5.2) are elementary affine and two-by-two calculations. Equation (5.3) is a direct rank-one instance of Mathlib's general Woodbury identity; the private N proof invokes that existing theorem in one step, so the candidate is unsuitable for every tier."
+    },
+    {
+      "candidate": "Section 4 tables and the comparative claims in Sections 4 and 6",
+      "reason": "They report finite numerical experiments and qualitative recommendations, not universal proof tasks with source-supplied proofs."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No complete result proved in P44 needs one substantial compiled NumStability theorem. The relevant floating-point and iterative-refinement results are either lower-level than the paper's qualitative conversion claims or belong to cited analyses, while the paper's own exact algebra is already short in N."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source-proved result needs two distinct substantial declarations from the frozen NumStability surface. In particular, the GMRES-IR convergence guarantees that could have combined several library results are imported from earlier papers rather than proved here."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. The internally proved universal claims are elementary scaling, inverse, or norm arguments and are below the T2-level difficulty floor. The only apparently larger exact inverse-update candidate is already in Mathlib, and the remaining major claims are cited or experimental."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only statements whose supporting proof is present in this paper.",
+    "Do not turn the cited GMRES-IR analyses or cited symmetry-preserving scaling theory into P44 tasks.",
+    "Do not promote numerical tables or qualitative conclusions to universal proof obligations.",
+    "Treat Mathlib's Woodbury identity as making equation (5.3) readily importable in condition N.",
+    "Do not classify the short exact scaled-preconditioner algebra or pivot bound as T3 merely because it uses matrices.",
+    "Assign a tier only when private N/L evidence and the frozen-library audit meet the full tier criteria."
+  ],
+  "short_name": "Higham--Pranesh--Zounon (2019)",
+  "source": {
+    "lawful_source_locator": "http://eprints.maths.manchester.ac.uk/",
+    "local_path": "paper_bencmark/reference_papers/P44 Squeezing a Matrix into Half Precision, with an Application to Solving Linear Systems.pdf",
+    "page_map": "Physical PDF page 1 is the MIMS cover; physical pages 2-17 are manuscript pages 1-16 respectively.",
+    "pdf_pages": 17,
+    "rights_note": "The local MIMS manuscript was supplied for benchmark construction. Release only its locator, hash, metadata, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "c10f7dee966a917f2e026fdea6a6cf193b99d84b44e1d4499fb033f536bce870"
+  },
+  "title": "Squeezing a Matrix into Half Precision, with an Application to Solving Linear Systems"
+}

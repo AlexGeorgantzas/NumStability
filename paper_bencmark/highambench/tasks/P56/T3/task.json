@@ -1,0 +1,89 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "constructive polynomial form of Lemma 4.2's exceptional-point approximation argument",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "0 < a < b and all exceptional nodes are positive, as in Lemma 4.2.",
+    "The nodes are pairwise distinct, matching the set {x_1,...,x_k} in the paper.",
+    "p is an arbitrary degree-n interval approximant to 1/x with error epsilon.",
+    "p56NodePolynomial is phi(x)=product_i(x-x_i).",
+    "p56Correction is the degree-at-most-k reciprocal interpolant r constructed from phi, and p56ExtendedApproximant is the paper's corrected polynomial r plus the scaled product phi p.",
+    "p56IntervalFactor is an explicit valid choice of the constant depending only on a, b, and the exceptional points."
+  ],
+  "author_label": "Lemma 4.2",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P56 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P56 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P56/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p56_t3_exceptional_point_approximation (k n : Nat) (a b epsilon : Real) (nodes : Fin k -> Real) (p : Polynomial Real) (ha : 0 < a) (hab : a < b) (hnodes : forall i, 0 < nodes i) (hinj : Function.Injective nodes) (hpdegree : p.natDegree <= n) (hpapprox : forall t, a <= t -> t <= b -> |t\u207b\u00b9 - Polynomial.eval t p| <= epsilon) : (p56ExtendedApproximant nodes p).natDegree <= n + k and (forall i, Polynomial.eval (nodes i) (p56ExtendedApproximant nodes p) = (nodes i)\u207b\u00b9) and forall t, a <= t -> t <= b -> |t\u207b\u00b9 - Polynomial.eval t (p56ExtendedApproximant nodes p)| <= p56IntervalFactor a b nodes * epsilon",
+    "namespace": "HighamBench",
+    "plain_language": "Show that the correction used in Lemma 4.2 preserves a controlled degree, interpolates 1/x at every exceptional point, and multiplies the interval error by one fixed endpoint-based constant.",
+    "target_file": "paper_bencmark/highambench/tasks/P56/T3/Target.lean",
+    "theorem_name": "p56_t3_exceptional_point_approximation"
+  },
+  "informal_proof": "The nodal product is nonzero at zero because every exceptional point is positive. Divide its nonconstant part by X to construct the reciprocal interpolant r and prove 1-xr(x)=c phi(x). This identity gives interpolation at every node and the exact corrected-error factorization. Bound each |t-x_i| on [a,b] by the larger endpoint distance, multiply the bounds, and combine them with the assumed error of p. Polynomial degree inequalities give the n+k bound.",
+  "informal_statement": "Prove the constructive approximation step used in Lemma 4.2 to add finitely many exceptional spectral points without changing the exponential rate.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P56",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P56 Decay Rates for Inverses of Band Matrices.pdf",
+    "sha256": "b86b6b357e70e5076fb8d86a4feb12f85a7aa28e849fd1ae56a38438e6014c85"
+  },
+  "paper_version": "Mathematics of Computation 43(168), October 1984, pages 491-499",
+  "result_form_tag": "LEM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "Chebyshev exceptional point reciprocal approximation Lemma 4.2",
+        "band matrix inverse exponential decay polynomial approximation",
+        "reciprocal interpolation finite exceptional spectrum"
+      ],
+      "result": "Neither Mathlib nor the exact 44-object frozen NumStability bundle contains P56's finite-exception reciprocal approximation lemma or its correction-polynomial identity. Mathlib supplies general polynomial and finite-product algebra, while NumStability's matrix spectral and norm infrastructure does not shorten this polynomial construction.",
+      "scope": "the complete frozen NumStability surface at commit 45813a95dacf577461bae13f033af0dbc985a225, the exact 44-object condition-L bundle, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "generic finite-dimensional matrix spectral, inverse, condition-number, and norm bounds only; no compiled declaration constructs the Lemma 4.2 polynomial or handles exceptional approximation points"
+    ],
+    "note": "The exact private N proof is 191 physical lines and the exact L proof is 192. After deleting L's one additional NumStability import, their mathematical bodies are byte-identical. L invokes no NumStability declaration and receives no shortcut."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "p56NodePolynomial",
+    "p56Correction",
+    "p56ExtendedApproximant",
+    "p56IntervalFactor"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Lemma 4.2 and its proof",
+      "pdf_page": "6-7",
+      "printed_page": "496-497",
+      "role": "selected exceptional-point approximation construction and bound",
+      "section": "4. Extensions and Eigenvectors"
+    }
+  ],
+  "source_tags": [
+    "LEM"
+  ],
+  "task_id": "P56-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The task requires constructing a reciprocal interpolation correction from a nodal product, proving its zero-value normalization and exact pointwise identity, establishing interpolation at an arbitrary finite family, controlling polynomial degrees through division and products, deriving an exact corrected-error factorization, and proving a uniform product bound from interval endpoints. The exact N proof has 191 physical lines and is at least as demanding as the lower validated T2/T3 workload rather than a short Mathlib import exercise. The exact L mathematical proof is byte-identical and uses no NumStability declaration, establishing that the frozen library provides no speedup.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P56/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p56_t3_exceptional_point_approximation"
+  }
+}

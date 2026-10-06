@@ -1,0 +1,108 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source selection, tier label, and indexed Algorithm 1.1 execution contract",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The system dimension is positive and A is nonsingular, witnessed by the inverse action of Ainv.",
+    "The indexed computed quantities satisfy Algorithm 1.1's exact residual and update equations, componentwise error models (3.3) and (3.6), and normwise correction-solver condition (2.4).",
+    "The unit roundoffs satisfy u_r <= u <= u_s <= u_f, gamma_p^r has a positive denominator, c1_i and c2_i are nonnegative, and c1_i*kappa_inf(A)*u_s < 1 pointwise."
+  ],
+  "author_label": "Theorem 4.1",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P03 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P03 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P03/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p03_t3_normwise_residual_contraction {n : \u2115} (run : P03NormwiseIRRun n) (i : \u2115) : p03VecInfNorm (p03ExactResidual run (i + 1)) \u2264 p03Alpha run i * p03VecInfNorm (p03ExactResidual run i) + p03Beta run i",
+    "namespace": "HighamBench",
+    "plain_language": "Every indexed execution satisfying Algorithm 1.1's residual, correction-solver, and update contracts obeys the exact alpha_i residual contraction plus beta_i floor in Theorem 4.1.",
+    "target_file": "paper_bencmark/highambench/tasks/P03/T3/Target.lean",
+    "theorem_name": "p03_t3_normwise_residual_contraction"
+  },
+  "informal_proof": "Use Ainv and (2.4) to bound and isolate the correction defect; derive norm bounds from the componentwise models (3.3) and (3.6); substitute them into the exact one-step identity (4.1); then collect the exact alpha_i and beta_i coefficients.",
+  "informal_statement": "The exact Algorithm 1.1 normwise residual recurrence in Theorem 4.1.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P03",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P03_ACCELERATING THE SOLUTION OF LINEAR SYSTEMS BYITERATIVE REFINEMENT IN THREE PRECISIONS.pdf",
+    "sha256": "952c6827db21fb2a9362b5aa4d38a1b2c75361f2cc7a3badbb7cd4a232d7b7bc"
+  },
+  "paper_version": "published journal version; volume 40, issue 2, 2018, printed pages A817-A847",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [],
+    "note": "The frozen library's one-step residual theorem assumes a backward-error matrix that the paper's normwise solver contract does not provide. Its remaining infinity-norm facts are elementary adapters and do not materially advance Theorem 4.1."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "p03MatVec",
+    "p03VecAbs",
+    "p03MatAbs",
+    "p03VecInfNorm",
+    "p03MatInfNorm",
+    "p03MaxAugmentedRowNnz",
+    "P03NormwiseIRRun",
+    "p03ExactResidual",
+    "p03KappaInf",
+    "p03CorrectionRatio",
+    "p03Alpha",
+    "p03Beta"
+  ],
+  "source_locations": [
+    {
+      "anchor": "equations (2.4), (3.3), and (3.6)",
+      "pdf_pages": [
+        5,
+        7
+      ],
+      "printed_pages": [
+        "A821",
+        "A823"
+      ],
+      "role": "correction-solver, computed-residual, and rounded-update contracts",
+      "section": "2. Preliminaries and 3. Rounding error analysis"
+    },
+    {
+      "anchor": "equation (4.1) and derivation through Theorem 4.1",
+      "pdf_pages": [
+        8,
+        9
+      ],
+      "printed_pages": [
+        "A824",
+        "A825"
+      ],
+      "role": "exact residual identity, correction-defect isolation, and residual recurrence",
+      "section": "4. Normwise backward error analysis"
+    },
+    {
+      "anchor": "Theorem 4.1",
+      "pdf_page": 9,
+      "printed_page": "A825",
+      "role": "normwise residual recurrence with alpha_i and beta_i",
+      "section": "4. Normwise backward error analysis"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P03-T3",
+  "tier": "T3",
+  "tier_label": "no library advantage",
+  "tier_rationale": "The frozen library has no corresponding theorem for the paper's normwise correction-solver contract or its exact alpha_i and beta_i recurrence. Generic finite-matrix and infinity-norm facts are elementary and available equally from Mathlib-level reasoning; both conditions must build the substantive proof from the paper source.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P03/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p03_t3_normwise_residual_contraction"
+  }
+}

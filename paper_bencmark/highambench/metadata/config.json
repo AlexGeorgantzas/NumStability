@@ -1,0 +1,418 @@
+{
+  "benchmark_id": "highambench-0.2-p01-p02-p03-p04-p05-p06-p07-p08-p09-p10-p11-p12-p13-p14-p15-p16-p17-p18-p19-p20-p21-p22-p23-p24-p25-p26-p27-p28-p29-p30-p31-p32-p33-p34-p35-p36-p37-p38-p39-p40-p41-p42-p43-p44-p45-p46-p47-p48-p49-p50-p51-p52-p53-p54-p55-p56-p57-p58-p59-p60-p61-p62-p63-p64-p65-p66-p67-p68",
+  "conditions": {
+    "L": {
+      "label": "with_library",
+      "lean_and_mathlib": "frozen_environment",
+      "local_file_search": "allowed only inside mounted local files",
+      "network": "model tools disabled; the Codex control process retains only its required provider connection",
+      "numstability_access": "frozen read-only source at /library/NumStability and /library/NumStability.lean plus compiled files at /library-olean, already on LEAN_PATH",
+      "prompt_supplement": "condition_prompts/L.md is authenticated and appended by the trusted adapter; it explicitly encourages neutral NumStability discovery and reuse without naming a relevant theorem or module",
+      "task_files": "identical controlled files"
+    },
+    "N": {
+      "label": "no_library",
+      "lean_and_mathlib": "frozen_environment",
+      "network": "model tools disabled; the Codex control process retains only its required provider connection",
+      "numstability_access": "none",
+      "pre_run_leak_check_required": true,
+      "prompt_supplement": "none; condition_prompts/L.md is neither staged, mounted, nor sent",
+      "required_absence": [
+        "source",
+        "compiled files",
+        "documentation",
+        "declaration-name lists",
+        "search-index entries",
+        "cached artifacts"
+      ],
+      "task_files": "identical controlled files"
+    }
+  },
+  "configuration_status": "corpus under construction; task metadata and snapshots may be regenerated",
+  "failure_reason_priority": [
+    "TIME_LIMIT",
+    "TOKEN_LIMIT",
+    "NO_SUBMISSION",
+    "RULE_VIOLATION",
+    "SYNTAX_OR_ELAB",
+    "PROOF_ERROR",
+    "SYSTEM_ERROR"
+  ],
+  "frozen_environment": {
+    "agent_binary_sha256": "d13cfcda217421fb20d0aa6aa80819a62483a72e4a7fd52743675ca20d86377c",
+    "agent_id": "codex-cli",
+    "agent_version": "0.146.0-alpha.9.2",
+    "allowed_tools": [
+      "workspace file editing",
+      "local shell commands through the no-socket seccomp launcher",
+      "local Lean compiler and local text search"
+    ],
+    "bubblewrap_binary_sha256": "d78807229d616606e339c5988392b9e0ab4a6a6998fa51e4590837f426a12fca",
+    "bubblewrap_version": "bubblewrap 0.6.1",
+    "compiled_environment_summary": "paper_bencmark/highambench/metadata/packages_olean.json",
+    "compiled_environment_summary_sha256": "ae361f8e83f4e65745249c1b7ce415fe91024b32cbe935be34402598ac1f7844",
+    "construction_status_note": "The corpus is still being built. No measured run may start until every task has been reviewed and a measurement-ready snapshot is created.",
+    "container_image_digest": null,
+    "container_note": "No OCI image is used. Every attempt receives a fresh bubblewrap filesystem and process namespace. The host system folders are read-only but are not one completely fingerprinted image.",
+    "environment_bundle_sha256": "2f773bb6fd4426e6456330e5d1c93cf3ef612c0374325c9fe127e5916241fd9e",
+    "environment_id": "highambench-p01-p02-p03-p04-p05-p06-p07-p08-p09-p10-p11-p12-p13-p14-p15-p16-p17-p18-p19-p20-p21-p22-p23-p24-p25-p26-p27-p28-p29-p30-p31-p32-p33-p34-p35-p36-p37-p38-p39-p40-p41-p42-p43-p44-p45-p46-p47-p48-p49-p50-p51-p52-p53-p54-p55-p56-p57-p58-p59-p60-p61-p62-p63-p64-p65-p66-p67-p68-2f773bb6fd4426e6",
+    "hardware_class": "Slurm allocation of 1 node/1 task/4 CPUs per task on an LXC guest with Intel Xeon 6960P (family 6/model 173/stepping 1); 4 logical threads on 2 physical cores in 1 socket; 32 GiB allocated and cgroup-limited memory; 995999997952 bytes visible to the actual benchmark process",
+    "lake_package_name": "numStability",
+    "lean_binary_sha256": "3e0d0d3d801675359f2d4cf9815bfdb417b20b92fdd9d48b3b14c95bbae28bbf",
+    "lean_commit": "5d86aa4032284a5242470e95fbe25f1ff506763d",
+    "lean_toolchain": "leanprover/lean4:v4.29.0-rc3",
+    "mathlib_commit": "e8ea1afc32790ce1d4e1a4e45cc412ba9388716b",
+    "mathlib_repository": "https://github.com/leanprover-community/mathlib4",
+    "model_reasoning_effort": "ultra",
+    "model_version": "gpt-5.6-sol",
+    "numstability_commit": "45813a95dacf577461bae13f033af0dbc985a225",
+    "numstability_commit_role": "source baseline before benchmark task files were added",
+    "numstability_compiled_manifest": "paper_bencmark/highambench/metadata/library_olean.json",
+    "numstability_compiled_manifest_sha256": "bbea1e90bc11605bd3c14b28dc39bf49b7bcb64ab5cf2306841f65b803a6ae2a",
+    "numstability_repository": "https://github.com/AlexGeorgantzas/lean-numerical-stability.git",
+    "numstability_source_manifest": "paper_bencmark/highambench/metadata/library_source.json",
+    "numstability_source_manifest_sha256": "8b52061f0fafc283acd2363267ebbee2f9c6eb97360c596723b95b27515c7828",
+    "operating_system": "Linux 6.17.0-35-generic x86_64",
+    "packages_runtime_manifest": "paper_bencmark/highambench/metadata/packages_runtime.json",
+    "packages_runtime_manifest_sha256": "a2ee0563bc731aa3dba22ed7af0e9bd1322c8c06b51cd9d01bd573282d9c8c31",
+    "prompt_protocol": {
+      "N_receives_condition_supplement": false,
+      "common_prompt": {
+        "bytes": 3017,
+        "path": "agent_prompt.md",
+        "sha256": "0f116039fb2ac519a722258f2b9b2d539f0e0c087d03ac476a91f0af61cd5e11"
+      },
+      "composition_order": [
+        "common_prompt",
+        "condition_L_supplement_if_condition_L",
+        "task_context",
+        "fixed_target"
+      ],
+      "condition_supplements": {
+        "L": {
+          "bytes": 455,
+          "path": "condition_prompts/L.md",
+          "sha256": "b4b217467237151e17ca50c851fff68fe7c60ab7e269339dddf5830ca4687463"
+        }
+      },
+      "relevant_theorem_or_module_hints_supplied": false,
+      "version": "signposted-library-v1"
+    },
+    "prompt_sha256": "0f116039fb2ac519a722258f2b9b2d539f0e0c087d03ac476a91f0af61cd5e11",
+    "provider_token_gate_sha256": "0f2b7e948dfca2cf2673c262aa430d1c28a5c0d152ea6e580b909466e8159447",
+    "python_binary_sha256": "d6bca2b84e73c7775a0dd5e6a76899cfe4ee62863d7c8f88513811d1fda23f49",
+    "python_version": "3.10.12",
+    "release_blocker_note": "This is an amended HighamBench-derived protocol, not a strict reference-PDF HighamBench 0.2 score: condition L uses signposted-library-v1; the backend exposes no demonstrated random seed; no OCI image is frozen; the current user-authorized 5,000,000-token cap replaces the earlier 2,000,000-token project freeze identically for N and L; and an external gate-v6 buffering/reservation layer (not the unchanged Codex binary) supplies a call-atomic token endpoint identically for N and L. Gate v6 accepts an absent upstream Content-Type only after strict complete byte-level SSE authentication and makes provider totals authoritative while explicitly reconciling the structural app-server ledger, suppressed collaboration waits, collaboration-message supersessions, and completed child responses discarded only after an authenticated explicit parent interrupt. Results remain private and are not authorized for public release.",
+    "release_manifest": "paper_bencmark/highambench/metadata/release_files.json",
+    "release_manifest_sha256": "05fb939290e0164440578b89f20736fff05dc4ae21fe0dd277d487ff4b854ae3",
+    "token_control_canary": {
+      "path": "paper_bencmark/highambench/metadata/evidence/token_control_live_canary.json",
+      "sha256": "b2fb3ae15ed94d4d79f2978b6d8de45f901e24ae6dbeafb9adde6048c381dc2a",
+      "status": "replacement_required"
+    },
+    "ultra_orchestration": {
+      "accounting_projection_schema_version": 6,
+      "automatic_task_delegation": true,
+      "child_model": "gpt-5.6-sol",
+      "child_model_locked": true,
+      "child_reasoning_effort": "ultra",
+      "child_reasoning_effort_locked": true,
+      "codex_config_locks": {
+        "agents.default_subagent_model": "gpt-5.6-sol",
+        "agents.default_subagent_reasoning_effort": "ultra",
+        "features.hooks": true,
+        "features.multi_agent_v2.expose_spawn_agent_model_overrides": false,
+        "features.multi_agent_v2.hide_spawn_agent_metadata": true,
+        "features.multi_agent_v2.max_concurrent_threads_per_session": 4,
+        "features.multi_agent_v2.usage_hint_enabled": true,
+        "features.multi_agent_v2.usage_hint_text": "For spawn_agent, omit fork_turns (defaults to \"all\") or set it to exactly \"all\" or \"none\"; positive integers and all other values are unavailable."
+      },
+      "enabled": true,
+      "fork_policy": {
+        "allowed_fork_turns": [
+          "omitted",
+          "all",
+          "none"
+        ],
+        "block_reason_template": "fork_turns for call {call_id} must be omitted or set to \"all\" or \"none\".",
+        "command": "/usr/bin/python3.10 /u501/m2fetrat/.codex/highambench-ultra-fork-policy.py",
+        "display_order": 0,
+        "enforcement": "codex_pre_tool_use_command_hook_v1",
+        "execution_mode": "sync",
+        "handler_type": "command",
+        "helper_filename": "highambench-ultra-fork-policy.py",
+        "helper_sha256": "5456bb8106715d1b783e14b81ce2df66e64bac828a1b1c345b4cdb76d2b3cd30",
+        "hook_event_name": "preToolUse",
+        "hook_notification": "hook/completed",
+        "hook_trust_bypass_cli_flag_present": true,
+        "hook_trust_bypass_effective_source": "thread_start_config",
+        "hook_trust_bypass_thread_config": {
+          "bypass_hook_trust": true
+        },
+        "hooks_json_sha256": "ffde6e560f2bb1c594a25a5ff8bbe07924324fa7c5f9f7297eb7ce5fb5503718",
+        "matcher": "^(Agent|spawn_agent|collaborationspawn_agent)$",
+        "positive_integer_fork_turns_allowed": false,
+        "schema_version": 1,
+        "scope": "turn",
+        "source": "user",
+        "source_path": "/u501/m2fetrat/.codex/hooks.json",
+        "usage_hint": "For spawn_agent, omit fork_turns (defaults to \"all\") or set it to exactly \"all\" or \"none\"; positive integers and all other values are unavailable.",
+        "usage_hint_sha256": "003b6103043c6f47ce098addedff5a82906c40786c667d132065e0ed35e97556"
+      },
+      "max_concurrency_scope": "root and subagent inference threads in one Codex session",
+      "max_concurrent_threads_per_session": 4,
+      "multi_agent_version": "v2",
+      "root_model": "gpt-5.6-sol",
+      "root_reasoning_effort": "ultra",
+      "spawn_agent_metadata_hidden": true,
+      "spawn_model_override_exposed": false,
+      "spawn_reasoning_effort_override_exposed": false,
+      "submission_barrier": {
+        "accepted_boundary": {
+          "descendants_quiescent": true,
+          "drain_complete": false,
+          "later_model_response_possible": false,
+          "measurement_exact": true,
+          "root_turn_active": true,
+          "stop_reason": "first_valid_proof",
+          "submission_boundary_exact": true
+        },
+        "candidate_path": "Candidate.lean",
+        "descendants_quiescent_before_submission": true,
+        "direct_submission_path_forbidden": true,
+        "inner_dynamic_arguments": {
+          "candidate_path": "Candidate.lean"
+        },
+        "inner_dynamic_call_left_blocked": true,
+        "inner_dynamic_call_observed": true,
+        "inner_dynamic_item_started": true,
+        "inner_dynamic_tool_name": "submit_proof",
+        "inner_dynamic_tool_response_sent": false,
+        "inner_submit_invocation_exact": true,
+        "inner_submit_only_nested_tool_call": true,
+        "outer_exec_final_raw_item": true,
+        "outer_exec_name": "exec",
+        "outer_exec_output_emitted": false,
+        "outer_exec_program": "// @exec: {\"yield_time_ms\": 2400000}\ntext(await tools.submit_proof({candidate_path:\"Candidate.lean\"}));\n",
+        "outer_exec_program_bytes": 104,
+        "outer_exec_program_sha256": "d8f1e2e53f379a5e1a0cd273127af52f71c150c9fa7c7a50dc177d40e6c12d14",
+        "outer_exec_timer_starts_at_or_after_prompt_release": true,
+        "outer_exec_yield_attempt_wall_seconds": 1800,
+        "outer_exec_yield_envelope_basis": "prompt_release_wall_clock_plus_post_submission_validation_reserve",
+        "outer_exec_yield_envelope_ms": 2169000,
+        "outer_exec_yield_exceeds_envelope": true,
+        "outer_exec_yield_margin_ms": 231000,
+        "outer_exec_yield_post_submission_validation_reserve_seconds": 369,
+        "outer_exec_yield_time_ms": 2400000,
+        "outer_raw_item_and_call_ids_pairwise_distinct": true,
+        "outer_raw_item_observed_before_inner_dynamic_call": true,
+        "outer_raw_item_type": "custom_tool_call",
+        "raw_response_completed_before_boundary_publication": true,
+        "root_coordinator_only": true,
+        "runner_materializes_submission_after_acceptance": true,
+        "runner_owned_submission_path": "Submission.lean",
+        "runner_validates_immutable_candidate_snapshot": true,
+        "schema_version": 5,
+        "sole_model_tool_call_in_response": true,
+        "submission_event_order_flags": [
+          "dynamic_call_observed_before_raw_response_completed",
+          "raw_response_completed_before_dynamic_call_observed"
+        ],
+        "submission_event_order_flags_exactly_one_true": true,
+        "submission_event_order_values": [
+          "inner_dynamic_call_before_raw_response_completed",
+          "raw_response_completed_before_inner_dynamic_call"
+        ],
+        "submission_transport": "functions_exec_dynamic_submit_proof_v3",
+        "tool_name": "submit_proof",
+        "workspace_local_module_imports_rejected": true
+      }
+    },
+    "ultra_orchestration_canary": {
+      "path": "paper_bencmark/highambench/metadata/evidence/ultra_orchestration_live_canary.json",
+      "sha256": "381e3c35753610a54626cfbcad4798777a8179653a522969bd4822935a1fd909",
+      "status": "replacement_required"
+    }
+  },
+  "isolation": {
+    "cross_run_transfer_forbidden": [
+      "messages",
+      "generated files",
+      "build output",
+      "search results",
+      "caches",
+      "human or agent knowledge from the paired run"
+    ],
+    "ephemeral_thread_start_per_run": false,
+    "filesystem_boundary": "The outer bubblewrap namespace mounts only the task workspace, system tools, frozen Lean and mathlib, and, for condition L only, frozen NumStability source and compiled files.",
+    "fresh_bubblewrap_namespace_per_run": true,
+    "fresh_codex_state_directory_per_run": true,
+    "fresh_container_per_run": false,
+    "fresh_conversation_per_run": true,
+    "history_persistence": "none",
+    "implementation": "fresh bubblewrap filesystem and process namespace per attempt",
+    "memories_feature_disabled": true,
+    "model_shell_network_disabled": "offline_shell.c installs a seccomp rule that rejects socket operations for every model-generated shell command and descendant",
+    "no_oci_image": true,
+    "normal_exit_state_cleanup": true,
+    "prior_outputs_or_submissions_mounted": false,
+    "provider_control_connection": "The Codex control process keeps network access only to communicate with the model provider; web, browser, app, plugin, and search features are disabled.",
+    "provider_prompt_prefix_cache": {
+      "automatic_prefix_caching_may_occur": true,
+      "cached_input_charged_at_full_token_weight": true,
+      "cached_object": "exact-prefix prefill key/value computation, not generated output",
+      "cross_run_answer_or_proof_replay": false,
+      "kind": "automatic exact-input-prefix prefill computation reuse",
+      "pinned_codex_disable_control_available": false,
+      "semantic_history_transfer": false
+    },
+    "state_directory_reused_across_runs": false,
+    "temporary_authentication": "A fresh Codex state directory receives the existing authentication file only for startup. The file is removed at thread or turn start, before model shell work. The directory is deleted on normal adapter exit and is never reused; an interrupted attempt is marked and cannot be silently resumed.",
+    "thread_resume_or_fork_used": false
+  },
+  "limits": {
+    "failure_scored_time_seconds": 1800,
+    "post_submission_validation_reserve_seconds": 369,
+    "prompt_startup_timeout_seconds": 120,
+    "token_definition": "all model input plus output tokens across all calls and retries; cached input counts as input",
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "measured_v3_cpu_partition": {
+    "authority": "metadata/measurement_protocol.json resources object",
+    "cpu_affinity_assignment": "root-cpuset-partition-and-systemd-system-unit-CPUAffinity",
+    "cpu_partition_idle_admission": "sustained-all-slots-or-fail-before-provider-use",
+    "cpu_partition_launch_manager": "system-systemd-as-configured-unprivileged-uid",
+    "cpu_partition_release": "empty-only",
+    "cpu_partition_scope": "campaign-wide-union-of-disjoint-pair-slots",
+    "cpu_partition_userspace_exclusivity": true,
+    "cpuset_controller_required": true,
+    "cpuset_partition_mode": "root",
+    "cpuset_partition_required": true,
+    "dedicated_idle_host_required": false,
+    "exclusivity_limitations": "kernel threads, interrupts, firmware activity, and shared cache, memory, interconnect, power, and thermal resources remain outside the userspace cpuset guarantee",
+    "foreign_process_cgroup_migration_allowed": false,
+    "foreign_process_signals_allowed": false,
+    "guard_path": "/usr/local/libexec/highambench/highambench-cpu-guard",
+    "guard_path_role": "digest-authorized sudo relay frontend only",
+    "host_guard_path": "/usr/local/libexec/highambench/highambench-cpu-guard-host",
+    "host_guard_path_sudo_authorized": false,
+    "host_pid_namespace_attestation_required": true,
+    "include_all_online_threads_of_selected_cores": true,
+    "parallel_cpu_slots_disjoint": true,
+    "partition_hierarchy": "top-level campaign-union partition root with one disjoint child partition root per pair slot",
+    "physical_cores_per_slot": 4,
+    "root_owned_cpu_guard_required": true,
+    "same_uid_process_trust_scope": "possible signaling or artifact/process manipulation only; no scheduling overlap with the leased partition"
+  },
+  "measurement_authority": "metadata/measurement_protocol.json and RUNNING.md",
+  "planned_counts_per_agent": {
+    "conditions": 2,
+    "paired_assignments": 189,
+    "papers": 51,
+    "repetitions_per_task": 3,
+    "runs": 378,
+    "tasks": 63
+  },
+  "record_status": "legacy construction configuration; not used by the measured-v5 runner",
+  "repetition_note": "These are fixed repetition IDs, not random seeds. No backend seed support has been established. Record a real backend seed before evaluation if the chosen backend supports and obeys one.",
+  "repetitions": [
+    {
+      "backend_seed": null,
+      "id": "rep-01"
+    },
+    {
+      "backend_seed": null,
+      "id": "rep-02"
+    },
+    {
+      "backend_seed": null,
+      "id": "rep-03"
+    }
+  ],
+  "schema_version": "0.1.0",
+  "stop_conditions": [
+    "first valid proof",
+    "wall-clock limit",
+    "model-token limit",
+    "agent ends the run"
+  ],
+  "system_error_policy": "A system fault before useful work starts is not scored. Rerun once under the same assignment and keep the incident log.",
+  "token_control": {
+    "advisory_rollout_budget": {
+      "enabled": true,
+      "feature": "rollout_budget",
+      "feature_row": "rollout_budget under development false",
+      "limit_tokens": 5000000,
+      "prefill_token_weight": 1,
+      "role": "advisory_only",
+      "sampling_token_weight": 1,
+      "strict_config": true
+    },
+    "all_descendant_threads_included": true,
+    "cached_input_counted_once": true,
+    "checked_before_submission_validation": true,
+    "comparison": ">=",
+    "concurrent_inflight_overshoot_possible": false,
+    "control": "loopback_provider_response_admission_gate",
+    "crossing_response_actions_released": false,
+    "crossing_response_release": "ordinary_empty_output_or_compaction_single_item_before_minimal_completion",
+    "input_includes_cached": true,
+    "limit_tokens": 5000000,
+    "live_cumulative": true,
+    "live_update_sequence": true,
+    "measurement_exact_required": true,
+    "measurement_source": "codex_app_server_rawResponse/completed",
+    "notification": "rawResponse/completed",
+    "one_response_overshoot_possible": true,
+    "outcome_exactness": {
+      "accepted_proof": {
+        "descendants_quiescent": true,
+        "drain_complete": false,
+        "later_model_response_possible": false,
+        "measurement_exact": true,
+        "provider_gate_close_reason": "accepted_submission",
+        "provider_requests_quiescent": true,
+        "required_evidence": "exact_authenticated_submission_boundary",
+        "root_turn_active": true,
+        "submission_boundary_exact": true
+      },
+      "scored_failure": {
+        "drain_complete": true,
+        "measurement_exact": true,
+        "provider_gate_close_reason": "natural_end",
+        "provider_requests_quiescent": true,
+        "required_evidence": "exact_natural_drain",
+        "tree_quiescent": true
+      },
+      "token_limit": {
+        "crossing_response_actions_released": false,
+        "drain_complete": false,
+        "measurement_exact": true,
+        "provider_gate_close_reason": "token_limit",
+        "provider_requests_quiescent": true,
+        "required_evidence": "sealed_sanitized_sole_inflight_crossing",
+        "tree_quiescent": false
+      },
+      "unscorable_useful_work": {
+        "matrix_action": "abort_and_preserve_incident",
+        "retry_allowed": false,
+        "scored": false,
+        "trigger": "no_exact_authenticated_provider_gate_endpoint_for_outcome"
+      }
+    },
+    "outer_runner_polling": true,
+    "over_limit_pass_allowed": false,
+    "provider_gate_protocol": "highambench-provider-token-gate-v6",
+    "provider_requests_quiescent_at_scored_endpoint": true,
+    "provider_response_bound_tokens": 272000,
+    "response_ids_deduplicated": true,
+    "root_completion_is_tree_barrier": false,
+    "strict_admission_inequality": "completed_tokens + (open_request_count + 1) * response_bound < token_limit",
+    "tree_quiescence_distinct_from_provider_quiescence": true,
+    "trusted_adapter_freezes_first_threshold": true,
+    "trusted_adapter_latches_first_threshold": true,
+    "trusted_usage_path_outside_workspace": true,
+    "usage_scope": "rooted_attempt_thread_tree_completed_responses"
+  }
+}

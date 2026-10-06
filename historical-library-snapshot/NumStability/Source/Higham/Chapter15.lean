@@ -1,0 +1,66 @@
+import NumStability.Source.Higham.Chapter15.Algorithm01.PNormPowerMethod.ConvergenceStatements
+import NumStability.Source.Higham.Chapter15.Algorithm01.PNormPowerMethod.PNormPowerMethod
+import NumStability.Source.Higham.Chapter15.Algorithm01.PNormPowerMethod.PNormRectangular
+import NumStability.Source.Higham.Chapter15.Algorithm03.OneNormPowerMethod.Basic
+import NumStability.Source.Higham.Chapter15.Algorithm04.LAPACKNormEstimator.Basic
+import NumStability.Source.Higham.Chapter15.Algorithm04.LAPACKNormEstimator.ConditionEstimate.Bounds
+import NumStability.Source.Higham.Chapter15.Algorithm05.LINPACKConditionEstimator.Basic
+import NumStability.Source.Higham.Chapter15.Algorithm05.LINPACKConditionEstimator.InverseNormBound.TriangularSolve
+import NumStability.Source.Higham.Chapter15.Equation02.Subgradient.PNormGeneral
+import NumStability.Source.Higham.Chapter15.Equation02.Subgradient.PNormPowerMethod
+import NumStability.Source.Higham.Chapter15.Equation03.GradientQuotient.ConvergenceStatements
+import NumStability.Source.Higham.Chapter15.Equation03.GradientQuotient.PNormGeneral
+import NumStability.Source.Higham.Chapter15.Equation03.GradientQuotient.PNormPowerMethod
+import NumStability.Source.Higham.Chapter15.Equation04.NormalizedDualDiscrepancy.Basic
+import NumStability.Source.Higham.Chapter15.Equation05.SubgradientInequality.Basic
+import NumStability.Source.Higham.Chapter15.Equation06.LAPACKCounterexample.Basic
+import NumStability.Source.Higham.Chapter15.Equation07.DixonBound.Basic
+import NumStability.Source.Higham.Chapter15.Lemma02.PNormPowerMethod.BoydInterface
+import NumStability.Source.Higham.Chapter15.Lemma02.PNormPowerMethod.BoydUniqueness
+import NumStability.Source.Higham.Chapter15.Lemma02.PNormPowerMethod.PNormPowerMethod
+import NumStability.Source.Higham.Chapter15.Lemma02.PNormPowerMethod.PNormRectangular
+import NumStability.Source.Higham.Chapter15.Problem04.LUConditionBounds.Basic
+import NumStability.Source.Higham.Chapter15.Problem06.TridiagonalInverseNorm.Recurrences.ArrayExecution
+import NumStability.Source.Higham.Chapter15.Problem06.TridiagonalInverseNorm.Recurrences.EntryFormulas
+import NumStability.Source.Higham.Chapter15.Problem06.TridiagonalInverseNorm.Recurrences.FactorizationAndNorm
+import NumStability.Source.Higham.Chapter15.Problem06.TridiagonalInverseNorm.TridiagonalInverse
+import NumStability.Source.Higham.Chapter15.Problem06.TridiagonalInverseNorm.TridiagonalInverseCompletion
+import NumStability.Source.Higham.Chapter15.Problem06.TridiagonalInverseNorm.TridiagonalInverseRuns
+import NumStability.Source.Higham.Chapter15.Section01.ConditionNumbers.CondEstimation
+import NumStability.Source.Higham.Chapter15.Section01.ConditionNumbers.ConditionEstimators
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.Corrections.BoydConcrete
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.Corrections.BoydLocal
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.Corrections.BoydLocalStability
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.Corrections.ConvergenceStatements
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.EndpointTermination.ConvergenceStatements
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.EndpointTermination.InfinityCounterexample.Trace
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.EndpointTermination.RectangularTermination
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.GlobalConvergence.BoydInterface
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.GlobalConvergence.BoydUniqueness
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.GlobalConvergence.ConvergenceStatements
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.GlobalConvergence.ScalarCase.Iteration
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.LocalConvergence.BoydConcrete
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.LocalConvergence.BoydInterface
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.LocalConvergence.BoydLocal
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.LocalConvergence.BoydLocalStability
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.LocalConvergence.ConstrainedLagrangian.Differentiation
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.SourceDomain.BoydCompletion
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.SourceDomain.BoydConcrete
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.SourceDomain.BoydDomain
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.SourceDomain.BoydLocal
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.SourceDomain.BoydRowwise
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.SourceDomain.SecondDerivative.Rowwise
+import NumStability.Source.Higham.Chapter15.Section02.Boyd.SourceDomain.StrongLocalMaximum.Convergence
+import NumStability.Source.Higham.Chapter15.Section06.TridiagonalLUConditionBounds.ExactBounds
+import NumStability.Source.Higham.Chapter15.Theorem06.Dixon.Basic
+import NumStability.Source.Higham.Chapter15.Theorem07.TridiagonalLU.Basic
+import NumStability.Source.Higham.Chapter15.Theorem08.TridiagonalDiagonalDominance.Basic
+import NumStability.Source.Higham.Chapter15.Theorem09.Ikebe.Basic
+import NumStability.Source.Higham.Chapter15.Theorem09.Ikebe.IrreducibleRightInverse.RankOneStructure
+
+/-!
+# Higham Chapter 15 source correspondence
+
+Complete canonical entry point for the Chapter 15 source-correspondence leaves
+currently migrated into `NumStability.Source.Higham`.
+-/

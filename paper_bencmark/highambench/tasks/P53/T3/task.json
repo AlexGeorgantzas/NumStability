@@ -1,0 +1,91 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "finite-dimensional complex formulation of Theorem 4.5 and its use of Theorem 4.1",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "P53CoreRollupRun records the paper's successive applications of C1^*,...,Cn^* to e1.",
+    "The equalities for x, its last coordinate, and |alpha| are the persistent relations used in the proof of Theorem 4.1.",
+    "hvw records |v_i|=|w_i| for a unitary core transformation.",
+    "Ctail, Rtail, and Htail are the n-by-n matrices Ctilde, Rtilde, and Htilde from the proofs of Theorems 4.2 and 4.5.",
+    "The diagonal, triangularity, product, and determinant-norm hypotheses are exactly the tail identities invoked in the proof of Theorem 4.5."
+  ],
+  "author_label": "Theorem 4.5",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P53 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P53 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P53/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p53_t3_core_subdiagonal_product (n : Nat) (hn : 0 < n) (run : P53CoreRollupRun n) (x : P53Vector n) (alpha a0 : Complex) (hx : x = alpha \u2022 run.state n) (hxlast : x <n> = -1) (halpha : \u2016alpha\u2016 = p53VecNorm2 x) (hvw : forall i, \u2016run.v i\u2016 = \u2016run.w i\u2016) (Ctail Rtail Htail : P53Matrix n) (hCdiag : forall i, Ctail i i = run.w i) (hCtri : Ctail.BlockTriangular id) (hRtri : Rtail.BlockTriangular id) (hHtail : Htail = Ctail * Rtail) (hdetR : \u2016Matrix.det Rtail\u2016 = \u2016a0\u2016) (ha0 : a0 != 0) : (forall i, 0 < \u2016Htail i i\u2016) and (product i, \u2016Htail i i\u2016) = \u2016a0\u2016 / p53VecNorm2 x",
+    "namespace": "HighamBench",
+    "plain_language": "Prove that every subdiagonal magnitude beta_i is positive and that their product is |a0| divided by the Euclidean norm of x.",
+    "target_file": "paper_bencmark/highambench/tasks/P53/T3/Target.lean",
+    "theorem_name": "p53_t3_core_subdiagonal_product"
+  },
+  "informal_proof": "Use the successive core transformations and the last coordinate of x to obtain Theorem 4.1's product for the C-core subdiagonal magnitudes. The upper-triangular identity Htilde=Ctilde Rtilde then relates the B-core magnitudes to those C-core magnitudes and the diagonal of Rtilde. Take products and use |det Rtilde|=|a0|. Nonzero a0 makes the resulting product positive, so every nonnegative magnitude is positive.",
+  "informal_statement": "Prove the positivity and product formula for the B-core subdiagonal magnitudes in Theorem 4.5.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P53",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P53 Fast and Backward Stable Computation of Roots of Polynomials.pdf",
+    "sha256": "ecde7ea5786795dee4e4d3068982768c72d73496670e2a5fe26e08c363d7b109"
+  },
+  "paper_version": "KU Leuven Report TW 654, August 2014",
+  "result_form_tag": "THM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "Theorem 4.5 companion core transformation subdiagonal product",
+        "unitary plus rank one polynomial roots beta product",
+        "successive core adjoints boundary coordinate product"
+      ],
+      "result": "Neither Mathlib nor the exact 44-object NumStability bundle contains companion-matrix core transformations, the C/B core-product identities, or Theorem 4.5. Generic triangular-determinant and finite-product lemmas are supporting infrastructure only.",
+      "scope": "the complete frozen NumStability source at commit 45813a95dacf577461bae13f033af0dbc985a225, the exact 44-object condition-L bundle, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "generic matrix algebra and triangular-determinant support only; no compiled declaration controls companion cores or the subdiagonal product"
+    ],
+    "note": "The exact private N proof is 154 physical lines and the exact L proof is 155. After deleting L's one additional NumStability import, their mathematical bodies are byte-identical. L invokes no NumStability declaration and receives no shortcut."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P53Vector",
+    "P53Matrix",
+    "p53VecNorm2",
+    "p53FirstBasis",
+    "p53CoreCoeff",
+    "p53AdjointCoreStep",
+    "P53CoreRollupRun"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Theorems 4.1 and 4.5, equations (4.6) and (4.9), and their proofs",
+      "pdf_page": "9-10",
+      "printed_page": "9-10",
+      "role": "selected B-core nontriviality and subdiagonal-product conclusion, including its C-core product premise",
+      "section": "4.1. Properties of the factorization"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P53-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The task requires an arbitrary-length support invariant for successive overlapping core transformations, an indexed boundary-product induction, conversion of the final coordinate into the C-core magnitude product, and a separate triangular-matrix determinant argument for the B-core product and factorwise positivity. The exact N proof has 154 physical lines and is comparable to the lower end of validated T2/T3 workloads rather than a short imported Mathlib exercise. The exact L mathematical proof is byte-identical and uses no NumStability declaration, establishing that the frozen library provides no speedup.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P53/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p53_t3_core_subdiagonal_product"
+  }
+}

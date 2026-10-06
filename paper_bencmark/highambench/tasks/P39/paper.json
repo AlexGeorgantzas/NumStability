@@ -1,0 +1,92 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 17-page paper in physical-PDF order, including Sections 1-4, all proofs, algorithms, figures, tables, experiments, conclusions, and references, then compared every candidate with Mathlib and the frozen importable NumStability baseline.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P39 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Stanley C. Eisenstat",
+    "Homer F. Walker"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P39-T3"
+  ],
+  "paper_id": "P39",
+  "paper_version": "published journal version; SIAM Journal on Scientific Computing 17(1), 1996, printed pages 16-32",
+  "publication": {
+    "doi": "10.1137/0917003",
+    "issue": "1",
+    "journal": "SIAM Journal on Scientific Computing",
+    "printed_pages": "16-32",
+    "publication_date": "1996-01",
+    "volume": "17",
+    "year": 1996
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "The standard local convergence facts summarized in Section 1",
+      "reason": "The paper explicitly attributes these results to Dembo, Eisenstat, and Steihaug rather than proving them here."
+    },
+    {
+      "candidate": "Lemmas 1.1-1.4 and Proposition 2.1",
+      "reason": "These are source-proved supporting bounds, but each is a short local norm or Taylor-remainder consequence and is below the T3 difficulty floor. No compiled NumStability result makes any one of them a valid T1 task."
+    },
+    {
+      "candidate": "Theorem 2.2, Choice 1 two-step q-quadratic convergence",
+      "reason": "This theorem is source-backed and unavailable in the compiled library, but Theorem 2.3's final R-order argument supplies a cleaner and harder self-contained T3 core with an explicit substantial induction."
+    },
+    {
+      "candidate": "The squared Choice 1 rate following Theorem 2.2",
+      "reason": "The paper explicitly states this result without proof."
+    },
+    {
+      "candidate": "Algorithm INB global convergence and GMRES properties in Section 3.1",
+      "reason": "The convergence theorem is quoted from an earlier Eisenstat--Walker paper and GMRES is imported from Saad--Schultz; P39 does not prove these results."
+    },
+    {
+      "candidate": "Safeguards, test problems, numerical comparisons, and conclusions in Sections 2.1-4",
+      "reason": "These are algorithm choices, empirical observations, and qualitative recommendations rather than new source-proved universal theorem statements."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. The compiled NumStability set has no inexact-Newton, nonlinear local-convergence, forcing-term, or q/r-order theorem, so no complete source-proved result receives exactly one substantial library shortcut."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No P39 proof needs at least two distinct substantial results from the compiled NumStability set; the relevant nonlinear convergence material is entirely absent from that set."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Selected the R-order part of Theorem 2.3 for gamma=1, specialized to the paper's tested value alpha=2 after the exact reindexing on printed page 22. The task retains the residual recurrence, smallness condition, scaling, simultaneous product induction, doubly exponential bound, and convergence conclusion."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only conclusions whose statements and supporting derivations appear in this paper.",
+    "Do not turn the cited standard inexact-Newton, globalized-backtracking, or GMRES results into P39 tasks.",
+    "Treat the alpha=2, gamma=1 case as a specialization of the parameter range explicitly proved and used in the experiments, not as a new theorem.",
+    "Do not count uncompiled Chapter-25 nonlinear-system source files as available to condition L.",
+    "Assign tiers only after comparison with the complete frozen NumStability source, its importable compiled subset, and Mathlib."
+  ],
+  "short_name": "Eisenstat--Walker (1996)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/0917003",
+    "local_path": "paper_bencmark/reference_papers/P39-Choosing the Forcing Terms in an Inexact Newton Method.pdf",
+    "page_map": "Physical PDF pages 1-17 are printed pages 16-32 respectively.",
+    "pdf_pages": 17,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "9ec10bc2e1add577e6cc974ae4dd55923d82417c5e5aad85cf64515f439fa26c"
+  },
+  "title": "Choosing the Forcing Terms in an Inexact Newton Method"
+}

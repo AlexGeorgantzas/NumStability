@@ -1,0 +1,74 @@
+import NumStability.Source.Higham.Chapter11.Aasen118Reduced
+import NumStability.Source.Higham.Chapter11.AasenAdjacentPivotOperationalMiddle
+import NumStability.Source.Higham.Chapter11.AasenAdjacentPivotResidualDomain
+import NumStability.Source.Higham.Chapter11.AasenAdjacentPivotSourceResidual
+import NumStability.Source.Higham.Chapter11.AasenAdjacentPivotTridiagExecutor
+import NumStability.Source.Higham.Chapter11.AasenAdjacentPivotTridiagForwardCounterexample
+import NumStability.Source.Higham.Chapter11.AasenDirect118
+import NumStability.Source.Higham.Chapter11.AasenDirectTridiagGEPPSolve
+import NumStability.Source.Higham.Chapter11.AasenFactorNorm
+import NumStability.Source.Higham.Chapter11.AasenGrowth
+import NumStability.Source.Higham.Chapter11.AasenMiddleGEPPCh11Counterexample
+import NumStability.Source.Higham.Chapter11.AasenOriginalCoordinateCorrection
+import NumStability.Source.Higham.Chapter11.AasenPermutationSourceCorrection
+import NumStability.Source.Higham.Chapter11.AasenPrintedCoefficientAlgebra
+import NumStability.Source.Higham.Chapter11.AasenSourceSharpFactorResidual
+import NumStability.Source.Higham.Chapter11.AasenTheorem118ScalarEdge
+import NumStability.Source.Higham.Chapter11.AasenTridiagGEPP
+import NumStability.Source.Higham.Chapter11.AasenUnitOuterSolve
+import NumStability.Source.Higham.Chapter11.BlockLDLTAllOneByOnePrinted
+import NumStability.Source.Higham.Chapter11.BlockLDLTBunchTridiagonal
+import NumStability.Source.Higham.Chapter11.BlockLDLTMixedPivot
+import NumStability.Source.Higham.Chapter11.BlockLDLTSolveBackward
+import NumStability.Source.Higham.Chapter11.Bunch.ActualSharpGrowthClosure
+import NumStability.Source.Higham.Chapter11.Bunch.ExactTrace
+import NumStability.Source.Higham.Chapter11.Bunch.SharpGrowthBridge
+import NumStability.Source.Higham.Chapter11.Bunch.TraceHadamard
+import NumStability.Source.Higham.Chapter11.BunchKaufman.ActualSelector
+import NumStability.Source.Higham.Chapter11.BunchKaufman.Exact.Growth
+import NumStability.Source.Higham.Chapter11.BunchKaufman.Exact.GrowthArithmetic
+import NumStability.Source.Higham.Chapter11.BunchKaufman.Exact.Trace
+import NumStability.Source.Higham.Chapter11.BunchKaufman.ExplicitInverse.Solve
+import NumStability.Source.Higham.Chapter11.BunchKaufman.ExplicitInverse.TerminalClosedForm
+import NumStability.Source.Higham.Chapter11.BunchKaufman.Rounded.Accumulated
+import NumStability.Source.Higham.Chapter11.BunchKaufman.Rounded.Bridge
+import NumStability.Source.Higham.Chapter11.BunchKaufman.Rounded.Closure
+import NumStability.Source.Higham.Chapter11.BunchKaufman.Rounded.Execution
+import NumStability.Source.Higham.Chapter11.BunchKaufman.Rounded.Factors
+import NumStability.Source.Higham.Chapter11.BunchKaufman.Rounded.Global
+import NumStability.Source.Higham.Chapter11.BunchKaufman.Rounded.Growth
+import NumStability.Source.Higham.Chapter11.BunchKaufman.Rounded.GrowthSolve
+import NumStability.Source.Higham.Chapter11.BunchKaufman.Rounded.MiddleSolve
+import NumStability.Source.Higham.Chapter11.BunchKaufman.Rounded.Solve
+import NumStability.Source.Higham.Chapter11.BunchKaufman.Rounded.Terminal
+import NumStability.Source.Higham.Chapter11.BunchKaufman.Rounded.TerminalClosedForm
+import NumStability.Source.Higham.Chapter11.BunchKaufman.SourceCorrection
+import NumStability.Source.Higham.Chapter11.BunchKaufmanSolve
+import NumStability.Source.Higham.Chapter11.BunchTridiagonalActualSolve
+import NumStability.Source.Higham.Chapter11.BunchTridiagonalHFactor
+import NumStability.Source.Higham.Chapter11.Problems
+import NumStability.Source.Higham.Chapter11.Rook.ExactTrace
+import NumStability.Source.Higham.Chapter11.Rook.ExecutorAdapter
+import NumStability.Source.Higham.Chapter11.Rook.RoundedGap
+import NumStability.Source.Higham.Chapter11.Rook.SourceClosure
+import NumStability.Source.Higham.Chapter11.Section01.Basic
+import NumStability.Source.Higham.Chapter11.Section01.CompletePivoting
+import NumStability.Source.Higham.Chapter11.Section01.PartialPivoting
+import NumStability.Source.Higham.Chapter11.Section01.RookPivoting
+import NumStability.Source.Higham.Chapter11.Section01.Tridiagonal
+import NumStability.Source.Higham.Chapter11.Section02.Aasen
+import NumStability.Source.Higham.Chapter11.Section03.SkewSymmetric
+import NumStability.Source.Higham.Chapter11.Skew.ActualSelector
+import NumStability.Source.Higham.Chapter11.Skew.ExactTrace
+import NumStability.Source.Higham.Chapter11.Skew.SourceCorrection
+import NumStability.Source.Higham.Chapter11.Theorem07
+import NumStability.Source.Higham.Chapter11.Theorem07.TridiagonalTwoByTwoResidual
+import NumStability.Source.Higham.Chapter11.TwoByTwoSchurStep
+import NumStability.Source.Higham.CrossChapter.SymmetricIndefiniteLU.ActualExecutorBridge
+import NumStability.Source.Higham.CrossChapter.SymmetricIndefiniteLU.BridgeClosure
+
+/-!
+# Higham Chapter 11 source correspondence
+
+Complete import-only surface for the migrated Chapter 11 source results.
+-/

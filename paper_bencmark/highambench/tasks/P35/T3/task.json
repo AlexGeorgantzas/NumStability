@@ -1,0 +1,92 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source-faithful Cholesky-coordinate and finite-sequence formalization of all five parts of Proposition 6.2",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The represented matrices are symmetric positive definite and have positive-diagonal lower Cholesky factors.",
+    "The formal dimension is n+1: lambdaMin is one eigenvalue and tailEigen contains the remaining n positive eigenvalues.",
+    "The supplied determinant, diagonal-product, eigenvalue-product, trace, and exact Jacobi-step identities are the coordinate identities used explicitly in the paper's proof.",
+    "The finite natural number M selects an arbitrary finite prefix of the exact Jacobi sequence; no floating-point effects are modeled in Proposition 6.2."
+  ],
+  "author_label": "Proposition 6.2",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P35 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P35 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P35/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p35_t3_hadamard_measure_jacobi_growth (n M L s detH diagProduct measure jacobiEntry lambdaMin lambdaMax tailEigen kappa) ... : the five Hadamard-measure and Jacobi-growth conclusions",
+    "namespace": "HighamBench",
+    "plain_language": "The Hadamard measure has the upper bound and diagonal equality case, is invariant under diagonal scaling, controls the smallest normalized eigenvalue, increases at every exact Jacobi step by the stated factor, and bounds condition growth throughout a finite Jacobi run.",
+    "target_file": "paper_bencmark/highambench/tasks/P35/T3/Target.lean",
+    "theorem_name": "p35_t3_hadamard_measure_jacobi_growth"
+  },
+  "informal_proof": "Use the Cholesky row-energy and determinant products for the first two parts. Apply finite AM-GM to the n tail eigenvalues and the standard binomial bound by exp(1) for the third. Use determinant preservation and the exact diagonal-product update for the fourth, then induct over the Jacobi steps and combine the smallest- and largest-eigenvalue bounds for the fifth.",
+  "informal_statement": "Proposition 6.2: prove all five properties of the Hadamard measure, including its equality case, diagonal-scaling invariance, normalized smallest-eigenvalue bound, exact Jacobi-step increase, and global condition-growth bound.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P35",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P35-Jacobi's Method is More Accurate than QR.pdf",
+    "sha256": "ef6629aca920a9391bc38f6a526853033631408b26f2fc686f4d640d0d4ee9e3"
+  },
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 13(4), 1992, printed pages 1204-1245",
+  "result_form_tag": null,
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "Hadamard measure",
+        "Jacobi condition growth",
+        "two-sided Jacobi measure",
+        "scaled relative eigenvalue perturbation",
+        "unit-diagonal determinant bound"
+      ],
+      "result": "Neither Mathlib nor the importable frozen NumStability set contains Proposition 6.2, a Hadamard-measure definition and equality theorem, the exact Jacobi measure update, or its condition-growth consequence. The compiled Givens theorems concern rounded application of a supplied rotation under a different arithmetic model and do not prove any of these exact measure claims.",
+      "scope": "the complete frozen NumStability source, the compiled condition-L bundle recorded in metadata/library_olean.json, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.fl_givensApply_computed_matrix_step_error",
+      "NumStability.hermitian_eigenvalues_list",
+      "NumStability.Matrix.IsHermitian.trace_eq_sum_eigenvalues"
+    ],
+    "note": "The nearby declarations neither define the Hadamard measure nor establish the exact Jacobi diagonal-product update or condition bound. The private N and L proofs reconstruct the same finite-product equality case, scaling cancellation, general-dimensional AM-GM argument, Jacobi monotonicity, and finite-run condition estimate; L has no substantial shortcut."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "p35DiagSquare",
+    "p35RowEnergy",
+    "p35HadamardMeasure",
+    "p35IsDiagonalCholesky",
+    "p35ScaleRows"
+  ],
+  "source_locations": [
+    {
+      "anchor": "definition of the Hadamard measure, Proposition 6.2, and its five-part proof",
+      "pdf_page": 32,
+      "printed_page": "1235-1236",
+      "role": "selected statement and complete proof of all five Hadamard-measure properties",
+      "section": "6. Bounds on the growth of kappa(A_m)/kappa(A_0)"
+    }
+  ],
+  "source_tags": [
+    "PROP"
+  ],
+  "task_id": "P35-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The task retains all five parts of Proposition 6.2. Its proof must establish equality in a dimension-indexed Cholesky product inequality, diagonal-scale cancellation, a general finite AM-GM and exponential estimate, exact Jacobi-step monotonicity, and an induction producing the global condition-number bound. This is at least T2-level effort and is not discharged by a Mathlib import. NumStability has no corresponding compiled Hadamard-measure or exact Jacobi-growth result, so L receives no material advantage over N.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P35/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p35_t3_hadamard_measure_jacobi_growth"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "annotation": {
+    "method": "Codex read the complete 18-page source in physical order through Sections 1-7, Lemma 2.1, Theorem 2.2, Algorithms 4.1, 5.1, and 5.2, every numerical experiment, conclusions, and all 22 references; separated the paper's proofs from cited matrix-function theory, heuristic algorithm design, and experiments; audited Mathlib and the exact frozen 44-object NumStability surface; and compiled paired private feasibility proofs for the closest internally proved candidate.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P51 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Awad H. Al-Mohy",
+    "Nicholas J. Higham"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [],
+  "paper_id": "P51",
+  "paper_version": "SIAM Journal on Scientific Computing 34(4), published electronically July 24, 2012",
+  "publication": {
+    "version_date": "2012-07-24",
+    "year": 2012
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Lemma 2.1",
+      "reason": "The paper's proof is the spectral mapping observation followed by a termwise triangle and denominator bound for the positive Pad\u00e9 weights and nodes. Paired private proofs of its scalar inequality core are 49 N lines and 50 L lines and mathematically identical. This is below the substantial tier threshold, and the frozen library provides no material shortcut."
+    },
+    {
+      "candidate": "Theorem 2.2 and equations (2.3)-(2.8)",
+      "reason": "The logarithm-of-exponential step is explicitly cited to [16, Problem 1.39], while the sharp alpha_p power-series norm bound (2.5) is obtained by applying [2, Theorem 4.2(a)]. The frozen OperatorLog module can replace part of that cited background only in self-adjoint specializations. Requiring N to reconstruct the cited operator-log theorem would make an artificial T1, and supplying the cited inputs leaves only a short summary argument."
+    },
+    {
+      "candidate": "Section 3 cancellation-avoidance formulas",
+      "reason": "The scalar product formula (3.1), first-superdiagonal formula, and their accuracy properties are taken from references [1], [16], and [18]. They are not newly proved P51 results."
+    },
+    {
+      "candidate": "Algorithm 4.1",
+      "reason": "Its parameter selection uses the explicitly asymptotic approximation (4.1), previously published square-root and norm-estimation algorithms, and heuristic limits on extra roots. The paper gives an algorithm design and cost count, not an exact correctness theorem suitable for a source-faithful proof task."
+    },
+    {
+      "candidate": "equation (5.1) and Algorithm 5.1",
+      "reason": "The exact product identity is a short repeated difference-of-squares factorization once the square roots are supplied. The paper explicitly says a complete justification of its cancellation-avoidance effectiveness for general matrices is lacking; formalizing such an accuracy guarantee would invent a result."
+    },
+    {
+      "candidate": "Algorithm 5.2",
+      "reason": "The transformation-free procedure combines cited Denman--Beavers iteration, estimated norms, tabulated symbolic constants, and heuristic cost tests. No universal correctness or stability theorem is proved for extraction."
+    },
+    {
+      "candidate": "Section 6 experiments and Section 7 conclusions",
+      "reason": "The speed and accuracy comparisons are empirical observations, not universal proof claims."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. The only substantial frozen operator-log theorems correspond to matrix-function background that P51 cites instead of proving. Its own Lemma 2.1 argument is short and receives no substantial shortcut."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No internally proved P51 result receives two distinct substantial non-Mathlib shortcuts from the exact compiled library. Theorem 2.2's hard inputs are external citations, not eligible P51 contributions."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. Lemma 2.1 and the exact part of (5.1) are below the T2 difficulty floor. The harder backward-error and algorithmic claims either import cited theory, use an explicit asymptotic heuristic, lack a complete general-matrix justification, or are empirical."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only exact claims and proof content established in P51.",
+    "Do not turn cited matrix-logarithm inversion or power-series norm theorems into P51 proof obligations.",
+    "Do not convert asymptotic parameter-selection rules or empirical accuracy evidence into exact theorem statements.",
+    "Do not invent the general cancellation-avoidance justification that the paper says is lacking.",
+    "Assign a tier only after exact private N and L evidence establishes the tier criteria."
+  ],
+  "short_name": "Al-Mohy--Higham (2012)",
+  "source": {
+    "lawful_source_locator": "local user-supplied MIMS eprint of the published article",
+    "local_path": "paper_bencmark/reference_papers/P51 Improved Inverse Scaling and Squaring Algorithms for the Matrix Logarithm.pdf",
+    "page_map": "Physical PDF page 1 is the MIMS cover; physical pages 2-18 are printed journal pages C153-C169.",
+    "pdf_pages": 18,
+    "rights_note": "The local eprint was supplied for benchmark construction. Release only its hash, metadata, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "cfa4c0795b618fb50cff4ebe30ca954ea40bec2975be2e7b3a107132c64441b6"
+  },
+  "title": "Improved Inverse Scaling and Squaring Algorithms for the Matrix Logarithm"
+}

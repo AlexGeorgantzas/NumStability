@@ -1,0 +1,64 @@
+{
+  "annotation": {
+    "method": "Read Figure 3.1 and Propositions 3.1\u20133.2; compiled exact N and L proofs before packaging.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner requested additional paper-grounded T1/T2 tasks."
+  },
+  "authors": [
+    "Anthony M. Castaldo",
+    "R. Clint Whaley",
+    "Anthony T. Chronopoulos"
+  ],
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P66-T1",
+    "P66-T2"
+  ],
+  "paper_id": "P66",
+  "paper_version": "2008 author-hosted publisher PDF, journal pages 1156\u20131174",
+  "publication": {
+    "doi": "10.1137/070679946",
+    "issue": "2",
+    "journal": "SIAM Journal on Scientific Computing",
+    "printed_pages": "1156\u20131174",
+    "volume": "31",
+    "year": 2008
+  },
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Retain Proposition 3.1\u2019s t=2 summation-only bound, distinct from Proposition 3.2\u2019s T2 dot-product bound.",
+      "task_id": "P66-T1",
+      "theorem_name": "p66_t1_two_level_superblock_sum_error"
+    },
+    "T2": {
+      "available": true,
+      "decision": "Select the two-level case of Proposition 3.2, combining inner dot-product and outer summation analyses.",
+      "task_id": "P66-T2",
+      "theorem_name": "p66_t2_two_level_superblock_dot_error"
+    },
+    "T3": {
+      "available": false,
+      "decision": "No T3 selected in this T1/T2 expansion."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Specialize Proposition 3.2 to two levels and equal integral block size b, so N=b\u00b2 as in the paper.",
+    "Keep the t=2 gamma_(2b\u22121) bound and the paper\u2019s multiply-then-accumulate execution order.",
+    "Keep private N/L proofs out of public task material.",
+    "Retain Proposition 3.1\u2019s t=2 summation-only bound, distinct from Proposition 3.2\u2019s T2 dot-product bound."
+  ],
+  "short_name": "Castaldo\u2013Whaley\u2013Chronopoulos (2008)",
+  "source": {
+    "lawful_source_locator": "https://www.cs.utsa.edu/~atc/pub/J42.pdf",
+    "local_path": "papers_to_be_approved/P66-Castaldo-Whaley-Chronopoulos-2008-Superblock-Dot.pdf",
+    "page_map": "Physical PDF pages 1\u201319 carry journal printed pages 1156\u20131174 in order.",
+    "pdf_pages": 19,
+    "rights_note": "Author-hosted publisher PDF retained privately; verify reuse terms before redistribution.",
+    "sha256": "ffdea8e2136c7f4226e4c0d382d512fef190cd207133a1a0c88c8ef7b9ebeeb2"
+  },
+  "title": "Reducing Floating Point Error in Dot Product Using the Superblock Family of Algorithms"
+}

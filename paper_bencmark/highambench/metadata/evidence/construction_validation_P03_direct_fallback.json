@@ -1,0 +1,93 @@
+{
+  "canonical_evidence": "metadata/evidence/construction_validation_P03.json",
+  "canonical_isolated_pass": false,
+  "direct_fallback_pass": true,
+  "generated_at_utc": "2026-08-06T00:52:18Z",
+  "host_limitation": {
+    "canonical_failure_occurs_before_lean_starts": true,
+    "message": "bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted",
+    "scope": "All six canonical P03 checks on this LXC host",
+    "tool": "/usr/bin/bwrap"
+  },
+  "kind": "highambench-direct-exact-path-construction-fallback",
+  "paper_id": "P03",
+  "pinned_lean": {
+    "commit": "5d86aa4032284a5242470e95fbe25f1ff506763d",
+    "version": "4.29.0-rc3"
+  },
+  "results": [
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "4e044e041df0603f127711ddf6cd25c7c9a9a4c3e1a4213d3c8d2259fa07f2d9",
+        "library_declarations": [
+          "NumStability.absError",
+          "NumStability.absError_nonneg"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "13513662e2e27fb9533969f892c439af1d52b63fc42af1fd1dd88a97c4140578",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "6de2787b760937b2e0b20ef82c6dbb221a7be6f8683b9a963070abee2439e717",
+      "target_theorem": "HighamBench.p03_t1_one_step_residual_identity",
+      "task_id": "P03-T1"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "a9cddd14bdad6c5eddc21251a0d3dba44a77dbf068112de556c735dc3f94bc81",
+        "library_declarations": [
+          "NumStability.absError",
+          "NumStability.absError_nonneg"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "d84bd01b74ccbea18f27138515c7405cc29a91ce788628f6a05af48b92a66cb5",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "66d46e86e70b37c6e4436debab03f0701acef350c440deeace177e718b6433a9",
+      "target_theorem": "HighamBench.p03_t2_normwise_residual_contraction",
+      "task_id": "P03-T2"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "cd69109c55341facb3ecaf6c956c480a24c83190d9b649ddfa9ab431946a8ffb",
+        "library_declarations": [
+          "NumStability.absError",
+          "NumStability.absError_nonneg"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "6aebca5e99e9d7305684b956e60ec979c0f7f2f50849a46a2ff13878d7a87e09",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "93c283a03101e253e657795229736e82264cbf585f42aabc9a69d40bbcc58d96",
+      "target_theorem": "HighamBench.p03_t3_componentwise_residual_recurrence",
+      "task_id": "P03-T3"
+    }
+  ],
+  "schema_version": 1,
+  "verification_basis": {
+    "condition_l_path": "The exact P03 shared bundle, frozen pruned package objects, and frozen NumStability object tree; no project .lake/build path.",
+    "condition_n_path": "The exact P03 shared bundle and frozen pruned package objects; no NumStability source or object path and no project .lake/build path.",
+    "negative_probe": "Direct pinned-Lean imports of HighamBench.P02Definitions and NumStability fail under the condition-N LEAN_PATH.",
+    "p03_definitions_olean_sha256": "bb86b0cdccc9c5f21f8b49f1b8c5c539040201c9746c7f0f86e5a5afc5340aea",
+    "p03_definitions_source_sha256": "25e5b0fc93004b684254c879d71dd789e3a2153c4517d5cfabdc617d84ead38a",
+    "semantic_check": "Each private L theorem was compared by Meta.isDefEq with a separately compiled renamed copy of the frozen target using tools/dependency_audit.lean.",
+    "shared_core_olean_sha256": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1"
+  }
+}

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="930" height="570" viewBox="0 0 930 570">
+<rect width="930" height="570" fill="white"/>
+<text x="30" y="35" font-family="sans-serif" font-size="20">Substantial-result reuse versus physical-LOC gain</text>
+<line x1="80.0" y1="80" x2="80.0" y2="480" stroke="#eee"/>
+<text x="76.0" y="505" font-family="sans-serif" font-size="13">0</text>
+<line x1="340.0" y1="80" x2="340.0" y2="480" stroke="#eee"/>
+<text x="336.0" y="505" font-family="sans-serif" font-size="13">1</text>
+<line x1="600.0" y1="80" x2="600.0" y2="480" stroke="#eee"/>
+<text x="596.0" y="505" font-family="sans-serif" font-size="13">2</text>
+<line x1="860.0" y1="80" x2="860.0" y2="480" stroke="#eee"/>
+<text x="856.0" y="505" font-family="sans-serif" font-size="13">3</text>
+<line x1="80" y1="480.0" x2="860" y2="480.0" stroke="#ddd"/>
+<text x="20" y="485.0" font-family="sans-serif" font-size="12">-30%</text>
+<line x1="80" y1="380.0" x2="860" y2="380.0" stroke="#ddd"/>
+<text x="20" y="385.0" font-family="sans-serif" font-size="12">-5%</text>
+<line x1="80" y1="280.0" x2="860" y2="280.0" stroke="#ddd"/>
+<text x="20" y="285.0" font-family="sans-serif" font-size="12">20%</text>
+<line x1="80" y1="180.0" x2="860" y2="180.0" stroke="#ddd"/>
+<text x="20" y="185.0" font-family="sans-serif" font-size="12">45%</text>
+<line x1="80" y1="80.0" x2="860" y2="80.0" stroke="#ddd"/>
+<text x="20" y="85.0" font-family="sans-serif" font-size="12">70%</text>
+<circle cx="590.0" cy="203.1" r="5" fill="#3366a8" opacity="0.75"><title>P01-T1: score 2, gain 39.2%</title></circle>
+<circle cx="855.0" cy="119.9" r="5" fill="#e0803b" opacity="0.75"><title>P01-T2: score 3, gain 60.0%</title></circle>
+<circle cx="600.0" cy="341.1" r="5" fill="#3366a8" opacity="0.75"><title>P02-T1: score 2, gain 4.7%</title></circle>
+<circle cx="85.0" cy="402.8" r="5" fill="#50966a" opacity="0.75"><title>P02-T3: score 0, gain -10.7%</title></circle>
+<circle cx="90.0" cy="362.1" r="5" fill="#50966a" opacity="0.75"><title>P03-T3: score 0, gain -0.5%</title></circle>
+<circle cx="590.0" cy="304.8" r="5" fill="#3366a8" opacity="0.75"><title>P04-T1: score 2, gain 13.8%</title></circle>
+<circle cx="75.0" cy="319.5" r="5" fill="#50966a" opacity="0.75"><title>P05-T3: score 0, gain 10.1%</title></circle>
+<circle cx="80.0" cy="355.8" r="5" fill="#50966a" opacity="0.75"><title>P06-T3: score 0, gain 1.0%</title></circle>
+<circle cx="85.0" cy="333.4" r="5" fill="#50966a" opacity="0.75"><title>P08-T3: score 0, gain 6.7%</title></circle>
+<circle cx="90.0" cy="396.2" r="5" fill="#50966a" opacity="0.75"><title>P09-T3: score 0, gain -9.0%</title></circle>
+<circle cx="70.0" cy="349.8" r="5" fill="#50966a" opacity="0.75"><title>P11-T3: score 0, gain 2.5%</title></circle>
+<circle cx="595.0" cy="163.4" r="5" fill="#3366a8" opacity="0.75"><title>P12-T1: score 2, gain 49.1%</title></circle>
+<circle cx="80.0" cy="372.9" r="5" fill="#50966a" opacity="0.75"><title>P13-T3: score 0, gain -3.2%</title></circle>
+<circle cx="605.0" cy="389.1" r="5" fill="#3366a8" opacity="0.75"><title>P14-T1: score 2, gain -7.3%</title></circle>
+<circle cx="610.0" cy="123.2" r="5" fill="#3366a8" opacity="0.75"><title>P15-T1: score 2, gain 59.2%</title></circle>
+<circle cx="850.0" cy="108.9" r="5" fill="#e0803b" opacity="0.75"><title>P15-T2: score 3, gain 62.8%</title></circle>
+<circle cx="335.0" cy="404.0" r="5" fill="#50966a" opacity="0.75"><title>P15-T3: score 1, gain -11.0%</title></circle>
+<circle cx="80.0" cy="291.1" r="5" fill="#3366a8" opacity="0.75"><title>P17-T1: score 0, gain 17.2%</title></circle>
+<circle cx="85.0" cy="398.9" r="5" fill="#50966a" opacity="0.75"><title>P17-T3: score 0, gain -9.7%</title></circle>
+<circle cx="90.0" cy="372.2" r="5" fill="#50966a" opacity="0.75"><title>P19-T3: score 0, gain -3.0%</title></circle>
+<circle cx="70.0" cy="407.3" r="5" fill="#50966a" opacity="0.75"><title>P20-T3: score 0, gain -11.8%</title></circle>
+<circle cx="595.0" cy="195.8" r="5" fill="#3366a8" opacity="0.75"><title>P23-T1: score 2, gain 41.0%</title></circle>
+<circle cx="80.0" cy="439.8" r="5" fill="#50966a" opacity="0.75"><title>P24-T3: score 0, gain -19.9%</title></circle>
+<circle cx="85.0" cy="396.7" r="5" fill="#50966a" opacity="0.75"><title>P25-T3: score 0, gain -9.2%</title></circle>
+<circle cx="610.0" cy="89.2" r="5" fill="#3366a8" opacity="0.75"><title>P26-T1: score 2, gain 67.7%</title></circle>
+<circle cx="70.0" cy="337.7" r="5" fill="#50966a" opacity="0.75"><title>P27-T3: score 0, gain 5.6%</title></circle>
+<circle cx="595.0" cy="132.0" r="5" fill="#3366a8" opacity="0.75"><title>P28-T1: score 2, gain 57.0%</title></circle>
+<circle cx="80.0" cy="319.4" r="5" fill="#50966a" opacity="0.75"><title>P28-T3: score 0, gain 10.2%</title></circle>
+<circle cx="605.0" cy="83.0" r="5" fill="#3366a8" opacity="0.75"><title>P29-T1: score 2, gain 69.3%</title></circle>
+<circle cx="870.0" cy="126.0" r="5" fill="#e0803b" opacity="0.75"><title>P29-T2: score 3, gain 58.5%</title></circle>
+<circle cx="70.0" cy="369.7" r="5" fill="#50966a" opacity="0.75"><title>P32-T3: score 0, gain -2.4%</title></circle>
+<circle cx="335.0" cy="126.3" r="5" fill="#3366a8" opacity="0.75"><title>P33-T1: score 1, gain 58.4%</title></circle>
+<circle cx="80.0" cy="339.5" r="5" fill="#50966a" opacity="0.75"><title>P34-T3: score 0, gain 5.1%</title></circle>
+<circle cx="345.0" cy="374.5" r="5" fill="#50966a" opacity="0.75"><title>P35-T3: score 1, gain -3.6%</title></circle>
+<circle cx="90.0" cy="445.8" r="5" fill="#50966a" opacity="0.75"><title>P36-T3: score 0, gain -21.4%</title></circle>
+<circle cx="70.0" cy="393.5" r="5" fill="#50966a" opacity="0.75"><title>P37-T3: score 0, gain -8.4%</title></circle>
+<circle cx="75.0" cy="338.9" r="5" fill="#50966a" opacity="0.75"><title>P39-T3: score 0, gain 5.3%</title></circle>
+<circle cx="340.0" cy="407.4" r="5" fill="#50966a" opacity="0.75"><title>P40-T3: score 1, gain -11.9%</title></circle>
+<text x="340" y="535" font-family="sans-serif" font-size="14">Median substantial-result score (0–3)</text>
+<text x="700" y="52" font-family="sans-serif" font-size="12" fill="#3366a8">T1</text>
+<text x="750" y="52" font-family="sans-serif" font-size="12" fill="#e0803b">T2</text>
+<text x="800" y="52" font-family="sans-serif" font-size="12" fill="#50966a">T3</text>
+</svg>

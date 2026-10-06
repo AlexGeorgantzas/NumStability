@@ -1,0 +1,85 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "invariant-subspace conclusion of Proposition 3.4",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "A is a linear equivalence because the K-PIK construction and Proposition 3.4 use both A and A^(-1).",
+    "The recurrence A(v_j)=v_(j+1) records the paper's two-sided Laurent sequence A^j B.",
+    "p48LaurentSpan v m is the paper's Range(V_m)=K_(2m)(A,A^(-m)B), with indices from -m through m-1.",
+    "Linear dependence of p48BreakdownDirections v m says that the two new directions A^(-m-1)B and A^m B have rank less than two after quotienting out the old space, exactly the rank-loss premise of Proposition 3.4."
+  ],
+  "author_label": "Proposition 3.4",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P48 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P48 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P48/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p48_t3_rank_breakdown_invariant (n m : Nat) (hm : 1 <= m) (v : Int -> Fin n -> Real) (A : (Fin n -> Real) \u2243\u2097[Real] (Fin n -> Real)) (hstep : forall j, A (v j) = v (j+1)) (hbreak : not (LinearIndependent Real (p48BreakdownDirections v m))) : forall x in p48LaurentSpan v (m+1), A x in p48LaurentSpan v (m+1)",
+    "namespace": "HighamBench",
+    "plain_language": "If the two new Laurent--Krylov directions at iteration m lose rank after the old space is removed, then the enlarged space is invariant under A.",
+    "target_file": "paper_bencmark/highambench/tasks/P48/T3/Target.lean",
+    "theorem_name": "p48_t3_rank_breakdown_invariant"
+  },
+  "informal_proof": "Extract a nontrivial dependence of the two new quotient directions. If the positive-end coefficient is nonzero, apply A to the relation, solve for the next positive Laurent vector, and close the enlarged span under A. If it is zero, solve for the new negative vector in the old space. Every old generator then has an old preimage under A; injectivity and equality of finite dimensions make A map the old space onto itself. This supplies the missing positive directions and again closes the enlarged span under A.",
+  "informal_statement": "Prove the invariant-subspace conclusion of Proposition 3.4 from rank loss of the two newly generated K-PIK directions.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P48",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P48 A New Iterative Method for Solving Large-Scale Lyapunov Matrix Equations.pdf",
+    "sha256": "1f266fdcde751242579be08e3427310edf50eacfcc5f6f3040567f6551597eff"
+  },
+  "paper_version": "author manuscript, version of February 3, 2007",
+  "result_form_tag": "PROP",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "K-PIK rank breakdown invariant subspace Proposition 3.4",
+        "Laurent Krylov two new directions quotient dependence",
+        "extended Krylov finite termination invariant span"
+      ],
+      "result": "Neither Mathlib nor the exact 44-object NumStability bundle contains K-PIK, extended/Laurent Krylov rank-breakdown, or a theorem deriving invariance from dependence of the two quotient directions. Generic span, quotient, and finite-dimensional lemmas are only background. The frozen repository has Lyapunov/Sylvester source modules outside the compiled condition-L bundle, and those unavailable modules do not state this Krylov breakdown theorem in any event.",
+      "scope": "the complete frozen NumStability source at commit 45813a95dacf577461bae13f033af0dbc985a225, the exact 44-object condition-L bundle, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "generic matrix, orthogonality, and spectral infrastructure only; no compiled declaration controls Laurent--Krylov rank breakdown or invariance"
+    ],
+    "note": "The exact private N proof is 145 physical lines and the exact L proof is 146. Their mathematical bodies are byte-identical; L differs only by its NumStability import and obtains no shortcut."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "p48LaurentSpan",
+    "p48BreakdownDirections"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Proposition 3.4 and its proof",
+      "pdf_page": "9",
+      "printed_page": "9",
+      "role": "selected rank-loss and invariant-subspace conclusion",
+      "section": "3.2. Finite Termination and convergence"
+    }
+  ],
+  "source_tags": [
+    "PROP"
+  ],
+  "task_id": "P48-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The proof must translate rank loss into a quotient-space dependence, reason separately about the two extreme coefficients, establish old-space invariance in the one-sided case through a finite-dimensional image/finrank argument, obtain the missing boundary Laurent vectors, and close the full enlarged span by induction. This is substantial, comparable to the lower end of validated T2/T3 constructions, and is not discharged by Mathlib imports. The frozen NumStability bundle has no corresponding result, and L uses the same proof as N.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P48/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p48_t3_rank_breakdown_invariant"
+  }
+}

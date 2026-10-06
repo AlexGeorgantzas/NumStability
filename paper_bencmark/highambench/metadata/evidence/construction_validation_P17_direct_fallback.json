@@ -1,0 +1,134 @@
+{
+  "canonical_evidence": "metadata/evidence/construction_validation_P17.json",
+  "canonical_evidence_sha256": "b770ffacf3d81e2f1b1d690cb63c7e6684db56ba8be8445cd27097351e9586ec",
+  "canonical_isolated_pass": false,
+  "direct_fallback_pass": true,
+  "generated_at_utc": "2026-08-06T11:44:05Z",
+  "host_limitation": {
+    "canonical_failure_occurs_before_lean_starts": true,
+    "message": "bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted",
+    "scope": "All six canonical P17 checks on this LXC host",
+    "tool": "/usr/bin/bwrap"
+  },
+  "kind": "highambench-direct-exact-path-construction-fallback",
+  "paper_id": "P17",
+  "pinned_lean": {
+    "commit": "5d86aa4032284a5242470e95fbe25f1ff506763d",
+    "version": "4.29.0-rc3"
+  },
+  "public_target_elaboration": {
+    "condition": "N exact path",
+    "P17-T1": {
+      "compile_exit_code": 0,
+      "olean_created": true
+    },
+    "P17-T2": {
+      "compile_exit_code": 0,
+      "olean_created": true
+    },
+    "P17-T3": {
+      "compile_exit_code": 0,
+      "olean_created": true
+    }
+  },
+  "results": [
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "b76abf0d3ebf56da359259714d457e6296b62f0087827f2ecd9c0114c79a64e5",
+        "library_declaration_count": 1,
+        "library_declarations": [
+          "NumStability.prod_one_add_delta_bounds"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "b61cd416f92a1554ce85efc6b34f28a9f2341a2353d4b7684a8310e65f251e20",
+        "library_declaration_count": 0,
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true,
+        "semantic_statement_equal": true
+      },
+      "target_source_sha256": "003a394c8a361bdbad3c41d5ee8971d4be789afd1f7d64aa1044c7055cb1e28e",
+      "target_theorem": "HighamBench.p17_t1_product_bias_envelope",
+      "task_id": "P17-T1"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "9b177c5be1174c6494ec38c4b257e6ddcf35aa06b99d9066c4731d974b1d37f4",
+        "library_declaration_count": 5,
+        "library_declarations": [
+          "NumStability.SummationComponentwisePerturbation",
+          "NumStability.summationComponentwisePerturbation_rel_error_le_condition",
+          "NumStability.summationConditionNumber",
+          "NumStability.summationComponentwisePerturbation_abs_error_le",
+          "NumStability.summationConditionNumber_eq"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "3a55162857ef7ed0e15bde1fd76ec0377cce813379480b63bcd4c2be5a5ae044",
+        "library_declaration_count": 0,
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true,
+        "semantic_statement_equal": true
+      },
+      "target_source_sha256": "361691c5f22f9529aca157de13f54a97ea32535889829e0f13877470d39da880",
+      "target_theorem": "HighamBench.p17_t2_recursive_sum_bias_condition_bound",
+      "task_id": "P17-T2"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "1f49eea95cc5dfe1f4b4547a2cdc4c3c704b00c748ff143573c8e5ea4509b10f",
+        "library_declaration_count": 11,
+        "library_declarations": [
+          "NumStability.FiniteProbability",
+          "NumStability.FiniteProbability.eventProb",
+          "NumStability.FiniteProbability.eventProb_abs_sub_le_ge_one_sub_of_second_moment",
+          "NumStability.FiniteProbability.eventProb_mono",
+          "NumStability.FiniteProbability.expectationReal",
+          "NumStability.FiniteProbability.mk",
+          "NumStability.FiniteProbability.prob",
+          "NumStability.FiniteProbability.eventProb_abs_sub_gt_le_expectationReal_sq_div",
+          "NumStability.FiniteProbability.eventProb_add_eventProb_compl",
+          "NumStability.FiniteProbability.prob_nonneg",
+          "NumStability.FiniteProbability.prob_sum"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "bdb07f5325a1700f5c19650f8c09bb5ec60a8d05d2ef47f83797bc61ea6e8d99",
+        "library_declaration_count": 0,
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true,
+        "semantic_statement_equal": true
+      },
+      "target_source_sha256": "7a2ec9477871b1e7c116f704e15f44dc6da12bb5eb768dd51fc69c8b427a5dd1",
+      "target_theorem": "HighamBench.p17_t3_variance_plus_bias_probability_bound",
+      "task_id": "P17-T3"
+    }
+  ],
+  "schema_version": 1,
+  "verification_basis": {
+    "canonical_manifest_sha256": "351899d5705482d6118e6c627d321a4a63baf30f5f976a81a0b93d74248930dd",
+    "condition_l_path": "The exact P17 shared bundle, frozen pruned package objects, and frozen NumStability object tree; no project .lake/build path.",
+    "condition_n_path": "The exact P17 shared bundle and frozen pruned package objects; no NumStability source or object path and no project .lake/build path.",
+    "negative_probe": "Direct pinned-Lean imports of NumStability.Analysis.RoundingProductBounds and HighamBench.P16Definitions fail under the condition-N LEAN_PATH; the other-paper import also fails under the condition-L P17 path.",
+    "p17_definitions_olean_sha256": "6a48be1a4f075ba24d0bb41544a82ab1548823b3532baada85ed9f81062ac6f8",
+    "p17_definitions_source_sha256": "e14850408c10ac1811546bbbf928e1493f9bd87b566c23ecd7aa46d670c8ec29",
+    "private_support_source_sha256": "8d8a46b9dfe2b2c158e85ab9f969574146e791ef5e80c32eed31299461ae8fd2",
+    "semantic_check": "Each private N/L theorem was compared by Meta.isDefEq with a separately compiled renamed copy of the frozen target using tools/dependency_audit.lean; P17Support was included in the T3-N transitive audit set.",
+    "shared_core_olean_sha256": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1"
+  }
+}

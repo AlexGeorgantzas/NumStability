@@ -1,0 +1,373 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1248" height="2345" viewBox="0 0 1248 2345" role="img" aria-label="Elapsed time three-run N/L averages by tier">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="30" y="35" font-family="sans-serif" font-size="24" font-weight="700" fill="#0f172a">Elapsed time — three-run N/L averages</text>
+<text x="30" y="58" font-family="sans-serif" font-size="13" fill="#475569">One adjacent N/L bar pair per task, only after all three repetitions have accepted proofs in both conditions.</text>
+<text x="30" y="78" font-family="sans-serif" font-size="12" fill="#475569">Absolute mean seconds above bars; each task has its own scale. Blue = N; orange = L. Generated 2026-09-20 17:23 UTC.</text>
+<text x="30" y="99" font-family="sans-serif" font-size="12" fill="#475569">Pending, scored-failure, and infrastructure tasks have no three-run mean. Token means are observed lower bounds if incomplete.</text>
+<g class="tier" data-tier="T1">
+<text x="30" y="144" font-family="sans-serif" font-size="21" font-weight="700" fill="#0f172a">T1 — 9/12 three-run averages ready</text>
+<line x1="30" x2="1218" y1="156" y2="156" stroke="#94a3b8"/>
+<g class="task" data-task-id="P01-T1">
+<rect x="30" y="165" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="42" y="187" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P01-T1</text>
+<line x1="64" x2="281" y1="310" y2="310" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="105" y="227.00" width="43" height="83.00" fill="#2563eb"><title>P01-T1 N: mean 244.73 seconds over 3 accepted repetitions</title></rect>
+<text x="126.5" y="221.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">244.7 s</text>
+<text x="126.5" y="330" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="200" y="272.15" width="43" height="37.85" fill="#d97706"><title>P01-T1 L: mean 111.61 seconds over 3 accepted repetitions</title></rect>
+<text x="221.5" y="266.15" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">111.6 s</text>
+<text x="221.5" y="330" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P02-T1">
+<rect x="331" y="165" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="343" y="187" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P02-T1</text>
+<line x1="365" x2="582" y1="310" y2="310" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="406" y="227.00" width="43" height="83.00" fill="#2563eb"><title>P02-T1 N: mean 784.89 seconds over 3 accepted repetitions</title></rect>
+<text x="427.5" y="221.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">784.9 s</text>
+<text x="427.5" y="330" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="501" y="248.45" width="43" height="61.55" fill="#d97706"><title>P02-T1 L: mean 582.08 seconds over 3 accepted repetitions</title></rect>
+<text x="522.5" y="242.45" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">582.1 s</text>
+<text x="522.5" y="330" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P04-T1">
+<rect x="632" y="165" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="644" y="187" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P04-T1</text>
+<line x1="666" x2="883" y1="310" y2="310" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="707" y="227.00" width="43" height="83.00" fill="#2563eb"><title>P04-T1 N: mean 652.85 seconds over 3 accepted repetitions</title></rect>
+<text x="728.5" y="221.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">652.8 s</text>
+<text x="728.5" y="330" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="802" y="254.73" width="43" height="55.27" fill="#d97706"><title>P04-T1 L: mean 434.75 seconds over 3 accepted repetitions</title></rect>
+<text x="823.5" y="248.73" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">434.7 s</text>
+<text x="823.5" y="330" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P12-T1">
+<rect x="933" y="165" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="945" y="187" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P12-T1</text>
+<line x1="967" x2="1184" y1="310" y2="310" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="1008" y="245.82" width="43" height="64.18" fill="#2563eb"><title>P12-T1 N: mean 1,194.11 seconds over 3 accepted repetitions</title></rect>
+<text x="1029.5" y="239.82" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">1,194.1 s</text>
+<text x="1029.5" y="330" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="1103" y="227.00" width="43" height="83.00" fill="#d97706"><title>P12-T1 L: mean 1,544.34 seconds over 3 accepted repetitions</title></rect>
+<text x="1124.5" y="221.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">1,544.3 s</text>
+<text x="1124.5" y="330" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P14-T1">
+<rect x="30" y="365" width="285" height="184" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="42" y="387" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P14-T1</text>
+<text x="42" y="455" font-family="sans-serif" font-size="13" fill="#475569">Infrastructure incident</text>
+<text x="42" y="476" font-family="sans-serif" font-size="12" fill="#64748b">2/3 accepted N/L pairs; mean unavailable</text>
+</g>
+<g class="task" data-task-id="P15-T1">
+<rect x="331" y="365" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="343" y="387" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P15-T1</text>
+<line x1="365" x2="582" y1="510" y2="510" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="406" y="427.00" width="43" height="83.00" fill="#2563eb"><title>P15-T1 N: mean 471.80 seconds over 3 accepted repetitions</title></rect>
+<text x="427.5" y="421.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">471.8 s</text>
+<text x="427.5" y="530" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="501" y="483.18" width="43" height="26.82" fill="#d97706"><title>P15-T1 L: mean 152.44 seconds over 3 accepted repetitions</title></rect>
+<text x="522.5" y="477.18" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">152.4 s</text>
+<text x="522.5" y="530" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P17-T1">
+<rect x="632" y="365" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="644" y="387" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P17-T1</text>
+<line x1="666" x2="883" y1="510" y2="510" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="707" y="427.00" width="43" height="83.00" fill="#2563eb"><title>P17-T1 N: mean 610.36 seconds over 3 accepted repetitions</title></rect>
+<text x="728.5" y="421.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">610.4 s</text>
+<text x="728.5" y="530" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="802" y="441.58" width="43" height="68.42" fill="#d97706"><title>P17-T1 L: mean 503.17 seconds over 3 accepted repetitions</title></rect>
+<text x="823.5" y="435.58" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">503.2 s</text>
+<text x="823.5" y="530" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P23-T1">
+<rect x="933" y="365" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="945" y="387" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P23-T1</text>
+<line x1="967" x2="1184" y1="510" y2="510" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="1008" y="427.00" width="43" height="83.00" fill="#2563eb"><title>P23-T1 N: mean 697.38 seconds over 3 accepted repetitions</title></rect>
+<text x="1029.5" y="421.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">697.4 s</text>
+<text x="1029.5" y="530" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="1103" y="481.82" width="43" height="28.18" fill="#d97706"><title>P23-T1 L: mean 236.81 seconds over 3 accepted repetitions</title></rect>
+<text x="1124.5" y="475.82" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">236.8 s</text>
+<text x="1124.5" y="530" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P26-T1">
+<rect x="30" y="565" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="42" y="587" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P26-T1</text>
+<line x1="64" x2="281" y1="710" y2="710" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="105" y="627.00" width="43" height="83.00" fill="#2563eb"><title>P26-T1 N: mean 1,002.62 seconds over 3 accepted repetitions</title></rect>
+<text x="126.5" y="621.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">1,002.6 s</text>
+<text x="126.5" y="730" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="200" y="693.53" width="43" height="16.47" fill="#d97706"><title>P26-T1 L: mean 198.90 seconds over 3 accepted repetitions</title></rect>
+<text x="221.5" y="687.53" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">198.9 s</text>
+<text x="221.5" y="730" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P28-T1">
+<rect x="331" y="565" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="343" y="587" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P28-T1</text>
+<line x1="365" x2="582" y1="710" y2="710" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="406" y="627.00" width="43" height="83.00" fill="#2563eb"><title>P28-T1 N: mean 513.81 seconds over 3 accepted repetitions</title></rect>
+<text x="427.5" y="621.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">513.8 s</text>
+<text x="427.5" y="730" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="501" y="695.22" width="43" height="14.78" fill="#d97706"><title>P28-T1 L: mean 91.50 seconds over 3 accepted repetitions</title></rect>
+<text x="522.5" y="689.22" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">91.5 s</text>
+<text x="522.5" y="730" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P29-T1">
+<rect x="632" y="565" width="285" height="184" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="644" y="587" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P29-T1</text>
+<text x="644" y="655" font-family="sans-serif" font-size="13" fill="#475569">Infrastructure incident</text>
+<text x="644" y="676" font-family="sans-serif" font-size="12" fill="#64748b">1/3 accepted N/L pairs; mean unavailable</text>
+</g>
+<g class="task" data-task-id="P33-T1">
+<rect x="933" y="565" width="285" height="184" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="945" y="587" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P33-T1</text>
+<text x="945" y="655" font-family="sans-serif" font-size="13" fill="#475569">Infrastructure incident</text>
+<text x="945" y="676" font-family="sans-serif" font-size="12" fill="#64748b">0/3 accepted N/L pairs; mean unavailable</text>
+</g>
+</g>
+<g class="tier" data-tier="T2">
+<text x="30" y="805" font-family="sans-serif" font-size="21" font-weight="700" fill="#0f172a">T2 — 1/3 three-run averages ready</text>
+<line x1="30" x2="1218" y1="817" y2="817" stroke="#94a3b8"/>
+<g class="task" data-task-id="P01-T2">
+<rect x="30" y="826" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="42" y="848" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P01-T2</text>
+<line x1="64" x2="281" y1="971" y2="971" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="105" y="888.00" width="43" height="83.00" fill="#2563eb"><title>P01-T2 N: mean 517.83 seconds over 3 accepted repetitions</title></rect>
+<text x="126.5" y="882.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">517.8 s</text>
+<text x="126.5" y="991" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="200" y="945.13" width="43" height="25.87" fill="#d97706"><title>P01-T2 L: mean 161.40 seconds over 3 accepted repetitions</title></rect>
+<text x="221.5" y="939.13" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">161.4 s</text>
+<text x="221.5" y="991" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P15-T2">
+<rect x="331" y="826" width="285" height="184" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="343" y="848" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P15-T2</text>
+<text x="343" y="916" font-family="sans-serif" font-size="13" fill="#475569">Infrastructure incident</text>
+<text x="343" y="937" font-family="sans-serif" font-size="12" fill="#64748b">2/3 accepted N/L pairs; mean unavailable</text>
+</g>
+<g class="task" data-task-id="P29-T2">
+<rect x="632" y="826" width="285" height="184" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="644" y="848" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P29-T2</text>
+<text x="644" y="916" font-family="sans-serif" font-size="13" fill="#475569">Infrastructure incident</text>
+<text x="644" y="937" font-family="sans-serif" font-size="12" fill="#64748b">2/3 accepted N/L pairs; mean unavailable</text>
+</g>
+</g>
+<g class="tier" data-tier="T3">
+<text x="30" y="1066" font-family="sans-serif" font-size="21" font-weight="700" fill="#0f172a">T3 — 14/24 three-run averages ready</text>
+<line x1="30" x2="1218" y1="1078" y2="1078" stroke="#94a3b8"/>
+<g class="task" data-task-id="P02-T3">
+<rect x="30" y="1087" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="42" y="1109" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P02-T3</text>
+<line x1="64" x2="281" y1="1232" y2="1232" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="105" y="1162.75" width="43" height="69.25" fill="#2563eb"><title>P02-T3 N: mean 1,315.47 seconds over 3 accepted repetitions</title></rect>
+<text x="126.5" y="1156.75" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">1,315.5 s</text>
+<text x="126.5" y="1252" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="200" y="1149.00" width="43" height="83.00" fill="#d97706"><title>P02-T3 L: mean 1,576.67 seconds over 3 accepted repetitions</title></rect>
+<text x="221.5" y="1143.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">1,576.7 s</text>
+<text x="221.5" y="1252" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P03-T3">
+<rect x="331" y="1087" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="343" y="1109" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P03-T3</text>
+<line x1="365" x2="582" y1="1232" y2="1232" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="406" y="1159.50" width="43" height="72.50" fill="#2563eb"><title>P03-T3 N: mean 322.05 seconds over 3 accepted repetitions</title></rect>
+<text x="427.5" y="1153.50" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">322.0 s</text>
+<text x="427.5" y="1252" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="501" y="1149.00" width="43" height="83.00" fill="#d97706"><title>P03-T3 L: mean 368.68 seconds over 3 accepted repetitions</title></rect>
+<text x="522.5" y="1143.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">368.7 s</text>
+<text x="522.5" y="1252" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P05-T3">
+<rect x="632" y="1087" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="644" y="1109" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P05-T3</text>
+<line x1="666" x2="883" y1="1232" y2="1232" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="707" y="1149.00" width="43" height="83.00" fill="#2563eb"><title>P05-T3 N: mean 975.15 seconds over 3 accepted repetitions</title></rect>
+<text x="728.5" y="1143.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">975.2 s</text>
+<text x="728.5" y="1252" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="802" y="1156.44" width="43" height="75.56" fill="#d97706"><title>P05-T3 L: mean 887.69 seconds over 3 accepted repetitions</title></rect>
+<text x="823.5" y="1150.44" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">887.7 s</text>
+<text x="823.5" y="1252" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P06-T3">
+<rect x="933" y="1087" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="945" y="1109" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P06-T3</text>
+<line x1="967" x2="1184" y1="1232" y2="1232" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="1008" y="1149.00" width="43" height="83.00" fill="#2563eb"><title>P06-T3 N: mean 362.75 seconds over 3 accepted repetitions</title></rect>
+<text x="1029.5" y="1143.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">362.8 s</text>
+<text x="1029.5" y="1252" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="1103" y="1158.61" width="43" height="73.39" fill="#d97706"><title>P06-T3 L: mean 320.75 seconds over 3 accepted repetitions</title></rect>
+<text x="1124.5" y="1152.61" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">320.7 s</text>
+<text x="1124.5" y="1252" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P08-T3">
+<rect x="30" y="1287" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="42" y="1309" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P08-T3</text>
+<line x1="64" x2="281" y1="1432" y2="1432" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="105" y="1349.00" width="43" height="83.00" fill="#2563eb"><title>P08-T3 N: mean 946.98 seconds over 3 accepted repetitions</title></rect>
+<text x="126.5" y="1343.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">947.0 s</text>
+<text x="126.5" y="1452" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="200" y="1376.39" width="43" height="55.61" fill="#d97706"><title>P08-T3 L: mean 634.53 seconds over 3 accepted repetitions</title></rect>
+<text x="221.5" y="1370.39" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">634.5 s</text>
+<text x="221.5" y="1452" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P09-T3">
+<rect x="331" y="1287" width="285" height="184" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="343" y="1309" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P09-T3</text>
+<text x="343" y="1377" font-family="sans-serif" font-size="13" fill="#475569">Infrastructure incident</text>
+<text x="343" y="1398" font-family="sans-serif" font-size="12" fill="#64748b">2/3 accepted N/L pairs; mean unavailable</text>
+</g>
+<g class="task" data-task-id="P11-T3">
+<rect x="632" y="1287" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="644" y="1309" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P11-T3</text>
+<line x1="666" x2="883" y1="1432" y2="1432" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="707" y="1354.48" width="43" height="77.52" fill="#2563eb"><title>P11-T3 N: mean 547.04 seconds over 3 accepted repetitions</title></rect>
+<text x="728.5" y="1348.48" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">547.0 s</text>
+<text x="728.5" y="1452" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="802" y="1349.00" width="43" height="83.00" fill="#d97706"><title>P11-T3 L: mean 585.72 seconds over 3 accepted repetitions</title></rect>
+<text x="823.5" y="1343.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">585.7 s</text>
+<text x="823.5" y="1452" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P13-T3">
+<rect x="933" y="1287" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="945" y="1309" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P13-T3</text>
+<line x1="967" x2="1184" y1="1432" y2="1432" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="1008" y="1349.00" width="43" height="83.00" fill="#2563eb"><title>P13-T3 N: mean 778.54 seconds over 3 accepted repetitions</title></rect>
+<text x="1029.5" y="1343.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">778.5 s</text>
+<text x="1029.5" y="1452" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="1103" y="1373.36" width="43" height="58.64" fill="#d97706"><title>P13-T3 L: mean 550.00 seconds over 3 accepted repetitions</title></rect>
+<text x="1124.5" y="1367.36" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">550.0 s</text>
+<text x="1124.5" y="1452" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P15-T3">
+<rect x="30" y="1487" width="285" height="184" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="42" y="1509" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P15-T3</text>
+<text x="42" y="1577" font-family="sans-serif" font-size="13" fill="#475569">Infrastructure incident</text>
+<text x="42" y="1598" font-family="sans-serif" font-size="12" fill="#64748b">2/3 accepted N/L pairs; mean unavailable</text>
+</g>
+<g class="task" data-task-id="P16-T3">
+<rect x="331" y="1487" width="285" height="184" rx="8" fill="#fff7ed" stroke="#cbd5e1"/>
+<text x="343" y="1509" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P16-T3</text>
+<text x="343" y="1577" font-family="sans-serif" font-size="13" fill="#475569">Scored failure</text>
+<text x="343" y="1598" font-family="sans-serif" font-size="12" fill="#64748b">0/3 accepted N/L pairs; mean unavailable</text>
+</g>
+<g class="task" data-task-id="P17-T3">
+<rect x="632" y="1487" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="644" y="1509" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P17-T3</text>
+<line x1="666" x2="883" y1="1632" y2="1632" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="707" y="1549.00" width="43" height="83.00" fill="#2563eb"><title>P17-T3 N: mean 175.86 seconds over 3 accepted repetitions</title></rect>
+<text x="728.5" y="1543.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">175.9 s</text>
+<text x="728.5" y="1652" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="802" y="1552.49" width="43" height="79.51" fill="#d97706"><title>P17-T3 L: mean 168.47 seconds over 3 accepted repetitions</title></rect>
+<text x="823.5" y="1546.49" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">168.5 s</text>
+<text x="823.5" y="1652" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P19-T3">
+<rect x="933" y="1487" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="945" y="1509" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P19-T3</text>
+<line x1="967" x2="1184" y1="1632" y2="1632" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="1008" y="1549.00" width="43" height="83.00" fill="#2563eb"><title>P19-T3 N: mean 433.05 seconds over 3 accepted repetitions</title></rect>
+<text x="1029.5" y="1543.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">433.0 s</text>
+<text x="1029.5" y="1652" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="1103" y="1560.25" width="43" height="71.75" fill="#d97706"><title>P19-T3 L: mean 374.36 seconds over 3 accepted repetitions</title></rect>
+<text x="1124.5" y="1554.25" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">374.4 s</text>
+<text x="1124.5" y="1652" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P20-T3">
+<rect x="30" y="1687" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="42" y="1709" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P20-T3</text>
+<line x1="64" x2="281" y1="1832" y2="1832" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="105" y="1749.00" width="43" height="83.00" fill="#2563eb"><title>P20-T3 N: mean 479.10 seconds over 3 accepted repetitions</title></rect>
+<text x="126.5" y="1743.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">479.1 s</text>
+<text x="126.5" y="1852" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="200" y="1760.59" width="43" height="71.41" fill="#d97706"><title>P20-T3 L: mean 412.22 seconds over 3 accepted repetitions</title></rect>
+<text x="221.5" y="1754.59" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">412.2 s</text>
+<text x="221.5" y="1852" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P24-T3">
+<rect x="331" y="1687" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="343" y="1709" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P24-T3</text>
+<line x1="365" x2="582" y1="1832" y2="1832" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="406" y="1764.19" width="43" height="67.81" fill="#2563eb"><title>P24-T3 N: mean 196.40 seconds over 3 accepted repetitions</title></rect>
+<text x="427.5" y="1758.19" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">196.4 s</text>
+<text x="427.5" y="1852" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="501" y="1749.00" width="43" height="83.00" fill="#d97706"><title>P24-T3 L: mean 240.40 seconds over 3 accepted repetitions</title></rect>
+<text x="522.5" y="1743.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">240.4 s</text>
+<text x="522.5" y="1852" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P25-T3">
+<rect x="632" y="1687" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="644" y="1709" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P25-T3</text>
+<line x1="666" x2="883" y1="1832" y2="1832" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="707" y="1751.12" width="43" height="80.88" fill="#2563eb"><title>P25-T3 N: mean 202.96 seconds over 3 accepted repetitions</title></rect>
+<text x="728.5" y="1745.12" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">203.0 s</text>
+<text x="728.5" y="1852" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="802" y="1749.00" width="43" height="83.00" fill="#d97706"><title>P25-T3 L: mean 208.28 seconds over 3 accepted repetitions</title></rect>
+<text x="823.5" y="1743.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">208.3 s</text>
+<text x="823.5" y="1852" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P27-T3">
+<rect x="933" y="1687" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="945" y="1709" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P27-T3</text>
+<line x1="967" x2="1184" y1="1832" y2="1832" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="1008" y="1749.00" width="43" height="83.00" fill="#2563eb"><title>P27-T3 N: mean 301.17 seconds over 3 accepted repetitions</title></rect>
+<text x="1029.5" y="1743.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">301.2 s</text>
+<text x="1029.5" y="1852" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="1103" y="1752.85" width="43" height="79.15" fill="#d97706"><title>P27-T3 L: mean 287.18 seconds over 3 accepted repetitions</title></rect>
+<text x="1124.5" y="1746.85" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">287.2 s</text>
+<text x="1124.5" y="1852" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P28-T3">
+<rect x="30" y="1887" width="285" height="184" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="42" y="1909" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P28-T3</text>
+<line x1="64" x2="281" y1="2032" y2="2032" stroke="#94a3b8"/>
+<rect class="bar" data-condition="N" x="105" y="1955.07" width="43" height="76.93" fill="#2563eb"><title>P28-T3 N: mean 224.58 seconds over 3 accepted repetitions</title></rect>
+<text x="126.5" y="1949.07" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">224.6 s</text>
+<text x="126.5" y="2052" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#2563eb">N</text>
+<rect class="bar" data-condition="L" x="200" y="1949.00" width="43" height="83.00" fill="#d97706"><title>P28-T3 L: mean 242.30 seconds over 3 accepted repetitions</title></rect>
+<text x="221.5" y="1943.00" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0f172a">242.3 s</text>
+<text x="221.5" y="2052" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706">L</text>
+</g>
+<g class="task" data-task-id="P32-T3">
+<rect x="331" y="1887" width="285" height="184" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="343" y="1909" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P32-T3</text>
+<text x="343" y="1977" font-family="sans-serif" font-size="13" fill="#475569">Infrastructure incident</text>
+<text x="343" y="1998" font-family="sans-serif" font-size="12" fill="#64748b">1/3 accepted N/L pairs; mean unavailable</text>
+</g>
+<g class="task" data-task-id="P34-T3">
+<rect x="632" y="1887" width="285" height="184" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="644" y="1909" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P34-T3</text>
+<text x="644" y="1977" font-family="sans-serif" font-size="13" fill="#475569">Infrastructure incident</text>
+<text x="644" y="1998" font-family="sans-serif" font-size="12" fill="#64748b">0/3 accepted N/L pairs; mean unavailable</text>
+</g>
+<g class="task" data-task-id="P35-T3">
+<rect x="933" y="1887" width="285" height="184" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="945" y="1909" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P35-T3</text>
+<text x="945" y="1977" font-family="sans-serif" font-size="13" fill="#475569">Infrastructure incident</text>
+<text x="945" y="1998" font-family="sans-serif" font-size="12" fill="#64748b">0/3 accepted N/L pairs; mean unavailable</text>
+</g>
+<g class="task" data-task-id="P36-T3">
+<rect x="30" y="2087" width="285" height="184" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="42" y="2109" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P36-T3</text>
+<text x="42" y="2177" font-family="sans-serif" font-size="13" fill="#475569">Infrastructure incident</text>
+<text x="42" y="2198" font-family="sans-serif" font-size="12" fill="#64748b">0/3 accepted N/L pairs; mean unavailable</text>
+</g>
+<g class="task" data-task-id="P37-T3">
+<rect x="331" y="2087" width="285" height="184" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="343" y="2109" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P37-T3</text>
+<text x="343" y="2177" font-family="sans-serif" font-size="13" fill="#475569">Infrastructure incident</text>
+<text x="343" y="2198" font-family="sans-serif" font-size="12" fill="#64748b">0/3 accepted N/L pairs; mean unavailable</text>
+</g>
+<g class="task" data-task-id="P39-T3">
+<rect x="632" y="2087" width="285" height="184" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="644" y="2109" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P39-T3</text>
+<text x="644" y="2177" font-family="sans-serif" font-size="13" fill="#475569">Infrastructure incident</text>
+<text x="644" y="2198" font-family="sans-serif" font-size="12" fill="#64748b">0/3 accepted N/L pairs; mean unavailable</text>
+</g>
+<g class="task" data-task-id="P40-T3">
+<rect x="933" y="2087" width="285" height="184" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="945" y="2109" font-family="sans-serif" font-size="15" font-weight="700" fill="#0f172a">P40-T3</text>
+<text x="945" y="2177" font-family="sans-serif" font-size="13" fill="#475569">Infrastructure incident</text>
+<text x="945" y="2198" font-family="sans-serif" font-size="12" fill="#64748b">0/3 accepted N/L pairs; mean unavailable</text>
+</g>
+</g>
+</svg>

@@ -1,0 +1,81 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "equation (2.5) exact-split variable-word one-entry specialization",
+    "performed_by": "Codex"
+  },
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "Identical fixed statement and P67 shared files plus frozen NumStability library.",
+    "N": "Identical fixed statement and P67 shared files; no NumStability artifact."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P67/T2/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p67_t2_multiword_product_error (fp : P67FPModel) (p n : \u2115) ... : absolute error \u2264 gamma_(n+p\u00b2\u22121) times the sum of absolute constituent products",
+    "namespace": "HighamBench",
+    "plain_language": "The high-precision accumulation of p\u00b2 constituent word-pair products obeys the exact-split bound of equation (2.5).",
+    "target_file": "paper_bencmark/highambench/tasks/P67/T2/Target.lean",
+    "theorem_name": "p67_t2_multiword_product_error"
+  },
+  "informal_proof": "Apply the \u03b3_n inner-product backward error independently to each of the p\u00b2 word pairs; apply \u03b3_(p\u00b2\u22121) recursive-summation backward error to their rounded totals; compose the factors into \u03b3_(n+p\u00b2\u22121).",
+  "informal_statement": "For p-word exact representations of two operands, one entry formed from p\u00b2 rounded constituent inner products and their rounded accumulation has error at most \u03b3_(n+p\u00b2\u22121) times the absolute sum of all constituent products.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P67",
+  "paper_source": {
+    "local_path": "papers_to_be_approved/P67-Fasi-Higham-Lopez-Mary-Mikaitis-2023-Multiword-Matmul.pdf",
+    "sha256": "d7be2f19c43cc13619793aadf6bb25f4096a074bb7006955c556c04f45208c7e"
+  },
+  "paper_version": "2023 author-hosted 19-page publisher PDF, journal pages C1\u2013C19",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.dotProduct_backward_error",
+      "NumStability.recursiveSum_backward_error"
+    ],
+    "note": "Both exact private proofs compile without sorry/admit; N imports no NumStability; no baseline multiword target exists."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P67FPModel",
+    "p67Gamma",
+    "P67GammaValid",
+    "p67RecursiveSum",
+    "p67BlockDot",
+    "p67MultiwordDotMany"
+  ],
+  "source_locations": [
+    {
+      "anchor": "constituent block-FMA matrix-product bound (2.1), two-word decomposition (2.2)\u2013(2.4), and exact-remainder note",
+      "pdf_page": 4,
+      "printed_page": "C4",
+      "role": "algorithm and error premises",
+      "section": "2. Error analysis of multiword matrix multiplication with block FMAs"
+    },
+    {
+      "anchor": "high-precision accumulation of p\u00b2 constituent products and final componentwise bound (2.5)",
+      "pdf_page": 5,
+      "printed_page": "C5",
+      "role": "selected composed result and proof",
+      "section": "2. Error analysis of multiword matrix multiplication with block FMAs"
+    }
+  ],
+  "source_tags": [
+    "EQN"
+  ],
+  "task_id": "P67-T2",
+  "tier": "T2",
+  "tier_label": "composition",
+  "tier_rationale": "For arbitrary positive p and inner dimension n, L calls distinct substantial dotProduct_backward_error and recursiveSum_backward_error results. N reconstructs both variable-length numerical analyses, then composes their errors. The target is the exact-split p-word one-entry instance of source equation (2.5), including its \u03b3_(n+p\u00b2\u22121) constant. No fixed-size outer sum shortcut remains.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P67/T2/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p67_t2_multiword_product_error"
+  }
+}

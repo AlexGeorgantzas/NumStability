@@ -1,0 +1,98 @@
+{
+  "annotation": {
+    "method": "Codex freshly reread the complete local paper for the missing-tier audit, including both appendices, surveyed every formal claim, excluded delegated textbook results and non-target conclusions, and compared all plausible T1/T2 routes with the actual frozen NumStability source and Mathlib.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P05 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Siegfried M. Rump",
+    "Claude-Pierre Jeannerod"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P05-T3"
+  ],
+  "paper_id": "P05",
+  "paper_version": "published journal version; volume 35, issue 2, 2014, printed pages 684-698",
+  "publication": {
+    "doi": "10.1137/130927231",
+    "issue": 2,
+    "journal": "SIAM Journal on Matrix Analysis and Applications",
+    "printed_pages": "684-698",
+    "publication_date": "2014-05-27",
+    "volume": 35,
+    "year": 2014
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Theorem 3.1",
+      "reason": "It is the paper's general summation framework rather than the selected Cholesky conclusion. The protected-tree instances needed by Theorem 4.4 remain part of the paper-specific execution model."
+    },
+    {
+      "candidate": "Corollary 3.2",
+      "reason": "Its division case feeds Lemma 4.1 and its square-root case feeds Lemma 4.3; the selected tasks retain the stronger factorization consequences."
+    },
+    {
+      "candidate": "Theorem 3.3",
+      "reason": "The specialized recursive-summation estimate is interesting but less central to the paper's LU and Cholesky contribution than the selected application ladder."
+    },
+    {
+      "candidate": "triangular solve bound (4.1)",
+      "reason": "The paper says it follows immediately from Lemma 4.1 and presents it as an improvement of a delegated textbook theorem; the LU and Cholesky targets are more central."
+    },
+    {
+      "candidate": "Lemma 4.3",
+      "reason": "It is an immediate specialization of Corollary 3.2; its coefficient is used in Theorem 4.4, which is selected instead."
+    },
+    {
+      "candidate": "linear-solver bounds in section 5",
+      "reason": "They are described as obtained by directly modifying textbook proofs, retain quadratic terms, and are not stated as named finite results."
+    },
+    {
+      "candidate": "appendix counterexamples and pairwise-summation construction",
+      "reason": "They justify limitations of simpler rounding models but are not as representative as the paper's main backward-error results."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped after a fresh complete-paper reread and frozen-source comparison. Every improved nu or (n+1)u result depends on the paper's protected-summation argument, which NumStability does not contain. Its conventional LU and Cholesky theorems prove the older gamma bounds and cannot derive the sharper unconditional constants; the only nearby residual-to-coefficient assembly result is short and does not materially reduce the protected-tree proof."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped after a fresh complete-paper reread and frozen-source comparison. Theorem 4.2 and Theorem 4.4 reuse the same missing protected-summation result and add only short triangular-support and perturbation assemblies; they do not expose two independent substantial NumStability results. The triangular-solve results invoked later are textbook results adapted without a new named proof target in this paper."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Use all of Theorem 4.4: the conventional Cholesky execution, local estimates (4.5), exact backward relation, and full diag((i+1)u) and (n+1)u bounds.",
+      "task_id": "P05-T3",
+      "theorem_name": "p05_t3_cholesky_backward_error"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use a finite claim made and proved in this paper.",
+    "Reject experiments, vague asymptotics, and claims whose proof is mainly delegated elsewhere.",
+    "Prefer exact displayed bounds and identities.",
+    "Keep the fixed Lean setting condition-neutral and paper-scoped.",
+    "Assign tiers only after verified frozen-library searches."
+  ],
+  "short_name": "Rump and Jeannerod (2014)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/130927231",
+    "local_path": "paper_bencmark/reference_papers/P05_IMPROVED BACKWARD ERROR BOUNDS FOR LU ANDCHOLESKY FACTORIZATIONS.pdf",
+    "page_map": "PDF page 1 is printed page 684; add 683 to a PDF page number to obtain the printed page.",
+    "pdf_pages": 15,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Permission to redistribute the full PDF is not asserted.",
+    "sha256": "dd8b525c0eabc509a68b325ee5008cf6f1d4ef262bef8ba54e1947fe3cdb3db6"
+  },
+  "title": "Improved Backward Error Bounds for LU and Cholesky Factorizations"
+}

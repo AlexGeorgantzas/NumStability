@@ -1,0 +1,227 @@
+{
+  "files": [
+    {
+      "bytes": 458976,
+      "path": "NumStability/Algorithms/Arithmetic/DotProduct/NoGuard/Core.olean",
+      "sha256": "8d39edd0c127605d343d0debf4e2cba126eb9f77124ce783779460ccb7bc46b4"
+    },
+    {
+      "bytes": 358488,
+      "path": "NumStability/Algorithms/Arithmetic/DotProduct/NoGuard/Tree.olean",
+      "sha256": "3012ba20ada919805a7bc988068ce833e95c2b075f034cc6e0cb1869f5315193"
+    },
+    {
+      "bytes": 1041088,
+      "path": "NumStability/Algorithms/DotProduct.olean",
+      "sha256": "7f50e83dbddba87918ad5331d55c5ae59cb099c72c81304d618826e17d7230d8"
+    },
+    {
+      "bytes": 2355864,
+      "path": "NumStability/Algorithms/IterativeRefinement.olean",
+      "sha256": "09c51f0f39560a0cbe0c5a04c79b2de0450659cb23f6b3505ae987b6216ab19c"
+    },
+    {
+      "bytes": 885784,
+      "path": "NumStability/Algorithms/LU/GaussianElimination.olean",
+      "sha256": "83ae4c6abd00513373cb136381d32c6a8feedb02dc2811766ad03f2bdeb5e6f9"
+    },
+    {
+      "bytes": 612288,
+      "path": "NumStability/Algorithms/LU/LUSolve.olean",
+      "sha256": "2d9c4e2d45aad08bdc335ebf33c76933745d4640dd9d7ccaf22e92f07c7563c4"
+    },
+    {
+      "bytes": 1992896,
+      "path": "NumStability/Algorithms/LinearSystems/Triangular/BackSubstitution.olean",
+      "sha256": "1e04ceb7ba59752355ab4abb5ec7e1c7bfc07f383604bb48336202d8a3a3e85c"
+    },
+    {
+      "bytes": 1271728,
+      "path": "NumStability/Algorithms/LinearSystems/Triangular/ForwardSubstitution.olean",
+      "sha256": "2af463a1bdc9013ae72b26b208b7321d8147cd3d0d2bb6affff48a4e0fc60fb8"
+    },
+    {
+      "bytes": 599160,
+      "path": "NumStability/Algorithms/MatMul.olean",
+      "sha256": "de67f3b1bb23694f8ca2af878dfcf59ff7c229295c8ced31334fb6d9d9880526"
+    },
+    {
+      "bytes": 224968,
+      "path": "NumStability/Algorithms/MatVec.olean",
+      "sha256": "13af9bed3fa2819a84ed64666f4984a977a7d4124a60c4f0e52be3e1454f7205"
+    },
+    {
+      "bytes": 422464,
+      "path": "NumStability/Algorithms/Norm2.olean",
+      "sha256": "344a6536154081209bc3da5c2808fedb3f3ec035cb04502146baa118fef9ab11"
+    },
+    {
+      "bytes": 287024,
+      "path": "NumStability/Algorithms/OuterProduct.olean",
+      "sha256": "456772a658d45a3bf0037960b42a25b7578b68c0fc2b2f6676f1ce28e3b43e75"
+    },
+    {
+      "bytes": 263328,
+      "path": "NumStability/Algorithms/QR/GivensMatrixStep.olean",
+      "sha256": "71d18335886e5471055f047ac1b04072845c0aa1249032817b32437d9e8c157f"
+    },
+    {
+      "bytes": 1434184,
+      "path": "NumStability/Algorithms/QR/GivensQR.olean",
+      "sha256": "50debf7ab3010ec35a8d59fea9e2c5d3516db4ffeaa90f65d762ab92e59587f1"
+    },
+    {
+      "bytes": 1808288,
+      "path": "NumStability/Algorithms/QR/GivensSpec.olean",
+      "sha256": "bee04058ad12eab0b8692117a814aaf5f8ce4bd6b434ca7d8e2ba9215526d963"
+    },
+    {
+      "bytes": 1580128,
+      "path": "NumStability/Algorithms/QR/HouseholderApply.olean",
+      "sha256": "62f84c845587c3b8699011957db320fa8775c707c1a5b851638b4f2686435a19"
+    },
+    {
+      "bytes": 161576,
+      "path": "NumStability/Algorithms/QR/HouseholderMatrixStep.olean",
+      "sha256": "18b7fa2688f9d2be851e2e8dae22782ae2310d4a9ab6add519b6eb3bf1e45d85"
+    },
+    {
+      "bytes": 296384,
+      "path": "NumStability/Algorithms/QR/HouseholderOneStep.olean",
+      "sha256": "f54df77a42b0a18116212145a07994f18f1f9479c9c9f6307cf8889c2f926f1c"
+    },
+    {
+      "bytes": 3635624,
+      "path": "NumStability/Algorithms/QR/HouseholderQR.olean",
+      "sha256": "d3efa96fa4a300c54612e1823b9061a98c74f45b4a78ef21a8f389b43636312f"
+    },
+    {
+      "bytes": 883456,
+      "path": "NumStability/Algorithms/QR/HouseholderReflector.olean",
+      "sha256": "dc32185b555131183110b2316c2fc9a41973a0eadc2abc60a9be8a4c8d101e84"
+    },
+    {
+      "bytes": 469416,
+      "path": "NumStability/Algorithms/QR/HouseholderSpec.olean",
+      "sha256": "2047b79ed9eea175f1e05514ff5d5c7a06208184fca6d014daa2f97aaefad49f"
+    },
+    {
+      "bytes": 719936,
+      "path": "NumStability/Algorithms/Summation/Pairwise/Core.olean",
+      "sha256": "e7858a14b9f06041b47b586bdf968c4b1eca832d808a57d2a675a9352130927a"
+    },
+    {
+      "bytes": 561664,
+      "path": "NumStability/Algorithms/Summation/Recursive/Core.olean",
+      "sha256": "9a324650e177ff5a0ed17d313b7bb53b496e870a4fc7e6c0f9d25a4f4f701fdd"
+    },
+    {
+      "bytes": 117736,
+      "path": "NumStability/Algorithms/Summation/Tree/Balanced.olean",
+      "sha256": "8d615302e08d1822c12b2432fa7841d075b76263a88cd23fac1d3bbeb93aa8d8"
+    },
+    {
+      "bytes": 1125360,
+      "path": "NumStability/Algorithms/Summation/Tree/Core.olean",
+      "sha256": "0f1d1b2af19dbe130906d9a7e8506eb51acad53ac0a18edd90f41080366873aa"
+    },
+    {
+      "bytes": 1248032,
+      "path": "NumStability/Analysis/CStarMatrixBridge.olean",
+      "sha256": "5a463631feabfd5a82f5114d67f0b55e740a6b91ac64daa5bbe3bb22152950bd"
+    },
+    {
+      "bytes": 266832,
+      "path": "NumStability/Analysis/CStarMatrixExpectation.olean",
+      "sha256": "68adaa9cab6c54ad00f3617a20e4eb43990051098690fc9090c149d1c2ba6e5f"
+    },
+    {
+      "bytes": 412904,
+      "path": "NumStability/Analysis/CStarMatrixTrace.olean",
+      "sha256": "43e8236111c05152fe88b1e2fea26a7dccb95fa9e28c9e731c482b4c94af2d71"
+    },
+    {
+      "bytes": 716960,
+      "path": "NumStability/Analysis/Error.olean",
+      "sha256": "3d6de4d082858985c86c58df41f73fd3cafde21cf4f262b4e9691cda2b84a830"
+    },
+    {
+      "bytes": 2185136,
+      "path": "NumStability/Analysis/FiniteProbability.olean",
+      "sha256": "1c9899bc4bdb6ffd7a401bc439589c3e687d1a55fb1983ab69845b7d61796b0e"
+    },
+    {
+      "bytes": 22317576,
+      "path": "NumStability/Analysis/FloatingPointArithmetic.olean",
+      "sha256": "94edcb38b3675bb3e45f6011671d5d8fafa657124fd26447377d855e27d2c167"
+    },
+    {
+      "bytes": 186736,
+      "path": "NumStability/Analysis/ForwardError.olean",
+      "sha256": "202a393f473a742a3650b9541e3caccbf352705ae6f2f12c58bc80b2b2c47a58"
+    },
+    {
+      "bytes": 7425440,
+      "path": "NumStability/Analysis/LiebTrace.olean",
+      "sha256": "98d3ddff7041eab36b4aef1c806b89b078356c75c6a02257c0e754b4cae94d01"
+    },
+    {
+      "bytes": 6994720,
+      "path": "NumStability/Analysis/MatrixAlgebra.olean",
+      "sha256": "ec4f57d91fecbb4e4ce54cfc8dc8448eae76f334cfd91e8f5dc9706e1a5e5808"
+    },
+    {
+      "bytes": 670832,
+      "path": "NumStability/Analysis/MatrixSpectral.olean",
+      "sha256": "7c1abf913adadd3ddfc0e87e976ff7c508ce47624a2c77a0b898bfbf64f0caa9"
+    },
+    {
+      "bytes": 175200,
+      "path": "NumStability/Analysis/OperatorLog.olean",
+      "sha256": "35ff41b268255a2639ea3539db98bbcc9ced352fb749ce7563a215147c2244e7"
+    },
+    {
+      "bytes": 2519176,
+      "path": "NumStability/Analysis/Rounding.olean",
+      "sha256": "590cdae540515e808dfa42ef2c3815416c0265bccdaa30355653f71b50250e51"
+    },
+    {
+      "bytes": 876152,
+      "path": "NumStability/Analysis/RoundingProductBounds.olean",
+      "sha256": "69b64b45313a7a4872742632c5e372a02b528154a9dff8c76919249c6e925372"
+    },
+    {
+      "bytes": 216856,
+      "path": "NumStability/Analysis/Stability.olean",
+      "sha256": "3fdc910931d4d59ed177a617f07857f0f674ee8c1b5ea693e72871c8ba5ad3f7"
+    },
+    {
+      "bytes": 457336,
+      "path": "NumStability/Analysis/StatisticalRounding.olean",
+      "sha256": "614572bd74fb286c7d7d801a525d65f6f572b433f35594e3bace57912aaebb38"
+    },
+    {
+      "bytes": 570616,
+      "path": "NumStability/Analysis/SubtractionFold.olean",
+      "sha256": "a09d57725e9f643578a9ccb5bf591068c47d66f13162d7e6be30dbc88fd18f20"
+    },
+    {
+      "bytes": 903616,
+      "path": "NumStability/Analysis/Summation/ErrorBounds.olean",
+      "sha256": "62ba7aa1649a8337503586db1ad7873d56b7ec6b1c1021e7c8dadb969d0c48c1"
+    },
+    {
+      "bytes": 127208,
+      "path": "NumStability/Analysis/Summation/Signs.olean",
+      "sha256": "94f4722999cac7995a019ba56f862fbf55f0eb0c1556795242e9a9064b465107"
+    },
+    {
+      "bytes": 283000,
+      "path": "NumStability/FloatingPoint/Model.olean",
+      "sha256": "2396e5f9bb49f628072bccea85a29c079387394f085dad29221c33f717bec9df"
+    }
+  ],
+  "kind": "highambench-controlled-files",
+  "label": "numstability-45813a95-compiled",
+  "schema_version": 1
+}

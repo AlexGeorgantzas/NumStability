@@ -1,0 +1,95 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "real nondegenerate perturbation-witness specialization of Theorem 2.3",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "A and B are real symmetric, the real specialization of the theorem's Hermitian pair.",
+    "lambda is positive, so equation (2.6) has |lambda|=lambda and sign(lambda)=1.",
+    "y has the same Euclidean norm as x and differs from x; this is the nonaligned Householder branch explicitly used in the proof.",
+    "c*y is the residual lambda*B*x-A*x and c is nonnegative, so c represents ||r||_2/||x||_2.",
+    "e and f are the nonnegative scalar 2-norm tolerances, with positive denominator e+lambda*f."
+  ],
+  "author_label": "Theorem 2.3",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P49 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P49 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P49/T1/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p49_t1_real_symmetric_backward_witness {n : Nat} (A B : P49Matrix n) (x y : P49Vector n) (hA : p49Symmetric A) (hB : p49Symmetric B) (henergy : p49Dot x x = p49Dot y y) (hxy : x != y) (c e f lambda : Real) (hres : forall i, c*y i = lambda*p49MatVec B x i-p49MatVec A x i) (hc : 0 <= c) (he : 0 <= e) (hf : 0 <= f) (hlambda : 0 < lambda) (hden : 0 < e+lambda*f) : exists dA dB, p49Symmetric dA and p49Symmetric dB and (forall i, p49MatVec A x i+p49MatVec dA x i=lambda*(p49MatVec B x i+p49MatVec dB x i)) and p49OpNormBound dA (e/(e+lambda*f)*c) and p49OpNormBound dB (f/(e+lambda*f)*c)",
+    "namespace": "HighamBench",
+    "plain_language": "In the real symmetric, positive-eigenvalue, nonaligned case of Theorem 2.3, construct symmetric perturbations that make the approximate eigenpair exact and satisfy the two scaled induced-2-norm bounds from equation (2.6).",
+    "target_file": "paper_bencmark/highambench/tasks/P49/T1/Target.lean",
+    "theorem_name": "p49_t1_real_symmetric_backward_witness"
+  },
+  "informal_proof": "Set the residual direction to an equal-norm target for x. Use the scaled Householder construction in the paper to obtain a symmetric norm-preserving map from x to that direction. Scale this map by the two coefficients in equation (2.6); the coefficients sum in the perturbed eigenpair equation and give the required induced Euclidean-norm bounds.",
+  "informal_statement": "Prove the real nondegenerate perturbation-witness construction used in Theorem 2.3.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P49",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P49 Structured Backward Error and Condition of Generalized Eigenvalue Problems.pdf",
+    "sha256": "9778b1ace7ba0df903e69f8266bdbabb2b4fe7e20a187c65ef3225efb43f3e75"
+  },
+  "paper_version": "SIAM Journal on Matrix Analysis and Applications 20(2), published electronically November 23, 1998",
+  "result_form_tag": "THM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "generalized eigenpair Hermitian structured backward error Theorem 2.3",
+        "symmetric perturbation witness scaled Householder",
+        "Householder maps equal-norm vectors"
+      ],
+      "result": "Neither Mathlib nor the exact frozen bundle contains P49's generalized-eigenpair backward-error theorem or its complete perturbation witness. The frozen bundle contains the substantial exact reflector theorem householder_orthogonal and only generic supporting reflector-application and Euclidean-norm declarations.",
+      "scope": "the complete frozen NumStability source, the exact 44-object condition-L bundle, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.householder_orthogonal",
+      "NumStability.householder_symmetric",
+      "NumStability.householder_matMulVec_eq",
+      "NumStability.vecNorm2_orthogonal",
+      "NumStability.vecNorm2_smul"
+    ],
+    "note": "The exact private N proof is 296 physical lines and reconstructs reflector orthogonality, norm preservation, mapping, scaling, and the perturbation equation. The exact L proof is 188 lines. Its one substantial shortcut is NumStability.householder_orthogonal; the symmetry, application expansion, and generic norm adapters are simpler support."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P49Matrix",
+    "P49Vector",
+    "p49Dot",
+    "p49MatVec",
+    "p49OpNormBound",
+    "p49Symmetric",
+    "p49VecNorm"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Theorem 2.3, equations (2.2), (2.5), and (2.6), and proof",
+      "pdf_page": "6",
+      "printed_page": "497",
+      "role": "selected structured backward-error witness and proof",
+      "section": "2.1. Backward errors"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P49-T1",
+  "tier": "T1",
+  "tier_label": "direct use",
+  "tier_rationale": "The L proof uses one substantial non-Mathlib result, NumStability.householder_orthogonal, for the scaled symmetric map that is central to Theorem 2.3. N must reconstruct the full finite-sum proof of reflector orthogonality. The remaining library calls are short symmetry, application, scaling, and generic norm-preservation support. Exact compiled proofs are 296 lines in N and 188 in L, establishing a material one-result advantage.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P49/T1/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p49_t1_real_symmetric_backward_witness"
+  }
+}

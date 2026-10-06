@@ -1,0 +1,86 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 14-page paper in physical-PDF order, surveyed every proved or justified mathematical claim, and compared all candidates with the frozen Mathlib and importable NumStability baselines.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P32 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Desmond J. Higham",
+    "Nicholas J. Higham"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P32-T3"
+  ],
+  "paper_id": "P32",
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 13(1), 1992, printed pages 162-175",
+  "publication": {
+    "doi": "10.1137/0613014",
+    "issue": "1",
+    "journal": "SIAM Journal on Matrix Analysis and Applications",
+    "printed_pages": "162-175",
+    "publication_date": "1992-01",
+    "volume": "13",
+    "year": 1992
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "equation (2.7), reduction of structured backward error to a minimum-infinity-norm underdetermined system",
+      "reason": "The paper's reduction is exact vectorization and diagonal scaling. The compiled library contains no underdetermined minimum-infinity-norm theorem; the close source modules are uncompiled. Its remaining formal core is therefore Mathlib-level linear algebra rather than a T1/T2 library advantage, and a full optimization existence treatment would extend beyond the brief paper derivation."
+    },
+    {
+      "candidate": "equation (2.8), the square-root(t+n) comparison from the pseudoinverse 2-norm solution",
+      "reason": "Once the 2-norm minimizer is supplied, the displayed comparison is the standard finite-dimensional relation between the 2-norm and infinity norm and is too easy for T3. The pseudoinverse/QR facts are invoked rather than proved in detail."
+    },
+    {
+      "candidate": "the symmetric, Toeplitz, and augmented least-squares constructions in Section 4",
+      "reason": "These specialize the general B and Y matrices and discuss costs, scaling, or experiments. They do not supply a separate difficult theorem proof, and the directly relevant structured and least-squares NumStability files are unavailable source-only modules."
+    },
+    {
+      "candidate": "condition estimator and numerical examples in Sections 3 and 5",
+      "reason": "The estimator is cited from earlier Hager/Higham work and the tables are experiments, not new universally quantified results proved in this paper."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No paper-proved target needs exactly one substantial result from the frozen compiled library. Generic matrix/norm adapters are Mathlib-level, while close underdetermined and perturbation modules are unavailable to L."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source proof needs at least two distinct substantial compiled NumStability results. The paper's structured backward-error and condition arguments are paper-specific exact derivations."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Selected the sharp componentwise-box supremum at the core of equations (3.3)-(3.4). It requires the full upper-bound and attainable-sign proof, is not a Mathlib import, and has no corresponding result in the compiled or source NumStability library that gives L a material advantage."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only mathematical conclusions whose statement and derivation are present in this paper.",
+    "Treat source-only NumStability modules as unavailable to condition L.",
+    "Do not classify generic matrix and norm adapters as substantial library results when Mathlib already supplies their content.",
+    "Retain the paper's attainable-sign sharpness claim rather than reducing equation (3.4) to only its easy upper inequality.",
+    "Do not turn the numerical experiments or externally cited estimator into formal theorem tasks.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source, its importable compiled subset, and Mathlib."
+  ],
+  "short_name": "Higham--Higham (1992)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/0613014",
+    "local_path": "paper_bencmark/reference_papers/P32-Backward Error and Condition of Structured Linear Systems.pdf",
+    "page_map": "Physical PDF pages 1-14 are printed pages 162-175 respectively.",
+    "pdf_pages": 14,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "a20f838b5b94a509d2c605da4c669b9cd01f4e6bb84a8c7fa2bc5846b3b230c2"
+  },
+  "title": "Backward Error and Condition of Structured Linear Systems"
+}

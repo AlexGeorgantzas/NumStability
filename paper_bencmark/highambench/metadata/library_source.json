@@ -1,0 +1,4892 @@
+{
+  "files": [
+    {
+      "bytes": 180,
+      "path": "NumStability/Algorithms/AccumulatorSum.lean",
+      "sha256": "81fdf0a2c3582c1ced01dc5a50c9b1a453c817a4e3494edc021850f3ab43a343"
+    },
+    {
+      "bytes": 12718,
+      "path": "NumStability/Algorithms/AitkenDenominator.lean",
+      "sha256": "3c4dbad0d5c52e52778bb4f097cd0bc4aef34987bb080d48376dd4fa782fcbae"
+    },
+    {
+      "bytes": 11706,
+      "path": "NumStability/Algorithms/Arithmetic/DotProduct/NoGuard/Core.lean",
+      "sha256": "7d0c27968afffdafc711ee27f7b776ad47346f59b08ffd09e6e7978951a14bd2"
+    },
+    {
+      "bytes": 9072,
+      "path": "NumStability/Algorithms/Arithmetic/DotProduct/NoGuard/Tree.lean",
+      "sha256": "b213f25e905202e80b71f6bf30cf37d95339344325ff83284624aa1b2b0d3ba4"
+    },
+    {
+      "bytes": 283,
+      "path": "NumStability/Algorithms/Arithmetic/DotProduct/NoGuard.lean",
+      "sha256": "2d91927b63618e0c80ac8ee2fe01246296fcaa4322bcdfa418fefbf4c56ac2d8"
+    },
+    {
+      "bytes": 1816,
+      "path": "NumStability/Algorithms/AutomaticErrorAnalysis/Higham26.lean",
+      "sha256": "618363292f0234d0c499039d898222c0b0edcde0505fefa82d7ff41e19891023"
+    },
+    {
+      "bytes": 557,
+      "path": "NumStability/Algorithms/AutomaticErrorAnalysis/Higham26SourceSearch.lean",
+      "sha256": "f43efebba8e77e7a3bd358fce3fce3ce0b8fce853dc6889582c02574c8ed10d6"
+    },
+    {
+      "bytes": 8858,
+      "path": "NumStability/Algorithms/BlockDotProduct.lean",
+      "sha256": "987a0a5086c13911feb649b72d232a9600cfc1c3f361a8bfc95b02f73b04aa1f"
+    },
+    {
+      "bytes": 7682,
+      "path": "NumStability/Algorithms/Ch10ActualSourceClosure.lean",
+      "sha256": "11735cac8a3a99ac593c32919e10dc45432daea20f43b12bb9966836539e14d0"
+    },
+    {
+      "bytes": 5273,
+      "path": "NumStability/Algorithms/Ch10Ch14Lemma66Op2Bridge.lean",
+      "sha256": "2dedc4f4628cba9cc3da9ff9eeb12386dc3aee821092dfd2c5a0911d25a6cb62"
+    },
+    {
+      "bytes": 115294,
+      "path": "NumStability/Algorithms/Ch10ComplexPositiveDefiniteSourceClosure.lean",
+      "sha256": "edcb46bd8fb81b37d556450807e29f577e119328df7e8d2eba3bdd0d5eb4d261"
+    },
+    {
+      "bytes": 8550,
+      "path": "NumStability/Algorithms/Ch10KahanSharpness.lean",
+      "sha256": "45b472dad7ff819ea9a73a136c80d43dbfda713ae64fa09860b1d6a067ed3f42"
+    },
+    {
+      "bytes": 18970,
+      "path": "NumStability/Algorithms/Ch10KahanSharpnessSource.lean",
+      "sha256": "cece3dd4324cd772ded4dc5032c69f34a6ee5bd263147d975c72ea4775d996ee"
+    },
+    {
+      "bytes": 12064,
+      "path": "NumStability/Algorithms/Ch10Lemma1011Source.lean",
+      "sha256": "04d5635b5fcf7fea882a2ff5772dcaced66907721b84f7fd3035049b3c8c476e"
+    },
+    {
+      "bytes": 31468,
+      "path": "NumStability/Algorithms/Ch10PivotedPSDSourceClosure.lean",
+      "sha256": "1d4ea8db9e9d51ae8d7fb938d4b35035f081d2244f5d2009c0e498ab3ef6dcca"
+    },
+    {
+      "bytes": 3233,
+      "path": "NumStability/Algorithms/Ch10Theorem107FailureVacuity.lean",
+      "sha256": "994bedba77366c3c760b5f3c3ca645365085631faf78f8c806c4bc6f57b41879"
+    },
+    {
+      "bytes": 23601,
+      "path": "NumStability/Algorithms/Ch10Theorem108Componentwise.lean",
+      "sha256": "53c8a077d6ec528b0e802b5f064d209385c05f4c32a8824f43c7a56cf0829afd"
+    },
+    {
+      "bytes": 15836,
+      "path": "NumStability/Algorithms/Ch10Theorem108Source.lean",
+      "sha256": "9d0bca312e8cac686c7027191ba3c491e3ef61e8c3e348cf2c3814a1db58a24e"
+    },
+    {
+      "bytes": 32981,
+      "path": "NumStability/Algorithms/Ch14AsymptoticFamilies.lean",
+      "sha256": "a9b8153f2cca33a66bfcd99d6497aa100ebb1b86c423365be7a4b14ce5c7e228"
+    },
+    {
+      "bytes": 24068,
+      "path": "NumStability/Algorithms/Ch14BlockTriInverse.lean",
+      "sha256": "30807846b6c6a00bc638080940c245daaa9f561e0722340f5f5eb56cb293aa50"
+    },
+    {
+      "bytes": 7983,
+      "path": "NumStability/Algorithms/Ch14Cor146UniformInverseBridge.lean",
+      "sha256": "53af4490694b5e3864a9c144544bb2b0b93987d70d8f00facf250a454d2ca699"
+    },
+    {
+      "bytes": 46584,
+      "path": "NumStability/Algorithms/Ch14Cor147FinalDivisionFamilyClosure.lean",
+      "sha256": "92863ba0c82f5203e5e26f5e7ac4efbba17ce3ca1f7f0d667102b55f92ae3fff"
+    },
+    {
+      "bytes": 4276,
+      "path": "NumStability/Algorithms/Ch14Cor147SourceDomainConstructor.lean",
+      "sha256": "d2effd56582efbd196a3236820b82a7e7395ac721dd582cc29b0b0be93ed995b"
+    },
+    {
+      "bytes": 118926,
+      "path": "NumStability/Algorithms/Ch14Corollary146Closure.lean",
+      "sha256": "b84a5fdb4e98806b93199012855fedc5a98752791106d5924c66e56269909a1f"
+    },
+    {
+      "bytes": 26928,
+      "path": "NumStability/Algorithms/Ch14Corollary146Concrete.lean",
+      "sha256": "e58db78276c348ee75486132cef2270222bbe39965d05c9bd23e39c2ee39eb2c"
+    },
+    {
+      "bytes": 41468,
+      "path": "NumStability/Algorithms/Ch14Corollary146SourceClosure.lean",
+      "sha256": "e8737a04696089585656bb8ba183b780ea341c75aa2bfc9aa47e101074a18906"
+    },
+    {
+      "bytes": 43782,
+      "path": "NumStability/Algorithms/Ch14Corollary147.lean",
+      "sha256": "a7db9e12edf63b3a2b92d52f19db9ca5a0bcdf880da80f04e408e2468f887bd1"
+    },
+    {
+      "bytes": 20021,
+      "path": "NumStability/Algorithms/Ch14Corollary147Closure.lean",
+      "sha256": "ceeb71cd6f2a1e2b6dc78f9b06f656166aac4811555c42f2e7607098ab01424c"
+    },
+    {
+      "bytes": 49578,
+      "path": "NumStability/Algorithms/Ch14Corollary147Concrete.lean",
+      "sha256": "f9a3a84ffeb60a697f96fe0a49e82300a5b64fbd180de49bacd81611086fdc37"
+    },
+    {
+      "bytes": 96615,
+      "path": "NumStability/Algorithms/Ch14Corollary147SourceClosure.lean",
+      "sha256": "627c8695d25e7e041c573a5020f570ac464e548fdf5c39c8258894e5a0a73eb2"
+    },
+    {
+      "bytes": 57014,
+      "path": "NumStability/Algorithms/Ch14Corollary147WeakFamily.lean",
+      "sha256": "d2621dea45cc8b1cb27274fd13c4974eb3f592149f73f2a0f6e879a62da7125a"
+    },
+    {
+      "bytes": 47123,
+      "path": "NumStability/Algorithms/Ch14ForwardErrorEndpoint.lean",
+      "sha256": "33bf763bde48284b8c45fcc731f4390c86e09a7ee60151f7f999446e71c825ce"
+    },
+    {
+      "bytes": 5782,
+      "path": "NumStability/Algorithms/Ch14GJEActualDoolittleAdapter.lean",
+      "sha256": "bc706e88cdb8bcfb7908e2c22f4cf3a377aa525135a9694a707ce3ebd53cad5c"
+    },
+    {
+      "bytes": 30695,
+      "path": "NumStability/Algorithms/Ch14GJEAsymptoticFamilies.lean",
+      "sha256": "1118bb0fa22c55e4727a4e426c073b93e25861a93dc0d89979bfea56f82db049"
+    },
+    {
+      "bytes": 207915,
+      "path": "NumStability/Algorithms/Ch14GJEFinalDivisionClosure.lean",
+      "sha256": "dde2c5924b56750a3e30fd64d4a37c3d029f45f47b50c0bada7b331f0b7cb4f1"
+    },
+    {
+      "bytes": 30792,
+      "path": "NumStability/Algorithms/Ch14GJEOperationalBridge.lean",
+      "sha256": "570745bfee416423c89aa43bcb92e0dd6a463e595862f19ad734f28712f1da62"
+    },
+    {
+      "bytes": 51712,
+      "path": "NumStability/Algorithms/Ch14GJEPrintedEnvelopeClosure.lean",
+      "sha256": "b03f51c8aeba8cf3383b45bcaa53e6eec65c215ded1fdeae52ace9d39a3bff49"
+    },
+    {
+      "bytes": 13649,
+      "path": "NumStability/Algorithms/Ch14GJESourceAccumulationBridge.lean",
+      "sha256": "7e6dd244e308d011955c9b9d2b66896601d03dd5b751a95ac646cc7461234dbc"
+    },
+    {
+      "bytes": 63550,
+      "path": "NumStability/Algorithms/Ch14GJETheorem145SourceClosure.lean",
+      "sha256": "e5ffbfd8947e3a32890a0d53e00319221a074c7c70e1bc517e7dc454f8018659"
+    },
+    {
+      "bytes": 82563,
+      "path": "NumStability/Algorithms/Ch14GaussJordanAccumulation.lean",
+      "sha256": "b6df00c54dd2b0a79f09093069b4d54bc46b055cae8d872a538b9c5fb2a4fdf0"
+    },
+    {
+      "bytes": 137164,
+      "path": "NumStability/Algorithms/Ch14GaussJordanQConstruction.lean",
+      "sha256": "ffba25c4e00120b750d561e5cc68dc2758dfbb041bf2e1c31ac300a1ec31a476"
+    },
+    {
+      "bytes": 85902,
+      "path": "NumStability/Algorithms/Ch14GaussJordanSPDCorollary.lean",
+      "sha256": "2d4210fad80400397b8db959bad95bc8ccc25aae191964ed62d39533622ed90f"
+    },
+    {
+      "bytes": 49353,
+      "path": "NumStability/Algorithms/Ch14GaussJordanSourceClosure.lean",
+      "sha256": "b12b955f89283cc3c903b313218ddc53af421be11d19c69c9b4267fa8f81a266"
+    },
+    {
+      "bytes": 19723,
+      "path": "NumStability/Algorithms/Ch14GaussJordanStep.lean",
+      "sha256": "926938df02295cec0e48e50064f9332a2ae2ffbc48eeb3c06c1b0724dfbf8764"
+    },
+    {
+      "bytes": 34625,
+      "path": "NumStability/Algorithms/Ch14HymanDeterminant.lean",
+      "sha256": "d67060c744a8d1a415352934a2cc3e79861ba768416279ffc66ec43a5b6c5562"
+    },
+    {
+      "bytes": 37791,
+      "path": "NumStability/Algorithms/Ch14Method1BWhole.lean",
+      "sha256": "895d42517d6e8cbdc170a207125e99f3afd4dec13d4f539ce15d1db84088f196"
+    },
+    {
+      "bytes": 27369,
+      "path": "NumStability/Algorithms/Ch14Method2C.lean",
+      "sha256": "b83cd1d4ed8c3f7f66f582d9f37cb83fc2704dac795203f308f5ebb1bcc6ff45"
+    },
+    {
+      "bytes": 15982,
+      "path": "NumStability/Algorithms/Ch14Method2CWhole.lean",
+      "sha256": "59ca969fdc218bad1e4afa0fa28518e7f086f6dc03a373b345529e4c323c7e33"
+    },
+    {
+      "bytes": 10030,
+      "path": "NumStability/Algorithms/Ch14Method2Loop.lean",
+      "sha256": "2fee33c78c6a28d8cf26290dfde8194fea9d1628ebf872ff7e116978a85e58b2"
+    },
+    {
+      "bytes": 20673,
+      "path": "NumStability/Algorithms/Ch14MethodDLeftResidual.lean",
+      "sha256": "82c9619c4333114607fae694a4b17a96b6c22d5422da447f642e945c8b1c3e0f"
+    },
+    {
+      "bytes": 11846,
+      "path": "NumStability/Algorithms/Ch14MethodDProductDischarge.lean",
+      "sha256": "181674acb677b931d5e3c280170659b145bba3212e9cc530c82e4773611d8e1c"
+    },
+    {
+      "bytes": 15591,
+      "path": "NumStability/Algorithms/Ch14MethodDUpperCertificate.lean",
+      "sha256": "67bb391251b2ccdc7cd06170ff223a9e69ac37f6db2aaf9a958672e6fe3c927c"
+    },
+    {
+      "bytes": 77421,
+      "path": "NumStability/Algorithms/Ch14MethodsBC.lean",
+      "sha256": "0edc7e8e38098adafb58b6fc8cd58545f2cf90ccf5271ba5d3e42007416d932c"
+    },
+    {
+      "bytes": 243,
+      "path": "NumStability/Algorithms/Ch14Problem1413Boundary.lean",
+      "sha256": "138c9fb8e9c9cbf4189a12cb1e5628ec4ee8a2dcd75d399f7af726e3ff9348a8"
+    },
+    {
+      "bytes": 26080,
+      "path": "NumStability/Algorithms/Ch14Problem142.lean",
+      "sha256": "57ede6f439aa62e96290c42f0e4c5d2f9130d41aea18fc01113856af553a3e09"
+    },
+    {
+      "bytes": 41478,
+      "path": "NumStability/Algorithms/Ch14Problem142Families.lean",
+      "sha256": "39a8a0491bfe307711086d9eea4f1e0af38879401afc6d3083a585418ae4eaf1"
+    },
+    {
+      "bytes": 24020,
+      "path": "NumStability/Algorithms/Ch14Problem142Method2B.lean",
+      "sha256": "56a99cee50a7689270486f3694bc85714140ed033838c797ef69d1891d583ff4"
+    },
+    {
+      "bytes": 46846,
+      "path": "NumStability/Algorithms/Ch14ProductErrorNotation.lean",
+      "sha256": "82d58d5b41fdfcf2b6f94765957baccaaf9736b03fc6f8c1d291144b506c69cd"
+    },
+    {
+      "bytes": 277,
+      "path": "NumStability/Algorithms/Ch14SchulzIteration.lean",
+      "sha256": "7615a06a8d5cbac2aed914c6b24356b70d99066b28fb9e6f19bc99e153c7c2c9"
+    },
+    {
+      "bytes": 292,
+      "path": "NumStability/Algorithms/Ch14SchulzRectangular.lean",
+      "sha256": "0a29333d4ef528671a61b17483f337f69dda894936afe7a7c4b458b7c50616a0"
+    },
+    {
+      "bytes": 289,
+      "path": "NumStability/Algorithms/Ch14SchulzSpectralConvergence.lean",
+      "sha256": "8c5109c4dafeea8ce2901643bf068838904ae1c4e40b4ff707f3ecdae621599e"
+    },
+    {
+      "bytes": 253,
+      "path": "NumStability/Algorithms/Ch14SourceCorrections.lean",
+      "sha256": "b37441c52be10db13b157522c6605281bd1239715baa2445a0b5e3da7cf29022"
+    },
+    {
+      "bytes": 31537,
+      "path": "NumStability/Algorithms/Ch15CondEstimators.lean",
+      "sha256": "c438aad48fb2d0ec1a3d0955f65446dc58604f8ba035a82fae34d1dbcde08f1c"
+    },
+    {
+      "bytes": 23133,
+      "path": "NumStability/Algorithms/Ch15DixonClosure.lean",
+      "sha256": "5b3d55589747a79afc55e2b77b0aec0f43658cebe1942fd7c562ed4ac07b2eb4"
+    },
+    {
+      "bytes": 20935,
+      "path": "NumStability/Algorithms/Ch15DixonProbability.lean",
+      "sha256": "2d47f1c2623e44484891a986cce3c58e6f021d9301c18624f41ede2f896e0f95"
+    },
+    {
+      "bytes": 398,
+      "path": "NumStability/Algorithms/Ch4KahanFiniteFamily.lean",
+      "sha256": "46307c66e8e9a7ed77173a3126945b2e84b83c5ddd1c627d35df23af690b69d6"
+    },
+    {
+      "bytes": 12360,
+      "path": "NumStability/Algorithms/Ch5DerivativeError.lean",
+      "sha256": "abc3308f8790da7724587239b51ea5fe8a2ebb0e9eeb04328fe25849ee3c9a75"
+    },
+    {
+      "bytes": 12592,
+      "path": "NumStability/Algorithms/Ch5LejaProducer.lean",
+      "sha256": "2a8b64666c0b87bb32429b6054fe902c769377fb40d8cb372b4705d2b29d2a14"
+    },
+    {
+      "bytes": 34818,
+      "path": "NumStability/Algorithms/Ch5NewtonForm.lean",
+      "sha256": "4687804a44aca43d8860cfe05ac6c25099b6b82ed576ebf4bc89f23e2a7d54a9"
+    },
+    {
+      "bytes": 73517,
+      "path": "NumStability/Algorithms/Ch5SourceClosure.lean",
+      "sha256": "2095f60b1c65185366952ec62fd7f731bd07a8a9b23bc997543a9f2c2962794f"
+    },
+    {
+      "bytes": 9239,
+      "path": "NumStability/Algorithms/Chapter06Lemma66.lean",
+      "sha256": "8492a5ce2f12c0e4b19e41f650d34018ce03aa40b21c3e9614ef3aa322b48228"
+    },
+    {
+      "bytes": 29084,
+      "path": "NumStability/Algorithms/Chapter14Problem1415Weyl.lean",
+      "sha256": "34901cf9369824ad8d1e6d6d4e0c8876d361f848609389312a73f09eca4116fc"
+    },
+    {
+      "bytes": 23301,
+      "path": "NumStability/Algorithms/Chapter15CondEst.lean",
+      "sha256": "f3b2a691662454c1939465936e05e9c2bf3c38533786e9645a193af9d12daace"
+    },
+    {
+      "bytes": 14135,
+      "path": "NumStability/Algorithms/Cholesky/Aasen118ReducedCh11Closure.lean",
+      "sha256": "bb42639eca2d27b188a50a5986c36c45be71cbcbf650e06769554fdb1ba88de6"
+    },
+    {
+      "bytes": 52848,
+      "path": "NumStability/Algorithms/Cholesky/AasenAdjacentPivotOperationalMiddleCh11.lean",
+      "sha256": "607411e314d0f635ae34ad0ded756bd287fd0727959085530820e738940028ea"
+    },
+    {
+      "bytes": 6463,
+      "path": "NumStability/Algorithms/Cholesky/AasenAdjacentPivotResidualDomainCh11Discrepancy.lean",
+      "sha256": "b647ce8c7b5c35e153f82082fe2e518bcf5666b0bddb94a829d7621211586cdb"
+    },
+    {
+      "bytes": 19752,
+      "path": "NumStability/Algorithms/Cholesky/AasenAdjacentPivotSourceResidualCh11Closure.lean",
+      "sha256": "42a05a4c875ba505c8d93bae74241bc2e2bc96edaae6b8da15220a31a64a7a4d"
+    },
+    {
+      "bytes": 33902,
+      "path": "NumStability/Algorithms/Cholesky/AasenAdjacentPivotTridiagExecutorCh11Closure.lean",
+      "sha256": "7f99318308c99ac62cb077ac1ae791c56889852e90ebbe4fc16905c72e8fa488"
+    },
+    {
+      "bytes": 10238,
+      "path": "NumStability/Algorithms/Cholesky/AasenAdjacentPivotTridiagForwardCounterexampleCh11.lean",
+      "sha256": "67aba643874bbfb570eef16a852098d6ef9ebef83ef804077aec5ae950917ba8"
+    },
+    {
+      "bytes": 33336,
+      "path": "NumStability/Algorithms/Cholesky/AasenCoupledFpCh11Closure.lean",
+      "sha256": "e8c4dce03a010c3181106564617a56dec8ee8c7d8ae0bfbe47be07e9dbc1dc2e"
+    },
+    {
+      "bytes": 23002,
+      "path": "NumStability/Algorithms/Cholesky/AasenDirect118Ch11Closure.lean",
+      "sha256": "c6bd8d26fc1e5065d0ce143ad492e592c7ea8cd89cacd15f9abf35422c0c47d4"
+    },
+    {
+      "bytes": 22935,
+      "path": "NumStability/Algorithms/Cholesky/AasenDirectTridiagGEPPSolveCh11Closure.lean",
+      "sha256": "5d5290ae096405b4030aa7ec4a5ffe583ef7d606f387643c9d2f18a9793e7ddd"
+    },
+    {
+      "bytes": 7966,
+      "path": "NumStability/Algorithms/Cholesky/AasenFactorNormCh11Closure.lean",
+      "sha256": "a9e42280d7ef1d283ec13312ce345659a35bf64900a95461961fec3f2a2e1d83"
+    },
+    {
+      "bytes": 46871,
+      "path": "NumStability/Algorithms/Cholesky/AasenFactorResidualCh11Closure.lean",
+      "sha256": "0ca7075c1a46073c30065294570c610fbd4502a13b16cbb7b52149d7dfbb9685"
+    },
+    {
+      "bytes": 19594,
+      "path": "NumStability/Algorithms/Cholesky/AasenGrowthCh11Closure.lean",
+      "sha256": "b7efaeefedc5a29f26a6fd6c99ecdcd417a0e6440fa98ad1fdf76c72ddf8dec9"
+    },
+    {
+      "bytes": 23898,
+      "path": "NumStability/Algorithms/Cholesky/AasenMiddleGEPPCh11Counterexample.lean",
+      "sha256": "bd30f8733509375c9c62d9f1c1857db534a62899026df585850fd7d09181ab44"
+    },
+    {
+      "bytes": 8693,
+      "path": "NumStability/Algorithms/Cholesky/AasenOriginalCoordinateCorrectionCh11.lean",
+      "sha256": "5decd5aa97d04e5c96f209f21b8fee761e06575c70351e0fc4d19afad35c4f4f"
+    },
+    {
+      "bytes": 6433,
+      "path": "NumStability/Algorithms/Cholesky/AasenPermutationSourceCorrectionCh11.lean",
+      "sha256": "c86bb59b7aea9f41ec00d5c0e89fcbc36802f53706000dd54b9b97fddbad8243"
+    },
+    {
+      "bytes": 8325,
+      "path": "NumStability/Algorithms/Cholesky/AasenPrintedCoefficientAlgebraCh11Closure.lean",
+      "sha256": "d20ecc29c135bd0f34baf24d9171285e337bf95e811268f660afd78be395b3fb"
+    },
+    {
+      "bytes": 43436,
+      "path": "NumStability/Algorithms/Cholesky/AasenSourceSharpFactorResidualCh11Closure.lean",
+      "sha256": "d8e148282571fc016f24c2eb70b9dc614cc63bc1f6ae965007a9809a2be542c3"
+    },
+    {
+      "bytes": 7528,
+      "path": "NumStability/Algorithms/Cholesky/AasenTheorem118ScalarEdgeCh11Discrepancy.lean",
+      "sha256": "812e2ecf65c822af0fe2ed49b338dc5f2e23c0f2414e2c8dd94a51210bac9e0e"
+    },
+    {
+      "bytes": 17872,
+      "path": "NumStability/Algorithms/Cholesky/AasenTridiagGEPPCh11Closure.lean",
+      "sha256": "09980d998e131bdda82e55c11a3274c3fb9bbdeca518fdbcb3850f0a5f80ecf3"
+    },
+    {
+      "bytes": 11939,
+      "path": "NumStability/Algorithms/Cholesky/AasenUnitOuterSolveCh11Closure.lean",
+      "sha256": "f20e2cc8b985e445c93eaf5caebeefa3c4423ffa93ab4b4060b58c6e152250e3"
+    },
+    {
+      "bytes": 23129,
+      "path": "NumStability/Algorithms/Cholesky/BlockLDLTAllOneByOnePrintedCh11Closure.lean",
+      "sha256": "876b8c252417969da7c040d1a595d8f33dd6b3c6b2693431cda1e776b3c397a6"
+    },
+    {
+      "bytes": 20220,
+      "path": "NumStability/Algorithms/Cholesky/BlockLDLTBunchTridiagonalCh11Closure.lean",
+      "sha256": "58e262a9db377cf199854db793073d474787fe5ece793d105d8d67cd7f2d3ad6"
+    },
+    {
+      "bytes": 62778,
+      "path": "NumStability/Algorithms/Cholesky/BlockLDLTMixedPivotCh11Closure.lean",
+      "sha256": "88343ef77ed87b53669970a2fae31a9828210a05f0b21582bef386f8056c83f3"
+    },
+    {
+      "bytes": 60896,
+      "path": "NumStability/Algorithms/Cholesky/BlockLDLTSolveBackwardCh11Closure.lean",
+      "sha256": "48b1e605fe58d52a8a38a3b77f9199b7a5bf055903ebc6a16ebeccc121a604be"
+    },
+    {
+      "bytes": 12260,
+      "path": "NumStability/Algorithms/Cholesky/BunchKaufmanSolveCh11Closure.lean",
+      "sha256": "cab367c161a3db42605835d1d59074d7831a737a4dac0a29a09be37bb97f6b3d"
+    },
+    {
+      "bytes": 10788,
+      "path": "NumStability/Algorithms/Cholesky/BunchTridiagonalActualSolveCh11Closure.lean",
+      "sha256": "1e05760294412e4b689e3009946d59329aded233fcf79b2846cc090d3a98a99a"
+    },
+    {
+      "bytes": 212,
+      "path": "NumStability/Algorithms/Cholesky/BunchTridiagonalCapstoneCh11Closure.lean",
+      "sha256": "4f61ded3605ad7f8eab705580f235e8f3b10cc1043e0d0f0bb9e4d9f5095ea1e"
+    },
+    {
+      "bytes": 33615,
+      "path": "NumStability/Algorithms/Cholesky/BunchTridiagonalFactorBoundCh11Closure.lean",
+      "sha256": "781b72eb2db48f7ca120aedd62512e37daac8e48c29ce43cc4674fe8bdc76bc8"
+    },
+    {
+      "bytes": 19471,
+      "path": "NumStability/Algorithms/Cholesky/BunchTridiagonalGrowthCh11Closure.lean",
+      "sha256": "a14c677e5228f36cc47634b896f758060e30535e710b01efd9f8bfa7563a6a28"
+    },
+    {
+      "bytes": 99301,
+      "path": "NumStability/Algorithms/Cholesky/BunchTridiagonalGrowthInvariantCh11Closure.lean",
+      "sha256": "38f321c129817afbe6bc746a22a25bc820c53f891a7013c1a2f1663b884acf67"
+    },
+    {
+      "bytes": 48648,
+      "path": "NumStability/Algorithms/Cholesky/BunchTridiagonalHFactorCh11Closure.lean",
+      "sha256": "4d21857fe48e1c179325ab9fb8d1da48f7fd778205e3ec243766b26339bea712"
+    },
+    {
+      "bytes": 45779,
+      "path": "NumStability/Algorithms/Cholesky/BunchTridiagonalSparseFactorCh11Closure.lean",
+      "sha256": "5ab726cd6eb5aca922b4f2df0b6c6424e2c0691fb1d334a998151720696085f4"
+    },
+    {
+      "bytes": 21525,
+      "path": "NumStability/Algorithms/Cholesky/BunchTridiagonalSparseSolveCh11Closure.lean",
+      "sha256": "708974e7061be9cbe55dece4cd88a55170c6f2586b81f6a6a9b9c0e3d88958ed"
+    },
+    {
+      "bytes": 24546,
+      "path": "NumStability/Algorithms/Cholesky/CholeskyDemmel.lean",
+      "sha256": "8331d50e82f8ab78068f38c7f5e8cf7473526976dc1e7213bd90d1dd2cd1a1a5"
+    },
+    {
+      "bytes": 104234,
+      "path": "NumStability/Algorithms/Cholesky/CholeskyFl.lean",
+      "sha256": "bd9c98d65343ca327e8afb56dea2363f2e3bfbc9003601e0b12332b2227ba264"
+    },
+    {
+      "bytes": 131554,
+      "path": "NumStability/Algorithms/Cholesky/CholeskyIndefinite.lean",
+      "sha256": "00f20d4ce076f41b5382f4788afbf82d112f96a5214557dc8c0c0c9e6e1086af"
+    },
+    {
+      "bytes": 17940,
+      "path": "NumStability/Algorithms/Cholesky/CholeskyNonsym.lean",
+      "sha256": "0c4da1b1d922c39aa50cc3c6165395c455bd8633d6dd75f7226c9f65d9d6c146"
+    },
+    {
+      "bytes": 185111,
+      "path": "NumStability/Algorithms/Cholesky/CholeskyPSD.lean",
+      "sha256": "589a448cda61cf95c37bf0355e6444756eb2b796cd9492356e9a2b8482b4da0a"
+    },
+    {
+      "bytes": 70853,
+      "path": "NumStability/Algorithms/Cholesky/CholeskyPerturbation.lean",
+      "sha256": "46cefc9ebc5fde973bec47d07eb1b16e3cae092019d97c9c61859e079172d1ac"
+    },
+    {
+      "bytes": 9313,
+      "path": "NumStability/Algorithms/Cholesky/CholeskySolve.lean",
+      "sha256": "d6edad44261021396841f2654cbc95626a8ccc58ee1e84762b94e476d0df1a62"
+    },
+    {
+      "bytes": 22778,
+      "path": "NumStability/Algorithms/Cholesky/CholeskySpec.lean",
+      "sha256": "47f8158ce69e18c21d0e7c97297e26a8fddca6e2c1ce908a11736d4010545857"
+    },
+    {
+      "bytes": 77291,
+      "path": "NumStability/Algorithms/Cholesky/Higham1014Equation1022.lean",
+      "sha256": "96dcd40386be91cf401de013bc1f5d41479950631d8dba5f01a9ffbc9d66869c"
+    },
+    {
+      "bytes": 36594,
+      "path": "NumStability/Algorithms/Cholesky/Higham1014SourceError.lean",
+      "sha256": "fd1388eefc655075edc651150c73928c67d2d500969d273ad6c760ac505dc03f"
+    },
+    {
+      "bytes": 2710,
+      "path": "NumStability/Algorithms/Cholesky/Higham1014SourceSuccess.lean",
+      "sha256": "b67c3d97fc21d387b8c42f9ceddb2c534fb113a0a7d3b0ea77a64bccf36f671c"
+    },
+    {
+      "bytes": 26081,
+      "path": "NumStability/Algorithms/Cholesky/Higham1029Source.lean",
+      "sha256": "8152ca81a47d5205a3a63d2d270061b32691c267f483b9573151eaea09d8aef3"
+    },
+    {
+      "bytes": 3241,
+      "path": "NumStability/Algorithms/Cholesky/Higham10Problem10_3.lean",
+      "sha256": "09780f863844342f5cead7fc11f92567303c979be23c09452c9dc3c11592ef93"
+    },
+    {
+      "bytes": 182,
+      "path": "NumStability/Algorithms/Cholesky/Higham10Theorem10_7Source.lean",
+      "sha256": "26f5cad6f474933856be1d6aba336b33c3acdfd80bd6f3d323ff2bed0478d093"
+    },
+    {
+      "bytes": 21060,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchActualSharpGrowthClosure.lean",
+      "sha256": "7df9fb8a10f21fad0f354bdbb8e75f0b57549620ab77bd7fff04538c4aa218dc"
+    },
+    {
+      "bytes": 19610,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchExactTrace.lean",
+      "sha256": "88cc5541d9b9e5c03fd49bee70a42afaf97de9a43d9c42443f971ed8131dee25"
+    },
+    {
+      "bytes": 17015,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanActualSelector.lean",
+      "sha256": "1c2e9341f9d41c58cd4f690100188e6e2ede57c6249475e8bd2a47fac0d7b9ea"
+    },
+    {
+      "bytes": 29382,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanExactGrowth.lean",
+      "sha256": "aefd2fbb9e6669142470c6f061d3068ec849476dcd3bdbe5509c07ef7aa8f83b"
+    },
+    {
+      "bytes": 4176,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanExactGrowthArithmetic.lean",
+      "sha256": "6df1b67a7fdb2ad319da6d8819bc450f49950aa53f3e71d360c1c604f0d37804"
+    },
+    {
+      "bytes": 27949,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanExactTrace.lean",
+      "sha256": "13a808b538bed2a5fd22523f9370f18cd0cad31a8a0631d467fd2529bb8a4f6e"
+    },
+    {
+      "bytes": 52246,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanExplicitInverseSolve.lean",
+      "sha256": "1db8ba3e15ef2f0e4f990d4885ce6b65223c9109c1461c27496d1a5e568b149d"
+    },
+    {
+      "bytes": 16636,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanExplicitInverseTerminalClosedForm.lean",
+      "sha256": "c7b30be4f4e02f340d731429cb2615f9d07acadc3fc995404ac0347ea5785653"
+    },
+    {
+      "bytes": 26859,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanRoundedAccumulated.lean",
+      "sha256": "0afd5b6c8dfc7fdc24aac5e3eee9e2af092ba50377224caa30ea837bbd2a0416"
+    },
+    {
+      "bytes": 17143,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanRoundedBridge.lean",
+      "sha256": "7c7f0fb4adc994739f44961c593d5c7988105b6911b12a5d3976dae211a4c59f"
+    },
+    {
+      "bytes": 37669,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanRoundedClosure.lean",
+      "sha256": "2d301c45b2a340e4e278caad612018693306887a8377b2b4a232216a67d76747"
+    },
+    {
+      "bytes": 24239,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanRoundedExecution.lean",
+      "sha256": "2d585ce394568bd41cf94dc3a4956ac77e84be3ddcd7283b6e85e080c32f9aa0"
+    },
+    {
+      "bytes": 8498,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanRoundedFactors.lean",
+      "sha256": "d230dc9081fb7c8e0987f2a1c4ee93e1500269c3755566a88fba2b6f4e8ba640"
+    },
+    {
+      "bytes": 111665,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanRoundedGlobal.lean",
+      "sha256": "761c6198b901bd8171cf0b72194a9b3e771e8ba87ed2265eeefac6e25b39170f"
+    },
+    {
+      "bytes": 78415,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanRoundedGrowth.lean",
+      "sha256": "94f97d61673e78e7cd6d865ab1d47ebf4ef70cb23e9eb4df6b45c43c456f73dc"
+    },
+    {
+      "bytes": 8013,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanRoundedGrowthSolve.lean",
+      "sha256": "c07171a26b6d57eb8ee6636e97f859beb9ecaf0cd6838ff48ceaffe84c493406"
+    },
+    {
+      "bytes": 12061,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanRoundedMiddleSolve.lean",
+      "sha256": "d9d5121708c79f8dc232182b5241d8c987edfdf41573540d28616fa278f7aafd"
+    },
+    {
+      "bytes": 19380,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanRoundedSolve.lean",
+      "sha256": "305c80a39962af1c1d59b03706fc3d94acef7f2a2e0d36ed274fba144dcfc844"
+    },
+    {
+      "bytes": 5281,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanRoundedTerminal.lean",
+      "sha256": "b5c2f3e494fb4dc8daca399e392d7576d56b32733207f0d19d6211fcfd84f3ce"
+    },
+    {
+      "bytes": 20732,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanRoundedTerminalClosedForm.lean",
+      "sha256": "53e051dcbfca965eacddd2428b98dcaab0913931b7dfc2235a2b958c711ef969"
+    },
+    {
+      "bytes": 12646,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchKaufmanSourceCorrection.lean",
+      "sha256": "3f39a7686d98be5252cc0e3f0f65a1c340ec438696a21d5bc37911a8adbf2188"
+    },
+    {
+      "bytes": 70171,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchSharpGrowthBridge.lean",
+      "sha256": "d29878a54d6c27718df3d710116c8c5220423c0aa4915da81729798dfdc18819"
+    },
+    {
+      "bytes": 36477,
+      "path": "NumStability/Algorithms/Cholesky/Higham11BunchTraceHadamard.lean",
+      "sha256": "059db8d2098027fa1096d1c1dbdf7bd4784ca25a3af1be68b690defb94951435"
+    },
+    {
+      "bytes": 29362,
+      "path": "NumStability/Algorithms/Cholesky/Higham11Chapter9ActualExecutorBridge.lean",
+      "sha256": "d115e92f76b32cbfedff8e3f36c337a38c083aaa85addd649ce87e454b042a87"
+    },
+    {
+      "bytes": 60732,
+      "path": "NumStability/Algorithms/Cholesky/Higham11Chapter9BridgeClosure.lean",
+      "sha256": "73aef4a3387d0edd02aff40956f0c5ada29220029f036ef6b50cb327e40b0f8d"
+    },
+    {
+      "bytes": 43071,
+      "path": "NumStability/Algorithms/Cholesky/Higham11RookExactTrace.lean",
+      "sha256": "293e5a7a176e3855a602419e32a9d523f985e88714caad5f127b5370d2b91ab1"
+    },
+    {
+      "bytes": 5873,
+      "path": "NumStability/Algorithms/Cholesky/Higham11RookExecutorAdapter.lean",
+      "sha256": "8938f272c7d553e2c9729dea58110a83222204013ee8b06d47c80957233ba06f"
+    },
+    {
+      "bytes": 8437,
+      "path": "NumStability/Algorithms/Cholesky/Higham11RookRoundedGap.lean",
+      "sha256": "e815b4eb37f619e33d47ff58086d0d3c56b7870481360490eb5cce36c9f062b1"
+    },
+    {
+      "bytes": 26102,
+      "path": "NumStability/Algorithms/Cholesky/Higham11RookSourceClosure.lean",
+      "sha256": "8e105eb415c822e29f63e14d3ff8b401640e9b86a4d81de420c23432fc10e262"
+    },
+    {
+      "bytes": 8860,
+      "path": "NumStability/Algorithms/Cholesky/Higham11SkewActualSelector.lean",
+      "sha256": "2b04418be3b289b73054dc8d74fe74d836054af045a2956406e0ca0c2e0e69ae"
+    },
+    {
+      "bytes": 29122,
+      "path": "NumStability/Algorithms/Cholesky/Higham11SkewExactTrace.lean",
+      "sha256": "be8a32c8c6be6d8a5e12d0d3bb9f51a5aefe292e1e65061650f423b7fad00449"
+    },
+    {
+      "bytes": 9484,
+      "path": "NumStability/Algorithms/Cholesky/Higham11SkewSourceCorrection.lean",
+      "sha256": "d2dd17ab295127abe46dce68ea495dbcbc46b9783c27125652a9c77dcc5f7712"
+    },
+    {
+      "bytes": 10029,
+      "path": "NumStability/Algorithms/Cholesky/HighamMathiasFirstBreakdown.lean",
+      "sha256": "4ffdb8441e52cc6356e0c32ce7686bdc23783eefafddfe9f633ff1a1565fea6b"
+    },
+    {
+      "bytes": 82389,
+      "path": "NumStability/Algorithms/Cholesky/HighamMathiasSource.lean",
+      "sha256": "ab1b4d8a8a38488a1f3a21cfbd3621a4b63d795309fe1f45e5924afa2b4dc422"
+    },
+    {
+      "bytes": 22731,
+      "path": "NumStability/Algorithms/Cholesky/TwoByTwoSchurStepCh11Closure.lean",
+      "sha256": "49b95d6e4da03e56a86b01422db8522f110a8011b6b2b454ff001c3fc5f55bad"
+    },
+    {
+      "bytes": 192,
+      "path": "NumStability/Algorithms/Circulant/Higham24.lean",
+      "sha256": "2145f504bd35acce898903ded14ea4cea95b02077bbdf6edddb916f3ce1c6539"
+    },
+    {
+      "bytes": 205,
+      "path": "NumStability/Algorithms/Circulant/Higham24BackwardStability.lean",
+      "sha256": "69e9e6a66261e868d6925dfd51b5e7a72fcba68761cfcd73c220fd1e81af5904"
+    },
+    {
+      "bytes": 208,
+      "path": "NumStability/Algorithms/Circulant/Higham24ForwardError.lean",
+      "sha256": "64401a784cd95f8e676fb61cf5e682561a54733b4e87922914a877f765480ec3"
+    },
+    {
+      "bytes": 211,
+      "path": "NumStability/Algorithms/Circulant/Higham24ForwardPerturbation.lean",
+      "sha256": "c6355a8fd208f48868a3b24a2c99d93b7da1f6c5ff3ddd18cfdbb03892dd2cb3"
+    },
+    {
+      "bytes": 174,
+      "path": "NumStability/Algorithms/Circulant/Higham24InverseFFT.lean",
+      "sha256": "64d288290881f49527a7ce68e62245d8920fa30e6161914c87dbbd67119c0449"
+    },
+    {
+      "bytes": 211,
+      "path": "NumStability/Algorithms/Circulant/Higham24LiteralSolver.lean",
+      "sha256": "8eda374aac8ef8a3eac309cbffbf6b182d33f359b355516490cfb1b4ced91df6"
+    },
+    {
+      "bytes": 205,
+      "path": "NumStability/Algorithms/Circulant/Higham24Rounded.lean",
+      "sha256": "75f25c1cbc07d070d3fb44ef2c2d3e0af9e5d09b531c833acbad59de5662c8f6"
+    },
+    {
+      "bytes": 217,
+      "path": "NumStability/Algorithms/Circulant/Higham24Structured.lean",
+      "sha256": "f2e1eb5a80f740008f195dc583cdc9b47e85de52b625ee9d3e7b68157a6e3a7a"
+    },
+    {
+      "bytes": 180,
+      "path": "NumStability/Algorithms/CompensatedSum.lean",
+      "sha256": "e5f0f2c513a0d0c30b23596bba96b1200b18a2b4e0332ab5c05bc6ed6abb6519"
+    },
+    {
+      "bytes": 4842,
+      "path": "NumStability/Algorithms/ComplexBackwardError.lean",
+      "sha256": "ea7ab7b8b95045a60879f4973fed52a5836637c3277de43d49be2472ea3d5e59"
+    },
+    {
+      "bytes": 13525,
+      "path": "NumStability/Algorithms/CondEstimation.lean",
+      "sha256": "cc72b00dac1cb891daa1d02e53b319220dae310fe2de970d954a784ea0266374"
+    },
+    {
+      "bytes": 5985,
+      "path": "NumStability/Algorithms/ContinuedFraction.lean",
+      "sha256": "85ae0bbfabbd3ba5040a703b4b02415519a72ca9d18f783f37612885be99b151"
+    },
+    {
+      "bytes": 34870,
+      "path": "NumStability/Algorithms/DotProduct.lean",
+      "sha256": "19813f0cb59e1e0121c286e91a0ffddd4c5f69917e49a5025bbbf1279fddd301"
+    },
+    {
+      "bytes": 199,
+      "path": "NumStability/Algorithms/DoublyCompensatedSum.lean",
+      "sha256": "ab1ef4c3e0c115f0ee9679e99c0c75bc241cdee03b621abfea24a1fb93af3011"
+    },
+    {
+      "bytes": 11427,
+      "path": "NumStability/Algorithms/ExtendedPrecisionDotProduct.lean",
+      "sha256": "5e7ced78b875e4cfd58a4c8702eaa765224fb11f3a152b00955b3da915017960"
+    },
+    {
+      "bytes": 192,
+      "path": "NumStability/Algorithms/FFT/Higham24.lean",
+      "sha256": "90e176ac89de2d8a4e203ddd8372460edfbd49e83efa0d81264c9ce642fb451a"
+    },
+    {
+      "bytes": 172,
+      "path": "NumStability/Algorithms/FFT/Higham24Radix2.lean",
+      "sha256": "5bcfbfa2474a85faf93d9fac2fa557d0cdf49981a8a431e073518bef1796469a"
+    },
+    {
+      "bytes": 967,
+      "path": "NumStability/Algorithms/FastMatMul/Higham23.lean",
+      "sha256": "da90fd904db1c152fc999d84f11a4cb642997586f7398cb6347dd56603c53232"
+    },
+    {
+      "bytes": 1100,
+      "path": "NumStability/Algorithms/FastMatMul/Higham23Bini.lean",
+      "sha256": "455d7a188bb88f15061de18ccdc97a268e9eac2604d61e04198243c6dcfe147d"
+    },
+    {
+      "bytes": 1053,
+      "path": "NumStability/Algorithms/FastMatMul/Higham23Problem23_8.lean",
+      "sha256": "eec63a17208689174d000e4effcf9e18388a9d2ea60ce32b372278237ca02ec4"
+    },
+    {
+      "bytes": 1075,
+      "path": "NumStability/Algorithms/FastMatMul/Higham23Recursive.lean",
+      "sha256": "46cb8d60b6ffea45d24a7e0a9deaf9a22792966cd11ca7d00543d05dc0e386dc"
+    },
+    {
+      "bytes": 1072,
+      "path": "NumStability/Algorithms/FastMatMul/Higham23Remaining.lean",
+      "sha256": "9a54336e86871bca50879ece46d7edff60eec4b73b99f2a801797b2c8d78efbc"
+    },
+    {
+      "bytes": 1170,
+      "path": "NumStability/Algorithms/FastMatMul/Higham23ThreeMStrassen.lean",
+      "sha256": "cda2e6d357cbc1464d3baf34916f6fbe6df51f62578578f203d77dd0c0c736c9"
+    },
+    {
+      "bytes": 2946,
+      "path": "NumStability/Algorithms/FastMatMul/Internal/LegacyBounds.lean",
+      "sha256": "b0e513a7b8c2f50a3c09b0786baac4b50e10579368506ce54383ad2619c8117a"
+    },
+    {
+      "bytes": 1722,
+      "path": "NumStability/Algorithms/FastMatMul/Recurrences.lean",
+      "sha256": "3d93ab3fb619fb0f91f0b12655eb082d016df2046677f55191e107ebda235295"
+    },
+    {
+      "bytes": 557,
+      "path": "NumStability/Algorithms/FastMatMul.lean",
+      "sha256": "721f652c1c64a88e9aebac8b6a40cdcc1542abb0e821f17775f227d160ce4d5e"
+    },
+    {
+      "bytes": 214,
+      "path": "NumStability/Algorithms/ForwardSub.lean",
+      "sha256": "10f3bad262210fceff441ae3814f634d5ecfcfdf9ac9c6506c446e0e7f56912b"
+    },
+    {
+      "bytes": 164926,
+      "path": "NumStability/Algorithms/GaussJordan.lean",
+      "sha256": "f666732ef180d0d9ae0bfabe92e8f3f44d00a1e415506fa4831dbe00083d0914"
+    },
+    {
+      "bytes": 28493,
+      "path": "NumStability/Algorithms/GaussJordanPivoting.lean",
+      "sha256": "909738eef2c495491efa745269384880499992fb2ccc326b32b1fcd396d20721"
+    },
+    {
+      "bytes": 12460,
+      "path": "NumStability/Algorithms/GridPoints.lean",
+      "sha256": "493ebe001c83a596ea8f0a89d70b64ab09de5269e9e6786133bf678b066d35cb"
+    },
+    {
+      "bytes": 11383,
+      "path": "NumStability/Algorithms/Higham5FastPolynomialEvaluation.lean",
+      "sha256": "f504f501f4680fc66b4f06a31cec9142b254adf4446a2f05dff7768b000b69bc"
+    },
+    {
+      "bytes": 10131,
+      "path": "NumStability/Algorithms/Higham5PatersonStockmeyer.lean",
+      "sha256": "2c6bcfdb0f3c0017fd84fb214cec69612f6a91c29f0a7685a17480268085bbb5"
+    },
+    {
+      "bytes": 52996,
+      "path": "NumStability/Algorithms/Higham726Rump.lean",
+      "sha256": "b2e0b64736eaffc79ea7a19871f083f141692154a689e006545d8ef6cefca29c"
+    },
+    {
+      "bytes": 247536,
+      "path": "NumStability/Algorithms/HighamChapter10.lean",
+      "sha256": "1bd214040e996b02d14624fb7fdaabf5a5c5e48f50414a8e3001f6c0e812c1b0"
+    },
+    {
+      "bytes": 8117453,
+      "path": "NumStability/Algorithms/HighamChapter11.lean",
+      "sha256": "8c83570770a28cee7cb5f55dfc93281e6205b2e52f8feffb440eb6d372f5251f"
+    },
+    {
+      "bytes": 253,
+      "path": "NumStability/Algorithms/HighamChapter12.lean",
+      "sha256": "b8ccce180f929263811ed5c9c337e4e360e03af983476128bc7f71aea33e93e3"
+    },
+    {
+      "bytes": 282,
+      "path": "NumStability/Algorithms/HighamChapter12Ch9GenericSolverBridge.lean",
+      "sha256": "3fee122ee9a5992c274854c0fb6bbc44e5f20aee8e040248b434090d658ec7e1"
+    },
+    {
+      "bytes": 266,
+      "path": "NumStability/Algorithms/HighamChapter12Ch9SolverBridge.lean",
+      "sha256": "2ee26f83ea865e1f064511a6f889645bf52440b3d4ad328167b4398d6ca3b0bd"
+    },
+    {
+      "bytes": 248,
+      "path": "NumStability/Algorithms/HighamChapter12OmegaDiscontinuity.lean",
+      "sha256": "f80b95255894ebbf48062b1dccd9327bc9ea875d25e8e9d47ab307c1c11cff4e"
+    },
+    {
+      "bytes": 218,
+      "path": "NumStability/Algorithms/HighamChapter12Problem12_2.lean",
+      "sha256": "e3f210e92e2295b33b8c19376355e6088581f713051502fc7087b68f6c4771af"
+    },
+    {
+      "bytes": 62642,
+      "path": "NumStability/Algorithms/HighamChapter15BoydBridges.lean",
+      "sha256": "b6f3b98adee57282849bc819476d3e0eedf9cb45bac445938237b673b56fe940"
+    },
+    {
+      "bytes": 51861,
+      "path": "NumStability/Algorithms/HighamChapter15BoydConcreteLemma3.lean",
+      "sha256": "0ad9b04f3093d56d688af25cf85c6db8f99022db5fc374aaf9929ec0ebe6045c"
+    },
+    {
+      "bytes": 19155,
+      "path": "NumStability/Algorithms/HighamChapter15BoydLocalStability.lean",
+      "sha256": "0797f6f5f200f1dd434fc005e7d1e7aa52b246260252819193fa69a05c9350f9"
+    },
+    {
+      "bytes": 28207,
+      "path": "NumStability/Algorithms/HighamChapter15BoydRowwiseDomain.lean",
+      "sha256": "fb74346fe322886f2b1913bbab5eb35571b19bc5b3ee81445595217229a95c7f"
+    },
+    {
+      "bytes": 9585,
+      "path": "NumStability/Algorithms/HighamChapter15BoydScalar.lean",
+      "sha256": "6a6407d757408c1adaba91d0d5c387a3d3eb44daa4f70cd9ab5ed0b4d11219f2"
+    },
+    {
+      "bytes": 11603,
+      "path": "NumStability/Algorithms/HighamChapter15BoydSourceClosure.lean",
+      "sha256": "2aa6c707fb5914ea5ce8688c8fe3d905e0b00208ec1e08a4f09586d4838b739e"
+    },
+    {
+      "bytes": 19215,
+      "path": "NumStability/Algorithms/HighamChapter15BoydSourceDomain.lean",
+      "sha256": "7842628ec18f0a6c0f6004e6f42e173dff911464bd29ed029c6dc6f1accdc76a"
+    },
+    {
+      "bytes": 77952,
+      "path": "NumStability/Algorithms/HighamChapter15BoydSourceLocal.lean",
+      "sha256": "21639f4dd68f3ca11ffc451545960bf2f1a4cf0d2838578447f48ef2f1b84962"
+    },
+    {
+      "bytes": 6061,
+      "path": "NumStability/Algorithms/HighamChapter15BoydSourceSecondDerivative.lean",
+      "sha256": "01b902d2f305c29750913351c1421a7c17f546fed08a9b52735c4ed1a36b5b23"
+    },
+    {
+      "bytes": 29233,
+      "path": "NumStability/Algorithms/HighamChapter15BoydUniqueness.lean",
+      "sha256": "cc2862a27ce296f8239f41f7b0ef0f6e38686f8ed7eb76fbcd76af775e5dd3e9"
+    },
+    {
+      "bytes": 264,
+      "path": "NumStability/Algorithms/HighamChapter15Ch7PracticalBoundBridge.lean",
+      "sha256": "040452b57b05e680f422a2226d38885bc893f9db6c241bb0674b1cf2c994f01a"
+    },
+    {
+      "bytes": 30060,
+      "path": "NumStability/Algorithms/HighamChapter15ConvergenceProse.lean",
+      "sha256": "dbc1743895614eb9afee92b222b80a08ef30b2a2ce32c194dbb6eb5bcc597a0a"
+    },
+    {
+      "bytes": 34019,
+      "path": "NumStability/Algorithms/HighamChapter15RectTermination.lean",
+      "sha256": "82c282a136b9f258b12e3165f3ed0c4e5d6d41279297c690f4d2702b9cee9363"
+    },
+    {
+      "bytes": 399,
+      "path": "NumStability/Algorithms/HighamChapter3NoGuardDotBridge.lean",
+      "sha256": "42fbd94ba279c879ae928c062cabb821f97a40b0f5c362e3208ba4385e28c1d0"
+    },
+    {
+      "bytes": 315,
+      "path": "NumStability/Algorithms/HighamChapter4KaoWangScope.lean",
+      "sha256": "413b13b49461f0c7660782ef8191d571f6ba351342bcecfb2a9ff22d136b631f"
+    },
+    {
+      "bytes": 18043,
+      "path": "NumStability/Algorithms/HighamChapter5ComplexAlgorithm51.lean",
+      "sha256": "d6258dc253af25c67bac80d00040807f35b604a9a739d39a6263eaa87469f068"
+    },
+    {
+      "bytes": 349709,
+      "path": "NumStability/Algorithms/HighamChapter8.lean",
+      "sha256": "60a399799fcc89374c4c4fcc5977ba69f14cf38401358a556ee8f01f74c8ec6c"
+    },
+    {
+      "bytes": 6027,
+      "path": "NumStability/Algorithms/HighamChapter8FanInClosure.lean",
+      "sha256": "51fc5483c5f2b970bbc37ed7bc83e4e9f832cd3ac101e5a377abc8ca3c75f078"
+    },
+    {
+      "bytes": 241,
+      "path": "NumStability/Algorithms/HighamChapter8Lemma88SourceDiscrepancy.lean",
+      "sha256": "9e7c0000ca31584e12a577b54faadca36c83fa525989591972b1517df8f539a9"
+    },
+    {
+      "bytes": 5343123,
+      "path": "NumStability/Algorithms/HighamChapter9.lean",
+      "sha256": "b53e40d3e61a236d543b0fdbfb7d31414b2a6f33e6f5cf42ec9175d245e7ca41"
+    },
+    {
+      "bytes": 19487,
+      "path": "NumStability/Algorithms/HighamChapter9CompletePivotSharpClosure.lean",
+      "sha256": "8a1a4d0d865e87986100f7ae26a82c7e175b82c4406f51ccf7e776ea21d64a9c"
+    },
+    {
+      "bytes": 63533,
+      "path": "NumStability/Algorithms/HighamChapter9ComplexClosure.lean",
+      "sha256": "bd3ddfde861cbfb502dcccff651a261986c822c4e1f752c4264fc54b7eebc0eb"
+    },
+    {
+      "bytes": 7574,
+      "path": "NumStability/Algorithms/HighamChapter9ComputedCorrection.lean",
+      "sha256": "5b13c0a3db21490ebdffaa9fd4fbd42e8dc08417b03dd0fde8fe40a6a8b30f9c"
+    },
+    {
+      "bytes": 39834,
+      "path": "NumStability/Algorithms/HighamChapter9DoolittleClosure.lean",
+      "sha256": "aa3958ed90d2f71c9c0d6c4304b6225f02ba38b53d4be3e3741aba1aff917899"
+    },
+    {
+      "bytes": 144780,
+      "path": "NumStability/Algorithms/HighamChapter9Theorem914Actual.lean",
+      "sha256": "269e045cba36ed607af51c84e96fcaac0360107efb1ca85f6cc97f50b5ad0ca6"
+    },
+    {
+      "bytes": 15558,
+      "path": "NumStability/Algorithms/HighamChapter9Theorem914DiagDominant.lean",
+      "sha256": "f875e06cc1d57407e0dcbb6c5b95bc137d12807646d9fec2a2f7e7b84b78a7c1"
+    },
+    {
+      "bytes": 35427,
+      "path": "NumStability/Algorithms/HighamChapter9Theorem914Primitive.lean",
+      "sha256": "1f726be0ff2bd6b0e42a7c73cf113548d3bcf27714e2d8f14f09a3b71a360bb6"
+    },
+    {
+      "bytes": 42292,
+      "path": "NumStability/Algorithms/HighamChapter9Theorem97Classification.lean",
+      "sha256": "2afa6518a8881ca17efb490dc014674f94e974735f5f8738fa1b5ce762c1df97"
+    },
+    {
+      "bytes": 32414,
+      "path": "NumStability/Algorithms/HighamChapter9Theorem99Closure.lean",
+      "sha256": "7681bd2987f4daf289519874af302db27bf86046a344c59db75c6f46b647585a"
+    },
+    {
+      "bytes": 43962,
+      "path": "NumStability/Algorithms/HighamChapter9Theorem99ComplexClosure.lean",
+      "sha256": "d2c2eb8aac1cb1a54619d7961dea4edee83f501bb10876869894a3f050cb4b6f"
+    },
+    {
+      "bytes": 141739,
+      "path": "NumStability/Algorithms/HighamChapters1To9SourceClosure.lean",
+      "sha256": "eacee868c4d8f8ab9d7ecefdd40b059ca301080b7ff5f1554c6e2ff951dd1010"
+    },
+    {
+      "bytes": 9702,
+      "path": "NumStability/Algorithms/HighamLemma88Entrywise.lean",
+      "sha256": "2177fb0f911fe444ca4d56b3d71c5a09def77d6b608b7444a0cd275318528f37"
+    },
+    {
+      "bytes": 384165,
+      "path": "NumStability/Algorithms/Horner.lean",
+      "sha256": "1410515734fa7b9a572be20a6188b4a520b36ed2e3a6da8945d9b65ebdab9816"
+    },
+    {
+      "bytes": 174,
+      "path": "NumStability/Algorithms/InsertionSum.lean",
+      "sha256": "894e35bdb70785ad7cc7585d3d4f3ba32a837c9f6d13fca701cc1f63b438fa54"
+    },
+    {
+      "bytes": 207,
+      "path": "NumStability/Algorithms/InverseBounds.lean",
+      "sha256": "068203e159345c55272cbd9b4920ec88ec1e9dec81a6490989e74edf07b68db9"
+    },
+    {
+      "bytes": 91124,
+      "path": "NumStability/Algorithms/IterativeRefinement.lean",
+      "sha256": "127a449e2edeffd37ff311bf35d1eab0fde1483fbdf583482361a9eba105b810"
+    },
+    {
+      "bytes": 248369,
+      "path": "NumStability/Algorithms/KahanAbsolute.lean",
+      "sha256": "9e2a22b364ccea7e9101f5a7d0d7e17595af7ddb7b24c089b3d2f188befdeff0"
+    },
+    {
+      "bytes": 387,
+      "path": "NumStability/Algorithms/KahanCompensatedFiniteFormat.lean",
+      "sha256": "c46abebd3e2af05494fdb5f1828bcbe01617ae4b75029908cd6be232ea282244"
+    },
+    {
+      "bytes": 4219241,
+      "path": "NumStability/Algorithms/LU/BlockLU.lean",
+      "sha256": "6794693991cbcf7abbdc3c6c2d31a362746609c0cbc14210486191e44a3e80e7"
+    },
+    {
+      "bytes": 35059,
+      "path": "NumStability/Algorithms/LU/BlockLUArbitraryNormSourceClosure.lean",
+      "sha256": "adda5e2f2112a33515e26ec8de9e115fd4bb2d975b42e720d83ccabc7ad9fa1f"
+    },
+    {
+      "bytes": 63806,
+      "path": "NumStability/Algorithms/LU/BlockLUComputationSourceClosure.lean",
+      "sha256": "53755daa743756703b50f0498f4eec363c36509bb18920d95345f40dc8fe5f52"
+    },
+    {
+      "bytes": 28822,
+      "path": "NumStability/Algorithms/LU/BlockLUFirstOrderFamilies.lean",
+      "sha256": "133b8ef4eb57d0a5180fc5e1ed8d64f52f9119be8b95286b1f7fb6e58351b515"
+    },
+    {
+      "bytes": 25649,
+      "path": "NumStability/Algorithms/LU/BlockLUPointRowGrowthSourceClosure.lean",
+      "sha256": "59db1e1bc1503e8c30b9e1d2e8a717b6592aeffd5cf1b53bbe95d435d9b94ea3"
+    },
+    {
+      "bytes": 21306,
+      "path": "NumStability/Algorithms/LU/BlockLURowSourceClosure.lean",
+      "sha256": "a22f8373ba7404aba5f3dbfffd56df28a430613a8cad46a10f204e883ba24f5e"
+    },
+    {
+      "bytes": 12085,
+      "path": "NumStability/Algorithms/LU/BlockLUSPDFamilies.lean",
+      "sha256": "95bf945182b8505f5a1ce18aa656132e7ece86c42ac860a01970e25683db4d23"
+    },
+    {
+      "bytes": 50100,
+      "path": "NumStability/Algorithms/LU/BlockLUSPDSourceClosure.lean",
+      "sha256": "95c1a91b81170148b4e75214d164e41dc730b13b2ea1cf9a2a434272fe2615fd"
+    },
+    {
+      "bytes": 60755,
+      "path": "NumStability/Algorithms/LU/BlockLUScalarGrowthBridge.lean",
+      "sha256": "24809e0eceadfe94c655a0d6e84dfb929da6174fe081cfa65148b907d5b3fcdc"
+    },
+    {
+      "bytes": 16689,
+      "path": "NumStability/Algorithms/LU/BlockLUSourceClosure.lean",
+      "sha256": "b31659e04fb76f5db860021b6debf8b9791e293773c883fde4dbf7ea5b7df217"
+    },
+    {
+      "bytes": 267,
+      "path": "NumStability/Algorithms/LU/BlockLUTable13_1Families.lean",
+      "sha256": "5bbc6cca25ead5580cd2320292ba8f88d0f4e1b47d77dfd8343fa3a7487f5580"
+    },
+    {
+      "bytes": 57256,
+      "path": "NumStability/Algorithms/LU/BlockLUVarying.lean",
+      "sha256": "b0b44cc28d63d572f50ebd6f5ddca636b112a31abaade32cbb928b128b43f8bb"
+    },
+    {
+      "bytes": 93547,
+      "path": "NumStability/Algorithms/LU/Doolittle.lean",
+      "sha256": "29d1787515776ee7715794c3766121ac9805758cbdd9464f50ad66f8a631a1db"
+    },
+    {
+      "bytes": 38857,
+      "path": "NumStability/Algorithms/LU/GaussianElimination.lean",
+      "sha256": "efee19bec906212585719c2d7799af59e2c927301b13968ab2bc211d17057620"
+    },
+    {
+      "bytes": 46566,
+      "path": "NumStability/Algorithms/LU/GrowthFactor.lean",
+      "sha256": "fb594f2e22c0b02df92082d1c95ff81ba516836b5d5ee88b178498ad3c07f831"
+    },
+    {
+      "bytes": 265,
+      "path": "NumStability/Algorithms/LU/Higham13DemmelSharpMultiplier.lean",
+      "sha256": "fa8e5d99c81ce9d089916c05bb09aa939a3ee6ea7201598593c7c1cb90dc271b"
+    },
+    {
+      "bytes": 27154,
+      "path": "NumStability/Algorithms/LU/Higham15Problem15_4.lean",
+      "sha256": "c10d10f724652725529039e9aeddb84ec2d01dee0a0642602661b31ffb3cd2d8"
+    },
+    {
+      "bytes": 15924,
+      "path": "NumStability/Algorithms/LU/Higham15Problem15_6.lean",
+      "sha256": "b68139173d323f7c1561ed7660215b0067763baece71d45764ea303e22e26e25"
+    },
+    {
+      "bytes": 41941,
+      "path": "NumStability/Algorithms/LU/Higham15Problem15_6Closure.lean",
+      "sha256": "3bd6da7f99c0c5fd75596c5b39e638fe03dd4f7da4bd1f5053ea83bfddb8b043"
+    },
+    {
+      "bytes": 26707,
+      "path": "NumStability/Algorithms/LU/Higham15Problem15_6Operational.lean",
+      "sha256": "c3b55ff0fce761b320a96953935f55fa1c3d5e393f3b7d7d7009df8c92161e74"
+    },
+    {
+      "bytes": 26431,
+      "path": "NumStability/Algorithms/LU/LUSolve.lean",
+      "sha256": "aa8f18ec5118d5ebe15325850f9cc3f33ed5d97e7652ae10d85b871865a868fd"
+    },
+    {
+      "bytes": 10631,
+      "path": "NumStability/Algorithms/LU/SpecialMatrices.lean",
+      "sha256": "b65dc807d79435007931cb748a74ddfa107277fd3776b0874c79d46da7362e35"
+    },
+    {
+      "bytes": 18939,
+      "path": "NumStability/Algorithms/LU/Tridiagonal.lean",
+      "sha256": "21ce46df70e0da130e0a8d8f050cffa6c53dddce253ca78ee6a9086ea76455cb"
+    },
+    {
+      "bytes": 23924,
+      "path": "NumStability/Algorithms/LU/TridiagonalCond.lean",
+      "sha256": "c6b5ba4fe8cc8821003802e801dcbea7f97a4982a53e72097aaa549ecc8440c2"
+    },
+    {
+      "bytes": 7264,
+      "path": "NumStability/Algorithms/LU/TridiagonalCondCh15.lean",
+      "sha256": "fec1889e85dd4bb0aec9e1cfc66c0b00a25c107bce628ee6b336f509f3bc79bc"
+    },
+    {
+      "bytes": 37187,
+      "path": "NumStability/Algorithms/LU/TridiagonalCondCh15Closure.lean",
+      "sha256": "00385d500551913c574e486d1189a29a8e11ff41d058513745714e4609c004c2"
+    },
+    {
+      "bytes": 10584,
+      "path": "NumStability/Algorithms/LU/TridiagonalCondCh15IkebeClosure.lean",
+      "sha256": "b8a9c4a829a3e5cd3061badc8a1083898bef1f828f66f892416d1926b431f059"
+    },
+    {
+      "bytes": 66085,
+      "path": "NumStability/Algorithms/LU/TridiagonalRecurrence.lean",
+      "sha256": "6f63eac3b65fc50fcbce7edd20357723cc7c536d6e705f7eb388a3cd2d3adfc0"
+    },
+    {
+      "bytes": 16779,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Algorithms.lean",
+      "sha256": "df9524ade6ac925dde8680e7d50600712da4560988371e93f7646041d5a01fbc"
+    },
+    {
+      "bytes": 18754,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20AlternativeBound.lean",
+      "sha256": "baade3437949a9dbc85bb677504d3bf987077b2bcf6003f9ccf6d142a018363f"
+    },
+    {
+      "bytes": 9034,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20CrossProductExample.lean",
+      "sha256": "58217c023bc9320dd656853397254225c24a1d4aac48f57903fdb9507168074b"
+    },
+    {
+      "bytes": 57138,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20EliminationActual.lean",
+      "sha256": "e45e43e0497fa076cc3bfae3d0c985d6a15f0553e0e7ec9bef4ae53e4224f3e0"
+    },
+    {
+      "bytes": 54246,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Equations.lean",
+      "sha256": "4b9aa913b4f315e69b5a0bb5d6b2e30020c8aaba40e8fb38cf2fcd095e8415e6"
+    },
+    {
+      "bytes": 9228,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20ExampleCondition.lean",
+      "sha256": "bec58b0746b7dff47a4498209d84df41e45865b2d2ec7d659810feb499c3dccf"
+    },
+    {
+      "bytes": 30832,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20GeneralWedin.lean",
+      "sha256": "b39f6cf74ac110e1762ddf9c9ca4e4bd324f1f37993681a5a3184971be72584b"
+    },
+    {
+      "bytes": 27299,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Lemma20_11.lean",
+      "sha256": "06cf991f1b60cc2c327604251b1c16a753312963b79f271b8ab15d43bd8628df"
+    },
+    {
+      "bytes": 18281,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Lemma20_12.lean",
+      "sha256": "8f3de0177c1c064df69a724be5ca166caf9606591f6caf84485052652e6c6827"
+    },
+    {
+      "bytes": 35378,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20MGSStability.lean",
+      "sha256": "f0ba5af542ea7d1df50101119ce0723653169f7a5a1e1746a48ace59dc77dff4"
+    },
+    {
+      "bytes": 10378,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20MPProse.lean",
+      "sha256": "2987e60bca22b3f5d361d4dde407fbaa844fa1bb166b7317da842a361fb9601c"
+    },
+    {
+      "bytes": 15240,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20MinimumNormBackwardError.lean",
+      "sha256": "d051f46a21f8c98998c555f73ea8c53dc495e1f1d8e34be68e532c268efcf966"
+    },
+    {
+      "bytes": 24957,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20NormalEquationsNorms.lean",
+      "sha256": "37c5cd53a7b95f6d52d590042cc53f1dccf33f218c06fe1037c4c475bc117ac4"
+    },
+    {
+      "bytes": 13656,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Problem20_3.lean",
+      "sha256": "49fb7d704999433321641d428bbeed49b78efe98eb2141beb30fb2c7936a2400"
+    },
+    {
+      "bytes": 20635,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Prose.lean",
+      "sha256": "6b503858a615b1cbb4dd9317c224830a19fe6803e61bcefb62421c441a5979e6"
+    },
+    {
+      "bytes": 10491,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20QuantitativeProse.lean",
+      "sha256": "8e8ed4e49c3203e4cca920db786b40ecb258fbbe973ad9e78dd0c51097d9a79b"
+    },
+    {
+      "bytes": 22079,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Refinement.lean",
+      "sha256": "5402a15491b448d592f5ec4e0514c353cef1a0d1319ecaab5ac3a57ba1798f79"
+    },
+    {
+      "bytes": 18022,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Remaining.lean",
+      "sha256": "454dd157b5adf6811c230fba6d70147597156604c0bb19946269a0749e45324d"
+    },
+    {
+      "bytes": 64983,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20ResidualQuality.lean",
+      "sha256": "4809a0ca697ddf736364ce6dd61032a0ff0787e11079521dfaa2c68217d08445"
+    },
+    {
+      "bytes": 78096,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20RowSorting.lean",
+      "sha256": "5ec2eca3e3748973e5957d898dff507beb07eef9b3ee36731a5a2c682b834fef"
+    },
+    {
+      "bytes": 336,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20SourceAliases.lean",
+      "sha256": "fb21d0efd04294a7378f8ba439ebb221b5fe848bf0b8bf48339657e18dc68ed9"
+    },
+    {
+      "bytes": 52546,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Theorem20_10.lean",
+      "sha256": "ed88d219f790eefb54e242b8e799e0e40247a06e01ef4bae8bbce22bfa132231"
+    },
+    {
+      "bytes": 9700,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Theorem20_3.lean",
+      "sha256": "0f70845ae7f0a546f2c8bcdd94b5a26e9a4e6172be1232228f32dcab3b3d91a0"
+    },
+    {
+      "bytes": 43564,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Theorem20_4Absorption.lean",
+      "sha256": "6a19ac73b407d213f6d88fb2f4ebf6df5c457c86ddd23f38ce211cfc97f7609e"
+    },
+    {
+      "bytes": 134270,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Theorem20_7.lean",
+      "sha256": "37a62b4caee1f1030684f4c5ab832f4d947c3dbbc706ea90e0d6917d1470e567"
+    },
+    {
+      "bytes": 93773,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Theorem20_7ActualAssembly.lean",
+      "sha256": "de41fc199a844ff020571a51547346529842e0648514ab8ee7d4b548da76af14"
+    },
+    {
+      "bytes": 59581,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Theorem20_7ActualBackSub.lean",
+      "sha256": "26f83aeb678e234b6556a93364b7776dbeb53904281583d7ea4904b8a32aeef6"
+    },
+    {
+      "bytes": 53238,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Theorem20_7ActualClosure.lean",
+      "sha256": "e63680b4d90619372421c9c583cb77833265eefac7f0fce69ea7aa55fcfe85b3"
+    },
+    {
+      "bytes": 13463,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Theorem20_7ActualGrowth.lean",
+      "sha256": "0f2c7c4a9cdeb937453c2639ec833ecd39c6c4e93441cef2a031f50693459aed"
+    },
+    {
+      "bytes": 24001,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Theorem20_7ActualRhs.lean",
+      "sha256": "6cb950c7dee9a9307b930fc3e7cde08ece41442fb6a9bec3e99a55d0c0f9b9f5"
+    },
+    {
+      "bytes": 47277,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Theorem20_7ActualTrace.lean",
+      "sha256": "f7b8cbf3d98488839f83542da9d327ea5e40dbbc922e0b08329c707c9a3fccd8"
+    },
+    {
+      "bytes": 118643,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Theorem20_7Contract.lean",
+      "sha256": "6091592b538e448e8497fa7c7f0db46f81f54b5677c6971778eafb48606ff91f"
+    },
+    {
+      "bytes": 36375,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Theorem20_7QdR.lean",
+      "sha256": "9c5b025d3a60c0c4618387511f80ff011268b5507baa5751d785004badda0d2f"
+    },
+    {
+      "bytes": 16885,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Theorem20_7Runtime.lean",
+      "sha256": "1d4044fc5a257c0740b34a209930730388981d2020ecafa70ca310ad0e0575b9"
+    },
+    {
+      "bytes": 46261,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Theorem20_7SourceTrace.lean",
+      "sha256": "1de87b473595f6575901518aa59ee9f56b077e756d7de6a35548749cc208f6b3"
+    },
+    {
+      "bytes": 118412,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20Theorem20_8.lean",
+      "sha256": "c5230c8b715162ac77aba3866dabeb7990f5bf87415afb314a24ec3c62ceddc1"
+    },
+    {
+      "bytes": 19085,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20WeightedLimit.lean",
+      "sha256": "322d683c0f92b15e07342aa22a105a31904ecbe5df646d4c90da37915add7d41"
+    },
+    {
+      "bytes": 56969,
+      "path": "NumStability/Algorithms/LeastSquares/Higham20ZeroDeltaB.lean",
+      "sha256": "680a1e2ac7b01913c8f0d01ec03855b720b393494c7efde0dc338051c877d507"
+    },
+    {
+      "bytes": 5061042,
+      "path": "NumStability/Algorithms/LeastSquares/LSE.lean",
+      "sha256": "ba189395dc89dcb70c5104770ce1cf0e278b6a381d36715465fca012c61bf88a"
+    },
+    {
+      "bytes": 20560,
+      "path": "NumStability/Algorithms/LeastSquares/LSNormalEquations.lean",
+      "sha256": "01127eb2b46bef7f76fabcd771ec94f55201c497a7b9580fe601fbe2c7253c58"
+    },
+    {
+      "bytes": 421817,
+      "path": "NumStability/Algorithms/LeastSquares/LSPerturbation.lean",
+      "sha256": "2119c6a918370069e42588ecb981ccbdeab56209a0ab38c181f4bdd9ad67f914"
+    },
+    {
+      "bytes": 3451866,
+      "path": "NumStability/Algorithms/LeastSquares/LSQRSolve.lean",
+      "sha256": "af7a6f7175c210642841a426891fbfc393f5d28057d9edb610f0ea3ead71b94a"
+    },
+    {
+      "bytes": 52582,
+      "path": "NumStability/Algorithms/LinearSystems/Triangular/BackSubstitution.lean",
+      "sha256": "3654411ae16cc0e1e6d312d1cc1a553f97a5048173f3a06f1f940f2747c62b54"
+    },
+    {
+      "bytes": 2470,
+      "path": "NumStability/Algorithms/LinearSystems/Triangular/Combined.lean",
+      "sha256": "8e9eec514ceef7ad02fc6bfdc334f6965ad9fc1c7092319be2dfe331ecae9d4a"
+    },
+    {
+      "bytes": 55027,
+      "path": "NumStability/Algorithms/LinearSystems/Triangular/ComparisonBounds.lean",
+      "sha256": "c5b75e4a6af8d20944da2c44b9a82a2088adb250d08f064b6c8266183d707293"
+    },
+    {
+      "bytes": 42184,
+      "path": "NumStability/Algorithms/LinearSystems/Triangular/DiagonalDominance.lean",
+      "sha256": "f85b4e3af1394b6963578588a56f97fc61a23cc12bbfa5e697d6dc7b5b5e2f78"
+    },
+    {
+      "bytes": 30163,
+      "path": "NumStability/Algorithms/LinearSystems/Triangular/ForwardSubstitution.lean",
+      "sha256": "bef294e01bc58160e440580b5a424e7aaf7217b9789af6033911d231fb02ce6f"
+    },
+    {
+      "bytes": 47556,
+      "path": "NumStability/Algorithms/LinearSystems/Triangular/InverseBounds.lean",
+      "sha256": "17e9dac8963f2ac768bb619014747ce5f3e83a9853690475018bf0e4aaa98c88"
+    },
+    {
+      "bytes": 603,
+      "path": "NumStability/Algorithms/LinearSystems/Triangular.lean",
+      "sha256": "9eeed9e3796f6ce667ee9586536fe6b381c6bda3a3a942d44a6c51e1a35ed261"
+    },
+    {
+      "bytes": 7566,
+      "path": "NumStability/Algorithms/LogExpProduct.lean",
+      "sha256": "57aaf30fd0a0ceaf70e73ae6caf057a44879577c2fb3c5753e64c196c9ee1ccb"
+    },
+    {
+      "bytes": 12714,
+      "path": "NumStability/Algorithms/MMatrix.lean",
+      "sha256": "3be5b5b2ee40474388a55a3756f001ae9972c97f797ff47754b7e9d09fe6e014"
+    },
+    {
+      "bytes": 38235,
+      "path": "NumStability/Algorithms/MatMul.lean",
+      "sha256": "f95979ec9721b543bed9ab28a16fb6b1e8e8b2bdbc64aae3984fd9cef6754322"
+    },
+    {
+      "bytes": 15059,
+      "path": "NumStability/Algorithms/MatMulBackwardError.lean",
+      "sha256": "7f264266792da5b4def4702e588a49cacfa1d19d3484da24da1f51a366e3f20b"
+    },
+    {
+      "bytes": 6642,
+      "path": "NumStability/Algorithms/MatSeqProduct.lean",
+      "sha256": "12bec734be1900f4bee7cf5d09f2960bd4a95416adff67efa98fbdbfdac0819d"
+    },
+    {
+      "bytes": 17383,
+      "path": "NumStability/Algorithms/MatVec.lean",
+      "sha256": "57dc318c8b966112b197965ac1a49a52b7ea3f9f5da5cef179489c685373131d"
+    },
+    {
+      "bytes": 417276,
+      "path": "NumStability/Algorithms/MatrixInversion.lean",
+      "sha256": "844b0a0d5f385b8bebcb24bb5b84025eedea5a2c235729a76a3c78bdabf9107a"
+    },
+    {
+      "bytes": 37439,
+      "path": "NumStability/Algorithms/MatrixInversionMethod2BInstance.lean",
+      "sha256": "1af8297a2a516e399e0f332c8234855fad12ec3125d050a81287f7fb7f0094f3"
+    },
+    {
+      "bytes": 52543,
+      "path": "NumStability/Algorithms/MatrixPowers.lean",
+      "sha256": "7b46c3d795145de3ef2ba2276a895cf09f018004479ddc682ecec3c529ef4f2f"
+    },
+    {
+      "bytes": 52912,
+      "path": "NumStability/Algorithms/MatrixPowersComplex.lean",
+      "sha256": "1998063016678fea6bc859b6226551e97032d323d32a6bb136211113a868ddcd"
+    },
+    {
+      "bytes": 39490,
+      "path": "NumStability/Algorithms/MatrixPowersJordan.lean",
+      "sha256": "60ab5555eb0ee71f9e57cca18544ca880132efa42e9bcf02e952595f75be9c0b"
+    },
+    {
+      "bytes": 21197,
+      "path": "NumStability/Algorithms/MatrixPowersLp.lean",
+      "sha256": "769b6b9534aa27f30700679e438f1a093744552381a489acd4e8cd67beeaaace"
+    },
+    {
+      "bytes": 26365,
+      "path": "NumStability/Algorithms/MatrixPowersLpJordan.lean",
+      "sha256": "de1a80597b2677e234197f02aff6c1132cc5ddb3162629dcbfb72e5d029c9d58"
+    },
+    {
+      "bytes": 7594,
+      "path": "NumStability/Algorithms/MatrixPowersPseudospectral.lean",
+      "sha256": "8a073ecf0fe4a3171229e023e4833ebe51d34bbf96757564186c74a91c5d0e81"
+    },
+    {
+      "bytes": 14615,
+      "path": "NumStability/Algorithms/MatrixPowersPseudospectralCriterion.lean",
+      "sha256": "7c2d123225a0d36d3edd331f154dce377d75d7c3fee21b8f1df36b9295016352"
+    },
+    {
+      "bytes": 10244,
+      "path": "NumStability/Algorithms/MatrixPowersSpectral.lean",
+      "sha256": "3ad603249a54a96fb1141dd1b62a7fdf0c1880055f3534e83264e27b765b17d8"
+    },
+    {
+      "bytes": 43463,
+      "path": "NumStability/Algorithms/NeumaierCompensatedFiniteFormat.lean",
+      "sha256": "b06f54efd72bdf9ddb1c1c1fbd1581351fba9236991872fe70121a4094d1bdc7"
+    },
+    {
+      "bytes": 273,
+      "path": "NumStability/Algorithms/Nonlinear/Higham25.lean",
+      "sha256": "b7f420e2dddaa90a95ecd4ab9bf002e728d6ad0cdbbd36c7a010c7aa54565693"
+    },
+    {
+      "bytes": 257,
+      "path": "NumStability/Algorithms/Nonlinear/Higham25EigenClosure.lean",
+      "sha256": "615d9a4f12e14a2b655818d3f9f02c4bb2e1721e40a4041895e30346197f61e8"
+    },
+    {
+      "bytes": 243,
+      "path": "NumStability/Algorithms/Nonlinear/Higham25Problem25_1.lean",
+      "sha256": "1202455d9ef44a2245fa46cef59c9bff1576111823a209a960022a50e5b808e7"
+    },
+    {
+      "bytes": 14677,
+      "path": "NumStability/Algorithms/Norm2.lean",
+      "sha256": "87edb4fa973f787ca2f933b0ea3753ef8614a38cfe10c88d34dd563f48000cf1"
+    },
+    {
+      "bytes": 172575,
+      "path": "NumStability/Algorithms/OrderingExamples.lean",
+      "sha256": "7f8024f0fd65820a09519ee76bc9f1e4e02dc9f6476f36d4dee25f3ead3034b1"
+    },
+    {
+      "bytes": 7480,
+      "path": "NumStability/Algorithms/OuterProduct.lean",
+      "sha256": "1fa4bd83c6faf4410fd12d8fd377bcb55c37d43a36886333e5479992a01214b0"
+    },
+    {
+      "bytes": 53538,
+      "path": "NumStability/Algorithms/PNormPowerMethod.lean",
+      "sha256": "e60cdfd514409dca885c6286911749ade68233144da92566d2ca0c69afc9c787"
+    },
+    {
+      "bytes": 26934,
+      "path": "NumStability/Algorithms/PNormPowerMethodGeneralP.lean",
+      "sha256": "2544f86b0d26ed95b44e5f28ae87de882d8826076db81d4a5ae31f5d94a273ef"
+    },
+    {
+      "bytes": 15633,
+      "path": "NumStability/Algorithms/PNormPowerMethodRect.lean",
+      "sha256": "f3d246b7d17e1e52298ab96a403dcc70464f6e3c6dd3b43f7d2e63c1b10aa83d"
+    },
+    {
+      "bytes": 171,
+      "path": "NumStability/Algorithms/PairwiseSum.lean",
+      "sha256": "500b1efd9d446b8537b924fb7be5f576621e4c81738833e19c19e359e98c335f"
+    },
+    {
+      "bytes": 175,
+      "path": "NumStability/Algorithms/PlusMinusSum.lean",
+      "sha256": "b96819e0ec459ee808d0e3a411e02ab26e2d22549b53f1978c4ff20a619c26d0"
+    },
+    {
+      "bytes": 12690,
+      "path": "NumStability/Algorithms/PriestAccuracy.lean",
+      "sha256": "f727a7e8e28d3be99ae72f4c0eb1683ef87ede6335673f1de7e8b62d3ff9e59e"
+    },
+    {
+      "bytes": 21365,
+      "path": "NumStability/Algorithms/PriestDefectBounded.lean",
+      "sha256": "a46e9299b22176d9ff78087228d4c44ae1782f8ae33aa236f06270db81274af8"
+    },
+    {
+      "bytes": 27219,
+      "path": "NumStability/Algorithms/PriestFiniteFormat.lean",
+      "sha256": "2333d8d0d900d5f7351e432e444dbedff0647156490844cb8f46e1af4a8828d4"
+    },
+    {
+      "bytes": 237,
+      "path": "NumStability/Algorithms/Problem44SixTerm.lean",
+      "sha256": "b59c9441e514e105435dc4798b4a22d4a75c81f18bce9f266fe586609aed9c1c"
+    },
+    {
+      "bytes": 20811,
+      "path": "NumStability/Algorithms/QR/GivensMatrixStep.lean",
+      "sha256": "0352bc8840b20986c7801eb3ff7496e870edc50bddcab59842e2a723727db959"
+    },
+    {
+      "bytes": 102829,
+      "path": "NumStability/Algorithms/QR/GivensQR.lean",
+      "sha256": "2a9236ec7ff10c174e409958fcf1753e9b146ba14f4c0101a6a4f04e0bcd1f9b"
+    },
+    {
+      "bytes": 54548,
+      "path": "NumStability/Algorithms/QR/GivensSpec.lean",
+      "sha256": "4def632c400efa761702817a21a551b09c27f911629ce1ccefc726cdafe59a86"
+    },
+    {
+      "bytes": 236711,
+      "path": "NumStability/Algorithms/QR/GramSchmidt.lean",
+      "sha256": "ce2c05b83bd810379b958d7d7a9bc31ea0c3254471b0c14b5d6444893f130f68"
+    },
+    {
+      "bytes": 59761,
+      "path": "NumStability/Algorithms/QR/GramSchmidtPolar.lean",
+      "sha256": "f779195bb7125257c369ddbcfcd0ff558ca6938f2534d6f574ba72cf09fad210"
+    },
+    {
+      "bytes": 1785842,
+      "path": "NumStability/Algorithms/QR/Higham19.lean",
+      "sha256": "d58d34f1e10a8b46a22e893ccdd18b55988445ebf6f1b9d793e88c4249c12a28"
+    },
+    {
+      "bytes": 39210,
+      "path": "NumStability/Algorithms/QR/Higham19Alg11CGSRounded.lean",
+      "sha256": "6db4c37ca6abbca31a98839d1870ba82ab9a6dc7ae7561a45e904ecc6a8d8038"
+    },
+    {
+      "bytes": 4019,
+      "path": "NumStability/Algorithms/QR/Higham19Alg12MGSClosure.lean",
+      "sha256": "b4d68265b4aefcda774ffea39fb69c89f3a828d715c6697fabc9da5e668de651"
+    },
+    {
+      "bytes": 8221,
+      "path": "NumStability/Algorithms/QR/Higham19Alg12MGSNonbreakdown.lean",
+      "sha256": "d2719eeacd42e66f4985fdb25378b3b3b6aa1dc6a92ec34016fd6b13f819ee63"
+    },
+    {
+      "bytes": 96571,
+      "path": "NumStability/Algorithms/QR/Higham19Alg12MGSPaddedClosure.lean",
+      "sha256": "babaa0f5c7fcca6727de1ce7a62731657a1b96e0733f67e4454002357823a5be"
+    },
+    {
+      "bytes": 9395,
+      "path": "NumStability/Algorithms/QR/Higham19Alg12MGSRepair.lean",
+      "sha256": "71f191d2e5b4636109cadf2f9f53ef905e6fdd338d056e49435fda62aa7320b4"
+    },
+    {
+      "bytes": 49897,
+      "path": "NumStability/Algorithms/QR/Higham19Alg12MGSRounded.lean",
+      "sha256": "eef4b51592fde680b6a28103c94001f45b73a8fc2cfda311854dbbb7e0cf9ed2"
+    },
+    {
+      "bytes": 41819,
+      "path": "NumStability/Algorithms/QR/Higham19Alg12MGSSourceRate.lean",
+      "sha256": "db00527e2f36e1866e84e97bf06b8fe4a44b4fa3bf6b36bf2280dc2b19a2ce90"
+    },
+    {
+      "bytes": 11621,
+      "path": "NumStability/Algorithms/QR/Higham19FormedQ.lean",
+      "sha256": "bca53fd3678c44c52949e970b2083e4c7be2bbd3a380bbe9041462b3c0fe4a74"
+    },
+    {
+      "bytes": 42063,
+      "path": "NumStability/Algorithms/QR/Higham19Labels.lean",
+      "sha256": "ccef62600e1be2f595663049dc8732a3fb12063582109765fbb24b7d40e1cb27"
+    },
+    {
+      "bytes": 10840,
+      "path": "NumStability/Algorithms/QR/Higham19Lemma3ActualSequence.lean",
+      "sha256": "9498d796426f8b07d74e582da469593725e4838a8f438f322097807c7acdbeff"
+    },
+    {
+      "bytes": 15296,
+      "path": "NumStability/Algorithms/QR/Higham19Lemma7Gamma4.lean",
+      "sha256": "07ad9e17de127b0e891ea75d8a5e98f2788daf2f2e5b92d3cad5d4aa9325c591"
+    },
+    {
+      "bytes": 83862,
+      "path": "NumStability/Algorithms/QR/Higham19Lemma9DisjointSweep.lean",
+      "sha256": "fd9a98b8b3f415b69b55acebd33df115c03362439b5817a85cc5950d687d01aa"
+    },
+    {
+      "bytes": 21920,
+      "path": "NumStability/Algorithms/QR/Higham19PolarNearest.lean",
+      "sha256": "2780ebc02820f8566c524850d53680202557a61814821f2d2698d77fec8144f3"
+    },
+    {
+      "bytes": 62758,
+      "path": "NumStability/Algorithms/QR/Higham19Problem19_10.lean",
+      "sha256": "f60e8be640356261ca4c2ef8c06ebcbff0376c1b1027924af9725489fc1af600"
+    },
+    {
+      "bytes": 13968,
+      "path": "NumStability/Algorithms/QR/Higham19Problem19_9.lean",
+      "sha256": "a76bad2aae0ef93de0783ea3d275c5b969753204325e100322d401ae7d9d4dfb"
+    },
+    {
+      "bytes": 7781,
+      "path": "NumStability/Algorithms/QR/Higham19Problem6ActualStep.lean",
+      "sha256": "1fe3454edc61cc61aaa05dcb7eae557cb7c493c187a7ed790df597db1c26cedb"
+    },
+    {
+      "bytes": 55954,
+      "path": "NumStability/Algorithms/QR/Higham19Sensitivity.lean",
+      "sha256": "65903be9186cbbc4bfa991a47b8909f94d3c6f73d3046fbf48c7da563644b399"
+    },
+    {
+      "bytes": 26404,
+      "path": "NumStability/Algorithms/QR/Higham19SensitivityClosure.lean",
+      "sha256": "4c9550a1e403832003cc4cb02fb6524e96211d14e33e37ed2738ad29af1cf3b3"
+    },
+    {
+      "bytes": 12477,
+      "path": "NumStability/Algorithms/QR/Higham19StoredLoop.lean",
+      "sha256": "ea380a583301b55b40451cd26860d8b5e433b54dc87099f66481bba991eb9946"
+    },
+    {
+      "bytes": 24928,
+      "path": "NumStability/Algorithms/QR/Higham19StoredLoopAllPivots.lean",
+      "sha256": "df22fe4f653156d25a5c5ef0da939041a941f59ba4359b59bcae060f126ab533"
+    },
+    {
+      "bytes": 14781,
+      "path": "NumStability/Algorithms/QR/Higham19StoredLoopStrongModel.lean",
+      "sha256": "a61f2fb0b38273b36e5cae1c0f45bbfdf06c1c9667cbe12560b2f000c59eacf1"
+    },
+    {
+      "bytes": 21971,
+      "path": "NumStability/Algorithms/QR/Higham19SunBischof.lean",
+      "sha256": "0405045fc2dc487b019625bd16d6925667a1042965d70588f9f6db8532f12d21"
+    },
+    {
+      "bytes": 35634,
+      "path": "NumStability/Algorithms/QR/Higham19Theorem10ActualMatrix.lean",
+      "sha256": "f7ff3102629b234d7462aeaa6449612421cf16802bbc70e6df016d4a0bf80ceb"
+    },
+    {
+      "bytes": 13909,
+      "path": "NumStability/Algorithms/QR/Higham19Theorem5Nonbreakdown.lean",
+      "sha256": "296e1cc4dc22964c9aef79c8812e5bf823be40d5939881b5c69baa5197d86da1"
+    },
+    {
+      "bytes": 57194,
+      "path": "NumStability/Algorithms/QR/Higham19Theorem5SourceClosure.lean",
+      "sha256": "799dee2f5f84fbaf157939f3c6ff4ef9d03f5c675ffcccbc8080dcab035831ef"
+    },
+    {
+      "bytes": 1062,
+      "path": "NumStability/Algorithms/QR/Higham19Theorem6ActualSource.lean",
+      "sha256": "d1549d05486e92ddd1b2ae42f2ff7cd5c4d13a58e69eb6ad72790cb565befda0"
+    },
+    {
+      "bytes": 22766,
+      "path": "NumStability/Algorithms/QR/Higham19Thm6ColPivot.lean",
+      "sha256": "5f75a45af1e09a755bd753ed7487e0ea0084b45b3c1329b24852f9e1e785f205"
+    },
+    {
+      "bytes": 33662,
+      "path": "NumStability/Algorithms/QR/Higham19Thm6ColPivotFull.lean",
+      "sha256": "d1c345e9a1b9cd798de612a050fac30f91e1d0a22863e29a5f2b38a68dd20a92"
+    },
+    {
+      "bytes": 30487,
+      "path": "NumStability/Algorithms/QR/Higham19Thm6CoxHigham.lean",
+      "sha256": "b912cbaae3a2e053560981a8dadb47743a87c9593c8cf1788a059895b604c65f"
+    },
+    {
+      "bytes": 10436,
+      "path": "NumStability/Algorithms/QR/Higham19Thm6CoxHighamAssembly.lean",
+      "sha256": "f44195e6c15d0c6106b96843584917cbe54fdafdc3aa0062ea5260f4764e2172"
+    },
+    {
+      "bytes": 21452,
+      "path": "NumStability/Algorithms/QR/Higham19Thm6CoxHighamConcrete.lean",
+      "sha256": "86b1be53bb254b1018d7be6e8faa67a5dba1a475ffb4f8bfca1f9a2857992181"
+    },
+    {
+      "bytes": 20689,
+      "path": "NumStability/Algorithms/QR/Higham19Thm6CoxHighamFull.lean",
+      "sha256": "ba15253d8e2bd97c25985b8587e6b194b402199ee438f801a41b5731fa086083"
+    },
+    {
+      "bytes": 22683,
+      "path": "NumStability/Algorithms/QR/Higham19Thm6Elementwise.lean",
+      "sha256": "241f813f1e4e0c92f1a06dd5465a961058b1e1bd6ecbae2153dabaa373fa1837"
+    },
+    {
+      "bytes": 40110,
+      "path": "NumStability/Algorithms/QR/Higham19Thm6ElementwiseEntry.lean",
+      "sha256": "82b696b9a113e089d7f9f26b62c8a4e1aab134bd8502592d442181b58478c77c"
+    },
+    {
+      "bytes": 29159,
+      "path": "NumStability/Algorithms/QR/Higham19Thm6ElementwisePackaged.lean",
+      "sha256": "9c7b4c5e89d0da18bef4af28f5878a1245feda61a59e3c5b8f9e4a4153984fe5"
+    },
+    {
+      "bytes": 31266,
+      "path": "NumStability/Algorithms/QR/Higham19Thm6Final.lean",
+      "sha256": "2c6ccd3d4fdaf6fe74c2d1b981354fd1933b17e886707a682360a4f9f657eae4"
+    },
+    {
+      "bytes": 18794,
+      "path": "NumStability/Algorithms/QR/Higham19Thm6Pivoted.lean",
+      "sha256": "52b7cabafc205f3afc92de4e539eab82dcc7e8d0215e44cdafce80dfc1f53ebb"
+    },
+    {
+      "bytes": 18848,
+      "path": "NumStability/Algorithms/QR/Higham19Thm6RowSpecific.lean",
+      "sha256": "fada0aa7973cddb345b77485229ce5db2146c1f9a02f160a3be667bcab354813"
+    },
+    {
+      "bytes": 44024,
+      "path": "NumStability/Algorithms/QR/Higham19Thm6StrongModel.lean",
+      "sha256": "93b4cd35afbff126bada4d9c343b4e7befb003fe7fe989cb3b5542b486e54108"
+    },
+    {
+      "bytes": 17992,
+      "path": "NumStability/Algorithms/QR/Higham19TurnbullAitken.lean",
+      "sha256": "2c176c83a6a106a17b9222d87f60491b6288ae95d102afab0b5e2ebc95ea620b"
+    },
+    {
+      "bytes": 39420,
+      "path": "NumStability/Algorithms/QR/Higham19WYApplicationClosure.lean",
+      "sha256": "7d4ed90d454f9fed0d16c29bf7aa60bb96495b2d027e7ecf8c522e4bffe8c651"
+    },
+    {
+      "bytes": 31668,
+      "path": "NumStability/Algorithms/QR/HouseholderApply.lean",
+      "sha256": "501fcda00000217cae877ea2b5f1ae86f3982959aeed6ff3d4d515c57c7199d9"
+    },
+    {
+      "bytes": 149281,
+      "path": "NumStability/Algorithms/QR/HouseholderApplySupport.lean",
+      "sha256": "53f8f884bb304929a5ddf874b0b96203a48bbf37711bc0b5379e1241c34729c7"
+    },
+    {
+      "bytes": 35029,
+      "path": "NumStability/Algorithms/QR/HouseholderConstruction2.lean",
+      "sha256": "938245ccc844f896b4ee265ec99b32d6c03a53a5a996c002ee593bed8b75fa74"
+    },
+    {
+      "bytes": 12655,
+      "path": "NumStability/Algorithms/QR/HouseholderMatrixStep.lean",
+      "sha256": "4fdfb8681be3dc6484f53a685cdca2443cae96f36f93b3451880aeabce499b05"
+    },
+    {
+      "bytes": 9071,
+      "path": "NumStability/Algorithms/QR/HouseholderOneStep.lean",
+      "sha256": "64a3b6de9f28fc29f536a47edd456b7f47258eab85980f8c64fd40faa520854b"
+    },
+    {
+      "bytes": 19547,
+      "path": "NumStability/Algorithms/QR/HouseholderQApply.lean",
+      "sha256": "38c5a2dca0553c6876884c69d12716dadcb198dda744a4e9649ecada6679403a"
+    },
+    {
+      "bytes": 349197,
+      "path": "NumStability/Algorithms/QR/HouseholderQR.lean",
+      "sha256": "626a3cab9d5d0576c3e9d806b5248f381698af8601b537432cdcff28e30662e3"
+    },
+    {
+      "bytes": 265841,
+      "path": "NumStability/Algorithms/QR/HouseholderQRSupport.lean",
+      "sha256": "3f98b50dac695fb55c5d71cac80cb21bfba169eef9f8132f310e5ff0bf0078b0"
+    },
+    {
+      "bytes": 40200,
+      "path": "NumStability/Algorithms/QR/HouseholderReflector.lean",
+      "sha256": "af5648c3f8a4ef3eb6cb93712976ac3cbd52e41f8c96e5ccb977895d5e9c6c04"
+    },
+    {
+      "bytes": 13036,
+      "path": "NumStability/Algorithms/QR/HouseholderSpec.lean",
+      "sha256": "5a37a594e208b32379c55ae68dd729f7973b69cdd1f115bc7afec0501e71a84b"
+    },
+    {
+      "bytes": 89752,
+      "path": "NumStability/Algorithms/QR/HouseholderSpecSupport.lean",
+      "sha256": "62f81cafc6b7a70eb3865a23544f9d33ba66601e8af535c273accac694021514"
+    },
+    {
+      "bytes": 248356,
+      "path": "NumStability/Algorithms/QR/QRSolve.lean",
+      "sha256": "4c9e6a8d5586fe114786985c8224d96a7ef5f150a482e9a51f12ca870c093557"
+    },
+    {
+      "bytes": 5423,
+      "path": "NumStability/Algorithms/Quadrature.lean",
+      "sha256": "e8e68548861fce846d4351a5fb5469bbc93d3a916fad14fac26d0e1ca3d3d1a0"
+    },
+    {
+      "bytes": 67927,
+      "path": "NumStability/Algorithms/RandNLA/ElementwiseSampling.lean",
+      "sha256": "e71d7bf00ee77e1f590a66634159223cfba03e51665a8121fd1dead5821de904"
+    },
+    {
+      "bytes": 637845,
+      "path": "NumStability/Algorithms/RandNLA/ElementwiseSpectral.lean",
+      "sha256": "35519e85816604724a53ffd5a69ae211de0a634e758b00f60c57a2ad334cfa8a"
+    },
+    {
+      "bytes": 22849,
+      "path": "NumStability/Algorithms/RandNLA/ElementwiseTraceMGF.lean",
+      "sha256": "b58fc39ea287e2971b7aa6cddf4df4183c67e04da65eb03b3f6d0f2500275ac0"
+    },
+    {
+      "bytes": 99286,
+      "path": "NumStability/Algorithms/RandNLA/HitCountConcentration.lean",
+      "sha256": "ca33e8225a1b6eeabf774bcb58c3a367bba7c4529694d4542b6f400ac2e80393"
+    },
+    {
+      "bytes": 614809,
+      "path": "NumStability/Algorithms/RandNLA/LeastSquaresSketch.lean",
+      "sha256": "549397c78298ecbd299cea89c22a06cc022d7e45babb69a8249ac1efff3acaf8"
+    },
+    {
+      "bytes": 802347,
+      "path": "NumStability/Algorithms/RandNLA/LowRankApprox.lean",
+      "sha256": "dadbd1e47926ecec59596deaf25721e9fc5eac0c83e9b1b687f38757851949eb"
+    },
+    {
+      "bytes": 1107504,
+      "path": "NumStability/Algorithms/RandNLA/Preconditioning.lean",
+      "sha256": "facf840c6fb92b9c1e490eb3997d6f065e6777609e6fadaadd4bfcb9846a37ce"
+    },
+    {
+      "bytes": 36292,
+      "path": "NumStability/Algorithms/RandNLA/RowSampling.lean",
+      "sha256": "24eabf3bdddf141d50463027d0a18fd78579aa56c324774394aa186acd4dd4dd"
+    },
+    {
+      "bytes": 136032,
+      "path": "NumStability/Algorithms/RandNLA/RowSamplingGram.lean",
+      "sha256": "dcfc696bccb5c276d6dbd3f1b35ae0ea64f01b2eeff7b7aae5cbd061a629d0d9"
+    },
+    {
+      "bytes": 22315,
+      "path": "NumStability/Algorithms/RandNLA/RowSamplingLeverage.lean",
+      "sha256": "64c33a42c3f1da714594409562186ff8d568cd81b7c9a3e76f0a1bf0b1f60582"
+    },
+    {
+      "bytes": 67827,
+      "path": "NumStability/Algorithms/RandNLA/RowSamplingLeverageComputedBasis.lean",
+      "sha256": "80c30c47080de4cfae88d5f163f4e42d004b0c3764c40a7bf2fb9027a21b8f3d"
+    },
+    {
+      "bytes": 88488,
+      "path": "NumStability/Algorithms/RandNLA/RowSamplingLeverageMGF.lean",
+      "sha256": "7e9bfb5bc162d50e1d2a8a8fafa6fc78a91fb4f548052330f1e5f84915a9bd6e"
+    },
+    {
+      "bytes": 21608,
+      "path": "NumStability/Algorithms/RandNLA/RowSamplingTraceMGF.lean",
+      "sha256": "6b24f5b1e29ca0f213d90dd56e538aa42de482091d08c09575ea5d93d0e53102"
+    },
+    {
+      "bytes": 43962,
+      "path": "NumStability/Algorithms/RandNLA/UniformRowSampling.lean",
+      "sha256": "d809d1e97cb61b9673b4a730e06da0a427c527f2f73e000f36a8f9d6d625c06a"
+    },
+    {
+      "bytes": 31731,
+      "path": "NumStability/Algorithms/RandNLA/UniformRowSamplingComposition.lean",
+      "sha256": "454ee02094ca4fc9dc5077ed350fe0203f19c4f616e66b4a4c5a0b8ddd2185b3"
+    },
+    {
+      "bytes": 773623,
+      "path": "NumStability/Algorithms/RandNLA/UniformRowSamplingFP.lean",
+      "sha256": "882814b69764cd13680f7ea51a080343b45127e85fc856a12b6d5e9d01b0e4ca"
+    },
+    {
+      "bytes": 78468,
+      "path": "NumStability/Algorithms/RandNLA/UniformRowSamplingMGF.lean",
+      "sha256": "e1098b7e8ebd26bb893f7ce806eb3d5fd90bd9ffa69a188a1fe0e19aca33237a"
+    },
+    {
+      "bytes": 1277,
+      "path": "NumStability/Algorithms/RandNLA.lean",
+      "sha256": "7a688a6798ee3a099ec67f4348abc8a7a2017b25e5f5fc010c349836462c70d9"
+    },
+    {
+      "bytes": 12245,
+      "path": "NumStability/Algorithms/RankOneUpdate.lean",
+      "sha256": "ebcb76ee24c609b06cefe4bcc4c32b55dc6f23949a9201958426bba73630eeeb"
+    },
+    {
+      "bytes": 174,
+      "path": "NumStability/Algorithms/RecursiveSum.lean",
+      "sha256": "217d42a384a6a501087cfee761eae6280f76e2e0f9273b02837c859f7c1ab8d4"
+    },
+    {
+      "bytes": 452,
+      "path": "NumStability/Algorithms/SoftwareIssues/Higham27.lean",
+      "sha256": "54f5c2e79bde0142f39685ef0c5eb7c18589b200f4182a4d9feade87b1147564"
+    },
+    {
+      "bytes": 421,
+      "path": "NumStability/Algorithms/SoftwareIssues/Higham27Pythag.lean",
+      "sha256": "00e301214e4d1bf353be4508861cdd57f1e901c1697227337b775f80e2936ee9"
+    },
+    {
+      "bytes": 4274,
+      "path": "NumStability/Algorithms/SquareDifference.lean",
+      "sha256": "9a5d2ec6597342dfcc978dd2e72a640c1c93989618be5e887df3fe6d42bd8a6a"
+    },
+    {
+      "bytes": 175232,
+      "path": "NumStability/Algorithms/StationaryIteration.lean",
+      "sha256": "882e536f047975cf40c4179935e46b0e3d3e98cdecb26fbe21192b93193807f0"
+    },
+    {
+      "bytes": 86442,
+      "path": "NumStability/Algorithms/StationaryIterationDrazin.lean",
+      "sha256": "028a76dde538c6c8ea6f33a3444103d67bb051e6836d7ba2b63ee33905e513c2"
+    },
+    {
+      "bytes": 25228,
+      "path": "NumStability/Algorithms/StationaryIterationRounded.lean",
+      "sha256": "1d8170399c0d780c6af8b30a56f1abb5563341e3664afbb4d95c5c00f2148402"
+    },
+    {
+      "bytes": 26657,
+      "path": "NumStability/Algorithms/StationaryIterationSemiconvergent.lean",
+      "sha256": "3277265bd03a951d85e60e373a3ce7c1d533ad59850ac239994a629876b26398"
+    },
+    {
+      "bytes": 19782,
+      "path": "NumStability/Algorithms/StationaryIterationSemiconvergentExistence.lean",
+      "sha256": "0eb4fd085a456b4862bce39183a09a516a7e22730bfc6447c9e92fb16c8ce548"
+    },
+    {
+      "bytes": 698,
+      "path": "NumStability/Algorithms/StationaryIterationSeries.lean",
+      "sha256": "1bafd664cde639d6634e2b424881b4308cf6efbee08196a196a9b73981076c9c"
+    },
+    {
+      "bytes": 159,
+      "path": "NumStability/Algorithms/SumTree.lean",
+      "sha256": "dc20bef02ac42cb41486911ad38517b17a09459e27be1173481418844c6958ab"
+    },
+    {
+      "bytes": 22293,
+      "path": "NumStability/Algorithms/Summation/Accumulator.lean",
+      "sha256": "5a29f14e55e2ef36bf608708835036abb8a6d5d42ffd9a60176f23d46ec5c378"
+    },
+    {
+      "bytes": 11614,
+      "path": "NumStability/Algorithms/Summation/Compensated/Alternative/Core.lean",
+      "sha256": "b4eba6ce7de89c416588c4b5490dced280843a2f73f87d2eb7887e1667b3d3df"
+    },
+    {
+      "bytes": 31453,
+      "path": "NumStability/Algorithms/Summation/Compensated/Alternative/ErrorBounds.lean",
+      "sha256": "60e60ce6c388454a3ac8c4e1948224df40b1138c3fc9d21c4fe1cde0d81c436b"
+    },
+    {
+      "bytes": 314,
+      "path": "NumStability/Algorithms/Summation/Compensated/Alternative.lean",
+      "sha256": "d17a910f120345d47ea2d2ebd2bb27e22f3740eaaec2f2337a53eb5691d698f5"
+    },
+    {
+      "bytes": 1534,
+      "path": "NumStability/Algorithms/Summation/Compensated/CorrectionFormula.lean",
+      "sha256": "1f954b0ac834212a2ea95cf476e46211e2f28cdf2fd42e73c3a0a949305c9a38"
+    },
+    {
+      "bytes": 59789,
+      "path": "NumStability/Algorithms/Summation/Compensated/FastTwoSum.lean",
+      "sha256": "1392002724b87824e8753468c3d2384f3eb4d326693334aaf98c0753b2df9a30"
+    },
+    {
+      "bytes": 9408,
+      "path": "NumStability/Algorithms/Summation/Compensated/FiniteFormat.lean",
+      "sha256": "6754a23acb9f53c8fdb8c37dacaa68e571c3058e60d5cbc8814b3c9725e8fdc2"
+    },
+    {
+      "bytes": 45758,
+      "path": "NumStability/Algorithms/Summation/Compensated/Kahan/Coefficients/Affine.lean",
+      "sha256": "5df6f6c29c49f8115f1ed13a009893b24d03bce4411411ca654b0c562dd6e1ac"
+    },
+    {
+      "bytes": 149840,
+      "path": "NumStability/Algorithms/Summation/Compensated/Kahan/Coefficients/Coupled.lean",
+      "sha256": "cca37fd29e9c3511e353e76083c6863760ac5c151f30fbee5ce5d67d1b77511a"
+    },
+    {
+      "bytes": 335,
+      "path": "NumStability/Algorithms/Summation/Compensated/Kahan/Coefficients.lean",
+      "sha256": "a878791f5c1bbc4016402740fc8b3ed93d6801167beff4c088ab0085355f3203"
+    },
+    {
+      "bytes": 7913,
+      "path": "NumStability/Algorithms/Summation/Compensated/Kahan/Core.lean",
+      "sha256": "3b54b2d39c0b8f35b9cfd7ae27ce5959b34cb5e7b43b193ddfe41e3c576d3ce0"
+    },
+    {
+      "bytes": 32979,
+      "path": "NumStability/Algorithms/Summation/Compensated/Kahan/ErrorBounds.lean",
+      "sha256": "66143f9722de33701ec7794bce2f6d03559ed327cd1653f5c8409cc444364c4f"
+    },
+    {
+      "bytes": 10592,
+      "path": "NumStability/Algorithms/Summation/Compensated/Kahan/Exactness.lean",
+      "sha256": "c3743540d20175fc51af356e4cad5990f543db8f7c019e18a6e268da092801ba"
+    },
+    {
+      "bytes": 30511,
+      "path": "NumStability/Algorithms/Summation/Compensated/Kahan/Finite.lean",
+      "sha256": "78344339ec5c20f6955e64b9dd7d24cbfc79c340e4fd444f6fb36531f125d919"
+    },
+    {
+      "bytes": 13471,
+      "path": "NumStability/Algorithms/Summation/Compensated/Kahan/FiniteErrorBounds.lean",
+      "sha256": "a567d5da4907c68d4cf17cbbb70e6bd527c3ae3e428e96478bd76e1de014e702"
+    },
+    {
+      "bytes": 3560,
+      "path": "NumStability/Algorithms/Summation/Compensated/Kahan/FiniteFormat.lean",
+      "sha256": "4a5b22fcf8e2ba949a25a52aa18146059fb372bebb62c1c7ddcc5fd6f60dfa6e"
+    },
+    {
+      "bytes": 1030,
+      "path": "NumStability/Algorithms/Summation/Compensated/Kahan/Internal/FinFold.lean",
+      "sha256": "cae6ff322e77dc3d904f8b95c8533532b4e9ee75b1d125e34c90ad6bdf17d0a1"
+    },
+    {
+      "bytes": 68723,
+      "path": "NumStability/Algorithms/Summation/Compensated/Kahan/LocalCoefficients.lean",
+      "sha256": "72cff91c61270075a08280d49467d7d136bcd7ef411a5636ead8f4a56805c3ae"
+    },
+    {
+      "bytes": 15218,
+      "path": "NumStability/Algorithms/Summation/Compensated/Kahan/Majorants.lean",
+      "sha256": "a81e3d91c3f042939452aea655a76da1b342495583ed6010b2e71bdc9a4ace73"
+    },
+    {
+      "bytes": 940,
+      "path": "NumStability/Algorithms/Summation/Compensated/Kahan.lean",
+      "sha256": "d58587177785d0165cfbacd5d4da1fdf6fd0f9e01dc2832f6396bd855584486e"
+    },
+    {
+      "bytes": 3119,
+      "path": "NumStability/Algorithms/Summation/Compensated/NoGuard/CorrectionFormula.lean",
+      "sha256": "010f20042e637aed8f224d59d29b0a6148e407bfcd500c7b64949b2921444c37"
+    },
+    {
+      "bytes": 9970,
+      "path": "NumStability/Algorithms/Summation/Compensated/NoGuard/Modified.lean",
+      "sha256": "e3ccc457a288852cf0eaf7ff8b9e58a9383300a5bc13700a2ac093aa566fd4ec"
+    },
+    {
+      "bytes": 4354,
+      "path": "NumStability/Algorithms/Summation/Compensated/NoGuard/Ordinary.lean",
+      "sha256": "21e2c1d987d7379ce841837b08de7b51e4e63ef1a4319fd2e7c84a2333b9af39"
+    },
+    {
+      "bytes": 404,
+      "path": "NumStability/Algorithms/Summation/Compensated/NoGuard.lean",
+      "sha256": "a199d420214300d1e4384c2dacb92a756fda43e878589d07723db3bb6d173cdb"
+    },
+    {
+      "bytes": 1650,
+      "path": "NumStability/Algorithms/Summation/Compensated.lean",
+      "sha256": "9f52ed81c762e5d72cd49d688d5af3c285cf2c1aae945f0d494016a1fa9ef3f6"
+    },
+    {
+      "bytes": 9141,
+      "path": "NumStability/Algorithms/Summation/DoublyCompensated.lean",
+      "sha256": "e3eeb2851ef2c24459b42d23569bc2f7114102111e16eb4d35b0e2952359ca17"
+    },
+    {
+      "bytes": 8388,
+      "path": "NumStability/Algorithms/Summation/Insertion/ActiveList.lean",
+      "sha256": "fbf0e9de4591c14dba5c93f54617165958840720e4c05d83db3567914ace7cb5"
+    },
+    {
+      "bytes": 9118,
+      "path": "NumStability/Algorithms/Summation/Insertion/Executor.lean",
+      "sha256": "0a5df93162ae0a81c847b6753039ae4176975cc673862ac707b7da2ffaa0f8f3"
+    },
+    {
+      "bytes": 8068,
+      "path": "NumStability/Algorithms/Summation/Insertion/RunningError.lean",
+      "sha256": "fac10470ad32569cbd95d4d0d3b8cc8b68f1dd05410d2055c157d2179bf04910"
+    },
+    {
+      "bytes": 458787,
+      "path": "NumStability/Algorithms/Summation/Insertion/Schedule.lean",
+      "sha256": "e464030e65538ca203f68f3a49167c0c2290709f7163f314bbc8c08830927f1b"
+    },
+    {
+      "bytes": 41588,
+      "path": "NumStability/Algorithms/Summation/Insertion/ScheduleExecution.lean",
+      "sha256": "4c779e6169f6cb952e4f4c0f421255e134568c825d98121e25b23ca68258afc9"
+    },
+    {
+      "bytes": 658,
+      "path": "NumStability/Algorithms/Summation/Insertion.lean",
+      "sha256": "66d7faf8d839418163bafdc5cb4dbf4a9371c8594a639be54158f14a91e1fbfb"
+    },
+    {
+      "bytes": 30146,
+      "path": "NumStability/Algorithms/Summation/Pairwise/Core.lean",
+      "sha256": "607acea59c08f8b2909f83f41e5643ddd2ceacffe3da59e536bfcafd52f4bbda"
+    },
+    {
+      "bytes": 382,
+      "path": "NumStability/Algorithms/Summation/Pairwise.lean",
+      "sha256": "9bf8188bd9ca1a3caa6bf60cd908ecebcfe0a720a13d3533d111e6dc628acecb"
+    },
+    {
+      "bytes": 9265,
+      "path": "NumStability/Algorithms/Summation/PlusMinus.lean",
+      "sha256": "699a64af4c153d2df982c07c3e632b3a72b7526a3f53233565eabcfb3f9c0779"
+    },
+    {
+      "bytes": 30417,
+      "path": "NumStability/Algorithms/Summation/Recursive/Core.lean",
+      "sha256": "3dc26514bea50c48356bf18b6940998416e5403b02601a469a8b36fbc0fe3b37"
+    },
+    {
+      "bytes": 391,
+      "path": "NumStability/Algorithms/Summation/Recursive.lean",
+      "sha256": "31db56454458d75a9c6b560f0e06214e3c227839c486b9c8f02fb2c6a5030bd7"
+    },
+    {
+      "bytes": 2236,
+      "path": "NumStability/Algorithms/Summation/Tree/Balanced.lean",
+      "sha256": "4469996966ed361054a24e5cdb9c741deaaa7709e81b176a7027ae3aa654b644"
+    },
+    {
+      "bytes": 4513,
+      "path": "NumStability/Algorithms/Summation/Tree/Chain.lean",
+      "sha256": "abba30af15f4514edd13bae7c227a314ab86af900f100b3b3b3ad33ec2c00362"
+    },
+    {
+      "bytes": 31461,
+      "path": "NumStability/Algorithms/Summation/Tree/Core.lean",
+      "sha256": "552910eea809cfac2e8bd73932abf0710774518a9ee2fc79870145a292685ef9"
+    },
+    {
+      "bytes": 226,
+      "path": "NumStability/Algorithms/Summation/Tree/RecursiveBridge.lean",
+      "sha256": "013c67efa85666dc26dedc24ff2ce107b27034e32a0f3f5538b037b95e803913"
+    },
+    {
+      "bytes": 436,
+      "path": "NumStability/Algorithms/Summation/Tree.lean",
+      "sha256": "4eefaa9090ca854d7c998a118f7fa1e9897790fa672ee2fe1d394f2bca0cc667"
+    },
+    {
+      "bytes": 797,
+      "path": "NumStability/Algorithms/Summation.lean",
+      "sha256": "4c6d12628341d77736c5a59e5742a83d4a9401c406b48abc0727ac6027dcf36e"
+    },
+    {
+      "bytes": 390921,
+      "path": "NumStability/Algorithms/Sylvester/Higham16.lean",
+      "sha256": "b3e3f06d6577336d654ee48f67a418aec78a261e8d4cbab5e1aed5000df55aaf"
+    },
+    {
+      "bytes": 25789,
+      "path": "NumStability/Algorithms/Sylvester/Higham16AutoCondition.lean",
+      "sha256": "67a2690796a3da47ce8e5ecb9acf73ef8c8cdb74293bca387b330774036ae810"
+    },
+    {
+      "bytes": 42917,
+      "path": "NumStability/Algorithms/Sylvester/Higham16Eq9Assembly.lean",
+      "sha256": "79bf22958c000065e2c665241a88b735207c00d6ec53007a0f5f966a71c99fa1"
+    },
+    {
+      "bytes": 19350,
+      "path": "NumStability/Algorithms/Sylvester/Higham16Eq9EndToEnd.lean",
+      "sha256": "bc8451af360e6bd3da197ef3e8d43ab5d486b9a501a116103a98bc5ddc75460d"
+    },
+    {
+      "bytes": 20942,
+      "path": "NumStability/Algorithms/Sylvester/Higham16HessenbergRounded.lean",
+      "sha256": "e194baa812378f49eea3a599dcaf932d6f3b5df4180fa44195848f292326d770"
+    },
+    {
+      "bytes": 43747,
+      "path": "NumStability/Algorithms/Sylvester/Higham16HessenbergSchur.lean",
+      "sha256": "f94b5d8ab4f55a9262337288808ef5cac6421e0a6a9d8c1d3bcb6d33ba1794e2"
+    },
+    {
+      "bytes": 85611,
+      "path": "NumStability/Algorithms/Sylvester/Higham16Lyapunov.lean",
+      "sha256": "e83f6dc2e212bd64fda30317aca40d39d3dd12a4bd19d7f987eb5547e9c30205"
+    },
+    {
+      "bytes": 32528,
+      "path": "NumStability/Algorithms/Sylvester/Higham16LyapunovSigmaMin.lean",
+      "sha256": "2cb501121afe4bac0764e81e2b3297e1e0cd96b9432cc95c3163fcd294a9cb23"
+    },
+    {
+      "bytes": 529637,
+      "path": "NumStability/Algorithms/Sylvester/Higham16Minimizers.lean",
+      "sha256": "df24cdda87d098a810c55aab9c27804c38e331207fb06cfc2f8ab1a754fdac75"
+    },
+    {
+      "bytes": 22077,
+      "path": "NumStability/Algorithms/Sylvester/Higham16NormEstimator.lean",
+      "sha256": "f079d28960979302d8da181455ced2b590d623db84e2e056dce9cd1c7ba2ef9a"
+    },
+    {
+      "bytes": 32022,
+      "path": "NumStability/Algorithms/Sylvester/Higham16PerturbationSigmaMin.lean",
+      "sha256": "c693167c9f9538ec25e867c22f0e4ee682c5ebccd39742ead36ddae15616c851"
+    },
+    {
+      "bytes": 19637,
+      "path": "NumStability/Algorithms/Sylvester/Higham16PivotedSmallBlocks.lean",
+      "sha256": "730d6757e06626ad969a316e4bfaebe8c42e61776e0bbcffc1fa532a2fd551dd"
+    },
+    {
+      "bytes": 35563,
+      "path": "NumStability/Algorithms/Sylvester/Higham16Problem16_2.lean",
+      "sha256": "d60ac9498077fc5624b3d32c60b9fd4ef1b637100cb65b4005ec24ed773d0830"
+    },
+    {
+      "bytes": 41177,
+      "path": "NumStability/Algorithms/Sylvester/Higham16Psi.lean",
+      "sha256": "fdc119d4ca6ced33e25a159d527c89f545176864348ec94e174dbfb95a5c6e1c"
+    },
+    {
+      "bytes": 8509,
+      "path": "NumStability/Algorithms/Sylvester/Higham16PsiSigmaMin.lean",
+      "sha256": "14346741d8339a0bb0f5c445419231f564ebb9c15fbba11c4a01a2baa07bbecd"
+    },
+    {
+      "bytes": 114723,
+      "path": "NumStability/Algorithms/Sylvester/Higham16QuasiQuasiRounded.lean",
+      "sha256": "dfa50f64ec09a5562bee60b6697edcdb2760ba45a7bce9f223c6b8e2225b6c05"
+    },
+    {
+      "bytes": 50427,
+      "path": "NumStability/Algorithms/Sylvester/Higham16QuasiQuasiSylvester.lean",
+      "sha256": "1fb78db33c1127eaebc963c5a094d4342ba4fd36fdf3a82c47190d190a470ad2"
+    },
+    {
+      "bytes": 100465,
+      "path": "NumStability/Algorithms/Sylvester/Higham16QuasiRoundedSolve.lean",
+      "sha256": "348d4b4f2d613e26f9044489eb17019d49e000ad7fd141d710961bd67a7de884"
+    },
+    {
+      "bytes": 45567,
+      "path": "NumStability/Algorithms/Sylvester/Higham16QuasiRoundedSylvester.lean",
+      "sha256": "2cd411c918887ec5b4229c1a91f79914f51c4e6c42a54c6bda7659996c850e91"
+    },
+    {
+      "bytes": 36520,
+      "path": "NumStability/Algorithms/Sylvester/Higham16RoundedExecutor.lean",
+      "sha256": "becaa8200ae8e4e45bb22be5bf39ee81c98cc18c50ff30b5a96ece1b20fc6590"
+    },
+    {
+      "bytes": 33683,
+      "path": "NumStability/Algorithms/Sylvester/Higham16RoundedTriangular.lean",
+      "sha256": "5f2527df786f0732b32e521c6e01f54f50769b6f3526b8bc31028e921070c5c2"
+    },
+    {
+      "bytes": 897441,
+      "path": "NumStability/Algorithms/Sylvester/Higham16Spectrum.lean",
+      "sha256": "a972e3702945a35c4d84e16f587485985b91ddf49d46832c817751db13653483"
+    },
+    {
+      "bytes": 30472,
+      "path": "NumStability/Algorithms/Sylvester/Higham16SpectrumMinimizers.lean",
+      "sha256": "38d53079516f26d899898d0acfd017dd297de2f25bc31367528e3a70f7fd824b"
+    },
+    {
+      "bytes": 483898,
+      "path": "NumStability/Algorithms/Sylvester/Higham16VecNorm.lean",
+      "sha256": "180fd13b207ca71315532e316dc3569fcdbaff98e641b4d1af83b89a31489fbc"
+    },
+    {
+      "bytes": 3174,
+      "path": "NumStability/Algorithms/Sylvester/Higham16VecPermutationNotes.lean",
+      "sha256": "a88a499d9849fcae675a207a668fa44d5936887fa944ac9964ef61a331a12e47"
+    },
+    {
+      "bytes": 137295,
+      "path": "NumStability/Algorithms/Sylvester/SylvesterBackward.lean",
+      "sha256": "576f27472c6c9b16e2f98d979b5642a19c99ca4210e1069e7ae5ebc94318c0cb"
+    },
+    {
+      "bytes": 23519,
+      "path": "NumStability/Algorithms/Sylvester/SylvesterPerturbation.lean",
+      "sha256": "fca6c4753354af412588ca0cd6eb0d4130d9000db21d3d6acf5f1b9287e07af3"
+    },
+    {
+      "bytes": 13123,
+      "path": "NumStability/Algorithms/Sylvester/SylvesterSpec.lean",
+      "sha256": "b30e9d61ee499bb5c5f748b63c606a587ef5374fd01bef588643fce886361742"
+    },
+    {
+      "bytes": 2024,
+      "path": "NumStability/Algorithms/Sylvester.lean",
+      "sha256": "ddf9a90cc41ff8844b26d490fc4cfed6786dabdc3a1ddc65fb2dc5b02168a3d8"
+    },
+    {
+      "bytes": 46308,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28.lean",
+      "sha256": "634d0a6d132a2633c37bc823bda548dfb116202885a44ef839aa2545f8f3308a"
+    },
+    {
+      "bytes": 10084,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28Asymptotics.lean",
+      "sha256": "ddee6212265945f59b7c5ac0ece593bad7f01de134b73b54dcb2c7b7aef45578"
+    },
+    {
+      "bytes": 33430,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28Cauchy.lean",
+      "sha256": "d7fd05f246c625e80cf024fdf35db9279fe29ba563c7ef589fdccff9f9b1c6ab"
+    },
+    {
+      "bytes": 14297,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28Companion.lean",
+      "sha256": "44b1d3979351bbc1ef47570c3833541d123c3929cbfb5c90da59812c71df01eb"
+    },
+    {
+      "bytes": 49516,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28CompanionSpectral.lean",
+      "sha256": "0bc469faa5a9d41accfe63e03253024afd16924e421ee6845714d63fea7355df"
+    },
+    {
+      "bytes": 41564,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28Contracts.lean",
+      "sha256": "a354b27709b594c557f4f276e0f5296d2e31f8490b666573d999d6271c14890b"
+    },
+    {
+      "bytes": 27897,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28Exact.lean",
+      "sha256": "c71e47f5cf46a21bcd6b185ed0ce9641d6cfa0eb463ad68e6aea2506591ec391"
+    },
+    {
+      "bytes": 269,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GaussianAbsoluteMoment.lean",
+      "sha256": "82b829679ad8e604725a770b7fec7afdaa32b5e7bc5c8d39f94cdc8a2c219b46"
+    },
+    {
+      "bytes": 7121,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GaussianDirection.lean",
+      "sha256": "87f9af37b2385f5f05664681606c9c861549efbb272c7da45c9ee56bb26a3bc4"
+    },
+    {
+      "bytes": 14391,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GaussianOrthogonal.lean",
+      "sha256": "9a26f3b9dea0cce0a7820b490a349fec37ec321259e5bde4d70b4530f82dfbbf"
+    },
+    {
+      "bytes": 33786,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GaussianQRHaar.lean",
+      "sha256": "ac74dcbc3b0750f3173e1307175e54f96d1c3edec6e8c0432d24ade99651420d"
+    },
+    {
+      "bytes": 15059,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28Ginibre.lean",
+      "sha256": "7cf5e9a361078af94a6205b46d01f31a25d97cd4ba621a12c2d569e35f2c7875"
+    },
+    {
+      "bytes": 29015,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreAbsoluteDetRecurrence.lean",
+      "sha256": "dc810b5073e35680cdfea53bbf4faa202dd52f3701ebdc79f7afe9191b6517c3"
+    },
+    {
+      "bytes": 10684,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreAtlas.lean",
+      "sha256": "8071e08681f17e2604ef316996798a21612d691c962f4504320ca11236422b3a"
+    },
+    {
+      "bytes": 75653,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreCharacteristicProduct.lean",
+      "sha256": "41fdb49206eac489eb5b41dc81b03af81d9d1be4aed775650a39fe8b20c8ca2e"
+    },
+    {
+      "bytes": 7397,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreComplexPairs.lean",
+      "sha256": "ea259160b0173d9a2431022328741087820254be64f50a50865804601bf99e5b"
+    },
+    {
+      "bytes": 3359,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreCorollary31Factor.lean",
+      "sha256": "f93016eda31e6e91f71eba44220b9d095b46de3475abd561e7536268fd030b86"
+    },
+    {
+      "bytes": 2919,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreDeterminantIntegral.lean",
+      "sha256": "842edad4578d2e61a65371a33a726073c4ec5e98e8c451869a995627b12ede95"
+    },
+    {
+      "bytes": 6983,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreDeterminantMoment.lean",
+      "sha256": "6d96c6d912b4c789849184b39e55716a7c6d201c14076dbf0c08a3c7d9aab060"
+    },
+    {
+      "bytes": 30033,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreDimensionTwo.lean",
+      "sha256": "9bd80083a503ec19d18f3d68629ad3caeb511a125a11ad2704ac8278053b7e2b"
+    },
+    {
+      "bytes": 5348,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreExpectationGlue.lean",
+      "sha256": "5bdb4aeea337ce0ce65ee18f28a60401e111a5c07df6374fc33a418653649467"
+    },
+    {
+      "bytes": 27792,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreFiniteFormula.lean",
+      "sha256": "b01911a5f983b306cd0baf6a2280da696766fe3cf091d700c17f3dddf8faf420"
+    },
+    {
+      "bytes": 9402,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreGaussianBridge.lean",
+      "sha256": "daf2eacda6e66f838017a6435d2f0b9fc11dc0ed34a7aed21a3d4432693c3582"
+    },
+    {
+      "bytes": 34188,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreIncidence.lean",
+      "sha256": "18ae6042973ab73827def00592e97c4b0216d15e0281acf9ff5715bcd9a9fd81"
+    },
+    {
+      "bytes": 5100,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreIntegral.lean",
+      "sha256": "d04591a7592e1b032a32cf6704a3c9117ad106994f008cd93e2065df472d0af9"
+    },
+    {
+      "bytes": 2801,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreJointDensity.lean",
+      "sha256": "26c7665a9a18f394898c4d37fbc9f0328f6cee2bae8b393364bcc7e2539ac981"
+    },
+    {
+      "bytes": 7824,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreMeasure.lean",
+      "sha256": "69efbf0ecd5848215fbe3ee672bbcfad4d1fca047628dda740fdfd3b452dc34a"
+    },
+    {
+      "bytes": 7759,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreMultiplicity.lean",
+      "sha256": "e1725294fea9566e9dd01299d677e69cc0a02049d137b06f4edda9b5d12eed76"
+    },
+    {
+      "bytes": 86876,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreOrthogonalFiber.lean",
+      "sha256": "81e29e59e01039400f04d05b93ec3b1669ee6ddfbc296c3b0ebb467f41780f7e"
+    },
+    {
+      "bytes": 10360,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreParity.lean",
+      "sha256": "4f148062851c881b70f343e842fd89ec6465b4f85c1d9fa782696f704e476cbe"
+    },
+    {
+      "bytes": 16285,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibrePlaneChart.lean",
+      "sha256": "4b010fd6dac9b429348c2334d6d1eabc835a6a891eddec6749e5721e6b18bfc7"
+    },
+    {
+      "bytes": 5848,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibrePlaneIncidence.lean",
+      "sha256": "63a723d1dfee2ccd29ffeb937bcebae7417b731a24493c07a52b07bfaa4602d9"
+    },
+    {
+      "bytes": 18423,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibrePlaneSylvester.lean",
+      "sha256": "4dfaed2e1a1d5958558f1342838dc64e047dac259e69c79d2e9752577e974663"
+    },
+    {
+      "bytes": 12429,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreProjectiveIntegral.lean",
+      "sha256": "dcef5bca76c90345b3170c74b3057db435fc9752fa87218d8c2ed6dd4b7dcf37"
+    },
+    {
+      "bytes": 15266,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreRecurrence.lean",
+      "sha256": "8208efc18140341a28337e6e276787e653c597089dba4b306a8d02577509337e"
+    },
+    {
+      "bytes": 20899,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreRoots.lean",
+      "sha256": "4628fca0fa89f35816874a32bd99beebc98773d08f692cf026724f6c363f7050"
+    },
+    {
+      "bytes": 13122,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreSignedConclusion.lean",
+      "sha256": "7869ca617df83d9deda3a4e5d8eca567149d373985fca96850ebcea61b63e5f0"
+    },
+    {
+      "bytes": 9202,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreSignedExpectation.lean",
+      "sha256": "a89b5fd1f9743d9f0ebe53c84e36a739df69903a80b592d2ffd5a3645f9a51f0"
+    },
+    {
+      "bytes": 17410,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreSignedGaussian.lean",
+      "sha256": "99f442eefc8bb0962a661224e50f94e653602776f45fa510393645ee40b86f8e"
+    },
+    {
+      "bytes": 42750,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreSignedIncidence.lean",
+      "sha256": "659ad880a3cd37385a3f99007654d0664a25a5487f8f8df0a0b4ca43782e80dc"
+    },
+    {
+      "bytes": 2379,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreSignedIncidenceAlgebra.lean",
+      "sha256": "20e912cdf5a2f356bad426723c1d81c0522bb5bb3b1c8d7e640154ba08af8772"
+    },
+    {
+      "bytes": 3903,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreSignedKernel.lean",
+      "sha256": "692e354d14107360c75fec8c80cfd954c287c6b8f92c1651719fd7876a829c0c"
+    },
+    {
+      "bytes": 18493,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreSignedRank.lean",
+      "sha256": "8eea281c5522e8597e527963a8fd3e90fc24683af500a6f8adafa5be8a898e94"
+    },
+    {
+      "bytes": 13484,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreSignedRankTransfer.lean",
+      "sha256": "ad10a0377b1a69f731b4ec2158b9aea8afb903547e10cbe1d402f1956aad15ae"
+    },
+    {
+      "bytes": 15636,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreSignedScalar.lean",
+      "sha256": "eb9d2a446327c26a1404b2da1c32437daecdd5b4b48c127ba6de7df38cc37e45"
+    },
+    {
+      "bytes": 24280,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreTraceDensity.lean",
+      "sha256": "28999d36b83b95f0c43c31241079eb6caa492ab86ceaeff9c6ed03a3c3715a53"
+    },
+    {
+      "bytes": 14194,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28GinibreTruncatedIncidence.lean",
+      "sha256": "4e7099e93e35c36d671b8a54f1696f36c5e5b9afdcfddc5dfef745170c06a15c"
+    },
+    {
+      "bytes": 9261,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28HaarFibers.lean",
+      "sha256": "ab2722d7fc8b0e843670a739f7d274b5e05920b3b7b91e433eebde8b5630ff03"
+    },
+    {
+      "bytes": 14295,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28HilbertAsymptotic.lean",
+      "sha256": "43397574c0bb7e59201a04099bdac9f61ad99835b37e332f2e93ea27af4ad7dc"
+    },
+    {
+      "bytes": 33656,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28HilbertCondition.lean",
+      "sha256": "17020dffe3a3ed36e748126a5a0999b14c0a813f139aba3f7a2795e9d403623e"
+    },
+    {
+      "bytes": 8712,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28HilbertRatioDiscrepancy.lean",
+      "sha256": "b286d644f43bfb23457f5834cdf8dff7d7f589c936b19e2213a4f054f67d99f7"
+    },
+    {
+      "bytes": 23443,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28Moments.lean",
+      "sha256": "12c2b57bfb31ba46cfae6841e672e809cfc4a35adc6974183cc999ca84b8f4a2"
+    },
+    {
+      "bytes": 7280,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28OrthogonalCoordinates.lean",
+      "sha256": "a5463fd684c2920436b5893705b343db2e7bdb494b91878a54cee90e26b9d393"
+    },
+    {
+      "bytes": 23957,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28OrthogonalFibers.lean",
+      "sha256": "969c650e883c7b209d41d38bd8ead96c3972c0184bb2cce051e003652aac9e54"
+    },
+    {
+      "bytes": 6496,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28OrthogonalHaar.lean",
+      "sha256": "08d4af34988d036b3d6f90a6b668944f1603f4c8d971450d4c588aaf293a7947"
+    },
+    {
+      "bytes": 3855,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28OrthogonalSphere.lean",
+      "sha256": "822e921a4139f1f996868fce5e11f9750225ba9075d243dabfee1c9f20434c80"
+    },
+    {
+      "bytes": 11408,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28Pascal.lean",
+      "sha256": "03b3e7c3e535b0ef673f1410edcd3208fb80e241cf69c3e7062b2db43198f0de"
+    },
+    {
+      "bytes": 11719,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28PascalCondition.lean",
+      "sha256": "9e90519af5dd3fcc27da619a09826ed10c079778770072bdf3684fbf444682b8"
+    },
+    {
+      "bytes": 32875,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28PascalDualFlag.lean",
+      "sha256": "fd6db391c9706a046483705e5f67c96f8d4c5af4ae9f847b0771b212490ef712"
+    },
+    {
+      "bytes": 17027,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28PascalOscillation.lean",
+      "sha256": "2f65eecd7224654d01a992c0cbd7f263eccd6b42d05088024da2575cd9478614"
+    },
+    {
+      "bytes": 44071,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28PascalOscillationCore.lean",
+      "sha256": "df74ba0a054f406d81d0054939875f4a95d5b6cf4210e47ac07bbd243fd99747"
+    },
+    {
+      "bytes": 4028,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28PascalOscillationExact.lean",
+      "sha256": "4d1712df3404f2c96be1d262ad4364573f6c0cbfe61e957cf7445d0382420181"
+    },
+    {
+      "bytes": 21545,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28PascalSpectral.lean",
+      "sha256": "76b4c4a0446ad7748a6570fcfa329e0c87dd20cd193800a6aa1425c678ed0384"
+    },
+    {
+      "bytes": 18264,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28PascalTotalPositivity.lean",
+      "sha256": "0dcd2409f8e70b6c1425da57d472c1b81f0fadd818e9f19b32ae138bb49e3653"
+    },
+    {
+      "bytes": 13273,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28Probability.lean",
+      "sha256": "45701c6eed632a91fa57e94c2e9d9b8ba7dd4f01545059826506ddedd8778625"
+    },
+    {
+      "bytes": 22897,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28RandsvdNorm.lean",
+      "sha256": "b8787189d00373b97e0247c2370f2ec045d3197d9e4f21a6e1bf7d629dcacc02"
+    },
+    {
+      "bytes": 19512,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28ReciprocalSPD.lean",
+      "sha256": "dc7da439f1eba7dccecbb4d4be7db0f8b1c720651a09e2fb992380d86c9051c1"
+    },
+    {
+      "bytes": 33984,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28ShiftedHilbert.lean",
+      "sha256": "496f22b20069cf64c3f001f5aec9a90bdb5ce85c3fddef4b742398e03d351123"
+    },
+    {
+      "bytes": 32282,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28Stewart.lean",
+      "sha256": "b2b92abfcacec6af50eceafd46b60f75b6f14814570997f1201ac61e64fa37e0"
+    },
+    {
+      "bytes": 5139,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28StewartHaar.lean",
+      "sha256": "c962e84718aaa869f69160807731cdcc277c842bcfa1690d2fa0fddf719345a1"
+    },
+    {
+      "bytes": 7264,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28StewartRawFiber.lean",
+      "sha256": "59a7e2b35b3fa75fd678797aa13bdba9bc8504393fa89fd492d006d3782ece75"
+    },
+    {
+      "bytes": 37700,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28StewartRecursion.lean",
+      "sha256": "a059bf735be87733491883b9ad48398571cc1576ac499eff2f8b4ccde993bf8d"
+    },
+    {
+      "bytes": 15008,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28ToeplitzCondition.lean",
+      "sha256": "30d3d0a97416ebdda8beae53b138f8a1170341cc8bfd9258bf900eec4a056f81"
+    },
+    {
+      "bytes": 19127,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28ToeplitzGeneral.lean",
+      "sha256": "a7cdec3eaccee501c343e1591ff4c7d6cbb032676c59c57579bf9ad93cba796c"
+    },
+    {
+      "bytes": 14338,
+      "path": "NumStability/Algorithms/TestMatrices/Higham28ToeplitzSpectrum.lean",
+      "sha256": "9017d23cd8dcd28080c9cb63f98c5eb4c56f5be23f12d9793694d4f7a98d1793"
+    },
+    {
+      "bytes": 14741,
+      "path": "NumStability/Algorithms/TreeDotProduct.lean",
+      "sha256": "6e02de37a7306f1002c02561d633f678d6651ebc2da1046ef58fc1e7aeb6e787"
+    },
+    {
+      "bytes": 48499,
+      "path": "NumStability/Algorithms/TriangularArbitraryOrder.lean",
+      "sha256": "0e0dc5c16172a239623a53fbed151cf63daf04abf11ac932154a2e15fe9be71c"
+    },
+    {
+      "bytes": 219,
+      "path": "NumStability/Algorithms/TriangularForwardBound.lean",
+      "sha256": "0a0752610afcad2623912bc9a4b145ca196184538b65a8d766f4d715197ecd79"
+    },
+    {
+      "bytes": 216,
+      "path": "NumStability/Algorithms/TriangularForwardComparison.lean",
+      "sha256": "96e1e946aa8e1181ce82039a31d5cea5997b30b5fe615b62a3fadfbb342ea4c9"
+    },
+    {
+      "bytes": 33358,
+      "path": "NumStability/Algorithms/TriangularNoGuard.lean",
+      "sha256": "95091cbc068bf6aee3b71e8815d8236a410b0e7539dec934858395e037c749bd"
+    },
+    {
+      "bytes": 205,
+      "path": "NumStability/Algorithms/TriangularSolve.lean",
+      "sha256": "987359c1e9fd03425c14728ebb60717dbcd6dc214fed17e01030c2328e463232"
+    },
+    {
+      "bytes": 191,
+      "path": "NumStability/Algorithms/TriangularSolveCombined.lean",
+      "sha256": "374e4f00f6eb1abefbb91d763a76b0a0b643c847e3700f1bc459f2796ac12c5d"
+    },
+    {
+      "bytes": 2481,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21.lean",
+      "sha256": "9fbe100b3f36402fb10817ab43becdfe5f2621b05bfb3d5b270fa15e613ce851"
+    },
+    {
+      "bytes": 33915,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21Attainability.lean",
+      "sha256": "78d02ab6ada41a7b35c76e6a660625af0ac5124492d24856361facc733a799e8"
+    },
+    {
+      "bytes": 262,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21Condition.lean",
+      "sha256": "01c4b58084c3666ce9b94f15e5fd66bc3fc1192fc0d39bd3f9b9040c72d07611"
+    },
+    {
+      "bytes": 37870,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21Eq21_11Uniform.lean",
+      "sha256": "f694e76af2c5fcfe9dec256ab24ccf2de6f2d21b4edfcaabf3d37bf2ca11a36a"
+    },
+    {
+      "bytes": 40915,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21Eq21_8.lean",
+      "sha256": "fa79dacb63de0523a57679e6b7d493a1e204dc4d0ea0fd0c541d06cf6e75e167"
+    },
+    {
+      "bytes": 42381,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21Eq21_9.lean",
+      "sha256": "bbd549608770f12d1cf4fec855c0e1f94e7c77b44a00af43d1f9fe1f6ed533e3"
+    },
+    {
+      "bytes": 17962,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21Equation21_11.lean",
+      "sha256": "90c32cd48ce487c87078da85f23518ba7bfa97fee2883c1b5856f1c6114362f1"
+    },
+    {
+      "bytes": 15030,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21Equation21_11Scalar.lean",
+      "sha256": "4b881bf9806f2dd7c18628dc03a8b846069a1f7a042b69dccd29ff2b88f0820e"
+    },
+    {
+      "bytes": 9328,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21Givens.lean",
+      "sha256": "be41dc27479701d686123c0534435dc2d4cc1a9b42736b73e8b5ed07ae943804"
+    },
+    {
+      "bytes": 48147,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21GivensClosure.lean",
+      "sha256": "5a0289497933c418ef1b10e4274191c5fbd1e50af5fd626fff5941588c6bc25a"
+    },
+    {
+      "bytes": 30090,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21GivensRounded.lean",
+      "sha256": "1bd84ff8e94ad32c0395d2ec3c00553e98d9c1e49e6e56cd21cd21e895470e5d"
+    },
+    {
+      "bytes": 25019,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21MGS.lean",
+      "sha256": "a44cc54c838df22dec2abfde1ffb3abed7af61e52b4bac7039a8623e2a42ff69"
+    },
+    {
+      "bytes": 49119,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21MGSRounded.lean",
+      "sha256": "74c1c1a8e94401ee42e2a14b9a036948e6bc20e782fbf4bccdae2dbd0f8e8812"
+    },
+    {
+      "bytes": 36189,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21Perturbation.lean",
+      "sha256": "be52fc23206f791f0dc56d2cf83fd2c2441183e55077d89ebf5dde715811a490"
+    },
+    {
+      "bytes": 37268,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21PerturbationRadius.lean",
+      "sha256": "e24e7c0da56c3aca51f381e76847beab79b78e55bfa6c5b2b11cb26f6b37c1d1"
+    },
+    {
+      "bytes": 15418,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21ProjectorNorm.lean",
+      "sha256": "300b7cbb893dcf1d79ea24a88f67d68df362370ae483d1f91ea9d32654e4371a"
+    },
+    {
+      "bytes": 18863,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21QRFoundations.lean",
+      "sha256": "c9a4c05b937c84511f4440557618f1895faef5dcffabd841d42311fcb609d0da"
+    },
+    {
+      "bytes": 8575,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21RankStability.lean",
+      "sha256": "9bb68fdfcfd2e85f85785da0f707a5b8de5b4a9e544b1ac33ff6ac3581ea51bc"
+    },
+    {
+      "bytes": 6706,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21RowwiseMeasure.lean",
+      "sha256": "150253075ceb18156c2de9a21a1f86202c130266658d9aa322ca6f629ac02e62"
+    },
+    {
+      "bytes": 30225,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21SNEActualOutput.lean",
+      "sha256": "99f78a77ef4b1069f57eedfbb183f5f6676fb68c27fc06019c607d644e7b2545"
+    },
+    {
+      "bytes": 122569,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21SNEClosure.lean",
+      "sha256": "35079295341b428457995e93c3391d90a68d6c60a97a2373b76b17b5e7bd51ec"
+    },
+    {
+      "bytes": 35045,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21SNEConditionTransfer.lean",
+      "sha256": "451d7f18af74081ad5321d8fb2323ae38c2bb2af75131ece114231d9ce0261fd"
+    },
+    {
+      "bytes": 31372,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21SNEEnvelopeTransfer.lean",
+      "sha256": "24f7592e762058013aaf9427b92ba1315fd230dbb68bb0bd7f56394a5ac816a9"
+    },
+    {
+      "bytes": 9403,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21SNEForward.lean",
+      "sha256": "1479663c7f7c7a6599f05d0af70de2b78b5d4694ef7bc725cd30a8f842cddebe"
+    },
+    {
+      "bytes": 12965,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21SNEQRMajorant.lean",
+      "sha256": "0179b29a10251ce13ef975cbfd96de021e23eb35b30e3b704990e3dc0638269b"
+    },
+    {
+      "bytes": 35553,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21SNERemainderBounds.lean",
+      "sha256": "12c7bb33c946b2031b43735fc147b6308f3942e83175afe712867748f43cc404"
+    },
+    {
+      "bytes": 46692,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21SNESigned.lean",
+      "sha256": "88add7e0d7587a202621f429ea0d406b2306c39d98bd098a67d91d8d0c8c25a7"
+    },
+    {
+      "bytes": 92607,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21SNEUniform.lean",
+      "sha256": "0944152cb94d1c96dda14a58c7761726436e975c571a0822351c4c7505d92e2b"
+    },
+    {
+      "bytes": 23628,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21Theorem214SourceClosure.lean",
+      "sha256": "84fe59f290faab88a928466384a348e43f71489d3073ae851de9c62a69e2c25d"
+    },
+    {
+      "bytes": 24491,
+      "path": "NumStability/Algorithms/Underdetermined/Higham21Theorem21_3Attainment.lean",
+      "sha256": "ca158e85ee7b52f2e852463414f9f3ba3121df67df695841df157c89a8430616"
+    },
+    {
+      "bytes": 692196,
+      "path": "NumStability/Algorithms/Underdetermined/UnderdeterminedSolve.lean",
+      "sha256": "19c5f521c2f83689fe64d5eb153fad79e79535439fd61320b1b3e53e4ebf6085"
+    },
+    {
+      "bytes": 38392,
+      "path": "NumStability/Algorithms/Underdetermined/UnderdeterminedSpec.lean",
+      "sha256": "7e87e8abeaf9ddac3a62a661c7a96d7d9f7bddf19bd8ad8cb13b65179d23a867"
+    },
+    {
+      "bytes": 242,
+      "path": "NumStability/Algorithms/Vandermonde/Higham22.lean",
+      "sha256": "6eebe4a89652bdbf61b0d63b2d20afeed5679d50e71627b04d868a5570a00a3d"
+    },
+    {
+      "bytes": 244,
+      "path": "NumStability/Algorithms/Vandermonde/Higham22Ch12RefinementBridge.lean",
+      "sha256": "df90d8728d6e90b24ae0e97e82629a15630abb88edbdcde68762acff11d01268"
+    },
+    {
+      "bytes": 281,
+      "path": "NumStability/Algorithms/Vandermonde/Higham22ComplexConfluentRefinementBridge.lean",
+      "sha256": "cd9ea28e0ba9262f297ec0bab352c8a30f8b26bde3802086d0f114d1e4940efe"
+    },
+    {
+      "bytes": 243,
+      "path": "NumStability/Algorithms/Vandermonde/Higham22MonomialClosure.lean",
+      "sha256": "dc06015e8cbc06b15c9265302762bc490e37a7c918976c5097b3e0d5fd98931f"
+    },
+    {
+      "bytes": 217,
+      "path": "NumStability/Algorithms/Vandermonde/Higham22Problem22_7.lean",
+      "sha256": "bed73ab07327728170fc5d4c2ac66ee6ead27d90b56268d2608243768e2624d7"
+    },
+    {
+      "bytes": 65300,
+      "path": "NumStability/Algorithms/WilkinsonAttainability.lean",
+      "sha256": "3a493aa038b6bd430416c488757fa72b9e599709bfe451785d718fc48c9bf04b"
+    },
+    {
+      "bytes": 26950,
+      "path": "NumStability/Algorithms.lean",
+      "sha256": "329a69f6ccb0d5239fd438443209436badd4fbc1afd97d30a1533cce2d6ce811"
+    },
+    {
+      "bytes": 295,
+      "path": "NumStability/All.lean",
+      "sha256": "e8e701f4f253e73f6f002b890867981fc04467cb241277febf66c72546367853"
+    },
+    {
+      "bytes": 29408,
+      "path": "NumStability/Analysis/Accumulation.lean",
+      "sha256": "0a34df135fdb3211f5e7cb30c47ae80c9cb3eccf27e706a688adc572851088b7"
+    },
+    {
+      "bytes": 28266,
+      "path": "NumStability/Analysis/AccuracyTests.lean",
+      "sha256": "d77f83092f0320f6b7ef96fb9892135a7f62e0bade0a6b6f79b88d966000c548"
+    },
+    {
+      "bytes": 4043,
+      "path": "NumStability/Analysis/AlternativeNumberSystems.lean",
+      "sha256": "ed119204ea2ca27b7611a06df453ec3368ccc7b7f2c4d5d39f48b94e168f87b5"
+    },
+    {
+      "bytes": 424979,
+      "path": "NumStability/Analysis/BeneficialRounding.lean",
+      "sha256": "38f34805f89eb26a680f1b38e4f9f2be6bc3cb56f607af70a3b14c9acee9d794"
+    },
+    {
+      "bytes": 21957,
+      "path": "NumStability/Analysis/BergerGeneral.lean",
+      "sha256": "65c819418212cbee08d8751c2ed8d12f134060ebcad6399d8ce72014ee0ee144"
+    },
+    {
+      "bytes": 9239,
+      "path": "NumStability/Analysis/BergerInequality.lean",
+      "sha256": "53505f055fa966dc877c8de1ccde942c8e8acf6fdc0e5e37b0dac6520f3bb89c"
+    },
+    {
+      "bytes": 25223,
+      "path": "NumStability/Analysis/BergerResolvent.lean",
+      "sha256": "bb003a442c1409c88e5ab8eb8bd83790aadfb05fdece7fd2779687f9ba6f31bb"
+    },
+    {
+      "bytes": 6256,
+      "path": "NumStability/Analysis/BrentBaseOptimality.lean",
+      "sha256": "c83e94c2dca0d83a14fabd96f52eae1f6dea14d8fc78452189164428f4ceec3c"
+    },
+    {
+      "bytes": 67377,
+      "path": "NumStability/Analysis/CStarMatrixBridge.lean",
+      "sha256": "60ddc6ac2ca2f04b8eb02533f3d783c6c5d3b1f188207483a1e1e4f96405e55f"
+    },
+    {
+      "bytes": 15389,
+      "path": "NumStability/Analysis/CStarMatrixExpectation.lean",
+      "sha256": "ea2f6f4497e3aeb37fcee8a702928dbdf9190a91e926f64388da9938be0b101b"
+    },
+    {
+      "bytes": 18677,
+      "path": "NumStability/Analysis/CStarMatrixTrace.lean",
+      "sha256": "e1fd4f5a63b21d7caa2278a004aada750466a56616c1c09d0996a2049980dc20"
+    },
+    {
+      "bytes": 2642,
+      "path": "NumStability/Analysis/CalculatorWords.lean",
+      "sha256": "14ce2f94858fcf9cd073092642e65e975e940742cd68ae30b07c30615cbc0285"
+    },
+    {
+      "bytes": 146046,
+      "path": "NumStability/Analysis/CancellationOfRoundingErrors.lean",
+      "sha256": "fd1aebec8add85bb97d5e975f70af18bef9b9dadde0088c586dc37b1a5b3d9b8"
+    },
+    {
+      "bytes": 286,
+      "path": "NumStability/Analysis/Ch17SemiconvergentBlockFormSourceClosure.lean",
+      "sha256": "73724f152920baf8c73bf563f8546533005e5363edea1d9f50655a1e83f005fc"
+    },
+    {
+      "bytes": 7711,
+      "path": "NumStability/Analysis/Chopping.lean",
+      "sha256": "1e5853f5bc4362a2464c27cb83b557a4f29fca88f17ec564cfaab6758d698cf9"
+    },
+    {
+      "bytes": 85154,
+      "path": "NumStability/Analysis/ComplexArithmetic.lean",
+      "sha256": "2a3a6440b8e7735b62e2d8ebfd8672afa11e8e04ec12235a8397d3a864e2eb76"
+    },
+    {
+      "bytes": 8943,
+      "path": "NumStability/Analysis/ComplexSqrt.lean",
+      "sha256": "f0ae7f9a214346937016a61fdceb1ec3d4099bbba784f57ab58da70e557e36c7"
+    },
+    {
+      "bytes": 7677,
+      "path": "NumStability/Analysis/ConditionEstimatorLowerBound.lean",
+      "sha256": "43c034f9ea48c28d0708ba4568f5065de1f6922cf169fc6830dd463e495811ca"
+    },
+    {
+      "bytes": 9431,
+      "path": "NumStability/Analysis/Counting.lean",
+      "sha256": "c2527f61dae9dbcdfe915b498496452c42f8eff4aa8adebb0e104dcc6ac06ba4"
+    },
+    {
+      "bytes": 46436,
+      "path": "NumStability/Analysis/CramersRule.lean",
+      "sha256": "96ef70df8e0cb03e0dc512dc459a0617e0aab7f915320cb23eea6d064a88c18d"
+    },
+    {
+      "bytes": 26095,
+      "path": "NumStability/Analysis/DoubleRounding.lean",
+      "sha256": "21b0cb7628318a303285d3b67773729f0f07aa9c88988c2018eb010f1f194e71"
+    },
+    {
+      "bytes": 14355,
+      "path": "NumStability/Analysis/DunfordResidue.lean",
+      "sha256": "dd27de4e55019e74fdc523ab153fa87ac5444cd79f05f472b00c5d5102a42cd4"
+    },
+    {
+      "bytes": 23598,
+      "path": "NumStability/Analysis/Equidistribution/AddCircle.lean",
+      "sha256": "2384ebfc9dd635eaa8c2f9a58e3c5fd46ecbdd857a1fe8aa96cd5b60c6b172c2"
+    },
+    {
+      "bytes": 196,
+      "path": "NumStability/Analysis/Equidistribution.lean",
+      "sha256": "c31c12e9a20f8812b069d53d4fe78e949f6ce2d530ed8a7cc4cfc182fb0468a5"
+    },
+    {
+      "bytes": 34439,
+      "path": "NumStability/Analysis/Error.lean",
+      "sha256": "e96209f422f979cbc0ad40d6967ac04cddbe2c279b6b40bd990edcd46177c016"
+    },
+    {
+      "bytes": 94701,
+      "path": "NumStability/Analysis/FiniteProbability.lean",
+      "sha256": "5b2e9d2ea6c873a18760eebdeebb2fa1739e94fe43b1a25545ecf98b7ffdeff5"
+    },
+    {
+      "bytes": 12469,
+      "path": "NumStability/Analysis/FirstOrder.lean",
+      "sha256": "ba14e66a6b7636b49179124cc0546f6b2114307989104b341ccecd8fdb641051"
+    },
+    {
+      "bytes": 9486,
+      "path": "NumStability/Analysis/FirstOrderFramework.lean",
+      "sha256": "8bf54c7ec6ef688010007ad7f6d0121acb809062de2c60a9b6c1ddc8fd978851"
+    },
+    {
+      "bytes": 1939225,
+      "path": "NumStability/Analysis/FloatingPointArithmetic.lean",
+      "sha256": "0ffbea66ecf52332f922acb5e1910c11baae87e3c2e403af7954c663c2f48a09"
+    },
+    {
+      "bytes": 8085,
+      "path": "NumStability/Analysis/ForwardError.lean",
+      "sha256": "ed5c840fe182376b63ca225e91021604114b4317db3eff475f534bb9c9714d7a"
+    },
+    {
+      "bytes": 13895,
+      "path": "NumStability/Analysis/FusedMultiplyAdd.lean",
+      "sha256": "a08288909c71b22d7ad2b786fa46653b2c8d08ac24d194884c51cc43a2e9aa23"
+    },
+    {
+      "bytes": 23076,
+      "path": "NumStability/Analysis/HenriciExtremal.lean",
+      "sha256": "0d7a6b5fd891ab53875ae09a7ffa2bf6b09f972ac700f057bb07de98f1ae9beb"
+    },
+    {
+      "bytes": 20852,
+      "path": "NumStability/Analysis/HenriciSharpConstant.lean",
+      "sha256": "bc2e068cac555f61e89396da4cf16f937b2f7f9f0e7cd051f57cfc4f7ba4035b"
+    },
+    {
+      "bytes": 28531,
+      "path": "NumStability/Analysis/HenriciSharpConstantExact.lean",
+      "sha256": "f3b2a1db7444bd91e10ccd8804218460543071f26bfbf4f55408cfb198952f6f"
+    },
+    {
+      "bytes": 50794,
+      "path": "NumStability/Analysis/Heron.lean",
+      "sha256": "c786774f82e0bef3e85ab470d25b2236f8e476e69bd367e92898663c35ec172e"
+    },
+    {
+      "bytes": 29929,
+      "path": "NumStability/Analysis/Higham6Asides.lean",
+      "sha256": "0b5b39910d16c5a2a2d82d582394ccfd7342d60b39a02e00c1f699551b4e171a"
+    },
+    {
+      "bytes": 11849,
+      "path": "NumStability/Analysis/Higham6BlockAntidiag.lean",
+      "sha256": "8ff0f5f5c71342bcb0490c26ee920626e60119a535ce92ff69fd021940f4d6c9"
+    },
+    {
+      "bytes": 8441,
+      "path": "NumStability/Analysis/HighamChapter2ElementaryFunctions.lean",
+      "sha256": "4f5253c285f4ed9127ef066e06e61335e51e4a57a2f410c760e2fd8abeb8b5e9"
+    },
+    {
+      "bytes": 10439,
+      "path": "NumStability/Analysis/HighamChapter2FmaDiscriminant.lean",
+      "sha256": "b33ef3cf389f6d6973246154e079016156e6a30f8e47d2012975a54917b18b53"
+    },
+    {
+      "bytes": 7861,
+      "path": "NumStability/Analysis/HighamChapter2GradualUnderflowExact.lean",
+      "sha256": "009bde53e7f0a12badf5e3ed26bd3082e8e9aa101640926e103cdc158d4beece"
+    },
+    {
+      "bytes": 10180,
+      "path": "NumStability/Analysis/HighamChapter2Lindemann.lean",
+      "sha256": "c673b8f81f62eb8aa778fe1b746a6e92b898ba1b9d233f8b335c0c921ff8eb68"
+    },
+    {
+      "bytes": 363,
+      "path": "NumStability/Analysis/HighamChapter2PowerLeadingDigits.lean",
+      "sha256": "e71e91174700c1c28643858621385235d1f5e03a6847ce870bf4d75196238a08"
+    },
+    {
+      "bytes": 4969,
+      "path": "NumStability/Analysis/HighamChapter2Tablemaker.lean",
+      "sha256": "70bcd69bc05aad77dd5e86714defbc646732fbccc2b5d4f1f22a41f1362709a9"
+    },
+    {
+      "bytes": 3078,
+      "path": "NumStability/Analysis/HighamChapter6Duality.lean",
+      "sha256": "65f95cc8858482e28ef54ba37770b704e7586f3a79a35c3579fb8907bf7cb02d"
+    },
+    {
+      "bytes": 1197845,
+      "path": "NumStability/Analysis/HighamChapter7.lean",
+      "sha256": "b58d1f318d1762ab90cb44a7d3ce48df1bb79c162d337baf3ef1aadc41d2470d"
+    },
+    {
+      "bytes": 18894,
+      "path": "NumStability/Analysis/HighamChapter7Rectangular.lean",
+      "sha256": "1d03e1385593525968e1b50d1fe33359d597b179b4482ba28bafcd39d9d7830a"
+    },
+    {
+      "bytes": 58590,
+      "path": "NumStability/Analysis/IncreasingPrecision.lean",
+      "sha256": "aa6c16c0d335bb0315dc8d9dec234e4cd591d5ab511a5a533af31c697ca80f6d"
+    },
+    {
+      "bytes": 925149,
+      "path": "NumStability/Analysis/InstabilityWithoutCancellation.lean",
+      "sha256": "1f23c4ec15e2d2c8f3be2860b2b8b4debc6d48fe868c69478915d1d46714313d"
+    },
+    {
+      "bytes": 17322,
+      "path": "NumStability/Analysis/InverseOpNorm2.lean",
+      "sha256": "0b38b965b0fe61772d7af8a34a3509d1e57c2f27054d0bed11b41e7e7d7bb817"
+    },
+    {
+      "bytes": 27559,
+      "path": "NumStability/Analysis/JordanNormalForm.lean",
+      "sha256": "0c3d65e9cb2fc5f4a8ca5e854e4ee67f16a241b24c59a0ee811e7ac056b1071b"
+    },
+    {
+      "bytes": 250,
+      "path": "NumStability/Analysis/LeadingDigitDistribution.lean",
+      "sha256": "4ecaa80da25b7ed4dd66c57d633e48bea32ada61e37890b97ffaf53535560676"
+    },
+    {
+      "bytes": 2533,
+      "path": "NumStability/Analysis/LeadingDigits/Decimal.lean",
+      "sha256": "461b42b9fca14183654dda760ff31daf013f2284241e05e2df669f8685d82836"
+    },
+    {
+      "bytes": 6261,
+      "path": "NumStability/Analysis/LeadingDigits/DecimalPowers.lean",
+      "sha256": "4acbd4b541c516a06f25aa8a4e4c7bfb6c8977c937152b984eb5f127cd8027ad"
+    },
+    {
+      "bytes": 4611,
+      "path": "NumStability/Analysis/LeadingDigits/Empirical.lean",
+      "sha256": "5514e1cc498f2b503c75c001acc9e9dd5d6fcb87eb4faa82729dc92d7f4f273c"
+    },
+    {
+      "bytes": 13305,
+      "path": "NumStability/Analysis/LeadingDigits/LogarithmicDistribution.lean",
+      "sha256": "9ab71a1968a2c6000d1d4245f5d017f3736fcc72eaf2c4b6c2af4f3392e7802f"
+    },
+    {
+      "bytes": 432,
+      "path": "NumStability/Analysis/LeadingDigits.lean",
+      "sha256": "9bb7de12e98937974a9237b20287a8807610438aeef1bcf2b81fefa7998a3ef5"
+    },
+    {
+      "bytes": 432159,
+      "path": "NumStability/Analysis/LiebTrace.lean",
+      "sha256": "4fc4822b372b35dd24f8e091cc216a24f2ff4e9077d58bc74967b26046958515"
+    },
+    {
+      "bytes": 468206,
+      "path": "NumStability/Analysis/MatrixAlgebra.lean",
+      "sha256": "83f5e913c59d68d45fbe79a6f5d5d00ab0a9d5b82914d5f876b8b9047ccd6ebb"
+    },
+    {
+      "bytes": 31778,
+      "path": "NumStability/Analysis/MatrixConcentration.lean",
+      "sha256": "48e75ea80af696946235becd576b6349205024338592b9b5f786a8f229d47308"
+    },
+    {
+      "bytes": 28861,
+      "path": "NumStability/Analysis/MatrixPowersBaiDemmelGu.lean",
+      "sha256": "d10f0d687b079af5f142e475cb3a2a4ef63c0274d239e2621ab8249a9cda3779"
+    },
+    {
+      "bytes": 22848,
+      "path": "NumStability/Analysis/MatrixPowersBaiDemmelGuDistance.lean",
+      "sha256": "2607ea52ad39250babc6aeb901883a3eb33830088d7eafe7d946de1fae345adf"
+    },
+    {
+      "bytes": 28353,
+      "path": "NumStability/Analysis/MatrixPowersBinomialBound.lean",
+      "sha256": "7dcdfa472359e3b373222a03cd1c9daae46589694a4ae4400b105bc5cfbb4356"
+    },
+    {
+      "bytes": 6882,
+      "path": "NumStability/Analysis/MatrixPowersGautschi.lean",
+      "sha256": "33a49d0bc9e16441eb6473bbaf68479e44c9c93c4577e88af8c62ea6551b63b6"
+    },
+    {
+      "bytes": 23589,
+      "path": "NumStability/Analysis/MatrixPowersHenrici.lean",
+      "sha256": "56258e83239d708a51983093d7612ad8bfef6500188909cfb37dd28c8b0409e9"
+    },
+    {
+      "bytes": 4311,
+      "path": "NumStability/Analysis/MatrixPowersHenriciNormal.lean",
+      "sha256": "445897ed340f281f4223a3fd7e5db17a430b598fa3930449793418dfdcbd98fe"
+    },
+    {
+      "bytes": 18398,
+      "path": "NumStability/Analysis/MatrixPowersKreiss.lean",
+      "sha256": "278f8b11534130beaeea3fba560e09c0a47fabfd028e72afef2cf315f4171404"
+    },
+    {
+      "bytes": 26552,
+      "path": "NumStability/Analysis/MatrixPowersKreissSpijker.lean",
+      "sha256": "7da2e3e3d2333cc012fa3454e9dc575302ea8bff712deb8be09ee94cf16c671d"
+    },
+    {
+      "bytes": 21352,
+      "path": "NumStability/Analysis/MatrixPowersLaszlo.lean",
+      "sha256": "e1aa586b13a9cdf6ec47a03a5698af1de370384eb2ad25b252e5f6c79265ab14"
+    },
+    {
+      "bytes": 16913,
+      "path": "NumStability/Analysis/MatrixPowersLp185Primary.lean",
+      "sha256": "c8d7709fa2d19c243463535a90b4406a023b7b4f2165f48e1bf84c8d892fe51a"
+    },
+    {
+      "bytes": 22198,
+      "path": "NumStability/Analysis/MatrixPowersSchur.lean",
+      "sha256": "63f2bb32980ffff01216655c9c575e1778ea9a97770d4e57425c0012dab0e536"
+    },
+    {
+      "bytes": 2165,
+      "path": "NumStability/Analysis/MatrixPowersSpijkerClosure.lean",
+      "sha256": "be22fe9a16045c687ae2cd4d82054f3b1b176296af21fa0becfc389c7325e04e"
+    },
+    {
+      "bytes": 20013,
+      "path": "NumStability/Analysis/MatrixPowersSpijkerPlanar.lean",
+      "sha256": "8c0d1554a85d8d60d15d9958c945f0b88fbcdd49350f03aae04f1960fbdcf89d"
+    },
+    {
+      "bytes": 28796,
+      "path": "NumStability/Analysis/MatrixPowersSpijkerPlanarAnalysis.lean",
+      "sha256": "bf90211c67d720673922dcbffa3d1b978631dcb5ba6ee7490dce645ab593b523"
+    },
+    {
+      "bytes": 11061,
+      "path": "NumStability/Analysis/MatrixPowersSpijkerRational.lean",
+      "sha256": "5c1b9910b8c35b92551eaa8034739ef6e9ff6eae9c10f3d5eedd4c98a77f6d9f"
+    },
+    {
+      "bytes": 41648,
+      "path": "NumStability/Analysis/MatrixSpectral.lean",
+      "sha256": "67a2e6621aadc00403ec6d99e108ae3e2c32e632c0845c1f65e18510f46c81fb"
+    },
+    {
+      "bytes": 21053,
+      "path": "NumStability/Analysis/Midpoint.lean",
+      "sha256": "f17231de46ea0b493c9cc2a0b957a2505b7a82aceba1c906f510246c277eca1e"
+    },
+    {
+      "bytes": 38221,
+      "path": "NumStability/Analysis/Monotonicity.lean",
+      "sha256": "8c8d58a5eed959808a5528e29dea8584eb99fe444b6f91bfa974255106554e63"
+    },
+    {
+      "bytes": 14641,
+      "path": "NumStability/Analysis/MullerRecurrence.lean",
+      "sha256": "bc9ba8d6e066fc29ad4ab9bd107112977bc382976ae4f697d946b9aaa6bbd202"
+    },
+    {
+      "bytes": 5226,
+      "path": "NumStability/Analysis/NearInteger.lean",
+      "sha256": "deac8d7c8c60863be221fa4a5ccd98c9347425468d475ecd7099420ba736c583"
+    },
+    {
+      "bytes": 20799,
+      "path": "NumStability/Analysis/NilpotentJordanChain.lean",
+      "sha256": "759540f48d1b979d1d2e88cdfc1e33d8d7c3f01ed484cce090905fbd640bc577"
+    },
+    {
+      "bytes": 33455,
+      "path": "NumStability/Analysis/Nonassociativity.lean",
+      "sha256": "70d669196c8f0472104e21391917505d04b6cff572718aa693e46c820e74199f"
+    },
+    {
+      "bytes": 288,
+      "path": "NumStability/Analysis/NonrandomRounding/Conclusions.lean",
+      "sha256": "d69545ca4e33ea846ad68f929861f8f601e807dc9fcdd9211626dc269f439277"
+    },
+    {
+      "bytes": 281,
+      "path": "NumStability/Analysis/NonrandomRounding/Core.lean",
+      "sha256": "1622c3a33a790294ded14226286b74cba8598c74624907803989206164bddce4"
+    },
+    {
+      "bytes": 286,
+      "path": "NumStability/Analysis/NonrandomRounding/GridVariation.lean",
+      "sha256": "cc877c18932003f15685478975f8d30d49a9b48f2fe52892d35ad766ba962a24"
+    },
+    {
+      "bytes": 290,
+      "path": "NumStability/Analysis/NonrandomRounding/SourceInterval.lean",
+      "sha256": "e12a26e78178458d23848db1a28ec26a60c5bd656834c0345bacbd603370d071"
+    },
+    {
+      "bytes": 274,
+      "path": "NumStability/Analysis/NonrandomRounding/StoredGrid.lean",
+      "sha256": "a6377a56177d6ac2db3fe16e8c3076bea3adbe29df5a45db5c5b1930c1e18d3c"
+    },
+    {
+      "bytes": 296,
+      "path": "NumStability/Analysis/NonrandomRounding.lean",
+      "sha256": "8e2c21a57ff96879b2da2b28855d359b54481dc8a253c326275fcf877c4d9005"
+    },
+    {
+      "bytes": 1124482,
+      "path": "NumStability/Analysis/Norms.lean",
+      "sha256": "21f15f1f492411a0a2598630ce4128f04c4b3c965554460c458861dc24e12b6d"
+    },
+    {
+      "bytes": 14618,
+      "path": "NumStability/Analysis/NumericalRadius.lean",
+      "sha256": "34d8ae941fed042c2612610e536e3c0407d17df060d88be3a91fc93b45830e67"
+    },
+    {
+      "bytes": 13310,
+      "path": "NumStability/Analysis/OperatorLog.lean",
+      "sha256": "70c4ac7697b9865f58b252c063d1298551db4446e98a705de9536795b51781a8"
+    },
+    {
+      "bytes": 64641,
+      "path": "NumStability/Analysis/PerturbationTheory.lean",
+      "sha256": "56c11ec7fc3ef6a8149843449f713a144d1ec17fdddfda1ac473e6174673c1a1"
+    },
+    {
+      "bytes": 6150,
+      "path": "NumStability/Analysis/Probability/Gaussian/AbsoluteMoment.lean",
+      "sha256": "9fc995867b9358875a9ec7630828e6d9b7f353a48f130ac375d473b66c91406b"
+    },
+    {
+      "bytes": 204,
+      "path": "NumStability/Analysis/Probability/Gaussian.lean",
+      "sha256": "7446fd273277bb2d5e58dbd30fcfc7e215f133822c33cc0dc82f1037d37cc4a9"
+    },
+    {
+      "bytes": 190,
+      "path": "NumStability/Analysis/Probability.lean",
+      "sha256": "70696d855d7bcfb3abccd963d7b89effa94fe4a1a93a114c8c10260e0556954b"
+    },
+    {
+      "bytes": 1693371,
+      "path": "NumStability/Analysis/Problem2_10.lean",
+      "sha256": "0c77b1d06d2bde497d0026f36ed2aabc7119eed0175d0f5591acb348dedbf213"
+    },
+    {
+      "bytes": 223,
+      "path": "NumStability/Analysis/Problem2_11.lean",
+      "sha256": "12d625e31c16366902cf0daf34891b35581482d5a968403a8270f284a52ecc26"
+    },
+    {
+      "bytes": 20610,
+      "path": "NumStability/Analysis/Problem2_12.lean",
+      "sha256": "052b24b8f313e149359bcd6f4c29e5bb0ef51a9643120699dabd084db3551a6b"
+    },
+    {
+      "bytes": 92656,
+      "path": "NumStability/Analysis/Problem2_13.lean",
+      "sha256": "d07365e954dc2110ef5af6561554864e24470b1134ee3c2c3ed967ea8bff490d"
+    },
+    {
+      "bytes": 18585,
+      "path": "NumStability/Analysis/Problem2_14.lean",
+      "sha256": "711716703163aefdb55c10db03e6d1b54eb139e43e375cc1f0216d53a33f9da3"
+    },
+    {
+      "bytes": 10964,
+      "path": "NumStability/Analysis/Problem2_15_16.lean",
+      "sha256": "32f5f02e92aeef81ca222e0f1bf283d29dad2254aef3b4850f0caf98ca75aa27"
+    },
+    {
+      "bytes": 5949,
+      "path": "NumStability/Analysis/Problem2_17.lean",
+      "sha256": "e7c879f29266fccc7da177cc2fa957c122b9beb8a03822a64b6da9d87b47522e"
+    },
+    {
+      "bytes": 8960,
+      "path": "NumStability/Analysis/Problem2_18.lean",
+      "sha256": "9d80f4e374ba277ce435f8cc5c595797ae13e3723a79571b427ac9ec2f557865"
+    },
+    {
+      "bytes": 7699,
+      "path": "NumStability/Analysis/Problem2_19.lean",
+      "sha256": "c5d9f364f9df35ef7d471a90df03cb282f608e67f220a308e86de569528fd125"
+    },
+    {
+      "bytes": 238,
+      "path": "NumStability/Analysis/Problem2_2.lean",
+      "sha256": "5ebafbbd081dcfbf75730e11a118708494effff7a2bee04d15122f62da101501"
+    },
+    {
+      "bytes": 22265,
+      "path": "NumStability/Analysis/Problem2_20.lean",
+      "sha256": "1de899393e8a619648e641f55a34c3308dde5f20492e2cbcfc35a63e4c9570ee"
+    },
+    {
+      "bytes": 312,
+      "path": "NumStability/Analysis/Problem2_21.lean",
+      "sha256": "ceaa7116b4f2129049645d7943a2d8c749d3e64871aee09b1346400e90514482"
+    },
+    {
+      "bytes": 253,
+      "path": "NumStability/Analysis/Problem2_22.lean",
+      "sha256": "ba1fd180abc9efcaac49859d103684e378de414b5b0da124d9c546f15df501d8"
+    },
+    {
+      "bytes": 5989,
+      "path": "NumStability/Analysis/Problem2_23.lean",
+      "sha256": "09614245596a09b11dbbec1d620877f22b2e2ce841bcec9756fea9d49fa3ab81"
+    },
+    {
+      "bytes": 184057,
+      "path": "NumStability/Analysis/Problem2_24.lean",
+      "sha256": "678892f0b4507071ed1ac449434c263ce202cc2f1274a70c1543b3da4e04d0e2"
+    },
+    {
+      "bytes": 9866,
+      "path": "NumStability/Analysis/Problem2_25.lean",
+      "sha256": "99d79ae1dd77d292e085b285ed2e4d2d69b9b24f85fadba5aecc1dacbdcbfad7"
+    },
+    {
+      "bytes": 43076,
+      "path": "NumStability/Analysis/Problem2_26.lean",
+      "sha256": "f3c27e758fcea52c36db8078325761e67fea80f398417eeddfc25dcce48b417e"
+    },
+    {
+      "bytes": 17185,
+      "path": "NumStability/Analysis/Problem2_27.lean",
+      "sha256": "fe0d4b764bab32633bf872dcdd537bc3e42e9251e405442c85f5ea07c56ffd86"
+    },
+    {
+      "bytes": 114021,
+      "path": "NumStability/Analysis/Problem2_3.lean",
+      "sha256": "99a5535af73f8a6efd8ad425829b0140e706d211c1ec0ee1e55135cb540e1fcd"
+    },
+    {
+      "bytes": 169,
+      "path": "NumStability/Analysis/Problem2_4.lean",
+      "sha256": "1f2c0c62f543d3796b7b27f9aa822421c0795690d1bd739af4bd09b758e5a1aa"
+    },
+    {
+      "bytes": 5758,
+      "path": "NumStability/Analysis/Problem2_5.lean",
+      "sha256": "fae1553ce99b5bfe2ffe4c0a90515563239a6e44b4b3cce0250dbf420ad1d579"
+    },
+    {
+      "bytes": 10490,
+      "path": "NumStability/Analysis/Problem2_6.lean",
+      "sha256": "ed17604e06f702d3b63bb503ca1778a63e48de796be2a33ba7891d5ffbe3c042"
+    },
+    {
+      "bytes": 262,
+      "path": "NumStability/Analysis/Problem2_7.lean",
+      "sha256": "cf5c97ff44a0dd6d31622f87fc229e3bd946b2b838de73bfb0a0b94b492e3ec7"
+    },
+    {
+      "bytes": 186359,
+      "path": "NumStability/Analysis/ProblemDependentStability.lean",
+      "sha256": "694b2f0292154f39304e71888cd0fdaeb36106571305de70af08717ec84de173"
+    },
+    {
+      "bytes": 23657,
+      "path": "NumStability/Analysis/PseudospectralLowerBound.lean",
+      "sha256": "2ef2d475d6228c0a0289335c9aa9f0e36b4cee929ebcc2735a7f5dd194b13448"
+    },
+    {
+      "bytes": 13171,
+      "path": "NumStability/Analysis/PseudospectralPowerBound.lean",
+      "sha256": "5c445f80e150939b50eb8971f80c88176ed1f9d92b78da84ff70a033d1f39b47"
+    },
+    {
+      "bytes": 10547,
+      "path": "NumStability/Analysis/PseudospectralResolvent.lean",
+      "sha256": "6cf4587a51970f39ce3269cb512369d34fcf516d109eb787a4ddf0a2a05abec1"
+    },
+    {
+      "bytes": 141916,
+      "path": "NumStability/Analysis/Quadratic.lean",
+      "sha256": "2abfd0c462b114ad3689dd7743eabd43eeae71701c83aacdf64550357d3b5124"
+    },
+    {
+      "bytes": 37125,
+      "path": "NumStability/Analysis/RealInvariantSubspace.lean",
+      "sha256": "d1f4955df3cb7a87699135ca4600e1c1ee3a38fbf4972bbf8741f45485213c2d"
+    },
+    {
+      "bytes": 80886,
+      "path": "NumStability/Analysis/RealQuasiSchur.lean",
+      "sha256": "0345edb45f91942e0fca9416ff8bd6cb7cd4e4c87871d6d030550b7326bc4790"
+    },
+    {
+      "bytes": 18713,
+      "path": "NumStability/Analysis/RealSchurTriangulation.lean",
+      "sha256": "9e3a861088725b2433d9f52abdfff1be6770f166f354e9af60f13254b87c571b"
+    },
+    {
+      "bytes": 2962,
+      "path": "NumStability/Analysis/RelativePrecision.lean",
+      "sha256": "13804a2387a92e9b8d697149902de51bd434427ac417bc73630651842f074e7a"
+    },
+    {
+      "bytes": 12416,
+      "path": "NumStability/Analysis/ResolventFunctionalCalculus.lean",
+      "sha256": "c119f207ea85b9cdfa9c23208ae716ecf30fe8de6260c4097f1cd4eea0514b5d"
+    },
+    {
+      "bytes": 52136,
+      "path": "NumStability/Analysis/Rounding.lean",
+      "sha256": "3c00f6f4b64b68ef166131ad1a9b7e86d730f2d1ff760ae352c674898c58ceef"
+    },
+    {
+      "bytes": 19029,
+      "path": "NumStability/Analysis/RoundingProductBounds.lean",
+      "sha256": "5987137ee77376515eb9b609be7590a110acf96e871843b3c20f5917dc2e7fff"
+    },
+    {
+      "bytes": 168106,
+      "path": "NumStability/Analysis/SampleVariance.lean",
+      "sha256": "8f97d1fea9e498952ae5b2ab8e3e7f1abef6d52694ef2bf817c6faaec5258515"
+    },
+    {
+      "bytes": 13747,
+      "path": "NumStability/Analysis/SchurTriangulation.lean",
+      "sha256": "a42214a3e214a0da9b0568ffdc4e839514e93197714523b1aae7932c24f8d2aa"
+    },
+    {
+      "bytes": 44852,
+      "path": "NumStability/Analysis/SemiconvergentBlockFormExists.lean",
+      "sha256": "b55cc9627dde8550f5b7dce0211e08d492b3ed5ece34a5699a0aca0fe6922efd"
+    },
+    {
+      "bytes": 43964,
+      "path": "NumStability/Analysis/SemiconvergentExistenceComplete.lean",
+      "sha256": "1f60dc67a1deda3600c1b50949b949c88f67953f58d8a0994072178b436288df"
+    },
+    {
+      "bytes": 29744,
+      "path": "NumStability/Analysis/SemiconvergentExistenceFull.lean",
+      "sha256": "0d7b36683d798619eefd245ed7cf447026b4522e98e08c1da2145f6f49f87c9d"
+    },
+    {
+      "bytes": 23553,
+      "path": "NumStability/Analysis/SemiconvergentExistenceGaps.lean",
+      "sha256": "cd6d8d5b20b5eaa6cd0bcf22c788a02c6fc66241a509f09eb357b6eec0b507bc"
+    },
+    {
+      "bytes": 43740,
+      "path": "NumStability/Analysis/SemiconvergentLimitGeneral.lean",
+      "sha256": "0302456918061567630b487053cc6d7292940def35ca30a7fe9683fd5052c986"
+    },
+    {
+      "bytes": 37258,
+      "path": "NumStability/Analysis/SemiconvergentRealSpectrumComplete.lean",
+      "sha256": "a73eb786acbe859c8cd4c0d2d1420bb1e2a02e5223f09b614e07772945076b22"
+    },
+    {
+      "bytes": 16735,
+      "path": "NumStability/Analysis/SemiconvergentSpectral.lean",
+      "sha256": "c01358bf7b60f7d01aa0cd6eb6772a02282fe4816324095c4bb548423f833baf"
+    },
+    {
+      "bytes": 5424,
+      "path": "NumStability/Analysis/SpijkerProjectionIntegral.lean",
+      "sha256": "ac3ba7c29c019ae49342ace1c8102146fadd8212b79a3cd72f2e78d1aed5bdc6"
+    },
+    {
+      "bytes": 19305,
+      "path": "NumStability/Analysis/Stability.lean",
+      "sha256": "cc38cf5aa02ebfe21c022813d29fdd83d90c5a3c2c172542462ad047c84aac1a"
+    },
+    {
+      "bytes": 21288,
+      "path": "NumStability/Analysis/StatisticalRounding.lean",
+      "sha256": "adbcae1db6e4e55c5ea8d75706153b8117a247f399a4b41c9c52caa170575a58"
+    },
+    {
+      "bytes": 13592,
+      "path": "NumStability/Analysis/SubtractionFold.lean",
+      "sha256": "3468ae207ca4ec7d73c5414f65979409285fa7656dc65f5df4cfee11f1ec5cd4"
+    },
+    {
+      "bytes": 27740,
+      "path": "NumStability/Analysis/Summation/ErrorBounds.lean",
+      "sha256": "c854e551e30988fac10416b90f1903fb2fc30a14ec083c6c63881c59ca4f600c"
+    },
+    {
+      "bytes": 4857,
+      "path": "NumStability/Analysis/Summation/Signs.lean",
+      "sha256": "37d8ab21de6513b53a850f442b000edecc9935dbaa2ee45c81e5e56ac84ee413"
+    },
+    {
+      "bytes": 243,
+      "path": "NumStability/Analysis/Summation.lean",
+      "sha256": "79f19fa4f203d7bed2096a200452b5c94863c33530058332d24282fe9391d373"
+    },
+    {
+      "bytes": 65093,
+      "path": "NumStability/Analysis/SylvesterSchurExistence.lean",
+      "sha256": "8575a7df98431a32946be7d5642853ec8ec6130ca0898d3cbd91770baf021952"
+    },
+    {
+      "bytes": 11857,
+      "path": "NumStability/Analysis/TieRules.lean",
+      "sha256": "74f15295653affea01a3087c49d1be4875888a6443d81bf2b6e26333b9f2cc1f"
+    },
+    {
+      "bytes": 19325,
+      "path": "NumStability/Analysis/TrigCancellation.lean",
+      "sha256": "8800be0d08f95835340ca1e82c6b2fb1e5d331f0237a9249c7bd911060a18d30"
+    },
+    {
+      "bytes": 4702,
+      "path": "NumStability/Analysis.lean",
+      "sha256": "eac17168bd974a9027976018627722d236bc9b77464d4b9eb3ea5b1d33b2984e"
+    },
+    {
+      "bytes": 511,
+      "path": "NumStability/Core.lean",
+      "sha256": "9468a114fc94389f62ffb9ea50f60036195398df53243ffc40548d60c35c3e25"
+    },
+    {
+      "bytes": 4750,
+      "path": "NumStability/FloatingPoint/IEEE/NaiveMaximum.lean",
+      "sha256": "28a78589a50fb87153336f1f658ceda9921d1a640254c15e58c7a511f2d22f3e"
+    },
+    {
+      "bytes": 197,
+      "path": "NumStability/FloatingPoint/IEEE.lean",
+      "sha256": "57e62470b19a0dabe1cdd84b27956e2385e5ddb64b2e2e02d1ef5e5132d7ec17"
+    },
+    {
+      "bytes": 5100,
+      "path": "NumStability/FloatingPoint/Model.lean",
+      "sha256": "87d16aa4df1b3d0d6a30dbe8046877993ba4caed6c74922bb71a6475be2bbc31"
+    },
+    {
+      "bytes": 3487,
+      "path": "NumStability/FloatingPoint/OperationLaws.lean",
+      "sha256": "3ee08caf9cbe297473c14cd9a3f54dbbf02e45279e4a97145e0470a784d14809"
+    },
+    {
+      "bytes": 274,
+      "path": "NumStability/FloatingPoint.lean",
+      "sha256": "5f19f7796058032db5ed4f3369b2654a619a198e44a4045e37e8e2948c99bd67"
+    },
+    {
+      "bytes": 222,
+      "path": "NumStability/Higham/Chapter02/Problem04.lean",
+      "sha256": "86ed16e2e532b78c80ec2d9461a536972dfd8dc5801c7f0299a3ca353b30e801"
+    },
+    {
+      "bytes": 222,
+      "path": "NumStability/Higham/Chapter02/Problem07.lean",
+      "sha256": "bf62840d900344e860819a08c02c5f9e3a18373823a9fa18e19283ff712f202c"
+    },
+    {
+      "bytes": 290,
+      "path": "NumStability/Higham/Chapter02/Problem22.lean",
+      "sha256": "7234bd808a1a356cf06ac17853a573b6c4dcca2d1eb64c1882aba9e7be40bcb6"
+    },
+    {
+      "bytes": 226,
+      "path": "NumStability/Higham/Chapter08/Lemma8_8Discrepancy.lean",
+      "sha256": "a24fb4b28a20a0b1e057b7c31f9dcb7172ce1f607edc87112b85e1802723486b"
+    },
+    {
+      "bytes": 212,
+      "path": "NumStability/Higham/Chapter10/Theorem10_7.lean",
+      "sha256": "88c7d73e6d2ee337c6b3a611be173fd57c0cde10c37b25218640fa4084b82766"
+    },
+    {
+      "bytes": 212,
+      "path": "NumStability/Higham/Chapter11/Theorem11_7Capstone.lean",
+      "sha256": "24c63e2954d4f4a658fb398854c2d633c7a7e5ee9aa4950a30c9e7bd2b78e5fc"
+    },
+    {
+      "bytes": 281,
+      "path": "NumStability/Higham/Chapter13/Table13_1.lean",
+      "sha256": "71f0585b45e7ee769a398587f9e318abaf3a4df92f1587aea27dfe501363c4b9"
+    },
+    {
+      "bytes": 177,
+      "path": "NumStability/Higham/Chapter14/Discrepancies.lean",
+      "sha256": "98848304d61ad689ccdb4754701bd7c1497234ab3cd8aa00e88665d3a795b1af"
+    },
+    {
+      "bytes": 353,
+      "path": "NumStability/Higham/Chapter20/SourceAliases.lean",
+      "sha256": "87c987a0470962fe82aad0463289f9351829e4d08bf180561c2875c88770ff88"
+    },
+    {
+      "bytes": 341,
+      "path": "NumStability/Higham/CrossChapter/Chapter02To03NoGuardDot.lean",
+      "sha256": "dcc9cde658cdf10f46dba292f02624a31fd20cc422d0e0f37c804c8b95625542"
+    },
+    {
+      "bytes": 239,
+      "path": "NumStability/Higham/CrossChapter/Chapter07To15PracticalBound.lean",
+      "sha256": "2c36a36bcd870ec14c6073fc5363228af3feb06c8f5a8546be632baebe8f3a33"
+    },
+    {
+      "bytes": 274,
+      "path": "NumStability/Higham/CrossChapter/Chapter09To12GenericSolver.lean",
+      "sha256": "d870a7eeb0f6523d935104877dff81abdb925d27549d8c1d4e081c583081f8a5"
+    },
+    {
+      "bytes": 258,
+      "path": "NumStability/Higham/CrossChapter/Chapter09To12Solver.lean",
+      "sha256": "a84e2a20afdf77637ce1d5c9dd18d3733ef0a445e417962dd6c15ba618cf9241"
+    },
+    {
+      "bytes": 228,
+      "path": "NumStability/Higham.lean",
+      "sha256": "6244c38c319be3481643ac171ddd694a54fd58abf0dca63f0a901d68fbcb55f8"
+    },
+    {
+      "bytes": 5548,
+      "path": "NumStability/Source/Higham/Chapter01/Section17/ErrorSpread.lean",
+      "sha256": "dfc012647fbe9b0c2362dcda49b3416e5d0ef2b1292faea511219f5f54111baf"
+    },
+    {
+      "bytes": 29182,
+      "path": "NumStability/Source/Higham/Chapter01/Section17/GridVariation.lean",
+      "sha256": "31a493e735c5c19a7c240a56738821a52072b013bc8546da47303c9273d170c2"
+    },
+    {
+      "bytes": 25366,
+      "path": "NumStability/Source/Higham/Chapter01/Section17/HornerEvaluation.lean",
+      "sha256": "abc5f2c249c12a7d7c0d80e5900877422af444653b8ba115b6e9a724cd6cce89"
+    },
+    {
+      "bytes": 43580,
+      "path": "NumStability/Source/Higham/Chapter01/Section17/SourceInterval.lean",
+      "sha256": "5d00c486b75a02ef4302bdcc3f6ed86b4fec3950dae945bdf105d986b5ed3b47"
+    },
+    {
+      "bytes": 84797,
+      "path": "NumStability/Source/Higham/Chapter01/Section17/StoredGrid.lean",
+      "sha256": "c12f90c2c5eb6cdb431712f0f5ebbf360bee5aafba01d8b551cd0f382778c783"
+    },
+    {
+      "bytes": 585,
+      "path": "NumStability/Source/Higham/Chapter01/Section17.lean",
+      "sha256": "ac2db9fcf3c7766d7711d5ab82a90ecbfb0d9187ff08ff585f134d321cb11b5f"
+    },
+    {
+      "bytes": 248,
+      "path": "NumStability/Source/Higham/Chapter01.lean",
+      "sha256": "464c235322f307d5bc37e98e6f17c1bce9d969084cf1b1629021515f0db10cdb"
+    },
+    {
+      "bytes": 2142,
+      "path": "NumStability/Source/Higham/Chapter02/Problem02.lean",
+      "sha256": "f8d7b21b46783c70047b95ff736430206eb45d0fd8b3f77cd09bca2817280a83"
+    },
+    {
+      "bytes": 2231,
+      "path": "NumStability/Source/Higham/Chapter02/Problem04.lean",
+      "sha256": "f0aa128c1a7edfcbd82eecae80f0be5d834a384a97f612d72803519c7360ae36"
+    },
+    {
+      "bytes": 4157,
+      "path": "NumStability/Source/Higham/Chapter02/Problem07.lean",
+      "sha256": "4351d16c57b3ac91f0ba594721cf4365461b20a1ba39b6a25704117a867c7348"
+    },
+    {
+      "bytes": 4202,
+      "path": "NumStability/Source/Higham/Chapter02/Problem11.lean",
+      "sha256": "62d0e49203e5445856b5b710288843f8839ab7d18004ba1346e06b8be0ed9176"
+    },
+    {
+      "bytes": 595,
+      "path": "NumStability/Source/Higham/Chapter02/Problem22.lean",
+      "sha256": "d4d1a6ac1eff71d3e78dbc74295e3659b6b1e43f30367763900a36f0a64b1cd8"
+    },
+    {
+      "bytes": 2883,
+      "path": "NumStability/Source/Higham/Chapter02/Problem23.lean",
+      "sha256": "bd5bcd99f7c916787755bc3429693e5fffd6f92538cf6d6ecbfe40adadfe1437"
+    },
+    {
+      "bytes": 2046,
+      "path": "NumStability/Source/Higham/Chapter02/Section07/PowerLeadingDigits.lean",
+      "sha256": "747e9527ba1b76ef6b6c4ebafa47666f3f9b91115902fd5f30a56cc395c29aac"
+    },
+    {
+      "bytes": 225,
+      "path": "NumStability/Source/Higham/Chapter02/Section07.lean",
+      "sha256": "bcf4b7a281b7bf5f4e0031eedbe6002acbedd337b5c5354720ccbc26aac0d243"
+    },
+    {
+      "bytes": 545,
+      "path": "NumStability/Source/Higham/Chapter02.lean",
+      "sha256": "8ceec9328d5140453cb9476628b65d10a43cf0b728f18ead199792e0a35d5a0e"
+    },
+    {
+      "bytes": 2238,
+      "path": "NumStability/Source/Higham/Chapter04/Algorithm02/InitializationModelLimitations.lean",
+      "sha256": "eb807e29ba0f930b5afc6a8bab33ee017995d45264d66729b9411504fe6be361"
+    },
+    {
+      "bytes": 235,
+      "path": "NumStability/Source/Higham/Chapter04/Algorithm02.lean",
+      "sha256": "a0b4cc087a48ce659ae1b4a9ef530ca26203a4283e129c550a008ad5a63c956a"
+    },
+    {
+      "bytes": 2289,
+      "path": "NumStability/Source/Higham/Chapter04/Equation07/AbstractModelCounterexample.lean",
+      "sha256": "7b4c51a18a743ef4d1a3195c04ea207c39c4b2f7bab1619543c5b6d8acfcded7"
+    },
+    {
+      "bytes": 2494,
+      "path": "NumStability/Source/Higham/Chapter04/Equation07/NoGuardCounterexample.lean",
+      "sha256": "1b1a356761b762ab368e56ef1fccd7a22782830ad94a8ccf3dd247234e9354d9"
+    },
+    {
+      "bytes": 8433,
+      "path": "NumStability/Source/Higham/Chapter04/Equation07/SterbenzCounterexamples.lean",
+      "sha256": "e9f0526c3f6bcea285071737f37e9757c22f4acbb19d006c8ff463c774383f52"
+    },
+    {
+      "bytes": 415,
+      "path": "NumStability/Source/Higham/Chapter04/Equation07.lean",
+      "sha256": "a713878c27bee3e2d3e8c2f21c13ea1f96925f2c9c5e985a69a4295eb3a07b7a"
+    },
+    {
+      "bytes": 44408,
+      "path": "NumStability/Source/Higham/Chapter04/Equation08/FiniteFamily.lean",
+      "sha256": "e4bc024575b837b645d8f879597d369be13a2f50ae8f70f1708b2badf3d6fd48"
+    },
+    {
+      "bytes": 2223,
+      "path": "NumStability/Source/Higham/Chapter04/Equation08/FiniteFormat.lean",
+      "sha256": "cb67b84556c2398855ac44e62839d1256d47fb006159c37def87eef31d2f07ca"
+    },
+    {
+      "bytes": 16738,
+      "path": "NumStability/Source/Higham/Chapter04/Equation08/FiniteRouteLimitations.lean",
+      "sha256": "35842b338711d1e5ffefabe2b6c65ee78f2bd0de6b085d5c16ed19463f40bf9d"
+    },
+    {
+      "bytes": 16671,
+      "path": "NumStability/Source/Higham/Chapter04/Equation08/ModelStrength.lean",
+      "sha256": "d7019efeb1bcf4274692e670cc72b5dbebfa2cd78ed2025edf1daf08ac6795d3"
+    },
+    {
+      "bytes": 89183,
+      "path": "NumStability/Source/Higham/Chapter04/Equation08/ReturnedSum.lean",
+      "sha256": "8148a4f08eea40e03fb221e3a12f14e6501b6975492284d68e7e779b40376e84"
+    },
+    {
+      "bytes": 510,
+      "path": "NumStability/Source/Higham/Chapter04/Equation08.lean",
+      "sha256": "57124bb19f6b157f8fe9123a1e6c7c1d2ec924c27876f3a82a6ea0e4a3e93ee6"
+    },
+    {
+      "bytes": 1882,
+      "path": "NumStability/Source/Higham/Chapter04/Equation09/Correction.lean",
+      "sha256": "a47a3ba8baac0c82caac4a32330722212ef9c10a916c9416af3c0dde6b207217"
+    },
+    {
+      "bytes": 1896,
+      "path": "NumStability/Source/Higham/Chapter04/Equation09/FiniteFormat.lean",
+      "sha256": "acf7eb5fee362939c46da4021da82d1aae8940ef51809439ebee5e9d1ec59a93"
+    },
+    {
+      "bytes": 4331,
+      "path": "NumStability/Source/Higham/Chapter04/Equation09/ModelStrength.lean",
+      "sha256": "3d8ea9bf9a2db6d53d623a4ed3ab6188570c870bd28ddc1ab6549d505909eaa1"
+    },
+    {
+      "bytes": 430,
+      "path": "NumStability/Source/Higham/Chapter04/Equation09.lean",
+      "sha256": "11a1a2b30e3817c4407bbfa6013866e227111a4603c07cbdc24567ebcd38de63"
+    },
+    {
+      "bytes": 46088,
+      "path": "NumStability/Source/Higham/Chapter04/Equation10/AbstractModel.lean",
+      "sha256": "be09a555197c992216b1c7ea4e606aa5829a8605edae6d6f4fe87ae910cb10b9"
+    },
+    {
+      "bytes": 2352,
+      "path": "NumStability/Source/Higham/Chapter04/Equation10/FiniteFormat.lean",
+      "sha256": "d1ecb95aa996d1799df2a1b853c3c340ec55ddcaf3c3d2a5e9f3be5a5ab6de22"
+    },
+    {
+      "bytes": 326,
+      "path": "NumStability/Source/Higham/Chapter04/Equation10.lean",
+      "sha256": "b237e178e7117ec10cc431b578316aa4076eee2280a3ed4a6ea3b5d4b4bc7a38"
+    },
+    {
+      "bytes": 12961,
+      "path": "NumStability/Source/Higham/Chapter04/Problem03.lean",
+      "sha256": "8e91cbdcdf6d15674116fb090ab5017cefb1f1010c8d2badaab8e027155a59d9"
+    },
+    {
+      "bytes": 10407,
+      "path": "NumStability/Source/Higham/Chapter04/Problem04.lean",
+      "sha256": "5fe50f766875cf28b6e50708d03dd7c95bb8de116ae313d0bebe9d5e0cf9d663"
+    },
+    {
+      "bytes": 11987,
+      "path": "NumStability/Source/Higham/Chapter04/Problem10.lean",
+      "sha256": "368d137b93f650a8e6ee1d5ed3352b8d38129e2aa38f08d37dc9cbbbd000c3c9"
+    },
+    {
+      "bytes": 12463,
+      "path": "NumStability/Source/Higham/Chapter04/Section01/InsertionExamples.lean",
+      "sha256": "ac93d3af7bf6b7ee80dcab4181609a58c395bdbaa1ef28038a3b301a05142a62"
+    },
+    {
+      "bytes": 2927,
+      "path": "NumStability/Source/Higham/Chapter04/Section01/PairwiseSixTerm.lean",
+      "sha256": "20e289b9ec96f566cd51f7737aa0d38d2725c10b58812b3c4fcb1a24e80da7d1"
+    },
+    {
+      "bytes": 276,
+      "path": "NumStability/Source/Higham/Chapter04/Section01.lean",
+      "sha256": "45cdd5d5f8b9430185a77f9dfdc1cbcf5e2269e55bf69b8cb3abacd90ab71f92"
+    },
+    {
+      "bytes": 13636,
+      "path": "NumStability/Source/Higham/Chapter04/Section02/KaoWangCitationDiscrepancy.lean",
+      "sha256": "9b667c30dacbdb17c753059e20dbeb7044adb6498a830f790068e64c03b73c3e"
+    },
+    {
+      "bytes": 248,
+      "path": "NumStability/Source/Higham/Chapter04/Section02.lean",
+      "sha256": "532afcbde5d8a8d75c5702a252b205d5aac6c63f7cada3e4954e7b764e8e270e"
+    },
+    {
+      "bytes": 387,
+      "path": "NumStability/Source/Higham/Chapter04/Section03/FiniteFormat.lean",
+      "sha256": "dc81e2c4bdd4d849166a876c63baff578decff4d5c84cbc9fcc3ea59d9937966"
+    },
+    {
+      "bytes": 4301,
+      "path": "NumStability/Source/Higham/Chapter04/Section03/NoGuardKahanCounterexample.lean",
+      "sha256": "48bd1502d8dd8cce8e040ae001dda0ffc3bcbd0c830e564e8b7337b1e9808ee4"
+    },
+    {
+      "bytes": 663,
+      "path": "NumStability/Source/Higham/Chapter04/Section03.lean",
+      "sha256": "089dbbabbf38792f955eb9bc9adfe29e47e3edffdc60928281c171cab3c0e056"
+    },
+    {
+      "bytes": 515,
+      "path": "NumStability/Source/Higham/Chapter04.lean",
+      "sha256": "d85b89fcc865ceedf58e3f06090431ef8f872f6636a82392ae841f4bd4ed8adc"
+    },
+    {
+      "bytes": 4650,
+      "path": "NumStability/Source/Higham/Chapter08/Lemma08Discrepancy.lean",
+      "sha256": "2dfcae19de090cdfa021dc17efd6a9b85ee062ad6b504c78c5961379a56ef3c3"
+    },
+    {
+      "bytes": 185,
+      "path": "NumStability/Source/Higham/Chapter08.lean",
+      "sha256": "6708ddd40c5b4224947788a24d5cec655e66fe6a42277d5b53889223741c66ae"
+    },
+    {
+      "bytes": 69795,
+      "path": "NumStability/Source/Higham/Chapter10/Theorem07.lean",
+      "sha256": "41f89c9e3bae222731725a176ddd7552f02b07d93b73344574c6500d262dd095"
+    },
+    {
+      "bytes": 178,
+      "path": "NumStability/Source/Higham/Chapter10.lean",
+      "sha256": "29965c8fa97e73ca8ae58ce90447d1f85c6d97a274a2492364017472df500443"
+    },
+    {
+      "bytes": 30821,
+      "path": "NumStability/Source/Higham/Chapter11/Theorem07.lean",
+      "sha256": "d75a1d49eadf99cefdc82c0fef91b30bf1d5e482df08be297e06f047e51e7620"
+    },
+    {
+      "bytes": 178,
+      "path": "NumStability/Source/Higham/Chapter11.lean",
+      "sha256": "6d16612c67a28bacde980beb7fb6ed54510f35355e120025952f574669450260"
+    },
+    {
+      "bytes": 35761,
+      "path": "NumStability/Source/Higham/Chapter12/IterativeRefinement.lean",
+      "sha256": "04697050c582210e89e9bf416613d92e263ebd2fc963e8a2726ae56e20942053"
+    },
+    {
+      "bytes": 7095,
+      "path": "NumStability/Source/Higham/Chapter12/OmegaDiscontinuity.lean",
+      "sha256": "dfdadd4033c901d1b3f2aca24b6607fc042e354989bbccceb4e74db153dc2377"
+    },
+    {
+      "bytes": 11523,
+      "path": "NumStability/Source/Higham/Chapter12/Problem02.lean",
+      "sha256": "041a92f11894b45b8d26a981a21a0a2c6bf38b7f3f37504e09b20562172030e5"
+    },
+    {
+      "bytes": 456,
+      "path": "NumStability/Source/Higham/Chapter12.lean",
+      "sha256": "06de175fd0c8a1e784c7c70c034de503903d7e08374a29615f5af4c4aeff815a"
+    },
+    {
+      "bytes": 29174,
+      "path": "NumStability/Source/Higham/Chapter13/DemmelSharpMultiplier.lean",
+      "sha256": "b1593d06e68f72ea922aa9c0c09ed9a85b4c564322efbdb53c2a5952fddc3fe3"
+    },
+    {
+      "bytes": 8944,
+      "path": "NumStability/Source/Higham/Chapter13/Equation25.lean",
+      "sha256": "4b94bc8df2746a563ed0fdad22876aac0d9728b7a72e17e1e1aa9e3f44b5daa8"
+    },
+    {
+      "bytes": 11482,
+      "path": "NumStability/Source/Higham/Chapter13/Table01.lean",
+      "sha256": "b7cec66eb258b4cda9bf3b816fcf293a7524585bf2c0564f549e9663b3abb1b7"
+    },
+    {
+      "bytes": 354,
+      "path": "NumStability/Source/Higham/Chapter13.lean",
+      "sha256": "16b7c17b9d33aba6b74ec149a5d2b9822cb4548288581a99be1d55471dbf0276"
+    },
+    {
+      "bytes": 732,
+      "path": "NumStability/Source/Higham/Chapter14/Discrepancies.lean",
+      "sha256": "b6fabab1a21ba3c2b9b6de31b8ca483986345b1caac7e95e12579c56d286dcda"
+    },
+    {
+      "bytes": 4810,
+      "path": "NumStability/Source/Higham/Chapter14/Problem13.lean",
+      "sha256": "85b598ab28846fa9be4382cd64c4ef4c51e52810daef28761cac0e356dcde9b5"
+    },
+    {
+      "bytes": 25708,
+      "path": "NumStability/Source/Higham/Chapter14/Section05/RectangularIteration.lean",
+      "sha256": "3f7c228b432b9b720e3622bf09a3fde65e70c0ab432117f1143ab950ec0c7584"
+    },
+    {
+      "bytes": 26280,
+      "path": "NumStability/Source/Higham/Chapter14/Section05/SpectralConvergence.lean",
+      "sha256": "8102533022f16c497639995ecb65bff5adea0b09a4032211ee40c9ff5017e8c8"
+    },
+    {
+      "bytes": 16649,
+      "path": "NumStability/Source/Higham/Chapter14/Section05/SquareIteration.lean",
+      "sha256": "c16aacdaecefbeb233c7ba2889d9ee1b974cbe16307eafaf3670badba8cc1f96"
+    },
+    {
+      "bytes": 400,
+      "path": "NumStability/Source/Higham/Chapter14/Section05.lean",
+      "sha256": "c6069a78b52d21802e317565d7664ccb24f9c5cfcce96158e4e885c3e6f65d16"
+    },
+    {
+      "bytes": 387,
+      "path": "NumStability/Source/Higham/Chapter14.lean",
+      "sha256": "7e37dd636fb55c000efe5889ca3a6b3ff68ec14042813832feb9fa4ad3af72c9"
+    },
+    {
+      "bytes": 2233,
+      "path": "NumStability/Source/Higham/Chapter17/Equation08.lean",
+      "sha256": "6dcc213fd4c1502a46e3c738a66308908e1fe1cda622c40d09a608e5618266f9"
+    },
+    {
+      "bytes": 10995,
+      "path": "NumStability/Source/Higham/Chapter17/Equation12.lean",
+      "sha256": "34909de96b23b2042f73c9fc5aabaf3c10c224126f09edea3bedbf067b41bbb2"
+    },
+    {
+      "bytes": 1797,
+      "path": "NumStability/Source/Higham/Chapter17/Equation15.lean",
+      "sha256": "78942e1ed684e8c7c4d9d5ab2ee27d4877119e30842a88113e97f4181e9ffc72"
+    },
+    {
+      "bytes": 1726,
+      "path": "NumStability/Source/Higham/Chapter17/Equation16.lean",
+      "sha256": "4be322a857e990d5585c0b2cb51a80d2c15c33c153bf6806119ab0a809fe7292"
+    },
+    {
+      "bytes": 3747,
+      "path": "NumStability/Source/Higham/Chapter17/Equation17.lean",
+      "sha256": "3ebf7f38b4e402e1bcae24f5854c0bd90861beeb14397b1a08ae26d4ca9881fa"
+    },
+    {
+      "bytes": 13021,
+      "path": "NumStability/Source/Higham/Chapter17/Equation20.lean",
+      "sha256": "73aab8416509a60468cebfe6b4cb867cb0d7b2702f7d0c92b056026b252ce5e2"
+    },
+    {
+      "bytes": 11460,
+      "path": "NumStability/Source/Higham/Chapter17/Equation22.lean",
+      "sha256": "4608828245b47daf5e8a1da5b150c804e44f71aedb4f6b6bcc2eaccee02d44df"
+    },
+    {
+      "bytes": 6727,
+      "path": "NumStability/Source/Higham/Chapter17/Problem01.lean",
+      "sha256": "a976a65d435a70771902bd59c283953d38ce165a96be3b9ffd971d5a12c5480a"
+    },
+    {
+      "bytes": 623,
+      "path": "NumStability/Source/Higham/Chapter17.lean",
+      "sha256": "94352cf6c4ad1b6c2d8955932d8cb10dffe170e3117c0769ee6267bc9d062bb8"
+    },
+    {
+      "bytes": 2480,
+      "path": "NumStability/Source/Higham/Chapter20/Equation32.lean",
+      "sha256": "a081bcea8b8c716a3539965855034a4b0a4f5122bd22823a3d6772ca9343b80a"
+    },
+    {
+      "bytes": 3959,
+      "path": "NumStability/Source/Higham/Chapter20/Lemma06.lean",
+      "sha256": "6c9dba6b9f230bdd28d23e9bbd7724dccc6b86f49241297ac8ccc7d8717b840e"
+    },
+    {
+      "bytes": 4199,
+      "path": "NumStability/Source/Higham/Chapter20/Theorem01.lean",
+      "sha256": "945de6a8c4e49bb3f3cdde0253e23874b78959e935cc2e1e1081f6e5ae8a427a"
+    },
+    {
+      "bytes": 285,
+      "path": "NumStability/Source/Higham/Chapter20.lean",
+      "sha256": "a86c04fda84a880d77e7597c1e473ed1948dadba85e7c0901726fd5fd58a2e7f"
+    },
+    {
+      "bytes": 4165,
+      "path": "NumStability/Source/Higham/Chapter21/RowScalingInvariance.lean",
+      "sha256": "8d470a719da3a708542301fc24169ba822d487d387fd53d4e6a51fd7f079a0b3"
+    },
+    {
+      "bytes": 407,
+      "path": "NumStability/Source/Higham/Chapter21.lean",
+      "sha256": "3d81fc5829aae9feed4b598093d0dc91df1500981e64d606761043e16066227a"
+    },
+    {
+      "bytes": 36518,
+      "path": "NumStability/Source/Higham/Chapter22/MonomialResidual.lean",
+      "sha256": "c1af56fb0fe1d874c0b07d317ab88e2833281bd41c7b1498b00943530ca1ecc8"
+    },
+    {
+      "bytes": 60547,
+      "path": "NumStability/Source/Higham/Chapter22/Problem07.lean",
+      "sha256": "59610536e1b212eb52de6fd3d0d21d28b9c3fcafc2d5fc6273c1039cc76e03bc"
+    },
+    {
+      "bytes": 36260,
+      "path": "NumStability/Source/Higham/Chapter22/Section03/ComplexConfluentRefinement.lean",
+      "sha256": "438e7a4fdd4983392a11afa9d68c45281dcc7c78ac045d3f9ec4f9be33bb0297"
+    },
+    {
+      "bytes": 21919,
+      "path": "NumStability/Source/Higham/Chapter22/Section03/RealRefinement.lean",
+      "sha256": "7595081465c6dbdb17d87ac85ea448f2302f57b17579cc9f4cebbf8754b0e66e"
+    },
+    {
+      "bytes": 334,
+      "path": "NumStability/Source/Higham/Chapter22/Section03.lean",
+      "sha256": "56b143e535685d5d2a8097e6380243f3e3954840d49fbd30d91661bd2bc7c615"
+    },
+    {
+      "bytes": 367711,
+      "path": "NumStability/Source/Higham/Chapter22/VandermondeSystems.lean",
+      "sha256": "bb3b38628bd2efa41cf202ade7c80a985f9ffe7e99e75e4414622f550bab2199"
+    },
+    {
+      "bytes": 408,
+      "path": "NumStability/Source/Higham/Chapter22.lean",
+      "sha256": "7bac25c40241f76a9da296df1ee66ca0efeeb578095848c2c7ccfd94fd7857b6"
+    },
+    {
+      "bytes": 3095,
+      "path": "NumStability/Source/Higham/Chapter23/BalancedScaling.lean",
+      "sha256": "34780463204159883fca3cf64c09b8fc399cae5ba5d6c705094c9106de3b3b23"
+    },
+    {
+      "bytes": 3306,
+      "path": "NumStability/Source/Higham/Chapter23/BilinearAlgorithm.lean",
+      "sha256": "6245ecc722679b3909d9c02c47c5a3b38303ff3f1e256fe1bcf050d8ad9a14fd"
+    },
+    {
+      "bytes": 12035,
+      "path": "NumStability/Source/Higham/Chapter23/BiniLotti/ExactMajorant.lean",
+      "sha256": "67676e436b18ab84855e33f65aa6dc98a00d10c8e5eecf0b72352c4d49b45733"
+    },
+    {
+      "bytes": 3193,
+      "path": "NumStability/Source/Higham/Chapter23/BiniLotti/Execution.lean",
+      "sha256": "fd5723fef92694705afeafddf7e2062af5b60d0730e9329efaa4e50173af02f0"
+    },
+    {
+      "bytes": 18252,
+      "path": "NumStability/Source/Higham/Chapter23/BiniLotti/FirstOrder.lean",
+      "sha256": "8891b98b6a9adda055fe904841d31fef520b10684ba02c9906408aa9985ffcec"
+    },
+    {
+      "bytes": 16975,
+      "path": "NumStability/Source/Higham/Chapter23/BiniLotti/RecursiveAlgebra.lean",
+      "sha256": "b081e81d6b11a296424a8146883e8cc5e1e96398bd04503d5882d65422f6c58e"
+    },
+    {
+      "bytes": 451,
+      "path": "NumStability/Source/Higham/Chapter23/BiniLotti.lean",
+      "sha256": "819f052bb2e3ddcda0b4aa0a2077ed399c3ea988a4beb7b55a15b04b9772403a"
+    },
+    {
+      "bytes": 6128,
+      "path": "NumStability/Source/Higham/Chapter23/BlockAlgorithms.lean",
+      "sha256": "72fae65327750312a770b731bf2d5fcbe123fa1927642a2cbcca7e75badfa645"
+    },
+    {
+      "bytes": 3992,
+      "path": "NumStability/Source/Higham/Chapter23/ConventionalMultiplication.lean",
+      "sha256": "d8003fb836d4735dae9464093516043e244624d5f529ec0bfaf4d599feab2ec8"
+    },
+    {
+      "bytes": 30739,
+      "path": "NumStability/Source/Higham/Chapter23/Equation11.lean",
+      "sha256": "c6aedbe24f634b3ed1d30b2d2c6afd57f80cb886f7d6d390963ee7b4304c10c9"
+    },
+    {
+      "bytes": 8092,
+      "path": "NumStability/Source/Higham/Chapter23/ErrorRecurrences.lean",
+      "sha256": "36a0281f433d8468dbb950f39d312c5f55fd0321dc8ebbf63d32e097eb4ef6a3"
+    },
+    {
+      "bytes": 2803,
+      "path": "NumStability/Source/Higham/Chapter23/GammaAsymptotics.lean",
+      "sha256": "cfcbe5189b01eccfa565ab5081721a3ef6e262e6fdacd73ff83a3dd278dfff52"
+    },
+    {
+      "bytes": 7380,
+      "path": "NumStability/Source/Higham/Chapter23/Problem08.lean",
+      "sha256": "df2a2d44599581ae9d821198bd8b2a4f1b0f3e064b9f03d19f8eba4a8b79fdfc"
+    },
+    {
+      "bytes": 28839,
+      "path": "NumStability/Source/Higham/Chapter23/Theorem02/ErrorBound.lean",
+      "sha256": "9677fcd831f84e4460920705b784064aece57dd22d458ac292d0a7cfeee3fbd5"
+    },
+    {
+      "bytes": 25886,
+      "path": "NumStability/Source/Higham/Chapter23/Theorem02/ErrorRelations.lean",
+      "sha256": "5e6552c191e4b9f94ba8954b02283d1f80b9fb84038ab892e7cea1ef6b52bd46"
+    },
+    {
+      "bytes": 11991,
+      "path": "NumStability/Source/Higham/Chapter23/Theorem02/ExactMajorant.lean",
+      "sha256": "433697d1c909d56c7cfe4b64c4497c6b3bc693fb57e5552d360971a329b85963"
+    },
+    {
+      "bytes": 2622,
+      "path": "NumStability/Source/Higham/Chapter23/Theorem02/Execution.lean",
+      "sha256": "d7c8048fa2aca1f70eb18dcc1356a0ddbd46cfe1fc0fd55a40811ab60c6363b7"
+    },
+    {
+      "bytes": 5504,
+      "path": "NumStability/Source/Higham/Chapter23/Theorem02/RecursiveMatrix.lean",
+      "sha256": "029021f38a357c2a8e9bd6fdc4a7cefd542896170fb85a89099dfc042a4ed35d"
+    },
+    {
+      "bytes": 505,
+      "path": "NumStability/Source/Higham/Chapter23/Theorem02.lean",
+      "sha256": "2c3ec03370032bf57ad7e735c624a873537a5417eb3850bc188c7e2d3e77a85c"
+    },
+    {
+      "bytes": 5101,
+      "path": "NumStability/Source/Higham/Chapter23/Theorem03/Certificates.lean",
+      "sha256": "a19a1dac2e85a85b30fa7734b316e8b0a8e50d5b985f6b06cda97e479912bc26"
+    },
+    {
+      "bytes": 9621,
+      "path": "NumStability/Source/Higham/Chapter23/Theorem03/ErrorBound.lean",
+      "sha256": "ce5429fdb7053d68f7bbb4af6928e65bb423820f3276e6cb71b4cb4679e7f94e"
+    },
+    {
+      "bytes": 34488,
+      "path": "NumStability/Source/Higham/Chapter23/Theorem03/ExactMajorant.lean",
+      "sha256": "0921cef4da8f1469a74787a3bdc00e188b887d1e8b47df5fd83d0a13b96b79a7"
+    },
+    {
+      "bytes": 2461,
+      "path": "NumStability/Source/Higham/Chapter23/Theorem03/Execution.lean",
+      "sha256": "ae2c6334515feddd783543ea00f7433b7bda478a8297ad23baab2a7b5471fb6f"
+    },
+    {
+      "bytes": 443,
+      "path": "NumStability/Source/Higham/Chapter23/Theorem03.lean",
+      "sha256": "794b483b9adb1bd0a8d30b754c80d91dfc4c6e09d0f101235a144af6308895d4"
+    },
+    {
+      "bytes": 29969,
+      "path": "NumStability/Source/Higham/Chapter23/ThreeM.lean",
+      "sha256": "637a4c21c2a0b7475cc0fd8bc272749b52046f97f822ded72ce2ce99163499ce"
+    },
+    {
+      "bytes": 8876,
+      "path": "NumStability/Source/Higham/Chapter23/ThreeMStrassen/ExactMajorant.lean",
+      "sha256": "0473f5bdd59aae71931418b073bfc64ae1c658b852bb4d43aeb0d95456e02b6c"
+    },
+    {
+      "bytes": 4387,
+      "path": "NumStability/Source/Higham/Chapter23/ThreeMStrassen/Execution.lean",
+      "sha256": "d42ecfa59113bc070521f24188347a3b894420d905af76a528e72c6cebdc9707"
+    },
+    {
+      "bytes": 15177,
+      "path": "NumStability/Source/Higham/Chapter23/ThreeMStrassen/FirstOrder.lean",
+      "sha256": "b2ff7f77335f089e1acca8a4bfc71f3281d0ed8fa064f6c8d8151473f761a12e"
+    },
+    {
+      "bytes": 406,
+      "path": "NumStability/Source/Higham/Chapter23/ThreeMStrassen.lean",
+      "sha256": "a48b969df69daadb3307ec7e092b330ff51cd6bcc1182950b8b7a12e3da8a6a2"
+    },
+    {
+      "bytes": 16819,
+      "path": "NumStability/Source/Higham/Chapter23/WinogradInnerProduct.lean",
+      "sha256": "b59a4f06af19d7bae3b10973350a49be774a8a9af101113f48b35b562829a887"
+    },
+    {
+      "bytes": 1067,
+      "path": "NumStability/Source/Higham/Chapter23.lean",
+      "sha256": "df4df0ccae8d0148bd90035ee02a268f926e88ba2a6c7bf3f685c17e424b0e03"
+    },
+    {
+      "bytes": 22368,
+      "path": "NumStability/Source/Higham/Chapter24/CirculantForwardError.lean",
+      "sha256": "48a11e3a61e39fa36201e8bd9d1478a48acf0ebeea9e83b2b6468346d81af15b"
+    },
+    {
+      "bytes": 16323,
+      "path": "NumStability/Source/Higham/Chapter24/CirculantSystems.lean",
+      "sha256": "9cae773f6928b8b6b24872e514be3321a49e39696ba1660974ecb051d972662a"
+    },
+    {
+      "bytes": 6476,
+      "path": "NumStability/Source/Higham/Chapter24/FFTBackwardStability.lean",
+      "sha256": "2d2629e4d982ccce29113f5ba6bea31a64f9fc46f31a9fc1d0070c1fe9b97804"
+    },
+    {
+      "bytes": 20572,
+      "path": "NumStability/Source/Higham/Chapter24/ForwardFFTPerturbation.lean",
+      "sha256": "19f376044667c6f16d6b3daa8f7e49b0254ff5aa96ed24f8ef9ca04e18079b92"
+    },
+    {
+      "bytes": 6192,
+      "path": "NumStability/Source/Higham/Chapter24/FourierTransform.lean",
+      "sha256": "29173d1dd5a8b4d9d5840bde83f49d2451d36d6a860c58dcecf1d4c7bd229731"
+    },
+    {
+      "bytes": 10884,
+      "path": "NumStability/Source/Higham/Chapter24/InverseFFT.lean",
+      "sha256": "18788b53de5aabd88e0e03b42b041c989d897667fe7ef5753db6cc2a63490397"
+    },
+    {
+      "bytes": 102136,
+      "path": "NumStability/Source/Higham/Chapter24/Radix2FFT.lean",
+      "sha256": "7441307496e272cca55a327a31d47e79d877d7fda8537789d2e37e1d330e81cd"
+    },
+    {
+      "bytes": 8303,
+      "path": "NumStability/Source/Higham/Chapter24/RoundedCirculantSolver.lean",
+      "sha256": "00312970e9d7e591c585756c967a2e782271e5a5d8aae9fbeaac1c690877ac6c"
+    },
+    {
+      "bytes": 4656,
+      "path": "NumStability/Source/Higham/Chapter24/RoundedDiagonalSolve.lean",
+      "sha256": "ffd4ebc9f92f7e2eeea5c32a33f1bc523941c0475ec27837ef6373bbb93f01cd"
+    },
+    {
+      "bytes": 53835,
+      "path": "NumStability/Source/Higham/Chapter24/StructuredMixedStability.lean",
+      "sha256": "2ce9f195be61e05358931b55645670290534ba386fb51935a3d929d4d63787ed"
+    },
+    {
+      "bytes": 806,
+      "path": "NumStability/Source/Higham/Chapter24.lean",
+      "sha256": "045a2b62d89949030aa0c99c7372bedb75dcb49b40d05c4accf95e904f67a150"
+    },
+    {
+      "bytes": 26693,
+      "path": "NumStability/Source/Higham/Chapter25/Eigenproblem.lean",
+      "sha256": "288087b0495c1c3d3fc9dbd02fcb0dd50acf55211dd0f23ef3c59bc14c3b1015"
+    },
+    {
+      "bytes": 60744,
+      "path": "NumStability/Source/Higham/Chapter25/NonlinearSystems.lean",
+      "sha256": "b241075b11150b42cdc7badab938ecc99a7404b35fc066b76eccb8ffbdea04a1"
+    },
+    {
+      "bytes": 6615,
+      "path": "NumStability/Source/Higham/Chapter25/Problem01.lean",
+      "sha256": "244a70d66a474793975d2e6f2c9def82aeab22d79ae4dc34795289865d74f2fb"
+    },
+    {
+      "bytes": 366,
+      "path": "NumStability/Source/Higham/Chapter25.lean",
+      "sha256": "7934b9ee38404590bbce037a38be7df54a45003ded6342468424cd7fb62c6aa4"
+    },
+    {
+      "bytes": 7601,
+      "path": "NumStability/Source/Higham/Chapter26/AlternatingDirections/CrudeLineSearch.lean",
+      "sha256": "ccd4591e9817c3f7420faa3e889e2a74d1c0341ca07859e68b6fd16d352a6764"
+    },
+    {
+      "bytes": 3496,
+      "path": "NumStability/Source/Higham/Chapter26/AlternatingDirections/ExactExecution.lean",
+      "sha256": "1963f26eda262635a0b109dcc90999669a317ccc5cc2115fb72424bd65cac12c"
+    },
+    {
+      "bytes": 607,
+      "path": "NumStability/Source/Higham/Chapter26/AlternatingDirections.lean",
+      "sha256": "16238aa3da0ac7ed58c623a1f96111f086cc35dd8b67821fe1fe2cdb6a533041"
+    },
+    {
+      "bytes": 1047,
+      "path": "NumStability/Source/Higham/Chapter26/CubicRoots/DepressedCubic.lean",
+      "sha256": "9ba4965a6c9b609e54e4d18230508707c08205612f2d81ac4eb4dc7e551eaa83"
+    },
+    {
+      "bytes": 1239,
+      "path": "NumStability/Source/Higham/Chapter26/CubicRoots/MonicCubic.lean",
+      "sha256": "11c37e7aaed6517345b46e7ec6e73d99b14fc51c2dc37a507bb9232d8b3fd0e1"
+    },
+    {
+      "bytes": 563,
+      "path": "NumStability/Source/Higham/Chapter26/CubicRoots.lean",
+      "sha256": "9783b0dd00a62b7418186f52114c591ee18fcc13777a59624e0c3d697d42e42d"
+    },
+    {
+      "bytes": 979,
+      "path": "NumStability/Source/Higham/Chapter26/Equation01.lean",
+      "sha256": "99340f344b2a97660e52e2215d6f050c4feb26a849c10cf0a9bcea1b3ebf9200"
+    },
+    {
+      "bytes": 604,
+      "path": "NumStability/Source/Higham/Chapter26/Equation02.lean",
+      "sha256": "74330ccd43ac8a59a782fb262bdb8698220fd52a2610e36f76ccf7b6b09d9078"
+    },
+    {
+      "bytes": 1160,
+      "path": "NumStability/Source/Higham/Chapter26/Equation03.lean",
+      "sha256": "9dce652eb1f4d241dee5c9f5142dd31d9ab017a7cc524573677cbc3dff73b39e"
+    },
+    {
+      "bytes": 913,
+      "path": "NumStability/Source/Higham/Chapter26/Equation04.lean",
+      "sha256": "f865fa229cc2f020d8729561f87a48132f8beb386afc76cd1c92e96794321059"
+    },
+    {
+      "bytes": 4420,
+      "path": "NumStability/Source/Higham/Chapter26/Equation05/CardanoRoots.lean",
+      "sha256": "eaf046d2553036c980d3a9f9cd18e675b70faab1fa18f59d1cdcf39de17ad227"
+    },
+    {
+      "bytes": 2819,
+      "path": "NumStability/Source/Higham/Chapter26/Equation05/ComplexBranches.lean",
+      "sha256": "e8a71bec5ac0ed053f091c5b681cddc1c1c044c0b5c5a774e712bc0236476deb"
+    },
+    {
+      "bytes": 1756,
+      "path": "NumStability/Source/Higham/Chapter26/Equation05/RealBranches.lean",
+      "sha256": "abe14d5363e305372955ab6e9766f8b6d4c6dbd3857d70f3560b38e02653f16b"
+    },
+    {
+      "bytes": 2185,
+      "path": "NumStability/Source/Higham/Chapter26/Equation05/ZeroBranchDiscrepancy.lean",
+      "sha256": "16a1acd3195f7e26b187e5bd9786a5008f07e6e89005061c210e80dbc36066d5"
+    },
+    {
+      "bytes": 736,
+      "path": "NumStability/Source/Higham/Chapter26/Equation05.lean",
+      "sha256": "658036bd12afc922a46efeb981407a6ed4720a9f5cf1ccebce21dbf2fe9f268c"
+    },
+    {
+      "bytes": 2626,
+      "path": "NumStability/Source/Higham/Chapter26/Equation06.lean",
+      "sha256": "72b43a6c23dbf1b022210280ee603037d8dbc4342682df8e7531de7c1eb697e8"
+    },
+    {
+      "bytes": 813,
+      "path": "NumStability/Source/Higham/Chapter26/Equation07.lean",
+      "sha256": "d01c9e88f01c80113b22f94d56f8f08f196eaa61bb12258da8ed5d111ba1912b"
+    },
+    {
+      "bytes": 3054,
+      "path": "NumStability/Source/Higham/Chapter26/Equation08.lean",
+      "sha256": "e249d640a0dbc85db2ee509386f6d47c93b716bd8584f6136f9d95a956cc2e5b"
+    },
+    {
+      "bytes": 1553,
+      "path": "NumStability/Source/Higham/Chapter26/IntervalArithmetic/DependencyExamples.lean",
+      "sha256": "5bd7b4ecd6df19c073e76d5fdb1b9575ee01bc74b9ab78b275e461db081534c7"
+    },
+    {
+      "bytes": 5936,
+      "path": "NumStability/Source/Higham/Chapter26/IntervalArithmetic/DirectedRounding.lean",
+      "sha256": "d852cdc6163340a8f6e68d4ad9ab970b8974f810acd3c1063330adca9798ec68"
+    },
+    {
+      "bytes": 6318,
+      "path": "NumStability/Source/Higham/Chapter26/IntervalArithmetic/ExactOperations.lean",
+      "sha256": "ebcf435e06ce11be096a790c73c41a92e0c6a6d7fdff4996cf92dc6d8e09cbb0"
+    },
+    {
+      "bytes": 701,
+      "path": "NumStability/Source/Higham/Chapter26/IntervalArithmetic.lean",
+      "sha256": "62f5941960d22b4d14d9f6f5627ad36b9110819b29885ec0dc02d81e7e7f5dd6"
+    },
+    {
+      "bytes": 3474,
+      "path": "NumStability/Source/Higham/Chapter26/MultidirectionalSearch/Execution.lean",
+      "sha256": "62fdf44d1545c22ccd5c9efd0d78f60203bb285de086b6804956d20581f61f17"
+    },
+    {
+      "bytes": 1289,
+      "path": "NumStability/Source/Higham/Chapter26/MultidirectionalSearch/InitialSimplexGeometry.lean",
+      "sha256": "63085f96a801606d59ea3acbc0bbfb7c84877f15f0301503de915758e87b0e93"
+    },
+    {
+      "bytes": 6689,
+      "path": "NumStability/Source/Higham/Chapter26/MultidirectionalSearch/RegularSimplex.lean",
+      "sha256": "a01bb024f2f2f00a333bcdf363c544b06a034d69fc4854dd8b7b0f5df9f50ae7"
+    },
+    {
+      "bytes": 2531,
+      "path": "NumStability/Source/Higham/Chapter26/MultidirectionalSearch/RightAngledSimplex.lean",
+      "sha256": "3f2f7c628c2b4d23b49b5a7364d5d29ad245859bf08ad7c187b0eb818a8b1baa"
+    },
+    {
+      "bytes": 4502,
+      "path": "NumStability/Source/Higham/Chapter26/MultidirectionalSearch/Simplex.lean",
+      "sha256": "bd1972fc65f1a9edb9a28f7678d78946d16514c835a21c0415c88bc92b0a057a"
+    },
+    {
+      "bytes": 884,
+      "path": "NumStability/Source/Higham/Chapter26/MultidirectionalSearch.lean",
+      "sha256": "517f38fbda5c478e7c61ab77f97fa28b4d9c68549f00909a5eec03e7b61728e6"
+    },
+    {
+      "bytes": 1182,
+      "path": "NumStability/Source/Higham/Chapter26.lean",
+      "sha256": "1954e361cccb52b329b5ba42b511c062da1f8c617384e994877d9ab734f374e7"
+    },
+    {
+      "bytes": 7868,
+      "path": "NumStability/Source/Higham/Chapter27/Problem06.lean",
+      "sha256": "3c39a7d8497b31e79f56f7cf15253be26037e5d879575ba19af242efc1a61c64"
+    },
+    {
+      "bytes": 54816,
+      "path": "NumStability/Source/Higham/Chapter27/SoftwareEnvironment.lean",
+      "sha256": "e1b2c806f442a3009162d415e1c1f8810d2f2c1339a55a39b2edfa1e5678c3fa"
+    },
+    {
+      "bytes": 334,
+      "path": "NumStability/Source/Higham/Chapter27.lean",
+      "sha256": "d8cb588576bdadf094bc12e04bf960d54b5d1e6c1a1460f0e1f243dc5ecec253"
+    },
+    {
+      "bytes": 3627,
+      "path": "NumStability/Source/Higham/CrossChapter/LUSolverWeights/Doolittle.lean",
+      "sha256": "eeb6fef1b63d716cdc57d7d24fceddbee5d59d49861e65217d9e0989046be16a"
+    },
+    {
+      "bytes": 7324,
+      "path": "NumStability/Source/Higham/CrossChapter/LUSolverWeights/Factorization.lean",
+      "sha256": "618ee6a220b1420e82e69ab54d10eae55a79565e845b2e7f77aebb168ff6ff24"
+    },
+    {
+      "bytes": 350,
+      "path": "NumStability/Source/Higham/CrossChapter/LUSolverWeights.lean",
+      "sha256": "364b9489f0186b215cc027f109ee54fa356cf079d2c1e3aaf405d5507e2b35a3"
+    },
+    {
+      "bytes": 6658,
+      "path": "NumStability/Source/Higham/CrossChapter/NoGuardDotProduct.lean",
+      "sha256": "5a359d8e18b1307d03c5924231a7c782d27f07d23a2f02a615d7aec3781a6f02"
+    },
+    {
+      "bytes": 2702,
+      "path": "NumStability/Source/Higham/CrossChapter/PracticalConditionBound.lean",
+      "sha256": "8e181603c432479b4c61016ed3cd3a96771c88ae70bc725caaf57fab45445298"
+    },
+    {
+      "bytes": 351,
+      "path": "NumStability/Source/Higham/CrossChapter.lean",
+      "sha256": "100d1aca44f1f949393ab6311172ed98a8a304df50836e1d2f0700b2c3ffa660"
+    },
+    {
+      "bytes": 1135,
+      "path": "NumStability/Source/Higham.lean",
+      "sha256": "afd0e69c5ffb435adae1cfab83bc6ce076e98e2bf967c8803e695a172d52f612"
+    },
+    {
+      "bytes": 215,
+      "path": "NumStability/Source.lean",
+      "sha256": "5af2d335213ab8f1fff6e2801c854875e15052ef4acce210c5e8063e52ec0f10"
+    },
+    {
+      "bytes": 28640,
+      "path": "NumStability/Upstream/Lindemann/AlgebraicPart.lean",
+      "sha256": "0e59fa1d5ae6a729160079fb7e00a1f869bae098a0bf47d4e0a5838c8fa3a529"
+    },
+    {
+      "bytes": 16990,
+      "path": "NumStability/Upstream/Lindemann/Basic.lean",
+      "sha256": "f00e9dda8c792dea17ea8b5f858a8820ce65f74d5f5b8313c9551c392b9051ea"
+    },
+    {
+      "bytes": 1617,
+      "path": "NumStability/Upstream/Lindemann/FinsuppQuotient.lean",
+      "sha256": "b4c44e04a4a1e02b7adc75420ccb5221bea4ae944a3e3176d0f096f1360baa76"
+    },
+    {
+      "bytes": 7956,
+      "path": "NumStability/Upstream/Lindemann/MonoidAlgebraCompat.lean",
+      "sha256": "5d6dee60601798166a8076d4f81e2f53be88cf0ca7068f478079c9a3e3e62cf4"
+    },
+    {
+      "bytes": 9633,
+      "path": "NumStability/Upstream/Lindemann/SymmetricEval.lean",
+      "sha256": "27cff6194d5a095103e1f4c97148cd788c1848f52b43165e37940ba8f9a90f61"
+    },
+    {
+      "bytes": 284,
+      "path": "NumStability.lean",
+      "sha256": "fa9e1b45080c29ab5d85b9681131cdd8a746720a2f246f9b8d72759f06790448"
+    }
+  ],
+  "kind": "highambench-controlled-files",
+  "label": "numstability-45813a95-source",
+  "schema_version": 1
+}

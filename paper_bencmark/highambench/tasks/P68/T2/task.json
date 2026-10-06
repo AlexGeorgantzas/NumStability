@@ -1,0 +1,89 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "Algorithm 3.1 and equations (3.5)\u2013(3.6), variable-bucket one-row already-represented-input gamma specialization",
+    "performed_by": "Codex"
+  },
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "Identical fixed statement and P68 shared files plus frozen NumStability library.",
+    "N": "Identical fixed statement and P68 shared files; no NumStability artifact."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P68/T2/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p68_t2_adaptive_row_many_error (q n : \u2115) (outer : P68FPModel) ... : absolute error \u2264 gamma_(q\u22121) outer term + (1+gamma_(q\u22121)) summed gamma_n bucket terms",
+    "namespace": "HighamBench",
+    "plain_language": "The variable-bucket adaptive row product satisfies the source two-stage error composition with classical gamma constants and no input conversion.",
+    "target_file": "paper_bencmark/highambench/tasks/P68/T2/Target.lean",
+    "theorem_name": "p68_t2_adaptive_row_many_error"
+  },
+  "informal_proof": "Apply each bucket precision\u2019s \u03b3_n inner-product error; apply the \u03b3_(q\u22121) recursive-summation error to the q rounded bucket totals; combine the two variable-length stages by the triangle inequality.",
+  "informal_statement": "For one sparse row partitioned into q precision-specific buckets, each n-entry bucket inner product and the q-term high-precision accumulation have absolute error bounded by a gamma_(q\u22121) outer term plus (1+gamma_(q\u22121)) times the summed gamma_n bucket terms.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P68",
+  "paper_source": {
+    "local_path": "papers_to_be_approved/P68-Graillat-Jezequel-Mary-Molina-2024-Adaptive-SpMV.pdf",
+    "sha256": "35b5c6a3fa535bf75b27ceb9d897d257635fa199cb551e24be64811b16c0b1cf"
+  },
+  "paper_version": "May 12, 2023 author-hosted 24-page preprint of 2024 journal article",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.dotProduct_backward_error",
+      "NumStability.recursiveSum_backward_error"
+    ],
+    "note": "Both exact private proofs compile without sorry/admit; N imports no NumStability; no baseline adaptive row result exists."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P68FPModel",
+    "p68Gamma",
+    "P68GammaValid",
+    "p68RecursiveSum",
+    "p68BlockDot",
+    "p68AdaptiveRowMany"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Algorithm 3.1: precision-specific bucket inner products and final u1 sum",
+      "pdf_page": 3,
+      "printed_page": "3",
+      "role": "source algorithm",
+      "section": "3. Adaptive precision matrix\u2013vector product"
+    },
+    {
+      "anchor": "bucket-error and final-sum composition, equations (3.2)\u2013(3.6)",
+      "pdf_page": 4,
+      "printed_page": "4",
+      "role": "selected composed result",
+      "section": "3. Adaptive precision matrix\u2013vector product"
+    },
+    {
+      "anchor": "Section 2 classical gamma-bound discussion",
+      "pdf_page": 2,
+      "printed_page": "2",
+      "role": "constant-model context",
+      "section": "2. Preliminaries"
+    }
+  ],
+  "source_tags": [
+    "EQN",
+    "TXT"
+  ],
+  "task_id": "P68-T2",
+  "tier": "T2",
+  "tier_label": "composition",
+  "tier_rationale": "For arbitrary positive bucket count q and inner length n, L calls distinct substantial dotProduct_backward_error and recursiveSum_backward_error results. N reconstructs both variable-length numerical analyses locally. The target is the one-row, q-bucket specialization of source equations (3.5)\u2013(3.6), using the source-discussed classical gamma constants and already-represented inputs to omit conversion errors. No fixed two-term outer sum shortcut remains.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P68/T2/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p68_t2_adaptive_row_many_error"
+  }
+}

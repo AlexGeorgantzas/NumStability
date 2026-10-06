@@ -1,0 +1,93 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source-faithful componentwise realization of the XX-star-X forward-error term in equation (6.6)",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The task is the real square-matrix specialization of the paper's complex-matrix calculation, so conjugate transpose becomes transpose.",
+    "The two matrix products in XX-transpose-X are computed entry by entry with sequential rounded dot products under the standard relative-error model, excluding overflow and underflow.",
+    "The gamma guard n*u<1 holds.",
+    "The displayed majorant keeps the two local matrix-product errors explicit instead of suppressing their dimension-dependent coefficient in the paper's epsilon notation."
+  ],
+  "author_label": null,
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P28 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P28 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P28/T1/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p28_t1_newton_schulz_triple_product_error (fp : P28FPModel) (n : Nat) (X : P28RealMatrix n) (hvalid : P28GammaValid fp.u n) : forall i j, abs (p28RoundedGramTriple fp X i j - p28ExactGramTriple X i j) <= p28GramTripleErrorMajorant fp X i j",
+    "namespace": "HighamBench",
+    "plain_language": "The entrywise forward error from computing XX-transpose-X with two rounded matrix products is bounded by the sum of the second product's local error majorant and the first product's error propagated through the final multiplication.",
+    "target_file": "paper_bencmark/highambench/tasks/P28/T1/Target.lean",
+    "theorem_name": "p28_t1_newton_schulz_triple_product_error"
+  },
+  "informal_proof": "Split the final difference into the local error of multiplying the computed Gram matrix by X and the first Gram-product error propagated through multiplication by X. Apply the componentwise rounded matrix-product bound to each of the two products and use the triangle inequality.",
+  "informal_statement": "The forward-error term epsilon_1 in equation (6.6), made explicit for the paper's prescribed two-product evaluation of XX-star-X.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P28",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P28-Backward Stability of Iterations for Computing the Polar Decomposition.pdf",
+    "sha256": "dcbc1d7383fc80a91263639b8b5278b34c308aa7a3aef2d7f6fff77577979faf"
+  },
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 33(2), 2012, printed pages 460-479",
+  "result_form_tag": "BND",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.matMul_error_bound"
+    ],
+    "note": "The same substantial matrix-multiplication error theorem is used for both products; repeated use remains one distinct substantial result. N must reconstruct the sequential rounded-dot-product analysis, while L reuses that theorem and performs only the paper-specific two-stage propagation. Mathlib has no floating-point matrix-product result."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P28FPModel",
+    "P28RealMatrix",
+    "p28MatMul",
+    "p28Transpose",
+    "p28Gamma",
+    "P28GammaValid",
+    "p28RoundedDotProduct",
+    "p28RoundedMatMul",
+    "p28RoundedGramTriple",
+    "p28ExactGramTriple",
+    "p28GramTripleErrorMajorant"
+  ],
+  "source_locations": [
+    {
+      "anchor": "epsilon convention at the start of Section 2",
+      "pdf_page": 3,
+      "printed_page": "462",
+      "role": "meaning of the suppressed dimension-dependent rounding-error terms",
+      "section": "2. Backward stability of the polar decomposition"
+    },
+    {
+      "anchor": "equation (6.6) and the paragraph proving the forward-error part of condition (4.10)",
+      "pdf_page": 19,
+      "printed_page": "478",
+      "role": "selected two-product XX-star-X error calculation",
+      "section": "6.3. The Newton--Schulz iteration"
+    }
+  ],
+  "source_tags": [
+    "EQN",
+    "TXT"
+  ],
+  "task_id": "P28-T1",
+  "tier": "T1",
+  "tier_label": "direct use",
+  "tier_rationale": "The L proof uses the one substantial result NumStability.matMul_error_bound twice to control the two matrix products. Reconstructing its n-term rounded-dot-product proof dominates N, whereas splitting and propagating the two errors is simpler paper-specific work. No second distinct substantial library result is needed.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P28/T1/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p28_t1_newton_schulz_triple_product_error"
+  }
+}

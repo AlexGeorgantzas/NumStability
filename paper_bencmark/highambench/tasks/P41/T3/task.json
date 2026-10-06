@@ -1,0 +1,86 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "direct finite-index matrix form of Theorem 2.1 and equation (2.7)",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "A and W are finite complex matrices with the dimensions in Theorem 2.1.",
+    "The shift matrix J has ones on the first superdiagonal and zeros elsewhere.",
+    "The formal phi-function is the paper's series phi_ell(A)=sum_k A^k/(k+ell)!.",
+    "The finite indices are zero-based: formal column j corresponds to the paper's column j+1."
+  ],
+  "author_label": "Theorem 2.1",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P41 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P41 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P41/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p41_t3_augmented_phi_column {n p : Nat} (A : Matrix (Fin n) (Fin n) Complex) (W : Matrix (Fin n) (Fin p) Complex) (tau : Complex) (ell : Nat) (j : Fin p) (i : Fin n) : p41Phi ell (tau \u2022 p41Augmented A W) (Sum.inl i) (Sum.inr j) = sum over r<j+1 of tau^(r+1) * mulVec (p41Phi (ell+r+1) (tau \u2022 A)) (p41ReverseColumn W j r) at i",
+    "namespace": "HighamBench",
+    "plain_language": "Every upper-right column of the phi-function of the augmented block matrix is the finite linear combination of shifted phi-functions stated in Theorem 2.1.",
+    "target_file": "paper_bencmark/highambench/tasks/P41/T3/Target.lean",
+    "theorem_name": "p41_t3_augmented_phi_column"
+  },
+  "informal_proof": "Compute every power of the augmented upper-block matrix, solve the resulting recurrence for each upper-right column, substitute that formula into the convergent phi-function series, and reindex the sums to identify each shifted phi-function.",
+  "informal_statement": "Prove the full arbitrary-ell, arbitrary-p augmented-matrix column identity in Theorem 2.1, equation (2.7).",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P41",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P41 Computing the Action of the Matrix Exponential, with an Application to Exponential Integrators.pdf",
+    "sha256": "a8bc1d282cbda4aad92d231c84a656482def0f4d1747a92e140c6b32ef4e3c1b"
+  },
+  "paper_version": "published journal version; SIAM Journal on Scientific Computing 33(2), 2011, printed pages 488-511",
+  "result_form_tag": "THM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "Al-Mohy Higham Theorem 2.1 augmented phi matrix",
+        "upper block triangular matrix phi function column",
+        "phi function augmented shift matrix",
+        "matrix exponential exponential integrator augmented block identity"
+      ],
+      "result": "Neither Mathlib nor the 44-module importable NumStability set contains Theorem 2.1, the augmented shift-block power recurrence, or the resulting phi-function column formula. Both conditions receive only generic finite-matrix, block-matrix, power-series, and convergence infrastructure.",
+      "scope": "the complete frozen NumStability source, the compiled condition-L bundle recorded in metadata/library_olean.json, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [],
+    "note": "The exact private N and L proofs use the same 372-line mathematical construction. L adds only an irrelevant zero-nonnegativity marker from RoundingProductBounds and receives no mathematical shortcut."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "p41Shift",
+    "p41Augmented",
+    "p41Phi",
+    "p41ReverseColumn"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Theorem 2.1 and equations (2.5)-(2.8)",
+      "pdf_page": "4-5",
+      "printed_page": "490-491",
+      "role": "selected augmented phi-function identity and complete proof",
+      "section": "2. Exponential integrators: Avoiding the phi functions"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P41-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The proof must establish convergence of the matrix-valued phi series, the full upper-block power recurrence, the shift-matrix column recurrence, justified reindexing of infinite sums, and a finite induction for arbitrary columns and ell. This is at least T2-level work and is not discharged by Mathlib imports. NumStability has no corresponding compiled theorem, and the exact L construction is mathematically identical to N.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P41/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p41_t3_augmented_phi_column"
+  }
+}

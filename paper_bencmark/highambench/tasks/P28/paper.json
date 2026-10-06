@@ -1,0 +1,95 @@
+{
+  "annotation": {
+    "method": "Codex freshly read the complete 20-page paper in physical-PDF order, surveyed every proved result and rigorous derivation, compared candidates with the frozen Mathlib and importable NumStability baselines, and privately formalized both selected tasks before packaging them.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P28 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Yuji Nakatsukasa",
+    "Nicholas J. Higham"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P28-T1",
+    "P28-T3"
+  ],
+  "paper_id": "P28",
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 33(2), 2012, printed pages 460-479",
+  "publication": {
+    "doi": "10.1137/110857544",
+    "issue": "2",
+    "journal": "SIAM Journal on Matrix Analysis and Applications",
+    "printed_pages": "460-479",
+    "publication_date": "2012-06-05",
+    "volume": "33",
+    "year": 2012
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Theorem 4.2, the general backward-stability theorem for polar iterations",
+      "reason": "The theorem is mathematically strong, but its full proof additionally invokes two polar perturbation results from an external book. Abstracting those results into transfer premises would reduce the formal target mostly to an artificial induction, while rebuilding all of them would exceed the proof supplied by this paper. Lemma 4.1 provides the source-complete polar-analysis core."
+    },
+    {
+      "candidate": "Theorem 5.1, rowwise stability of pivoted or row-sorted Householder QR",
+      "reason": "The paper quotes this theorem from earlier sources and does not prove it. The compiled library's Householder QR theorem is neither pivoted nor rowwise and is not a replacement."
+    },
+    {
+      "candidate": "Section 5.1, mixed backward-forward stability of one QDWH step",
+      "reason": "Its main required rowwise pivoted-QR theorem is absent from the importable library, while ordinary matrix-product error bounds are only supporting operations. It therefore has neither the one-result T1 profile nor the two-result T2 profile."
+    },
+    {
+      "candidate": "Section 5.2 and Section 6.1 scalar mapping inequalities",
+      "reason": "These are useful source derivations, but their rational-function and endpoint inequalities are below the T3 difficulty floor and have no substantial NumStability result for T1 or T2."
+    },
+    {
+      "candidate": "inverse Newton and Newton--Schulz instability discussions and numerical experiments",
+      "reason": "The instability conclusions beyond the selected equation-(6.6) error calculation are qualitative, asymptotic, or experimental rather than complete additional proof targets."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Use the two-product forward-error calculation for XX-star-X represented by epsilon_1 in equation (6.6).",
+      "task_id": "P28-T1",
+      "theorem_name": "p28_t1_newton_schulz_triple_product_error"
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source proof needs at least two distinct substantial importable results. Reusing the same matrix-product theorem twice counts as one result, and the rowwise pivoted-QR and polar results required by the larger analyses are unavailable."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Use the square-matrix SVD/pseudoinverse error-transport core of Lemma 4.1, including both residual and Hermitian-factor conclusions.",
+      "task_id": "P28-T3",
+      "theorem_name": "p28_t3_lemma4_1_core"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only statements and proof steps present in the paper.",
+    "Interpret the suppressed epsilon_1 term in equation (6.6) by the standard componentwise matrix-product majorant.",
+    "Count two uses of the same matrix-multiplication theorem as one distinct substantial result.",
+    "Retain the SVD recovery, mixed perturbations, symmetrization, and both conclusions of the square-case Lemma 4.1 proof.",
+    "Do not turn quoted theorems, qualitative instability explanations, or experiments into benchmark tasks.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source, its importable compiled subset, and Mathlib."
+  ],
+  "short_name": "Nakatsukasa--Higham (2012)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/110857544",
+    "local_path": "paper_bencmark/reference_papers/P28-Backward Stability of Iterations for Computing the Polar Decomposition.pdf",
+    "page_map": "Physical PDF pages 1-20 are printed pages 460-479 respectively.",
+    "pdf_pages": 20,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "dcbc1d7383fc80a91263639b8b5278b34c308aa7a3aef2d7f6fff77577979faf"
+  },
+  "title": "Backward Stability of Iterations for Computing the Polar Decomposition"
+}

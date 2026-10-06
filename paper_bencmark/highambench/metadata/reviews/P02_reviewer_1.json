@@ -1,0 +1,84 @@
+{
+  "record_status": "superseded_construction_snapshot",
+  "schema_version": "highambench-review-0.2",
+  "review_id": "P02-source-and-mathematics-review-1",
+  "reviewer": {
+    "id": "codex-independent-p02-source-and-mathematics-pass",
+    "kind": "Codex review pass, not a human reviewer",
+    "focus": "paper meaning, source anchors, assumptions, algorithm indexing, tier assignment, and frozen-library overlap",
+    "independence_note": "This pass independently read the complete paper and specification, checked the numbered formulas and Lean definitions, and searched the frozen source trees. It did not treat the formal-interface review as evidence."
+  },
+  "review_date": "2026-07-31",
+  "overall_status": "pass for source selection, mathematical fidelity, and tier labels; private construction validation remains pending",
+  "review_basis": {
+    "specification": {
+      "path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+      "sha256": "25a8a72d62e2ad9d131004b871f5ccc58438d488dbd64afcd0a8839e9e4d78a8",
+      "pages_read": [1, 2, 3, 4]
+    },
+    "paper": {
+      "path": "paper_bencmark/reference_papers/ACCURATE SUM AND DOT PRODUCT.pdf",
+      "sha256": "e7b8523c793ad7345dfc76f681c44d1afbbc3a810fb948912451432ae616512d",
+      "pdf_pages_read": "1-34",
+      "formula_pages_checked": [8, 10, 11, 12, 13, 16, 23, 24]
+    },
+    "overlap_search": {
+      "path": "paper_bencmark/highambench/metadata/evidence/exact_target_search_P02.json",
+      "sha256": "bbbf96f50544cb9925954975e018ba6b2cc40d19aa8ddabae2ba5772b54235b0",
+      "mathlib_commit": "e8ea1afc32790ce1d4e1a4e45cc412ba9388716b",
+      "numstability_commit": "45813a95dacf577461bae13f033af0dbc985a225"
+    }
+  },
+  "task_reviews": [
+    {
+      "task_id": "P02-T1",
+      "tier": "T1",
+      "source_tags": ["EQN"],
+      "author_label": null,
+      "source_result": "Algorithm 4.3 and equation (4.7)(i), supported by Theorem 3.4 equation (3.2)",
+      "checks": {
+        "source_presentation_tag": "pass: EQN describes the selected equation (4.7)(i); Theorem 3.4 is supporting material, not the selected task result",
+        "paper_match": "pass: vecSum emits N-1 lows and one final high whose exact total is unchanged",
+        "indexing": "pass: N=n+1 and Fin n corrections match the nonempty paper vector",
+        "tier": "pass: close compensated-prefix exactness results exist, but the exact fixed VecSum target does not"
+      },
+      "outcome": "pass"
+    },
+    {
+      "task_id": "P02-T2",
+      "tier": "T2",
+      "source_tags": ["PROP"],
+      "author_label": "Proposition 4.5",
+      "source_result": "Proposition 4.5, equation (4.8)",
+      "checks": {
+        "source_presentation_tag": "pass: the paper explicitly labels the selected result Proposition 4.5",
+        "paper_match": "pass: the target is u|s| + gamma_(N-1)^2 S under N*u<1",
+        "assumptions": "pass: GammaValid fp.u (n+1) is exactly the paper guard and no nonzero-sum premise is needed",
+        "tier": "pass: exact transformation, recursive summation, final rounding, and gamma facts must be combined"
+      },
+      "outcome": "pass"
+    },
+    {
+      "task_id": "P02-T3",
+      "tier": "T3",
+      "source_tags": ["PROP"],
+      "author_label": "Proposition 5.11",
+      "source_result": "Algorithm 5.10, equation (5.10), and Proposition 5.11 without multiplication underflow",
+      "checks": {
+        "source_presentation_tag": "pass: the paper explicitly labels the selected result Proposition 5.11",
+        "paper_match": "pass: the coefficient, exponent K, 4N-2 index, K>=3, and 8*N*u<=1 guard are exact",
+        "algorithm": "pass: the shared transform has length 2N in paper order and dotK calls SumK with K-1",
+        "branch_selection": "pass: the absolute no-multiplication-underflow branch needs neither d!=0 nor eta",
+        "boundary_detail": "pass: the context now states the K=3 Sum2/Proposition 4.5 case separately from Proposition 4.10",
+        "tier": "pass: VecSum, SumK, TwoProduct-transform, and DotK infrastructure is absent from the frozen library"
+      },
+      "outcome": "pass"
+    }
+  ],
+  "scope_check": {
+    "included_papers": ["P01", "P02"],
+    "new_papers_in_this_change": ["P02"],
+    "other_papers_added": false
+  },
+  "release_caveat": "This review validates selection and mathematical fidelity. It does not claim that complete private P02 proofs have passed the hidden validator."
+}

@@ -1,0 +1,79 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "Proposition 3.1 two-level equal-block summation specialization",
+    "performed_by": "Codex"
+  },
+  "author_label": "Proposition 3.1",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "Identical fixed statement and P66 shared files plus frozen NumStability library.",
+    "N": "Identical fixed statement and P66 shared files; no NumStability artifact."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P66/T1/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p66_t1_two_level_superblock_sum_error (fp : P66FPModel) (b : \u2115) ... : absolute error \u2264 \u03b3_(2(b\u22121)) times sum of absolute inputs",
+    "namespace": "HighamBench",
+    "plain_language": "For t=2 and N=b\u00b2, the two-level superblock summation absolute error is at most \u03b3_(2(b\u22121)) times the sum of absolute inputs.",
+    "target_file": "paper_bencmark/highambench/tasks/P66/T1/Target.lean",
+    "theorem_name": "p66_t1_two_level_superblock_sum_error"
+  },
+  "informal_proof": "The paper counts b\u22121 rounded additions in each block and b\u22121 in the outer accumulator; the two error factors combine within \u03b3_(2(b\u22121)).",
+  "informal_statement": "For t=2 and N=b\u00b2, the two-level superblock summation absolute error is at most \u03b3_(2(b\u22121)) times the sum of absolute inputs.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P66",
+  "paper_source": {
+    "local_path": "papers_to_be_approved/P66-Castaldo-Whaley-Chronopoulos-2008-Superblock-Dot.pdf",
+    "sha256": "ffdea8e2136c7f4226e4c0d382d512fef190cd207133a1a0c88c8ef7b9ebeeb2"
+  },
+  "paper_version": "2008 author-hosted publisher PDF, journal pages 1156\u20131174",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.recursiveSum_backward_error"
+    ],
+    "note": "Both exact private N/L proofs compile; N has no NumStability import; L directly uses one substantial frozen result."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P66FPModel",
+    "p66Gamma",
+    "P66GammaValid",
+    "p66RecursiveSum",
+    "p66SuperblockSum"
+  ],
+  "source_locations": [
+    {
+      "anchor": "two-level superblock summation schedule, Figure 3.2",
+      "pdf_page": 8,
+      "printed_page": "1163",
+      "role": "algorithm schedule",
+      "section": "3. Superblocked dot product"
+    },
+    {
+      "anchor": "Proposition 3.1 summation counter t(N^(1/t)\u22121) and gamma bound",
+      "pdf_page": 7,
+      "printed_page": "1162",
+      "role": "selected labeled result and proof",
+      "section": "3. Superblocked dot product"
+    }
+  ],
+  "source_tags": [
+    "PROP"
+  ],
+  "task_id": "P66-T1",
+  "tier": "T1",
+  "tier_label": "direct use",
+  "tier_rationale": "The L proof invokes only the substantial frozen recursiveSum_backward_error theorem, at both variable-length accumulation levels; gamma composition is elementary. N independently rebuilds the generic recursive-summation error analysis. N is 310 lines versus L 166; Mathlib has no ready rounded recursive-summation bound.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P66/T1/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p66_t1_two_level_superblock_sum_error"
+  }
+}

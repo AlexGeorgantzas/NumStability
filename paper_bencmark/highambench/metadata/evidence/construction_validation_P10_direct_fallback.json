@@ -1,0 +1,107 @@
+{
+  "canonical_evidence": "metadata/evidence/construction_validation_P10.json",
+  "canonical_evidence_sha256": "b4c181f4ad068647a5a9a21c3838d33de9dcc6ebe54b9501fe78c3671efb7104",
+  "canonical_isolated_pass": false,
+  "direct_fallback_pass": true,
+  "generated_at_utc": "2026-08-06T06:33:39Z",
+  "host_limitation": {
+    "canonical_failure_occurs_before_lean_starts": true,
+    "message": "bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted",
+    "scope": "All six canonical P10 checks on this LXC host",
+    "tool": "/usr/bin/bwrap"
+  },
+  "kind": "highambench-direct-exact-path-construction-fallback",
+  "paper_id": "P10",
+  "pinned_lean": {
+    "commit": "5d86aa4032284a5242470e95fbe25f1ff506763d",
+    "version": "4.29.0-rc3"
+  },
+  "results": [
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "21d4c6201915710e1b47bd3d0256363e34535abb1b10889f1295eeec81a0b951",
+        "library_declarations": [
+          "NumStability.frobNorm",
+          "NumStability.frobNormSq",
+          "NumStability.frobNorm_eq_sqrt_frobNormSq",
+          "NumStability.frobNorm_matMul_le",
+          "NumStability.RMatFn",
+          "NumStability.matMul"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "cb54c9dc61d82763f4c2fc36df7507784d7e45253d2f7a9b32d68a4e35c5d3ac",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "eb19fb0413ba12647774872f38496b584d03d5fa21d063d3b38a508c9f8dcdf0",
+      "target_theorem": "HighamBench.p10_t1_inherited_right_product_error",
+      "task_id": "P10-T1"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "94dd46fb5df4cbd67b9b517c05cf64f882db6267cf0332ffe290db3f8f3f7241",
+        "library_declarations": [
+          "NumStability.frobNorm",
+          "NumStability.frobNormSq",
+          "NumStability.frobNorm_add_le",
+          "NumStability.frobNorm_eq_sqrt_frobNormSq",
+          "NumStability.frobNorm_matMul_le",
+          "NumStability.RMatFn",
+          "NumStability.matMul"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "a4df30be83d50a48240e2507e2e8be588d87647ee8d94ebd111f243beabf8028",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "90fdf84b3b59fe01d3c2e850d61d4c50cf9d5c47195270fb1d7cea2379e37518",
+      "target_theorem": "HighamBench.p10_t2_product_error_with_cross_term",
+      "task_id": "P10-T2"
+    },
+    {
+      "condition_l": {
+        "compile_exit_code": 0,
+        "forbidden_dependency_count": 0,
+        "gold_source_sha256": "cbb2495b1896c623802f6bdf3d1aa46bb9d006d00cbaaa78c054cd56178517a8",
+        "library_declarations": [
+          "NumStability.frobNorm",
+          "NumStability.frobNormSq",
+          "NumStability.frobNorm_eq_sqrt_frobNormSq",
+          "NumStability.frobNorm_nonneg",
+          "NumStability.RMatFn"
+        ],
+        "semantic_statement_equal": true
+      },
+      "condition_n": {
+        "compile_exit_code": 0,
+        "gold_source_sha256": "1d72d09518beb5721c93b410b9b7814197ed99fb2b39082894f2ad3f169c64c2",
+        "other_paper_import_failed": true,
+        "numstability_import_failed": true
+      },
+      "target_source_sha256": "678e0d48115267a7b9ba48c8d8b0a31ca85c421c08147fa0377eb1d70612ae61",
+      "target_theorem": "HighamBench.p10_t3_recursive_sylvester_error_unroll",
+      "task_id": "P10-T3"
+    }
+  ],
+  "schema_version": 1,
+  "verification_basis": {
+    "condition_l_path": "The exact P10 shared bundle, frozen pruned package objects, and frozen NumStability object tree; no project .lake/build path.",
+    "condition_n_path": "The exact P10 shared bundle and frozen pruned package objects; no NumStability source or object path and no project .lake/build path.",
+    "negative_probe": "Direct pinned-Lean imports of HighamBench.P09Definitions and NumStability fail under the condition-N LEAN_PATH; the other-paper import also fails under the condition-L P10 path.",
+    "p10_definitions_olean_sha256": "22d5ed0145eb1674bacf1db7bac5b07c005b5729021221ea244f3cef2718d11d",
+    "p10_definitions_source_sha256": "fe10c0868a161a26b4cd39e18b9dd21121fff955cca9888d7b854960cae02671",
+    "private_support_source_sha256": "cc1e379cbb20895bac640ca1b96b4a8803d4d52b349260de01d53cce1a1716f1",
+    "semantic_check": "Each private L theorem was compared by Meta.isDefEq with a separately compiled renamed copy of the frozen target using tools/dependency_audit.lean.",
+    "shared_core_olean_sha256": "7fc6ade160c0aaac4d98a426d60dba3f069bfc18cdbac68af3cec76971f12aa1"
+  }
+}

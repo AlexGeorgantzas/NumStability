@@ -1,0 +1,103 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source-faithful block-gain formulation of both strong rank-revealing bounds in Theorem 3.2",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The natural number q denotes n-k.",
+    "X is the matrix A_k inverse times B_k, and ratio(i,j) is gamma_j(C_k) divided by omega_i(A_k).",
+    "The pointwise p_lt_f field is the squared form of p(R,k)<f.",
+    "alpha is sigma_max(C_k) divided by sigma_min(A_k); alpha_sq_le records the Frobenius estimate used in the displayed W_1 norm calculation.",
+    "The two hornJohnson fields are the source proof's applications of the general singular-value product comparison cited as [29, Theorem 3.3.16]. They apply only after a squared gain bound for the corresponding displayed block transformation has been proved."
+  ],
+  "author_label": "Theorem 3.2",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P27 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P27 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P27/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p27_t3_theorem3_2 (data : P27Theorem32Data k q) : (forall i, sigmaMTop i / sqrt(1+f^2*k*q) <= sigmaA i) and (forall j, sigmaC j <= sigmaMTail j * sqrt(1+f^2*k*q))",
+    "namespace": "HighamBench",
+    "plain_language": "If every combined entry-and-row/column ratio in the strong-RRQR criterion is below f, then all leading singular values of A_k and all trailing singular values of C_k satisfy the two bounds in Theorem 3.2.",
+    "target_file": "paper_bencmark/highambench/tasks/P27/T3/Target.lean",
+    "theorem_name": "p27_t3_theorem3_2"
+  },
+  "informal_proof": "Prove a finite-dimensional Cauchy--Schwarz bound for multiplication by A_k inverse B_k. Use it separately for the W_1 and W_2 block transformations, sum the p(R,k)<f inequalities over the k(n-k) pairs, and apply the two cited singular-value product comparisons to derive equations (8) and (9).",
+  "informal_statement": "Theorem 3.2: p(R,k)<f implies the leading A_k singular-value lower bounds and the trailing C_k singular-value upper bounds with factor sqrt(1+f^2 k(n-k)).",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P27",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P27-Efficient Algorithms for Computing a Strong Rank-Revealing QR Factorization.pdf",
+    "sha256": "0460d727814216aa6b110f3c9a22742617ffa08d5d50f919e6885da35ec43ce3"
+  },
+  "paper_version": "published journal version; SIAM Journal on Scientific Computing 17(4), 1996, printed pages 848-869",
+  "result_form_tag": "THM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "strong rank-revealing QR",
+        "RRQR",
+        "p(R,k)",
+        "singular value product",
+        "determinant interchange"
+      ],
+      "result": "The importable frozen NumStability set has Householder and Givens QR implementations and generic spectral helpers, but no rank-revealing or pivoted-QR theorem, no Gu--Eisenstat interchange criterion, no singular-value block-product comparison specialized to this proof, and no strong-RRQR bound. More extensive singular-value source exists only in modules absent from the compiled condition-L set.",
+      "scope": "the complete frozen NumStability source, the compiled condition-L bundle recorded in metadata/library_olean.json, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.opNorm2Le_of_finitePSD_of_finiteHermitianEigenvalues_le"
+    ],
+    "note": "Mathlib supplies finite sums, real square roots, and Cauchy--Schwarz, but no ready theorem proving the two block gains or either strong-RRQR conclusion. Private N and L proofs reconstruct the same matrix-vector, block-gain, and k(n-k) aggregation argument; L has no corresponding substantial result that shortens it."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P27Vector",
+    "P27Coupling",
+    "p27VecNormSq",
+    "p27PairNormSq",
+    "p27MatVec",
+    "p27W1",
+    "p27W2",
+    "P27SquaredGainBound",
+    "P27Theorem32Data",
+    "p27StrongFactor"
+  ],
+  "source_locations": [
+    {
+      "anchor": "definition of p(R,k) after Lemma 3.1",
+      "pdf_page": 6,
+      "printed_page": "853",
+      "role": "the entrywise criterion assumed by the selected theorem",
+      "section": "3. The existence of a strong RRQR factorization"
+    },
+    {
+      "anchor": "Theorem 3.2, equations (8)-(10), and its complete proof",
+      "pdf_page": 7,
+      "printed_page": "854",
+      "role": "the selected pair of singular-value bounds and block-factorization proof",
+      "section": "3. The existence of a strong RRQR factorization"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P27-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The proof must reconstruct finite-dimensional matrix-vector Cauchy--Schwarz, two distinct block-transformation gain estimates, the exact aggregation over k(n-k) index pairs, and both indexed singular-value conclusions. This is substantial T2-or-harder work and is not discharged by a Mathlib import. NumStability has no corresponding strong-RRQR or block singular-value theorem, so L receives no material advantage over N.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P27/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p27_t3_theorem3_2"
+  }
+}

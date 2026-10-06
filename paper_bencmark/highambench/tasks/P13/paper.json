@@ -1,0 +1,120 @@
+{
+  "annotation": {
+    "method": "Codex freshly reread the complete local paper, surveyed its definition, two lemmas, two theorems, corollary, and complete derivations, and compared every candidate with the full frozen Mathlib and NumStability baselines; T3 was redesigned to state Theorem 4.1 directly without exposing a project-derived finite envelope.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P13 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Nicholas J. Higham"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P13-T3"
+  ],
+  "paper_id": "P13",
+  "paper_version": "published journal version; IMA Journal of Numerical Analysis 24(4), October 2004, printed pages 547-556",
+  "publication": {
+    "doi": "10.1093/imanum/24.4.547",
+    "issue": 4,
+    "issue_date": "2004-10",
+    "journal": "IMA Journal of Numerical Analysis",
+    "printed_pages": "547-556",
+    "publication_date": "2004-10-01",
+    "volume": 24,
+    "year": 2004
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Lagrange representation (2.1) standing alone",
+      "reason": "Equation (2.1) is setup rather than a standalone result. Its exact basis and interpolation value are retained in T1 to state Definition 2.1 and Lemma 2.2 faithfully."
+    },
+    {
+      "candidate": "Definition 2.1 standing alone",
+      "reason": "The limit/supremum definition is not used as an isolated task. T1 combines it with Lemma 2.2's proved closed form, exact sign-aligned attainment, and lower bound."
+    },
+    {
+      "candidate": "modified Lagrange formulae (3.1)-(3.3)",
+      "reason": "These are definitions of the evaluation formula, weights, gamma notation, and relative-error counters rather than standalone proved results."
+    },
+    {
+      "candidate": "Lemma 3.1 on computed weights and the product ell(x)",
+      "reason": "This operation-count lemma is tied to a full floating-point implementation trace. The selected targets isolate the paper's condition-number core and the central barycentric cancellation phenomenon."
+    },
+    {
+      "candidate": "Theorem 3.2 and forward bound (3.4) for the modified Lagrange formula",
+      "reason": "This is a strong backward-stability result, but a faithful target would require modeling weight construction, products, divisions, and summation simultaneously. The frozen mounted objects only cover generic finite-sum stages, making the theorem a weaker fit than the chosen tier sequence."
+    },
+    {
+      "candidate": "discussion of non-floating interpolation nodes on printed page 551",
+      "reason": "This is qualitative perturbation interpretation rather than a quantified theorem."
+    },
+    {
+      "candidate": "second barycentric formula (4.1) and the perturbed quotient derivation",
+      "reason": "Equation (4.1) alone is a formula definition. Its exact uncollected and collected perturbed quotient is retained inside T3 as the execution layer supporting Theorem 4.1 rather than selected as a separate equality task."
+    },
+    {
+      "candidate": "Corollary 4.2 and the Lebesgue-constant bound (4.4)",
+      "reason": "It weakens Theorem 4.1 by replacing cond(x,n,1) with the Lebesgue constant. T3 preserves the sharper two-condition-number structure."
+    },
+    {
+      "candidate": "Chebyshev and equally-spaced Lebesgue-constant growth statements",
+      "reason": "The paper cites external approximation-theory sources for these results rather than proving them here."
+    },
+    {
+      "candidate": "weight rescaling commentary and explicit Chebyshev-weight remarks",
+      "reason": "These are implementation observations or delegated known formulas, not proved source results."
+    },
+    {
+      "candidate": "Section 5 experiments and Figures 1-4",
+      "reason": "The MATLAB experiments illustrate sharpness and ordering sensitivity but are empirical observations, not general mathematical targets."
+    },
+    {
+      "candidate": "Section 6 conclusions and Newton-form discussion",
+      "reason": "These summarize prior results and identify open analysis directions rather than add fixed proved statements."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. The source candidates either require the paper-specific barycentric perturbation analysis, for which NumStability has no matching theorem, or only use short generic summation and norm inequalities; none isolates one substantial library result."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. No result has two independent substantial NumStability matches. The hard weighted barycentric analysis is absent from the library, and the reusable sum, absolute-value, and norm facts are elementary."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Use Theorem 4.1's directly weighted second-barycentric forward-error bound with its two condition-number terms and O(u^2) remainder; do not invent a numerical constant for the paper's qualitative sharpness sentence.",
+      "task_id": "P13-T3",
+      "theorem_name": "p13_t3_barycentric_forward_bound"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use results proved in this paper rather than definitions, empirical figures, or results delegated to cited approximation-theory sources.",
+    "Preserve the fixed-node, fixed-evaluation-point interpretation and componentwise perturbations in the data.",
+    "Represent the second barycentric formula using the paper's reciprocal-product weights and exact uncollected and collected relative-error counters.",
+    "Retain Theorem 4.1's O(u^2) term as an existential asymptotic remainder, without exposing a proof-specific exact finite envelope or inventing a numerical interpretation of the paper's qualitative sharpness sentence.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the complete frozen NumStability source and the compiled condition-L bundle recorded in metadata/library_olean.json."
+  ],
+  "short_name": "Higham (2004)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1093/imanum/24.4.547",
+    "license": "Copyright Institute of Mathematics and its Applications 2004; all rights reserved",
+    "local_path": "paper_bencmark/reference_papers/P13_The numerical stability of barycentric Lagrange interpolation.pdf",
+    "page_map": "PDF pages 1-10 are printed pages 547-556 respectively.",
+    "pdf_pages": 10,
+    "rights_note": "The local published article states that all rights are reserved; the benchmark records only paraphrases, locations, and formal restatements.",
+    "sha256": "9ebf8adb699f96c82ccbb153dd6ca592c64475a8bc3e0703a50cb659b012c520"
+  },
+  "title": "The numerical stability of barycentric Lagrange interpolation"
+}

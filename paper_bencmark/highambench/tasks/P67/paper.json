@@ -1,0 +1,66 @@
+{
+  "annotation": {
+    "method": "Read the Section 2 constituent-product and accumulation derivation; compiled exact variable-p N and L proofs before packaging.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner requested additional paper-grounded T1/T2 tasks."
+  },
+  "authors": [
+    "Massimiliano Fasi",
+    "Nicholas J. Higham",
+    "Florent Lopez",
+    "Theo Mary",
+    "Mantas Mikaitis"
+  ],
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P67-T1",
+    "P67-T2"
+  ],
+  "paper_id": "P67",
+  "paper_version": "2023 author-hosted 19-page publisher PDF, journal pages C1\u2013C19",
+  "publication": {
+    "doi": "10.1137/21M1465032",
+    "issue": "1",
+    "journal": "SIAM Journal on Scientific Computing",
+    "printed_pages": "C1\u2013C19",
+    "volume": "45",
+    "year": 2023
+  },
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Retain the displayed accumulation representation before equation (2.5), distinct from P67-T2\u2019s complete constituent-product-plus-accumulation error.",
+      "task_id": "P67-T1",
+      "theorem_name": "p67_t1_multiword_accumulation"
+    },
+    "T2": {
+      "available": true,
+      "decision": "Select the variable-p exact-split, one-entry form of equation (2.5), retaining all p\u00b2 constituent products.",
+      "task_id": "P67-T2",
+      "theorem_name": "p67_t2_multiword_product_error"
+    },
+    "T3": {
+      "available": false,
+      "decision": "No T3 selected during this T1/T2 expansion."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Specialize Section 2 equation (2.5) to one output entry and the zero-decomposition-remainder case explicitly permitted by the paper.",
+    "Retain arbitrary positive word count p, all p\u00b2 constituent inner products, their high-precision accumulation, and \u03b3_(n+p\u00b2\u22121).",
+    "Keep private N/L proofs out of public task material.",
+    "Retain the displayed accumulation representation before equation (2.5), distinct from P67-T2\u2019s complete constituent-product-plus-accumulation error."
+  ],
+  "short_name": "Fasi\u2013Higham\u2013Lopez\u2013Mary\u2013Mikaitis (2023)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/21M1465032",
+    "local_path": "papers_to_be_approved/P67-Fasi-Higham-Lopez-Mary-Mikaitis-2023-Multiword-Matmul.pdf",
+    "page_map": "Physical PDF pages 1\u201319 carry journal pages C1\u2013C19 in order.",
+    "pdf_pages": 19,
+    "rights_note": "Author-hosted publisher PDF retained privately; verify redistribution rights before public release.",
+    "sha256": "d7be2f19c43cc13619793aadf6bb25f4096a074bb7006955c556c04f45208c7e"
+  },
+  "title": "Matrix Multiplication in Multiword Arithmetic: Error Analysis and Application to GPU Tensor Cores"
+}

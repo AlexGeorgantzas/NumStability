@@ -1,0 +1,46 @@
+{
+  "tasks": 30,
+  "papers": 25,
+  "pairs": 90,
+  "attempts": 180,
+  "source_campaign_tasks": {
+    "r11": 12,
+    "r09_r10": 18
+  },
+  "use_group_counts": {
+    "0": 17,
+    "1": 0,
+    "2": 1,
+    "3": 12
+  },
+  "metrics": {
+    "time": {
+      "N_mean": 792.2217644333333,
+      "L_mean": 515.0661341666666,
+      "gain_of_totals_pct": 34.984601876586005,
+      "task_mean_gain_pct": 27.29063774132213,
+      "tasks_L_better": 23
+    },
+    "tokens": {
+      "N_mean": 109458.11111111111,
+      "L_mean": 96574.16666666667,
+      "gain_of_totals_pct": 11.770662140666694,
+      "task_mean_gain_pct": 12.253794343183747,
+      "tasks_L_better": 20
+    },
+    "loc": {
+      "N_mean": 415.4111111111111,
+      "L_mean": 340.8,
+      "gain_of_totals_pct": 17.96078850937491,
+      "task_mean_gain_pct": 17.623293341799265,
+      "tasks_L_better": 19
+    }
+  },
+  "all_three_use_mean_time_gain_pct": 55.77634516405432,
+  "all_three_use_mean_loc_gain_pct": 43.346318070470815,
+  "zero_use_mean_time_gain_pct": 5.706452601353083,
+  "zero_use_mean_loc_gain_pct": -1.8048351876314543,
+  "exclusion": "Six papers chosen after inspecting tier-fit outcomes; this is a sensitivity analysis.",
+  "token_metric": "Observed net-new tokens = input - cached input + output; historical completed-response lower bound.",
+  "token_ledger": "observed_net_new_tokens.json"
+}

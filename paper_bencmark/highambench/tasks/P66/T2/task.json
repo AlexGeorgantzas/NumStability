@@ -1,0 +1,88 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "Proposition 3.2 two-level equal-block specialization",
+    "performed_by": "Codex"
+  },
+  "author_label": "Proposition 3.2",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "Identical fixed statement and P66 shared files plus frozen NumStability library.",
+    "N": "Identical fixed statement and P66 shared files; no NumStability artifact."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P66/T2/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p66_t2_two_level_superblock_dot_error (fp : P66FPModel) (b : \u2115) ... : absolute error \u2264 gamma_(2b\u22121) times sum of absolute input products",
+    "namespace": "HighamBench",
+    "plain_language": "The two-level superblock dot product obeys the paper\u2019s gamma_(2b\u22121) forward error bound.",
+    "target_file": "paper_bencmark/highambench/tasks/P66/T2/Target.lean",
+    "theorem_name": "p66_t2_two_level_superblock_dot_error"
+  },
+  "informal_proof": "Apply the componentwise error bound to each sequential block dot product, apply recursive-sum backward error to block totals, compose their factors within \u03b3_(2b\u22121), and bound the resulting perturbed sum.",
+  "informal_statement": "For the t=2 equal-block superblock dot product, the absolute forward error is bounded by \u03b3_(2b\u22121) times the sum of absolute input products.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P66",
+  "paper_source": {
+    "local_path": "papers_to_be_approved/P66-Castaldo-Whaley-Chronopoulos-2008-Superblock-Dot.pdf",
+    "sha256": "ffdea8e2136c7f4226e4c0d382d512fef190cd207133a1a0c88c8ef7b9ebeeb2"
+  },
+  "paper_version": "2008 author-hosted publisher PDF, journal pages 1156\u20131174",
+  "review_record_not_for_run_prompt": {
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "NumStability.dotProduct_backward_error",
+      "NumStability.recursiveSum_backward_error"
+    ],
+    "note": "Both exact private proofs compile without sorry/admit; N imports no NumStability."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P66FPModel",
+    "p66Gamma",
+    "P66GammaValid",
+    "p66RecursiveSum",
+    "p66BlockDot",
+    "p66SuperblockDot"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Figure 3.1(a) t-level superblock dot-product pseudocode",
+      "pdf_page": 8,
+      "printed_page": "1163",
+      "role": "algorithm schedule",
+      "section": "3. Superblocked dot product"
+    },
+    {
+      "anchor": "Proposition 3.1 and its summation error count",
+      "pdf_page": 7,
+      "printed_page": "1162",
+      "role": "summation premise",
+      "section": "3. Superblocked dot product"
+    },
+    {
+      "anchor": "Proposition 3.2 and equation (3.2), superblock dot-product forward error",
+      "pdf_page": 9,
+      "printed_page": "1164",
+      "role": "selected result and proof",
+      "section": "3. Superblocked dot product"
+    }
+  ],
+  "source_tags": [
+    "PROP"
+  ],
+  "task_id": "P66-T2",
+  "tier": "T2",
+  "tier_label": "composition",
+  "tier_rationale": "The L proof needs two distinct substantial frozen results, dotProduct_backward_error and recursiveSum_backward_error; N independently proves both with local rounding-induction arguments. The exact t=2 specialization of Proposition 3.2 preserves its \u03b3_(2b\u22121) forward bound. N is 372 lines and L is 195; Mathlib has neither numerical error theorem.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P66/T2/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p66_t2_two_level_superblock_dot_error"
+  }
+}

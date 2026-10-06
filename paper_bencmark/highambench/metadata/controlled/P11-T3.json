@@ -1,0 +1,27 @@
+{
+  "files": [
+    {
+      "bytes": 3017,
+      "path": "agent_prompt.md",
+      "sha256": "0f116039fb2ac519a722258f2b9b2d539f0e0c087d03ac476a91f0af61cd5e11"
+    },
+    {
+      "bytes": 12360,
+      "path": "shared/HighamBench/P11Definitions.lean",
+      "sha256": "4dba62c0953fb63e6a956e0d8ef74caa13fa5c17ca90a55685bfbb880c52ce5b"
+    },
+    {
+      "bytes": 802,
+      "path": "tasks/P11/T3/Target.lean",
+      "sha256": "b0eafd7c60cf8cc5afcb58676d1e3c463f0175c327c71fcd8c0c9d86c044223b"
+    },
+    {
+      "bytes": 3838,
+      "path": "tasks/P11/T3/context.md",
+      "sha256": "a933f386fa4af5cd65807ca01c138df42bca7c9a59475dd07f74b5dc29b1735c"
+    }
+  ],
+  "kind": "highambench-controlled-files",
+  "label": "P11-T3-controlled",
+  "schema_version": 1
+}

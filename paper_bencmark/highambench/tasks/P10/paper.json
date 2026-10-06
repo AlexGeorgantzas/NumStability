@@ -1,0 +1,99 @@
+{
+  "annotation": {
+    "method": "Codex freshly reread the complete local paper for the missing-tier audit, surveyed its inversion, recursive randomized QR, LU, rank-revealing, Schur, singular-value, Sylvester, and eigenvector claims, and compared every finite candidate with the full frozen Mathlib and NumStability baselines.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P10 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "James Demmel",
+    "Ioana Dumitriu",
+    "Olga Holtz"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [],
+  "paper_id": "P10",
+  "paper_version": "published journal version; volume 108, 2007, printed pages 59-91",
+  "publication": {
+    "doi": "10.1007/s00211-007-0114-x",
+    "issue": 1,
+    "journal": "Numerische Mathematik",
+    "printed_pages": "59-91",
+    "publication_date": "2007-10-10",
+    "volume": 108,
+    "year": 2007
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "the matrix-multiplication stability model (1) and the general logarithmic-stability conclusions",
+      "reason": "Equation (1) is an assumed interface inherited from prior work, while the headline conclusions are asymptotic complexity and stability claims rather than compact exact finite targets."
+    },
+    {
+      "candidate": "Theorem 3.3's asymptotic conclusions and equations (6)-(7)",
+      "reason": "The theorem's main statement is a bit-complexity conversion depending on asymptotic O notation, condition-number growth, and a precision-cost model. Its exact finite block-inverse identity was also rejected after a short neutral proof."
+    },
+    {
+      "candidate": "the recursive triangular and dense matrix-inversion conclusions after equation (8)",
+      "reason": "Their displayed solutions are asymptotic and invoke an external recurrence theorem; no source-faithful finite replacement met the T2 criterion."
+    },
+    {
+      "candidate": "Lemma 4.1 on recursive QR and Lemma 4.2 on LU decomposition",
+      "reason": "Both are broad algorithmic backward-stability results with O(epsilon) statements and substantial block-algorithm models; the LU result also carries structural assumptions not suitable for a compact condition-neutral target."
+    },
+    {
+      "candidate": "Lemma 5.1, Theorem 5.2, and Lemma 5.4 on randomized rank-revealing decompositions",
+      "reason": "The candidates mix probabilistic or generic matrix choices, singular-value perturbation machinery, and O(epsilon) claims; a literal task would require a much larger random-matrix and decomposition model."
+    },
+    {
+      "candidate": "the rank-revealing, Schur, and singular-value decomposition reductions in Sections 5-6",
+      "reason": "Several stability conclusions are delegated to earlier references or given as high-level algorithm reductions and asymptotic recurrences rather than self-contained finite estimates."
+    },
+    {
+      "candidate": "the SylR recurrence, equation (20), and the generalized Sylvester extension",
+      "reason": "The generalized extension is explicitly only sketched. The printed ordinary SylR recurrence also omits first-order forcing terms needed by its claimed bound, and the alternative exact block-inverse reduction proved too easy for T3."
+    },
+    {
+      "candidate": "equation (21) and the recursive eigenvector algorithm",
+      "reason": "Equation (21) is a block factorization used to define an algorithm, while the subsequent accuracy discussion is conditional, asymptotic, and not presented as an exact finite theorem."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. The paper's QR-dependent results use its recursive randomized QRR procedure rather than NumStability's Householder QR, while the remaining exact matrix identities are elementary or their numerical claims are asymptotic, complexity-only, sketched, or delegated."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. No paper-proved finite statement aligns with two substantial frozen results. Replacing recursive QRR by Householder QR would change the algorithm, and the downstream LU, Schur, and rank-revealing claims are either asymptotic or rely on external results."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped after a fresh full-paper audit. The only self-contained exact candidate, the block-inverse identity, is a short finite-matrix calculation far below T2 difficulty; the harder claims either lack a complete paper proof or would benefit from mismatched algorithmic library results only after changing the task."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use exact finite claims made or algebraically completed from displayed arguments in this paper.",
+    "Reject definitions, experiments, complexity-only statements, delegated results, sketches, and claims whose literal content is vague asymptotics.",
+    "Represent every omitted higher-order term explicitly in the computation model while keeping equation (8)'s selected first-order bound free of those terms.",
+    "Keep the fixed Lean setting condition-neutral and paper-scoped.",
+    "Assign tiers only after checking the mounted frozen object baseline, not merely the broader source tree."
+  ],
+  "short_name": "Demmel, Dumitriu, and Holtz (2007)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1007/s00211-007-0114-x",
+    "local_path": "paper_bencmark/reference_papers/P10_Fast linear algebra is stable.pdf",
+    "page_map": "PDF pages 1-33 are printed pages 59-91 respectively.",
+    "pdf_pages": 33,
+    "rights_note": "The local journal copy was supplied for benchmark construction. Permission to redistribute the full PDF is not asserted.",
+    "sha256": "0ee818d060542baefdd85cbb7c7f2fd948efcb927101da84c37e418713f87269"
+  },
+  "title": "Fast linear algebra is stable"
+}

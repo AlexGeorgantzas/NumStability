@@ -1,0 +1,81 @@
+{
+  "record_status": "superseded_construction_snapshot",
+  "schema_version": "0.2.0",
+  "kind": "highambench-fixed-target-elaboration-evidence",
+  "paper_id": "P02",
+  "generated_at_utc": "2026-07-28T23:09:28Z",
+  "scope": "Elaboration of the fixed theorem interfaces and their shared condition-neutral setting; this is not a private-gold proof-reachability claim.",
+  "inputs": {
+    "shared_source": {
+      "path": "shared/HighamBench/Definitions.lean",
+      "sha256": "a38c8441b28dc9b3806f08394fb4d2d55bbe7171b72f97ab6781c8b8ac6e4861"
+    },
+    "shared_olean_sha256": "5e71d7b12e7d4648013600fa0f257c1eb8bfdfd7c32ea2710595df4f2672e851",
+    "targets": {
+      "P02-T1": "433a0639bd3bd9ff39cd187dbab957e27996f5117c02a717402dae4213d47a41",
+      "P02-T2": "28e1ba2efb227a2d435c4939643bad09b199440695528346770ff319df6d17a4",
+      "P02-T3": "d1e0f8186e63c672549dd3b8a3d25c3d684ea5787f37db954708190e224e2373"
+    }
+  },
+  "isolation": {
+    "adapter": "tools/lean_isolated.py compile",
+    "workspace": "Each target was checked in an independently staged four-file controlled task workspace containing the common prompt and shared source plus that task's Target.lean and context.md.",
+    "network": "unshared by Bubblewrap",
+    "condition_n_library_mounts": false,
+    "condition_l_library_mounts": true,
+    "condition_l_library": "the frozen NumStability source and olean trees",
+    "same_target_and_shared_files_in_both_conditions": true
+  },
+  "results": [
+    {
+      "task_id": "P02-T1",
+      "condition": "N",
+      "exit_code": 0,
+      "warning": "declaration uses sorry"
+    },
+    {
+      "task_id": "P02-T1",
+      "condition": "L",
+      "exit_code": 0,
+      "warning": "declaration uses sorry"
+    },
+    {
+      "task_id": "P02-T2",
+      "condition": "N",
+      "exit_code": 0,
+      "warning": "declaration uses sorry"
+    },
+    {
+      "task_id": "P02-T2",
+      "condition": "L",
+      "exit_code": 0,
+      "warning": "declaration uses sorry"
+    },
+    {
+      "task_id": "P02-T3",
+      "condition": "N",
+      "exit_code": 0,
+      "warning": "declaration uses sorry"
+    },
+    {
+      "task_id": "P02-T3",
+      "condition": "L",
+      "exit_code": 0,
+      "warning": "declaration uses sorry"
+    }
+  ],
+  "shared_setting_regression_check": {
+    "scope": "The three existing P01 public targets were restaged from their regenerated controlled manifests and recompiled against the same expanded shared source and olean.",
+    "results": [
+      {"task_id": "P01-T1", "condition": "N", "exit_code": 0},
+      {"task_id": "P01-T1", "condition": "L", "exit_code": 0},
+      {"task_id": "P01-T2", "condition": "N", "exit_code": 0},
+      {"task_id": "P01-T2", "condition": "L", "exit_code": 0},
+      {"task_id": "P01-T3", "condition": "N", "exit_code": 0},
+      {"task_id": "P01-T3", "condition": "L", "exit_code": 0}
+    ],
+    "pass": true
+  },
+  "pass": true,
+  "interpretation": "All three fixed theorem statements and the shared definitions elaborate unchanged in both conditions. The sorry warning is expected in public benchmark targets: contestants replace the proof region. A separate private-gold construction check is required before calling P02 release-frozen."
+}

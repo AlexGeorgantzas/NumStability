@@ -1,0 +1,94 @@
+{
+  "annotation": {
+    "method": "Codex extracted and read all 38 pages in physical order, covering Sections 1-7, Algorithms 1, Theorems 1-11, Lemmas 1-9, every supplied proof, both probabilistic appendices, all numerical experiments, and all 48 references; separated the paper's deductions from cited interlacing, singular-value, Gaussian-tail, matrix-Chernoff, and convex-concentration results; and audited Mathlib and the exact frozen 44-object NumStability surface before skipping all tiers.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P59 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Arvind K. Saibaba",
+    "Alen Alexanderian",
+    "Ilse C. F. Ipsen"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [],
+  "paper_id": "P59",
+  "paper_version": "arXiv:1605.04893v2 [math.NA], 15 February 2017; manuscript dated 17 February 2017",
+  "publication": {
+    "arxiv_id": "1605.04893v2",
+    "version_date": "2017-02-15",
+    "year": 2017
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Lemma 1 and Lemma 2, trace and log-determinant lower bounds",
+      "reason": "Both proofs obtain their decisive eigenvalue comparisons from the cited Cauchy interlacing theorem. The frozen library has no matching interlacing result. Requiring its proof would add a major theorem not proved in P59, while exposing it as a premise leaves short summation and scalar-log algebra below the tier difficulty floor."
+    },
+    {
+      "candidate": "Theorem 6, deterministic trace upper bounds",
+      "reason": "The long proof relies decisively on the cited von Neumann trace theorem and cited singular-value product and sum inequalities, none of which is supplied by the frozen bundle. Treating those results as assumptions leaves matrix substitutions and scalar bounds that do not receive one or two substantial NumStability shortcuts; rebuilding them would not be source-faithful."
+    },
+    {
+      "candidate": "Theorem 8 and Theorem 9, deterministic log-determinant upper bounds",
+      "reason": "These proofs use cited Sylvester determinant, Loewner-order, Ostrowski, and singular-value theorems. Operator-log monotonicity and finite Jensen are already available directly in this benchmark's Mathlib, so the nearby NumStability log and trace wrappers do not create an exclusive substantial L advantage. The remaining paper-specific determinant argument still depends on cited results absent from both conditions."
+    },
+    {
+      "candidate": "Theorem 1, Gaussian expectation bounds",
+      "reason": "Its matrix error bounds come from Theorems 6 and 8, while its probabilistic inputs come from cited continuous-Gaussian norm and pseudoinverse-tail results. The final independence, Jensen, and monotonicity assembly is short, and Mathlib already supplies finite/integral Jensen infrastructure. NumStability's probability model is finite and does not provide the cited Gaussian distribution theory."
+    },
+    {
+      "candidate": "Theorems 2-4, concentration and asymptotic sample bounds",
+      "reason": "Theorems 2 and 3 are explicitly one-line substitutions into earlier results. Theorem 4 is an asymptotic calculation built on those bounds and on stated asymptotic sample counts; it is not an exact source theorem with the constants and limiting relation needed for a substantial Lean task."
+    },
+    {
+      "candidate": "Lemma 4 and Appendix A",
+      "reason": "The appendix integrates cited continuous-Gaussian spectral-norm and pseudoinverse-tail bounds. NumStability has finite probability only, and formalizing the cited continuous laws would introduce source-external proof obligations; assuming them leaves routine tail integration and scalar optimization."
+    },
+    {
+      "candidate": "Theorem 10 and Appendix B",
+      "reason": "The proof's two central inputs are the cited matrix Chernoff inequality stated as Theorem 11 and the cited Ledoux convex concentration inequality stated as Lemma 7. The frozen bundle does not contain those exact results. Supplying them as assumptions leaves standard event bounds and union-bound assembly, whereas proving them would turn cited background into a P59 obligation."
+    },
+    {
+      "candidate": "Sections 5-6",
+      "reason": "These sections contain numerical experiments and an application setup, not additional exact proved results suitable for the benchmark tiers."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": false,
+      "decision": "Skipped. No internally proved P59 result obtains one substantial non-Mathlib shortcut from the frozen library: the nearby log-monotonicity and Jensen facts are already in Mathlib, while the missing substantial inputs are cited external theorems absent from NumStability."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No source-complete result obtains two distinct substantial non-Mathlib shortcuts. The structural bounds depend instead on cited interlacing, singular-value, determinant, and Ostrowski results not present in the frozen bundle."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. The only arguments at or above the required difficulty rely centrally on cited matrix or continuous-probability theorems. Exposing those as assumptions makes the remaining proof too short; rebuilding them would create a task not proved by P59."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only statements whose supporting proof is present in P59.",
+    "Do not turn cited Cauchy interlacing, von Neumann trace, singular-value, Sylvester determinant, Ostrowski, Gaussian-tail, matrix-Chernoff, or Ledoux concentration results into P59 proof obligations.",
+    "Do not count a NumStability wrapper as a tier shortcut when the same underlying result is readily available in Mathlib.",
+    "Do not promote asymptotic discussion, algorithms, experiments, or application setup to exact theorem tasks."
+  ],
+  "short_name": "Saibaba--Alexanderian--Ipsen (2017)",
+  "source": {
+    "lawful_source_locator": "local user-supplied arXiv PDF",
+    "local_path": "paper_bencmark/reference_papers/P59 Randomized Matrix-Free Trace and Log-Determinant Estimators.pdf",
+    "page_map": "Physical pages 1-38 carry manuscript pages 1-38.",
+    "pdf_pages": 38,
+    "rights_note": "Retain the local source path and cryptographic hash for benchmark provenance; do not redistribute the source PDF.",
+    "sha256": "192cd9981220d616abcdc2b6e6cde5c4f6be54ba906782bbf5457ca7cf487e3d"
+  },
+  "title": "Randomized Matrix-free Trace and Log-Determinant Estimators"
+}

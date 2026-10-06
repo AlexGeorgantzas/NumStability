@@ -1,0 +1,92 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "exact matrix form of Theorem 4.1 and equations (4.6)-(4.12)",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The matrices and vectors are the real specialization of the quantities in Theorem 4.1.",
+    "a is p_(j+1)^T Q_j, b is P_j^T q_(j+1), and p55LastBasis k is e_j.",
+    "ha and hb are the last-coordinate consequences of local biorthogonality used for the two rank-one support claims.",
+    "hmaster is equation (4.10), with F and G denoting the two projected error terms.",
+    "hDelta and herror are the decompositions defining K-L and N-M in Theorem 4.1.",
+    "hCT and hDT are the strict-triangular commutator observations made immediately after equation (4.10).",
+    "The denominator assumptions make the two quotient statements explicit over Lean's totalized real division."
+  ],
+  "author_label": "Theorem 4.1",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P55 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P55 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P55/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p55_t3_loss_of_biorthogonality (k : Nat) (T C Delta D F G K L N M : P55Matrix (k + 1)) (a b z w : P55Vector (k + 1)) (beta gamma theta : Real) (ha : a (Fin.last k) = 0) (hb : b (Fin.last k) = 0) (hmaster : gamma \u2022 p55Outer (p55LastBasis k) a - beta \u2022 p55Outer b (p55LastBasis k) = (C * T - T * C) + (Delta * T - T * Delta) + (D * T - T * D) + (F - G)) (hDelta : Delta * T - T * Delta = K - L) (herror : F - G = N - M) (hCT : p55StrictLower (C * T - T * C)) (hDT : p55StrictUpper (D * T - T * D)) (hK : p55StrictLower K) (hL : p55StrictUpper L) (hN : p55StrictLower N) (hM : p55StrictUpper M) (hz : T *\u1d65 z = theta \u2022 z) (hw : w \u1d65* T = theta \u2022 w) (hgamma : gamma * (w \u2b1d\u1d65 p55LastBasis k) != 0) (hbeta : beta * (p55LastBasis k \u2b1d\u1d65 z) != 0) : a \u2b1d\u1d65 z = (w \u2b1d\u1d65 ((K + N) *\u1d65 z)) / (gamma * (w \u2b1d\u1d65 p55LastBasis k)) and w \u2b1d\u1d65 b = (w \u2b1d\u1d65 ((L + M) *\u1d65 z)) / (beta * (p55LastBasis k \u2b1d\u1d65 z))",
+    "namespace": "HighamBench",
+    "plain_language": "Derive both loss-of-biorthogonality formulas by splitting equation (4.10) into its strict lower and upper parts and cancelling the two commutators against a left and right eigenvector.",
+    "target_file": "paper_bencmark/highambench/tasks/P55/T3/Target.lean",
+    "theorem_name": "p55_t3_loss_of_biorthogonality"
+  },
+  "informal_proof": "Equation (4.10) is a sum of a strictly lower and a strictly upper matrix on each side. Uniqueness of that decomposition yields (4.11) and (4.12). Apply w_i^H on the left and z_i on the right. The left and right eigenvector equations make each commutator scalar vanish, leaving the two numerators. The two nonzero scalar factors can then be divided out.",
+  "informal_statement": "Prove the two exact loss-of-biorthogonality identities in Theorem 4.1.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P55",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P55 Error Analysis of the Lanczos Algorithm for the Nonsymmetric Eigenvalue Problem.pdf",
+    "sha256": "01eff93ae32eefc941c48659d3f9255df1e418c705431211dc4f4001385087f7"
+  },
+  "paper_version": "Mathematics of Computation 62(205), January 1994, pages 209-226",
+  "result_form_tag": "THM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "Lanczos loss of biorthogonality Theorem 4.1",
+        "Ritz vector nonsymmetric eigenvalue commutator",
+        "strict lower upper triangular split biorthogonality"
+      ],
+      "result": "Neither Mathlib nor the exact 44-object frozen NumStability bundle contains a Lanczos, Ritz-vector, or loss-of-biorthogonality theorem. Their generic matrix operations do not replace the rank-one support proof, strict-triangular decomposition, commutator cancellation, and two quotient derivations required here.",
+      "scope": "the complete frozen NumStability surface at commit 45813a95dacf577461bae13f033af0dbc985a225, the exact 44-object condition-L bundle, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [
+      "generic matrix algebra only; no compiled declaration concerns Lanczos biorthogonality, Ritz vectors, or the lower/upper split in Theorem 4.1"
+    ],
+    "note": "The exact private N proof is 170 physical lines and the exact L proof is 171. After deleting L's one additional NumStability import, their mathematical bodies are byte-identical. L invokes no NumStability declaration and receives no shortcut."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "P55Vector",
+    "P55Matrix",
+    "p55StrictLower",
+    "p55StrictUpper",
+    "p55Outer",
+    "p55LastBasis"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Theorem 4.1 and equations (4.6)-(4.12)",
+      "pdf_page": "11-13",
+      "printed_page": "218-220",
+      "role": "selected loss-of-biorthogonality theorem and complete proof",
+      "section": "4. Convergence Versus Loss of Biorthogonality"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P55-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The task requires proving the support of two boundary rank-one matrices, constructing and using uniqueness of a strict-lower/strict-upper decomposition, reorganizing the full projected recurrence, cancelling two noncommutative matrix commutators with left and right eigenvector equations, and deriving two quotient identities. The exact N proof has 170 physical lines and is at least as demanding as the lower end of validated T2/T3 workloads rather than a short Mathlib import exercise. The exact L mathematical proof is byte-identical and uses no NumStability declaration, establishing that the frozen library provides no speedup.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P55/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p55_t3_loss_of_biorthogonality"
+  }
+}

@@ -1,0 +1,6 @@
+{"monotonic_ns":12739486481466,"raw_line":"\u001b[2m2026-09-16T16:54:30.429554Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: invalid patch: multiple operations target /workspace/Candidate.lean","record_type":"app_server_stderr","sequence":1,"unix_ns":1789577670429581613}
+{"monotonic_ns":13063717790600,"raw_line":"\u001b[2m2026-09-16T16:59:54.660777Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mapply_patch verification failed: Failed to find expected lines in /workspace/Candidate.lean:","record_type":"app_server_stderr","sequence":2,"unix_ns":1789577994660888840}
+{"monotonic_ns":13063718035844,"raw_line":"    apply congrArg f","record_type":"app_server_stderr","sequence":3,"unix_ns":1789577994661135729}
+{"monotonic_ns":13063718136728,"raw_line":"    apply Fin.ext","record_type":"app_server_stderr","sequence":4,"unix_ns":1789577994661236722}
+{"monotonic_ns":13063718224205,"raw_line":"    simp [rightIndex]","record_type":"app_server_stderr","sequence":5,"unix_ns":1789577994661324274}
+{"monotonic_ns":13063718308841,"raw_line":"    omega","record_type":"app_server_stderr","sequence":6,"unix_ns":1789577994661408910}

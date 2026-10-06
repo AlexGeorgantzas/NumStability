@@ -1,0 +1,85 @@
+{
+  "annotation": {
+    "added_mathematical_proof_not_in_paper": false,
+    "kind": "source-faithful alpha=2 specialization of the reindexed R-order part of Theorem 2.3",
+    "performed_by": "Codex"
+  },
+  "assumptions": [
+    "The positive sequence residual represents the norms ||F(x_k)|| after the reindexing performed in the proof of Theorem 2.3.",
+    "The constant B is the positive local residual constant introduced in Lemma 1.4.",
+    "The hypothesis hstep is equation (2.8) specialized to gamma=1 and alpha=2.",
+    "The hypothesis hsmall is the paper's post-reindexing smallness condition specialized to alpha=2.",
+    "The definitions of D and the scaled ratio are exactly the D and beta_k introduced on printed page 22; the formal index zero corresponds to the paper's ratio tau_1."
+  ],
+  "author_label": "Theorem 2.3, R-order proof for gamma=1, specialized to alpha=2",
+  "classification_frozen_before_runs": false,
+  "conditions": {
+    "L": "The identical fixed statement and P39 shared files are present; the frozen NumStability library is also present.",
+    "N": "The fixed statement and P39 shared files are present; no NumStability artifact is present."
+  },
+  "context_file": "paper_bencmark/highambench/tasks/P39/T3/context.md",
+  "formal_statement": {
+    "lean_header": "theorem p39_t3_choice_two_r_quadratic_core (residual B hpos hB hstep hsmall) : let D = 1/(2*tau_0); D>1 and beta_0=1/2 and beta_k <= (1/2)^(2^k) and beta_k tends to zero",
+    "namespace": "HighamBench",
+    "plain_language": "Under the paper's quadratic Choice-2 residual recurrence and reindexed smallness condition, the scaled residual ratios are positive, bounded by a doubly exponential sequence, and converge to zero.",
+    "target_file": "paper_bencmark/highambench/tasks/P39/T3/Target.lean",
+    "theorem_name": "p39_t3_choice_two_r_quadratic_core"
+  },
+  "informal_proof": "Turn equation (2.8) into a recurrence for consecutive residual ratios. Scale the ratios by D and simultaneously induct on their doubly exponential bound and the telescoping product bound for the residuals. The initial smallness inequality makes the two coefficients in the inductive step sum to at most one. Finally squeeze the scaled ratios between zero and (1/2)^(2^k).",
+  "informal_statement": "The R-order part of Theorem 2.3 for gamma=1 and alpha=2: prove the paper's scaled residual-ratio bound after its exact reindexing step.",
+  "limits": {
+    "total_model_tokens": 5000000,
+    "wall_clock_seconds": 1800
+  },
+  "paper_id": "P39",
+  "paper_source": {
+    "local_path": "paper_bencmark/reference_papers/P39-Choosing the Forcing Terms in an Inexact Newton Method.pdf",
+    "sha256": "9ec10bc2e1add577e6cc974ae4dd55923d82417c5e5aad85cf64515f439fa26c"
+  },
+  "paper_version": "published journal version; SIAM Journal on Scientific Computing 17(1), 1996, printed pages 16-32",
+  "result_form_tag": "THM",
+  "review_record_not_for_run_prompt": {
+    "absence_search": {
+      "patterns": [
+        "inexact Newton forcing term convergence",
+        "Choice 2 residual ratio R-order",
+        "scaled residual ratio doubly exponential",
+        "Eisenstat Walker Theorem 2.3"
+      ],
+      "result": "Neither Mathlib nor the 44-module importable NumStability set contains Theorem 2.3, an inexact-Newton forcing-term rate theorem, or the scaled residual-ratio induction used here. Mathlib supplies general sequence-limit and ordered-field primitives but not the combined recurrence result. Nonlinear-system and inexact-contraction material in the complete frozen NumStability source is outside the compiled condition-L bundle and does not state this theorem.",
+      "scope": "the complete frozen NumStability source, the compiled condition-L bundle recorded in metadata/library_olean.json, and Mathlib"
+    },
+    "exact_target_found_in_mathlib": false,
+    "exact_target_found_in_numstability_baseline": false,
+    "nearby_numstability_declarations": [],
+    "note": "The private N and L proofs reconstruct the same residual-ratio recurrence, simultaneous scaled-ratio and residual-product induction, exact paper constant, doubly exponential bound, and limit. L uses only an irrelevant zero-nonnegativity marker and receives no mathematical shortcut."
+  },
+  "schema_version": "highambench-task-0.3",
+  "shared_symbols": [
+    "p39ResidualRatio",
+    "p39ScaledResidualRatio"
+  ],
+  "source_locations": [
+    {
+      "anchor": "Theorem 2.3, equations (2.8)-(2.9), and the final R-order argument",
+      "pdf_page": "6-7",
+      "printed_page": "21-22",
+      "role": "selected residual-ratio rate statement and proof",
+      "section": "2. The proposed choices"
+    }
+  ],
+  "source_tags": [
+    "THM"
+  ],
+  "task_id": "P39-T3",
+  "tier": "T3",
+  "tier_label": "extend",
+  "tier_rationale": "The proof must derive the ratio recurrence from the nonlinear residual estimate, track a telescoping residual product together with the scaled ratios, manage the exact reindexed smallness constant, establish a doubly exponential bound by simultaneous induction, and prove the resulting sequence limit. This is substantial multi-stage formalization and is not discharged by Mathlib imports. NumStability has no corresponding compiled result, so L receives no material advantage over N.",
+  "validation": {
+    "controlled_target_file": "paper_bencmark/highambench/tasks/P39/T3/Target.lean",
+    "mode": "shared automatic validator",
+    "reject_sorry_admit_new_axiom_unsafe_or_forbidden_import": true,
+    "reject_statement_changes": true,
+    "required_declaration": "HighamBench.p39_t3_choice_two_r_quadratic_core"
+  }
+}

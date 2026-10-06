@@ -1,0 +1,94 @@
+{
+  "annotation": {
+    "method": "Codex read the complete 34-page manuscript in physical order, including the CALU and TSLU algorithms, all stability and communication results, experiments, Appendix A, and references; separated results proved in the paper from imported background; audited Mathlib and the exact frozen 44-object NumStability surface; and compiled exact private N/L proofs before retaining either task.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P43 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Laura Grigori",
+    "James W. Demmel",
+    "Hua Xiang"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P43-T1",
+    "P43-T3"
+  ],
+  "paper_id": "P43",
+  "paper_version": "author manuscript dated March 30, 2011",
+  "publication": {
+    "version_date": "2011-03-30",
+    "year": 2011
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Lemma 3.1",
+      "reason": "The row-space spanning statement is a short rank argument and is too easy for any tier."
+    },
+    {
+      "candidate": "Lemma 3.2",
+      "reason": "The height-one GEPP embedding is a small block-algebra instance. The arbitrary-height content of Theorem 3.4 is the source-faithful task with the qualifying one-result library advantage."
+    },
+    {
+      "candidate": "Corollary 3.5",
+      "reason": "The whole-CALU extension is described as a construction that repeatedly copies sparse blocks rather than as a complete independent formal proof. Selecting it in addition to Theorem 3.4 would duplicate the same result and require filling informal construction details."
+    },
+    {
+      "candidate": "Lemma 3.7",
+      "reason": "The lemma is explicitly imported as Lemma 9.6 from Higham rather than proved in this paper."
+    },
+    {
+      "candidate": "communication lower bounds and communication optimality",
+      "reason": "The lower bounds are recalled from earlier work, while the paper's optimality discussion combines them with performance counts rather than proving a new self-contained mathematical theorem suitable for these tiers."
+    },
+    {
+      "candidate": "growth-factor examples, numerical experiments, and Appendix A tables",
+      "reason": "These are constructed examples or empirical measurements, not additional universal proof tasks that improve on the selected theorems."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Selected the b=1, k=0, arbitrary-height specialization of Theorem 3.4 and equation (3.5). Exact private proofs show that one substantial NumStability LU/Schur construction theorem removes the generic factorization step and materially shortens L.",
+      "task_id": "P43-T1",
+      "theorem_name": "p43_t1_calu_scalar_gepp_chain"
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. The only qualifying substantial compiled shortcut for a complete P43 result is the one-step LU/Schur factorization theorem used by T1. Repeated use of that same declaration is not a second distinct result, and no source-proved candidate receives two independent substantial NumStability shortcuts."
+    },
+    "T3": {
+      "available": true,
+      "decision": "Selected Theorem 3.6's explicitly stated bounded unit-lower inverse action and final 2^(bH) CALU multiplier bound. The exact proof derives forward substitution from the full matrix equations, proves the geometric one-level bound, and iterates it over the tree height. NumStability provides no corresponding exact theorem or shortcut.",
+      "task_id": "P43-T3",
+      "theorem_name": "p43_t3_calu_multiplier_growth"
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only theorems and proof content stated in this paper.",
+    "Treat b=1 and k=0 as the explicit scalar-panel and leaf-path specialization of Theorem 3.4, not as a new claim.",
+    "Retain the full arbitrary-height sparse chain and its final updated entry; do not replace it with the easy height-one lemma.",
+    "For Theorem 3.6, expose the unit-lower factors, each bounded inverse-action equation, and the repeated height product rather than assuming either conclusion.",
+    "Do not count repeated applications of one LU/Schur theorem as multiple substantial results.",
+    "Assign a tier only after exact private N and L proofs compile."
+  ],
+  "short_name": "Grigori--Demmel--Xiang (2011)",
+  "source": {
+    "lawful_source_locator": "local user-supplied author manuscript",
+    "local_path": "paper_bencmark/reference_papers/P43 CALU- A Communication Optimal LU Factorization Algorithm.pdf",
+    "page_map": "The 34 physical PDF pages use printed page numbers 1-34.",
+    "pdf_pages": 34,
+    "rights_note": "The local author manuscript was supplied for benchmark construction. Release only its hash, metadata, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "1736c3457db9d40ca85456f5edccc8593d619d4edc3989fbc18a633d6671cd43"
+  },
+  "title": "CALU: A Communication Optimal LU Factorization Algorithm"
+}

@@ -1,0 +1,88 @@
+{
+  "annotation": {
+    "method": "Codex read the complete 25-page local paper in order, surveyed every named theorem and displayed proof result, and compared all candidates with the frozen Mathlib and importable NumStability baselines.",
+    "not_human_reviewer": true,
+    "performed_by": "Codex",
+    "reason": "The project owner assigned the P23 source selection and benchmark annotation to Codex."
+  },
+  "authors": [
+    "Xiaobo Liu"
+  ],
+  "benchmark_specification": {
+    "local_path": "paper_bencmark/scratch_pad/HighamBench_Simple_Two_Condition_Specification.pdf",
+    "name": "HighamBench Simple Two-Condition Specification",
+    "sha256": "59dfc314d4f9afecbbc6131c3c693624b09cc9e908f0e157efa468675ff56915",
+    "version": "0.2"
+  },
+  "classification_frozen_before_runs": false,
+  "corpus_membership": "This paper is part of the current corpus listed in metadata/manifest.json.",
+  "included_tasks": [
+    "P23-T1"
+  ],
+  "paper_id": "P23",
+  "paper_version": "published journal version; SIAM Journal on Matrix Analysis and Applications 46(1), 2025, printed pages 811-835",
+  "publication": {
+    "doi": "10.1137/24M1675734",
+    "issue": 1,
+    "journal": "SIAM Journal on Matrix Analysis and Applications",
+    "printed_pages": "811-835",
+    "publication_date": "2025-03-28",
+    "volume": 46,
+    "year": 2025
+  },
+  "rejected_candidates": [
+    {
+      "candidate": "Theorem 2.1, the mixed-precision Paterson-Stockmeyer/Horner forward-error bound",
+      "reason": "Its full proof can reuse the same substantial rounded matrix-multiplication result as Lemma 2.2, but no second independent substantial importable result is needed. It therefore does not qualify for T2, and the more focused Lemma 2.2 gives the cleaner T1 task without assuming the coefficient and power approximation hypotheses that Theorem 2.1 takes as inputs."
+    },
+    {
+      "candidate": "Theorem 2.3, the forward error of a polynomial assembled from computed powers",
+      "reason": "The paper explicitly omits its proof, stating only that it is similar to Theorem 2.1, so it does not provide the required source proof text."
+    },
+    {
+      "candidate": "Equations (3.2)-(3.5), decay estimates for Taylor coefficients",
+      "reason": "The derivation deliberately uses numerical approximations and informal asymptotic comparisons, including an observed approximation to the sth root of s factorial. It is not presented as a finite rigorous theorem suitable for a source-faithful Lean target."
+    },
+    {
+      "candidate": "Algorithms 3.2 and 3.3 and the accuracy and efficiency conclusions in Sections 3-4",
+      "reason": "These are algorithm descriptions, heuristic guarantees under approximate smallness conditions, and numerical experiments rather than additional finite theorem statements with complete proofs."
+    },
+    {
+      "candidate": "The exact Paterson-Stockmeyer grouping and operation-count statements",
+      "reason": "The paper uses these established facts as background rather than proving them as new results. The closer NumStability Paterson-Stockmeyer source module is also absent from the frozen importable object set."
+    }
+  ],
+  "result_survey": {
+    "T1": {
+      "available": true,
+      "decision": "Selected Lemma 2.2. Its proof needs one substantial importable result, the componentwise rounded matrix-multiplication error bound, which removes the n-term floating-point dot-product analysis from L while N must rebuild it."
+    },
+    "T2": {
+      "available": false,
+      "decision": "Skipped. No proved target needs at least two distinct substantial importable NumStability results. Theorem 2.1 and Lemma 2.2 both rely on the same matrix-multiplication result plus elementary gamma and matrix algebra."
+    },
+    "T3": {
+      "available": false,
+      "decision": "Skipped. The paper's difficult proved error bounds all contain rounded matrix multiplications, for which NumStability provides a material advantage. The remaining source-supported claims are either substantially easier, proved only heuristically, omitted, or experimental."
+    }
+  },
+  "schema_version": "highambench-paper-0.2",
+  "selection_policy": [
+    "Use only mathematical conclusions stated and proved in this paper.",
+    "Use Lemma 2.2 with the exact reindexing t=k+1 rather than weakening or replacing its componentwise bound.",
+    "Do not turn approximate smallness arguments, numerical experiments, or omitted proofs into benchmark theorems.",
+    "Treat source-only NumStability modules as unavailable when their compiled modules are absent from the frozen L-condition object set.",
+    "Keep every public definition paper-scoped and free of NumStability imports.",
+    "Assign tiers only after comparison with the frozen importable NumStability set and Mathlib."
+  ],
+  "short_name": "Liu (2025)",
+  "source": {
+    "lawful_source_locator": "https://doi.org/10.1137/24M1675734",
+    "local_path": "paper_bencmark/reference_papers/P23-Mixed-Precision Paterson-Stockmeyer Method for Evaluating Polynomials of Matrices.pdf",
+    "page_map": "Physical PDF pages 1-25 are printed pages 811-835 respectively.",
+    "pdf_pages": 25,
+    "rights_note": "The local PDF was supplied for benchmark construction and displays a SIAM redistribution notice. Release only its locator, hash, and short lawful paraphrases unless redistribution permission is confirmed.",
+    "sha256": "d5ea6c996b4134d2830df67c5b70d4b4c475ccbaebc92501a57282bd81c39ef3"
+  },
+  "title": "Mixed-Precision Paterson-Stockmeyer Method for Evaluating Polynomials of Matrices"
+}
